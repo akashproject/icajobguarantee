@@ -40,10 +40,10 @@ class AppServiceProvider extends ServiceProvider
 
             // Header Menu
             $primaryMenu = array(
-                '/home' => 'Home',
+                '/' => 'Home',
                 '/about-us' => "About Us",
                 '/courses' => "Courses",
-                '/gst-tally-accounts-sap-fico-finance-course-training-institute' => "Centers",
+                '/centers' => "Centers",
                 '/accounts-gst-sap-tally-career-opportunities' => "Placements",
                 '/franchise-opportunity' => "Franchise Opportunity",
                 '/blogs' => "Blogs",
