@@ -7,17 +7,24 @@ use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
-    //
-    public function index() {
-        return view('administrator.index');
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        // $this->middleware('auth');
     }
 
-    public function login() {
-        return view('administrator.index');
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
+    {
+        return view('administrator.dashboard');
     }
 
-    
-    public function logout() {
-        return view('administrator.index');
-    }
 }

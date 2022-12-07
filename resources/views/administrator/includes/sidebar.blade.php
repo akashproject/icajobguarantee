@@ -1,6 +1,6 @@
 <!-- Main Sidebar Container -->
 
-<!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
 
         <!-- ============================================================== -->
 
@@ -16,7 +16,20 @@
 
                     <ul id="sidebarnav" class="p-t-30">
 
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('administrator-home') }}" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('dashboard') }}" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Courses </span></a>
+
+                            <ul aria-expanded="false" class="collapse  first-level">
+
+								<li class="sidebar-item"><a href="{{ url('administrator/courses') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> All Courses </span></a></li>
+
+                                <li class="sidebar-item"><a href="{{ url('administrator/add-course') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Add Course </span></a></li>
+
+                                <li class="sidebar-item"><a href="{{ url('administrator/course-type') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Course type </span></a></li>
+
+                            </ul>
+
+                        </li>
 
 						<li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-face"></i><span class="hide-menu">Users </span></a>
 
@@ -27,6 +40,7 @@
                             </ul>
 
                         </li>
+                        
                     </ul>
 
                 </nav>

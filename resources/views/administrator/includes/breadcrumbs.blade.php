@@ -18,7 +18,7 @@
 									$link .= "/dashboard/" . Request::segment($i);
 								@endphp
 								<li class="breadcrumb-item">
-									<a href="{{route('administrator-home')}}">{{ ucwords(str_replace('-',' ',Request::segment($i))) }}</a>
+									<a href="{{route('dashboard')}}">{{ ucwords(str_replace('-',' ',Request::segment($i))) }}</a>
 								</li>
 							@else
 								<li class="breadcrumb-item active">

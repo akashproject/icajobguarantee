@@ -1,0 +1,2 @@
+run commend : php artisan tinker
+ use this DB::table('admins')->insert(['name'=>'ica-admin','email'=>'akash.dutta@icagroup.in','password'=>Hash::make('ub)O$*AjyPWGz94iMA(qfBbu')])

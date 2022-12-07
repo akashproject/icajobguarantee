@@ -4,33 +4,33 @@ namespace App\Http\Controllers\Administrator;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Course;
+use App\Models\CourseType;
 
-class CourseController extends Controller
+class CourseTypeController extends Controller
 {
-    //
+    //Course Type
     public function index()
     {
         try {
 
-            $courses = Course::where('status', 1)->get();
-            return view('administrator.courses.index',compact('courses'));
+            $courseType = CourseType::where('status', 1)->get();
+            return view('administrator.coursetype.index',compact('courseType'));
 
         } catch(\Illuminate\Database\QueryException $e){
-            //throw $th;
+            throw $e;
         }
         
     }
 
     public function add() {
-        return view('administrator.courses.add');
+        return view('administrator.coursetype.add');
     }
 
     public function show($id)
     {
         try {
-            $course = Course::find($id);
-            return view('administrator.courses.show',compact('course'));
+            $course = CourseType::find($id);
+            return view('administrator.coursetype.show',compact('course'));
         } catch(\Illuminate\Database\QueryException $e){
         }        
     }
@@ -48,12 +48,12 @@ class CourseController extends Controller
             ]);
 
             if($data['course_id'] <= 0){
-                Course::create($data);
+                CourseType::create($data);
             } else {
-                $institute = Course::findOrFail($data['course_id']);
+                $institute = CourseType::findOrFail($data['course_id']);
                 $institute->update($data);
             }
-            return redirect('/administrator/courses');
+            return redirect('/administrator/course-type');
         } catch(\Illuminate\Database\QueryException $e){
             var_dump($e->getMessage()); 
         }
@@ -61,9 +61,8 @@ class CourseController extends Controller
 
     
     public function delete($id) {
-        $course = Course::findOrFail($id);
+        $course = CourseType::findOrFail($id);
         $course->delete();
         return redirect('/administrator/courses');
     }
-
 }

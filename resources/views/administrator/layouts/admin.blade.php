@@ -35,7 +35,7 @@
     <!-- Main wrapper - style you can find in pages.scss -->
     
 	<div id="main-wrapper">
-        @if(!Request::is('/'))
+        @if(!Request::is('/administrator'))
 			@include('administrator.includes.navbar')
 			@include('administrator.includes.sidebar')		
         @else
@@ -67,7 +67,7 @@
 <script src="{{ url('assets/administrator/libs/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 <script src="{{ url('assets/administrator/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js') }}"></script>
 <script src="{{ url('assets/administrator/extra-libs/sparkline/sparkline.js') }}"></script>
-<script src="{{ url('dist/js/sidebarmenu.js') }}"></script>
+<script src="{{ url('assets/administrator/dist/js/sidebarmenu.js') }}"></script>
 <script src="{{ url('assets/administrator/libs/flot/excanvas.js') }}"></script>
 <script src="{{ url('assets/administrator/libs/flot/jquery.flot.js') }}"></script>
 <script src="{{ url('assets/administrator/libs/flot/jquery.flot.pie.js') }}"></script>
@@ -75,12 +75,12 @@
 <script src="{{ url('assets/administrator/libs/flot/jquery.flot.stack.js') }}"></script>
 <script src="{{ url('assets/administrator/libs/flot/jquery.flot.crosshair.js') }}"></script>
 <script src="{{ url('assets/administrator/libs/flot.tooltip/js/jquery.flot.tooltip.min.js') }}"></script>
-<script src="{{ url('dist/js/pages/chart/chart-page-init.js') }}"></script>
-<script src="{{ url('dist/js/waves.js') }}"></script>
+<script src="{{ url('assets/administrator/dist/js/pages/chart/chart-page-init.js') }}"></script>
+<script src="{{ url('assets/administrator/dist/js/waves.js') }}"></script>
 <script src="{{ url('assets/administrator/extra-libs/multicheck/datatable-checkbox-init.js') }}"></script>
 <script src="{{ url('assets/administrator/extra-libs/multicheck/jquery.multicheck.js') }}"></script>
 <script src="{{ url('assets/administrator/extra-libs/DataTables/datatables.min.js') }}"></script>
-<script src="assets/administrator/libs/quill/dist/quill.min.js"></script>
+<script src="{{ url('assets/administrator/libs/quill/dist/quill.min.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.10.0/tinymce.min.js"></script>
 <script src="{{ url('assets/administrator/dist/js/custom.js') }}"></script>
 <!--Wave Effects -->

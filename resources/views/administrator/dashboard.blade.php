@@ -1,5 +1,4 @@
-@extends('layouts.admin')
-
+@extends('administrator.layouts.admin')
 @section('content')
 	<div class="container-fluid">
 		<!-- ============================================================== -->
@@ -187,7 +186,7 @@
 					<div class="comment-widgets scrollable">
 						<!-- Comment Row -->
 						<div class="d-flex flex-row comment-row m-t-0">
-							<div class="p-2"><img src="assets/images/users/1.jpg" alt="user" width="50" class="rounded-circle"></div>
+							<div class="p-2"><img src="assets/administrator/images/users/1.jpg" alt="user" width="50" class="rounded-circle"></div>
 							<div class="comment-text w-100">
 								<h6 class="font-medium">James Anderson</h6>
 								<span class="m-b-15 d-block">Lorem Ipsum is simply dummy text of the printing and type setting industry. </span>
@@ -201,7 +200,7 @@
 						</div>
 						<!-- Comment Row -->
 						<div class="d-flex flex-row comment-row">
-							<div class="p-2"><img src="assets/images/users/4.jpg" alt="user" width="50" class="rounded-circle"></div>
+							<div class="p-2"><img src="assets/administrator/images/users/4.jpg" alt="user" width="50" class="rounded-circle"></div>
 							<div class="comment-text active w-100">
 								<h6 class="font-medium">Michael Jorden</h6>
 								<span class="m-b-15 d-block">Lorem Ipsum is simply dummy text of the printing and type setting industry. </span>
@@ -215,7 +214,7 @@
 						</div>
 						<!-- Comment Row -->
 						<div class="d-flex flex-row comment-row">
-							<div class="p-2"><img src="assets/images/users/5.jpg" alt="user" width="50" class="rounded-circle"></div>
+							<div class="p-2"><img src="assets/administrator/images/users/5.jpg" alt="user" width="50" class="rounded-circle"></div>
 							<div class="comment-text w-100">
 								<h6 class="font-medium">Johnathan Doeting</h6>
 								<span class="m-b-15 d-block">Lorem Ipsum is simply dummy text of the printing and type setting industry. </span>
@@ -243,10 +242,10 @@
 										</label>
 									</div>
 									<ul class="list-style-none assignedto">
-										<li class="assignee"><img class="rounded-circle" width="40" src="assets/images/users/1.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Steave"></li>
-										<li class="assignee"><img class="rounded-circle" width="40" src="assets/images/users/2.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Jessica"></li>
-										<li class="assignee"><img class="rounded-circle" width="40" src="assets/images/users/3.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Priyanka"></li>
-										<li class="assignee"><img class="rounded-circle" width="40" src="assets/images/users/4.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Selina"></li>
+										<li class="assignee"><img class="rounded-circle" width="40" src="assets/administrator/images/users/1.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Steave"></li>
+										<li class="assignee"><img class="rounded-circle" width="40" src="assets/administrator/images/users/2.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Jessica"></li>
+										<li class="assignee"><img class="rounded-circle" width="40" src="assets/administrator/images/users/3.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Priyanka"></li>
+										<li class="assignee"><img class="rounded-circle" width="40" src="assets/administrator/images/users/4.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Selina"></li>
 									</ul>
 								</li>
 								<li class="list-group-item todo-item" data-role="task">
@@ -266,8 +265,8 @@
 										</label>
 									</div>
 									<ul class="list-style-none assignedto">
-										<li class="assignee"><img class="rounded-circle" width="40" src="assets/images/users/3.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Priyanka"></li>
-										<li class="assignee"><img class="rounded-circle" width="40" src="assets/images/users/4.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Selina"></li>
+										<li class="assignee"><img class="rounded-circle" width="40" src="assets/administrator/images/users/3.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Priyanka"></li>
+										<li class="assignee"><img class="rounded-circle" width="40" src="assets/administrator/images/users/4.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Selina"></li>
 									</ul>
 								</li>
 								<li class="list-group-item todo-item" data-role="task">
@@ -287,8 +286,8 @@
 										</label>
 									</div>
 									<ul class="list-style-none assignedto">
-										<li class="assignee"><img class="rounded-circle" width="40" src="assets/images/users/3.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Priyanka"></li>
-										<li class="assignee"><img class="rounded-circle" width="40" src="assets/images/users/4.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Selina"></li>
+										<li class="assignee"><img class="rounded-circle" width="40" src="assets/administrator/images/users/3.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Priyanka"></li>
+										<li class="assignee"><img class="rounded-circle" width="40" src="assets/administrator/images/users/4.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Selina"></li>
 									</ul>
 								</li>
 							</ul>
@@ -431,7 +430,7 @@
 							<ul class="chat-list">
 								<!--chat Row -->
 								<li class="chat-item">
-									<div class="chat-img"><img src="assets/images/users/1.jpg" alt="user"></div>
+									<div class="chat-img"><img src="assets/administrator/images/users/1.jpg" alt="user"></div>
 									<div class="chat-content">
 										<h6 class="font-medium">James Anderson</h6>
 										<div class="box bg-light-info">Lorem Ipsum is simply dummy text of the printing &amp; type setting industry.</div>
@@ -440,7 +439,7 @@
 								</li>
 								<!--chat Row -->
 								<li class="chat-item">
-									<div class="chat-img"><img src="assets/images/users/2.jpg" alt="user"></div>
+									<div class="chat-img"><img src="assets/administrator/images/users/2.jpg" alt="user"></div>
 									<div class="chat-content">
 										<h6 class="font-medium">Bianca Doe</h6>
 										<div class="box bg-light-info">It’s Great opportunity to work.</div>
@@ -464,7 +463,7 @@
 								</li>
 								<!--chat Row -->
 								<li class="chat-item">
-									<div class="chat-img"><img src="assets/images/users/3.jpg" alt="user"></div>
+									<div class="chat-img"><img src="assets/administrator/images/users/3.jpg" alt="user"></div>
 									<div class="chat-content">
 										<h6 class="font-medium">Angelina Rhodes</h6>
 										<div class="box bg-light-info">Well we have good budget for the project</div>
@@ -496,7 +495,7 @@
 					<div class="comment-widgets scrollable" style="max-height: 130px;">
 						<!-- Comment Row -->
 						<div class="d-flex flex-row comment-row m-t-0">
-							<div class="p-2"><img src="assets/images/users/1.jpg" alt="user" width="50" class="rounded-circle"></div>
+							<div class="p-2"><img src="assets/administrator/images/users/1.jpg" alt="user" width="50" class="rounded-circle"></div>
 							<div class="comment-text w-100">
 								<h6 class="font-medium">James Anderson</h6>
 								<span class="m-b-15 d-block">Lorem Ipsum is simply dummy text of the printing and type setting industry. </span>
@@ -510,7 +509,7 @@
 						</div>
 						<!-- Comment Row -->
 						<div class="d-flex flex-row comment-row">
-							<div class="p-2"><img src="assets/images/users/4.jpg" alt="user" width="50" class="rounded-circle"></div>
+							<div class="p-2"><img src="assets/administrator/images/users/4.jpg" alt="user" width="50" class="rounded-circle"></div>
 							<div class="comment-text active w-100">
 								<h6 class="font-medium">Michael Jorden</h6>
 								<span class="m-b-15 d-block">Lorem Ipsum is simply dummy text of the printing and type setting industry. </span>
@@ -524,7 +523,7 @@
 						</div>
 						<!-- Comment Row -->
 						<div class="d-flex flex-row comment-row">
-							<div class="p-2"><img src="assets/images/users/5.jpg" alt="user" width="50" class="rounded-circle"></div>
+							<div class="p-2"><img src="assets/administrator/images/users/5.jpg" alt="user" width="50" class="rounded-circle"></div>
 							<div class="comment-text w-100">
 								<h6 class="font-medium">Johnathan Doeting</h6>
 								<span class="m-b-15 d-block">Lorem Ipsum is simply dummy text of the printing and type setting industry. </span>
@@ -638,12 +637,12 @@
 							<div class="p-20">
 								<p>And is full of waffle to It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end.multiple paragraphs and is full of waffle to
 									pad out the comment..</p>
-								<img src="assets/images/background/img4.jpg" class="img-fluid">
+								<img src="assets/administrator/images/background/img4.jpg" class="img-fluid">
 							</div>
 						</div>
 						<div class="tab-pane  p-20" id="profile" role="tabpanel">
 							<div class="p-20">
-								<img src="assets/images/background/img4.jpg" class="img-fluid">
+								<img src="assets/administrator/images/background/img4.jpg" class="img-fluid">
 								<p class="m-t-10">And is full of waffle to It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end.multiple paragraphs and is full of waffle to
 									pad out the comment..</p>
 							</div>
@@ -652,7 +651,7 @@
 							<div class="p-20">
 								<p>And is full of waffle to It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end.multiple paragraphs and is full of waffle to
 									pad out the comment..</p>
-								<img src="assets/images/background/img4.jpg" class="img-fluid">
+								<img src="assets/administrator/images/background/img4.jpg" class="img-fluid">
 							</div>
 						</div>
 					</div>
