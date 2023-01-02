@@ -241,6 +241,27 @@ $(function() {
     $('.removeProductVarient').on("click", function(){
         $(this).parent().parent().remove();
     });
-
-    
 });
+
+function getCitiesByStateId(event){
+    let state_id = event.value;
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    $.ajax({
+        url: `/icajobguarantee/administrator/get-city-by-state-id`,
+        type: "post",
+        data: {
+            state_id: state_id,
+        },
+        success: function(result) {
+            let htmlContent = '<option value="">Select City</option>';
+            $.each(result, function (key, data) {
+                htmlContent += '<option value="'+data.id+'"> '+data.name+' </option>';
+            });
+            $("#city_id").html(htmlContent);  
+        }
+    });
+}

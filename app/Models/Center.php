@@ -12,6 +12,6 @@ class Center extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'id','title','slug','banner_image','featured_image','description','seo_description','offer_price','price','duration','no_of_module','highlights','criteria','enable_otp','schema','utm_campaign','utm_source','status','created_at',
+        'id','name','title','slug','banner_image','featured_image','description','highlights','email','mobile','whatsapp','gmap_location','gmap_location','state_id','city_id','pincode','center_pincode','tags','enable_otp','meta_description','schema','robots','canonical','utm_campaign','utm_source','status','created_at',
     ];
 }

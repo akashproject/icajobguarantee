@@ -6,7 +6,7 @@
 
 <div class="col-12">
 
-	@if($courses)
+	@if($reviews)
 
 		<div class="card">
 
@@ -28,12 +28,10 @@
 
 						<tbody>
 
-							@foreach ($courses as $value)
+							@foreach ($reviews as $value)
 							<tr>
-								<td>{{ $value->name }}</td>													
-								<td>{{ $value->slug }}</td>													
-								<td>
-									<a href="{{ url('/courses') }}/{{ $value->slug }}" class="btn btn-success btn-lg">View</a>
+								<td>{{ $value->title }}</td>													
+								<td>									
 									<a href="{{ url('administrator/view-course') }}/{{ $value->id }}" class="btn btn-primary btn-lg">Edit</a>
 									<a href="{{ url('administrator/delete-course') }}/{{ $value->id }}" class="btn btn-danger btn-lg" onclick="return confirm('Are you sure?')"; >Delete </a>
 								</td>

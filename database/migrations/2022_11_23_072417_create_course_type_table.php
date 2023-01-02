@@ -15,9 +15,19 @@ return new class extends Migration
     {
         Schema::create('course_type', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->string('title');
             $table->string('slug');
+            $table->string('description');            
             $table->integer('parent_id')->nullable();
+            $table->boolean('enable_otp')->default('1');
+            $table->text('meta_description')->nullable();
+            $table->text('schema')->nullable();
+            $table->string('robots',150)->default('index, follow');           
+            $table->string('canonical')->nullable();           
+            $table->string('utm_campaign',100)->default('Google-Organic');
+            $table->string('utm_source',100)->default('SEO');
+            $table->boolean('status',100)->default('1');
             $table->timestamps();
         });
     }

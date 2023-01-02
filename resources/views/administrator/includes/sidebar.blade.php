@@ -31,6 +31,18 @@
 
                         </li>
 
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Centers </span></a>
+
+                            <ul aria-expanded="false" class="collapse  first-level">
+
+								<li class="sidebar-item"><a href="{{ url('administrator/centers') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> All Centers </span></a></li>
+
+                                <li class="sidebar-item"><a href="{{ url('administrator/add-center') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Add Center </span></a></li>
+
+                            </ul>
+
+                        </li>
+
 						<li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-face"></i><span class="hide-menu">Users </span></a>
 
                             <ul aria-expanded="false" class="collapse  first-level">
@@ -39,6 +51,9 @@
 
                             </ul>
 
+                        </li>
+
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark" href="{{ url('administrator/settings') }}" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Settings </span></a>
                         </li>
                         
                     </ul>

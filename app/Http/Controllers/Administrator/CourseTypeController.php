@@ -43,15 +43,19 @@ class CourseTypeController extends Controller
             $validatedData = $request->validate([
                 'title' => 'required',
                 'slug' => 'required',
+                'description' => 'required',
+                'status' => 'required',
+                'utm_campaign' => 'required',
+                'utm_source' => 'required',
             ]);
 
-            if($data['course_id'] <= 0){
+            if($data['course_type_id'] <= 0){
                 CourseType::create($data);
             } else {
-                $institute = CourseType::findOrFail($data['course_id']);
+                $institute = CourseType::findOrFail($data['course_type_id']);
                 $institute->update($data);
             }
-            return redirect('/administrator/course-type');
+            return redirect()->back()->with('message', 'Page updated successfully!');
         } catch(\Illuminate\Database\QueryException $e){
             var_dump($e->getMessage()); 
         }

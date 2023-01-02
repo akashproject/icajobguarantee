@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Administrator;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Course;
+use App\Models\CourseType;
 
 class CourseController extends Controller
 {
@@ -23,14 +24,16 @@ class CourseController extends Controller
     }
 
     public function add() {
-        return view('administrator.courses.add');
+        $courseType = CourseType::all();
+        return view('administrator.courses.add',compact('courseType'));
     }
 
     public function show($id)
     {
         try {
             $course = Course::find($id);
-            return view('administrator.courses.show',compact('course'));
+            $courseType = CourseType::all();
+            return view('administrator.courses.show',compact('course','courseType'));
         } catch(\Illuminate\Database\QueryException $e){
         }        
     }
@@ -45,6 +48,10 @@ class CourseController extends Controller
                 'description' => 'required',
                 'duration' => 'required',
                 'no_of_module' => 'required',
+                'status' => 'required',
+                'utm_campaign' => 'required',
+                'utm_source' => 'required',
+                'robots' => 'required',
             ]);
 
             if($data['course_id'] <= 0){
@@ -53,7 +60,7 @@ class CourseController extends Controller
                 $institute = Course::findOrFail($data['course_id']);
                 $institute->update($data);
             }
-            return redirect('/administrator/courses');
+            return redirect()->back()->with('message', 'Page updated successfully!');
         } catch(\Illuminate\Database\QueryException $e){
             var_dump($e->getMessage()); 
         }

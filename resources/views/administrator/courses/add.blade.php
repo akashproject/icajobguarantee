@@ -18,12 +18,17 @@
 					</div>
 
 				@endif
+				@if(session()->has('message'))
+					<div class="alert alert-success">
+						{{ session()->get('message') }}
+					</div>
+				@endif
 				<div class="row">
 					<div class="col-md-7" >
 						<div class="form-group row">
-							<label for="title" class="col-sm-3 text-right control-label col-form-label">Title</label>
+							<label for="name" class="col-sm-3 text-right control-label col-form-label">Name</label>
 							<div class="col-sm-9">
-								<input type="text" class="form-control" name="title" id="title" placeholder="Title Here" >
+								<input type="text" class="form-control" name="name" id="name" placeholder="Enter Name Here" >
 							</div>
 						</div>
 
@@ -75,35 +80,24 @@
 								<textarea class="form-control" name="criteria" id="criteria" placeholder="Enter Course Criteria" ></textarea>
 							</div>
 						</div>
-						<div class="form-group row">
-							<label for="schema" class="col-sm-3 text-right control-label col-form-label">Schema Code</label>
-							<div class="col-sm-9">
-								<textarea class="form-control" name="schema" id="schema" placeholder="Enter Schema Code" ></textarea>
-							</div>
-						</div>
 					</div>
 					<div class="col-md-5">
 						<div class="form-group row">
 							<label for="type_id" class="col-sm-3 text-right control-label col-form-label">Cateogry</label>
 							<div class="col-sm-9">
 								<select name="type_id" id="type_id" class="select2 form-control custom-select" style="width: 100%; height:36px;">	
-									<option value="1">Uncategorized</option>
+									@foreach ($courseType as $value)
+									<option value="{{  $value->id }}" > {{  $value->name }} </option>
+									@endforeach
 								<select>
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="utm_campaign" class="col-sm-3 text-right control-label col-form-label">Campaign</label>
+							<label for="tags" class="col-sm-3 text-right control-label col-form-label">Tags</label>
 							<div class="col-sm-9">
-								<input type="text" class="form-control" name="utm_campaign" id="utm_campaign" placeholder="Enter Utm Campaign Here" >
+								<textarea class="form-control" name="tags" id="meta_description" placeholder="Enter Tags Here" ></textarea>
 							</div>
-						</div>
-
-						<div class="form-group row">
-							<label for="utm_source" class="col-sm-3 text-right control-label col-form-label">Source</label>
-							<div class="col-sm-9">
-								<input type="text" class="form-control" name="utm_source" id="utm_source" placeholder="Enter Utm Source Here" >
-							</div>
-						</div>
+						</div>		
 						<div class="form-group row">
 							<label for="state" class="col-sm-3 text-right control-label col-form-label">Enable OTP</label>
 							<div class="col-sm-9">
@@ -126,7 +120,58 @@
 						</div>
 					</div>
 
-				<div>
+				</div>
+				<h4 class="card-title"> Search Engine Options </h4>
+				<div class="row">
+					<div class="col-md-7" >
+						<div class="form-group row">
+							<label for="title" class="col-sm-3 text-right control-label col-form-label">Title</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" name="title" id="title" placeholder="Title Here" >
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="meta_description" class="col-sm-3 text-right control-label col-form-label">Meta Description</label>
+							<div class="col-sm-9">
+								<textarea class="form-control" name="meta_description" id="meta_description" placeholder="Enter Meta Description Here" ></textarea>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="schema" class="col-sm-3 text-right control-label col-form-label">Schema Code</label>
+							<div class="col-sm-9">
+								<textarea class="form-control" name="schema" id="schema" placeholder="Enter Schema Code" ></textarea>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="utm_campaign" class="col-sm-3 text-right control-label col-form-label">Campaign</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" name="utm_campaign" id="utm_campaign" placeholder="Enter Utm Campaign Here" >
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<label for="utm_source" class="col-sm-3 text-right control-label col-form-label">Source</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" name="utm_source" id="utm_source" placeholder="Enter Utm Source Here" >
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="robots" class="col-sm-3 text-right control-label col-form-label">Robots Content</label>
+							<div class="col-sm-9">
+							<input type="text" class="form-control" name="robots" id="robots" placeholder="Enter Center Pincode Here" >
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="canonical" class="col-sm-3 text-right control-label col-form-label">Cronical Url</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" name="canonical" id="canonical" placeholder="Enter Canonical Url Here" >
+							</div>
+						</div>
+					</div>
+					<div class="col-md-5" >
+
+					</div>
+				</div>
 			</div>
 
 			<div class="border-top">

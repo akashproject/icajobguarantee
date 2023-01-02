@@ -12,7 +12,7 @@ class Course extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'id','type_id','title','slug','banner_image','featured_image','description','seo_description','offer_price','price','duration','no_of_module','highlights','criteria','enable_otp','schema','utm_campaign','utm_source','status','created_at',
+        'id','type_id','name','title','slug','banner_image','featured_image','description','offer_price','price','duration','no_of_module','highlights','criteria','tags','meta_description','schema','robots','canonical','utm_campaign','utm_source','status','created_at',
     ];
 
 }
