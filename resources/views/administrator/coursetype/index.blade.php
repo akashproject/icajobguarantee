@@ -1,7 +1,5 @@
 @extends('administrator.layouts.admin')
 
-
-
 @section('content')
 
 <div class="col-12">
@@ -13,7 +11,7 @@
 			<div class="card-body">
 
 				<h5 class="card-title"> Add New Course Type</h5>
-				<form class="form-horizontal" method="post" action="{{ url('administrator/save-course') }}" enctype="multipart/form-data">
+				<form class="form-horizontal" method="post" action="{{ url('administrator/save-course-type') }}" enctype="multipart/form-data">
 				@csrf
 				<div class="card-body">
 					<h4 class="card-title"> Add Course </h4>
@@ -61,8 +59,8 @@
 
 									<tr>
 										<th>Name</th>
+										<th>Slug</th>
 										<th>Options</th>
-
 									</tr>
 
 								</thead>
@@ -72,6 +70,7 @@
 									@foreach ($courseType as $value)
 									<tr>
 										<td>{{ $value->title }}</td>													
+										<td>{{ $value->slug }}</td>
 										<td>
 											<a href="{{ url('administrator/view-course-type') }}/{{ $value->id }}" class="btn btn-primary btn-lg">Edit</a>
 											<a href="{{ url('administrator/delete-course-type') }}/{{ $value->id }}" class="btn btn-danger btn-lg" onclick="return confirm('Are you sure?')"; >Delete </a>

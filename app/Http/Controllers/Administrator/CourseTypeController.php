@@ -13,7 +13,7 @@ class CourseTypeController extends Controller
     {
         try {
 
-            $courseType = CourseType::where('status', 1)->get();
+            $courseType = CourseType::all();
             return view('administrator.coursetype.index',compact('courseType'));
 
         } catch(\Illuminate\Database\QueryException $e){
@@ -29,8 +29,9 @@ class CourseTypeController extends Controller
     public function show($id)
     {
         try {
-            $course = CourseType::find($id);
-            return view('administrator.coursetype.show',compact('course'));
+            $courseType = CourseType::find($id);
+            $listCourseType = CourseType::all();
+            return view('administrator.coursetype.show',compact('courseType','listCourseType'));
         } catch(\Illuminate\Database\QueryException $e){
         }        
     }
@@ -42,9 +43,6 @@ class CourseTypeController extends Controller
             $validatedData = $request->validate([
                 'title' => 'required',
                 'slug' => 'required',
-                'description' => 'required',
-                'duration' => 'required',
-                'no_of_module' => 'required',
             ]);
 
             if($data['course_id'] <= 0){
