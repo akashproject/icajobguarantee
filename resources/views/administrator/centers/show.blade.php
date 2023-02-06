@@ -39,14 +39,14 @@
 						<div class="form-group row">
 							<label for="description" class="col-sm-3 text-right control-label col-form-label">Description</label>
 							<div class="col-sm-9">
-								<textarea class="form-control" name="description" id="description" placeholder="Enter description Here" >{{ $center->description }}</textarea>
+								<textarea class="form-control editor" name="description" id="description" placeholder="Enter description Here" >{{ $center->description }}</textarea>
 							</div>
 						</div>
 						
 						<div class="form-group row">
 							<label for="highlights" class="col-sm-3 text-right control-label col-form-label">Course highlights</label>
 							<div class="col-sm-9">
-								<textarea class="form-control" name="highlights" id="highlights" placeholder="Enter Highlights" >{{ $center->highlights }}</textarea>
+								<textarea class="form-control editor" name="highlights" id="highlights" placeholder="Enter Highlights" >{{ $center->highlights }}</textarea>
 							</div>
 						</div>
 						<div class="form-group row">
@@ -70,7 +70,7 @@
 						<div class="form-group row">
 							<label for="gmap_location" class="col-sm-3 text-right control-label col-form-label">Gmap Location</label>
 							<div class="col-sm-9">
-								<textarea class="form-control" name="gmap_location" id="gmap_location" placeholder="Enter Gmap Location Code" >{{ $center->gmap_location }}</textarea>
+								<textarea class="form-control editor" name="gmap_location" id="gmap_location" placeholder="Enter Gmap Location Code" >{{ $center->gmap_location }}</textarea>
 							</div>
 						</div>
 						<div class="form-group row">

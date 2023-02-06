@@ -32,12 +32,6 @@ class AppServiceProvider extends ServiceProvider
         View::composer('*', function($view)
         {
 
-            $serviceLocation = array(
-                'Howrah','Kolkata','Bihar'
-            );
-
-            $view->with('serviceLocation', $serviceLocation);
-
             // Header Menu
             $primaryMenu = array(
                 '/' => 'Home',

@@ -1,31 +1,12 @@
 $(function() {
 
     "use strict";
-
-
-
     $(".preloader").fadeOut();
-
-    // ============================================================== 
-
-    // Theme options
-
-    // ==============================================================     
-
-    // ============================================================== 
-
-    // sidebar-hover
-
-    // ==============================================================
-
-
+    dropZone();
 
     $(".left-sidebar").hover(
-
         function() {
-
             $(".navbar-header").addClass("expand-logo");
-
         },
 
         function() {
@@ -265,3 +246,64 @@ function getCitiesByStateId(event){
         }
     });
 }
+
+function dropZone(){
+    Dropzone.options.dropzone = {
+        //maxFilesize: 1000000000,
+        //acceptedFiles: ".jpeg,.jpg,.png,.gif,.doc,.pdf",
+        addRemoveLinks: false,
+        timeout: 60000,
+        success: function (file, response) {
+            console.log(response);
+        },
+        error: function (file, response) {
+            return false;
+        }
+    };
+}
+$('#searchMedia').on('keyup',function(){
+    let keyword = $(this).val();
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    $.ajax({
+        url: `/icajobguarantee/administrator/search-media`,
+        type: "post",
+        data: {
+            keyword: keyword,
+        },
+        success: function(result) {
+            $(".image-thumbnail-container").html(result); 
+        }
+    });
+});
+
+jQuery('.open-popup-link').magnificPopup({
+
+    type: 'inline',
+
+    midClick: true,
+
+    mainClass: 'mfp-fade'
+
+});
+
+
+$(".image-thumbnail").on("click", function(){
+    $(this).toggleClass("active");
+    // $(this).magnificPopup({
+    //     // you may add other options here, e.g.:
+    //     preloader: true,
+    //     callbacks: {
+    //       open: function() {
+    //         // Will fire when this exact popup is opened
+    //         // this - is Magnific Popup object
+    //       },
+    //       close: function() {
+    //         // Will fire when popup is closed
+    //       }
+    //     }
+    // });
+})

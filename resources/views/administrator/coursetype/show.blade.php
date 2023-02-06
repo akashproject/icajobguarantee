@@ -40,7 +40,7 @@
 							<div class="form-group row">
 								<label for="description" class="col-sm-3 text-right control-label col-form-label">Description</label>
 								<div class="col-sm-9">
-									<textarea class="form-control" name="description" id="description" placeholder="Enter description Here" >
+									<textarea class="form-control editor" name="description" id="description" placeholder="Enter description Here" >
 									{{ $courseType->description }}
 									</textarea>
 								</div>

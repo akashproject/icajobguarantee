@@ -41,7 +41,7 @@
 						<div class="form-group row">
 							<label for="description" class="col-sm-3 text-right control-label col-form-label">Description</label>
 							<div class="col-sm-9">
-								<textarea class="form-control" name="description" id="description" placeholder="Enter description Here" ></textarea>
+								<textarea class="form-control editor" name="description"  id="description" placeholder="Enter description Here" ></textarea>
 							</div>
 						</div>
 						<div class="form-group row">
@@ -71,13 +71,13 @@
 						<div class="form-group row">
 							<label for="highlights" class="col-sm-3 text-right control-label col-form-label">Course highlights</label>
 							<div class="col-sm-9">
-								<textarea class="form-control" name="highlights" id="highlights" placeholder="Enter Highlights" ></textarea>
+								<textarea class="form-control editor" name="highlights" id="highlights" placeholder="Enter Highlights" ></textarea>
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="criteria" class="col-sm-3 text-right control-label col-form-label">Course criteria</label>
 							<div class="col-sm-9">
-								<textarea class="form-control" name="criteria" id="criteria" placeholder="Enter Course Criteria" ></textarea>
+								<textarea class="form-control editor" name="criteria" id="criteria" placeholder="Enter Course Criteria" ></textarea>
 							</div>
 						</div>
 					</div>
@@ -95,7 +95,7 @@
 						<div class="form-group row">
 							<label for="tags" class="col-sm-3 text-right control-label col-form-label">Tags</label>
 							<div class="col-sm-9">
-								<textarea class="form-control" name="tags" id="meta_description" placeholder="Enter Tags Here" ></textarea>
+								<textarea class="form-control" name="tags" id="tags" placeholder="Enter Tags Here" ></textarea>
 							</div>
 						</div>		
 						<div class="form-group row">

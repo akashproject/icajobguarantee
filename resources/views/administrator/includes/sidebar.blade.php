@@ -17,7 +17,16 @@
                     <ul id="sidebarnav" class="p-t-30">
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('dashboard') }}" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Courses </span></a>
+
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-face"></i><span class="hide-menu">Users </span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+								<li class="sidebar-item"><a href="{{ url('users') }}" class="sidebar-link"><i class="mdi mdi-emoticon"></i><span class="hide-menu"> All Users </span></a></li>
+                            </ul>
+                        </li> 
+
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('administrator/media') }}" aria-expanded="false"><i class="mdi mdi-folder-multiple-image"></i><span class="hide-menu">Media Library</span></a></li>
+
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-book-multiple-variant"></i><span class="hide-menu">Courses </span></a>
 
                             <ul aria-expanded="false" class="collapse  first-level">
 
@@ -31,7 +40,7 @@
 
                         </li>
 
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Centers </span></a>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-home-map-marker"></i><span class="hide-menu">Centers </span></a>
 
                             <ul aria-expanded="false" class="collapse  first-level">
 
@@ -41,20 +50,49 @@
 
                             </ul>
 
-                        </li>
+                        </li>	
 
-						<li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-face"></i><span class="hide-menu">Users </span></a>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-home-map-marker"></i><span class="hide-menu"> Universities </span></a>
 
                             <ul aria-expanded="false" class="collapse  first-level">
 
-								<li class="sidebar-item"><a href="{{ url('users') }}" class="sidebar-link"><i class="mdi mdi-emoticon"></i><span class="hide-menu"> All Users </span></a></li>
+								<li class="sidebar-item"><a href="{{ url('administrator/universities') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> All Universities </span></a></li>
+
+                                <li class="sidebar-item"><a href="{{ url('administrator/add-university') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Add University </span></a></li>
+
+                            </ul>
+
+                        </li>	
+                        
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-comment-question-outline"></i><span class="hide-menu">Faqs</span></a>
+
+                            <ul aria-expanded="false" class="collapse  first-level">
+
+								<li class="sidebar-item"><a href="{{ url('administrator/faqs') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> All Faqs </span></a></li>
+
+                                <li class="sidebar-item"><a href="{{ url('administrator/add-faq') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Add Faq </span></a></li>
+
+                            </ul>
+
+                        </li>
+                        
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-comment-account-outline"></i><span class="hide-menu">Testimonials</span></a>
+
+                            <ul aria-expanded="false" class="collapse  first-level">
+
+								<li class="sidebar-item"><a href="{{ url('administrator/testimonials') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> All Testimonials </span></a></li>
+
+                                <li class="sidebar-item"><a href="{{ url('administrator/add-testimonial') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Add Testimonial </span></a></li>
 
                             </ul>
 
                         </li>
 
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark" href="{{ url('administrator/settings') }}" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Settings </span></a>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark" href="{{ url('administrator/reviews') }}" aria-expanded="false"><i class="mdi mdi-star"></i><span class="hide-menu">Reviews</span></a></li>
+
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark" href="{{ url('administrator/settings') }}" aria-expanded="false"><i class="mdi mdi-settings"></i><span class="hide-menu">Settings </span></a>
                         </li>
+
                         
                     </ul>
 

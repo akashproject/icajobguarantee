@@ -4,7 +4,7 @@
 
     <!-- Start of breadcrumb section
 		============================================= -->
-		<section id="breadcrumb" class="breadcrumb-section relative-position backgroud-style">
+		<!-- <section id="breadcrumb" class="breadcrumb-section relative-position backgroud-style">
 			<div class="blakish-overlay"></div>
 			<div class="container">
 				<div class="page-breadcrumb-content text-center">
@@ -19,12 +19,12 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> -->
 	<!-- End of breadcrumb section
 		============================================= -->
 
 
-	<!-- Start of course details section
+		<!-- Start of course details section
 		============================================= -->
 		<section id="course-details" class="course-details-section">
 			<div class="container">
@@ -38,22 +38,20 @@
 								<div class="course-title mt10 headline relative-position">
 									<h3><a href="#">Fully Responsive <b>Web Design &amp; Development.</b></a> <span class="trend-badge text-uppercase bold-font"><i class="fas fa-bolt"></i> TRENDING</span></h3>
 								</div>
+								<div class="course-details-category ul-li">
+									<span>Course <b>Section:</b></span>
+									<ul>
+										<li><a href="#">Summary</a></li>
+										<li><a href="#">Criteria</a></li>
+										<li><a href="#">Highlights</a></li>
+										<li><a href="#">Carriculam</a></li>
+									</ul>
+								</div>
 								<div class="course-details-content">
 									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
 									<p>
 										Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
 									</p>
-								</div>
-
-								<div class="course-details-category ul-li">
-									<span>Course <b>Section:</b></span>
-									<ul>
-										<li><a href="#">SEction 1 </a></li>
-										<li><a href="#">SEction 2 </a></li>
-										<li><a href="#">SEction 3 </a></li>
-										<li><a href="#">SEction 4  </a></li>
-										<li><a href="#">SEction 5  </a></li>
-									</ul>
 								</div>
 							</div>
 						</div>
@@ -344,7 +342,6 @@
 					<div class="col-md-3">
 						<div class="side-bar">
 							<div class="course-side-bar-widget">
-								<h3>Price <span>$69.99</span></h3>
 								<div class="genius-btn gradient-bg text-center text-uppercase float-left bold-font">
 									<a href="#">Enroll THis course <i class="fas fa-caret-right"></i></a>
 								</div>

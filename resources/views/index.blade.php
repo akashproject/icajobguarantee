@@ -207,7 +207,6 @@
 						<div class="course-item-text">
 							<div class="course-meta">
 								<span class="course-category bold-font"><a href="#">Web Design</a></span>
-								<span class="course-author bold-font"><a href="#">John Luis Fernandes</a></span>
 								<div class="course-rate ul-li">
 									<ul>
 										<li><i class="fas fa-star"></i></li>

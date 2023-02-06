@@ -13,10 +13,12 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/magnific-popup.min.css" rel="stylesheet">
     <!-- Styles -->
     <link href="{{ url('assets/administrator/libs/flot/css/float-chart.css') }}" rel="stylesheet">
     <link href="{{ url('assets/administrator/extra-libs/multicheck/multicheck.css') }}" rel="stylesheet">
     <link href="{{ url('assets/administrator/libs/datatables.net-bs4/css/dataTables.bootstrap4.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.0/min/dropzone.min.css">
     <link href="{{ url('assets/administrator/dist/css/style.min.css') }}" rel="stylesheet">
     <link href="{{ url('assets/administrator/dist/css/custom.css') }}" rel="stylesheet">
     @yield('style')
@@ -35,7 +37,7 @@
     <!-- Main wrapper - style you can find in pages.scss -->
     
 	<div id="main-wrapper">
-        @if(!Request::is('/administrator'))
+        @if(auth()->check())
 			@include('administrator.includes.navbar')
 			@include('administrator.includes.sidebar')		
         @else
@@ -47,7 +49,9 @@
 		@endif
 		
 		<div class="page-wrapper">
+        @if(auth()->check())
 			@include('administrator.includes.breadcrumbs')
+        @endif
 			@include('administrator.includes.message')
             <div class="container-fluid">
             <!-- Sales Cards  -->           
@@ -67,6 +71,8 @@
 <script src="{{ url('assets/administrator/libs/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 <script src="{{ url('assets/administrator/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js') }}"></script>
 <script src="{{ url('assets/administrator/extra-libs/sparkline/sparkline.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.0/dropzone.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
 <script src="{{ url('assets/administrator/dist/js/sidebarmenu.js') }}"></script>
 <script src="{{ url('assets/administrator/libs/flot/excanvas.js') }}"></script>
 <script src="{{ url('assets/administrator/libs/flot/jquery.flot.js') }}"></script>
@@ -87,11 +93,14 @@
 <script>
     $('#zero_config').DataTable();
     tinymce.init({
-        selector : "#mceEditor",
+        selector : ".editor",
         plugins: 'emoticons wordcount help code lists',
         menubar : true,
         toolbar: "undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist checklist | forecolor backcolor casechange permanentpen formatpainter removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media pageembed template link anchor codesample | a11ycheck"
     });
+</script>
+<script type="text/javascript">
+    
 </script>
 @yield('script')
 </body>

@@ -7,7 +7,7 @@
 				<div class="container">
 					<div class="navbar-default">
 						<div class="navbar-header float-left">
-							<a class="navbar-brand text-uppercase" href="#"><img src="assets/img/logo/logo.png" alt="logo"></a>
+							<a class="navbar-brand text-uppercase" href="#"><img src="{{ url('assets/images/logo.png') }}" alt="ICA Edu Skills"></a>
 						</div><!-- /.navbar-header -->						
 						<!-- <div class="cart-search float-right ul-li">
 							<ul>
@@ -94,31 +94,14 @@
 						</nav>
 
 						<div class="mobile-menu">
-							<div class="logo"><a href="index-1.html"><img src="assets/img/logo/logo.png" alt="Logo"></a></div>
+							<div class="logo"><a href="index-1.html"><img src="{{ url('assets/img/logo/logo.png') }}" alt="Logo"></a></div>
 							<nav>
 								<ul>
-									<li><a href="index-1.html">Home</a>
-									</li>
-									<li><a href="about.html">About</a></li>
-									<li><a href="blog.html">Blog</a>
-										<ul>
-											<li><a href="blog.html">Blog</a></li>
-											<li><a href="blog-single.html">Blog sinlge</a></li>
-										</ul>
-									</li>
-									<li><a href="shop.html">Shop</a>
-									</li>
-									<li><a href="contact.html">Contact</a></li>
-									<li><a href="#">Pages</a>
-										<ul>
-											<li><a href="course.html">Course</a></li>
-											<li><a href="course-details.html">course sinlge</a></li>
-											<li><a href="teacher.html">teacher</a></li>
-											<li><a href="teacher-details.html">teacher details</a></li>
-											<li><a href="faq.html">FAQ</a></li>
-											<li><a href="check-out.html">Check Out</a></li>
-										</ul>
-									</li>
+									@foreach ($primaryMenu as $key => $menuItem)
+										<li class="">
+											<a href="{{ url($key) }}">{{ $menuItem }}</a>
+										</li>
+									@endforeach
 								</ul>
 							</nav>
 

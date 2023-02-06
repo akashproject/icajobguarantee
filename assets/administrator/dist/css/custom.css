@@ -2107,7 +2107,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
   height: calc(2.64063rem + 2px); }
 
 .form-group {
-  margin-bottom: 1rem; }
+  margin: 0.5rem; }
 
 .form-text {
   display: block;
@@ -14786,7 +14786,9 @@ This is for the horizontal layout
       #main-wrapper[data-layout="horizontal"] .sidebar-nav #sidebarnav .user-pro,
       #main-wrapper[data-layout="horizontal"] .sidebar-nav #sidebarnav .badge {
         display: none; } }
-
+.add-media {
+  width: 100%;
+}
 @media (min-width: 768px) and (max-width: 1023px) {
   #main-wrapper[data-layout="horizontal"] .sidebar-nav > ul > .sidebar-item > .sidebar-link i {
     display: none; }
@@ -14833,4 +14835,29 @@ File: scss
 
 .productVarient {
     margin: 5px 0;
+}
+
+.image-thumbnail {
+  width: 113px;
+  margin: 0.5rem;
+  border: 1px solid #cfcfcf;
+  padding: 1px;
+  display: inline-flex;
+}
+.image-thumbnail.active {
+  border: 2px solid #6e6de5;
+}
+
+.filter-container {
+  border: 2px solid #d5d5d5;
+  margin-bottom: 1rem;
+}
+.white-popup {
+  position: relative;
+  background: #FFF;
+  padding: 20px 40px;
+  width: auto;
+  max-width: 90%;
+  margin: 20px auto;
+  transition: 1s all;
 }
