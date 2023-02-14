@@ -1,40 +1,32 @@
+let imageId;
+let imagePath;
+let fieldId;
+let BulkSelect = false
+let lectureField;
 $(function() {
-
     "use strict";
     $(".preloader").fadeOut();
     dropZone();
-
     $(".left-sidebar").hover(
         function() {
             $(".navbar-header").addClass("expand-logo");
         },
-
         function() {
-
             $(".navbar-header").removeClass("expand-logo");
-
         }
-
     );
 
     // this is for close icon when navigation open in mobile view
 
     $(".nav-toggler").on('click', function() {
-
         $("#main-wrapper").toggleClass("show-sidebar");
-
         $(".nav-toggler i").toggleClass("ti-menu");
-
     });
 
     $(".nav-lock").on('click', function() {
-
         $("body").toggleClass("lock-nav");
-
         $(".nav-lock i").toggleClass("mdi-toggle-switch-off");
-
         $("body, .page-wrapper").trigger("resize");
-
     });
 
     $(".search-box a, .search-box .app-search .srh-btn").on('click', function() {
@@ -54,19 +46,12 @@ $(function() {
     // ==============================================================
 
     $(function() {
-
         $(".service-panel-toggle").on('click', function() {
-
             $(".customizer").toggleClass('show-service-panel');
-
-
-
         });
 
         $('.page-wrapper').on('click', function() {
-
             $(".customizer").removeClass('show-service-panel');
-
         });
 
     });
@@ -166,63 +151,104 @@ $(function() {
     //**************************** 
 
     var setsidebartype = function() {
-
         var width = (window.innerWidth > 0) ? window.innerWidth : this.screen.width;
-
         if (width < 1170) {
-
             $("#main-wrapper").attr("data-sidebartype", "mini-sidebar");
-
         } else {
-
             $("#main-wrapper").attr("data-sidebartype", "full");
-
         }
-
     };
 
     $(window).ready(setsidebartype);
 
     $(window).on("resize", setsidebartype);
-
     //****************************
-
     /* This is for sidebartoggler*/
-
     //****************************
 
     $('.sidebartoggler').on("click", function() {
-
         $("#main-wrapper").toggleClass("mini-sidebar");
-
         if ($("#main-wrapper").hasClass("mini-sidebar")) {
-
             $(".sidebartoggler").prop("checked", !0);
-
             $("#main-wrapper").attr("data-sidebartype", "mini-sidebar");
-
         } else {
-
             $(".sidebartoggler").prop("checked", !1);
-
             $("#main-wrapper").attr("data-sidebartype", "full");
-
         }
-
     });
-    let varientField = '';
-    $('.addMoreProductVarient').on("click", function(){
-        console.log("here");
-        if(varientField == ''){
-            varientField = $('.productVarientWrap').html();
+
+    $('#searchMedia').on('keyup',function(){
+        let keyword = $(this).val();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            url: `/icajobguarantee/administrator/search-media`,
+            type: "post",
+            data: {
+                keyword: keyword,
+            },
+            success: function(result) {
+                $(".image-thumbnail-container").html(result); 
+            }
+        });
+    });
+    
+    jQuery('.open-popup-link').magnificPopup({
+        type: 'inline',
+        midClick: true,
+        mainClass: 'mfp-fade'
+    });
+    
+    
+    $(".image-thumbnail").on("click", function(){
+        imageId = $(this).attr("data-id");
+        imagePath = $(this).children("img").attr("src");
+        if (!BulkSelect) {
+            $(".image-thumbnail").removeClass("active");
         }
-        $('.productVarientWrap').append(varientField);
+        $(this).toggleClass("active");
+        // $(this).magnificPopup({
+        //     // you may add other options here, e.g.:
+        //     preloader: true,
+        //     callbacks: {
+        //       open: function() {
+        //         // Will fire when this exact popup is opened
+        //         // this - is Magnific Popup object
+        //       },
+        //       close: function() {
+        //         // Will fire when popup is closed
+        //       }
+        //     }
+        // });
     });
 
-    $('.removeProductVarient').on("click", function(){
-        $(this).parent().parent().remove();
+    $(".image-profile").on("click",function(){
+        fieldId = $(this).children("input").attr("id");
     });
+
+    $(".removeImage").on("click",function(){
+        $(this).parent().children().children("img").attr("src","https://dummyimage.com/150x150?text=Add%20Image");
+        $(this).parent().children().children("input").val("");
+    });
+
+    $(document).on("click",".addLecture",function() {
+        lectureField = $(this).parent().parent().clone();
+        $(this).parents(".lecturelist").append(lectureField);
+    })
+
+    $(document).on("click",".removeLecture",function() {
+        lectureField = $(this).parent().parent().remove();
+    })
+
 });
+function setMedia(){
+    $("#"+fieldId).val(imageId);
+    $("#"+fieldId).parent().children("img").attr("src",imagePath)
+    $.magnificPopup.close();
+}
 
 function getCitiesByStateId(event){
     let state_id = event.value;
@@ -261,49 +287,5 @@ function dropZone(){
         }
     };
 }
-$('#searchMedia').on('keyup',function(){
-    let keyword = $(this).val();
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
-    $.ajax({
-        url: `/icajobguarantee/administrator/search-media`,
-        type: "post",
-        data: {
-            keyword: keyword,
-        },
-        success: function(result) {
-            $(".image-thumbnail-container").html(result); 
-        }
-    });
-});
-
-jQuery('.open-popup-link').magnificPopup({
-
-    type: 'inline',
-
-    midClick: true,
-
-    mainClass: 'mfp-fade'
-
-});
 
 
-$(".image-thumbnail").on("click", function(){
-    $(this).toggleClass("active");
-    // $(this).magnificPopup({
-    //     // you may add other options here, e.g.:
-    //     preloader: true,
-    //     callbacks: {
-    //       open: function() {
-    //         // Will fire when this exact popup is opened
-    //         // this - is Magnific Popup object
-    //       },
-    //       close: function() {
-    //         // Will fire when popup is closed
-    //       }
-    //     }
-    // });
-})

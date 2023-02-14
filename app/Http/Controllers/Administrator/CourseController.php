@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Course;
 use App\Models\CourseType;
+use App\Models\Curriculum;
 
 class CourseController extends Controller
 {
@@ -38,27 +39,45 @@ class CourseController extends Controller
         }        
     }
 
+    public function curriculum($id){
+        try {
+            $carriculam = Curriculum::where('course_id',$id)->get();
+            return view('administrator.courses.curriculum',compact('carriculam','id'));       
+        } catch(\Illuminate\Database\QueryException $e){
+        }     
+    }
+
     public function save(Request $request) {
         try {
             $data = $request->all();
             
             $validatedData = $request->validate([
-                'title' => 'required',
+                'name' => 'required',
                 'slug' => 'required',
-                'description' => 'required',
-                'duration' => 'required',
                 'no_of_module' => 'required',
-                'status' => 'required',
-                'utm_campaign' => 'required',
-                'utm_source' => 'required',
-                'robots' => 'required',
             ]);
-
+            // echo "<pre>"; print_r($data);
+            // exit;
             if($data['course_id'] <= 0){
-                Course::create($data);
+                $course = Course::create($data);
+                if($course->id){
+                    $carriculam = array_fill(0,$data['no_of_module'],array('course_id'=>$course->id));
+                    foreach ($carriculam as $key => $value) {
+                        Curriculum::create($value);
+                    }
+                }
             } else {
-                $institute = Course::findOrFail($data['course_id']);
-                $institute->update($data);
+                $course = Course::findOrFail($data['course_id']);
+                $carriculam = Curriculum::where('course_id',$data['course_id'])->get();
+                if($carriculam->count() < $data['no_of_module']){
+                    $carriculam = array_fill(0,$data['no_of_module'] - $carriculam->count(),array('course_id'=>$course->id));
+                    foreach ($carriculam as $key => $value) {
+                        Curriculum::create($value);
+                    }
+                } else {
+                    echo "kom";
+                }
+                $course->update($data);
             }
             return redirect()->back()->with('message', 'Page updated successfully!');
         } catch(\Illuminate\Database\QueryException $e){
@@ -71,6 +90,21 @@ class CourseController extends Controller
         $course = Course::findOrFail($id);
         $course->delete();
         return redirect('/administrator/courses');
+    }
+
+    public function saveCurriculum(Request $request){
+        try {
+            $data = $request->all();
+            foreach ($data['curriculum'] as $key => $value) {
+                //echo "<pre>"; print_r($value); exit;
+                $value['lecture'] = (isset($value['lecture']))?json_encode($value['lecture']):'';
+                $carriculam = Curriculum::findOrFail($key);
+                $carriculam->update($value);
+            }
+            return redirect()->back()->with('message', 'Page updated successfully!');
+        } catch(\Illuminate\Database\QueryException $e){
+            var_dump($e->getMessage()); 
+        }
     }
 
 }

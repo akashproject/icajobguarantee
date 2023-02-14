@@ -312,9 +312,18 @@ h1, h2, h3, h4, h5, h6 {
   color: #333333;
   font-weight: 300;
   position: relative; }
+.why-choose-us-section .section-title-2 h2 span {
+    font-weight: 700;
+    color: #ffffff;
+  }
   .section-title-2 h2 span {
     font-weight: 700;
     color: #393185; }
+
+  .why-choose-us-section .section-title-2 h2:after {
+    background-color: #ffffff;
+  }
+
   .section-title-2 h2:after {
     position: absolute;
     content: '';
@@ -390,6 +399,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-menu {
   padding-top: 20px; }
+  .nav-menu li a:hover {
+    color: #ffffff;
+  }
   .nav-menu li a {
     color: #3e4095;
     text-transform: uppercase;
@@ -1479,7 +1491,6 @@ button.alt-menu-btn.float-left {
   display: inline-block;
   width: 100%; }
   .course-meta span {
-    float: left;
     font-size: 14px;
     margin-right: 24px;
     position: relative; }
@@ -1498,7 +1509,7 @@ button.alt-menu-btn.float-left {
   .course-meta .course-author {
     color: #333333; }
   .course-meta .course-rate li {
-    color: #ffc926; }
+    color: #ffc926;font-size: 13px; }
 
     .university-meta .university-author {
       color: #ffffff;
@@ -1525,15 +1536,24 @@ button.alt-menu-btn.float-left {
   -o-transition: .3s all ease-in-out;
   transition: .3s all ease-in-out; 
 }
-  .course-title h3 span {
-    top: -6px;
-    color: #fff;
-    padding: 5px;
-    font-size: 11px;
-    border-radius: 3px;
-    position: relative;
-    background-color: #ff5c26; }
+.trend-badge {
+  top: -6px;
+  color: #fff;
+  padding: 5px;
+  font-size: 11px;
+  border-radius: 3px;
+  position: relative;
+  background-color: #ff5c26; }
 
+.trend-bestseller {
+  color: #fff;
+  padding: 5px;
+  font-size: 11px;
+  border-radius: 3px;
+  position: relative;
+  margin-left: 0.9rem;
+  background-color: #4caf50; }
+      
 .course-title h5 {
   color: #393185;
   font-size: 18px;
@@ -2165,7 +2185,7 @@ button.alt-menu-btn.float-left {
 /*----------------------------------------------------*/
 .best-course-section {
   background-color: #f7f7f7;
-  padding: 125px 0px 125px 0px; }
+  padding: 50px 0px 50px 0px; }
 
 .best-course-pic-text {
   border-radius: 4px;
@@ -2173,7 +2193,7 @@ button.alt-menu-btn.float-left {
   .best-course-pic-text .course-title h3 {
     font-size: 16px;
     line-height: 24px;
-    height: 37px;
+    height: auto;
   }
   .best-course-pic-text .course-title:after {
     display: none; }
@@ -3250,7 +3270,7 @@ ul.product-tab li.active:after {
       color: #393185; }
 
 .panel-group .btn-link.collapsed {
-  color: #fff; }
+  color: #333; }
   .panel-group .btn-link.collapsed:before {
     content: ' ';
     -webkit-transition: all 0.5s;
@@ -3312,7 +3332,7 @@ ul.product-tab li.active:after {
 /*----------------------------------------------------*/
 .course-category-section {
   background-color: #f7f7f7;
-  padding: 125px 0px 125px; }
+  padding: 50px 0px 50px; }
 
 .category-icon {
   position: relative;
@@ -4058,7 +4078,7 @@ ul.product-tab li.active:after {
     color: #bbbbbb; }
 
 .course-details-section {
-  padding: 80px 0px 0px; }
+  padding: 25px 0px 0px; }
 
 .course-single-text .course-title {
   padding-bottom: 55px; }
@@ -4082,7 +4102,7 @@ ul.product-tab li.active:after {
   .course-details-category span b {
     font-weight: 700; }
 
-.course-details-category li {
+.course-details-category .product-tab li {
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 700;
@@ -4092,8 +4112,10 @@ ul.product-tab li.active:after {
   margin-top: 5px;
   -webkit-transition: .3s all ease-in-out;
   -o-transition: .3s all ease-in-out;
-  transition: .3s all ease-in-out; }
-  .course-details-category .product-tab li:hover {
+  transition: .3s all ease-in-out; 
+}
+ 
+.course-details-category .product-tab li:hover {
     color: #fff; }
 
 .course-details-item {
@@ -4152,13 +4174,13 @@ ul.product-tab li.active:after {
   right: 60px;
   top: 20px; }
   .affiliate-market-accordion .leanth-course span {
-    background-color: #f7f7f7;
+    background-color: #d0d5f3;
     padding: 12px 20px;
     font-size: 12px !important;
-    font-weight: 700;
+    font-weight: 700 !important;
     border-radius: 4px;
     text-transform: uppercase;
-    color: #ccc !important; }
+    color: #333 !important; }
 
 .affiliate-market-accordion .panel-group .btn-link.collapsed:after {
   color: #d9d9d9; }
@@ -4666,4 +4688,8 @@ ul.product-tab li.active:after {
 .university-banner-content {
   width: 87%;
   margin: auto;
+}
+.course-rate.ul-li {
+  display: inline-flex;
+  margin-right: 0.9rem;
 }

@@ -81,7 +81,6 @@
 <script src="{{ url('assets/administrator/libs/flot/jquery.flot.stack.js') }}"></script>
 <script src="{{ url('assets/administrator/libs/flot/jquery.flot.crosshair.js') }}"></script>
 <script src="{{ url('assets/administrator/libs/flot.tooltip/js/jquery.flot.tooltip.min.js') }}"></script>
-<script src="{{ url('assets/administrator/dist/js/pages/chart/chart-page-init.js') }}"></script>
 <script src="{{ url('assets/administrator/dist/js/waves.js') }}"></script>
 <script src="{{ url('assets/administrator/extra-libs/multicheck/datatable-checkbox-init.js') }}"></script>
 <script src="{{ url('assets/administrator/extra-libs/multicheck/jquery.multicheck.js') }}"></script>

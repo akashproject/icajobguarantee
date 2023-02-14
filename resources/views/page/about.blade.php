@@ -149,87 +149,6 @@
 								</div>
 								<!-- /course-advantage -->
 
-
-								<div class="about-course-categori about-teacher-2">
-									<div class="section-title-2  headline text-left">
-										<h2>Course <span>Categories</span></h2>
-									</div>
-									<div class="category-slide text-center">
-										<div class="category-icon-title text-center">
-											<div class="category-icon">
-												<i class="text-gradiant flaticon-technology"></i>
-											</div>
-											<div class="category-title">
-												<h4>Responsive Website</h4>
-											</div>
-										</div>
-
-										<div class="category-icon-title text-center">
-											<div class="category-icon">
-												<i class="text-gradiant flaticon-app-store"></i>
-											</div>
-											<div class="category-title">
-												<h4>IOS Applications</h4>
-											</div>
-										</div>
-
-										<div class="category-icon-title text-center">
-											<div class="category-icon">
-												<i class="text-gradiant flaticon-artist-tools"></i>
-											</div>
-											<div class="category-title">
-												<h4>Graphic Design</h4>
-											</div>
-										</div>
-
-										<div class="category-icon-title text-center">
-											<div class="category-icon">
-												<i class="text-gradiant flaticon-business"></i>
-											</div>
-											<div class="category-title">
-												<h4>Marketing</h4>
-											</div>
-										</div>
-
-										<div class="category-icon-title text-center">
-											<div class="category-icon">
-												<i class="text-gradiant flaticon-dna"></i>
-											</div>
-											<div class="category-title">
-												<h4>Science</h4>
-											</div>
-										</div>
-
-										<div class="category-icon-title text-center">
-											<div class="category-icon">
-												<i class="text-gradiant flaticon-cogwheel"></i>
-											</div>
-											<div class="category-title">
-												<h4>Enginering</h4>
-											</div>
-										</div>
-
-										<div class="category-icon-title text-center">
-											<div class="category-icon">
-												<i class="text-gradiant flaticon-technology-1"></i>
-											</div>
-											<div class="category-title">
-												<h4>Photography</h4>
-											</div>
-										</div>
-
-										<div class="category-icon-title text-center">
-											<div class="category-icon">
-												<i class="text-gradiant flaticon-technology-2"></i>
-											</div>
-											<div class="category-title">
-												<h4>Mobile Application</h4>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- /course-categori -->
-
 							</div>
 						</div>
 					</div>
@@ -319,153 +238,90 @@
 	<!-- End of about us content
 		============================================= -->
 
-
-	<!-- Start of best product section
+	<!-- Start secound teacher section
 		============================================= -->
-		<section id="best-product" class="best-product-section best-product-4">
+		<section id="teacher-2" class="secound-teacher-section">
 			<div class="container">
-				<div class="section-title-2 mb65 headline text-left">
-					<h2>Genius <span>Best Products.</span></h2>
+				<div class="section-title mb35 headline text-left">
+					<span class="subtitle ml42  text-uppercase">GENIUS STAFFS</span>
+					<h2>Team <span>Managements.</span></h2>
 				</div>
-				<div  id="best-product-slide-item" class="best-product-slide">
-					<div class="product-img-text">
-						<div class="product-img text-center mb20">
-							<img src="assets/img/product/bp-1.png" alt="">
+				<div class="teacher-secound-slide">
+					<div class="teacher-img-text relative-position text-center">
+						<div class="teacher-img-social relative-position">
+							<img src="assets/img/teacher/tb-1.png" alt="">
+							<div class="blakish-overlay"></div>
+							<div class="teacher-social-list ul-li">
+								<ul>
+									<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+									<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+									<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+								</ul>
+							</div>
 						</div>
-						<div class="product-text-content relative-position">
-							<div class="best-title-price float-left">
-								<div class="course-title headline">
-									<h3><a href="#">Mobile Apps Books.</a></h3>
-								</div>
-								<div class="price-start">
-									Start from
-									<span>$55.25</span>
-								</div>
-							</div>
-							<div class="add-cart text-center">
-								<i class="fas fa-cart-plus"></i>
-							</div>
+						<div class="teacher-name-designation mt15">
+							<span class="teacher-name">Daniel Alvares</span>
+							<span class="teacher-designation">Mobile Apps</span>
 						</div>
 					</div>
 
-					<div class="product-img-text">
-						<div class="product-img text-center mb20">
-							<img src="assets/img/product/bp-2.png" alt="">
+					<div class="teacher-img-text relative-position text-center">
+						<div class="teacher-img-social relative-position">
+							<img src="assets/img/teacher/tb-2.png" alt="">
+							<div class="blakish-overlay"></div>
+							<div class="teacher-social-list ul-li">
+								<ul>
+									<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+									<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+									<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+								</ul>
+							</div>
 						</div>
-						<div class="product-text-content relative-position">
-							<div class="best-title-price float-left">
-								<div class="course-title headline">
-									<h3><a href="#">Mobile Apps Books.</a></h3>
-								</div>
-								<div class="price-start">
-									Start from
-									<span>$55.25</span>
-								</div>
-							</div>
-							<div class="add-cart text-center">
-								<i class="fas fa-cart-plus"></i>
-							</div>
+						<div class="teacher-name-designation mt15">
+							<span class="teacher-name">Daniel Alvares</span>
+							<span class="teacher-designation">Mobile Apps</span>
 						</div>
 					</div>
-					<div class="product-img-text">
-						<div class="product-img text-center mb20">
-							<img src="assets/img/product/bp-3.png" alt="">
-						</div>
-						<div class="product-text-content relative-position">
-							<div class="best-title-price float-left">
-								<div class="course-title headline">
-									<h3><a href="#">Mobile Apps Books.</a></h3>
-								</div>
-								<div class="price-start">
-									Start from
-									<span>$55.25</span>
-								</div>
-							</div>
-							<div class="add-cart text-center">
-								<i class="fas fa-cart-plus"></i>
+
+					<div class="teacher-img-text relative-position text-center">
+						<div class="teacher-img-social relative-position">
+							<img src="assets/img/teacher/tb-3.png" alt="">
+							<div class="blakish-overlay"></div>
+							<div class="teacher-social-list ul-li">
+								<ul>
+									<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+									<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+									<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+								</ul>
 							</div>
 						</div>
-					</div>
-					<div class="product-img-text">
-						<div class="product-img text-center mb20">
-							<img src="assets/img/product/bp-4.png" alt="">
-						</div>
-						<div class="product-text-content relative-position">
-							<div class="best-title-price float-left">
-								<div class="course-title headline">
-									<h3><a href="#">Mobile Apps Books.</a></h3>
-								</div>
-								<div class="price-start">
-									Start from
-									<span>$55.25</span>
-								</div>
-							</div>
-							<div class="add-cart text-center">
-								<i class="fas fa-cart-plus"></i>
-							</div>
+						<div class="teacher-name-designation mt15">
+							<span class="teacher-name">Juliana Hernandes</span>
+							<span class="teacher-designation">Web Design</span>
 						</div>
 					</div>
-					<div class="product-img-text">
-						<div class="product-img text-center mb20">
-							<img src="assets/img/product/bp-1.png" alt="">
-						</div>
-						<div class="product-text-content relative-position">
-							<div class="best-title-price float-left">
-								<div class="course-title headline">
-									<h3><a href="#">Mobile Apps Books.</a></h3>
-								</div>
-								<div class="price-start">
-									Start from
-									<span>$55.25</span>
-								</div>
-							</div>
-							<div class="add-cart text-center">
-								<i class="fas fa-cart-plus"></i>
+
+					<div class="teacher-img-text relative-position text-center">
+						<div class="teacher-img-social relative-position">
+							<img src="assets/img/teacher/tb-4.png" alt="">
+							<div class="blakish-overlay"></div>
+							<div class="teacher-social-list ul-li">
+								<ul>
+									<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+									<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+									<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+								</ul>
 							</div>
 						</div>
-					</div>
-					<div class="product-img-text">
-						<div class="product-img text-center mb20">
-							<img src="assets/img/product/bp-2.png" alt="">
-						</div>
-						<div class="product-text-content relative-position">
-							<div class="best-title-price float-left">
-								<div class="course-title headline">
-									<h3><a href="#">Mobile Apps Books.</a></h3>
-								</div>
-								<div class="price-start">
-									Start from
-									<span>$55.25</span>
-								</div>
-							</div>
-							<div class="add-cart text-center">
-								<i class="fas fa-cart-plus"></i>
-							</div>
-						</div>
-					</div>
-					<div class="product-img-text">
-						<div class="product-img text-center mb20">
-							<img src="assets/img/product/bp-3.png" alt="">
-						</div>
-						<div class="product-text-content relative-position">
-							<div class="best-title-price float-left">
-								<div class="course-title headline">
-									<h3><a href="#">Mobile Apps Books.</a></h3>
-								</div>
-								<div class="price-start">
-									Start from
-									<span>$55.25</span>
-								</div>
-							</div>
-							<div class="add-cart text-center">
-								<i class="fas fa-cart-plus"></i>
-							</div>
+						<div class="teacher-name-designation mt15">
+							<span class="teacher-name">Daniel Alvares</span>
+							<span class="teacher-designation">Mobile Apps</span>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
-	<!-- End  of best product section
+	<!-- End teacher section
 		============================================= -->
     @endsection
 @section('script')

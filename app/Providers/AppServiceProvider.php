@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
-use App\Models\Categories;
+use App\Models\Media;
 use View;
 
 class AppServiceProvider extends ServiceProvider
@@ -54,6 +54,10 @@ class AppServiceProvider extends ServiceProvider
 
             );
             $view->with('moreinfo', $moreinfo);
+
+            // Category Menu
+            $media = Media::all();
+            $view->with('media', $media);
         });
     }
 }

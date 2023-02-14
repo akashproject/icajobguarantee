@@ -108,11 +108,11 @@ CREATE TABLE `courses` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `type_id` char(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `banner_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `featured_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `offer_price` char(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `price` char(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `duration` char(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -158,6 +158,26 @@ CREATE TABLE `faqs` (
   `model` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `model_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `status` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `media`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `media` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `filename` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `alternative` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `caption` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `extension` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `size` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `dimension` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `path` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -285,6 +305,32 @@ CREATE TABLE `testimonials` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `universities`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `universities` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `banner_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `featured_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `state_id` int(11) DEFAULT NULL,
+  `city_id` int(11) DEFAULT NULL,
+  `enable_otp` tinyint(1) NOT NULL DEFAULT 1,
+  `meta_description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `schema` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `robots` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'index, follow',
+  `canonical` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `utm_campaign` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Google-Organic',
+  `utm_source` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'SEO',
+  `status` tinyint(1) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -326,3 +372,5 @@ INSERT INTO `migrations` VALUES (28,'2022_12_29_070141_create_reviews_table',11)
 INSERT INTO `migrations` VALUES (30,'2022_12_29_082756_create_settings_table',12);
 INSERT INTO `migrations` VALUES (33,'2023_01_17_095023_create_testimonials_table',13);
 INSERT INTO `migrations` VALUES (34,'2023_01_17_103910_create_faqs_table',13);
+INSERT INTO `migrations` VALUES (35,'2023_01_24_101839_create_media_table',14);
+INSERT INTO `migrations` VALUES (37,'2023_02_02_074104_create_universities_table',15);

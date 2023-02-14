@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Course;
 use App\Models\CourseType;
+use App\Models\Curriculum;
 
 class CourseController extends Controller
 {
@@ -14,7 +15,6 @@ class CourseController extends Controller
     public function index(Request $request)
     {
         try {
-
             $courses = DB::table('courses')
             ->join('course_type', 'course_type.id', '=', 'courses.type_id')
             ->select('courses.*', 'courses.name as course_name','course_type.name as category')
@@ -33,8 +33,6 @@ class CourseController extends Controller
     public function courseListByCategory($slug)
     {
         try {
-
-
             $courses = DB::table('courses')
             ->join('course_type', 'course_type.id', '=', 'courses.type_id')
             ->select('courses.*', 'courses.name as course_name','course_type.name as category')
@@ -57,10 +55,10 @@ class CourseController extends Controller
     public function viewCourse($slug)
     {
         try {
-            //$course = Course::where('slug', $slug)->where('status', 1);
-            //$course = $course->firstOrFail();
-            $course = array();
-            return view('courses.view',compact('course'));
+            $course = Course::where('slug', $slug)->where('status', 1);
+            $course = $course->firstOrFail();
+            $carriculams = Curriculum::where('course_id',$course->id)->get();
+            return view('courses.view',compact('course','carriculams'));
         } catch(\Illuminate\Database\QueryException $e){
         }
        

@@ -46,9 +46,7 @@
         </div>
     </div>
 </div>
-<div id="imageBox" class="white-popup mfp-hide">
-    <h5 class="text-center">GET IN TOUCH</h2>
-</div>
+
 @endsection
 @section('script')
 <!-- ============================================================== -->

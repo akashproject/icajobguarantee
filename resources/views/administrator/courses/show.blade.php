@@ -22,7 +22,7 @@
 					</div>
 				@endif
 				<div class="row">
-					<div class="col-md-7" >
+					<div class="col-md-8" >
 						<div class="form-group row">
 							<label for="name" class="col-sm-3 text-right control-label col-form-label">Name</label>
 							<div class="col-sm-9">
@@ -63,7 +63,35 @@
 						<div class="form-group row">
 							<label for="no_of_module" class="col-sm-3 text-right control-label col-form-label">No Of Module</label>
 							<div class="col-sm-9">
-								<input type="text" class="form-control" name="no_of_module" id="no_of_module" placeholder="Enter No Of Module" value="{{ $course->no_of_module }}" >
+								<input type="number" class="form-control" name="no_of_module" id="no_of_module" placeholder="Enter No Of Module" value="{{ $course->no_of_module }}" >
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="no_of_module" class="col-sm-3 text-left control-label col-form-label">Curriculum</label>
+							<div class="col-sm-9">
+								<a href="{{ url('administrator/curriculum') }}/{{ $course->id }}" class="btn btn-primary">Curriculum Detail</a>
+								<!-- @for( $i = 1; $i<=$course->no_of_module; $i++ )
+									<div class="form-group row">
+										<label for="no_of_module" class="col-sm-3 text-right control-label col-form-label">Module {{$i}}</label>
+										<div class="col-sm-9">
+											<input type="text" class="form-control" name="curriculum[{{$i}}]['modulename']" id="curriculum" placeholder="Enter Module Name" >
+											<div class="form-group row">
+												<label for="no_of_module" class="col-sm-2 text-right control-label col-form-label">Lecture</label>
+												<div class="col-md-8" >
+													<input type="text" class="form-control" name="curriculum[{{$i}}]['lecture][]" id="lecture" placeholder="Enter Lecture" >
+												</div>
+												<div class="col-md-2" >
+													<span class="addLecture" > 
+														<i class="mdi mdi-plus-circle-outline"></i>
+													</span>
+													<span class="removeLecture" > 
+														<i class="mdi mdi-minus-circle-outline"></i> 
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								@endfor -->
 							</div>
 						</div>
 						<div class="form-group row">
@@ -80,10 +108,10 @@
 						</div>
 						
 					</div>
-					<div class="col-md-5">
+					<div class="col-md-4">
 						<div class="form-group row">
-							<label for="type_id" class="col-sm-3 text-right control-label col-form-label">Cateogry</label>
-							<div class="col-sm-9">
+							<label for="type_id" class="col-md-12 text-left control-label col-form-label">Cateogry</label>
+							<div class="col-sm-12">
 								<select name="type_id" id="type_id" class="select2 form-control custom-select" style="width: 100%; height:36px;">	
 									@foreach ($courseType as $value)
 									<option value="{{  $value->id }}" {{ ( $value->id ==  $course->type_id )? 'selected' : '' }} > {{  $value->title }} </option>
@@ -92,14 +120,14 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="tags" class="col-sm-3 text-right control-label col-form-label">Tags</label>
-							<div class="col-sm-9">
+							<label for="tags" class="col-md-12 text-left control-label col-form-label">Tags</label>
+							<div class="col-sm-12">
 								<textarea class="form-control" name="tags" id="meta_description" placeholder="Enter Tags Here" ></textarea>
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="state" class="col-sm-3 text-right control-label col-form-label">Enable OTP</label>
-							<div class="col-sm-9">
+							<label for="state" class="col-md-12 text-left control-label col-form-label">Enable OTP</label>
+							<div class="col-sm-12">
 								<select name="enable_otp" id="enable_otp" class="select2 form-control custom-select" style="width: 100%; height:36px;">	
 									<option value="">Enable Otp</option>
 									<option value="1" {{ ( $course->enable_otp ==  '1' )? 'selected' : '' }}> Yes</option>
@@ -108,13 +136,37 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="state" class="col-sm-3 text-right control-label col-form-label">Status</label>
-							<div class="col-sm-9">
+							<label for="state" class="col-md-12 text-left control-label col-form-label">Status</label>
+							<div class="col-sm-12">
 								<select name="status" id="status" class="select2 form-control custom-select" style="width: 100%; height:36px;">	
 									<option value="">Update Status</option>
 									<option value="1" {{ ( $course->status ==  '1' )? 'selected' : '' }} > Publish</option>
 									<option value="0" {{ ( $course->status ==  '0' )? 'selected' : '' }}> Private </option>
 								<select>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="tags" class="col-md-6 text-left control-label col-form-label">Featured Image</label>
+							<div class="col-sm-6 text-center">
+								<a href="#imageBox" class="image-profile open-popup-link">
+									<img src="{{ (isset($course->featured_image))?getSizedImage('thumb',$course->featured_image):'https://dummyimage.com/150x150?text=Add%20Image' }}" alt="">
+									<input type="hidden" name="featured_image" id="featured_image" value="{{ $course->featured_image }}" >	
+								</a>	
+								@if(isset($course->featured_image))
+									<a href="javascript:void(0)" class="removeImage" style="color: #c90f0f;font-weight: 600;"> Remove Image </a>	
+								@endif					
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="tags" class="col-md-6 text-left control-label col-form-label">Banner Image</label>
+							<div class="col-sm-6 text-center">
+								<a href="#imageBox" class="image-profile open-popup-link">
+									<img src="{{ (isset($course->banner_image))?getSizedImage('thumb',$course->banner_image):'https://dummyimage.com/150x150?text=Add%20Image' }}" alt="">
+									<input type="hidden" name="banner_image" id="banner_image" value="{{ $course->banner_image }}" >	
+								</a>	
+								@if(isset($course->banner_image))
+									<a href="javascript:void(0)" class="removeImage" style="color: #c90f0f;font-weight: 600;"> Remove Image </a>	
+								@endif					
 							</div>
 						</div>
 					</div>
@@ -177,7 +229,7 @@
 				<div class="card-body">
 
 					<button type="submit" class="btn btn-primary">Submit</button>
-					<input type="hidden" name="course_id" id="course_id" value="{{ $course->id }}" >
+					<input type="hidden" name="course_id" id="model_id" value="{{ $course->id }}" >
 				</div>
 
 			</div>

@@ -86,6 +86,30 @@
 								<select>
 							</div>
 						</div>
+						<div class="form-group row">
+							<label for="tags" class="col-md-4 text-left control-label col-form-label">Featured Image</label>
+							<div class="col-sm-8 text-center">
+								<a href="#imageBox" class="image-profile open-popup-link">
+									<img src="{{ (isset($university->featured_image))?getSizedImage('',$university->featured_image):'https://dummyimage.com/250x250?text=Add%20Image' }}" alt="" style="width:100%">
+									<input type="hidden" name="featured_image" id="featured_image" value="{{ $university->featured_image }}" >	
+								</a>	
+								@if(isset($university->featured_image))
+									<a href="javascript:void(0)" class="removeImage" style="color: #c90f0f;font-weight: 600;"> Remove Image </a>	
+								@endif					
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="tags" class="col-md-4 text-left control-label col-form-label">Banner Image</label>
+							<div class="col-sm-8 text-center">
+								<a href="#imageBox" class="image-profile open-popup-link">
+									<img src="{{ (isset($university->banner_image))?getSizedImage('',$university->banner_image):'https://dummyimage.com/250x250?text=Add%20Image' }}" alt="" style="width:100%">
+									<input type="hidden" name="banner_image" id="banner_image" value="{{ $university->banner_image }}" >	
+								</a>	
+								@if(isset($university->banner_image))
+									<a href="javascript:void(0)" class="removeImage" style="color: #c90f0f;font-weight: 600;"> Remove Image </a>	
+								@endif					
+							</div>
+						</div>
 					</div>
 
 				</div>

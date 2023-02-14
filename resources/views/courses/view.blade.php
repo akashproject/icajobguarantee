@@ -4,22 +4,18 @@
 
     <!-- Start of breadcrumb section
 		============================================= -->
-		<!-- <section id="breadcrumb" class="breadcrumb-section relative-position backgroud-style">
-			<div class="blakish-overlay"></div>
+		<section id="breadcrumb" class="breadcrumb-section relative-position backgroud-style">
 			<div class="container">
 				<div class="page-breadcrumb-content text-center">
 					<div class="page-breadcrumb-title">
-						<h2 class="breadcrumb-head black bold">Genius <span>Course Details.</span></h2>
+						<h2 class="breadcrumb-head black bold">{{$course->name}}</h2>
 					</div>
-					<div class="page-breadcrumb-item ul-li">
-						<ul class="breadcrumb text-uppercase black">
-							<li class="breadcrumb-item"><a href="#">Home</a></li>
-							<li class="breadcrumb-item active">Details</li>
-						</ul>
+					<div class="">
+						{!! $course->description !!}
 					</div>
 				</div>
 			</div>
-		</section> -->
+		</section>
 	<!-- End of breadcrumb section
 		============================================= -->
 
@@ -32,129 +28,104 @@
 					<div class="col-md-9">
 						<div class="course-details-item">
 							<div class="course-single-pic mb30">
-								<img src="assets/img/course/cs-1.jpg" alt="">
+								<img src="{{ url('assets/img/course/cs-1.jpg') }}" alt="">
 							</div>
-							<div class="course-single-text">
-								<div class="course-title mt10 headline relative-position">
-									<h3><a href="#">Fully Responsive <b>Web Design &amp; Development.</b></a> <span class="trend-badge text-uppercase bold-font"><i class="fas fa-bolt"></i> TRENDING</span></h3>
-								</div>
-								<div class="course-details-category ul-li">
-									<span>Course <b>Section:</b></span>
-									<ul>
-										<li><a href="#">Summary</a></li>
-										<li><a href="#">Criteria</a></li>
-										<li><a href="#">Highlights</a></li>
-										<li><a href="#">Carriculam</a></li>
-									</ul>
-								</div>
-								<div class="course-details-content">
-									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
-									<p>
-										Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
-									</p>
-								</div>
-							</div>
-						</div>
-						<!-- /course-details -->
+							<div class="faq-tab mb65">
+								<div class="faq-tab-ques  ul-li">
+									<div class="course-details-category ul-li tab-button text-left mb25 tab-button text-left mb25">
+										<span>Course <b>Section:</b></span>
+										<ul class="product-tab ">
+											<li class="active" rel="tab1">Summary</li>
+											<li rel="tab2"> Criteria </li>
+											<li rel="tab3"> Highlights </li>
+											<li rel="tab4">  Curriculum  </li>
+										</ul>
+									</div>
+									<!-- /tab-head -->
 
-						<div class="affiliate-market-guide mb65">
-							<div class="section-title-2 mb20 headline text-left">
-								<h2><span>Affiliate Marketing</span> A Begginer's Guide</h2>
-							</div>
+									<!-- tab content -->
+									<div class="tab-container">
+										<!-- 1st tab -->
+										<div id="tab1" class="tab-content-1 pt35">
+											<div class="course-details-content">
+												<div class="course-single-text">
+													<div class="course-details-content">
+														{!! $course->description !!}
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- #tab1 -->
 
-							<div class="affiliate-market-accordion">
-								<div id="accordion" class="panel-group">
-									<div class="panel">
-										<div class="panel-title" id="headingOne">
-											<div class="ac-head">
+										<div id="tab2" class="tab-content-1 pt35">
+											<div class="course-details-content">
 												
-												<button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-													<span>01</span>	Designing Website Using Photoshop 
-												</button>
-												<div class="course-by">
-													BY: <b>TONI KROSS</b> 
-												</div>
-												<div class="leanth-course">
-													<span>60 Minuttes</span>
-													<span>Adobe photoshop</span>
-												</div>
 											</div>
 										</div>
-										<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-											<div class="panel-body">
-												Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore.
-											</div>
-										</div>
-									</div>
-									<div class="panel">
-										<div class="panel-title" id="headingTwo">
-											<div class="ac-head">
+										<!-- #tab2 -->
+
+										<div id="tab3" class="tab-content-1 pt35">
+											<div class="course-details-content">
 												
-												<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-													<span>02</span>	Designing Website Using Photoshop 
-												</button>
-												<div class="course-by">
-													BY: <b>TONI KROSS</b> 
-												</div>
-												<div class="leanth-course">
-													<span>60 Minuttes</span>
-													<span>Adobe photoshop</span>
-												</div>
 											</div>
 										</div>
-										<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-											<div class="panel-body">
-												Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam volutpat. Ut wisi enim ad minim veniam consectetuer adipiscing elit, sed diam nonummy.
-											</div>
-										</div>
-									</div>
-									<div class="panel">
-										<div class="panel-title" id="headingThree">
-											<div class="ac-head">
-												<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-													<span>03</span>	Designing Website Using Photoshop 
-												</button>
-												<div class="course-by">
-													BY: <b>TONI KROSS</b> 
+										<!-- #tab3 -->
+
+										<div id="tab4" class="tab-content-1 pt35">
+											<div class="course-details-content">
+												<div class="affiliate-market-guide mb65">
+													<div class="section-title-2 mb20 headline text-left">
+														<h2><span>Affiliate Marketing</span> A Begginer's Guide</h2>
+													</div>
+
+													<div class="affiliate-market-accordion">
+														<div id="accordion" class="panel-group">
+															@foreach($carriculams as $key => $carriculam)
+															@if($carriculam->name)
+															<div class="panel">
+																<div class="panel-title" id="heading{{$key}}">
+																	<div class="ac-head">												
+																		<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse{{$key}}" aria-expanded="true" aria-controls="collapse{{$key}}">
+																			<span>0{{$key + 1}}</span> {{$carriculam->name}}
+																		</button>
+																		<div class="course-by">
+																			BY: <b>TONI KROSS</b> 
+																		</div>
+																		<div class="leanth-course">
+																			<span>{{ $carriculam->duration }} Hours</span>
+																			<span>Adobe photoshop</span>
+																		</div>
+																	</div>
+																</div>
+																<div id="collapse{{$key}}" class="collapse" aria-labelledby="heading{{$key}}" data-parent="#accordion">
+																	<div class="panel-body">
+																		@foreach(json_decode($carriculam->lecture) as $key => $lecture)
+																			<div class="" >
+																				<strong> Lecture {{$key + 1}} : </strong> {!! $lecture !!}
+																			</div>
+																		@endforeach
+																		<h4 > Module Benefit </h4>
+																		<div class="benefit-content" >
+																		{!! $carriculam->benefits !!}
+																		</div>
+																	</div>
+																</div>
+															</div>
+															@endif
+															@endforeach
+														</div>
+													</div>
 												</div>
-												<div class="leanth-course">
-													<span>60 Minuttes</span>
-													<span>Adobe photoshop</span>
-												</div>
+												<!-- /market guide -->
 											</div>
 										</div>
-										<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-											<div class="panel-body">
-												Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam volutpat. Ut wisi enim ad minim veniam consectetuer adipiscing elit, sed diam nonummy.
-											</div>
-										</div>
-									</div>
-									<div class="panel">
-										<div class="panel-title" id="headingFoure">
-											<div class="ac-head">
-												<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFoure" aria-expanded="true" aria-controls="collapseFoure">
-													<span>04</span>	Designing Website Using Photoshop 
-												</button>
-												<div class="course-by">
-													BY: <b>TONI KROSS</b> 
-												</div>
-												<div class="leanth-course">
-													<span>60 Minuttes</span>
-													<span>Adobe photoshop</span>
-												</div>
-											</div>
-										</div>
-										<div id="collapseFoure" class="collapse" data-parent="#accordion">
-											<div class="panel-body">
-												Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam volutpat. Ut wisi enim ad minim veniam consectetuer adipiscing elit, sed diam nonummy.
-											</div>
-										</div>
+										<!-- #tab3 -->
 									</div>
 								</div>
-							</div>
+							</div>		
+							
 						</div>
-						<!-- /market guide -->
-
+						<!-- /course-details -->				
 						<div class="course-review">
 							<div class="section-title-2 mb20 headline text-left">
 								<h2>Course <span>Reviews:</span></h2>
