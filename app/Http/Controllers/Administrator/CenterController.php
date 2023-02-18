@@ -22,8 +22,7 @@ class CenterController extends Controller
 
         } catch(\Illuminate\Database\QueryException $e){
             //throw $th;
-        }
-        
+        }        
     }
 
     public function add() {

@@ -206,7 +206,7 @@ h1, h2, h3, h4, h5, h6 {
 .pb10 {
   padding-bottom: 10px; }
 
-.gradient-bg, .modal-body .nws-button button, .teacher-pic-content .teacher-img-content:after, .course-details-category li:hover {
+.gradient-bg, .modal-body .nws-button button, .teacher-pic-content .teacher-img-content:after, .course-details-category li:hover,ul.product-tab li.active {
   background: #393185;
   background: -moz-linear-gradient(left, #616dfd 0%, #393185 51%, #616dfd 100%);
   background: -webkit-gradient(left top, right top, color-stop(0%, #4eb3bf), color-stop(51%, #393185), color-stop(100%, #4eb3bf));
@@ -271,6 +271,20 @@ h1, h2, h3, h4, h5, h6 {
       margin-left: 5px;
       color: #616dfd; }
 
+.header-btn {
+  border-radius: 4px;
+  padding: 0.6rem 1.5rem;
+  margin: 0.6rem 0;
+  display: inline-block;
+}
+.header-btn a {
+  color: #fff;
+  display: block;
+  width: 100%; }
+  .header-btn a i {
+    margin-left: 5px;
+    color: #616dfd; }
+
 .bold-font {
   font-weight: 700; }
 
@@ -305,7 +319,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
   color: #333333; }
   .section-title h3 span {
-    font-weight: 700; }
+    font-weight: 700;color: #393185; }
 
 .section-title-2 h2 {
   font-size: 38px;
@@ -389,7 +403,7 @@ h1, h2, h3, h4, h5, h6 {
 /*Header Section*/
 /*----------------------------------------------------*/
 .main-menu-container {
-  position: fixed;
+  position: absolute;
   width: 100%;
   padding: 10px 0px;
   -webkit-transition: .3s all ease-in-out;
@@ -397,6 +411,13 @@ h1, h2, h3, h4, h5, h6 {
   transition: .3s all ease-in-out;
   z-index: 9; }
 
+.header-fixed{
+  position: fixed;
+}
+.courseMenu .active a {
+  color: #ffffff;
+  background:linear-gradient(to right, #616dfd 0%, #393185 51%, #616dfd 100%)
+}
 .nav-menu {
   padding-top: 20px; }
   .nav-menu li a:hover {
@@ -437,6 +458,14 @@ h1, h2, h3, h4, h5, h6 {
     .nav-menu li a:hover:after {
       opacity: 1;
       visibility: visible; }
+
+  nav.navbar-menu.inside-navbar {
+    padding: 0.6rem;
+}
+
+nav.navbar-menu.inside-navbar .nav-menu {
+  padding: 10px 0;
+}
 
 .log-in {
   margin-top: 20px; }
@@ -492,8 +521,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .main-menu-container.menu-bg-overlay {
   background: #ffffff;
-  padding: 10px 0px; }
-
+  padding: 10px 0px; 
+  box-shadow: 0 1px 5px 0 rgb(46 61 73 / 20%);
+}
+.border-none {
+  border: none;
+}
 .header-style-2.main-menu-container.menu-bg-overlay {
   background: #fff;
   -webkit-transition: .3s all ease-in-out;
@@ -1991,7 +2024,7 @@ button.alt-menu-btn.float-left {
   .testimonial_2_section .student-qoute {
     border: 2px solid #f7f7f7; }
     .testimonial_2_section .student-qoute p {
-      color: #8c8c8c; }
+      color: #000000; }
       .testimonial_2_section .student-qoute p b {
         color: #333333; }
     .testimonial_2_section .student-qoute:after {
@@ -2076,7 +2109,7 @@ button.alt-menu-btn.float-left {
     visibility: visible; }
 
 .latest-title {
-  font-size: 18px;
+  font-size: 16px;
   color: #333333;
   margin-bottom: 10px; }
 
@@ -2843,7 +2876,7 @@ button.alt-menu-btn.float-left {
 .teacher-faq-form input, .teacher-faq-form .register-form-area select, .register-form-area .teacher-faq-form select, .teacher-faq-form .register-form-area textarea, .register-form-area .teacher-faq-form textarea,
 .teacher-faq-form textarea {
   width: 100%;
-  height: 60px;
+  height: 45px;
   border-radius: 4px;
   background-color: #f7f7f7;
   border: none;
@@ -3115,7 +3148,7 @@ ul.product-tab li:after {
 }
 
 ul.product-tab li.active {
-  color: #333333; }
+  color: #ffffff; }
 
 ul.product-tab li.active:after {
   opacity: 1; }
@@ -4007,8 +4040,11 @@ ul.product-tab li.active:after {
 .course-item-text {
   padding: 0 0.9rem;
 }
-
 .blog-comment-area .comment-ratting li {
+  color: black;
+}
+
+.blog-comment-area .comment-ratting li.active {
   font-size: 15px;
   color: #ffc926;
   border-bottom: none;
@@ -4114,7 +4150,70 @@ ul.product-tab li.active:after {
   -o-transition: .3s all ease-in-out;
   transition: .3s all ease-in-out; 
 }
+
+.highlights li {
+  padding: 12px 20px;
+  background: linear-gradient(to right, #7b84f4 0%, #756ccc 51%, #8c94f6 100%);
+  border-radius: 25px;
+  color: #fff;
+  font-size: 18px;
+  margin: 0.5rem 0.3rem;
+  font-weight: 600;
+}
+
+.benefit-title {
+  text-align: center;
+  padding: 5px 0;
+  background: #393185;
+  margin: 1rem auto;
+  width: auto;
+  font-size: 23px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #fff;
+  border-radius: 7px;
+}
+
+.benefit-title:after {
+  content: '';
+  border-bottom: 3px solid;
+  width: 73%;
+  display: block;
+  margin: auto;
+}
  
+.benefit-content p {
+  margin: 0;
+  color: #333;
+}
+.benefit-content ul li {
+  display: block;
+  margin-left: 20px;
+  position: relative;
+}
+
+.benefit-content ul li:before {
+  content: '.';
+  margin: auto;
+  position: absolute;
+  left: -17px;
+  font-size: 4.1rem;
+  bottom: -25px;
+  color: #393185;
+}
+
+.benefit-content ul li:after {
+  content: '';
+  height: 14px;
+  border: 1px solid;
+  position: absolute;
+  left: -16px;
+  top: 7px;
+  color: #393185;
+  width: 14px;
+  border-radius: 50%;
+}
+
 .course-details-category .product-tab li:hover {
     color: #fff; }
 
@@ -4320,22 +4419,27 @@ ul.product-tab li.active:after {
 
 .course-side-bar-widget .genius-btn {
   line-height: 50px;
-  padding: 0px 15px; }
-
+  padding: 0px 15px; 
+  font-size: 0.90rem;
+}
+.course-side-bar-widget .genius-btn i {
+  color:#fff
+}
 .student-number {
   float: right;
   color: #393185;
   font-size: 14px; }
 
 .enrolled-student {
-  margin-top: 20px;
   display: inline-block;
   width: 100%; }
   .enrolled-student li {
     color: #ffc926; }
-
+  .course-side-bar-widget {
+      margin-top: 20px;
+  }
 .couse-feature {
-  margin-top: 15px; }
+  margin-top: 15px 0; }
   .couse-feature li {
     font-size: 17px;
     font-weight: 500;
@@ -4692,4 +4796,24 @@ ul.product-tab li.active:after {
 .course-rate.ul-li {
   display: inline-flex;
   margin-right: 0.9rem;
+}
+
+.review-success {
+  background-color: #56ae6a!important;
+}
+
+/* .side-bar {
+  position: fixed;
+  top: 90px;
+  background: #fff;
+  padding: 10px;
+  z-index: 8;
+  height: 100%;
+} */
+
+.page-inside-menu {
+  background: #fff;
+  z-index: 10;
+  width: 100%;
+  box-shadow: 0 1px 5px 0 rgb(46 61 73 / 20%);
 }

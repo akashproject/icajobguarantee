@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Course;
 use App\Models\CourseType;
 use App\Models\Curriculum;
+use App\Models\Review;
 
 class CourseController extends Controller
 {
@@ -55,10 +56,10 @@ class CourseController extends Controller
     public function viewCourse($slug)
     {
         try {
-            $course = Course::where('slug', $slug)->where('status', 1);
-            $course = $course->firstOrFail();
+            $course = Course::where('slug', $slug)->first();
             $carriculams = Curriculum::where('course_id',$course->id)->get();
-            return view('courses.view',compact('course','carriculams'));
+            $courses = Course::where('type_id', $course->type_id)->get();
+            return view('courses.view',compact('course','carriculams','courses'));
         } catch(\Illuminate\Database\QueryException $e){
         }
        

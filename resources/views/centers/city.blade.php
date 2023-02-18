@@ -32,7 +32,7 @@
 							<div class="side-bar">
 								<div class="side-bar-widget  first-widget">
 									<h2 class="widget-title text-capitalize"><span>Find </span>By Location.</h2>
-									<div class="listing-filter-form pb30">
+									<div class="listing-filter-form pb30">										
 										<div class="filter-select mb20">
 											<label>Find By States</label>
 											<select class="gotoCourseCategory">
@@ -50,17 +50,16 @@
 											<select class="gotoCourseCategory">
 												<option value="9" selected="">All Cities</option>
 												@if(isset($cities))
-													@foreach ($cities as $value)
-													<option value="{{ URL::to('/city') }}/{{ $value->slug }}" > {{ $value->name }} </option>
+													@foreach ($cities as $cityValue)
+													<option value="{{ URL::to('/city') }}/{{ $cityValue->slug }}" {{ (isset($city->id) && ($city->id == $cityValue->id)) ?"selected":"" }}> {{ $cityValue->name }} </option>
 													@endforeach	
 												@endif	
 											</select>
 										</div>
-
 										<form action="{{url('/centers')}}" method="get">
 											<div class="filter-search mb20">
 												<label>Search Pincode</label>
-												<input type="text" class="" name="pincode" placeholder="Search by pincode" value="{{$pincode}}">
+												<input type="text" class="" name="pincode" placeholder="Search by pincode">
 											</div>
 											<button type="submit" class="text-white border-none genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
 												FIND CENTER <i class="fas fa-caret-right"></i>
@@ -182,7 +181,7 @@
 															<div class="product-text-content relative-position">
 																<div class="best-title-price float-left">
 																	<div class="course-title headline">
-																		<h3><a href="{{ URL::to('/centers') }}/{{ $value->slug }}">{{ $value->name }}</a></h3>
+																		<h3><a href="{{ URL::to('/center') }}/{{ $value->slug }}">{{ $value->name }}</a></h3>
 																	</div>
 																	<div class="price-start">
 																		Start from

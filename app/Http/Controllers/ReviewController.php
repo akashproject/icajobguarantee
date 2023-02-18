@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Administrator;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -8,6 +8,8 @@ use App\Models\Review;
 
 class ReviewController extends Controller
 {
+    public $_statusOK = 200;
+    public $_statusErr = 500;
     /**
      * Display a listing of the resource.
      *
@@ -16,11 +18,29 @@ class ReviewController extends Controller
     public function index()
     {
         //
-        try {
-            $reviews = Review::all();      
-            return view('administrator.reviews.index',compact('reviews'));
-        } catch(\Illuminate\Database\QueryException $e){
+    }
 
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create(Request $request)
+    {
+        //
+        try {
+            $data = $request->all();
+            $validatedData = $request->validate([
+                'reviewer_name' => 'required',
+                'reviewer_email' => 'required',
+                'review' => 'required',
+            ]);
+
+            $review = Review::create($data);
+
+            return response()->json($review,$this->_statusOK);
+        } catch(\Illuminate\Database\QueryException $e){
+            var_dump($e->getMessage()); 
         }
     }
 
@@ -32,12 +52,7 @@ class ReviewController extends Controller
      */
     public function show($id)
     {
-        try {
-            $review = Review::findOrFail($id);
-            return view('administrator.reviews.show',compact('review'));
-        } catch(\Illuminate\Database\QueryException $e){
-
-        }
+       
     }
 
     /**
@@ -58,21 +73,9 @@ class ReviewController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function save(Request $request)
+    public function update(Request $request, $id)
     {
         //
-        try {
-            $data = $request->all();
-            $validatedData = $request->validate([
-                'status' => 'required',
-            ]);
-
-            $review = Review::findOrFail($data['review_id']);
-            $review->update($data);
-            return redirect()->back()->with('message', 'Review updated successfully!');
-        } catch(\Illuminate\Database\QueryException $e){
-            var_dump($e->getMessage()); 
-        }
     }
 
     /**

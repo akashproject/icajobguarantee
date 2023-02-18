@@ -109,10 +109,13 @@ Route::get('/courses/{slug}', [App\Http\Controllers\CourseController::class, 'vi
 // Centers
 Route::get('/centers', [App\Http\Controllers\CenterController::class, 'index'])->name('centers');
 Route::get('/centers/{slug}', [App\Http\Controllers\CenterController::class, 'viewCenters'])->name('view-centers');
+Route::get('/state/{slug}', [App\Http\Controllers\CenterController::class, 'state'])->name('states');
+Route::get('/city/{slug}', [App\Http\Controllers\CenterController::class, 'city'])->name('city');
 
-
+Route::post('/submit-review', [App\Http\Controllers\ReviewController::class, 'create'])->name('submit-review');
 
 Route::get('/blogs', [App\Http\Controllers\BlogController::class, 'index'])->name('blogs');
+
 
 
 Auth::routes();

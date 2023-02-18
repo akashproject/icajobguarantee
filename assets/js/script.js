@@ -79,6 +79,14 @@ menuBar: function (){
 		}
 	})
 
+	jQuery(window).on('scroll', function() {
+		if (jQuery(window).scrollTop() > 450) {
+			jQuery('.page-inside-menu').show()
+		} else {
+			jQuery('.page-inside-menu').hide()
+		}
+	})
+
 },
 
 onePageNav: function (){
@@ -405,6 +413,22 @@ faqTAB: function (){
 		$(".tab_drawer_heading[rel^='"+activeTab+"']").addClass("d_active");
 		
 	});
+
+	$(".courseMenu").on("click", "li", function() {
+		console.log("here");
+		$(".tab-content-1").hide();
+		var activeTab = $(this).attr("rel"); 
+		console.log("here",activeTab);
+		$("#"+activeTab).fadeIn();    
+		
+		$("ul.courseMenu li").removeClass("active");
+		$(this).addClass("active");
+
+		$(".tab_drawer_heading").removeClass("d_active");
+		$(".tab_drawer_heading[rel^='"+activeTab+"']").addClass("d_active");
+		
+	});
+
 	/* if in drawer mode */
 	$(".tab_drawer_heading").on("click", function() {
 		
@@ -558,8 +582,9 @@ contactMAP: function (){
 rateReview: function (){
 	$(':radio').change(function() {
 		console.log('New star rating: ' + this.value);
-	});
+		$("#rating").val(this.value);
 
+	});
 },
 /* - End of faq accordion
 ================================================*/
@@ -975,5 +1000,23 @@ jQuery(document).ready(function (){
 jQuery(".gotoCourseCategory").on("change",function (){
 	window.location.href = $(this).val();
 });
+
+jQuery(".submitReview").on("click",function() {
+	$.ajaxSetup({
+		headers: {
+		 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+		}
+	});
+	$.ajax({
+		url: `http://${window.location.hostname}/icajobguarantee/submit-review`,
+		type: "post",
+		data: $("#submit-review").serialize(),
+		success: function(result) {
+			$(".review-success").show();
+			$("#submit-review").reset();
+		}
+	});
+})
+
 
 })();

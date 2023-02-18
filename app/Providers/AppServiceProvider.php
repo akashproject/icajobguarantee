@@ -58,6 +58,29 @@ class AppServiceProvider extends ServiceProvider
             // Category Menu
             $media = Media::all();
             $view->with('media', $media);
+
+            $courseMenu = array(
+                '#tab3' => array('rel'=>"tab3",'value'=>"Highlights"),
+                '#tab4' => array('rel'=>"tab4",'value'=>"Curriculam"),
+                '#career' => array('rel'=>"",'value'=>"Careers"),
+                '#alumni' => array('rel'=>"",'value'=>"Alumni"),
+                '#courses' => array('rel'=>"",'value'=>"Related Courses"),
+                '#review' => array('rel'=>"",'value'=>"Reviews"),
+                '#faq' => array('rel'=>"",'value'=>"FAQs"),
+            );
+            $view->with('courseMenu', $courseMenu);
+
+
+            $centerMenu = array(
+                '#tab3' => array('rel'=>"tab3",'value'=>"Highlights"),
+                '#tab4' => array('rel'=>"tab4",'value'=>"Curriculam"),
+                '#career' => array('rel'=>"",'value'=>"Careers"),
+                '#alumni' => array('rel'=>"",'value'=>"Alumni"),
+                '#courses' => array('rel'=>"",'value'=>"Related Courses"),
+                '#review' => array('rel'=>"",'value'=>"Reviews"),
+                '#faq' => array('rel'=>"",'value'=>"FAQs"),
+            );
+            $view->with('centerMenu', $centerMenu);
         });
     }
 }

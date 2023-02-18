@@ -20,7 +20,7 @@ class CreateCoursesTable extends Migration {
             $table->string('banner_image')->nullable();
             $table->string('featured_image')->nullable();
             $table->text('description')->nullable();           
-            $table->string('excerpt')->nullable();           
+            $table->text ('excerpt')->nullable();           
             $table->char('offer_price', 50)->nullable();
             $table->char('price', 50)->nullable();
             $table->char('duration', 50)->nullable();

@@ -15,7 +15,7 @@ class CourseController extends Controller
     {
         try {
 
-            $courses = Course::where('status', 1)->get();
+            $courses = Course::all();
             return view('administrator.courses.index',compact('courses'));
 
         } catch(\Illuminate\Database\QueryException $e){

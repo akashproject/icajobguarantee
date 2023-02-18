@@ -24,9 +24,9 @@
 				<div class="row">
 					<div class="col-md-7" >
 						<div class="form-group row">
-							<label for="title" class="col-sm-3 text-right control-label col-form-label">Title</label>
+							<label for="name" class="col-sm-3 text-right control-label col-form-label">Name</label>
 							<div class="col-sm-9">
-								<input type="text" class="form-control" name="title" id="title" placeholder="Title Here"  value="{{ $center->title }}" >
+								<input type="text" class="form-control" name="name" id="name" placeholder="Name Here"  value="{{ $center->name }}" >
 							</div>
 						</div>
 

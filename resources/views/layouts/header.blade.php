@@ -2,7 +2,7 @@
 <!-- Start of Header section
 	============================================= -->
 	<header>
-		<div id="main-menu"  class="main-menu-container">
+		<div id="main-menu"  class="main-menu-container {{ (Route::current()->getName() != 'view-courses') ? 'header-fixed' : '' }}">
 			<div  class="main-menu">
 				<div class="container">
 					<div class="navbar-default">
@@ -110,6 +110,6 @@
 				</div>
 			</div>
 		</div>
-	</header>
+	</header>	
 <!-- Start of Header section
 	============================================= -->

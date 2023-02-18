@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('testimonials', function (Blueprint $table) {
             $table->id();
-            $table->text('image')->nullable();
+            $table->text('featured_image')->nullable();
             $table->string('name',100);
             $table->string('course_id',100);
             $table->string('dasignation',200);

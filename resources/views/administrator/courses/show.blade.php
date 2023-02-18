@@ -43,6 +43,12 @@
 							</div>
 						</div>
 						<div class="form-group row">
+							<label for="excerpt" class="col-sm-3 text-right control-label col-form-label">Exerpt</label>
+							<div class="col-sm-9">
+								<textarea class="form-control" name="excerpt" id="excerpt" placeholder="Enter excerpt Here" >{{ $course->excerpt }}</textarea>
+							</div>
+						</div>
+						<div class="form-group row">
 							<label for="price" class="col-sm-3 text-right control-label col-form-label">Actual Price</label>
 							<div class="col-sm-9">
 								<input type="text" class="form-control" name="price" id="price" placeholder="Enter Actual Price Here" value="{{ $course->price }}" >
@@ -58,6 +64,18 @@
 							<label for="duration" class="col-sm-3 text-right control-label col-form-label">Course Duration</label>
 							<div class="col-sm-9">
 								<input type="text" class="form-control" name="duration" id="duration" placeholder="Enter Course Duration" value="{{ $course->duration }}" >
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="number_of_enrolled" class="col-sm-3 text-right control-label col-form-label">No Of Enrolled</label>
+							<div class="col-sm-9">
+								<input type="number" class="form-control" name="number_of_enrolled" id="number_of_enrolled" placeholder="Enter No Of Module" value="{{ $course->number_of_enrolled }}" >
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="number_of_rating" class="col-sm-3 text-right control-label col-form-label">No Of Rating</label>
+							<div class="col-sm-9">
+								<input type="number" class="form-control" name="number_of_rating" id="number_of_rating" placeholder="Enter No Of Module" value="{{ $course->number_of_rating }}" >
 							</div>
 						</div>
 						<div class="form-group row">
@@ -105,8 +123,7 @@
 							<div class="col-sm-9">
 								<textarea class="form-control editor" name="criteria" id="criteria" placeholder="Enter Course Criteria" >{{ $course->criteria }}</textarea>
 							</div>
-						</div>
-						
+						</div>						
 					</div>
 					<div class="col-md-4">
 						<div class="form-group row">

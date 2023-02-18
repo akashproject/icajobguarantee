@@ -12,7 +12,6 @@ class Course extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'id','type_id','name','title','slug','banner_image','featured_image','description','offer_price','price','duration','no_of_module','highlights','criteria','tags','meta_description','schema','robots','canonical','utm_campaign','utm_source','status','created_at',
+        'id','type_id','name','title','slug','banner_image','featured_image','description','excerpt','offer_price','price','duration','no_of_module','highlights','criteria','number_of_enrolled','number_of_rating','tags','enable_otp','meta_description','schema','robots','canonical','utm_campaign','utm_source','status','created_at',
     ];
-
 }

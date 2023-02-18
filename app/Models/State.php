@@ -12,6 +12,6 @@ class State extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'id','name'
+        'id','name','slug'
     ];
 }

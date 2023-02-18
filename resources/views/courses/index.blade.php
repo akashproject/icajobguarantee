@@ -42,8 +42,8 @@
 							</div>
 							<div class="tab-button blog-button ul-li text-center float-right">
 								<ul class="product-tab">
-									<li class="active" rel="tab1"><i class="fas fa-th"></i></li>
-									<li rel="tab2"> <i class="fas fa-list"></i></li>
+									<li class="active" rel="tab1"> <i class="fas fa-list"></i></li>
+									<li rel="tab2"><i class="fas fa-th"></i></li>									
 								</ul>
 							</div>
 							<div class="shorting-filter float-right">
@@ -59,54 +59,7 @@
 
 						<div class="genius-post-item">
 							<div class="tab-container">
-								<div id="tab1" class="tab-content-1 pt35">
-									<div class="best-course-area best-course-v2">
-										<div class="row">
-										@if($courses)
-                							@foreach ($courses as $value)
-
-											<div class="col-md-4">
-												<div class="best-course-pic-text relative-position">
-													<div class="best-course-pic relative-position">
-														<img src="{{ URL::to('/assets/img/course/bc-1.jpg') }}" alt="">
-														<div class="trend-badge-2 text-center text-uppercase">
-															<i class="fas fa-bolt"></i>
-															<span>Trending</span>
-														</div>
-														
-														<div class="course-rate ul-li">
-															<ul>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-															</ul>
-														</div>
-														<div class="course-details-btn">
-															<a href="{{ URL::to('/courses') }}/{{ $value->slug }}">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
-														</div>
-														<div class="blakish-overlay"></div>
-													</div>
-													<div class="best-course-text">
-														<div class="course-title mb20 headline relative-position">
-															<h3><a href="{{ URL::to('/courses') }}/{{ $value->slug }}">{{ $value->course_name }}</a></h3>
-														</div>
-														<div class="course-meta">
-															<span class="course-category"><a href="#">{{ $value->category }}</a></span>
-															<span class="course-author"><a href="#">250 Students</a></span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<!-- /course -->
-											@endforeach	
-            							@endif											
-										</div>
-									</div>
-								</div><!-- /tab-1 -->
-
-								<div id="tab2" class="tab-content-1">
+								<div id="tab1" class="tab-content-1">
 									<div class="course-list-view">
 										<table>
 											<tr class="list-head">
@@ -304,6 +257,52 @@
 										</table>
 									</div>
 								</div><!-- /tab-2 -->
+								<div id="tab2" class="tab-content-1 pt35">
+									<div class="best-course-area best-course-v2">
+										<div class="row">
+										@if($courses)
+                							@foreach ($courses as $value)
+
+											<div class="col-md-4">
+												<div class="best-course-pic-text relative-position">
+													<div class="best-course-pic relative-position">
+														<img src="{{ URL::to('/assets/img/course/bc-1.jpg') }}" alt="">
+														<div class="trend-badge-2 text-center text-uppercase">
+															<i class="fas fa-bolt"></i>
+															<span>Trending</span>
+														</div>
+														
+														<div class="course-rate ul-li">
+															<ul>
+																<li><i class="fas fa-star"></i></li>
+																<li><i class="fas fa-star"></i></li>
+																<li><i class="fas fa-star"></i></li>
+																<li><i class="fas fa-star"></i></li>
+																<li><i class="fas fa-star"></i></li>
+															</ul>
+														</div>
+														<div class="course-details-btn">
+															<a href="{{ URL::to('/courses') }}/{{ $value->slug }}">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
+														</div>
+														<div class="blakish-overlay"></div>
+													</div>
+													<div class="best-course-text">
+														<div class="course-title mb20 headline relative-position">
+															<h3><a href="{{ URL::to('/courses') }}/{{ $value->slug }}">{{ $value->course_name }}</a></h3>
+														</div>
+														<div class="course-meta">
+															<span class="course-category"><a href="#">{{ $value->category }}</a></span>
+															<span class="course-author"><a href="#">250 Students</a></span>
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- /course -->
+											@endforeach	
+            							@endif											
+										</div>
+									</div>
+								</div><!-- /tab-1 -->								
 							</div>
 						</div>
 

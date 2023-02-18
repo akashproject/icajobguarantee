@@ -7,8 +7,8 @@
 					<div class="col-md-9">
 						<nav class="navbar-menu inside-navbar">
 							<div class="nav-menu ul-li">
-								<ul class="courseMenu" >
-									@foreach ($courseMenu as $key => $menuItem)
+								<ul class="centerMenu" >
+									@foreach ($centerMenu as $key => $menuItem)
 										<li class="" rel="{{$menuItem['rel']}}">
 											<a href="{{ url($key) }}">{{$menuItem['value']}}</a>
 										</li>
@@ -31,10 +31,10 @@
 			<div class="container">
 				<div class="page-breadcrumb-content text-center">
 					<div class="page-breadcrumb-title">
-						<h2 class="breadcrumb-head black bold">{{$course->name}}</h2>
+						<h2 class="breadcrumb-head black bold">{{$center->name}}</h2>
 					</div>
 					<div class="">
-						{!! $course->excerpt !!}
+						{!! $center->excerpt !!}
 					</div>
 				</div>
 			</div>
@@ -42,7 +42,7 @@
 	<!-- End of breadcrumb section
 		============================================= -->
 
-		<section id="search-course" class="search-course-section search-course-secound">
+		<section id="search-center" class="search-center-section search-center-secound">
 			<div class="container">
 				<div class="search-counter-up">
 					<div class="row">
@@ -87,7 +87,7 @@
 
 						<div class="col-md-3">
 							<div class="enroll-btn genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
-								<a href="#"> Enroll This Course </i></a>
+								<a href="#"> Enroll This center </i></a>
 							</div>
 						</div>
 						<!-- /counter -->
@@ -96,20 +96,20 @@
 			</div>
 		</section>
 
-		<!-- Start of course details section
+		<!-- Start of center details section
 		============================================= -->
-		<section id="course-details" class="course-details-section">
+		<section id="center-details" class="center-details-section">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-9">
-						<div class="course-details-item">
-							<!-- <div class="course-single-pic mb30">
-								<img src="{{ url('assets/img/course/cs-1.jpg') }}" alt="">
+						<div class="center-details-item">
+							<!-- <div class="center-single-pic mb30">
+								<img src="{{ url('assets/img/center/cs-1.jpg') }}" alt="">
 							</div> -->
 							<div class="faq-tab mb65">
 								<div class="faq-tab-ques  ul-li">
-									<div class="course-details-category ul-li tab-button text-left mb25 tab-button text-left mb25">
-										<span>Course <b>Section:</b></span>
+									<div class="center-details-category ul-li tab-button text-left mb25 tab-button text-left mb25">
+										<span>center <b>Section:</b></span>
 										<ul class="product-tab ">
 											<li class="active" rel="tab1">Summary</li>
 											<li rel="tab2"> Criteria </li>
@@ -123,10 +123,10 @@
 									<div class="tab-container">
 										<!-- 1st tab -->
 										<div id="tab1" class="tab-content-1 pt35">
-											<div class="course-details-content">
-												<div class="course-single-text">
-													<div class="course-details-content">
-														{!! $course->description !!}
+											<div class="center-details-content">
+												<div class="center-single-text">
+													<div class="center-details-content">
+														{!! $center->description !!}
 													</div>
 												</div>
 											</div>
@@ -134,26 +134,26 @@
 										<!-- #tab1 -->
 
 										<div id="tab2" class="tab-content-1 pt35">
-											<div class="course-details-content criteria">
-												{!! $course->criteria !!}
+											<div class="center-details-content criteria">
+												{!! $center->criteria !!}
 											</div>
 										</div>
 										<!-- #tab2 -->
 
 										<div id="tab3" class="tab-content-1 pt35">
-											<div class="course-details-content highlights">
+											<div class="center-details-content highlights">
 												<div class="affiliate-market-guide mb65">
 													<div class="section-title-2 mb20 headline text-left">
 														<h2><span>Affiliate Marketing</span> A Begginer's Guide</h2>
 													</div>
-													{!! $course->highlights !!}
+													{!! $center->highlights !!}
 												</div>
 											</div>
 										</div>
 										<!-- #tab3 -->
 
 										<div id="tab4" class="tab-content-1 pt35">
-											<div class="course-details-content">
+											<div class="center-details-content">
 												<div class="affiliate-market-guide mb65">
 													<div class="section-title-2 mb20 headline text-left">
 														<h2><span>Affiliate Marketing</span> A Begginer's Guide</h2>
@@ -161,41 +161,7 @@
 
 													<div class="affiliate-market-accordion">
 														<div id="accordion" class="panel-group">
-															@foreach($carriculams as $key => $carriculam)
-															@if($carriculam->name)
-															<div class="panel">
-																<div class="panel-title" id="heading{{$key}}">
-																	<div class="ac-head">												
-																		<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse{{$key}}" aria-expanded="true" aria-controls="collapse{{$key}}">
-																			<span>0{{$key + 1}}</span> {{$carriculam->name}}
-																		</button>
-																		<div class="course-by">
-																			BY: <b>TONI KROSS</b> 
-																		</div>
-																		<div class="leanth-course">
-																			<span>{{ $carriculam->duration }} Hours</span>
-																			<span>Adobe photoshop</span>
-																		</div>
-																	</div>
-																</div>
-																<div id="collapse{{$key}}" class="collapse" aria-labelledby="heading{{$key}}" data-parent="#accordion">
-																	<div class="panel-body">
-																		@foreach(json_decode($carriculam->lecture) as $key => $lecture)
-																			<div class="" >
-																				<strong> Lecture {{$key + 1}} : </strong> {!! $lecture !!}
-																			</div>
-																		@endforeach
-																		<div>
-																			<h4 class="benefit-title"> Module Benefit </h4>
-																			<div class="benefit-content" >
-																			{!! $carriculam->benefits !!}
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-															@endif
-															@endforeach
+															
 														</div>
 													</div>
 												</div>
@@ -214,7 +180,7 @@
 						<div class="side-bar">
 							<div class="latest-area-content " >
 								<div class="latest-video-poster relative-position mb20">
-									<img src="{{ url('assets/img/course/bc-1.jpg') }}" alt="">
+									<img src="{{ url('assets/img/center/bc-1.jpg') }}" alt="">
 									<div class="video-play-btn text-center gradient-bg">
 										<a class="popup-with-zoom-anim" href="https://www.youtube.com/watch?v=-g4TnixUdSc"><i class="fas fa-play"></i></a>
 									</div>
@@ -236,23 +202,23 @@
 								</div>
 								
 								<div class="student-number bold-font">
-									{{ thousandsCurrencyFormat($course->number_of_enrolled) }} Enrolled
+									{{ thousandsCurrencyFormat($center->number_of_enrolled) }} Enrolled
 								</div>
 							</div>
 							<div class="couse-feature ul-li-block">
 								<ul>
-									<li>Modules <span>{{ $course->no_of_module }} Modules</span></li>
+									<li>Modules <span>{{ $center->no_of_module }} Modules</span></li>
 									<li>Language  <span>English, France</span></li>
 									<li>Video  <span>8 Hours</span></li>
-									<li>Duration <span>{{ $course->duration }}</span></li>
+									<li>Duration <span>{{ $center->duration }}</span></li>
 									<li>Call  <a href="tel:{{ get_theme_setting('mobile') }}" ><span>+91 {{ get_theme_setting('mobile') }}</span></a> </li>
 								</ul>
 							</div>
-							<div class="course-side-bar-widget">
+							<div class="center-side-bar-widget">
 								<div class="genius-btn gradient-bg text-center text-uppercase float-left bold-font">
 									<a href="#"> <i class="fas fa-download"></i> Download Syllabus</a>
 								</div>
-								<div class="like-course">
+								<div class="like-center">
 									<a href="#"><i class="fas fa-heart"></i></a>
 								</div>
 							</div>
@@ -285,7 +251,7 @@
 											<div class="date-meta">
 												<i class="fas fa-calendar-alt"></i> 26 April 2018
 											</div>
-											<h3 class="latest-title bold-font"><a href="#">No.1 The Best Online Course 2018.</a></h3>
+											<h3 class="latest-title bold-font"><a href="#">No.1 The Best Online center 2018.</a></h3>
 										</div>
 									</div>
 
@@ -296,23 +262,23 @@
 							</div>
 
 							<div class="side-bar-widget">
-								<h2 class="widget-title text-capitalize"><span>Featured</span> Course.</h2>
-								<div class="featured-course">
-									<div class="best-course-pic-text relative-position">
-										<div class="best-course-pic relative-position">
+								<h2 class="widget-title text-capitalize"><span>Featured</span> center.</h2>
+								<div class="featured-center">
+									<div class="best-center-pic-text relative-position">
+										<div class="best-center-pic relative-position">
 										<img src="{{ url('assets/img/blog/fb-1.jpg') }}" alt="">
 											<div class="trend-badge-2 text-center text-uppercase">
 												<i class="fas fa-bolt"></i>
 												<span>Trending</span>
 											</div>
 										</div>
-										<div class="best-course-text">
-											<div class="course-title mb20 headline relative-position">
+										<div class="best-center-text">
+											<div class="center-title mb20 headline relative-position">
 												<h3><a href="#">Fully Responsive Web Design &amp; Development.</a></h3>
 											</div>
-											<div class="course-meta">
-												<span class="course-category"><a href="#">Web Design</a></span>
-												<span class="course-author"><a href="#">250 Students</a></span>
+											<div class="center-meta">
+												<span class="center-category"><a href="#">Web Design</a></span>
+												<span class="center-author"><a href="#">250 Students</a></span>
 											</div>
 										</div>
 									</div>
@@ -323,7 +289,7 @@
 				</div>
 			</div>
 		</section>
-	    <!-- End of course details section
+	    <!-- End of center details section
 		============================================= -->	
 		<!-- Start of sponsor section
 		============================================= -->
@@ -372,11 +338,11 @@
 			<div class="container">
 				<div class="testimonial-slide">
 					<div class="section-title mb20 headline text-center">
-						<span class="subtitle text-uppercase">About This Course </span>
+						<span class="subtitle text-uppercase">About This center </span>
 						<h3>Student<span> Speaks.</span></h3>
 					</div>
 					<div  id="testimonial-slide-item" class="testimonial-slide-area">
-						@foreach(get_testimonials("Course",$course->id) as $value)
+						@foreach(get_testimonials("center",$center->id) as $value)
 						<div class="student-qoute">
 							{!! $value->comment !!}
 							<div class="student-name-designation">
@@ -391,25 +357,25 @@
 		</section>
 		<!-- End  of testimonial secound section
 		============================================= -->
-		<section id="courses" class="best-course-section">
+		<section id="centers" class="best-center-section">
 			<div class="container">
 				<div class="section-title mb10 headline text-center">
-					<span class="subtitle text-uppercase">SEARCH OUR COURSES</span>
-					<h3>Check<span> Related Course.</span></h3>
+					<span class="subtitle text-uppercase">SEARCH OUR centerS</span>
+					<h3>Check<span> Related center.</span></h3>
 				</div>
-				<div class="best-course-area mb10">
+				<div class="best-center-area mb10">
 					<div class="row">
 					@if($courses)
 						@foreach ($courses as $value)
 						<div class="col-md-3">
-							<div class="best-course-pic-text relative-position">
-								<div class="best-course-pic relative-position">
-									<img src="{{ URL::to('/') }}/assets/img/course/bc-1.jpg" alt="">
+							<div class="best-center-pic-text relative-position">
+								<div class="best-center-pic relative-position">
+									<img src="{{ URL::to('/') }}/assets/img/center/bc-1.jpg" alt="">
 									<div class="trend-badge-2 text-center text-uppercase">
 										<i class="fas fa-bolt"></i>
 										<span>Trending</span>
 									</div>
-									<div class="course-rate ul-li">
+									<div class="center-rate ul-li">
 										<ul>
 											<li><i class="fas fa-star"></i></li>
 											<li><i class="fas fa-star"></i></li>
@@ -418,23 +384,23 @@
 											<li><i class="fas fa-star"></i></li>
 										</ul>
 									</div>
-									<div class="course-details-btn">
-										<a href="{{ URL::to('/courses') }}/{{ $value->slug }}">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
+									<div class="center-details-btn">
+										<a href="{{ URL::to('/courses') }}/{{ $value->slug }}">center DETAIL <i class="fas fa-arrow-right"></i></a>
 									</div>
 									<div class="blakish-overlay"></div>
 								</div>
-								<div class="best-course-text">
-									<div class="course-title mb20 headline relative-position">
+								<div class="best-center-text">
+									<div class="center-title mb20 headline relative-position">
 										<h3><a href="{{ URL::to('/courses') }}/{{ $value->slug }}">{{ $value->name }}</a></h3>
 									</div>
-									<div class="course-meta">
-										<span class="course-category"><a href="{{ URL::to('/courses') }}/{{ $value->slug }}">Web Design</a></span>
-										<span class="course-author"><a href="{{ URL::to('/courses') }}/{{ $value->slug }}">250 Students</a></span>
+									<div class="center-meta">
+										<span class="center-category"><a href="{{ URL::to('/courses') }}/{{ $value->slug }}">Web Design</a></span>
+										<span class="center-author"><a href="{{ URL::to('/courses') }}/{{ $value->slug }}">250 Students</a></span>
 									</div>
 								</div>
 							</div>
 						</div>
-						<!-- /course -->
+						<!-- /center -->
 					@endforeach	
 						@endif	
 						
@@ -443,16 +409,16 @@
 			</div>
 		</section>
 		@php
-			$reviewRatings = get_reviews_ratings("Course",$course->id);
+			$reviewRatings = get_reviews_ratings("center",$center->id);
 		@endphp
 		<section id="review" class="teacher-details-area" >
 			<div class="container"> 
 				<div class="row" >
 					<div class="col-md-9" >
-						<!-- /course-details -->				
-						<div class="course-review">
+						<!-- /center-details -->				
+						<div class="center-review">
 							<div class="section-title-2 mb20 headline text-left">
-								<h2>Course <span>Reviews:</span></h2>
+								<h2>center <span>Reviews:</span></h2>
 							</div>
 							<div class="row">
 								<div class="col-md-6">
@@ -586,8 +552,8 @@
 											<div class="nws-button text-center  gradient-bg text-uppercase">
 												<button type="button" class="submitReview">Send Message now</button> 
 											</div>
-											<input type="hidden" name="model" id="model" value="Course">
-											<input type="hidden" name="model_id" id="model_id" value="{{ $course->id }}">
+											<input type="hidden" name="model" id="model" value="center">
+											<input type="hidden" name="model_id" id="model_id" value="{{ $center->id }}">
 											<input type="hidden" id="rating" name="rating" value="" />
 										</form>
 									</div>
@@ -648,7 +614,7 @@
                                             </div>
                                             <div id="collapse_2" class="collapse" aria-labelledby="heading_2" data-parent="#accordion3">
                                                 <div class="panel-body">
-                                                   <p>Obviously! Our 3 years program consists of 2 years classroom training &amp; 1 year paid internship. After completion of the course the student will get guaranteed placement in a renowned company.</p>
+                                                   <p>Obviously! Our 3 years program consists of 2 years classroom training &amp; 1 year paid internship. After completion of the center the student will get guaranteed placement in a renowned company.</p>
                                                 </div>
                                             </div>
                                         </div>

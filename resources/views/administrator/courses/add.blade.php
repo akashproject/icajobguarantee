@@ -69,6 +69,18 @@
 							</div>
 						</div>
 						<div class="form-group row">
+							<label for="number_of_enrolled" class="col-sm-3 text-right control-label col-form-label">No Of Enrolled</label>
+							<div class="col-sm-9">
+								<input type="number" class="form-control" name="number_of_enrolled" id="number_of_enrolled" placeholder="Enter No Of Module" value="" >
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="number_of_rating" class="col-sm-3 text-right control-label col-form-label">No Of Rating</label>
+							<div class="col-sm-9">
+								<input type="number" class="form-control" name="number_of_rating" id="number_of_rating" placeholder="Enter No Of Module" value="" >
+							</div>
+						</div>
+						<div class="form-group row">
 							<label for="highlights" class="col-sm-3 text-right control-label col-form-label">Course highlights</label>
 							<div class="col-sm-9">
 								<textarea class="form-control editor" name="highlights" id="highlights" placeholder="Enter Highlights" ></textarea>
@@ -79,7 +91,7 @@
 							<div class="col-sm-9">
 								<textarea class="form-control editor" name="criteria" id="criteria" placeholder="Enter Course Criteria" ></textarea>
 							</div>
-						</div>
+						</div>						
 					</div>
 					<div class="col-md-4">
 						<div class="form-group row">
