@@ -1,40 +1,21 @@
 @extends('layouts.main')
 
     @section('content')
-		<div class="page-inside-menu header-fixed" style="display:none">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-9">
-						<nav class="navbar-menu inside-navbar">
-							<div class="nav-menu ul-li">
-								<ul class="centerMenu" >
-									@foreach ($centerMenu as $key => $menuItem)
-										<li class="" rel="{{$menuItem['rel']}}">
-											<a href="{{ url($key) }}">{{$menuItem['value']}}</a>
-										</li>
-									@endforeach
-								</ul>
-							</div>
-						</nav>						
-					</div>
-					<div class="col-md-3 text-center" >
-						<div class="enroll-btn header-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
-							<a href="#"> Apply Now </a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-    <!-- Start of breadcrumb section
+		<!-- Start of breadcrumb section
 		============================================= -->
 		<section id="breadcrumb" class="breadcrumb-section relative-position backgroud-style">
+			<div class="blakish-overlay"></div>
 			<div class="container">
-				<div class="page-breadcrumb-content text-center">
+				<div class="page-breadcrumb-content">
+					
 					<div class="page-breadcrumb-title">
 						<h2 class="breadcrumb-head black bold">{{$center->name}}</h2>
 					</div>
-					<div class="">
+					<div class="page-breadcrumb-description">
 						{!! $center->excerpt !!}
+					</div>
+					<div class="page-breadcrumb-option">
+						<p>{!! $center->criteria !!} </p>
 					</div>
 				</div>
 			</div>
@@ -42,7 +23,9 @@
 	<!-- End of breadcrumb section
 		============================================= -->
 
-		<section id="search-center" class="search-center-section search-center-secound">
+	<!-- End of breadcrumb section
+		============================================= -->
+		<section id="search-course" class="search-course-section search-course-secound">
 			<div class="container">
 				<div class="search-counter-up">
 					<div class="row">
@@ -79,7 +62,7 @@
 								</div>
 								<div class="counter-number">
 									<span class="counter-count bold-font">24</span><span>+</span>
-									<p>Years of Excellence</p>
+									<p>Partner with ICA</p>
 								</div>
 							</div>
 						</div>
@@ -87,7 +70,7 @@
 
 						<div class="col-md-3">
 							<div class="enroll-btn genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
-								<a href="#"> Enroll This center </i></a>
+								<a data-toggle="modal" data-target="#lead-generation-form" href="#"> Connect To Center </i></a>
 							</div>
 						</div>
 						<!-- /counter -->
@@ -96,25 +79,25 @@
 			</div>
 		</section>
 
-		<!-- Start of center details section
+	<!-- Start of course details section
 		============================================= -->
-		<section id="center-details" class="center-details-section">
+		<section id="course-details" class="course-details-section">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-9">
-						<div class="center-details-item">
-							<!-- <div class="center-single-pic mb30">
-								<img src="{{ url('assets/img/center/cs-1.jpg') }}" alt="">
+					<div class="col-md-8">
+						<div class="course-details-item">
+							<!-- <div class="course-single-pic mb30">
+								<img src="{{ url('assets/img/course/cs-1.jpg') }}" alt="">
 							</div> -->
 							<div class="faq-tab mb65">
 								<div class="faq-tab-ques  ul-li">
-									<div class="center-details-category ul-li tab-button text-left mb25 tab-button text-left mb25">
-										<span>center <b>Section:</b></span>
+									<div class="course-details-category ul-li tab-button text-left mb25 tab-button text-left mb25">
 										<ul class="product-tab ">
 											<li class="active" rel="tab1">Summary</li>
 											<li rel="tab2"> Criteria </li>
 											<li rel="tab3"> Highlights </li>
-											<li rel="tab4">  Curriculum  </li>
+											<li rel="tab4">  Gallery  </li>
+											<li rel="tab5">  Map  </li>
 										</ul>
 									</div>
 									<!-- /tab-head -->
@@ -123,9 +106,9 @@
 									<div class="tab-container">
 										<!-- 1st tab -->
 										<div id="tab1" class="tab-content-1 pt35">
-											<div class="center-details-content">
-												<div class="center-single-text">
-													<div class="center-details-content">
+											<div class="course-details-content">
+												<div class="course-single-text">
+													<div class="course-details-content">
 														{!! $center->description !!}
 													</div>
 												</div>
@@ -134,8 +117,8 @@
 										<!-- #tab1 -->
 
 										<div id="tab2" class="tab-content-1 pt35">
-											<div class="center-details-content criteria">
-												{!! $center->criteria !!}
+											<div class="course-details-content criteria">
+												
 											</div>
 										</div>
 										<!-- #tab2 -->
@@ -144,7 +127,7 @@
 											<div class="center-details-content highlights">
 												<div class="affiliate-market-guide mb65">
 													<div class="section-title-2 mb20 headline text-left">
-														<h2><span>Affiliate Marketing</span> A Begginer's Guide</h2>
+														<h2><span>ICA Shantipuram</span> Quick Training Highlights</h2>
 													</div>
 													{!! $center->highlights !!}
 												</div>
@@ -153,22 +136,45 @@
 										<!-- #tab3 -->
 
 										<div id="tab4" class="tab-content-1 pt35">
-											<div class="center-details-content">
+											<div class="course-details-content">
 												<div class="affiliate-market-guide mb65">
 													<div class="section-title-2 mb20 headline text-left">
 														<h2><span>Affiliate Marketing</span> A Begginer's Guide</h2>
 													</div>
 
-													<div class="affiliate-market-accordion">
-														<div id="accordion" class="panel-group">
-															
-														</div>
+													<div class="row">
+														@foreach($gallery as $value )
+															<div class="col-md-2 photo-list" >
+																<img src="{{ getSizedImage('thumb',$value->image_id) }}" alt="">
+																<div class="blakish-overlay"></div>
+																<div class="pop-up-icon">
+																	<a href="{{ getSizedImage('',$value->image_id) }}" data-lightbox="roadtrip">
+																		<i class="fas fa-search"></i>
+																	</a>
+																</div>
+																
+															</div>
+														@endforeach
 													</div>
 												</div>
 												<!-- /market guide -->
 											</div>
 										</div>
-										<!-- #tab3 -->
+										<!-- #tab4 -->
+										<div id="tab5" class="tab-content-1 pt35">
+											<div class="course-details-content">
+												<div class="affiliate-market-guide mb65">
+													<div class="section-title-2 mb20 headline text-left">
+														<h2><span>Affiliate Marketing</span> A Begginer's Guide</h2>
+													</div>
+													<div class="affiliate-market-accordion">
+													{!! $center->gmap_location !!}
+													</div>
+												</div>
+												<!-- /market guide -->
+											</div>
+										</div>
+										<!-- #tab5 -->
 									</div>
 								</div>
 							</div>		
@@ -176,21 +182,9 @@
 						</div>						
 					</div>
 
-					<div class="col-md-3">
-						<div class="side-bar">
-							<div class="latest-area-content " >
-								<div class="latest-video-poster relative-position mb20">
-									<img src="{{ url('assets/img/center/bc-1.jpg') }}" alt="">
-									<div class="video-play-btn text-center gradient-bg">
-										<a class="popup-with-zoom-anim" href="https://www.youtube.com/watch?v=-g4TnixUdSc"><i class="fas fa-play"></i></a>
-									</div>
-								</div>
-								<div class="vidoe-text text-center">
-									<h3 class="latest-title bold-font"><a href="#">Learning IOS Apps in Amsterdam.</a></h3>
-								</div>
-								
-							</div>
-							<div class="enrolled-student mt15">								
+					<div class="col-md-4">
+						<div class="side-bar">							
+							<div class="enrolled-student">
 								<div class="comment-ratting float-left ul-li">
 									<ul>
 										<li><i class="fas fa-star"></i></li>
@@ -198,151 +192,91 @@
 										<li><i class="fas fa-star"></i></li>
 										<li><i class="fas fa-star"></i></li>
 										<li><i class="fas fa-star"></i></li>
-									</ul>	
+									</ul>
 								</div>
-								
 								<div class="student-number bold-font">
-									{{ thousandsCurrencyFormat($center->number_of_enrolled) }} Enrolled
+									2.5k Enrolled
 								</div>
 							</div>
 							<div class="couse-feature ul-li-block">
 								<ul>
-									<li>Modules <span>{{ $center->no_of_module }} Modules</span></li>
-									<li>Language  <span>English, France</span></li>
+									<li>Lectures <span>20 Lectures</span></li>
+									<li>Language  <span>Hindi, English</span></li>
 									<li>Video  <span>8 Hours</span></li>
-									<li>Duration <span>{{ $center->duration }}</span></li>
-									<li>Call  <a href="tel:{{ get_theme_setting('mobile') }}" ><span>+91 {{ get_theme_setting('mobile') }}</span></a> </li>
+									<li>Duration <span>30 Days</span></li>
+									<li>Includes  <span>Breakfast</span></li>
 								</ul>
-							</div>
-							<div class="center-side-bar-widget">
-								<div class="genius-btn gradient-bg text-center text-uppercase float-left bold-font">
-									<a href="#"> <i class="fas fa-download"></i> Download Syllabus</a>
+							</div>							
+							<div class="side-bar-widget">
+								<h2 class="widget-title text-capitalize"><span>Related </span>News.</h2>
+								<div class="latest-news-posts">
+									<ul class="side-bar-widget-contact-info" >
+										<li>
+											<div class="mail-phone">
+												<div class="info-icon">
+													<i class="text-gradiant fas fa-envelope"></i>
+												</div>
+												<div class="info-content">
+													<a href="mailto:{{ $center->email }}" class="info-id">{{ $center->email }}</a>
+													<span class="info-text">Connect Via Email</span>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="mail-phone">
+												<div class="info-icon">
+													<i class="text-gradiant fas fa-phone-square"></i>
+												</div>
+												<div class="info-content">
+													<a href="tel:{{ $center->mobile }}" class="info-id">{{ $center->mobile }}</a>
+													<span class="info-text">Connect Via Call</span>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="mail-phone">
+												<div class="info-icon">
+													<i class="text-gradiant fas fa-map-marker-alt"></i>
+												</div>
+												<div class="info-content">
+													<span class="info-id">ICA Edu Skills Shantipuram</span>
+													<span class="info-text">
+														<a href="javascript:void(0)" > {{ $center->address }} </a>
+														<br>
+														<a href=""  class="info-id"> Get Direction </a>
+													</span>
+												</div>
+											</div>
+										</li>
+									</ul>
 								</div>
-								<div class="like-center">
+							</div>
+							<div class="course-side-bar-widget">
+								<div class="genius-btn gradient-bg text-center text-uppercase float-left bold-font">
+									<a href="#">Download Brochure <i class="fas fa-caret-right"></i></a>
+								</div>
+								<div class="like-course">
 									<a href="#"><i class="fas fa-heart"></i></a>
 								</div>
 							</div>
-							<!-- <div class="side-bar-widget">
-								<h2 class="widget-title text-capitalize"><span>Related </span>News.</h2>
-								<div class="latest-news-posts">
-									<div class="latest-news-area">
-										<div class="latest-news-thumbnile relative-position">
-											<img src="{{ url('assets/img/blog/lb-1.jpg') }}" alt="">
-											<div class="hover-search">
-												<i class="fas fa-search"></i>
-											</div>
-											<div class="blakish-overlay"></div>
-										</div>
-										<div class="date-meta">
-											<i class="fas fa-calendar-alt"></i> 26 April 2018
-										</div>
-										<h3 class="latest-title bold-font"><a href="#">Affiliate Marketing A Beginner’s Guide.</a></h3>
-									</div>
-
-									<div class="latest-news-posts">
-										<div class="latest-news-area">
-											<div class="latest-news-thumbnile relative-position">
-												<img src="{{ url('assets/img/blog/lb-2.jpg') }}" alt="">
-												<div class="hover-search">
-													<i class="fas fa-search"></i>
-												</div>
-												<div class="blakish-overlay"></div>
-											</div>
-											<div class="date-meta">
-												<i class="fas fa-calendar-alt"></i> 26 April 2018
-											</div>
-											<h3 class="latest-title bold-font"><a href="#">No.1 The Best Online center 2018.</a></h3>
-										</div>
-									</div>
-
-									<div class="view-all-btn bold-font">
-										<a href="#">View All News <i class="fas fa-chevron-circle-right"></i></a>
-									</div>
-								</div>
-							</div>
-
-							<div class="side-bar-widget">
-								<h2 class="widget-title text-capitalize"><span>Featured</span> center.</h2>
-								<div class="featured-center">
-									<div class="best-center-pic-text relative-position">
-										<div class="best-center-pic relative-position">
-										<img src="{{ url('assets/img/blog/fb-1.jpg') }}" alt="">
-											<div class="trend-badge-2 text-center text-uppercase">
-												<i class="fas fa-bolt"></i>
-												<span>Trending</span>
-											</div>
-										</div>
-										<div class="best-center-text">
-											<div class="center-title mb20 headline relative-position">
-												<h3><a href="#">Fully Responsive Web Design &amp; Development.</a></h3>
-											</div>
-											<div class="center-meta">
-												<span class="center-category"><a href="#">Web Design</a></span>
-												<span class="center-author"><a href="#">250 Students</a></span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div> -->
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
-	    <!-- End of center details section
+	<!-- End of course details section
 		============================================= -->	
-		<!-- Start of sponsor section
-		============================================= -->
-		<section id="career" class="sponsor-section">
-			<div class="container">
-				<div class="section-title-2 mb65 headline text-left">
-					<h2>Get placed <span> where you belong.</span></h2>
-				</div>
-				<div class="sponsor-item sponsor-1">
-					<div class="sponsor-pic text-center">
-						<img src="{{url('assets/img/sponsor/s-1.jpg')}}" alt="">
-					</div>
-					<div class="sponsor-pic text-center">
-						<img src="{{url('assets/img/sponsor/s-1.jpg')}}" alt="">
-					</div>
-					<div class="sponsor-pic text-center">
-						<img src="{{url('assets/img/sponsor/s-1.jpg')}}" alt="">
-					</div>
-					<div class="sponsor-pic text-center">
-						<img src="{{url('assets/img/sponsor/s-1.jpg')}}" alt="">
-					</div>
-					<div class="sponsor-pic text-center">
-						<img src="{{url('assets/img/sponsor/s-1.jpg')}}" alt="">
-					</div>
-					<div class="sponsor-pic text-center">
-						<img src="{{url('assets/img/sponsor/s-1.jpg')}}" alt="">
-					</div>
-					<div class="sponsor-pic text-center">
-						<img src="{{url('assets/img/sponsor/s-1.jpg')}}" alt="">
-					</div>
-					<div class="sponsor-pic text-center">
-						<img src="{{url('assets/img/sponsor/s-1.jpg')}}" alt="">
-					</div>
-					<div class="sponsor-pic text-center">
-						<img src="{{url('assets/img/sponsor/s-1.jpg')}}" alt="">
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- End of sponsor section
-		============================================= -->
-
 		<!-- Start of testimonial secound section
 		============================================= -->
 		<section id="alumni" class="testimonial_2_section">
 			<div class="container">
 				<div class="testimonial-slide">
 					<div class="section-title mb20 headline text-center">
-						<span class="subtitle text-uppercase">About This center </span>
+						<span class="subtitle text-uppercase">About This Course </span>
 						<h3>Student<span> Speaks.</span></h3>
 					</div>
 					<div  id="testimonial-slide-item" class="testimonial-slide-area">
-						@foreach(get_testimonials("center",$center->id) as $value)
+						@foreach(get_testimonials("Course",$center->id) as $value)
 						<div class="student-qoute">
 							{!! $value->comment !!}
 							<div class="student-name-designation">
@@ -357,68 +291,17 @@
 		</section>
 		<!-- End  of testimonial secound section
 		============================================= -->
-		<section id="centers" class="best-center-section">
-			<div class="container">
-				<div class="section-title mb10 headline text-center">
-					<span class="subtitle text-uppercase">SEARCH OUR centerS</span>
-					<h3>Check<span> Related center.</span></h3>
-				</div>
-				<div class="best-center-area mb10">
-					<div class="row">
-					@if($courses)
-						@foreach ($courses as $value)
-						<div class="col-md-3">
-							<div class="best-center-pic-text relative-position">
-								<div class="best-center-pic relative-position">
-									<img src="{{ URL::to('/') }}/assets/img/center/bc-1.jpg" alt="">
-									<div class="trend-badge-2 text-center text-uppercase">
-										<i class="fas fa-bolt"></i>
-										<span>Trending</span>
-									</div>
-									<div class="center-rate ul-li">
-										<ul>
-											<li><i class="fas fa-star"></i></li>
-											<li><i class="fas fa-star"></i></li>
-											<li><i class="fas fa-star"></i></li>
-											<li><i class="fas fa-star"></i></li>
-											<li><i class="fas fa-star"></i></li>
-										</ul>
-									</div>
-									<div class="center-details-btn">
-										<a href="{{ URL::to('/courses') }}/{{ $value->slug }}">center DETAIL <i class="fas fa-arrow-right"></i></a>
-									</div>
-									<div class="blakish-overlay"></div>
-								</div>
-								<div class="best-center-text">
-									<div class="center-title mb20 headline relative-position">
-										<h3><a href="{{ URL::to('/courses') }}/{{ $value->slug }}">{{ $value->name }}</a></h3>
-									</div>
-									<div class="center-meta">
-										<span class="center-category"><a href="{{ URL::to('/courses') }}/{{ $value->slug }}">Web Design</a></span>
-										<span class="center-author"><a href="{{ URL::to('/courses') }}/{{ $value->slug }}">250 Students</a></span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- /center -->
-					@endforeach	
-						@endif	
-						
-					</div>
-				</div>
-			</div>
-		</section>
 		@php
-			$reviewRatings = get_reviews_ratings("center",$center->id);
+			$reviewRatings = get_reviews_ratings("Center",$center->id);
 		@endphp
 		<section id="review" class="teacher-details-area" >
 			<div class="container"> 
 				<div class="row" >
 					<div class="col-md-9" >
-						<!-- /center-details -->				
-						<div class="center-review">
+						<!-- /course-details -->				
+						<div class="course-review">
 							<div class="section-title-2 mb20 headline text-left">
-								<h2>center <span>Reviews:</span></h2>
+								<h2>Course <span>Reviews:</span></h2>
 							</div>
 							<div class="row">
 								<div class="col-md-6">
@@ -497,29 +380,29 @@
 											<span>Your Rating: </span>
 											<form class="rating">
 												<label>
-													<input type="radio" name="stars" value="1" />
+													<input type="radio" name="stars" value="1" required />
 													<span class="icon"><i class="fas fa-star"></i></span>
 												</label>
 												<label>
-													<input type="radio" name="stars" value="2" />
+													<input type="radio" name="stars" value="2" required />
 													<span class="icon"><i class="fas fa-star"></i></span>
 													<span class="icon"><i class="fas fa-star"></i></span>
 												</label>
 												<label>
-													<input type="radio" name="stars" value="3" />
+													<input type="radio" name="stars" value="3" required />
 													<span class="icon"><i class="fas fa-star"></i></span>
 													<span class="icon"><i class="fas fa-star"></i></span>
 													<span class="icon"><i class="fas fa-star"></i></span>   
 												</label>
 												<label>
-													<input type="radio" name="stars" value="4" />
+													<input type="radio" name="stars" value="4" required />
 													<span class="icon"><i class="fas fa-star"></i></span>
 													<span class="icon"><i class="fas fa-star"></i></span>
 													<span class="icon"><i class="fas fa-star"></i></span>
 													<span class="icon"><i class="fas fa-star"></i></span>
 												</label>
 												<label>
-													<input type="radio" name="stars" value="5" />
+													<input type="radio" name="stars" value="5" required />
 													<span class="icon"><i class="fas fa-star"></i></span>
 													<span class="icon"><i class="fas fa-star"></i></span>
 													<span class="icon"><i class="fas fa-star"></i></span>
@@ -533,8 +416,11 @@
 										<form id="submit-review" method="POST" action="/no-form" data-lead="Residential">
 											<div class="row">
 												<div class="col-md-6">
-													<label for="name">Your Name</label>
-													<input type="text" name="reviewer_name" id="reviewer_name" required="required">
+													<label for="reviewer_name">Your Name</label>
+													<input type="text" name="reviewer_name" id="reviewer_name" class="@error('title') is-invalid @enderror form-control" required>
+													@error('reviewer_name')
+													<div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+													@enderror
 												</div>
 												<div class="col-md-6">
 													<label for="phone">Email Address</label>
@@ -543,7 +429,7 @@
 											</div>
 											<div class="row">
 												<div class="col-md-12">
-													<label for="name">Summary</label>
+													<label for="title">Summary</label>
 													<input type="text" name="title" id="title" required="required">
 												</div>
 											</div>
@@ -552,7 +438,7 @@
 											<div class="nws-button text-center  gradient-bg text-uppercase">
 												<button type="button" class="submitReview">Send Message now</button> 
 											</div>
-											<input type="hidden" name="model" id="model" value="center">
+											<input type="hidden" name="model" id="model" value="Center">
 											<input type="hidden" name="model_id" id="model_id" value="{{ $center->id }}">
 											<input type="hidden" id="rating" name="rating" value="" />
 										</form>
@@ -614,7 +500,7 @@
                                             </div>
                                             <div id="collapse_2" class="collapse" aria-labelledby="heading_2" data-parent="#accordion3">
                                                 <div class="panel-body">
-                                                   <p>Obviously! Our 3 years program consists of 2 years classroom training &amp; 1 year paid internship. After completion of the center the student will get guaranteed placement in a renowned company.</p>
+                                                   <p>Obviously! Our 3 years program consists of 2 years classroom training &amp; 1 year paid internship. After completion of the course the student will get guaranteed placement in a renowned company.</p>
                                                 </div>
                                             </div>
                                         </div>

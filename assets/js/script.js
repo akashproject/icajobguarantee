@@ -1013,10 +1013,34 @@ jQuery(".submitReview").on("click",function() {
 		data: $("#submit-review").serialize(),
 		success: function(result) {
 			$(".review-success").show();
-			$("#submit-review").reset();
+			$("#submit-review")[0].reset();
 		}
 	});
 })
 
+$("#submit-review").validate({
+	rules: {
+		reviewer_name: {
+			required: true,
+		},
+		reviewer_email: {
+			required: true,
+		},
+		title: {
+			required: true,
+		},
+	},
+	messages: {
+		reviewer_name: {
+			required: "Please enter title",
+		},
+		reviewer_email: {
+			required: "Please enter valid email",
+		},
+		title: {
+			required: "Please enter message",
+		},
+	},
+})
 
 })();

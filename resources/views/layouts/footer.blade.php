@@ -48,51 +48,58 @@
                                 <div class="photo-list ul-li">
                                     <ul>
                                         <li>
-                                            <img src="assets/img/gallery/g-1.jpg" alt="">
+                                            <img src="{{ url('assets/img/gallery/g-1.jpg') }}" alt="">
                                             <div class="blakish-overlay"></div>
                                             <div class="pop-up-icon">
-                                                <a href="assets/img/gallery/g-1.jpg" data-lightbox="roadtrip">
+                                                <a href="{{ url('assets/img/gallery/g-1.jpg') }}" data-lightbox="roadtrip">
                                                     <i class="fas fa-search"></i>
                                                 </a>
                                             </div>
                                         </li>
                                         <li>
-                                            <img src="assets/img/gallery/g-2.jpg" alt="">
+                                            <img src="{{ url('assets/img/gallery/g-1.jpg') }}" alt="">
                                             <div class="blakish-overlay"></div>
                                             <div class="pop-up-icon">
-                                                <a href="assets/img/gallery/g-2.jpg" data-lightbox="roadtrip">
+                                                <a href="{{ url('assets/img/gallery/g-1.jpg') }}" data-lightbox="roadtrip">
                                                     <i class="fas fa-search"></i>
                                                 </a>
                                             </div>
                                         </li>
                                         <li>
-                                            <img src="assets/img/gallery/g-3.jpg" alt="">
+                                            <img src="{{ url('assets/img/gallery/g-1.jpg') }}" alt="">
                                             <div class="blakish-overlay"></div>
                                             <div class="pop-up-icon">
-                                                <a href="assets/img/gallery/g-3.jpg" data-lightbox="roadtrip">	<i class="fas fa-search"></i></a>
+                                                <a href="{{ url('assets/img/gallery/g-1.jpg') }}" data-lightbox="roadtrip">
+                                                    <i class="fas fa-search"></i>
+                                                </a>
                                             </div>
                                         </li>
                                         <li>
-                                            <img src="assets/img/gallery/g-4.jpg" alt="">
+                                            <img src="{{ url('assets/img/gallery/g-1.jpg') }}" alt="">
                                             <div class="blakish-overlay"></div>
                                             <div class="pop-up-icon">
-                                                <a href="assets/img/gallery/g-4.jpg" data-lightbox="roadtrip">	<i class="fas fa-search"></i></a>
+                                                <a href="{{ url('assets/img/gallery/g-1.jpg') }}" data-lightbox="roadtrip">
+                                                    <i class="fas fa-search"></i>
+                                                </a>
                                             </div>
                                         </li>
                                         <li>
-                                            <img src="assets/img/gallery/g-5.jpg" alt="">
+                                            <img src="{{ url('assets/img/gallery/g-1.jpg') }}" alt="">
                                             <div class="blakish-overlay"></div>
                                             <div class="pop-up-icon">
-                                                <a href="assets/img/gallery/g-5.jpg" data-lightbox="roadtrip">	<i class="fas fa-search"></i></a>
+                                                <a href="{{ url('assets/img/gallery/g-1.jpg') }}" data-lightbox="roadtrip">
+                                                    <i class="fas fa-search"></i>
+                                                </a>
                                             </div>
                                         </li>
                                         <li>
-                                            <img src="assets/img/gallery/g-6.jpg" alt="">
+                                            <img src="{{ url('assets/img/gallery/g-1.jpg') }}" alt="">
                                             <div class="blakish-overlay"></div>
                                             <div class="pop-up-icon">
-                                                <a href="assets/img/gallery/g-6.jpg" data-lightbox="roadtrip">	<i class="fas fa-search"></i></a>
+                                                <a href="{{ url('assets/img/gallery/g-1.jpg') }}" data-lightbox="roadtrip">
+                                                    <i class="fas fa-search"></i>
+                                                </a>
                                             </div>
-
                                         </li>
                                     </ul>
                                 </div>
@@ -153,3 +160,44 @@
     </footer>
 <!-- End of footer section
     ============================================= -->
+    <!-- The Modal -->
+    <div class="modal fade" id="lead-generation-form" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header backgroud-style">
+                    <div class="gradient-bg"></div>
+                    <div class="popup-logo">
+                        <img src="assets/img/logo/p-logo.jpg" alt="">
+                    </div>
+                    <div class="popup-text text-center">
+                        <h2> <span>Get</span> In Touch. </h2>
+                        <p>Enter your details to start the <span>Application</span></p>
+                    </div>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">                    
+                    <form class="contact_form" action="#" method="POST" enctype="multipart/form-data">
+                        <div class="contact-info">
+                            <input class="name" name="name" type="text" placeholder="Enter Your Name" autocomplete="off">
+                        </div>
+                        <div class="contact-info">
+                            <input class="email" name="email" type="email" placeholder="Enter Your Email" autocomplete="off">
+                        </div>
+                        <div class="contact-info">
+                            <input class="mobile" name="mobile" type="number" placeholder="Enter Your Mobile" autocomplete="off">
+                        </div>
+                        <div class="nws-button text-center white text-capitalize">
+                            <button type="submit" value="Submit">Enquire Now</button> 
+                        </div> 
+                    </form>
+                    <div class="log-in-footer text-center">
+                        <p>* Denotes mandatory field.</p>
+                        <p>** At least one telephone number is required.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

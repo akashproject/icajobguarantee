@@ -19,7 +19,7 @@
 					</div>
 					<div class="col-md-3 text-center" >
 						<div class="enroll-btn header-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
-							<a href="#"> Apply Now </a>
+							<a  data-toggle="modal" data-target="#lead-generation-form" href="#" > Apply Now </a>
 						</div>
 					</div>
 				</div>
@@ -28,13 +28,19 @@
     <!-- Start of breadcrumb section
 		============================================= -->
 		<section id="breadcrumb" class="breadcrumb-section relative-position backgroud-style">
+			<div class="blakish-overlay"></div>
 			<div class="container">
-				<div class="page-breadcrumb-content text-center">
+				<div class="page-breadcrumb-content">
+					<span class="trend-bestseller text-uppercase bold-font">
+						<i class="fas fa-bolt"></i> Bestseller</span>
 					<div class="page-breadcrumb-title">
 						<h2 class="breadcrumb-head black bold">{{$course->name}}</h2>
 					</div>
-					<div class="">
+					<div class="page-breadcrumb-description">
 						{!! $course->excerpt !!}
+					</div>
+					<div class="page-breadcrumb-option">
+						<p>{!! $course->criteria !!} </p>
 					</div>
 				</div>
 			</div>
@@ -87,7 +93,7 @@
 
 						<div class="col-md-3">
 							<div class="enroll-btn genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
-								<a href="#"> Enroll This Course </i></a>
+								<a data-toggle="modal" data-target="#lead-generation-form" href="#"> Enroll This Course </i></a>
 							</div>
 						</div>
 						<!-- /counter -->
@@ -111,7 +117,7 @@
 									<div class="course-details-category ul-li tab-button text-left mb25 tab-button text-left mb25">
 										<span>Course <b>Section:</b></span>
 										<ul class="product-tab ">
-											<li class="active" rel="tab1">Summary</li>
+											<li class="active" rel="tab1"> Summary </li>
 											<li rel="tab2"> Criteria </li>
 											<li rel="tab3"> Highlights </li>
 											<li rel="tab4">  Curriculum  </li>
@@ -250,7 +256,7 @@
 							</div>
 							<div class="course-side-bar-widget">
 								<div class="genius-btn gradient-bg text-center text-uppercase float-left bold-font">
-									<a href="#"> <i class="fas fa-download"></i> Download Syllabus</a>
+									<a data-toggle="modal" data-target="#lead-generation-form" href="javascript:void(0)"> <i class="fas fa-download"></i> Download Syllabus</a>
 								</div>
 								<div class="like-course">
 									<a href="#"><i class="fas fa-heart"></i></a>
@@ -333,39 +339,16 @@
 					<h2>Get placed <span> where you belong.</span></h2>
 				</div>
 				<div class="sponsor-item sponsor-1">
+					@foreach(get_placements() as $value)
 					<div class="sponsor-pic text-center">
-						<img src="{{url('assets/img/sponsor/s-1.jpg')}}" alt="">
+						<img src="{{ getSizedImage('',$value->featured_image) }}" alt="">
 					</div>
-					<div class="sponsor-pic text-center">
-						<img src="{{url('assets/img/sponsor/s-1.jpg')}}" alt="">
-					</div>
-					<div class="sponsor-pic text-center">
-						<img src="{{url('assets/img/sponsor/s-1.jpg')}}" alt="">
-					</div>
-					<div class="sponsor-pic text-center">
-						<img src="{{url('assets/img/sponsor/s-1.jpg')}}" alt="">
-					</div>
-					<div class="sponsor-pic text-center">
-						<img src="{{url('assets/img/sponsor/s-1.jpg')}}" alt="">
-					</div>
-					<div class="sponsor-pic text-center">
-						<img src="{{url('assets/img/sponsor/s-1.jpg')}}" alt="">
-					</div>
-					<div class="sponsor-pic text-center">
-						<img src="{{url('assets/img/sponsor/s-1.jpg')}}" alt="">
-					</div>
-					<div class="sponsor-pic text-center">
-						<img src="{{url('assets/img/sponsor/s-1.jpg')}}" alt="">
-					</div>
-					<div class="sponsor-pic text-center">
-						<img src="{{url('assets/img/sponsor/s-1.jpg')}}" alt="">
-					</div>
+					@endforeach					
 				</div>
 			</div>
 		</section>
 		<!-- End of sponsor section
 		============================================= -->
-
 		<!-- Start of testimonial secound section
 		============================================= -->
 		<section id="alumni" class="testimonial_2_section">
@@ -612,59 +595,22 @@
 							<div class="faq-tab mb35">
 								<div class="faq-tab-ques  ul-li">
                                     <div id="accordion3" class="panel-group">
+										@foreach(get_faqs("Course") as $key => $value)
                                         <div class="panel">
-                                            <div class="panel-title" id="heading_0">
-                                                <h3 class="mb-0">
-                                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapse_0" aria-expanded="true" aria-controls="collapse_0">
-                                                        What Is the Eligibility Criteria for The Admission Process?
+                                            <div class="panel-title" id="heading_{{$key}}">
+                                                <h3 class="mb-{{$key}}">
+                                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapse_{{$key}}" aria-expanded="true" aria-controls="collapse_{{$key}}">
+                                                       {{ $value->question }}
 													</button>
                                                 </h3>
                                             </div>
-                                            <div id="collapse_0" class="collapse" aria-labelledby="heading_0" data-parent="#accordion3">
+                                            <div id="collapse_{{$key}}" class="collapse" aria-labelledby="heading_{{$key}}" data-parent="#accordion3">
                                                 <div class="panel-body">
-                                                   <p>10+2 Passed or Graduate in Science Or Commerce</p>
+                                                   {!! $value->answer !!}
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="panel">
-                                            <div class="panel-title" id="heading_1">
-                                                <h3 class="mb-0">
-                                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapse_1" aria-expanded="true" aria-controls="collapse_1">
-                                                        What Kind of Academic Support Does the Program Provide?                                                    </button>
-                                                </h3>
-                                            </div>
-                                            <div id="collapse_1" class="collapse" aria-labelledby="heading_1" data-parent="#accordion3">
-                                                <div class="panel-body">
-                                                   <p>It is a practical oriented program, where students gets hands-on training by the industry expert faculty through case studies &amp; tech applications. Also students will get grooming sessions that makes them job ready.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-										<div class="panel">
-                                            <div class="panel-title" id="heading_2">
-                                                <h3 class="mb-0">
-                                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapse_2" aria-expanded="true" aria-controls="collapse_2">
-                                                        Do You Provide Placement Support?                                                    </button>
-                                                </h3>
-                                            </div>
-                                            <div id="collapse_2" class="collapse" aria-labelledby="heading_2" data-parent="#accordion3">
-                                                <div class="panel-body">
-                                                   <p>Obviously! Our 3 years program consists of 2 years classroom training &amp; 1 year paid internship. After completion of the course the student will get guaranteed placement in a renowned company.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="panel">
-                                            <div class="panel-title" id="heading_3">
-                                                <h3 class="mb-0">
-                                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapse_3" aria-expanded="true" aria-controls="collapse_3">
-                                                        What Companies Are Invited for Campus Recruitment?                                                    </button>
-                                                </h3>
-                                            </div>
-                                            <div id="collapse_3" class="collapse" aria-labelledby="heading_3" data-parent="#accordion3">
-                                                <div class="panel-body">
-                                                   <p>We have tie-ups with 70000+ employers, which contains some of the India’s top companies. After successful completion of the program, students will be placed in those organisations.</p>
-                                                </div>
-                                            </div>
-                                        </div>
+										@endforeach                                       
 									</div>
                                     <!-- end of #accordion -->
 								</div>

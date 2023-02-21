@@ -81,6 +81,11 @@ class AppServiceProvider extends ServiceProvider
                 '#faq' => array('rel'=>"",'value'=>"FAQs"),
             );
             $view->with('centerMenu', $centerMenu);
+
+
+            //Models
+            $models =  array("Blog","Center","Course","CourseType","University");
+            $view->with('models', $models);
         });
     }
 }

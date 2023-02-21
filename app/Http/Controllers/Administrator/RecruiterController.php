@@ -4,31 +4,30 @@ namespace App\Http\Controllers\Administrator;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Faq;
+use App\Models\Recruiter;
 
-class FaqController extends Controller
+class RecruiterController extends Controller
 {
     public function index()
     {
         try {
-            $faqs = Faq::all();
-            return view('administrator.faq.index',compact('faqs'));
+            $recruiters = Recruiter::all();
+            return view('administrator.recruiters.index',compact('recruiters'));
 
         } catch(\Illuminate\Database\QueryException $e){
             //throw $th;
         }
-        
     }
 
-    public function add() {       
-        return view('administrator.faq.add');
+    public function add() {        
+        return view('administrator.recruiters.add');
     }
 
     public function show($id)
     {
         try {
-            $faq = Faq::findOrFail($id);
-            return view('administrator.faq.show',compact('faq'));
+            $recruiter = Recruiter::findOrFail($id);
+            return view('administrator.recruiters.show',compact('recruiter'));
         } catch(\Illuminate\Database\QueryException $e){
         }        
     }
@@ -37,18 +36,17 @@ class FaqController extends Controller
         try {
             $data = $request->all();
             $validatedData = $request->validate([
-                'question' => 'required',
-                'answer' => 'required',
+                'name' => 'required',
                 'status' => 'required',
             ]);
 
-            if($data['faq_id'] <= 0){
-                Faq::create($data);
+            if($data['recruiter_id'] <= 0){
+                Recruiter::create($data);
             } else {
-                $faq = Faq::findOrFail($data['faq_id']);
-                $faq->update($data);
+                $recruiter = Recruiter::findOrFail($data['recruiter_id']);
+                $recruiter->update($data);
             }
-            return redirect()->back()->with('message', 'FAQ updated successfully!');
+            return redirect()->back()->with('message', 'Recruiter updated successfully!');
         } catch(\Illuminate\Database\QueryException $e){
             var_dump($e->getMessage()); 
         }

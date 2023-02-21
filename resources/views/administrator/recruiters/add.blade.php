@@ -1,11 +1,12 @@
 @extends('administrator.layouts.admin')
+
 @section('content')
 <div class="col-12">
 	<div class="card">
-		<form class="form-horizontal" method="post" action="{{ url('administrator/save-faq') }}" enctype="multipart/form-data">
+		<form class="form-horizontal" method="post" action="{{ url('administrator/save-recruiter') }}" enctype="multipart/form-data">
 			@csrf
 			<div class="card-body">
-				<h4 class="card-title"> Add FAQ </h4>
+				<h4 class="card-title"> Add Recruiter </h4>
 				@if ($errors->any())
 					<div class="alert alert-danger">
 						<ul>
@@ -21,19 +22,14 @@
 					</div>
 				@endif
 				<div class="row">
-					<div class="col-md-8" >
+					<div class="col-md-7" >
 						<div class="form-group row">
-							<label for="question" class="col-sm-3 text-right control-label col-form-label">Question</label>
+							<label for="name" class="col-sm-3 text-right control-label col-form-label">Name</label>
 							<div class="col-sm-9">
-								<input type="text" class="form-control" name="question" id="question" placeholder="Enter Question Here" >
+								<input type="text" class="form-control" name="name" id="name" placeholder="Enter Name Here" >
 							</div>
 						</div>
-						<div class="form-group row">
-							<label for="answer" class="col-sm-3 text-right control-label col-form-label">Answer</label>
-							<div class="col-sm-9">
-								<textarea class="form-control editor" name="answer"  id="mceEditor" placeholder="Enter answer Here" ></textarea>
-							</div>
-						</div>
+						
 						<div class="form-group row">
 							<label for="model" class="col-sm-3 text-right control-label col-form-label">Model</label>
 							<div class="col-sm-9">
@@ -47,7 +43,8 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-4">					
+					<div class="col-md-5">
+											
 						<div class="form-group row">
 							<label for="state" class="col-sm-3 text-right control-label col-form-label">Status</label>
 							<div class="col-sm-9">
@@ -57,15 +54,29 @@
 									<option value="0" > Private </option>
 								<select>
 							</div>
-						</div>						
+						</div>
+						<div class="form-group row">
+							<label for="tags" class="col-md-6 text-left control-label col-form-label">Featured Image</label>
+							<div class="col-sm-6 text-center">
+								<a href="#imageBox" class="image-profile open-popup-link">
+									<img src="https://dummyimage.com/150x150?text=Add%20Image" alt="">
+									<input type="hidden" name="featured_image" id="featured_image" value="" >	
+								</a>	
+								@if(isset($course->featured_image))
+									<a href="javascript:void(0)" class="removeImage" style="color: #c90f0f;font-weight: 600;"> Remove Image </a>	
+								@endif					
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 
 			<div class="border-top">
+
 				<div class="card-body">
+
 					<button type="submit" class="btn btn-primary">Submit</button>
-					<input type="hidden" name="faq_id" id="faq_id" value="" >
+					<input type="hidden" name="recruiter_id" id="recruiter_id" value="" >
 				</div>
 
 			</div>
@@ -76,7 +87,12 @@
 </div>              
 
 @endsection
+
 @section('script')
+
 <!-- ============================================================== -->
+
 <!-- CHARTS -->
+
 @endsection
+

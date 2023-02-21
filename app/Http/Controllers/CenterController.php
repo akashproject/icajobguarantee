@@ -7,6 +7,8 @@ use App\Models\Center;
 use App\Models\State;
 use App\Models\City;
 use App\Models\Course;
+use App\Models\Gallery;
+use Illuminate\Support\Facades\DB;
 
 class CenterController extends Controller
 {
@@ -67,8 +69,9 @@ class CenterController extends Controller
             $center = Center::where('slug', $slug)->first();
             $courses = Course::where('status', 1)->get();
             $states = State::where('status', 1)->get();
-
-            return view('centers.view',compact('center','courses','states'));
+           
+            $gallery = DB::table('gallery')->where("center_id",$center->id)->get();
+            return view('centers.view',compact('center','courses','gallery','states'));
         } catch(\Illuminate\Database\QueryException $e){
         }
        

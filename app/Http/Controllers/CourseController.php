@@ -42,9 +42,12 @@ class CourseController extends Controller
             ->orderBy('courses.id', 'asc')
             ->get();
 
+            $category = CourseType::where('slug', $slug)->first();
+            
             $courseTypes = CourseType::where('status', 1)->get();
 
-            $category = CourseType::where('slug', $slug)->first();
+            
+
             return view('courses.index',compact('courses','courseTypes','category'));
 
         } catch(\Illuminate\Database\QueryException $e){

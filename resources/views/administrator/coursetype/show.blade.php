@@ -38,6 +38,12 @@
 								</div>
 							</div>
 							<div class="form-group row">
+								<label for="Excerpt" class="col-sm-3 text-right control-label col-form-label">Excerpt</label>
+								<div class="col-sm-9">
+									<textarea class="form-control" name="Excerpt" id="Excerpt" placeholder="Enter Excerpt Here" >{{ $courseType->excerpt }}</textarea>
+								</div>
+							</div>
+							<div class="form-group row">
 								<label for="description" class="col-sm-3 text-right control-label col-form-label">Description</label>
 								<div class="col-sm-9">
 									<textarea class="form-control editor" name="description" id="description" placeholder="Enter description Here" >
@@ -50,8 +56,8 @@
 								<div class="col-sm-9">
 									<select name="status" id="status" class="select2 form-control custom-select" style="width: 100%; height:36px;">	
 										<option value="">Update Status</option>
-										<option value="1" > Publish</option>
-										<option value="0" > Private </option>
+										<option value="1" {{ ( $courseType->status ==  '1' )? 'selected' : '' }} > Publish</option>
+										<option value="0" {{ ( $courseType->status ==  '0' )? 'selected' : '' }}> Private </option>
 									<select>
 								</div>
 							</div>

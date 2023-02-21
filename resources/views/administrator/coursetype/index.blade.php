@@ -44,7 +44,12 @@
 									<input type="text" class="form-control" name="slug" id="slug" placeholder="Slug Here" >
 								</div>
 							</div>
-
+							<div class="form-group row">
+								<label for="Excerpt" class="col-sm-3 text-right control-label col-form-label">Excerpt</label>
+								<div class="col-sm-9">
+									<textarea class="form-control" name="Excerpt" id="Excerpt" placeholder="Enter Excerpt Here" ></textarea>
+								</div>
+							</div>
 							<div class="form-group row">
 								<label for="description" class="col-sm-3 text-right control-label col-form-label">Description</label>
 								<div class="col-sm-9">

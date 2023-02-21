@@ -39,6 +39,12 @@
 							</div>
 						</div>
 						<div class="form-group row">
+							<label for="excerpt" class="col-sm-3 text-right control-label col-form-label">Excerpt</label>
+							<div class="col-sm-9">
+								<textarea class="form-control" name="excerpt"  id="mceEditor" placeholder="Enter excerpt Here" ></textarea>
+							</div>
+						</div>
+						<div class="form-group row">
 							<label for="description" class="col-sm-3 text-right control-label col-form-label">Description</label>
 							<div class="col-sm-9">
 								<textarea class="form-control editor" name="description"  id="mceEditor" placeholder="Enter description Here" ></textarea>
@@ -66,6 +72,12 @@
 							<label for="whatsapp" class="col-sm-3 text-right control-label col-form-label">Center WhatsApp</label>
 							<div class="col-sm-9">
 								<input type="text" class="form-control" name="whatsapp" id="whatsapp" placeholder="Enter Center WhatsApp No Here" >
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="address" class="col-sm-3 text-right control-label col-form-label">Address</label>
+							<div class="col-sm-9">
+								<textarea class="form-control" name="address" id="address" placeholder="Enter Gmap Location Code" ></textarea>
 							</div>
 						</div>
 						<div class="form-group row">

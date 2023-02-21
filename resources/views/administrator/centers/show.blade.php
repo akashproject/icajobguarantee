@@ -29,11 +29,16 @@
 								<input type="text" class="form-control" name="name" id="name" placeholder="Name Here"  value="{{ $center->name }}" >
 							</div>
 						</div>
-
 						<div class="form-group row">
 							<label for="slug" class="col-sm-3 text-right control-label col-form-label">Slug</label>
 							<div class="col-sm-9">
 								<input type="text" class="form-control" name="slug" id="slug" placeholder="Slug Here"  value="{{ $center->slug }}" >
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="excerpt" class="col-sm-3 text-right control-label col-form-label">Excerpt</label>
+							<div class="col-sm-9">
+								<textarea class="form-control" name="excerpt"  id="excerpt" placeholder="Enter excerpt Here" >{{ $center->excerpt }}</textarea>
 							</div>
 						</div>
 						<div class="form-group row">
@@ -42,7 +47,6 @@
 								<textarea class="form-control editor" name="description" id="description" placeholder="Enter description Here" >{{ $center->description }}</textarea>
 							</div>
 						</div>
-						
 						<div class="form-group row">
 							<label for="highlights" class="col-sm-3 text-right control-label col-form-label">Course highlights</label>
 							<div class="col-sm-9">
@@ -68,6 +72,12 @@
 							</div>
 						</div>
 						<div class="form-group row">
+							<label for="address" class="col-sm-3 text-right control-label col-form-label">Address</label>
+							<div class="col-sm-9">
+								<textarea class="form-control" name="address" id="address" placeholder="Enter Address Here" >{{ $center->address }}</textarea>
+							</div>
+						</div>
+						<div class="form-group row">
 							<label for="gmap_location" class="col-sm-3 text-right control-label col-form-label">Gmap Location</label>
 							<div class="col-sm-9">
 								<textarea class="form-control editor" name="gmap_location" id="gmap_location" placeholder="Enter Gmap Location Code" >{{ $center->gmap_location }}</textarea>
@@ -83,6 +93,14 @@
 							<label for="pincode" class="col-sm-3 text-right control-label col-form-label">Pincode</label>
 							<div class="col-sm-9">
 								<textarea class="form-control" name="pincode" id="pincode" placeholder="Enter Pincode Here" >{{ $center->pincode }}</textarea>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="no_of_module" class="col-sm-3 text-left control-label col-form-label">Gallery</label>
+							<div class="col-sm-9">
+								<a href="{{ url('administrator/gallery') }}/{{ $center->id }}" class="btn btn-primary">
+									Gallery Detail
+								</a>								
 							</div>
 						</div>
 					</div>

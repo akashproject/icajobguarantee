@@ -565,33 +565,11 @@
 					<h2>Genius <span>Sponsors.</span></h2>
 				</div>
 				<div class="sponsor-item sponsor-1 " >
+					@foreach(get_placements() as $value)
 					<div class="sponsor-pic text-center">
-						<img src="assets/img/sponsor/s-1.jpg" alt="">
+						<img src="{{ getSizedImage('',$value->featured_image) }}" alt="">
 					</div>
-					<div class="sponsor-pic text-center">
-						<img src="assets/img/sponsor/s-2.jpg" alt="">
-					</div>
-					<div class="sponsor-pic text-center">
-						<img src="assets/img/sponsor/s-3.jpg" alt="">
-					</div>
-					<div class="sponsor-pic text-center">
-						<img src="assets/img/sponsor/s-4.jpg" alt="">
-					</div>
-					<div class="sponsor-pic text-center">
-						<img src="assets/img/sponsor/s-5.jpg" alt="">
-					</div>
-					<div class="sponsor-pic text-center">
-						<img src="assets/img/sponsor/s-6.jpg" alt="">
-					</div>
-					<div class="sponsor-pic text-center">
-						<img src="assets/img/sponsor/s-6.jpg" alt="">
-					</div>
-					<div class="sponsor-pic text-center">
-						<img src="assets/img/sponsor/s-6.jpg" alt="">
-					</div>
-					<div class="sponsor-pic text-center">
-						<img src="assets/img/sponsor/s-6.jpg" alt="">
-					</div>
+					@endforeach						
 				</div>
 			</div>
 		</section>

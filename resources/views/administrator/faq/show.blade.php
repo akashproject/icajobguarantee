@@ -1,4 +1,5 @@
 @extends('administrator.layouts.admin')
+
 @section('content')
 <div class="col-12">
 	<div class="card">
@@ -13,7 +14,9 @@
 								<li>{{ $error }}</li>
 							@endforeach
 						</ul>
+
 					</div>
+
 				@endif
 				@if(session()->has('message'))
 					<div class="alert alert-success">
@@ -25,19 +28,24 @@
 						<div class="form-group row">
 							<label for="question" class="col-sm-3 text-right control-label col-form-label">Question</label>
 							<div class="col-sm-9">
-								<input type="text" class="form-control" name="question" id="question" placeholder="Enter Question Here" >
+								<input type="text" class="form-control" name="question" id="question" placeholder="Enter Question Here" value="{{ $faq->question }}">
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="answer" class="col-sm-3 text-right control-label col-form-label">Answer</label>
 							<div class="col-sm-9">
-								<textarea class="form-control editor" name="answer"  id="mceEditor" placeholder="Enter answer Here" ></textarea>
+								<textarea class="form-control editor" name="answer"  id="mceEditor" placeholder="Enter answer Here" >{{ $faq->answer }}</textarea>
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="model" class="col-sm-3 text-right control-label col-form-label">Model</label>
+							<label for="state" class="col-sm-3 text-right control-label col-form-label">Model</label>
 							<div class="col-sm-9">
-								<input type="text" class="form-control" name="model" id="model" placeholder="Enter Model Here" >
+								<select name="model[]" id="model" class="select2 form-control custom-select" style="width: 100%; height:136px;" multiple>	
+									<option value="">Select Model</option>
+									@foreach($models as $model)
+									<option value="{{ $model }}" > {{$model}}</option>
+									@endforeach
+								<select>
 							</div>
 						</div>
 						<div class="form-group row">
@@ -53,30 +61,34 @@
 							<div class="col-sm-9">
 								<select name="status" id="status" class="select2 form-control custom-select" style="width: 100%; height:36px;">	
 									<option value="">Update Status</option>
-									<option value="1" > Publish</option>
-									<option value="0" > Private </option>
+									<option value="1" {{ ( $faq->status ==  '1' )? 'selected' : '' }} > Publish</option>
+									<option value="0" {{ ( $faq->status ==  '0' )? 'selected' : '' }}> Private </option>
 								<select>
 							</div>
 						</div>						
 					</div>
 				</div>
+				
 			</div>
 
 			<div class="border-top">
 				<div class="card-body">
 					<button type="submit" class="btn btn-primary">Submit</button>
-					<input type="hidden" name="faq_id" id="faq_id" value="" >
+					<input type="hidden" name="faq_id" id="faq_id" value="{{ $faq->id }}" >
 				</div>
-
 			</div>
-
 		</form>
 
 	</div>
 </div>              
 
 @endsection
+
 @section('script')
+
 <!-- ============================================================== -->
+
 <!-- CHARTS -->
+
 @endsection
+

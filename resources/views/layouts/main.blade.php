@@ -5,7 +5,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>@yield('title','Accounts | Finance | Taxation | Courses | Training Institute | Icajobguarantee')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="title" content="@yield('meta_title','Accounts | Finance | Taxation | Courses | Training Institute | Icajobguarantee')">
@@ -63,6 +62,7 @@
     <script src="{{ url('assets/js/jquery-2.1.4.min.js') }}"></script>
     <script src="{{ url('assets/js/bootstrap.min.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
     <script src="{{ url('assets/js/popper.min.js') }}"></script>
     <script src="{{ url('assets/js/owl.carousel.min.js') }}"></script>
     <script src="{{ url('assets/js/jarallax.js') }}"></script>

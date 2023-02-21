@@ -71,6 +71,9 @@
 }
 
 @media screen and (max-width: 991px) { 
+	.modal-body {
+		padding: 30px 25px;
+	}
 	.pt150 {
 		padding-top: 80px;
 	}

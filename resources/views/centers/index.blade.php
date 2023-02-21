@@ -60,7 +60,7 @@
 										<form action="{{url('/centers')}}" method="get">
 											<div class="filter-search mb20">
 												<label>Search Pincode</label>
-												<input type="text" class="" name="pincode" placeholder="Search by pincode" value="{{$pincode}}">
+												<input type="text" class="" name="pincode" placeholder="Search by pincode" value="{{isset($pincode)?$pincode:''}}">
 											</div>
 											<button type="submit" class="text-white border-none genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
 												FIND CENTER <i class="fas fa-caret-right"></i>
