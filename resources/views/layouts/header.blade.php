@@ -7,7 +7,15 @@
 				<div class="container">
 					<div class="navbar-default">
 						<div class="navbar-header float-left">
-							<a class="navbar-brand text-uppercase" href="#"><img src="{{ url('assets/images/logo.png') }}" alt="ICA Edu Skills"></a>
+							<a class="navbar-brand text-uppercase" href="{{ url('/') }}"><img src="{{ url('assets/images/logo.png') }}" alt="ICA Edu Skills"></a>
+							<div class="menu-item-has-children ul-li-block enroll-btn header-btn gradient-bg text-center text-uppercase ul-li-block bold-font" style="margin: 0;">
+								<a href="{{ url('/courses') }}"> Courses <i class="fas fa-caret-down" style="color: #fff;"></i></a>
+									<ul class="sub-menu">
+										@foreach($courseTypes as $key => $value)
+										<li><a href="{{url('/course-category')}}/{{$value->slug}}">{{$value->name}}</a></li>
+										@endforeach												
+									</ul>
+							</div>
 						</div><!-- /.navbar-header -->						
 						<!-- <div class="cart-search float-right ul-li">
 							<ul>

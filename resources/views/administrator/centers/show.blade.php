@@ -54,6 +54,17 @@
 							</div>
 						</div>
 						<div class="form-group row">
+							<label for="courses" class="col-sm-3 text-right control-label col-form-label">Courses</label>
+							<div class="col-sm-9">
+								<select name="courses[]" id="courses" class="select2 form-control custom-select" style="width: 100%; height:136px;" multiple>	
+									<option value="">Select Courses</option>
+									@foreach($courseCategories as $category)
+									<option value="{{ $category->id }}" {{ (in_array($category->id,  json_decode($center->courses)))?'selected' : '' }} >{{ $category->name }}</option>
+									@endforeach
+								<select>
+							</div>
+						</div>
+						<div class="form-group row">
 							<label for="email" class="col-sm-3 text-right control-label col-form-label">Center Email</label>
 							<div class="col-sm-9">
 								<input type="text" class="form-control" name="email" id="email" placeholder="Email Address Here" value="{{ $center->email }}" >

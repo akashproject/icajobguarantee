@@ -8,6 +8,7 @@ use App\Models\State;
 use App\Models\City;
 use App\Models\Course;
 use App\Models\Gallery;
+use App\Models\CourseType;
 use Illuminate\Support\Facades\DB;
 
 class CenterController extends Controller
@@ -23,7 +24,8 @@ class CenterController extends Controller
             }
             $centers = $centers->get();
             $states = State::where('status', 1)->orderBy("name","asc")->get();
-            return view('centers.index',compact('centers','states','pincode'));
+            $courseTypes = CourseType::where('status', 1)->get();
+            return view('centers.index',compact('centers','states','pincode','courseTypes'));
 
         } catch(\Illuminate\Database\QueryException $e){
             //throw $th;
@@ -69,9 +71,11 @@ class CenterController extends Controller
             $center = Center::where('slug', $slug)->first();
             $courses = Course::where('status', 1)->get();
             $states = State::where('status', 1)->get();
-           
+            $center_id = $center->id;
             $gallery = DB::table('gallery')->where("center_id",$center->id)->get();
-            return view('centers.view',compact('center','courses','gallery','states'));
+            $utm_campaign = $center->utm_campaign;
+            $utm_source = $center->utm_source;
+            return view('centers.view',compact('center','center_id','courses','gallery','states','utm_campaign','utm_source'));
         } catch(\Illuminate\Database\QueryException $e){
         }
        

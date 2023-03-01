@@ -35,9 +35,14 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="model" class="col-sm-3 text-right control-label col-form-label">Model</label>
+							<label for="state" class="col-sm-3 text-right control-label col-form-label">Model</label>
 							<div class="col-sm-9">
-								<input type="text" class="form-control" name="model" id="model" placeholder="Enter Model Here" >
+								<select name="model[]" id="model" class="select2 form-control custom-select" style="width: 100%; height:136px;" multiple>	
+									<option value="">Select Model</option>
+									@foreach($models as $model)
+									<option value="{{ $model }}" >{{$model}}</option>
+									@endforeach
+								<select>
 							</div>
 						</div>
 						<div class="form-group row">

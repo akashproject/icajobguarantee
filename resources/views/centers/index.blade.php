@@ -69,86 +69,7 @@
 									</div>
 								</div>
 
-								<div class="side-bar-widget">
-									<h2 class="widget-title text-capitalize"><span>Recent  </span>News</h2>
-									<div class="latest-news-posts">
-										<div class="latest-news-area">
-											<div class="latest-news-thumbnile relative-position">
-												<img src="{{ URL::to('/') }}/assets//img/blog/lb-1.jpg" alt="">
-												<div class="hover-search">
-													<i class="fas fa-search"></i>
-												</div>
-												<div class="blakish-overlay"></div>
-											</div>
-											<div class="date-meta">
-												<i class="fas fa-calendar-alt"></i> 26 April 2018
-											</div>
-											<h3 class="latest-title bold-font"><a href="#">Affiliate Marketing A Beginner’s Guide.</a></h3>
-										</div>
-										<!-- /post -->
-
-										<div class="latest-news-posts">
-											<div class="latest-news-area">
-												<div class="latest-news-thumbnile relative-position">
-													<img src="{{ URL::to('/') }}/assets/img/blog/lb-2.jpg" alt="">
-													<div class="hover-search">
-														<i class="fas fa-search"></i>
-													</div>
-													<div class="blakish-overlay"></div>
-												</div>
-												<div class="date-meta">
-													<i class="fas fa-calendar-alt"></i> 26 April 2018
-												</div>
-												<h3 class="latest-title bold-font"><a href="#">No.1 The Best Online Course 2018.</a></h3>
-											</div>
-											<!-- /post -->
-										</div>
-
-										<div class="view-all-btn bold-font">
-											<a href="#">View All News <i class="fas fa-chevron-circle-right"></i></a>
-										</div>
-									</div>
-								</div>
-
-								<div class="side-bar-widget">
-									<h2 class="widget-title text-capitalize">Popular <span>Tag's.</span></h2>
-									<div class="tag-clouds ul-li">
-										<ul>
-											<li><a href="#">fruits</a></li>
-											<li><a href="#">veegetable</a></li>
-											<li><a href="#">juices</a></li>
-											<li><a href="#">natural food</a></li>
-											<li><a href="#">food</a></li>
-											<li><a href="#">bread</a></li>
-											<li><a href="#">natural</a></li>
-											<li><a href="#">healthy</a></li>
-										</ul>
-									</div>
-								</div>
-
-								<div class="side-bar-widget">
-									<h2 class="widget-title text-capitalize"><span>Featured</span> Course.</h2>
-									<div class="featured-course">
-										<div class="best-course-pic-text relative-position">
-											<div class="best-course-pic relative-position">
-												<img src="{{ URL::to('/') }}/assets//img/blog/fb-1.jpg" alt="">
-												<div class="trend-badge-2 text-center text-uppercase">
-													<i class="fas fa-bolt"></i>
-													<span>Trending</span>
-												</div>
-											</div>
-											<div class="best-course-text">
-												<div class="course-title mb20 headline relative-position">
-													<h3><a href="#">Fully Responsive Web Design &amp; Development.</a></h3>
-												</div>
-												<div class="course-meta">
-													<span class="course-category"><a href="#">Web Design</a></span>
-													<span class="course-author"><a href="#">250 Students</a></span>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
+								
 							</div>
 						</div>
 						<div class="col-md-9">
@@ -176,23 +97,24 @@
 													@foreach($centers as $value)
 													<div class="col-md-4">
 														<div class="product-img-text">
-															<div class="product-img text-center mb20">
+															<div class="product-img text-center mb10">
 																<img src="{{url('assets/img/product/bp-1.png')}}" alt="">
 															</div>
-															<div class="product-text-content relative-position">
-																<div class="best-title-price float-left">
+															<div class="product-text-content text-center mb20">
+																<div class="best-title-price">
 																	<div class="course-title headline">
 																		<h3><a href="{{ URL::to('/centers') }}/{{ $value->slug }}">{{ $value->name }}</a></h3>
 																	</div>
-																	<div class="price-start">
-																		Start from
-																		<span>$55.25</span>
-																	</div>
+																</div>															
+															</div>	
+															<div class="more-btn text-center" >
+																<div class="course-type-list">	
+																	<a class="outline" href="javascript:void(0)" onclick="lead_capture_form_btn('',{{ $value->id }})"><i class="fas fa-download"></i> Brochure</a>
 																</div>
-																<div class="add-cart text-center">
-																	<i class="fas fa-cart-plus"></i>
-																</div>
-															</div>
+																<div class="course-type-list">														
+																	<a href="{{ URL::to('/centers') }}/{{ $value->slug }}" >View More <i class="fas fa-caret-right"></i></a>
+																</div>														
+															</div>														
 														</div>
 													</div>
 													@endforeach													
@@ -413,145 +335,52 @@
 
 	<!-- Start of recent view product
 		============================================= -->
-		<section id="best-product" class="best-product-section best-product-4">
+		<section id="courses" class="best-course-section">
 			<div class="container">
-				<div class="section-title-2 mb65 headline text-left">
-					<h2>Genius <span>Best Products.</span></h2>
+				<div class="section-title mb10 headline text-center">
+					<span class="subtitle text-uppercase">SEARCH OUR COURSES</span>
+					<h3>Check<span> Another Domain.</span></h3>
 				</div>
-				<div id="best-product-slide-item" class="best-product-slide">
-					<div class="product-img-text">
-						<div class="product-img text-center mb20">
-							<img src="assets/img/product/bp-1.png" alt="">
-						</div>
-						<div class="product-text-content relative-position">
-							<div class="best-title-price float-left">
-								<div class="course-title headline">
-									<h3><a href="#">Mobile Apps Books.</a></h3>
+				<div class="best-course-area mb10">
+					<div class="row">
+					@if($courseTypes)
+						@foreach ($courseTypes as $value)
+						<div class="col-md-3">
+							<div class="best-course-pic-text relative-position">
+								<div class="best-course-pic relative-position">
+									<img src="{{ URL::to('/') }}/assets/img/course/bc-1.jpg" alt="">
+									<div class="course-rate ul-li">
+										<ul>
+											<li><i class="fas fa-star"></i></li>
+											<li><i class="fas fa-star"></i></li>
+											<li><i class="fas fa-star"></i></li>
+											<li><i class="fas fa-star"></i></li>
+											<li><i class="fas fa-star"></i></li>
+										</ul>
+									</div>
+									<div class="course-details-btn">
+										<a href="{{ URL::to('/course-category') }}/{{ $value->slug }}">Know More <i class="fas fa-arrow-right"></i></a>
+									</div>
+									<div class="blakish-overlay"></div>
 								</div>
-								<div class="price-start">
-									Start from
-									<span>$55.25</span>
-								</div>
-							</div>
-							<div class="add-cart text-center">
-								<i class="fas fa-cart-plus"></i>
-							</div>
-						</div>
-					</div>
-
-					<div class="product-img-text">
-						<div class="product-img text-center mb20">
-							<img src="assets/img/product/bp-2.png" alt="">
-						</div>
-						<div class="product-text-content relative-position">
-							<div class="best-title-price float-left">
-								<div class="course-title headline">
-									<h3><a href="#">Mobile Apps Books.</a></h3>
-								</div>
-								<div class="price-start">
-									Start from
-									<span>$55.25</span>
-								</div>
-							</div>
-							<div class="add-cart text-center">
-								<i class="fas fa-cart-plus"></i>
-							</div>
-						</div>
-					</div>
-					<div class="product-img-text">
-						<div class="product-img text-center mb20">
-							<img src="assets/img/product/bp-3.png" alt="">
-						</div>
-						<div class="product-text-content relative-position">
-							<div class="best-title-price float-left">
-								<div class="course-title headline">
-									<h3><a href="#">Mobile Apps Books.</a></h3>
-								</div>
-								<div class="price-start">
-									Start from
-									<span>$55.25</span>
+								<div class="best-course-text">
+									<div class="course-title mb10 headline relative-position">
+										<h3><a href="{{ URL::to('/course-category') }}/{{ $value->slug }}">{{ $value->name }}</a></h3>
+									</div>
+									<div class="course-short-description mb10" >
+										{!! substr($value->excerpt,0,100); !!}...
+									</div>
+									<div class="course-meta">
+										<span class="course-category"><a href="{{ URL::to('/courses') }}/{{ $value->slug }}">Web Design</a></span>
+										<span class="course-author"><a href="{{ URL::to('/courses') }}/{{ $value->slug }}">250 Students</a></span>
+									</div>
 								</div>
 							</div>
-							<div class="add-cart text-center">
-								<i class="fas fa-cart-plus"></i>
-							</div>
 						</div>
-					</div>
-					<div class="product-img-text">
-						<div class="product-img text-center mb20">
-							<img src="assets/img/product/bp-4.png" alt="">
-						</div>
-						<div class="product-text-content relative-position">
-							<div class="best-title-price float-left">
-								<div class="course-title headline">
-									<h3><a href="#">Mobile Apps Books.</a></h3>
-								</div>
-								<div class="price-start">
-									Start from
-									<span>$55.25</span>
-								</div>
-							</div>
-							<div class="add-cart text-center">
-								<i class="fas fa-cart-plus"></i>
-							</div>
-						</div>
-					</div>
-					<div class="product-img-text">
-						<div class="product-img text-center mb20">
-							<img src="assets/img/product/bp-5.png" alt="">
-						</div>
-						<div class="product-text-content relative-position">
-							<div class="best-title-price float-left">
-								<div class="course-title headline">
-									<h3><a href="#">Mobile Apps Books.</a></h3>
-								</div>
-								<div class="price-start">
-									Start from
-									<span>$55.25</span>
-								</div>
-							</div>
-							<div class="add-cart text-center">
-								<i class="fas fa-cart-plus"></i>
-							</div>
-						</div>
-					</div>
-					<div class="product-img-text">
-						<div class="product-img text-center mb20">
-							<img src="assets/img/product/bp-6.png" alt="">
-						</div>
-						<div class="product-text-content relative-position">
-							<div class="best-title-price float-left">
-								<div class="course-title headline">
-									<h3><a href="#">Mobile Apps Books.</a></h3>
-								</div>
-								<div class="price-start">
-									Start from
-									<span>$55.25</span>
-								</div>
-							</div>
-							<div class="add-cart text-center">
-								<i class="fas fa-cart-plus"></i>
-							</div>
-						</div>
-					</div>
-					<div class="product-img-text">
-						<div class="product-img text-center mb20">
-							<img src="assets/img/product/bp-1.png" alt="">
-						</div>
-						<div class="product-text-content relative-position">
-							<div class="best-title-price float-left">
-								<div class="course-title headline">
-									<h3><a href="#">Mobile Apps Books.</a></h3>
-								</div>
-								<div class="price-start">
-									Start from
-									<span>$55.25</span>
-								</div>
-							</div>
-							<div class="add-cart text-center">
-								<i class="fas fa-cart-plus"></i>
-							</div>
-						</div>
+						<!-- /course -->
+					@endforeach	
+						@endif	
+						
 					</div>
 				</div>
 			</div>
@@ -559,6 +388,55 @@
 	<!-- End of recent view product
 		============================================= -->
 
+		<!-- Start of faq section
+		============================================= -->
+		<section id="faq" class="teacher-details-area">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-9">
+					<div class="about-teacher about-faq faq-secound-home-version">
+							<div class="section-title-2  headline text-left">
+								<h2>Frequently  <span>Ask &amp; Questions.</span></h2>
+							</div>							
+							<div class="faq-tab mb35">
+								<div class="faq-tab-ques  ul-li">
+									<div id="accordion3" class="panel-group">
+										@foreach(get_faqs("Center") as $key => $value)
+										<div class="panel">
+											<div class="panel-title" id="heading_{{$key}}">
+												<h3 class="mb-{{$key}}">
+													<button class="btn btn-link" data-toggle="collapse" data-target="#collapse_{{$key}}" aria-expanded="true" aria-controls="collapse_{{$key}}">
+													{{ $value->question }}
+													</button>
+												</h3>
+											</div>
+											<div id="collapse_{{$key}}" class="collapse" aria-labelledby="heading_{{$key}}" data-parent="#accordion3">
+												<div class="panel-body">
+												{!! $value->answer !!}
+												</div>
+											</div>
+										</div>
+										@endforeach                                       
+									</div>
+									<!-- end of #accordion -->
+								</div>
+							</div>
+
+							<div class="about-btn">
+								<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
+									<a href="#">Make Question <i class="fas fa-caret-right"></i></a>
+								</div>
+								<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
+									<a href="#">contact us <i class="fas fa-caret-right"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End of faq section
+		============================================= -->	
 
     @endsection
 @section('script')

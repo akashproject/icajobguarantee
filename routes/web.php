@@ -57,7 +57,6 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::post('/upload', [App\Http\Controllers\Administrator\MediaController::class, 'save'])->name('admin-save-media');
         Route::post('/search-media', [App\Http\Controllers\Administrator\MediaController::class, 'search'])->name('admin-search-media');
 
-
         //Settings
         Route::get('/settings', [App\Http\Controllers\Administrator\SettingController::class, 'show'])->name('admin-settings');
         Route::post('/save-settings', [App\Http\Controllers\Administrator\SettingController::class, 'save'])->name('admin-save-settings');
@@ -90,6 +89,12 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::get('/add-university', [App\Http\Controllers\Administrator\UniversityController::class, 'add'])->name('admin-add-university');
         Route::get('/view-university/{id}', [App\Http\Controllers\Administrator\UniversityController::class, 'show'])->name('admin-view-university');
         Route::post('/save-university', [App\Http\Controllers\Administrator\UniversityController::class, 'save'])->name('admin-save-university');
+
+        //Brochure
+        Route::get('/brochures', [App\Http\Controllers\Administrator\BrochureController::class, 'index'])->name('admin-brochures');
+        Route::get('/add-brochure', [App\Http\Controllers\Administrator\BrochureController::class, 'add'])->name('add-brochure');
+        Route::get('/view-brochure/{id}', [App\Http\Controllers\Administrator\BrochureController::class, 'show'])->name('admin-view-brochure');
+        Route::post('/save-brochure', [App\Http\Controllers\Administrator\BrochureController::class, 'save'])->name('admin-save-brochure');
     });
     // Will be inside middleware
 });
@@ -114,6 +119,7 @@ Route::get('/career', [App\Http\Controllers\PageController::class, 'careerpage']
 Route::get('/courses', [App\Http\Controllers\CourseController::class, 'index'])->name('courses');
 Route::get('/course-category/{slug}', [App\Http\Controllers\CourseController::class, 'courseListByCategory'])->name('course-category');
 Route::get('/courses/{slug}', [App\Http\Controllers\CourseController::class, 'viewCourse'])->name('view-courses');
+Route::get('/search/{slug}', [App\Http\Controllers\CourseController::class, 'search'])->name('search-courses');
 
 // Centers
 Route::get('/centers', [App\Http\Controllers\CenterController::class, 'index'])->name('centers');
@@ -122,9 +128,12 @@ Route::get('/state/{slug}', [App\Http\Controllers\CenterController::class, 'stat
 Route::get('/city/{slug}', [App\Http\Controllers\CenterController::class, 'city'])->name('city');
 
 Route::post('/submit-review', [App\Http\Controllers\ReviewController::class, 'create'])->name('submit-review');
-
 Route::get('/blogs', [App\Http\Controllers\BlogController::class, 'index'])->name('blogs');
 
-Auth::routes();
+//Capture Leads
+Route::get('/home', [App\Http\Controllers\IndexController::class, 'index'])->name('home');
+Route::post('/submit-mobile-otp', [App\Http\Controllers\IndexController::class, 'submitMobileOtp'])->name('submit-mobile-otp');
+Route::post('/capture-lead', [App\Http\Controllers\IndexController::class, 'captureLead'])->name('capture-lead');
+Route::post('/get-centers', [App\Http\Controllers\IndexController::class, 'getCenters'])->name('get-centers');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Auth::routes();

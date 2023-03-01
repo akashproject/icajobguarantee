@@ -149,6 +149,9 @@ select:visited {
 
 .relative-position {
   position: relative; }
+.overflow-hidden {
+  overflow: hidden; }
+  
 
 .headline h1,
 .headline h2,
@@ -225,6 +228,7 @@ h1, h2, h3, h4, h5, h6 {
   -o-transition: background 1s ease-out;
   transition: background 1s ease-out; }
   .gradient-bg:hover, .modal-body .nws-button button:hover, .teacher-pic-content .teacher-img-content:hover:after, .course-details-category li:hover {
+    color: #fff;
     background: #616dfd;
     background: -moz-linear-gradient(left, #393185 0%, #616dfd 51%, #393185 100%);
     background: -webkit-gradient(left top, right top, color-stop(0%, #4eb3bf), color-stop(51%, #616dfd), color-stop(100%, #4eb3bf));
@@ -265,7 +269,9 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 52px;
   border-radius: 4px;
   display: table;
-  padding: 0px 25px; }
+  padding: 0px 25px; 
+  color: #fff;   
+  border: none;}
   .genius-btn a {
     color: #fff;
     display: block;
@@ -291,6 +297,28 @@ h1, h2, h3, h4, h5, h6 {
 .bold-font {
   font-weight: 700; }
 
+  .alumni-item-text h3 {
+    font-size: 15px;
+    color: #343434;
+  }
+  .circle-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 1.5rem auto;
+  }
+  .circle-img img {
+    width: 140px !important;
+  }
+  .alumni-content {
+    padding: 0 1.2rem;
+    font-size: 12px;
+  }
+
+  .alumni-content p{
+    margin: 0;
+  }
 .section-title .subtitle {
   color: #a9a3a3;
   letter-spacing: 7px;
@@ -387,8 +415,7 @@ h1, h2, h3, h4, h5, h6 {
     right: 0; }
     .page-breadcrumb-description {
       width: 50%;
-      font-size: 15px;
-      line-height: 1.2rem;
+      font-size: 16px;
     }
   .breadcrumb-section .breadcrumb-head {
     font-size: 38px;
@@ -435,7 +462,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 .nav-menu {
   padding-top: 12px; }
-  .nav-menu li a:hover {
+  /* nav .nav-menu ul li:first-child a {
+    background:linear-gradient(to right, #616dfd 0%, #393185 51%, #616dfd 100%);
+    color: #ffffff;
+  } */
+
+  .nav-menu li a:hover{
     color: #ffffff;
   }
   .nav-menu li a {
@@ -784,7 +816,7 @@ nav.navbar-menu.inside-navbar .nav-menu {
     border-radius: 4px; }
 
 .modal-dialog {
-  margin: 1.75rem auto; }
+  margin: 2.75rem auto; }
 
 .modal-header {
   padding: 0;
@@ -800,7 +832,7 @@ nav.navbar-menu.inside-navbar .nav-menu {
 
 .popup-text {
   width: 100%;
-  padding: 30px 0px 20px 0px;
+  padding: 42px 0px 20px 0px;
   position: relative; }
   .popup-text h2 {
     color: #fff;
@@ -854,15 +886,12 @@ nav.navbar-menu.inside-navbar .nav-menu {
   border-right: 1px solid #a29c9c; }
 
 .modal-body {
-  padding: 30px 65px; }
-  .modal-body .contact_form {
-    margin-bottom: 20px; }
+  padding: 30px 0; }
     .modal-body .contact_form input, .modal-body .contact_form .register-form-area select, .register-form-area .modal-body .contact_form select, .modal-body .contact_form .register-form-area textarea, .register-form-area .modal-body .contact_form textarea {
       height: 50px;
       background-color: #eeeeee;
       padding: 15px;
       border-radius: 4px;
-      margin-bottom: 10px;
       width: 100%;
       border: none; }
   .modal-body .nws-button button {
@@ -878,8 +907,8 @@ nav.navbar-menu.inside-navbar .nav-menu {
 
 .menu-item-has-children {
   position: relative; }
-  .menu-item-has-children a {
-    padding-bottom: 10px !important; }
+  /* .menu-item-has-children a {
+    padding-bottom: 10px !important; } */
   .menu-item-has-children:hover a:after {
     opacity: 1;
     visibility: visible; }
@@ -909,7 +938,7 @@ nav.navbar-menu.inside-navbar .nav-menu {
   -webkit-transition: .3s all ease-in-out;
   -o-transition: .3s all ease-in-out;
   transition: .3s all ease-in-out;
-  top: 30px;
+  top: 41px;
   left: -115px;
   text-align: left;
   border-radius: 4px;
@@ -1597,6 +1626,7 @@ button.alt-menu-btn.float-left {
   margin-bottom: 5px;
   font-weight: 500;
   line-height: 30px;
+  height: 80px;
   -webkit-transition: .3s all ease-in-out;
   -o-transition: .3s all ease-in-out;
   transition: .3s all ease-in-out; 
@@ -2254,12 +2284,21 @@ button.alt-menu-btn.float-left {
 
 .best-course-pic-text {
   border-radius: 4px;
-  padding-top: 30px; }
+  margin-top: 20px;
+  background: #fff; }
   .best-course-pic-text .course-title h3 {
     font-size: 16px;
     line-height: 24px;
-    height: auto;
+    height: 80px;
   }
+  .best-course-pic-text .course-type-title h3 {
+    font-size: 16px;
+    line-height: 24px;
+    color: #333333;
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+
   .best-course-pic-text .course-title:after {
     display: none; }
   .best-course-pic-text .best-course-text {
@@ -2269,6 +2308,7 @@ button.alt-menu-btn.float-left {
     -webkit-transition: .3s all ease-in-out;
     -o-transition: .3s all ease-in-out;
     transition: .3s all ease-in-out; 
+
   }
   .best-course-pic-text .best-course-text .course-meta span {
     font-weight: 400;
@@ -2306,7 +2346,7 @@ button.alt-menu-btn.float-left {
     opacity: 1;
     visibility: visible;
     z-index: 0; }
-  .best-course-pic-text:hover .best-course-text {
+  .best-course-pic-text:hover {
     -webkit-box-shadow: 10px 10px 20px 1px rgba(0, 0, 0, 0.1);
     box-shadow: 10px 10px 20px 1px rgba(0, 0, 0, 0.1); }
 
@@ -3001,7 +3041,7 @@ button.alt-menu-btn.float-left {
 
 .product-img-text {
   background-color: #f1f1f3;
-  padding: 25px 20px;
+  padding: 25px 5px 5px;
   display: inline-block;
   width: 97%;
   margin: 5px;
@@ -3037,7 +3077,7 @@ button.alt-menu-btn.float-left {
 
 .genius-shop-item .best-product-section {
   padding-top: 0; }
-  .genius-shop-item .best-product-section .product-img-text {
+  .genius-shop-item .best-product-section .product-img-text,.best-course-area .product-img-text {
     width: 100%;
     margin: 0;
     margin-bottom: 30px; }
@@ -3297,7 +3337,7 @@ ul.product-tab li.active:after {
     display: block;
     padding: 15px 0px 15px;
     position: relative;
-    width: 100%;
+    width: 99%;
     text-align: left;
     text-decoration: none;
     font-size: 22px;
@@ -4138,12 +4178,19 @@ ul.product-tab li.active:after {
       font-size: 16px;
       font-weight: 700;
       color: #333333; }
-  .course-page-section .course-type-list a {
+  .course-page-section .course-type-list a,.course-type-list a {
     background-color: #393185;
     color: #fff;
-    padding: 12px 20px;
-    border-radius: 4px; }
-    
+    padding: 11px;
+    border-radius: 4px; 
+    width: 100%; 
+    }
+.course-type-list a.outline {
+  background: #fff;
+  color: #393185;
+  border: 1px solid;
+  width: 100%;
+  }   
   .course-page-section .course-meta .course-rate li {
     color: #bbbbbb; }
   .course-page-section .course-meta .course-rate li.active {
@@ -4151,7 +4198,10 @@ ul.product-tab li.active:after {
 
 .course-details-section {
   padding: 25px 0px 0px; }
-
+  .more-btn {
+    display: block;
+    clear: both;
+}
 .course-single-text .course-title {
   padding-bottom: 55px; }
   .course-single-text .course-title b {
@@ -4160,8 +4210,9 @@ ul.product-tab li.active:after {
     font-size: 35px;
     font-weight: 300; }
     .course-type-list {
-      display: inline-block;
-  }
+      display: inline-flex;
+      width: 49%;
+      font-size: 16px; }
 .course-single-text p {
   font-size: 18px;
   font-weight: 300;
@@ -4815,7 +4866,6 @@ ul.product-tab li.active:after {
   box-shadow: 0px 0px 9px 0px #ccc;
   margin: 3px;
   border-radius: 14px;
-  padding-bottom: 20px;
   background: #fff;
 }
 .course-title p {
@@ -4832,10 +4882,12 @@ ul.product-tab li.active:after {
   font-size: 58px;
   font-weight: 800;
 }
+
 .university-banner-content {
   width: 87%;
   margin: auto;
 }
+
 .course-rate.ul-li {
   display: inline-flex;
   margin-right: 0.9rem;
@@ -4863,4 +4915,59 @@ ul.product-tab li.active:after {
 .course-short-description {
   font-size: 13px;
   /* margin-bottom: 1.5rem; */
+}
+.otp-content {
+  color: #494393;
+  margin-bottom: 1rem;
+  font-size: 15px;
+  text-align: center;
+  font-weight: 600;
+}
+.otp-content p {
+  font-size: 13px;
+}
+
+.otp-content p a{
+  color: #31862a;
+}
+
+.contact-info {
+  margin-bottom: 10px;
+}
+
+.lead_capture_form label.error {
+  color: #d81a1a;
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0;
+  display: inline-grid;
+}
+
+.form-success-content {
+  text-align: center;
+  color: #474747;
+}
+
+.lead_steps {
+  display: none; 
+  padding: 0 65px;
+}
+
+.lead_steps.active {
+  display: block;
+}
+
+span.success-icon {
+  font-size: 45px;
+  color: green;
+  border: 2px solid;
+  width: 64px;
+  height: 64px;
+  display: block;
+  margin: 1.5rem auto;
+  margin-top: 0;
+  border-radius: 50%;
+}
+.form-process,.form-success {
+  padding: 0 65px;
 }

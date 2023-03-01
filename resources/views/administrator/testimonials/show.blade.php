@@ -90,7 +90,7 @@
 							<label for="tags" class="col-md-6 text-left control-label col-form-label">Featured Image</label>
 							<div class="col-sm-6 text-center">
 								<a href="#imageBox" class="image-profile open-popup-link">
-									<img src="https://dummyimage.com/150x150?text=Add%20Image" alt="">
+									<img src="{{ (isset($testimonial->featured_image))?getSizedImage('',$testimonial->featured_image):'https://dummyimage.com/150x150?text=Add%20Image' }}" alt="">
 									<input type="hidden" name="featured_image" id="featured_image" value="" >	
 								</a>	
 								@if(isset($course->featured_image))

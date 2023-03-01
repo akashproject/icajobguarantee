@@ -26,6 +26,7 @@ Author:         HTMLMATE Team
 				this.quickScroll2();
 				this.counterUp();
 				this.courseSlide();
+				this.fourGridSlide();
 				this.datePicker();
 				this.bannerParalax();
 				this.serviceSlide();
@@ -171,7 +172,42 @@ mainSlide: function (){
 /* End Of course slide
 ================================================*/
 
+/* Start Of course slide
+================================================*/
+fourGridSlide: function (){
+	$('.four-grid-slide').owlCarousel({
+		margin:30,
+		responsiveClass:true,
+		nav: true,
+		dots: false,
+		autoplay: false,
+		navText:["<i class='fas fa-chevron-left'></i>","<i class='fas fa-chevron-right'></i>"],
+		smartSpeed: 1000,
+		responsive:{
+			0:{
+				items:1,
+			},
+			400:{
+				items:1,
+			},
+			600:{
+				items:1,
+			},
+			700:{
+				items:3,
+			},
+			800:{
+				items:4,
+			},
+			1000:{
+				items:5,
 
+			}
+		},
+	})
+},
+/* End Of course slide
+================================================*/
 
 
 /* Start Of course slide
@@ -326,9 +362,9 @@ sponsorSlide: function (){
 		margin: 2,
 		responsiveClass:true,
 		nav: true,
-		autoplay: false,
+		loop: true,
+		autoplay: true,
 		navText:["<i class='fas fa-chevron-left'></i>","<i class='fas fa-chevron-right'></i>"],
-		autoplay: false,
 		dots: true,
 		smartSpeed: 1000,
 		responsive:{
@@ -363,7 +399,7 @@ bestproductSlide: function (){
 		responsiveClass:true,
 		nav: true,
 		dots: false,
-		autoplay: false,
+		autoplay: true,
 		navText:["<i class='fas fa-chevron-left'></i>","<i class='fas fa-chevron-right'></i>"],
 		smartSpeed: 1000,
 		responsive:{
@@ -989,8 +1025,6 @@ quickScroll: function (){
 	});
 },
 
-
-
 }
 }
 jQuery(document).ready(function (){
@@ -1001,22 +1035,18 @@ jQuery(".gotoCourseCategory").on("change",function (){
 	window.location.href = $(this).val();
 });
 
-jQuery(".submitReview").on("click",function() {
-	$.ajaxSetup({
-		headers: {
-		 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-		}
-	});
-	$.ajax({
-		url: `http://${window.location.hostname}/icajobguarantee/submit-review`,
-		type: "post",
-		data: $("#submit-review").serialize(),
-		success: function(result) {
-			$(".review-success").show();
-			$("#submit-review")[0].reset();
-		}
-	});
-})
+jQuery(".gotoStep1").on("click",function(){
+	jQuery(".step1").show();
+	jQuery(".step2").hide();
+});
+
+jQuery.validator.addMethod('email_rule', function (value, element) {
+	if (/^([a-zA-Z0-9_\-\.]+)\+?([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/.test(value)) {
+	  return true;
+	} else {
+	  return false;
+	};
+});
 
 $("#submit-review").validate({
 	rules: {
@@ -1040,7 +1070,156 @@ $("#submit-review").validate({
 		title: {
 			required: "Please enter message",
 		},
-	},
+	}, 
+	submitHandler: function(form) {
+		$.ajaxSetup({
+			headers: {
+			 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			}
+		});
+		$.ajax({
+			url: `http://${window.location.hostname}/icajobguarantee/submit-review`,
+			type: "post",
+			data: $("#submit-review").serialize(),
+			success: function(result) {
+				$(".review-success").show();
+				$("#submit-review")[0].reset();
+			}
+		});
+	}
 })
 
+	$(".lead_capture_form").validate({
+		rules: {
+			name: {
+				required: true,
+			},
+			email: {
+				required: true,
+				email_rule: true
+			},
+			mobile: {
+				required: true,
+				maxlength: 10,
+				minlength: 10
+			},
+			center: {
+				required: true,
+			},
+		},
+		messages: {
+			name: {
+				required: "Please enter full name",
+			},
+			email: {
+				required: "Please enter valid email address",
+			},
+			mobile: {
+				required: "Please enter valid mobile number",
+			},
+			center: {
+				required: "Please select you location",
+			},
+		},
+		submitHandler: function(form) {
+			var formId = "lead_capture_form";
+			let checkEnable = jQuery("#" + formId + " .is_enable_otp").val();
+			if(!checkEnable) {
+				captureLead(form)
+			} else {     
+				sendMobileOtp(formId);
+				return false;
+			}
+			return false;
+		}
+	});
+
+	jQuery(".apply_now").on("click",function (){
+		var verifyOtp = jQuery("#lead_capture_form .verify_otp").val();
+		var responsedOtp = jQuery("#lead_capture_form .responsed_otp").val();
+		if (verifyOtp == '' || verifyOtp !== responsedOtp) {
+			jQuery("#lead_capture_form .response_status").html("OTP is Invalid");
+			return false;
+		}
+		captureLead($(this).closest("form"));
+		
+	});
+
+	function sendMobileOtp(formId) {
+		var mobileNo = jQuery("#" + formId + " input[name='mobile']").val();
+		$.ajaxSetup({
+			headers: {
+			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			}
+		});
+		$.ajax({
+			url: `http://${window.location.hostname}/icajobguarantee/submit-mobile-otp`,
+			type: "post",
+			data: {
+				mobile: mobileNo,
+			},
+			success: function(result) {
+				if (result) {
+					console.log(result);
+					jQuery("#" + formId + " .responsed_otp").val(result.otp_value);
+					jQuery("#" + formId + " .lastDigit").text(result.lastdigit);
+					jQuery("#" + formId + " .lead_steps").removeClass("active");
+					jQuery("#" + formId + " .lead_steps.step2").addClass("active");
+					
+					return true;
+				} else {
+					jQuery("#" + formId + " .response_status").html("OTP Sent Failed! Please Try Again Later");
+					return true;
+				}
+			}
+		});
+	}
+
+	function captureLead(form){
+		var formId = form.attr('id');
+		$.ajaxSetup({
+			headers: {
+			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			}
+		});
+		$.ajax({
+			url: `http://${window.location.hostname}/icajobguarantee/capture-lead`,
+			type: "post",
+			data: form.serialize(),
+			success: function(result) {
+				jQuery("#" + formId + " .lead_steps").removeClass("active");
+				jQuery("#" + formId + " .lead_steps.step3").addClass("active");
+				jQuery("#" + formId)[0].reset()
+				return true;
+			}
+		});
+	}
+
 })();
+
+function lead_capture_form_btn(course_id,center_id) {
+	jQuery(".lead_steps").removeClass("active");
+	jQuery(".lead_steps.step1").addClass("active");
+	getCenters(course_id,center_id);
+}
+
+function getCenters(course_id,center_id) {
+	$.ajaxSetup({
+		headers: {
+		'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+		}
+	});
+	$.ajax({
+		url: `http://${window.location.hostname}/icajobguarantee/get-centers`,
+		type: "post",
+		data: {
+			"course_id":course_id,
+			"center_id":center_id
+		},
+		success: function(result) {
+			$("#lead_capture_form .center").html(result);
+			$("#lead_capture_form .course_id").val(course_id); 
+			$('#lead-generation-form').modal('show');
+		}
+	});
+}

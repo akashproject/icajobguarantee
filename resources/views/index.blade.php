@@ -19,7 +19,7 @@
 						<div class="layer-1-4">
 							<div id="course-btn">
 								<div class="genius-btn  text-center text-uppercase ul-li-block bold-font">
-									<a href="#">Our Courses <i class="fas fa-caret-right"></i></a>
+									<a href="{{url('/courses')}}">Our Courses <i class="fas fa-caret-right"></i></a>
 								</div>
 							</div>
 						</div>
@@ -38,8 +38,8 @@
 						</div>
 						<div class="layer-1-3">
 							<div class="search-course mb30 relative-position">
-								<form action="#" method="post">
-									<input class="course" name="course" type="text" placeholder="Type what do you want to learn today?">
+								<form action="{{url('/courses')}}" method="get">
+									<input class="course" name="search" type="text" placeholder="Type what do you want to learn today?">
 									<div class="nws-button text-center  gradient-bg text-capitalize">
 										<button type="submit" value="Submit">Search Course</button> 
 									</div>
@@ -49,11 +49,9 @@
 								<div class="slider-course-category ul-li text-center">
 									<span class="float-left">BY CATEGORY:</span>
 									<ul>
-										<li>Graphics Design</li>
-										<li>Web Design</li>
-										<li>Mobile Application</li>
-										<li>Enginering</li>
-										<li>Science</li>
+									@foreach($courseTypes as $key => $value)
+										<li> <a target="_blank" href="{{url('/course-category')}}/{{$value->slug}}" > {{$value->name}} </a> </li>
+									@endforeach										
 									</ul>
 								</div>
 							</div>
@@ -190,12 +188,12 @@
 			<div class="container">
 				<div class="section-title mb20 headline text-left">
 					<span class="subtitle text-uppercase">LEARN NEW SKILLS</span>
-					<h2><span>Popular</span> Courses.</h2>
+					<h2><span>Popular </span> Courses.</h2>
 				</div>
 				<div class="mb150">
 					<div class="search-course mb30 relative-position">
-						<form action="#" method="post">
-							<input class="course" name="course" type="text" placeholder="Type what do you want to learn today?">
+						<form action="{{ url('/courses') }}" method="get">
+							<input class="course" name="search" type="text" placeholder="Type what do you want to learn today?">
 							<div class="nws-button text-center  gradient-bg text-capitalize">
 								<button type="submit" value="Submit">Search Course</button> 
 							</div>
@@ -210,15 +208,15 @@
 							<img src="{{ (isset($course->featured_image))?getSizedImage('',$course->featured_image):'assets/img/course/c-1.jpg' }}" alt="">
 							<div class="trend-badge-2 text-center text-uppercase">
 								<i class="fas fa-bolt"></i>
-								<span>Trending</span>
+								<span>Career</span>
 							</div>
 							<div class="course-details-btn">
 								<a href="courses/{{ $course->slug }}">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
 							</div>
 						</div>
-						<div class="course-item-text">
+						<div class="course-item-text mb-20">
 							<div class="course-meta">
-								<span class="course-category bold-font"><a href="#">Web Design</a></span>
+								<span class="course-category bold-font"><a href="#">{{$course->duration}}</a></span>
 								<div class="course-rate ul-li">
 									<ul>
 										<li><i class="fas fa-star"></i></li>
@@ -239,6 +237,14 @@
 									<li><a href="">125k Unrolled</a></li>
 								</ul>
 							</div>
+						</div>
+						<div class="more-btn text-center" >
+							<div class="course-type-list">	
+								<a class="outline" href="javascript:void(0)" onclick="lead_capture_form_btn({{ $course->category_id }},'')"><i class="fas fa-download"></i> Brochure</a>
+							</div>
+							<div class="course-type-list">														
+								<a href="{{ URL::to('/courses') }}/{{ $course->slug }}" >View More <i class="fas fa-caret-right"></i></a>
+							</div>														
 						</div>
 					</div>
 					<!-- /item -->
@@ -265,25 +271,7 @@
 								</div>
 								<div class="register-form-area">
 									<form class="contact_form" action="#" method="POST" enctype="multipart/form-data">
-										<div class="contact-info">
-											<input class="name" name="name" type="text" placeholder="Your Name.">
-										</div>
-										<div class="contact-info">
-											<input class="nbm" name="nbm" type="number" placeholder="Your Number">
-										</div>
-										<div class="contact-info">
-											<input class="email" name="email" type="email" placeholder="Email Address.">
-										</div>
-										<select>
-											<option value="9" selected="">Select Course.</option>
-											<option value="10">Web Design</option>
-											<option value="11">Web Development</option>
-											<option value="12">Php Core</option>
-										</select>
-										<div class="contact-info">
-											<input type="text" id="datepicker" placeholder="Date.">
-										</div>
-										<textarea  placeholder="Message."></textarea>
+										@include('common.leadCaptureFormField')
 										<div class="nws-button text-uppercase text-center white text-capitalize">
 											<button type="submit" value="Submit">SUBMIT REQUEST </button> 
 										</div> 
@@ -529,9 +517,17 @@
 													</h3>
 												</div>
 												<div class="course-meta">
-													<span class="course-category"><a href="#">Web Design</a></span>
-													<span class="course-author"><a href="#">250 Students</a></span>
+													<span class="course-category"><a href="#">{{ $course->duration }}</a></span>
+													<span class="course-author"><a href="#">{{ thousandsCurrencyFormat($course->number_of_enrolled) }} Students</a></span>
 												</div>
+											</div>
+											<div class="more-btn text-center" >
+												<div class="course-type-list">	
+													<a class="outline" href="javascript:void(0)" onclick="lead_capture_form_btn({{ $course->category_id }},'')"><i class="fas fa-download"></i> Brochure</a>
+												</div>
+												<div class="course-type-list">														
+													<a href="{{ URL::to('/courses') }}/{{ $course->slug }}" >View More <i class="fas fa-caret-right"></i></a>
+												</div>														
 											</div>
 										</div>
 									</div>
@@ -557,196 +553,13 @@
 	<!-- End of course teacher
 		============================================= -->
 
-	<!-- Start of sponsor section
-		============================================= -->
-		<section id="sponsor" class="sponsor-section">
-			<div class="container">
-				<div class="section-title-2 mb65 headline text-left "  >
-					<h2>Genius <span>Sponsors.</span></h2>
-				</div>
-				<div class="sponsor-item sponsor-1 " >
-					@foreach(get_placements() as $value)
-					<div class="sponsor-pic text-center">
-						<img src="{{ getSizedImage('',$value->featured_image) }}" alt="">
-					</div>
-					@endforeach						
-				</div>
-			</div>
-		</section>
-	<!-- End of sponsor section
-		============================================= -->	
-
-	<!-- Start FAQ section
-		============================================= -->
-		<section id="faq" class="faq-section">
-			<div class="container">
-				<div class="section-title mb45 headline text-center "  >
-					<span class="subtitle text-uppercase">GENIUS COURSE FAQ</span>
-					<h2>Frequently<span> Ask & Questions</span></h2>
-				</div>
-				<div id="accordion" class="panel-group">
-					<div class="row">
-						<div class="col-md-6">
-							<div class="panel">
-								<div class="panel-title" id="headingOne">
-									<h3 class="mb-0">
-										<button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-											How to Register or Make An Account in Genius?
-										</button>
-									</h3>
-								</div>
-								<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-									<div class="panel-body">
-										Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam volutpat. Ut wisi enim ad minim veniam consectetuer adipiscing elit, sed diam nonummy.
-									</div>
-								</div>
-							</div>
-							<div class="panel">
-								<div class="panel-title" id="headingTwo">
-									<h3 class="mb-0">
-										<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-											What is Genius Courses?
-										</button>
-									</h3>
-								</div>
-								<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-									<div class="panel-body">
-										Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam volutpat. Ut wisi enim ad minim veniam consectetuer adipiscing elit, sed diam nonummy.
-									</div>
-								</div>
-							</div>
-							<div class="panel">
-								<div class="panel-title" id="headingThree">
-									<h3 class="mb-0">
-										<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-											What Lorem Ipsum Dolor Sit Amet Consectuerer?
-										</button>
-									</h3>
-								</div>
-								<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-									<div class="panel-body">
-										Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam volutpat. Ut wisi enim ad minim veniam consectetuer adipiscing elit, sed diam nonummy.
-									</div>
-								</div>
-							</div>
-							<div class="panel">
-								<div class="panel-title" id="heading65">
-									<h3 class="mb-0">
-										<button class="btn btn-link  collapsed" data-toggle="collapse" data-target="#collapse65" aria-expanded="true" aria-controls="collapse65">
-											How to Register or Make An Account in Genius?
-										</button>
-									</h3>
-								</div>
-								<div id="collapse65" class="collapse" aria-labelledby="heading65" data-parent="#accordion">
-									<div class="panel-body">
-										Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam volutpat. Ut wisi enim ad minim veniam consectetuer adipiscing elit, sed diam nonummy.
-									</div>
-								</div>
-							</div>
-							<div class="panel">
-								<div class="panel-title" id="heading78">
-									<h3 class="mb-0">
-										<button class="btn btn-link  collapsed" data-toggle="collapse" data-target="#collapse78" aria-expanded="true" aria-controls="collapse78">
-											How to Register or Make An Account in Genius?
-										</button>
-									</h3>
-								</div>
-								<div id="collapse78" class="collapse" aria-labelledby="heading78" data-parent="#accordion">
-									<div class="panel-body">
-										Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam volutpat. Ut wisi enim ad minim veniam consectetuer adipiscing elit, sed diam nonummy.
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-md-6">
-							<div class="panel">
-								<div class="panel-title" id="heading22">
-									<h3 class="mb-0">
-										<button class="btn btn-link" data-toggle="collapse" data-target="#collapse22" aria-expanded="true" aria-controls="collapse22">
-											How to Register or Make An Account in Genius?
-										</button>
-									</h3>
-								</div>
-								<div id="collapse22" class="collapse show" aria-labelledby="heading22" data-parent="#accordion">
-									<div class="panel-body">
-										Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam volutpat. Ut wisi enim ad minim veniam consectetuer adipiscing elit, sed diam nonummy.
-									</div>
-								</div>
-							</div>
-							<div class="panel">
-								<div class="panel-title" id="headingFoure">
-									<h3 class="mb-0">
-										<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFoure" aria-expanded="true" aria-controls="collapseFoure">
-											Adipiscing Diamet Nonnumy Nibh Euismod?
-										</button>
-									</h3>
-								</div>
-								<div id="collapseFoure" class="collapse"  data-parent="#accordion">
-									<div class="panel-body">
-										Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam volutpat. Ut wisi enim ad minim veniam consectetuer adipiscing elit, sed diam nonummy.
-									</div>
-								</div>
-							</div>
-							<div class="panel">
-								<div class="panel-title" id="heading33">
-									<h3 class="mb-0">
-										<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse33" aria-expanded="true" aria-controls="collapse33">
-											What is Genius Courses?
-										</button>
-									</h3>
-								</div>
-								<div id="collapse33" class="collapse" aria-labelledby="heading33" data-parent="#accordion">
-									<div class="panel-body">
-										Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam volutpat. Ut wisi enim ad minim veniam consectetuer adipiscing elit, sed diam nonummy.
-									</div>
-								</div>
-							</div>
-							<div class="panel">
-								<div class="panel-title" id="heading36">
-									<h3 class="mb-0">
-										<button class="btn btn-link  collapsed" data-toggle="collapse" data-target="#collapse36" aria-expanded="true" aria-controls="collapse36">
-											How to Register or Make An Account in Genius?
-										</button>
-									</h3>
-								</div>
-								<div id="collapse36" class="collapse" aria-labelledby="heading36" data-parent="#accordion">
-									<div class="panel-body">
-										Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam volutpat. Ut wisi enim ad minim veniam consectetuer adipiscing elit, sed diam nonummy.
-									</div>
-								</div>
-							</div>
-							<div class="panel">
-								<div class="panel-title" id="heading998">
-									<h3 class="mb-0">
-										<button class="btn btn-link  collapsed" data-toggle="collapse" data-target="#collapse998" aria-expanded="true" aria-controls="collapse998">
-											How to Register or Make An Account in Genius?
-										</button>
-									</h3>
-								</div>
-								<div id="collapse998" class="collapse" aria-labelledby="heading998" data-parent="#accordion">
-									<div class="panel-body">
-										Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam volutpat. Ut wisi enim ad minim veniam consectetuer adipiscing elit, sed diam nonummy.
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- end of #accordion -->
-				</div>
-			</div>
-		</section>
-	<!-- End FAQ section
-		============================================= -->
-
-
 	<!-- Start Course category
 		============================================= -->
-		<section id="course-category" class="course-category-section">
+		<section id="course-category" class="course-category-section" style="background:#d0cfda">
 			<div class="container">
 				<div class="section-title mb45 headline text-center "  >
 					<span class="subtitle text-uppercase">COURSES CATEGORIES</span>
-					<h2>Browse Courses<span> By Category.</span></h2>
+					<h3>Browse Courses<span> By Category.</span></h3>
 				</div>
 				<div class="category-item">
 					<div class="row">
@@ -850,8 +663,57 @@
 			</div>
 		</section>
 	<!-- End Course category
-
 		============================================= -->
+	<!-- Start of alumni section
+		============================================= -->
+		<section id="sponsor" class="sponsor-section">
+			<div class="container">
+				<div class="section-title-2 mb65 headline text-left "  >
+					<h2>Our Alumni <span>Speaks</span></h2>
+				</div>
+				<div id="alumni-slide-item" class="four-grid-slide">
+					@foreach(get_testimonials() as $testimonial)
+					<div class="course-item-pic-text">
+						<div class="course-pic relative-position text-center">
+							<div class="circle-img">
+								<img src="{{ (isset($testimonial->featured_image))?getSizedImage('',$testimonial->featured_image):'https://dummyimage.com/140x140' }}" alt="">		
+							</div>					
+						</div>
+						<div class="alumni-item-text ">
+							<div class="alumni-name text-center">
+								<h3><a href="#">{{ $testimonial->name }}</a> </h3>
+							</div>	
+							<div class="alumni-content text-center">
+								<p><a href="#">{{ $testimonial->dasignation }} </a> </p>
+							</div>	
+						</div>
+					</div>
+					<!-- /item -->
+					@endforeach
+				</div>
+			</div>
+		</section>
+	<!-- End of alumni section
+		============================================= -->	
+		
+	<!-- Start of sponsor section
+		============================================= -->
+		<section id="sponsor" class="sponsor-section">
+			<div class="container">
+				<div class="section-title-2 mb65 headline text-left "  >
+					<h2>Our Alumni <span>Worked At.</span></h2>
+				</div>
+				<div class="sponsor-item sponsor-1 " >
+					@foreach(get_placements() as $value)
+					<div class="sponsor-pic text-center">
+						<img src="{{ getSizedImage('',$value->featured_image) }}" alt="">
+					</div>
+					@endforeach						
+				</div>
+			</div>
+		</section>
+	<!-- End of sponsor section
+		============================================= -->	
 	<!-- Start latest section
 		============================================= -->
 		<section id="latest-area" class="latest-area-section">
@@ -1002,6 +864,74 @@
 			</div>
 		</section>
 	<!-- End latest section
+		============================================= -->
+	<!-- Start FAQ section
+		============================================= -->
+		<section id="faq" class="faq-section">
+			<div class="container">
+				<div class="section-title mb45 headline text-center "  >
+					<span class="subtitle text-uppercase">GENIUS COURSE FAQ</span>
+					<h3>Frequently<span> Ask & Questions</span></h3>
+				</div>
+				<div id="accordion" class="panel-group">
+					<div class="row">
+						<div class="col-md-6">
+						@foreach(get_faqs() as $key => $value)
+							@if($key < 5)
+							<div class="panel">
+								<div class="panel-title" id="heading_{{$key}}">
+									<h3 class="mb-0">
+										<button class="btn btn-link" data-toggle="collapse" data-target="#collapse_{{$key}}" aria-expanded="true" aria-controls="collapse_{{$key}}">
+											{{$value->question}}
+										</button>
+									</h3>
+								</div>
+								<div id="collapse_{{$key}}" class="collapse" aria-labelledby="heading_{{$key}}" data-parent="#accordion">
+									<div class="panel-body">
+									{!!$value->answer!!}
+									</div>
+								</div>
+							</div>
+							@endif
+						@endforeach
+						</div>
+
+						<div class="col-md-6">
+						@foreach(get_faqs() as $key => $value)
+							@if($key >= 5)
+							<div class="panel">
+								<div class="panel-title" id="heading_{{$key}}">
+									<h3 class="mb-0">
+										<button class="btn btn-link" data-toggle="collapse" data-target="#collapse_{{$key}}" aria-expanded="true" aria-controls="collapse_{{$key}}">
+										{{$value->question}}
+										</button>
+									</h3>
+								</div>
+								<div id="collapse_{{$key}}" class="collapse" aria-labelledby="heading_{{$key}}" data-parent="#accordion">
+									<div class="panel-body">
+									{!!$value->answer!!}
+									</div>
+								</div>
+							</div>
+							@endif
+						@endforeach
+						</div>
+
+					</div>
+					<!-- end of #accordion -->
+					
+				</div>
+				<div class="about-btn">
+					<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
+						<a href="#">Make Question <i class="fas fa-caret-right"></i></a>
+					</div>
+					<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
+						<a href="#">contact us <i class="fas fa-caret-right"></i></a>
+					</div>
+				</div>
+			</div>
+		</section>
+	<!-- End FAQ section
 		============================================= -->
     @endsection
 @section('script')

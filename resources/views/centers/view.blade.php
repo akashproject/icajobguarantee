@@ -70,7 +70,7 @@
 
 						<div class="col-md-3">
 							<div class="enroll-btn genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
-								<a data-toggle="modal" data-target="#lead-generation-form" href="#"> Connect To Center </i></a>
+								<a onclick="lead_capture_form_btn('',{{ $center->id }})" href="javascript:void(0)"> Connect To Center </i></a>
 							</div>
 						</div>
 						<!-- /counter -->
@@ -251,14 +251,7 @@
 									</ul>
 								</div>
 							</div>
-							<div class="course-side-bar-widget">
-								<div class="genius-btn gradient-bg text-center text-uppercase float-left bold-font">
-									<a href="#">Download Brochure <i class="fas fa-caret-right"></i></a>
-								</div>
-								<div class="like-course">
-									<a href="#"><i class="fas fa-heart"></i></a>
-								</div>
-							</div>
+							
 						</div>
 					</div>
 				</div>
@@ -295,9 +288,10 @@
 			$reviewRatings = get_reviews_ratings("Center",$center->id);
 		@endphp
 		<section id="review" class="teacher-details-area" >
-			<div class="container"> 
+			<div class="container"> 				
 				<div class="row" >
 					<div class="col-md-9" >
+						@if($reviewRatings)
 						<!-- /course-details -->				
 						<div class="course-review">
 							<div class="section-title-2 mb20 headline text-left">
@@ -339,10 +333,13 @@
 							</div>
 						</div>
 						<!-- /review overview -->
-
+						@else
+						<h5> There are no reviews yet. Be the first one to write one. </h4>
+						@endif
 						<div class="couse-comment">
 							<div class="blog-comment-area ul-li about-teacher-2">
 								<ul class="comment-list">
+									@if($reviewRatings)
 									@foreach($reviewRatings['reviews'] as $review)
 									<li>
 										<div class="author-name-rate">
@@ -356,7 +353,7 @@
 													@endfor
 												</ul>
 											</div>
-											<div class="time-comment float-right">{{ $review->created_at->format('d M, Y') }}</div>
+											<div class="time-comment float-right">{{ $review->created_at; }}</div>
 										</div>
 										<div class="author-designation-comment">
 											<h3>{{$review->title}}</h3>
@@ -365,7 +362,8 @@
 											</p>
 										</div>
 									</li>
-									@endforeach									
+									@endforeach		
+									@endif
 								</ul>
 
 								<div class="reply-comment-box">
@@ -380,29 +378,29 @@
 											<span>Your Rating: </span>
 											<form class="rating">
 												<label>
-													<input type="radio" name="stars" value="1" required />
+													<input type="radio" name="stars" value="1" />
 													<span class="icon"><i class="fas fa-star"></i></span>
 												</label>
 												<label>
-													<input type="radio" name="stars" value="2" required />
+													<input type="radio" name="stars" value="2" />
 													<span class="icon"><i class="fas fa-star"></i></span>
 													<span class="icon"><i class="fas fa-star"></i></span>
 												</label>
 												<label>
-													<input type="radio" name="stars" value="3" required />
+													<input type="radio" name="stars" value="3" />
 													<span class="icon"><i class="fas fa-star"></i></span>
 													<span class="icon"><i class="fas fa-star"></i></span>
 													<span class="icon"><i class="fas fa-star"></i></span>   
 												</label>
 												<label>
-													<input type="radio" name="stars" value="4" required />
+													<input type="radio" name="stars" value="4" />
 													<span class="icon"><i class="fas fa-star"></i></span>
 													<span class="icon"><i class="fas fa-star"></i></span>
 													<span class="icon"><i class="fas fa-star"></i></span>
 													<span class="icon"><i class="fas fa-star"></i></span>
 												</label>
 												<label>
-													<input type="radio" name="stars" value="5" required />
+													<input type="radio" name="stars" value="5" />
 													<span class="icon"><i class="fas fa-star"></i></span>
 													<span class="icon"><i class="fas fa-star"></i></span>
 													<span class="icon"><i class="fas fa-star"></i></span>
@@ -416,11 +414,8 @@
 										<form id="submit-review" method="POST" action="/no-form" data-lead="Residential">
 											<div class="row">
 												<div class="col-md-6">
-													<label for="reviewer_name">Your Name</label>
-													<input type="text" name="reviewer_name" id="reviewer_name" class="@error('title') is-invalid @enderror form-control" required>
-													@error('reviewer_name')
-													<div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-													@enderror
+													<label for="name">Your Name</label>
+													<input type="text" name="reviewer_name" id="reviewer_name" required="required">
 												</div>
 												<div class="col-md-6">
 													<label for="phone">Email Address</label>
@@ -429,7 +424,7 @@
 											</div>
 											<div class="row">
 												<div class="col-md-12">
-													<label for="title">Summary</label>
+													<label for="name">Summary</label>
 													<input type="text" name="title" id="title" required="required">
 												</div>
 											</div>
@@ -438,7 +433,7 @@
 											<div class="nws-button text-center  gradient-bg text-uppercase">
 												<button type="button" class="submitReview">Send Message now</button> 
 											</div>
-											<input type="hidden" name="model" id="model" value="Center">
+											<input type="hidden" name="model" id="model" value="Course">
 											<input type="hidden" name="model_id" id="model_id" value="{{ $center->id }}">
 											<input type="hidden" id="rating" name="rating" value="" />
 										</form>
@@ -450,6 +445,7 @@
 					<div class="col-md-3" >
 					</div>
 				</div>
+				
 			</div>
 		</section>
 		

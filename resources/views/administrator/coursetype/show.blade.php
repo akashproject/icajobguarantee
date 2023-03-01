@@ -8,11 +8,10 @@
 	<div class="card">
 		<div class="card-body">
 		@if($courseType)
-			<h5 class="card-title"> Add New Course Type</h5>
+			<h5 class="card-title"> Edit Course Type #{{ $courseType->id }}</h5>
 			<form class="form-horizontal" method="post" action="{{ url('administrator/save-course-type') }}" enctype="multipart/form-data">
 				@csrf
 				<div class="card-body">
-					<h4 class="card-title"> Add Course </h4>
 					@if ($errors->any())
 						<div class="alert alert-danger">
 							<ul>
@@ -24,7 +23,7 @@
 						</div>
 					@endif
 					<div class="row" >
-						<div class="col-md-5" >
+						<div class="col-md-7" >
 							<div class="form-group row">
 								<label for="name" class="col-sm-3 text-right control-label col-form-label">Name</label>
 								<div class="col-sm-9">
@@ -51,6 +50,40 @@
 									</textarea>
 								</div>
 							</div>
+							<div class="form-group row">
+								<label for="tags" class="col-md-4 text-left control-label col-form-label">Featured Image</label>
+								<div class="col-sm-8 text-center">
+									<a href="#imageBox" class="image-profile open-popup-link">
+										<img src="{{ (isset($courseType->featured_image))?getSizedImage('thumb',$courseType->featured_image):'https://dummyimage.com/150x150?text=Add%20Image' }}" alt="" style="width:100%">
+										<input type="hidden" name="featured_image" id="featured_image" value="{{ $courseType->featured_image }}" >	
+									</a>	
+									@if(isset($courseType->featured_image))
+										<a href="javascript:void(0)" class="removeImage" style="color: #c90f0f;font-weight: 600;"> Remove Image </a>	
+									@endif					
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="tags" class="col-md-4 text-left control-label col-form-label">Banner Image</label>
+								<div class="col-sm-8 text-center">
+									<a href="#imageBox" class="image-profile open-popup-link">
+										<img src="{{ (isset($courseType->banner_image))?getSizedImage('thumb',$courseType->banner_image):'https://dummyimage.com/150x150?text=Add%20Image' }}" alt="" style="width:100%">
+										<input type="hidden" name="banner_image" id="banner_image" value="{{ $courseType->banner_image }}" >	
+									</a>	
+									@if(isset($courseType->banner_image))
+										<a href="javascript:void(0)" class="removeImage" style="color: #c90f0f;font-weight: 600;"> Remove Image </a>	
+									@endif					
+								</div>
+							</div>
+							<div class="form-group row text-center">
+								<label for="tags" class="col-md-4 text-left control-label col-form-label">Brochure</label>
+								<div class="col-sm-8 text-center">
+									<a href="#imageBox" class="image-profile open-popup-link">
+										<img src="{{ (isset($courseType->brochure_id))?url('assets/img/pdf.png'):'https://dummyimage.com/150x150?text=Upload%20File' }}" alt="">
+										<input type="hidden" name="brochure_id" id="attachment" value="{{ $courseType->brochure_id }}" >	
+									</a>	
+													
+								</div>
+							</div>	
 							<div class="form-group row">
 								<label for="state" class="col-sm-3 text-right control-label col-form-label">Status</label>
 								<div class="col-sm-9">
@@ -104,7 +137,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-7" >
+						<div class="col-md-5" >
 							<div class="table-responsive">
 								<table id="zero_config" class="table table-striped table-bordered">
 
@@ -123,11 +156,16 @@
 
 										@foreach ($listCourseType as $value)
 										<tr>
-											<td>{{ $value->title }}</td>													
+											<td>
+												{{ $value->title }}
+												<div >
+													<a href="{{ url('administrator/view-course-type') }}/{{ $value->id }}" class="">Edit</a> | 
+													<a href="{{ url('administrator/delete-course-type') }}/{{ $value->id }}" class="" onclick="return confirm('Are you sure?')"; >Delete </a>
+												</div>
+											</td>													
 											<td>{{ $value->slug }}</td>													
 											<td>
-												<a href="{{ url('administrator/view-course-type') }}/{{ $value->id }}" class="btn btn-primary btn-lg">Edit</a>
-												<a href="{{ url('administrator/delete-course-type') }}/{{ $value->id }}" class="btn btn-danger btn-lg" onclick="return confirm('Are you sure?')"; >Delete </a>
+												
 											</td>
 										</tr>
 										@endforeach							

@@ -47,7 +47,7 @@ class TestimonialController extends Controller
                 'comment' => 'required',
                 'course_id' => 'required',
             ]);
-
+            $data['model'] = json_encode($data['model']);
             if($data['testimonial_id'] <= 0){
                 Testimonial::create($data);
             } else {

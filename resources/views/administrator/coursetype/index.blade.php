@@ -30,7 +30,7 @@
 						</div>
 					@endif
 					<div class="row" >
-						<div class="col-md-5" >
+						<div class="col-md-7" >
 							<div class="form-group row">
 								<label for="name" class="col-sm-3 text-right control-label col-form-label">Name</label>
 								<div class="col-sm-9">
@@ -56,7 +56,16 @@
 									<textarea class="form-control editor" name="description" id="description" placeholder="Enter description Here" ></textarea>
 								</div>
 							</div>
-
+							<div class="form-group row text-center">
+								<label for="tags" class="col-md-2 text-left control-label col-form-label">Brochure</label>
+								<div class="col-sm-8 text-center">
+									<a href="#imageBox" class="image-profile open-popup-link">
+										<img src="https://dummyimage.com/150x150?text=Upload%20File" alt="">
+										<input type="hidden" name="brochure_id" id="attachment" value="" >	
+									</a>	
+													
+								</div>
+							</div>	
 							<div class="form-group row">
 								<label for="state" class="col-sm-3 text-right control-label col-form-label">Status</label>
 								<div class="col-sm-9">
@@ -106,7 +115,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-7" >
+						<div class="col-md-5" >
 							<div class="table-responsive">
 								<table id="zero_config" class="table table-striped table-bordered">
 
@@ -115,7 +124,7 @@
 										<tr>
 											<th>Name</th>
 											<th>Slug</th>
-											<th>Options</th>
+											<th>Count</th>
 										</tr>
 
 									</thead>
@@ -124,11 +133,15 @@
 
 										@foreach ($courseType as $value)
 										<tr>
-											<td>{{ $value->name }}</td>													
+											<td>{{ $value->name }}
+												<div>
+													<a href="{{ url('administrator/view-course-type') }}/{{ $value->id }}" class="">Edit</a> | 
+													<a href="{{ url('administrator/delete-course-type') }}/{{ $value->id }}" class=""; >Delete </a>
+												</div>
+											</td>													
 											<td>{{ $value->slug }}</td>
 											<td>
-												<a href="{{ url('administrator/view-course-type') }}/{{ $value->id }}" class="btn btn-primary btn-lg">Edit</a>
-												<a href="{{ url('administrator/delete-course-type') }}/{{ $value->id }}" class="btn btn-danger btn-lg" onclick="return confirm('Are you sure?')"; >Delete </a>
+											<a href="{{ url('administrator/view-course-type') }}/{{ $value->id }}" class="">4</a>
 											</td>
 										</tr>
 										@endforeach							

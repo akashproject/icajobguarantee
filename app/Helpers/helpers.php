@@ -5,6 +5,27 @@ use App\Models\Review;
 use App\Models\Testimonial;
 use App\Models\Faq;
 use Illuminate\Support\Facades\DB;
+use Jenssegers\Agent\Facades\Agent;
+use App\Models\Center;
+if (! function_exists('check_device')) {
+    function check_device($param = null){
+        switch ($param) {
+            case 'desktop':
+                $device = Agent::isDesktop();
+                break;
+            case 'tablet':
+                $device = Agent::isTablet();
+            case 'mobile':
+                $device = Agent::isPhone();
+                break;
+            case 'os':
+                $device = Agent::device();
+                break;
+        }
+        
+        return $device;
+    }
+}
 
 if (! function_exists('getSizedImage')) {
     function getSizedImage($size = '',$id) {
@@ -40,7 +61,7 @@ if (! function_exists('get_theme_setting')) {
 
 if (! function_exists('get_reviews_ratings')) {
     function get_reviews_ratings($model="",$model_id=""){
-        $reviews = Review::where('model',$model);
+        $reviews = DB::table('reviews');
         if($model){
             $reviews->where('model',$model);
         } 
@@ -50,6 +71,10 @@ if (! function_exists('get_reviews_ratings')) {
         $reviews->where('status',"1");     
         $reviews = $reviews->get();                      
         $total = $reviews->sum('rating');
+
+        if(count($reviews) <= 0){
+            return false;
+        }
         
         $avg = number_format((float)$total/count($reviews), 1, '.', '');
 
@@ -75,7 +100,7 @@ if (! function_exists('get_reviews_ratings')) {
 
 if (! function_exists('get_testimonials')) {
     function get_testimonials($model="",$model_id=""){
-        $testimonials = Testimonial::where('model',$model);
+        $testimonials = DB::table('testimonials');
         if($model){
             $testimonials->where('model',$model);
         } 
@@ -89,9 +114,9 @@ if (! function_exists('get_testimonials')) {
 
 if (! function_exists('get_faqs')) {
     function get_faqs($model="",$model_id=""){
-        $faq = Faq::where('model',$model);
+        $faq = DB::table('faqs');
         if($model){
-            $faq->where('model',$model);
+            $faq->where('model', 'like', '%"' . $model . '"%');
         } 
         if($model_id){
             $faq->where('model_id',$model_id);
@@ -112,5 +137,19 @@ if (! function_exists('get_placements')) {
         }   
         $placements = $placements->where('status',"1")->get();
         return $placements;
+    }
+}
+
+if (! function_exists('get_centers')) {
+    function get_centers($course_id=null, $center_id=null){
+        $centers = DB::table('centers');
+        if($course_id){
+            $centers->where('courses','like', '%"' . $course_id . '"%');
+        } 
+        if($center_id){
+            $centers->where('id',$center_id);
+        } 
+        $centers = $centers->where('status',"1")->get();
+        return $centers;
     }
 }

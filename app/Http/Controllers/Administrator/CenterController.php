@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Center;
 use App\Models\State;
 use App\Models\City;
+use App\Models\CourseType;
 use Illuminate\Support\Facades\DB;
 
 class CenterController extends Controller
@@ -29,7 +30,8 @@ class CenterController extends Controller
     public function add() {
         try {
             $states = State::all();
-            return view('administrator.centers.add',compact('states'));
+            $courseCategories = CourseType::all();
+            return view('administrator.centers.add',compact('states','courseCategories'));
         } catch(\Illuminate\Database\QueryException $e){
             //throw $th;
         }
@@ -39,10 +41,12 @@ class CenterController extends Controller
     public function show($id)
     {
         try {
-            $center = Center::find($id);
+            $courseCategories = CourseType::all();
+            $center = Center::findorFail($id);
+            $center->pincode = implode(',',json_decode($center->pincode));
             $states = State::all();
             $cities = City::where('state_id', $center->state_id)->orderBy('name', 'asc')->get();
-            return view('administrator.centers.show',compact('center','states','cities'));
+            return view('administrator.centers.show',compact('center','states','cities','courseCategories'));
         } catch(\Illuminate\Database\QueryException $e){
         }        
     }
@@ -53,10 +57,12 @@ class CenterController extends Controller
             $validatedData = $request->validate([
                 'title' => 'required',
                 'slug' => 'required',
+                'courses' => 'required',
                 'description' => 'required',
                 'state_id' => 'required',
             ]);
-
+            $data['courses'] = json_encode($data['courses']);
+            $data['pincode'] = json_encode(explode(",",$data['pincode']));
             if($data['center_id'] <= 0){
                 Center::create($data);
             } else {
@@ -68,7 +74,6 @@ class CenterController extends Controller
             var_dump($e->getMessage()); 
         }
     }
-
 
     public function getCitiesByStateId(Request $request){
         try {

@@ -66,7 +66,6 @@ class ReviewController extends Controller
             $validatedData = $request->validate([
                 'status' => 'required',
             ]);
-
             $review = Review::findOrFail($data['review_id']);
             $review->update($data);
             return redirect()->back()->with('message', 'Review updated successfully!');

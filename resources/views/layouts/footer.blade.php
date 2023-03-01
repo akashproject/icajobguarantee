@@ -114,9 +114,10 @@
                             <div class="footer-social ul-li">
                                 <h2 class="widget-title">Social Network</h2>
                                 <ul>
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                                    <li><a href="{{ get_theme_setting('facebook') }}"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="{{ get_theme_setting('twitter') }}"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="{{ get_theme_setting('linkedin') }}"><i class="fab fa-linkedin"></i></a></li>
+                                    <li><a href="{{ get_theme_setting('youtube') }}"><i class="fab fa-youtube"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -164,39 +165,53 @@
     <div class="modal fade" id="lead-generation-form" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-
                 <!-- Modal Header -->
                 <div class="modal-header backgroud-style">
                     <div class="gradient-bg"></div>
                     <div class="popup-logo">
-                        <img src="assets/img/logo/p-logo.jpg" alt="">
+                        <img src="{{ url('assets/img/logo/p-logo.jpg')}}" alt="">
                     </div>
                     <div class="popup-text text-center">
                         <h2> <span>Get</span> In Touch. </h2>
                         <p>Enter your details to start the <span>Application</span></p>
                     </div>
                 </div>
-
                 <!-- Modal body -->
-                <div class="modal-body">                    
-                    <form class="contact_form" action="#" method="POST" enctype="multipart/form-data">
-                        <div class="contact-info">
-                            <input class="name" name="name" type="text" placeholder="Enter Your Name" autocomplete="off">
+                <div class="modal-body">    
+                    <form id="lead_capture_form" class="contact_form lead_capture_form" action="{{ url('capture-lead') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="lead_steps step1 active" > 
+                            @include('common.leadCaptureFormField')
+                            <div class="nws-button text-center white text-capitalize">
+                                <button class="form_step_1" type="submit">Next</button> 
+                            </div>
                         </div>
-                        <div class="contact-info">
-                            <input class="email" name="email" type="email" placeholder="Enter Your Email" autocomplete="off">
+                        <div class="lead_steps step2">
+                            <div class="otp-content">
+                                <h4 class="otp-heading"> OTP Verification </h4>                                   
+                                <p class="message"> <span class="message"> Enter the OTP you recive at </span> +91 XXXXXX<span class="lastDigit"></span> <a href="javacript:void(0)" class="gotoStep1"> (Change) </a> </p>
+                                <p class="response_status" style="color: #000;"></p>
+                            </div> 
+                            <div class="contact-info">
+                                <input class="verify_otp" name="verify_otp" type="text" placeholder="Enter One Time Password" autocomplete="off" required>
+                            </div>
+                            <div class="nws-button text-center white text-capitalize">
+                                <button class="apply_now" type="button">Apply Now</button> 
+                            </div>
                         </div>
-                        <div class="contact-info">
-                            <input class="mobile" name="mobile" type="number" placeholder="Enter Your Mobile" autocomplete="off">
+                        <div class="lead_steps step3">
+                            <div class="form-success-content">
+                                <span class="success-icon"> <i class="fas fa-check"></i> </span>
+                                <h4> Thank You! Your Application Submitted Successfully </h4>
+                                <p> <strong> Brochure </strong> has been sent your email address </p>
+                            </div>
                         </div>
-                        <div class="nws-button text-center white text-capitalize">
-                            <button type="submit" value="Submit">Enquire Now</button> 
-                        </div> 
-                    </form>
-                    <div class="log-in-footer text-center">
-                        <p>* Denotes mandatory field.</p>
-                        <p>** At least one telephone number is required.</p>
-                    </div>
+                        <input type="hidden" name="course_id" value="">
+                        <input type="hidden" name="responsed_otp" class="responsed_otp" value="">
+                        <input type="hidden" name="" class="is_enable_otp" value="1">
+                        <input type="hidden" name="utm_campaign" class="" value="{{ isset($utm_campaign)?$utm_campaign:'' }}">
+                        <input type="hidden" name="utm_source" class="utm_source" value="{{ isset($utm_source)?$utm_source:'' }}">
+                    </form>  
                 </div>
             </div>
         </div>

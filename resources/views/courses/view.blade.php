@@ -19,7 +19,7 @@
 					</div>
 					<div class="col-md-3 text-center" >
 						<div class="enroll-btn header-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
-							<a  data-toggle="modal" data-target="#lead-generation-form" href="#" > Apply Now </a>
+							<a onclick="lead_capture_form_btn({{ $course->type_id }},'')" href="javascript:void(0)" > Apply Now </a>
 						</div>
 					</div>
 				</div>
@@ -93,7 +93,7 @@
 
 						<div class="col-md-3">
 							<div class="enroll-btn genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
-								<a data-toggle="modal" data-target="#lead-generation-form" href="#"> Enroll This Course </i></a>
+								<a onclick="lead_capture_form_btn({{ $course->type_id }},'')" href="javascript:void(0)"> Enroll This Course </i></a>
 							</div>
 						</div>
 						<!-- /counter -->
@@ -172,7 +172,7 @@
 															<div class="panel">
 																<div class="panel-title" id="heading{{$key}}">
 																	<div class="ac-head">												
-																		<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse{{$key}}" aria-expanded="true" aria-controls="collapse{{$key}}">
+																		<button class="btn btn-link {{ (count($carriculams) > 1)?'collapsed':'' ; }}" data-toggle="collapse" data-target="#collapse{{$key}}" aria-expanded="true" aria-controls="collapse{{$key}}">
 																			<span>0{{$key + 1}}</span> {{$carriculam->name}}
 																		</button>
 																		<div class="course-by">
@@ -184,7 +184,7 @@
 																		</div>
 																	</div>
 																</div>
-																<div id="collapse{{$key}}" class="collapse" aria-labelledby="heading{{$key}}" data-parent="#accordion">
+																<div id="collapse{{$key}}" class="collapse {{ (count($carriculams) > 1)?'':'show' ; }}" aria-labelledby="heading{{$key}}" data-parent="#accordion">
 																	<div class="panel-body">
 																		@foreach(json_decode($carriculam->lecture) as $key => $lecture)
 																			<div class="" >
@@ -192,10 +192,12 @@
 																			</div>
 																		@endforeach
 																		<div>
+																			@if($carriculam->benefits)
 																			<h4 class="benefit-title"> Module Benefit </h4>
 																			<div class="benefit-content" >
 																			{!! $carriculam->benefits !!}
 																			</div>
+																			@endif
 																		</div>
 																	</div>
 																</div>
@@ -256,74 +258,13 @@
 							</div>
 							<div class="course-side-bar-widget">
 								<div class="genius-btn gradient-bg text-center text-uppercase float-left bold-font">
-									<a data-toggle="modal" data-target="#lead-generation-form" href="javascript:void(0)"> <i class="fas fa-download"></i> Download Syllabus</a>
+									<a onclick="lead_capture_form_btn({{ $course->type_id }},'')" href="javascript:void(0)"> <i class="fas fa-download"></i> Download Syllabus</a>
 								</div>
 								<div class="like-course">
 									<a href="#"><i class="fas fa-heart"></i></a>
 								</div>
 							</div>
-							<!-- <div class="side-bar-widget">
-								<h2 class="widget-title text-capitalize"><span>Related </span>News.</h2>
-								<div class="latest-news-posts">
-									<div class="latest-news-area">
-										<div class="latest-news-thumbnile relative-position">
-											<img src="{{ url('assets/img/blog/lb-1.jpg') }}" alt="">
-											<div class="hover-search">
-												<i class="fas fa-search"></i>
-											</div>
-											<div class="blakish-overlay"></div>
-										</div>
-										<div class="date-meta">
-											<i class="fas fa-calendar-alt"></i> 26 April 2018
-										</div>
-										<h3 class="latest-title bold-font"><a href="#">Affiliate Marketing A Beginner’s Guide.</a></h3>
-									</div>
-
-									<div class="latest-news-posts">
-										<div class="latest-news-area">
-											<div class="latest-news-thumbnile relative-position">
-												<img src="{{ url('assets/img/blog/lb-2.jpg') }}" alt="">
-												<div class="hover-search">
-													<i class="fas fa-search"></i>
-												</div>
-												<div class="blakish-overlay"></div>
-											</div>
-											<div class="date-meta">
-												<i class="fas fa-calendar-alt"></i> 26 April 2018
-											</div>
-											<h3 class="latest-title bold-font"><a href="#">No.1 The Best Online Course 2018.</a></h3>
-										</div>
-									</div>
-
-									<div class="view-all-btn bold-font">
-										<a href="#">View All News <i class="fas fa-chevron-circle-right"></i></a>
-									</div>
-								</div>
-							</div>
-
-							<div class="side-bar-widget">
-								<h2 class="widget-title text-capitalize"><span>Featured</span> Course.</h2>
-								<div class="featured-course">
-									<div class="best-course-pic-text relative-position">
-										<div class="best-course-pic relative-position">
-										<img src="{{ url('assets/img/blog/fb-1.jpg') }}" alt="">
-											<div class="trend-badge-2 text-center text-uppercase">
-												<i class="fas fa-bolt"></i>
-												<span>Trending</span>
-											</div>
-										</div>
-										<div class="best-course-text">
-											<div class="course-title mb20 headline relative-position">
-												<h3><a href="#">Fully Responsive Web Design &amp; Development.</a></h3>
-											</div>
-											<div class="course-meta">
-												<span class="course-category"><a href="#">Web Design</a></span>
-												<span class="course-author"><a href="#">250 Students</a></span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div> -->
+							
 						</div>
 					</div>
 				</div>
@@ -359,7 +300,7 @@
 						<h3>Student<span> Speaks.</span></h3>
 					</div>
 					<div  id="testimonial-slide-item" class="testimonial-slide-area">
-						@foreach(get_testimonials("Course",$course->id) as $value)
+						@foreach(get_testimonials("Course") as $value)
 						<div class="student-qoute">
 							{!! $value->comment !!}
 							<div class="student-name-designation">
@@ -385,7 +326,7 @@
 					@if($courses)
 						@foreach ($courses as $value)
 						<div class="col-md-3">
-							<div class="best-course-pic-text relative-position">
+							<div class="best-course-pic-text">
 								<div class="best-course-pic relative-position">
 									<img src="{{ URL::to('/') }}/assets/img/course/bc-1.jpg" alt="">
 									<div class="trend-badge-2 text-center text-uppercase">
@@ -415,6 +356,14 @@
 										<span class="course-author"><a href="{{ URL::to('/courses') }}/{{ $value->slug }}">250 Students</a></span>
 									</div>
 								</div>
+								<div class="more-btn text-center" >
+									<div class="course-type-list">	
+										<a class="outline" href="javascript:void(0)" onclick="lead_capture_form_btn({{ $value->category_id }},'')"><i class="fas fa-download"></i> Brochure</a>
+									</div>
+									<div class="course-type-list">														
+										<a href="{{ URL::to('/courses') }}/{{ $value->slug }}" >View More <i class="fas fa-caret-right"></i></a>
+									</div>														
+								</div>	
 							</div>
 						</div>
 						<!-- /course -->
@@ -430,8 +379,10 @@
 		@endphp
 		<section id="review" class="teacher-details-area" >
 			<div class="container"> 
+				
 				<div class="row" >
 					<div class="col-md-9" >
+						@if($reviewRatings)
 						<!-- /course-details -->				
 						<div class="course-review">
 							<div class="section-title-2 mb20 headline text-left">
@@ -473,10 +424,13 @@
 							</div>
 						</div>
 						<!-- /review overview -->
-
+						@else
+						<h5> There are no reviews yet. Be the first one to write one. </h4>
+						@endif
 						<div class="couse-comment">
 							<div class="blog-comment-area ul-li about-teacher-2">
 								<ul class="comment-list">
+									@if($reviewRatings)
 									@foreach($reviewRatings['reviews'] as $review)
 									<li>
 										<div class="author-name-rate">
@@ -490,7 +444,7 @@
 													@endfor
 												</ul>
 											</div>
-											<div class="time-comment float-right">{{ $review->created_at->format('d M, Y') }}</div>
+											<div class="time-comment float-right">{{ $review->created_at }}</div>
 										</div>
 										<div class="author-designation-comment">
 											<h3>{{$review->title}}</h3>
@@ -499,7 +453,8 @@
 											</p>
 										</div>
 									</li>
-									@endforeach									
+									@endforeach		
+									@endif
 								</ul>
 
 								<div class="reply-comment-box">
@@ -567,7 +522,7 @@
 											<label for="review">Message</label>
 											<textarea name="review" id="review" rows="2" cols="20" required="required"></textarea>
 											<div class="nws-button text-center  gradient-bg text-uppercase">
-												<button type="button" class="submitReview">Send Message now</button> 
+												<button type="submit" class="submitReview">Send Message now</button> 
 											</div>
 											<input type="hidden" name="model" id="model" value="Course">
 											<input type="hidden" name="model_id" id="model_id" value="{{ $course->id }}">
@@ -581,6 +536,7 @@
 					<div class="col-md-3" >
 					</div>
 				</div>
+				
 			</div>
 		</section>
 		

@@ -17,6 +17,15 @@ class PageController extends Controller
         return view($page->template)->with('page', $page);
     }
 
+    public function franchiseOpportunity(){
+        try {
+            
+            return view('page.franchise-opportunity');
+        } catch(\Illuminate\Database\QueryException $e){
+            var_dump($e->getMessage()); 
+        }
+    }
+
     public function aboutUs()
     {
         return view('page.about');

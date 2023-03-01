@@ -67,7 +67,7 @@ class MediaController extends Controller
                 'description' => "",
                 'extension' => $request->file->extension(),
                 'size' => number_format((float)($request->file->getSize()/1024), 2, '.', ''),
-                'dimension' => ($dimension)?$dimension:'', 
+                'dimension' => (isset($dimension))?$dimension:'', 
                 'path' => config('constant.relativeMediaPath').'/'.$today,
             );  
 

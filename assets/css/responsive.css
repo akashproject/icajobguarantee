@@ -71,6 +71,21 @@
 }
 
 @media screen and (max-width: 991px) { 
+	.navbar-header {
+		width: 80%;
+	}
+	a.navbar-brand {
+		width: 50%;
+	}
+	.navbar-brand img {
+		width: 95%;
+	}
+	.menu-item-has-children {
+    	float: right;
+	}
+	.header-btn a {
+		font-size: 12px;
+	}
 	.modal-body {
 		padding: 30px 25px;
 	}
@@ -262,6 +277,9 @@
 		margin-top: 30px;
 		width: inherit;
 	}
+	.lead_steps {
+		padding: 0;
+	}
 	.footer-menu {
 		margin-left: 0;
 		margin-right: 30px;
@@ -353,7 +371,7 @@
 	}
 	.navbar-header {
 		width: 180px;
-		right: 80px;
+		right: -30px;
 	}
 	.cart-search {
 		top: 16px;
@@ -676,7 +694,19 @@
 		display: none;
 	}
 	.navbar-header {
-		width: 140px;
+		width: 80%;
+	}
+	a.navbar-brand {
+		width: 48%;
+	}
+	.navbar-brand img {
+		width: 95%;
+	}
+	.menu-item-has-children {
+    	float: right;
+	}
+	.header-btn a {
+		font-size: 12px;
 	}
 	.affiliate-market-accordion .panel-group .panel {
 		padding: 20px 5px

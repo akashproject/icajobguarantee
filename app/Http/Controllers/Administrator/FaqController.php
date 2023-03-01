@@ -41,7 +41,7 @@ class FaqController extends Controller
                 'answer' => 'required',
                 'status' => 'required',
             ]);
-
+            $data['model'] = json_encode($data['model']);
             if($data['faq_id'] <= 0){
                 Faq::create($data);
             } else {

@@ -5,6 +5,8 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
 use App\Models\Media;
+use App\Models\CourseType;
+
 use View;
 
 class AppServiceProvider extends ServiceProvider
@@ -34,12 +36,11 @@ class AppServiceProvider extends ServiceProvider
 
             // Header Menu
             $primaryMenu = array(
-                '/' => 'Home',
-                '/about-us' => "About Us",
-                '/courses' => "Courses",
-                '/centers' => "Centers",
+                '/centers' => "Centers",                
+                '/franchise-opportunity' => "For Franchise",               
+                '/university' => "For University",
                 '/accounts-gst-sap-tally-career-opportunities' => "Placements",
-                '/franchise-opportunity' => "Franchise Opportunity",
+                '/career' => "We Are Hiring",
                 '/blogs' => "Blogs",
             );
             $view->with('primaryMenu', $primaryMenu);
@@ -69,6 +70,9 @@ class AppServiceProvider extends ServiceProvider
                 '#faq' => array('rel'=>"",'value'=>"FAQs"),
             );
             $view->with('courseMenu', $courseMenu);
+
+            $courseTypes = CourseType::All();
+            $view->with('courseTypes', $courseTypes);
 
 
             $centerMenu = array(
