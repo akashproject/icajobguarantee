@@ -511,14 +511,14 @@
 											</div>
 											<div class="best-course-text">
 												<div class="course-title mb20 headline relative-position">
-													<h3><a href="courses/{{ $course->slug }}"> {{ $course->name }} </a>
+													<h3><a href="courses/{{ $course->slug }}"> {{ $course->name }} </a> <br>
 													 <span class="trend-bestseller text-uppercase bold-font">
 														<i class="fas fa-bolt"></i> Bestseller</span> 
 													</h3>
 												</div>
 												<div class="course-meta">
-													<span class="course-category"><a href="#">{{ $course->duration }}</a></span>
-													<span class="course-author"><a href="#">{{ thousandsCurrencyFormat($course->number_of_enrolled) }} Students</a></span>
+													<span class="course-category"><a href="#"><i class="fas fa-clock"></i> {{ $course->duration }}</a></span>
+													<span class="course-author"><a href="#"><i class="fas fa-user"></i> {{ thousandsCurrencyFormat($course->number_of_enrolled) }} Students</a></span>
 												</div>
 											</div>
 											<div class="more-btn text-center" >

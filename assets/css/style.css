@@ -1588,14 +1588,6 @@ button.alt-menu-btn.float-left {
     font-size: 14px;
     margin-right: 24px;
     position: relative; }
-    .course-meta span:after {
-      top: 2px;
-      width: 1px;
-      content: '';
-      height: 15px;
-      right: -14px;
-      position: absolute;
-      background-color: #989898; }
     .course-meta span:last-child:after {
       display: none; }
   .course-meta .course-category, .latest-events .course-meta .course-author {
@@ -2304,7 +2296,7 @@ button.alt-menu-btn.float-left {
   .best-course-pic-text .best-course-text {
     background-color: #fff;
     border-radius: 4px;
-    padding: 11px 17px 7px 17px;
+    padding: 11px 10px 7px 17px;
     -webkit-transition: .3s all ease-in-out;
     -o-transition: .3s all ease-in-out;
     transition: .3s all ease-in-out; 

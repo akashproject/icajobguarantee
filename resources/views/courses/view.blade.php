@@ -352,8 +352,8 @@
 										<h3><a href="{{ URL::to('/courses') }}/{{ $value->slug }}">{{ $value->name }}</a></h3>
 									</div>
 									<div class="course-meta">
-										<span class="course-category"><a href="{{ URL::to('/courses') }}/{{ $value->slug }}">Web Design</a></span>
-										<span class="course-author"><a href="{{ URL::to('/courses') }}/{{ $value->slug }}">250 Students</a></span>
+										<span class="course-category"><a href="#"><i class="fas fa-clock"></i> {{ $course->duration }}</a></span>
+										<span class="course-author"><a href="#"><i class="fas fa-user"></i> {{ thousandsCurrencyFormat($course->number_of_enrolled) }} Students</a></span>
 									</div>
 								</div>
 								<div class="more-btn text-center" >

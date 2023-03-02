@@ -60,7 +60,7 @@
 										<table>
 										
 											<tr class="list-head">
-												<th>COURSE NAME {{ (check_device('desktop'))?'active':'' }}</th>												
+												<th>COURSE NAME</th>												
 												<th>DURATION</th>
 												<th>OFFER</th>
 												<th>Options</th>
@@ -198,48 +198,6 @@
 
 								</div>
 							</div>
-
-							<div class="side-bar-widget">
-								<h2 class="widget-title text-capitalize"><span>Recent  </span>News</h2>
-								<div class="latest-news-posts">
-									<div class="latest-news-area">
-										<div class="latest-news-thumbnile relative-position">
-											<img src="{{ URL::to('/') }}/assets//img/blog/lb-1.jpg" alt="">
-											<div class="hover-search">
-												<i class="fas fa-search"></i>
-											</div>
-											<div class="blakish-overlay"></div>
-										</div>
-										<div class="date-meta">
-											<i class="fas fa-calendar-alt"></i> 26 April 2018
-										</div>
-										<h3 class="latest-title bold-font"><a href="#">Affiliate Marketing A Beginner’s Guide.</a></h3>
-									</div>
-									<!-- /post -->
-
-									<div class="latest-news-posts">
-										<div class="latest-news-area">
-											<div class="latest-news-thumbnile relative-position">
-												<img src="{{ URL::to('/') }}/assets/img/blog/lb-2.jpg" alt="">
-												<div class="hover-search">
-													<i class="fas fa-search"></i>
-												</div>
-												<div class="blakish-overlay"></div>
-											</div>
-											<div class="date-meta">
-												<i class="fas fa-calendar-alt"></i> 26 April 2018
-											</div>
-											<h3 class="latest-title bold-font"><a href="#">No.1 The Best Online Course 2018.</a></h3>
-										</div>
-										<!-- /post -->
-									</div>
-
-									<div class="view-all-btn bold-font">
-										<a href="#">View All News <i class="fas fa-chevron-circle-right"></i></a>
-									</div>
-								</div>
-							</div>
-
 							<div class="side-bar-widget">
 								<h2 class="widget-title text-capitalize">Popular <span>Tag's.</span></h2>
 								<div class="tag-clouds ul-li">
@@ -262,62 +220,6 @@
 		</section>
 	<!-- End of course section
 		============================================= -->
-
-		<section id="best-course" class="best-course-section">
-			<div class="container">
-				<div class="section-title mb45 headline text-center">
-					<span class="subtitle text-uppercase">SEARCH OUR COURSES</span>
-					<h3>You<span> Recently View.</span></h3>
-				</div>
-				<div class="best-course-area mb45">
-					<div class="row">
-					@if($courses)
-						@foreach ($courses as $value)
-						<div class="col-md-3">
-							<div class="best-course-pic-text relative-position">
-								<div class="best-course-pic relative-position">
-									<img src="{{ URL::to('/') }}/assets/img/course/bc-1.jpg" alt="">
-									<div class="trend-badge-2 text-center text-uppercase">
-										<i class="fas fa-bolt"></i>
-										<span>Trending</span>
-									</div>
-									<div class="course-rate ul-li">
-										<ul>
-											<li><i class="fas fa-star"></i></li>
-											<li><i class="fas fa-star"></i></li>
-											<li><i class="fas fa-star"></i></li>
-											<li><i class="fas fa-star"></i></li>
-											<li><i class="fas fa-star"></i></li>
-										</ul>
-									</div>
-									<div class="course-details-btn">
-										<a href="{{ URL::to('/courses') }}/{{ $value->slug }}">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
-									</div>
-									<div class="blakish-overlay"></div>
-								</div>
-								<div class="best-course-text">
-									<div class="course-title mb10 headline relative-position">
-										<h3><a href="{{ URL::to('/courses') }}/{{ $value->slug }}">{{ $value->course_name }}</a></h3>
-									</div>
-									<div class="course-short-description mb10" >
-										{!! substr($value->excerpt,0,100); !!}...
-									</div>
-									<div class="course-meta">
-										<span class="course-category"><a href="{{ URL::to('/courses') }}/{{ $value->slug }}">Web Design</a></span>
-										<span class="course-author"><a href="{{ URL::to('/courses') }}/{{ $value->slug }}">250 Students</a></span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- /course -->
-					@endforeach	
-						@endif	
-						
-					</div>
-				</div>
-			</div>
-		</section>
-
 	<!-- Start of sponsor section
 		============================================= -->
 		<section id="career" class="sponsor-section">
@@ -375,6 +277,14 @@
 										<span class="course-category"><a href="{{ URL::to('/courses') }}/{{ $value->slug }}">Web Design</a></span>
 										<span class="course-author"><a href="{{ URL::to('/courses') }}/{{ $value->slug }}">250 Students</a></span>
 									</div>
+								</div>
+								<div class="more-btn text-center" >
+									<div class="course-type-list">	
+										<a class="outline" href="javascript:void(0)" onclick="lead_capture_form_btn({{ $value->id }},'')"><i class="fas fa-download"></i> Brochure</a>
+									</div>
+									<div class="course-type-list">														
+										<a href="{{ URL::to('/course-category') }}/{{ $value->slug }}" >View More <i class="fas fa-caret-right"></i></a>
+									</div>														
 								</div>
 							</div>
 						</div>
