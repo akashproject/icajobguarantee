@@ -29,6 +29,19 @@ CREATE TABLE `blogs` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `brochures`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `brochures` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `attachment` int(11) NOT NULL,
+  `status` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `centers`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -47,6 +60,7 @@ CREATE TABLE `centers` (
   `whatsapp` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `address` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `gmap_location` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `courses` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `state_id` int(11) DEFAULT NULL,
   `city_id` int(11) DEFAULT NULL,
   `pincode` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -72,7 +86,6 @@ CREATE TABLE `cities` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `slug` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `districtid` int(11) NOT NULL,
   `state_id` int(11) NOT NULL,
   `description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -91,6 +104,9 @@ CREATE TABLE `course_type` (
   `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `excerpt` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `banner_image` int(11) DEFAULT NULL,
+  `featured_image` int(11) DEFAULT NULL,
+  `brochure_id` int(11) DEFAULT NULL,
   `parent_id` int(11) DEFAULT NULL,
   `enable_otp` tinyint(1) NOT NULL DEFAULT 1,
   `meta_description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -429,3 +445,4 @@ INSERT INTO `migrations` VALUES (39,'2023_02_08_125943_create_curriculums_table'
 INSERT INTO `migrations` VALUES (40,'2022_11_23_062217_create_courses_table',17);
 INSERT INTO `migrations` VALUES (41,'2023_02_20_083653_create_recruiters_table',18);
 INSERT INTO `migrations` VALUES (42,'2023_02_20_123712_create_gallery_table',19);
+INSERT INTO `migrations` VALUES (44,'2023_02_22_113616_create_brochures_table',20);
