@@ -15,17 +15,20 @@ return new class extends Migration
     {
         Schema::create('pages', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('slug');
-            $table->string('banner_image');
-            $table->text('description');
-            $table->text('seo_description');
-            $table->string('template');
-            $table->boolean('enable_otp');
-            $table->text('schema');
-            $table->string('utm_campaign',100);
-            $table->string('utm_source',100);
-            $table->boolean('status',100);
+            $table->string('name');
+            $table->string('title')->nullable();
+            $table->string('slug')->nullable();
+            $table->string('banner_image')->nullable();
+            $table->text('description')->nullable();    
+            $table->string('template',50)->default('default-template');    
+            $table->boolean('enable_otp')->default('1');
+            $table->text('meta_description')->nullable();
+            $table->text('schema')->nullable();
+            $table->string('robots',150)->default('index, follow');           
+            $table->string('canonical')->nullable();           
+            $table->string('utm_campaign',100)->default('Google-Organic');
+            $table->string('utm_source',100)->default('SEO');
+            $table->boolean('status',100)->default('1');    
             $table->timestamps();
         });
     }

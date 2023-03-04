@@ -79,7 +79,7 @@ class CourseController extends Controller
                 }
                 $course->update($data);
             }
-            return redirect()->back()->with('message', 'Page updated successfully!');
+            return redirect()->back()->with('message', 'Course updated successfully!');
         } catch(\Illuminate\Database\QueryException $e){
             var_dump($e->getMessage()); 
         }

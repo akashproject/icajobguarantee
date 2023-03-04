@@ -211,6 +211,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .pb10 {
   padding-bottom: 10px; }
+.height-60 {
+  height: 60px;
+}
+
 
 .gradient-bg, .modal-body .nws-button button, .teacher-pic-content .teacher-img-content:after, .course-details-category li:hover,ul.product-tab li.active {
   background: #393185;
@@ -395,7 +399,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .breadcrumb-section {
   background-image: url(../img/banner/brt-1.jpg);
-  padding-bottom: 355px; }
+  padding-bottom: 435px; }
   .breadcrumb-section .blakish-overlay {
     opacity: 0.5;
     visibility: visible;
@@ -407,6 +411,7 @@ h1, h2, h3, h4, h5, h6 {
   .breadcrumb-section .page-breadcrumb-content {
     position: absolute;
     top: 60%;
+    width: 60%;
     -webkit-transform: translateY(-60%);
     -ms-transform: translateY(-60%);
     transform: translateY(-60%);
@@ -414,7 +419,6 @@ h1, h2, h3, h4, h5, h6 {
     color: #fff;
     right: 0; }
     .page-breadcrumb-description {
-      width: 50%;
       font-size: 16px;
     }
   .breadcrumb-section .breadcrumb-head {
@@ -1586,7 +1590,7 @@ button.alt-menu-btn.float-left {
   width: 100%; }
   .course-meta span {
     font-size: 14px;
-    margin-right: 24px;
+    margin-right: 17px;
     position: relative; }
     .course-meta span:last-child:after {
       display: none; }
@@ -1618,7 +1622,6 @@ button.alt-menu-btn.float-left {
   margin-bottom: 5px;
   font-weight: 500;
   line-height: 30px;
-  height: 80px;
   -webkit-transition: .3s all ease-in-out;
   -o-transition: .3s all ease-in-out;
   transition: .3s all ease-in-out; 
@@ -2281,7 +2284,6 @@ button.alt-menu-btn.float-left {
   .best-course-pic-text .course-title h3 {
     font-size: 16px;
     line-height: 24px;
-    height: 80px;
   }
   .best-course-pic-text .course-type-title h3 {
     font-size: 16px;

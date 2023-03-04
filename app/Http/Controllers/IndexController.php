@@ -35,7 +35,7 @@ class IndexController extends Controller
 
     public function getCenters(Request $request) {
         $data = $request->all();
-        $centers = get_centers($data['course_id'], $data['center_id']);
+        $centers = getCenters($data['course_id'], $data['center_id']);
         $option = "";
         if(count($centers) > 1){
             $option .= "<option> Select Center </option>";

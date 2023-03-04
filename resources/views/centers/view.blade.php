@@ -239,7 +239,7 @@
 													<i class="text-gradiant fas fa-map-marker-alt"></i>
 												</div>
 												<div class="info-content">
-													<span class="info-id">ICA Edu Skills Shantipuram</span>
+													<span class="info-id">ICA Edu Skills | {{ $center->name }}</span>
 													<span class="info-text">
 														<a href="javascript:void(0)" > {{ $center->address }} </a>
 														<br>
@@ -269,7 +269,7 @@
 						<h3>Student<span> Speaks.</span></h3>
 					</div>
 					<div  id="testimonial-slide-item" class="testimonial-slide-area">
-						@foreach(get_testimonials("Course",$center->id) as $value)
+						@foreach(getTestimonials("Course",$center->id) as $value)
 						<div class="student-qoute">
 							{!! $value->comment !!}
 							<div class="student-name-designation">

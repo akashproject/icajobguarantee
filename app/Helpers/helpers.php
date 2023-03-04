@@ -7,6 +7,9 @@ use App\Models\Faq;
 use Illuminate\Support\Facades\DB;
 use Jenssegers\Agent\Facades\Agent;
 use App\Models\Center;
+use App\Models\Course;
+use App\Models\CourseType;
+use App\Models\State;
 if (! function_exists('check_device')) {
     function check_device($param = null){
         switch ($param) {
@@ -98,8 +101,8 @@ if (! function_exists('get_reviews_ratings')) {
     }
 }
 
-if (! function_exists('get_testimonials')) {
-    function get_testimonials($model="",$model_id=""){
+if (! function_exists('getTestimonials')) {
+    function getTestimonials($model="",$model_id=""){
         $testimonials = DB::table('testimonials');
         if($model){
             $testimonials->where('model',$model);
@@ -112,8 +115,8 @@ if (! function_exists('get_testimonials')) {
     }
 }
 
-if (! function_exists('get_faqs')) {
-    function get_faqs($model="",$model_id=""){
+if (! function_exists('getFaqs')) {
+    function getFaqs($model="",$model_id=""){
         $faq = DB::table('faqs');
         if($model){
             $faq->where('model', 'like', '%"' . $model . '"%');
@@ -126,8 +129,8 @@ if (! function_exists('get_faqs')) {
     }
 }
 
-if (! function_exists('get_placements')) {
-    function get_placements($model="",$model_id=""){
+if (! function_exists('getPlacements')) {
+    function getPlacements($model="",$model_id=""){
         $placements = DB::table('recruiters');
         if($model){
             $placements->where('model',$model);
@@ -140,8 +143,19 @@ if (! function_exists('get_placements')) {
     }
 }
 
-if (! function_exists('get_centers')) {
-    function get_centers($course_id=null, $center_id=null){
+if (! function_exists('getStates')) {
+    function getStates(){
+        try {
+            $states = State::where('status', 1)->orderBy("name","asc")->get();
+            return $states;
+        } catch(\Illuminate\Database\QueryException $e){
+            throw $e;
+        }
+    }
+}
+
+if (! function_exists('getCenters')) {
+    function getCenters($course_id=null, $center_id=null){
         $centers = DB::table('centers');
         if($course_id){
             $centers->where('courses','like', '%"' . $course_id . '"%');
@@ -151,5 +165,39 @@ if (! function_exists('get_centers')) {
         } 
         $centers = $centers->where('status',"1")->get();
         return $centers;
+    }
+}
+
+if (! function_exists('getCourses')) {
+    function getCourses(){
+        try {
+            $search = (request()->has('search'))?request()->get('search'):"";
+            $courses = DB::table('courses')
+            ->join('course_type', 'course_type.id', '=', 'courses.type_id')
+            ->select('courses.*', 'courses.name as course_name','course_type.name as category','course_type.id as category_id');
+            if($search){
+                $courses->where('courses.name', 'like', '%' . $search . '%');
+                $courses->where('courses.description', 'like', '%' . $search . '%');
+                $courses->orWhere('course_type.name', 'like', '%' . $search . '%');
+                $courses->orWhere('course_type.slug', 'like', '%' . $search . '%');
+            }
+            $courses = $courses->distinct()
+            ->orderBy('courses.id', 'asc')
+            ->get();
+            return $courses;
+            //return view('courses.index',compact('model','courses','courseTypes'));
+        } catch(\Illuminate\Database\QueryException $e){
+            throw $e;
+        }
+    }
+}
+
+if (! function_exists('getCourseTypes')) {
+    function getCourseTypes(){
+        try {
+            return $courseTypes = CourseType::where('status', 1)->get();
+        } catch(\Illuminate\Database\QueryException $e){
+            throw $e;
+        }
     }
 }

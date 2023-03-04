@@ -10,7 +10,7 @@
 <div class="register-form-area">
     <select class="center" name="center" required>
         @php
-            $centers = get_centers('',isset($center_id)?$center_id:'');
+            $centers = getCenters('',isset($center_id)?$center_id:'');
         @endphp
         @if(count($centers) > 1)
         <option value="" selected> Select Location </option>

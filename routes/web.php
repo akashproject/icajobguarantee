@@ -24,6 +24,13 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::get('/dashboard', [App\Http\Controllers\Administrator\IndexController::class, 'index'])->name('dashboard');
         Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('administrator-logout');
         
+        //Page
+        Route::get('/pages', [App\Http\Controllers\Administrator\PageController::class, 'index'])->name('admin-pages');
+        Route::get('/add-page', [App\Http\Controllers\Administrator\PageController::class, 'Add'])->name('admin-add-page');
+        Route::get('/view-page/{id}', [App\Http\Controllers\Administrator\PageController::class, 'show'])->name('admin-view-page');
+        Route::post('/save-page', [App\Http\Controllers\Administrator\PageController::class, 'save'])->name('admin-save-page');
+        Route::get('/delete-page/{id}', [App\Http\Controllers\Administrator\PageController::class, 'delete'])->name('admin-delete-page');
+
         //Courses
         Route::get('/courses', [App\Http\Controllers\Administrator\CourseController::class, 'index'])->name('admin-courses');
         Route::get('/add-course', [App\Http\Controllers\Administrator\CourseController::class, 'Add'])->name('admin-add-course');
@@ -99,39 +106,33 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
     // Will be inside middleware
 });
 
-//Administrator
-//Route::get('/administrator', [App\Http\Controllers\Administrator\IndexController::class, 'index'])->name('index');
-// Route::get('/administrator/login', [App\Http\Controllers\Administrator\IndexController::class, 'login'])->name('login');
-//Route::get('/administrator/logout', [App\Http\Controllers\Administrator\IndexController::class, 'logout'])->name('administrator-logout');
-// Route::get('/administrator/dashboard', [App\Http\Controllers\Administrator\IndexController::class, 'logout'])->name('dashboard');
-
-//Route::get('{slug}', [App\Http\Controllers\PageController::class, 'getPage'])->where('slug', '([A-Za-z0-9\-\/]+)');
+Route::get('/{slug}', [App\Http\Controllers\PageController::class, 'index'])->where('slug', '([A-Za-z0-9\-]+)');
 
 // Individual Pages
 Route::get('/', [App\Http\Controllers\IndexController::class, 'index'])->name('index');
-Route::get('/about-us', [App\Http\Controllers\PageController::class, 'aboutUs'])->name('about-us');
-Route::get('/contact-us', [App\Http\Controllers\PageController::class, 'contactUs'])->name('contact-us');
-Route::get('/accounts-gst-sap-tally-career-opportunities', [App\Http\Controllers\PageController::class, 'placementPage'])->name('placement');
-Route::get('/franchise-opportunity', [App\Http\Controllers\PageController::class, 'franchiseOpportunity'])->name('franchise-opportunity');
-Route::get('/career', [App\Http\Controllers\PageController::class, 'careerpage'])->name('career');
+// Route::get('/about-us', [App\Http\Controllers\PageController::class, 'aboutUs'])->name('about-us');
+// Route::get('/contact-us', [App\Http\Controllers\PageController::class, 'contactUs'])->name('contact-us');
+// Route::get('/accounts-gst-sap-tally-career-opportunities', [App\Http\Controllers\PageController::class, 'placementPage'])->name('placement');
+// Route::get('/franchise-opportunity', [App\Http\Controllers\PageController::class, 'franchiseOpportunity'])->name('franchise-opportunity');
+// Route::get('/career', [App\Http\Controllers\PageController::class, 'careerpage'])->name('career');
 
 // Courses
-Route::get('/courses', [App\Http\Controllers\CourseController::class, 'index'])->name('courses');
+//Route::get('/courses', [App\Http\Controllers\CourseController::class, 'index'])->name('courses');
 Route::get('/course-category/{slug}', [App\Http\Controllers\CourseController::class, 'courseListByCategory'])->name('course-category');
 Route::get('/courses/{slug}', [App\Http\Controllers\CourseController::class, 'viewCourse'])->name('view-courses');
 Route::get('/search/{slug}', [App\Http\Controllers\CourseController::class, 'search'])->name('search-courses');
 
 // Centers
-Route::get('/centers', [App\Http\Controllers\CenterController::class, 'index'])->name('centers');
+//Route::get('/centers', [App\Http\Controllers\CenterController::class, 'index'])->name('centers');
 Route::get('/centers/{slug}', [App\Http\Controllers\CenterController::class, 'viewCenters'])->name('view-centers');
 Route::get('/state/{slug}', [App\Http\Controllers\CenterController::class, 'state'])->name('states');
 Route::get('/city/{slug}', [App\Http\Controllers\CenterController::class, 'city'])->name('city');
 
 Route::post('/submit-review', [App\Http\Controllers\ReviewController::class, 'create'])->name('submit-review');
-Route::get('/blogs', [App\Http\Controllers\BlogController::class, 'index'])->name('blogs');
+//Route::get('/blogs', [App\Http\Controllers\BlogController::class, 'index'])->name('blogs');
 
 //Capture Leads
-Route::get('/home', [App\Http\Controllers\IndexController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\IndexController::class, 'index'])->name('home');
 Route::post('/submit-mobile-otp', [App\Http\Controllers\IndexController::class, 'submitMobileOtp'])->name('submit-mobile-otp');
 Route::post('/capture-lead', [App\Http\Controllers\IndexController::class, 'captureLead'])->name('capture-lead');
 Route::post('/get-centers', [App\Http\Controllers\IndexController::class, 'getCenters'])->name('get-centers');

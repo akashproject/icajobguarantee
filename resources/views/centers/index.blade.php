@@ -401,7 +401,7 @@
 							<div class="faq-tab mb35">
 								<div class="faq-tab-ques  ul-li">
 									<div id="accordion3" class="panel-group">
-										@foreach(get_faqs("Center") as $key => $value)
+										@foreach(getFaqs("Center") as $key => $value)
 										<div class="panel">
 											<div class="panel-title" id="heading_{{$key}}">
 												<h3 class="mb-{{$key}}">

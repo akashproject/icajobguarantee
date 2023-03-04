@@ -2,17 +2,17 @@
     @section('content')
 	<!-- Start of breadcrumb section
 		============================================= -->
-	<section id="breadcrumb" class="breadcrumb-section relative-position backgroud-style" style="background-image: url({{ (isset($category->banner_image))?getSizedImage('',$category->banner_image):url('assets/img/banner/brt-1.jpg') }});">
+	<section id="breadcrumb" class="breadcrumb-section relative-position backgroud-style" style="background-image: url({{ (isset($category->banner_image))?getSizedImage('',$page->banner_image):url('assets/img/banner/brt-1.jpg') }});">
 		<div class="blakish-overlay"></div>
 		<div class="container">
 			<div class="page-breadcrumb-content">
 				<div class="page-breadcrumb-title">
 					<h2 class="breadcrumb-head black bold">
-						{{(isset($category))?$category->name:"Courses" }}
+						{{(isset($page))?$page->name:"Default Title" }}
 					</h2>
 				</div>
 				<div class="page-breadcrumb-description">
-					{{(isset($category))?$category->excerpt:"Courses" }}
+					{!!(isset($page))?$page->description:"Default description" !!}
 				</div>
 				<div class="page-breadcrumb-option">
 					
@@ -59,11 +59,11 @@
 										<tr class="list-head">
 											<th>COURSE NAME</th>												
 											<th>DURATION</th>
-											<th>OFFER</th>
+											<th>MODULE</th>
 											<th>Options</th>
 										</tr>
-										@if($courses)
-										@foreach ($courses as $value)
+										@if(getCourses())
+										@foreach (getCourses() as $value)
 										<tr>
 											<td>
 												<div class="course-list-img-text">
@@ -91,7 +91,7 @@
 											</td>
 											
 											<td> {{ $value->duration}} </td>
-											<td> No Cost EMI </td>
+											<td> {{ $value->no_of_module }} Modules </td>
 											<td>
 												<div class="course-type-list">														
 													<a href="javascript:void(0)" onclick="lead_capture_form_btn({{ $value->category_id }},'')"><i class="fas fa-download"></i> Brochure</a>
@@ -109,8 +109,8 @@
 							@else
 								<div class="best-course-area best-course-v2">
 									<div class="row">
-									@if($courses)
-										@foreach ($courses as $value)
+									@if(getCourses())
+										@foreach (getCourses() as $value)
 										<div class="col-md-4">
 											<div class="best-course-pic-text relative-position">
 												<div class="best-course-pic relative-position">
@@ -166,8 +166,8 @@
 									<label>COURSE TYPE</label>
 									<select class="gotoCourseCategory">
 										<option value="" selected="">All Categories </option>
-									@if($courseTypes)
-										@foreach ($courseTypes as $value)
+									@if(getCourseTypes())
+										@foreach (getCourseTypes() as $value)
 										<option value="{{ URL::to('/course-category') }}/{{ $value->slug }}" {{ (isset($category->slug) && ($value->slug == $category->slug)) ?"selected":"" }}> {{ $value->name }} </option>
 										@endforeach	
 									@endif		
@@ -306,7 +306,7 @@
 							<div class="faq-tab mb35">
 								<div class="faq-tab-ques  ul-li">
 									<div id="accordion3" class="panel-group">
-										@foreach(getFaqs($model) as $key => $value)
+										@foreach(getFaqs("Course") as $key => $value)
 										<div class="panel">
 											<div class="panel-title" id="heading_{{$key}}">
 												<h3 class="mb-{{$key}}">

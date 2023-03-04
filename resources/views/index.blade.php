@@ -216,7 +216,7 @@
 						</div>
 						<div class="course-item-text mb-20">
 							<div class="course-meta">
-								<span class="course-category bold-font"><a href="#">{{$course->duration}}</a></span>
+								<span class="course-category bold-font"><a href="#"><i class="fas fa-user"></i> {{thousandsCurrencyFormat($course->number_of_enrolled)}} Students</a></span>
 								<div class="course-rate ul-li">
 									<ul>
 										<li><i class="fas fa-star"></i></li>
@@ -227,14 +227,13 @@
 									</ul>
 								</div>
 							</div>
-							<div class="course-title mt10 headline relative-position">
+							<div class="course-title mt10 headline relative-position height-60">
 								<h3><a href="courses/{{ $course->slug }}">{{ $course->name }}</a> </h3>
 							</div>
 							<div class="course-viewer ul-li">
 								<ul>
-									<li><a href=""><i class="fas fa-user"></i> 1.220</a></li>
-									<li><a href=""><i class="fas fa-comment-dots"></i> 1.015</a></li>
-									<li><a href="">125k Unrolled</a></li>
+									<li><a href=""><i class="fas fa-clock"></i> {{$course->duration}} </a></li>
+									<li><a href=""><i class="fas fa-book"></i> {{$course->no_of_module}} Modules</a></li>
 								</ul>
 							</div>
 						</div>
@@ -510,15 +509,15 @@
 												<div class="blakish-overlay"></div>
 											</div>
 											<div class="best-course-text">
-												<div class="course-title mb20 headline relative-position">
-													<h3><a href="courses/{{ $course->slug }}"> {{ $course->name }} </a> <br>
+												<div class="course-title mb20 headline relative-position height-60">
+													<h3><a href="courses/{{ $course->slug }}"> {{ $course->name }} </a> 
 													 <span class="trend-bestseller text-uppercase bold-font">
 														<i class="fas fa-bolt"></i> Bestseller</span> 
 													</h3>
 												</div>
 												<div class="course-meta">
 													<span class="course-category"><a href="#"><i class="fas fa-clock"></i> {{ $course->duration }}</a></span>
-													<span class="course-author"><a href="#"><i class="fas fa-user"></i> {{ thousandsCurrencyFormat($course->number_of_enrolled) }} Students</a></span>
+													<span class="course-author"><a href="#"><i class="fas fa-user"></i> {{ $course->no_of_module }} Modules</a></span>
 												</div>
 											</div>
 											<div class="more-btn text-center" >
@@ -672,7 +671,7 @@
 					<h2>Our Alumni <span>Speaks</span></h2>
 				</div>
 				<div id="alumni-slide-item" class="four-grid-slide">
-					@foreach(get_testimonials() as $testimonial)
+					@foreach(getTestimonials() as $testimonial)
 					<div class="course-item-pic-text">
 						<div class="course-pic relative-position text-center">
 							<div class="circle-img">
@@ -704,7 +703,7 @@
 					<h2>Our Alumni <span>Worked At.</span></h2>
 				</div>
 				<div class="sponsor-item sponsor-1 " >
-					@foreach(get_placements() as $value)
+					@foreach(getPlacements() as $value)
 					<div class="sponsor-pic text-center">
 						<img src="{{ getSizedImage('',$value->featured_image) }}" alt="">
 					</div>
@@ -876,7 +875,7 @@
 				<div id="accordion" class="panel-group">
 					<div class="row">
 						<div class="col-md-6">
-						@foreach(get_faqs() as $key => $value)
+						@foreach(getFaqs() as $key => $value)
 							@if($key < 5)
 							<div class="panel">
 								<div class="panel-title" id="heading_{{$key}}">
@@ -897,7 +896,7 @@
 						</div>
 
 						<div class="col-md-6">
-						@foreach(get_faqs() as $key => $value)
+						@foreach(getFaqs() as $key => $value)
 							@if($key >= 5)
 							<div class="panel">
 								<div class="panel-title" id="heading_{{$key}}">

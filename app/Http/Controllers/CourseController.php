@@ -11,8 +11,7 @@ use App\Models\Review;
 
 class CourseController extends Controller
 {
-    //
-
+   
     public function index(Request $request)
     {
         try {

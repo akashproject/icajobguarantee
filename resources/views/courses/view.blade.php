@@ -27,7 +27,7 @@
 		</div>
     <!-- Start of breadcrumb section
 		============================================= -->
-		<section id="breadcrumb" class="breadcrumb-section relative-position backgroud-style">
+		<section id="breadcrumb" class="breadcrumb-section relative-position backgroud-style" style="background-image: url({{ (isset($category->banner_image))?getSizedImage('',$category->banner_image):url('assets/img/banner/brt-1.jpg') }});" >
 			<div class="blakish-overlay"></div>
 			<div class="container">
 				<div class="page-breadcrumb-content">
@@ -173,7 +173,7 @@
 																<div class="panel-title" id="heading{{$key}}">
 																	<div class="ac-head">												
 																		<button class="btn btn-link {{ (count($carriculams) > 1)?'collapsed':'' ; }}" data-toggle="collapse" data-target="#collapse{{$key}}" aria-expanded="true" aria-controls="collapse{{$key}}">
-																			<span>0{{$key + 1}}</span> {{$carriculam->name}}
+																			<span>{{ ($key < "9" )?"0":""}}{{$key + 1}}</span> {{$carriculam->name}}
 																		</button>
 																		<div class="course-by">
 																			BY: <b>TONI KROSS</b> 
@@ -280,7 +280,7 @@
 					<h2>Get placed <span> where you belong.</span></h2>
 				</div>
 				<div class="sponsor-item sponsor-1">
-					@foreach(get_placements() as $value)
+					@foreach(getPlacements() as $value)
 					<div class="sponsor-pic text-center">
 						<img src="{{ getSizedImage('',$value->featured_image) }}" alt="">
 					</div>
@@ -300,7 +300,7 @@
 						<h3>Student<span> Speaks.</span></h3>
 					</div>
 					<div  id="testimonial-slide-item" class="testimonial-slide-area">
-						@foreach(get_testimonials("Course") as $value)
+						@foreach(getTestimonials("Course") as $value)
 						<div class="student-qoute">
 							{!! $value->comment !!}
 							<div class="student-name-designation">
@@ -551,7 +551,7 @@
 							<div class="faq-tab mb35">
 								<div class="faq-tab-ques  ul-li">
                                     <div id="accordion3" class="panel-group">
-										@foreach(get_faqs("Course") as $key => $value)
+										@foreach(getFaqs("Course") as $key => $value)
                                         <div class="panel">
                                             <div class="panel-title" id="heading_{{$key}}">
                                                 <h3 class="mb-{{$key}}">
