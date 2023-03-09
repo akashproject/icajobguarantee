@@ -68,14 +68,14 @@ class CenterController extends Controller
     public function viewCenters($slug)
     {
         try {
-            $center = Center::where('slug', $slug)->first();
+            $contentMain = Center::where('slug', $slug)->first();
             $courses = Course::where('status', 1)->get();
             $states = State::where('status', 1)->get();
-            $center_id = $center->id;
-            $gallery = DB::table('gallery')->where("center_id",$center->id)->get();
-            $utm_campaign = $center->utm_campaign;
-            $utm_source = $center->utm_source;
-            return view('centers.view',compact('center','center_id','courses','gallery','states','utm_campaign','utm_source'));
+            $center_id = $contentMain->id;
+            $gallery = DB::table('gallery')->where("center_id",$contentMain->id)->get();
+            $utm_campaign = $contentMain->utm_campaign;
+            $utm_source = $contentMain->utm_source;
+            return view('centers.view',compact('contentMain','center_id','courses','gallery','states','utm_campaign','utm_source'));
         } catch(\Illuminate\Database\QueryException $e){
         }
        

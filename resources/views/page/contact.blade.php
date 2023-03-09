@@ -4,18 +4,20 @@
 
     <!-- Start of breadcrumb section
 		============================================= -->
-		<section id="breadcrumb" class="breadcrumb-section relative-position backgroud-style">
+		<section id="breadcrumb" class="breadcrumb-section relative-position backgroud-style" style="background-image: url({{ (isset($contentMain->banner_image))?getSizedImage('',$contentMain->banner_image):url('assets/img/banner/brt-1.jpg') }});">
 			<div class="blakish-overlay"></div>
 			<div class="container">
-				<div class="page-breadcrumb-content text-center">
+				<div class="page-breadcrumb-content">
 					<div class="page-breadcrumb-title">
-						<h2 class="breadcrumb-head black bold">Genius <span>Contact</span></h2>
+						<h2 class="breadcrumb-head black bold">
+							{{(isset($contentMain))?$contentMain->name:"Default Page" }}
+						</h2>
 					</div>
-					<div class="page-breadcrumb-item ul-li">
-						<ul class="breadcrumb text-uppercase black">
-							<li class="breadcrumb-item"><a href="#">Home</a></li>
-							<li class="breadcrumb-item active">Contact</li>
-						</ul>
+					<div class="page-breadcrumb-description">
+						{!! (isset($contentMain))?$contentMain->description:"Default Description" !!}
+					</div>
+					<div class="page-breadcrumb-option">
+						
 					</div>
 				</div>
 			</div>

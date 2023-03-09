@@ -19,7 +19,7 @@
 					</div>
 					<div class="col-md-3 text-center" >
 						<div class="enroll-btn header-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
-							<a onclick="lead_capture_form_btn({{ $course->type_id }},'')" href="javascript:void(0)" > Apply Now </a>
+							<a onclick="lead_capture_form_btn({{ $contentMain->type_id }},'')" href="javascript:void(0)" > Apply Now </a>
 						</div>
 					</div>
 				</div>
@@ -34,13 +34,13 @@
 					<span class="trend-bestseller text-uppercase bold-font">
 						<i class="fas fa-bolt"></i> Bestseller</span>
 					<div class="page-breadcrumb-title">
-						<h2 class="breadcrumb-head black bold">{{$course->name}}</h2>
+						<h2 class="breadcrumb-head black bold">{{$contentMain->name}}</h2>
 					</div>
 					<div class="page-breadcrumb-description">
-						{!! $course->excerpt !!}
+						{!! $contentMain->excerpt !!}
 					</div>
 					<div class="page-breadcrumb-option">
-						<p>{!! $course->criteria !!} </p>
+						<p>{!! $contentMain->criteria !!} </p>
 					</div>
 				</div>
 			</div>
@@ -93,7 +93,7 @@
 
 						<div class="col-md-3">
 							<div class="enroll-btn genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
-								<a onclick="lead_capture_form_btn({{ $course->type_id }},'')" href="javascript:void(0)"> Enroll This Course </i></a>
+								<a onclick="lead_capture_form_btn({{ $contentMain->type_id }},'')" href="javascript:void(0)"> Enroll This Course </i></a>
 							</div>
 						</div>
 						<!-- /counter -->
@@ -132,7 +132,7 @@
 											<div class="course-details-content">
 												<div class="course-single-text">
 													<div class="course-details-content">
-														{!! $course->description !!}
+														{!! $contentMain->description !!}
 													</div>
 												</div>
 											</div>
@@ -141,7 +141,7 @@
 
 										<div id="tab2" class="tab-content-1 pt35">
 											<div class="course-details-content criteria">
-												{!! $course->criteria !!}
+												{!! $contentMain->criteria !!}
 											</div>
 										</div>
 										<!-- #tab2 -->
@@ -152,7 +152,7 @@
 													<div class="section-title-2 mb20 headline text-left">
 														<h2><span>Affiliate Marketing</span> A Begginer's Guide</h2>
 													</div>
-													{!! $course->highlights !!}
+													{!! $contentMain->highlights !!}
 												</div>
 											</div>
 										</div>
@@ -244,21 +244,21 @@
 								</div>
 								
 								<div class="student-number bold-font">
-									{{ thousandsCurrencyFormat($course->number_of_enrolled) }} Enrolled
+									{{ thousandsCurrencyFormat($contentMain->number_of_enrolled) }} Enrolled
 								</div>
 							</div>
 							<div class="couse-feature ul-li-block">
 								<ul>
-									<li>Modules <span>{{ $course->no_of_module }} Modules</span></li>
+									<li>Modules <span>{{ $contentMain->no_of_module }} Modules</span></li>
 									<li>Language  <span>English, France</span></li>
 									<li>Video  <span>8 Hours</span></li>
-									<li>Duration <span>{{ $course->duration }}</span></li>
+									<li>Duration <span>{{ $contentMain->duration }}</span></li>
 									<li>Call  <a href="tel:{{ get_theme_setting('mobile') }}" ><span>+91 {{ get_theme_setting('mobile') }}</span></a> </li>
 								</ul>
 							</div>
 							<div class="course-side-bar-widget">
 								<div class="genius-btn gradient-bg text-center text-uppercase float-left bold-font">
-									<a onclick="lead_capture_form_btn({{ $course->type_id }},'')" href="javascript:void(0)"> <i class="fas fa-download"></i> Download Syllabus</a>
+									<a onclick="lead_capture_form_btn({{ $contentMain->type_id }},'')" href="javascript:void(0)"> <i class="fas fa-download"></i> Download Syllabus</a>
 								</div>
 								<div class="like-course">
 									<a href="#"><i class="fas fa-heart"></i></a>
@@ -352,8 +352,8 @@
 										<h3><a href="{{ URL::to('/courses') }}/{{ $value->slug }}">{{ $value->name }}</a></h3>
 									</div>
 									<div class="course-meta">
-										<span class="course-category"><a href="#"><i class="fas fa-clock"></i> {{ $course->duration }}</a></span>
-										<span class="course-author"><a href="#"><i class="fas fa-user"></i> {{ thousandsCurrencyFormat($course->number_of_enrolled) }} Students</a></span>
+										<span class="course-category"><a href="#"><i class="fas fa-clock"></i> {{ $contentMain->duration }}</a></span>
+										<span class="course-author"><a href="#"><i class="fas fa-user"></i> {{ thousandsCurrencyFormat($contentMain->number_of_enrolled) }} Students</a></span>
 									</div>
 								</div>
 								<div class="more-btn text-center" >
@@ -375,7 +375,7 @@
 			</div>
 		</section>
 		@php
-			$reviewRatings = get_reviews_ratings("Course",$course->id);
+			$reviewRatings = get_reviews_ratings("Course",$contentMain->id);
 		@endphp
 		<section id="review" class="teacher-details-area" >
 			<div class="container"> 
@@ -525,7 +525,7 @@
 												<button type="submit" class="submitReview">Send Message now</button> 
 											</div>
 											<input type="hidden" name="model" id="model" value="Course">
-											<input type="hidden" name="model_id" id="model_id" value="{{ $course->id }}">
+											<input type="hidden" name="model_id" id="model_id" value="{{ $contentMain->id }}">
 											<input type="hidden" id="rating" name="rating" value="" />
 										</form>
 									</div>

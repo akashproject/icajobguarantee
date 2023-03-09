@@ -209,8 +209,8 @@
                         <input type="hidden" name="course_id" value="">
                         <input type="hidden" name="responsed_otp" class="responsed_otp" value="">
                         <input type="hidden" name="" class="is_enable_otp" value="1">
-                        <input type="hidden" name="utm_campaign" class="" value="{{ isset($utm_campaign)?$utm_campaign:'' }}">
-                        <input type="hidden" name="utm_source" class="utm_source" value="{{ isset($utm_source)?$utm_source:'' }}">
+                        <input type="hidden" name="utm_campaign" class="" value="{{ isset($contentMain->utm_campaign)?$contentMain->utm_campaign:'' }}">
+                        <input type="hidden" name="utm_source" class="utm_source" value="{{ isset($contentMain->utm_source)?$contentMain->utm_source:'' }}">
                     </form>  
                 </div>
             </div>

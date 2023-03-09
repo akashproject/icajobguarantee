@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
     @section('content')
-		<!-- Start of breadcrumb section
+	<!-- Start of breadcrumb section
 		============================================= -->
 		<section id="breadcrumb" class="breadcrumb-section relative-position backgroud-style">
 			<div class="blakish-overlay"></div>
@@ -9,13 +9,13 @@
 				<div class="page-breadcrumb-content">
 					
 					<div class="page-breadcrumb-title">
-						<h2 class="breadcrumb-head black bold">{{$center->name}}</h2>
+						<h2 class="breadcrumb-head black bold">{{$contentMain->name}}</h2>
 					</div>
 					<div class="page-breadcrumb-description">
-						{!! $center->excerpt !!}
+						{!! $contentMain->excerpt !!}
 					</div>
 					<div class="page-breadcrumb-option">
-						<p>{!! $center->criteria !!} </p>
+						<p>{!! $contentMain->criteria !!} </p>
 					</div>
 				</div>
 			</div>
@@ -70,7 +70,7 @@
 
 						<div class="col-md-3">
 							<div class="enroll-btn genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
-								<a onclick="lead_capture_form_btn('',{{ $center->id }})" href="javascript:void(0)"> Connect To Center </i></a>
+								<a onclick="lead_capture_form_btn('',{{ $contentMain->id }})" href="javascript:void(0)"> Connect To Center </i></a>
 							</div>
 						</div>
 						<!-- /counter -->
@@ -109,7 +109,7 @@
 											<div class="course-details-content">
 												<div class="course-single-text">
 													<div class="course-details-content">
-														{!! $center->description !!}
+														{!! $contentMain->description !!}
 													</div>
 												</div>
 											</div>
@@ -129,7 +129,7 @@
 													<div class="section-title-2 mb20 headline text-left">
 														<h2><span>ICA Shantipuram</span> Quick Training Highlights</h2>
 													</div>
-													{!! $center->highlights !!}
+													{!! $contentMain->highlights !!}
 												</div>
 											</div>
 										</div>
@@ -168,7 +168,7 @@
 														<h2><span>Affiliate Marketing</span> A Begginer's Guide</h2>
 													</div>
 													<div class="affiliate-market-accordion">
-													{!! $center->gmap_location !!}
+													{!! $contentMain->gmap_location !!}
 													</div>
 												</div>
 												<!-- /market guide -->
@@ -217,7 +217,7 @@
 													<i class="text-gradiant fas fa-envelope"></i>
 												</div>
 												<div class="info-content">
-													<a href="mailto:{{ $center->email }}" class="info-id">{{ $center->email }}</a>
+													<a href="mailto:{{ $contentMain->email }}" class="info-id">{{ $contentMain->email }}</a>
 													<span class="info-text">Connect Via Email</span>
 												</div>
 											</div>
@@ -228,7 +228,7 @@
 													<i class="text-gradiant fas fa-phone-square"></i>
 												</div>
 												<div class="info-content">
-													<a href="tel:{{ $center->mobile }}" class="info-id">{{ $center->mobile }}</a>
+													<a href="tel:{{ $contentMain->mobile }}" class="info-id">{{ $contentMain->mobile }}</a>
 													<span class="info-text">Connect Via Call</span>
 												</div>
 											</div>
@@ -239,9 +239,9 @@
 													<i class="text-gradiant fas fa-map-marker-alt"></i>
 												</div>
 												<div class="info-content">
-													<span class="info-id">ICA Edu Skills | {{ $center->name }}</span>
+													<span class="info-id">ICA Edu Skills | {{ $contentMain->name }}</span>
 													<span class="info-text">
-														<a href="javascript:void(0)" > {{ $center->address }} </a>
+														<a href="javascript:void(0)" > {{ $contentMain->address }} </a>
 														<br>
 														<a href=""  class="info-id"> Get Direction </a>
 													</span>
@@ -257,280 +257,284 @@
 				</div>
 			</div>
 		</section>
+	
 	<!-- End of course details section
 		============================================= -->	
-		<!-- Start of testimonial secound section
-		============================================= -->
-		<section id="alumni" class="testimonial_2_section">
-			<div class="container">
-				<div class="testimonial-slide">
-					<div class="section-title mb20 headline text-center">
-						<span class="subtitle text-uppercase">About This Course </span>
-						<h3>Student<span> Speaks.</span></h3>
-					</div>
-					<div  id="testimonial-slide-item" class="testimonial-slide-area">
-						@foreach(getTestimonials("Course",$center->id) as $value)
-						<div class="student-qoute">
-							{!! $value->comment !!}
-							<div class="student-name-designation">
-								<span class="st-name bold-font">{{ $value->name }}</span>
-								<span class="st-designation">{{ $value->dasignation }}</span>
-							</div>
+		
+	<!-- Start of testimonial secound section
+	============================================= -->
+
+	<section id="alumni" class="testimonial_2_section">
+		<div class="container">
+			<div class="testimonial-slide">
+				<div class="section-title mb20 headline text-center">
+					<span class="subtitle text-uppercase">About This Course </span>
+					<h3>Student<span> Speaks.</span></h3>
+				</div>
+				<div  id="testimonial-slide-item" class="testimonial-slide-area">
+					@foreach(getTestimonials("Course",$contentMain->id) as $value)
+					<div class="student-qoute">
+						{!! $value->comment !!}
+						<div class="student-name-designation">
+							<span class="st-name bold-font">{{ $value->name }}</span>
+							<span class="st-designation">{{ $value->dasignation }}</span>
 						</div>
-						@endforeach
 					</div>
+					@endforeach
 				</div>
 			</div>
-		</section>
-		<!-- End  of testimonial secound section
-		============================================= -->
-		@php
-			$reviewRatings = get_reviews_ratings("Center",$center->id);
-		@endphp
-		<section id="review" class="teacher-details-area" >
-			<div class="container"> 				
-				<div class="row" >
-					<div class="col-md-9" >
-						@if($reviewRatings)
-						<!-- /course-details -->				
-						<div class="course-review">
-							<div class="section-title-2 mb20 headline text-left">
-								<h2>Course <span>Reviews:</span></h2>
-							</div>
-							<div class="row">
-								<div class="col-md-6">
-									<div class="ratting-preview">
-										<div class="row">
-											<div class="col-md-4">
-												<div class="avrg-rating ul-li">
-													<b>Average Rating</b>													
-													<span class="avrg-rate">{{ $reviewRatings['avarageRating'] }}</span>
-													<ul>
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-													</ul>
-													<b>{{ $reviewRatings['reviewCount'] }} Ratings</b>
-												</div>
+		</div>
+	</section>
+	<!-- End  of testimonial secound section
+	============================================= -->
+
+	@php
+		$reviewRatings = get_reviews_ratings("Center",$contentMain->id);
+	@endphp
+	<section id="review" class="teacher-details-area" >
+		<div class="container"> 				
+			<div class="row" >
+				<div class="col-md-9" >
+					@if($reviewRatings)
+					<!-- /course-details -->				
+					<div class="course-review">
+						<div class="section-title-2 mb20 headline text-left">
+							<h2>Course <span>Reviews:</span></h2>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="ratting-preview">
+									<div class="row">
+										<div class="col-md-4">
+											<div class="avrg-rating ul-li">
+												<b>Average Rating</b>													
+												<span class="avrg-rate">{{ $reviewRatings['avarageRating'] }}</span>
+												<ul>
+													<li><i class="fas fa-star"></i></li>
+													<li><i class="fas fa-star"></i></li>
+													<li><i class="fas fa-star"></i></li>
+													<li><i class="fas fa-star"></i></li>
+													<li><i class="fas fa-star"></i></li>
+												</ul>
+												<b>{{ $reviewRatings['reviewCount'] }} Ratings</b>
 											</div>
-											<div class="col-md-8">												
-												<div class="avrg-rating ul-li">
-													<span>Details</span>
-													@foreach($reviewRatings['ratings'] as $key => $value)
-													<div class="rating-overview">
-														<span class="start-item">{{$key}} Starts</span>
-														<span class="start-bar"></span>
-														<span class="start-count">{{$value}}</span>
-													</div>
-													@endforeach
+										</div>
+										<div class="col-md-8">												
+											<div class="avrg-rating ul-li">
+												<span>Details</span>
+												@foreach($reviewRatings['ratings'] as $key => $value)
+												<div class="rating-overview">
+													<span class="start-item">{{$key}} Starts</span>
+													<span class="start-bar"></span>
+													<span class="start-count">{{$value}}</span>
 												</div>
+												@endforeach
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						<!-- /review overview -->
-						@else
-						<h5> There are no reviews yet. Be the first one to write one. </h4>
-						@endif
-						<div class="couse-comment">
-							<div class="blog-comment-area ul-li about-teacher-2">
-								<ul class="comment-list">
-									@if($reviewRatings)
-									@foreach($reviewRatings['reviews'] as $review)
-									<li>
-										<div class="author-name-rate">
-											<div class="author-name float-left">
-												BY: <span>{{$review->reviewer_name}}</span> 
-											</div>
-											<div class="comment-ratting float-right ul-li">
-												<ul>
-													@for($i=1; $i<=$review->rating; $i++)
-														<li class="active"><i class="fas fa-star"></i></li>
-													@endfor
-												</ul>
-											</div>
-											<div class="time-comment float-right">{{ $review->created_at; }}</div>
+					</div>
+					<!-- /review overview -->
+					@else
+					<h5> There are no reviews yet. Be the first one to write one. </h4>
+					@endif
+					<div class="couse-comment">
+						<div class="blog-comment-area ul-li about-teacher-2">
+							<ul class="comment-list">
+								@if($reviewRatings)
+								@foreach($reviewRatings['reviews'] as $review)
+								<li>
+									<div class="author-name-rate">
+										<div class="author-name float-left">
+											BY: <span>{{$review->reviewer_name}}</span> 
 										</div>
-										<div class="author-designation-comment">
-											<h3>{{$review->title}}</h3>
-											<p>
-												{{$review->review}}
-											</p>
+										<div class="comment-ratting float-right ul-li">
+											<ul>
+												@for($i=1; $i<=$review->rating; $i++)
+													<li class="active"><i class="fas fa-star"></i></li>
+												@endfor
+											</ul>
 										</div>
-									</li>
-									@endforeach		
-									@endif
-								</ul>
+										<div class="time-comment float-right">{{ $review->created_at; }}</div>
+									</div>
+									<div class="author-designation-comment">
+										<h3>{{$review->title}}</h3>
+										<p>
+											{{$review->review}}
+										</p>
+									</div>
+								</li>
+								@endforeach		
+								@endif
+							</ul>
 
-								<div class="reply-comment-box">
-									<div class="p-2 mb-2 review-success text-white " style="display:none">
-									 Review has been submitted successfully 
+							<div class="reply-comment-box">
+								<div class="p-2 mb-2 review-success text-white " style="display:none">
+									Review has been submitted successfully 
+								</div>
+								<div class="review-option">
+									<div class="section-title-2  headline text-left float-left">
+										<h2>Add <span>Reviews.</span></h2>
 									</div>
-									<div class="review-option">
-										<div class="section-title-2  headline text-left float-left">
-											<h2>Add <span>Reviews.</span></h2>
-										</div>
-										<div class="review-stars-item float-right mt15">
-											<span>Your Rating: </span>
-											<form class="rating">
-												<label>
-													<input type="radio" name="stars" value="1" />
-													<span class="icon"><i class="fas fa-star"></i></span>
-												</label>
-												<label>
-													<input type="radio" name="stars" value="2" />
-													<span class="icon"><i class="fas fa-star"></i></span>
-													<span class="icon"><i class="fas fa-star"></i></span>
-												</label>
-												<label>
-													<input type="radio" name="stars" value="3" />
-													<span class="icon"><i class="fas fa-star"></i></span>
-													<span class="icon"><i class="fas fa-star"></i></span>
-													<span class="icon"><i class="fas fa-star"></i></span>   
-												</label>
-												<label>
-													<input type="radio" name="stars" value="4" />
-													<span class="icon"><i class="fas fa-star"></i></span>
-													<span class="icon"><i class="fas fa-star"></i></span>
-													<span class="icon"><i class="fas fa-star"></i></span>
-													<span class="icon"><i class="fas fa-star"></i></span>
-												</label>
-												<label>
-													<input type="radio" name="stars" value="5" />
-													<span class="icon"><i class="fas fa-star"></i></span>
-													<span class="icon"><i class="fas fa-star"></i></span>
-													<span class="icon"><i class="fas fa-star"></i></span>
-													<span class="icon"><i class="fas fa-star"></i></span>
-													<span class="icon"><i class="fas fa-star"></i></span>
-												</label>
-											</form>
-										</div>
-									</div>
-									<div class="teacher-faq-form">
-										<form id="submit-review" method="POST" action="/no-form" data-lead="Residential">
-											<div class="row">
-												<div class="col-md-6">
-													<label for="name">Your Name</label>
-													<input type="text" name="reviewer_name" id="reviewer_name" required="required">
-												</div>
-												<div class="col-md-6">
-													<label for="phone">Email Address</label>
-													<input type="email" name="reviewer_email" id="reviewer_email" required="required">
-												</div>
-											</div>
-											<div class="row">
-												<div class="col-md-12">
-													<label for="name">Summary</label>
-													<input type="text" name="title" id="title" required="required">
-												</div>
-											</div>
-											<label for="review">Message</label>
-											<textarea name="review" id="review" rows="2" cols="20" required="required"></textarea>
-											<div class="nws-button text-center  gradient-bg text-uppercase">
-												<button type="button" class="submitReview">Send Message now</button> 
-											</div>
-											<input type="hidden" name="model" id="model" value="Course">
-											<input type="hidden" name="model_id" id="model_id" value="{{ $center->id }}">
-											<input type="hidden" id="rating" name="rating" value="" />
+									<div class="review-stars-item float-right mt15">
+										<span>Your Rating: </span>
+										<form class="rating">
+											<label>
+												<input type="radio" name="stars" value="1" />
+												<span class="icon"><i class="fas fa-star"></i></span>
+											</label>
+											<label>
+												<input type="radio" name="stars" value="2" />
+												<span class="icon"><i class="fas fa-star"></i></span>
+												<span class="icon"><i class="fas fa-star"></i></span>
+											</label>
+											<label>
+												<input type="radio" name="stars" value="3" />
+												<span class="icon"><i class="fas fa-star"></i></span>
+												<span class="icon"><i class="fas fa-star"></i></span>
+												<span class="icon"><i class="fas fa-star"></i></span>   
+											</label>
+											<label>
+												<input type="radio" name="stars" value="4" />
+												<span class="icon"><i class="fas fa-star"></i></span>
+												<span class="icon"><i class="fas fa-star"></i></span>
+												<span class="icon"><i class="fas fa-star"></i></span>
+												<span class="icon"><i class="fas fa-star"></i></span>
+											</label>
+											<label>
+												<input type="radio" name="stars" value="5" />
+												<span class="icon"><i class="fas fa-star"></i></span>
+												<span class="icon"><i class="fas fa-star"></i></span>
+												<span class="icon"><i class="fas fa-star"></i></span>
+												<span class="icon"><i class="fas fa-star"></i></span>
+												<span class="icon"><i class="fas fa-star"></i></span>
+											</label>
 										</form>
 									</div>
 								</div>
+								<div class="teacher-faq-form">
+									<form id="submit-review" method="POST" action="/no-form" data-lead="Residential">
+										<div class="row">
+											<div class="col-md-6">
+												<label for="name">Your Name</label>
+												<input type="text" name="reviewer_name" id="reviewer_name" required="required">
+											</div>
+											<div class="col-md-6">
+												<label for="phone">Email Address</label>
+												<input type="email" name="reviewer_email" id="reviewer_email" required="required">
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-12">
+												<label for="name">Summary</label>
+												<input type="text" name="title" id="title" required="required">
+											</div>
+										</div>
+										<label for="review">Message</label>
+										<textarea name="review" id="review" rows="2" cols="20" required="required"></textarea>
+										<div class="nws-button text-center  gradient-bg text-uppercase">
+											<button type="button" class="submitReview">Send Message now</button> 
+										</div>
+										<input type="hidden" name="model" id="model" value="Course">
+										<input type="hidden" name="model_id" id="model_id" value="{{ $contentMain->id }}">
+										<input type="hidden" id="rating" name="rating" value="" />
+									</form>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="col-md-3" >
 					</div>
 				</div>
-				
+				<div class="col-md-3" >
+				</div>
 			</div>
-		</section>
-		
-		<section id="faq" class="teacher-details-area">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-9">
-                    <div class="about-teacher about-faq faq-secound-home-version">
-							<div class="section-title-2  headline text-left">
-								<h2>Frequently  <span>Ask &amp; Questions.</span></h2>
-							</div>							
-							<div class="faq-tab mb35">
-								<div class="faq-tab-ques  ul-li">
-                                    <div id="accordion3" class="panel-group">
-                                        <div class="panel">
-                                            <div class="panel-title" id="heading_0">
-                                                <h3 class="mb-0">
-                                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapse_0" aria-expanded="true" aria-controls="collapse_0">
-                                                        What Is the Eligibility Criteria for The Admission Process?
-													</button>
-                                                </h3>
-                                            </div>
-                                            <div id="collapse_0" class="collapse" aria-labelledby="heading_0" data-parent="#accordion3">
-                                                <div class="panel-body">
-                                                   <p>10+2 Passed or Graduate in Science Or Commerce</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="panel">
-                                            <div class="panel-title" id="heading_1">
-                                                <h3 class="mb-0">
-                                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapse_1" aria-expanded="true" aria-controls="collapse_1">
-                                                        What Kind of Academic Support Does the Program Provide?                                                    </button>
-                                                </h3>
-                                            </div>
-                                            <div id="collapse_1" class="collapse" aria-labelledby="heading_1" data-parent="#accordion3">
-                                                <div class="panel-body">
-                                                   <p>It is a practical oriented program, where students gets hands-on training by the industry expert faculty through case studies &amp; tech applications. Also students will get grooming sessions that makes them job ready.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-										<div class="panel">
-                                            <div class="panel-title" id="heading_2">
-                                                <h3 class="mb-0">
-                                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapse_2" aria-expanded="true" aria-controls="collapse_2">
-                                                        Do You Provide Placement Support?                                                    </button>
-                                                </h3>
-                                            </div>
-                                            <div id="collapse_2" class="collapse" aria-labelledby="heading_2" data-parent="#accordion3">
-                                                <div class="panel-body">
-                                                   <p>Obviously! Our 3 years program consists of 2 years classroom training &amp; 1 year paid internship. After completion of the course the student will get guaranteed placement in a renowned company.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="panel">
-                                            <div class="panel-title" id="heading_3">
-                                                <h3 class="mb-0">
-                                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapse_3" aria-expanded="true" aria-controls="collapse_3">
-                                                        What Companies Are Invited for Campus Recruitment?                                                    </button>
-                                                </h3>
-                                            </div>
-                                            <div id="collapse_3" class="collapse" aria-labelledby="heading_3" data-parent="#accordion3">
-                                                <div class="panel-body">
-                                                   <p>We have tie-ups with 70000+ employers, which contains some of the India’s top companies. After successful completion of the program, students will be placed in those organisations.</p>
-                                                </div>
-                                            </div>
-                                        </div>
+			
+		</div>
+	</section>
+	
+	<section id="faq" class="teacher-details-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9">
+				<div class="about-teacher about-faq faq-secound-home-version">
+						<div class="section-title-2  headline text-left">
+							<h2>Frequently  <span>Ask &amp; Questions.</span></h2>
+						</div>							
+						<div class="faq-tab mb35">
+							<div class="faq-tab-ques  ul-li">
+								<div id="accordion3" class="panel-group">
+									<div class="panel">
+										<div class="panel-title" id="heading_0">
+											<h3 class="mb-0">
+												<button class="btn btn-link" data-toggle="collapse" data-target="#collapse_0" aria-expanded="true" aria-controls="collapse_0">
+													What Is the Eligibility Criteria for The Admission Process?
+												</button>
+											</h3>
+										</div>
+										<div id="collapse_0" class="collapse" aria-labelledby="heading_0" data-parent="#accordion3">
+											<div class="panel-body">
+												<p>10+2 Passed or Graduate in Science Or Commerce</p>
+											</div>
+										</div>
 									</div>
-                                    <!-- end of #accordion -->
+									<div class="panel">
+										<div class="panel-title" id="heading_1">
+											<h3 class="mb-0">
+												<button class="btn btn-link" data-toggle="collapse" data-target="#collapse_1" aria-expanded="true" aria-controls="collapse_1">
+													What Kind of Academic Support Does the Program Provide?                                                    </button>
+											</h3>
+										</div>
+										<div id="collapse_1" class="collapse" aria-labelledby="heading_1" data-parent="#accordion3">
+											<div class="panel-body">
+												<p>It is a practical oriented program, where students gets hands-on training by the industry expert faculty through case studies &amp; tech applications. Also students will get grooming sessions that makes them job ready.</p>
+											</div>
+										</div>
+									</div>
+									<div class="panel">
+										<div class="panel-title" id="heading_2">
+											<h3 class="mb-0">
+												<button class="btn btn-link" data-toggle="collapse" data-target="#collapse_2" aria-expanded="true" aria-controls="collapse_2">
+													Do You Provide Placement Support?                                                    </button>
+											</h3>
+										</div>
+										<div id="collapse_2" class="collapse" aria-labelledby="heading_2" data-parent="#accordion3">
+											<div class="panel-body">
+												<p>Obviously! Our 3 years program consists of 2 years classroom training &amp; 1 year paid internship. After completion of the course the student will get guaranteed placement in a renowned company.</p>
+											</div>
+										</div>
+									</div>
+									<div class="panel">
+										<div class="panel-title" id="heading_3">
+											<h3 class="mb-0">
+												<button class="btn btn-link" data-toggle="collapse" data-target="#collapse_3" aria-expanded="true" aria-controls="collapse_3">
+													What Companies Are Invited for Campus Recruitment?                                                    </button>
+											</h3>
+										</div>
+										<div id="collapse_3" class="collapse" aria-labelledby="heading_3" data-parent="#accordion3">
+											<div class="panel-body">
+												<p>We have tie-ups with 70000+ employers, which contains some of the India’s top companies. After successful completion of the program, students will be placed in those organisations.</p>
+											</div>
+										</div>
+									</div>
 								</div>
-							</div>
-
-							<div class="about-btn">
-								<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
-									<a href="#">Make Question <i class="fas fa-caret-right"></i></a>
-								</div>
-								<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
-									<a href="#">contact us <i class="fas fa-caret-right"></i></a>
-								</div>
+								<!-- end of #accordion -->
 							</div>
 						</div>
-                    </div>
-                </div>
-            </div>
-        </section>
+
+						<div class="about-btn">
+							<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
+								<a href="#">Make Question <i class="fas fa-caret-right"></i></a>
+							</div>
+							<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
+								<a href="#">contact us <i class="fas fa-caret-right"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
     @endsection
 @section('script')
 <!-- ============================================================== -->
