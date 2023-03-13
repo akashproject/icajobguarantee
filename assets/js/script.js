@@ -27,6 +27,7 @@ Author:         HTMLMATE Team
 				this.counterUp();
 				this.courseSlide();
 				this.fourGridSlide();
+				this.threeGridSlide();
 				this.datePicker();
 				this.bannerParalax();
 				this.serviceSlide();
@@ -200,7 +201,7 @@ fourGridSlide: function (){
 				items:4,
 			},
 			1000:{
-				items:5,
+				items:4,
 
 			}
 		},
@@ -208,8 +209,38 @@ fourGridSlide: function (){
 },
 /* End Of course slide
 ================================================*/
+threeGridSlide: function (){
+	$('.tree-grid-slide').owlCarousel({
+		margin:30,
+		responsiveClass:true,
+		nav: true,
+		dots: false,
+		autoplay: false,
+		navText:["<i class='fas fa-chevron-left'></i>","<i class='fas fa-chevron-right'></i>"],
+		smartSpeed: 1000,
+		responsive:{
+			0:{
+				items:1,
+			},
+			400:{
+				items:1,
+			},
+			600:{
+				items:1,
+			},
+			700:{
+				items:3,
+			},
+			800:{
+				items:3,
+			},
+			1000:{
+				items:3,
 
-
+			}
+		},
+	})
+},
 /* Start Of course slide
 ================================================*/
 courseSlide: function (){
@@ -661,7 +692,6 @@ categorySlide: function (){
 /* End Of best product
 ================================================*/
 
-
 /* Start Of service slide
 ================================================*/
 testi_2Slide: function (){
@@ -1048,46 +1078,46 @@ jQuery.validator.addMethod('email_rule', function (value, element) {
 	};
 });
 
-$("#submit-review").validate({
-	rules: {
-		reviewer_name: {
-			required: true,
+	$("#submit-review").validate({
+		rules: {
+			reviewer_name: {
+				required: true,
+			},
+			reviewer_email: {
+				required: true,
+			},
+			title: {
+				required: true,
+			},
 		},
-		reviewer_email: {
-			required: true,
-		},
-		title: {
-			required: true,
-		},
-	},
-	messages: {
-		reviewer_name: {
-			required: "Please enter title",
-		},
-		reviewer_email: {
-			required: "Please enter valid email",
-		},
-		title: {
-			required: "Please enter message",
-		},
-	}, 
-	submitHandler: function(form) {
-		$.ajaxSetup({
-			headers: {
-			 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-			}
-		});
-		$.ajax({
-			url: `http://${window.location.hostname}/icajobguarantee/submit-review`,
-			type: "post",
-			data: $("#submit-review").serialize(),
-			success: function(result) {
-				$(".review-success").show();
-				$("#submit-review")[0].reset();
-			}
-		});
-	}
-})
+		messages: {
+			reviewer_name: {
+				required: "Please enter title",
+			},
+			reviewer_email: {
+				required: "Please enter valid email",
+			},
+			title: {
+				required: "Please enter message",
+			},
+		}, 
+		submitHandler: function(form) {
+			$.ajaxSetup({
+				headers: {
+				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+				}
+			});
+			$.ajax({
+				url: `http://${window.location.hostname}/icajobguarantee/submit-review`,
+				type: "post",
+				data: $("#submit-review").serialize(),
+				success: function(result) {
+					$(".review-success").show();
+					$("#submit-review")[0].reset();
+				}
+			});
+		}
+	})
 
 	$(".lead_capture_form").validate({
 		rules: {
@@ -1145,6 +1175,30 @@ $("#submit-review").validate({
 		
 	});
 
+	jQuery(".state").on("change",function(){
+		let state_id = $(this).find(':selected').attr("data-id");
+		console.log(state_id);
+		$.ajaxSetup({
+			headers: {
+				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			}
+		});
+		$.ajax({
+			url: `/icajobguarantee/administrator/get-city-by-state-id`,
+			type: "post",
+			data: {
+				state_id: state_id,
+			},
+			success: function(result) {
+				let htmlContent = '<option value="">Select City</option>';
+				$.each(result, function (key, data) {
+					htmlContent += '<option value="'+data.id+'"> '+data.name+' </option>';
+				});
+				$(".city_id").html(htmlContent);  
+			}
+		});
+	});
+
 	function sendMobileOtp(formId) {
 		var mobileNo = jQuery("#" + formId + " input[name='mobile']").val();
 		$.ajaxSetup({
@@ -1194,7 +1248,6 @@ $("#submit-review").validate({
 			}
 		});
 	}
-
 })();
 
 function lead_capture_form_btn(course_id,center_id) {

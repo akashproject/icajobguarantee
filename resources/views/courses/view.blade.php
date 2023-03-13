@@ -264,7 +264,6 @@
 									<a href="#"><i class="fas fa-heart"></i></a>
 								</div>
 							</div>
-							
 						</div>
 					</div>
 				</div>

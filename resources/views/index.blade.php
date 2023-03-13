@@ -49,7 +49,7 @@
 								<div class="slider-course-category ul-li text-center">
 									<span class="float-left">BY CATEGORY:</span>
 									<ul>
-									@foreach($courseTypes as $key => $value)
+									@foreach(getCourseTypes() as $key => $value)
 										<li> <a target="_blank" href="{{url('/course-category')}}/{{$value->slug}}" > {{$value->name}} </a> </li>
 									@endforeach										
 									</ul>

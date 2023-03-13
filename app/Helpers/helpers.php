@@ -10,6 +10,9 @@ use App\Models\Center;
 use App\Models\Course;
 use App\Models\CourseType;
 use App\Models\State;
+use App\Models\Job;
+use App\Models\JobType;
+
 if (! function_exists('check_device')) {
     function check_device($param = null){
         switch ($param) {
@@ -196,6 +199,26 @@ if (! function_exists('getCourseTypes')) {
     function getCourseTypes(){
         try {
             return $courseTypes = CourseType::where('status', 1)->get();
+        } catch(\Illuminate\Database\QueryException $e){
+            throw $e;
+        }
+    }
+}
+
+if (! function_exists('getJobs')) {
+    function getJobs(){
+        try {
+            return $jobs = Job::where('status', 1)->get();
+        } catch(\Illuminate\Database\QueryException $e){
+            throw $e;
+        }
+    }
+}
+
+if (! function_exists('getJobTypes')) {
+    function getJobTypes(){
+        try {
+            return $jobtypes = JobType::where('status', 1)->get();
         } catch(\Illuminate\Database\QueryException $e){
             throw $e;
         }

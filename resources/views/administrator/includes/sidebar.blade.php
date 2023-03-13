@@ -124,6 +124,20 @@
 
                         </li>
 
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-briefcase-check"></i><span class="hide-menu">Jobs</span></a>
+
+                            <ul aria-expanded="false" class="collapse  first-level">
+
+								<li class="sidebar-item"><a href="{{ url('administrator/jobs') }}" class="sidebar-link"><i class="mdi mdi-briefcase-check"></i><span class="hide-menu"> All Jobs </span></a></li>
+
+                                <li class="sidebar-item"><a href="{{ url('administrator/add-job') }}" class="sidebar-link"><i class="mdi mdi-briefcase-check"></i><span class="hide-menu"> Add Job </span></a></li>
+
+                                <li class="sidebar-item"><a href="{{ url('administrator/job-type') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Job type </span></a></li>
+
+                            </ul>
+
+                        </li>
+
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark" href="{{ url('administrator/reviews') }}" aria-expanded="false"><i class="mdi mdi-star"></i><span class="hide-menu">Reviews</span></a></li>
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark" href="{{ url('administrator/settings') }}" aria-expanded="false"><i class="mdi mdi-settings"></i><span class="hide-menu">Settings </span></a>

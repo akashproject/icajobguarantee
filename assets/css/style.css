@@ -2052,7 +2052,7 @@ button.alt-menu-btn.float-left {
 .secound-testimoinial-section {
   max-width: 880px;
   margin: 0 auto;
-  padding: 10px 0px 90px 0px; }
+  padding: 90px 0px 90px 0px; }
   .secound-testimoinial-section .student-qoute {
     padding: 0;
     border: none; }
@@ -3497,12 +3497,25 @@ ul.product-tab li.active:after {
   .category-icon-title:hover {
     -webkit-box-shadow: 0px 10px 15px 2px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 10px 15px 2px rgba(0, 0, 0, 0.1); }
-
-.home-secound-version {
-  background-color: #fff; }
-  .home-secound-version .category-icon-title {
-    background-color: #f7f7f7; }
-
+.category-title p {
+  font-size: 14px;}
+.four-grid-box {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    -webkit-transition: .3s all ease-in-out;
+    -o-transition: .3s all ease-in-out;
+    transition: .3s all ease-in-out;
+    position: relative;
+}
+.circle-icon {
+  margin: 20px 0;
+}
+.circle-icon img {
+  margin: auto;
+  width: 40%;
+}
 /*---------------------------------------------------- */
 /*why choose  section*/
 /*----------------------------------------------------*/
@@ -3846,24 +3859,34 @@ ul.product-tab li.active:after {
   color: #333333;
   margin-bottom: 15px; }
 
+.blog-list-view {
+  width: 100%; }
+
+  .blog-title-content {
+    color: #484848;
+}
 .blog-title-content .blog-content {
   font-size: 17px;
-  margin-bottom: 22px; }
+  margin-bottom: 22px;
+  color: #3e3d3d; }
 
 .genius-post-item {
   padding-bottom: 45px; }
 
-.list-blog-item {
-  background-color: #f7f7f7;
+.list-career-item {
+  background-color: #ffffff;
   border-radius: 4px;
-  margin-bottom: 30px; }
-  .list-blog-item .blog-post-img-content {
+  margin-bottom: 30px;
+  border-bottom: 1px solid;
+  padding-bottom: 20px; }
+
+  .list-career-item .career-post-img-content {
     padding: 0;
     margin: 0; }
-  .list-blog-item .blog-img-date {
+  .list-career-item .career-img-date {
     margin: 0; }
-  .list-blog-item .blog-title-content {
-    padding-top: 30px; }
+  .list-career-item .career-title-content {
+    padding: 30px; }
 
 .side-bar-search {
   position: relative; }
@@ -3901,14 +3924,18 @@ ul.product-tab li.active:after {
   .side-bar-widget .post-categori {
     background-color: #f7f7f7;
     border-radius: 4px; }
-    .side-bar-widget .post-categori .cat-item {
+    ul.benifit-wrap {
+      padding: 0;
+    }
+    .cat-item {
       position: relative;
       padding: 15px 20px 15px 35px;
       border-bottom: 1px solid #eeeeee;
       -webkit-transition: .3s all ease-in-out;
       -o-transition: .3s all ease-in-out;
-      transition: .3s all ease-in-out; }
-      .side-bar-widget .post-categori .cat-item:before {
+      transition: .3s all ease-in-out; 
+      list-style: none; }
+      .cat-item:before {
         font-family: 'Font Awesome 5 Free';
         position: absolute;
         top: 19px;
@@ -3916,7 +3943,7 @@ ul.product-tab li.active:after {
         font-size: 10px;
         font-weight: 700;
         content: '\f054'; }
-      .side-bar-widget .post-categori .cat-item:hover {
+      .cat-item:hover {
         color: #333333; }
   .side-bar-widget .latest-news-thumbnile {
     height: 80px;
@@ -4964,4 +4991,117 @@ span.success-icon {
 }
 .form-process,.form-success {
   padding: 0 65px;
+}
+
+.page-heading {
+  font-size: 48px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.page-subheading h2 {
+  font-size: 40px;
+  font-weight: 600;
+  color: #1f195e;
+}
+
+.page-subheading h3 {
+  width: auto;
+  font-size: 27px;
+  margin: 18px 0;
+  font-weight: 400;
+  line-height: 37px;
+  color: #1a1a1a;
+}
+
+.placement-grid {
+  border: 1px solid #ccc;
+  padding: 2px;
+  box-shadow: 0 1px 5px 0 rgb(46 61 73 / 20%);
+}
+
+.student_benefits .items ul {
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 0;
+}
+.student_benefits .items ul li {
+  list-style: none;
+  text-align: center;
+}
+
+.student_benefits .items ul li img {
+  height: 55px;
+  margin-bottom: 23px;
+}
+
+.student_benefits .items ul .line_seperator {
+  position: relative;
+}
+
+.student_benefits .items ul .line_seperator:before {
+  content: " ";
+  background-image: url(https://jetking.com/assets/img/group-7.svg);
+  position: absolute;
+  background-position: center;
+  width: 15px;
+  height: 15px;
+  right: -8px;
+  z-index: 9;
+  top: 40%;
+}
+
+.student_benefits .items ul .line_seperator:after {
+  position: absolute;
+  content: " ";
+  background: rgba(96,92,87,.44);
+  height: 79%;
+  width: 1px;
+  top: 10px;
+  opacity: .35;
+}
+
+.student_benefits .items ul li .name {
+  font-size: 26px;
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.69;
+  letter-spacing: normal;
+  text-align: center;
+  color: #3e3e3e;
+}
+.career-filter {
+  text-align: center;
+}
+
+.career-item {
+  border: 2px solid #393185;
+  padding: 9px 17px;
+  border-radius: 25px;
+  color: #393185;
+  display: inline-flex;
+  margin: 0 0.5rem;
+}
+.career-item:hover {
+  background: #393185;
+  color: #fff;
+}
+.career-apply {
+  margin: auto;
+}
+
+.career-tag {
+  padding: 0;
+}
+
+.career-tag-item {
+  border: 2px solid #393185;
+  padding: 6px 13px;
+  border-radius: 25px;
+  color: #393185;
+  display: inline-flex;
+  margin: 0 0.5rem;
+  font-size: 14px;
 }

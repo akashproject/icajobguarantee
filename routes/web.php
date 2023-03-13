@@ -102,6 +102,18 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::get('/add-brochure', [App\Http\Controllers\Administrator\BrochureController::class, 'add'])->name('add-brochure');
         Route::get('/view-brochure/{id}', [App\Http\Controllers\Administrator\BrochureController::class, 'show'])->name('admin-view-brochure');
         Route::post('/save-brochure', [App\Http\Controllers\Administrator\BrochureController::class, 'save'])->name('admin-save-brochure');
+
+        //Jobs
+        Route::get('/jobs', [App\Http\Controllers\Administrator\JobController::class, 'index'])->name('admin-jobs');
+        Route::get('/add-job', [App\Http\Controllers\Administrator\JobController::class, 'add'])->name('admin-add-job');
+        Route::get('/view-job/{id}', [App\Http\Controllers\Administrator\JobController::class, 'show'])->name('admin-view-job');
+        Route::post('/save-job', [App\Http\Controllers\Administrator\JobController::class, 'save'])->name('admin-save-job');
+        Route::get('/delete-job/{id}', [App\Http\Controllers\Administrator\JobController::class, 'delete'])->name('admin-delete-job');
+
+        Route::get('/job-type', [App\Http\Controllers\Administrator\JobController::class, 'indexJobType'])->name('admin-job-type');
+        Route::get('/view-job-type/{id}', [App\Http\Controllers\Administrator\JobController::class, 'showJobType'])->name('admin-view-job-type');
+        Route::post('/save-job-type', [App\Http\Controllers\Administrator\JobController::class, 'saveJobType'])->name('admin-save-job-type');
+
     });
     // Will be inside middleware
 });
@@ -110,11 +122,6 @@ Route::get('/{slug}', [App\Http\Controllers\PageController::class, 'index'])->wh
 
 // Individual Pages
 Route::get('/', [App\Http\Controllers\IndexController::class, 'index'])->name('index');
-// Route::get('/about-us', [App\Http\Controllers\PageController::class, 'aboutUs'])->name('about-us');
-// Route::get('/contact-us', [App\Http\Controllers\PageController::class, 'contactUs'])->name('contact-us');
-// Route::get('/accounts-gst-sap-tally-career-opportunities', [App\Http\Controllers\PageController::class, 'placementPage'])->name('placement');
-// Route::get('/franchise-opportunity', [App\Http\Controllers\PageController::class, 'franchiseOpportunity'])->name('franchise-opportunity');
-// Route::get('/career', [App\Http\Controllers\PageController::class, 'careerpage'])->name('career');
 
 // Courses
 //Route::get('/courses', [App\Http\Controllers\CourseController::class, 'index'])->name('courses');
@@ -136,5 +143,5 @@ Route::post('/submit-review', [App\Http\Controllers\ReviewController::class, 'cr
 Route::post('/submit-mobile-otp', [App\Http\Controllers\IndexController::class, 'submitMobileOtp'])->name('submit-mobile-otp');
 Route::post('/capture-lead', [App\Http\Controllers\IndexController::class, 'captureLead'])->name('capture-lead');
 Route::post('/get-centers', [App\Http\Controllers\IndexController::class, 'getCenters'])->name('get-centers');
-
+Route::post('/get-city-by-state-id', [App\Http\Controllers\Administrator\CenterController::class, 'getCitiesByStateId'])->name('get-city-by-state-id');
 Auth::routes();
