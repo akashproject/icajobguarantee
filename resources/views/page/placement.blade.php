@@ -244,7 +244,7 @@
 						@foreach(getTestimonials() as $value)
 						<div class="student-qoute text-center">
 							<div class="circle-img">
-								<img src="{{ getSizedImage('',$value->featured_image) }}" alt="">		
+								<img src="{{ (isset($value->featured_image))?getSizedImage('',	$value->featured_image):'https://dummyimage.com/140x140' }}" alt="">	
 							</div>
 							<p>{!!$value->comment!!}</p>
 							<div class="student-name-designation">

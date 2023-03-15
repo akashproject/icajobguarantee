@@ -140,6 +140,8 @@
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark" href="{{ url('administrator/reviews') }}" aria-expanded="false"><i class="mdi mdi-star"></i><span class="hide-menu">Reviews</span></a></li>
 
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark" href="{{ url('administrator/contacts') }}" aria-expanded="false"><i class="mdi mdi-users"></i><span class="hide-menu">Contacts</span></a></li>
+
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark" href="{{ url('administrator/settings') }}" aria-expanded="false"><i class="mdi mdi-settings"></i><span class="hide-menu">Settings </span></a>
                         </li>
 

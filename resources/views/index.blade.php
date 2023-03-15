@@ -202,7 +202,7 @@
 				</div>
 				<div id="course-slide-item" class="course-slide">
 					@foreach($courses as $course)
-					@if($course->categorySlug == "job-guarantee")
+					@if($course->categorySlug == "career-course")
 					<div class="course-item-pic-text">
 						<div class="course-pic relative-position mb25">
 							<img src="{{ (isset($course->featured_image))?getSizedImage('',$course->featured_image):'assets/img/course/c-1.jpg' }}" alt="">
@@ -216,7 +216,7 @@
 						</div>
 						<div class="course-item-text mb-20">
 							<div class="course-meta">
-								<span class="course-category bold-font"><a href="#"><i class="fas fa-user"></i> {{thousandsCurrencyFormat($course->number_of_enrolled)}} Students</a></span>
+								<span class="course-category bold-font"><i class="fas fa-user"></i> {{thousandsCurrencyFormat($course->number_of_enrolled)}} Students</span>
 								<div class="course-rate ul-li">
 									<ul>
 										<li><i class="fas fa-star"></i></li>
@@ -230,16 +230,14 @@
 							<div class="course-title mt10 headline relative-position height-60">
 								<h3><a href="courses/{{ $course->slug }}">{{ $course->name }}</a> </h3>
 							</div>
-							<div class="course-viewer ul-li">
-								<ul>
-									<li><a href=""><i class="fas fa-clock"></i> {{$course->duration}} </a></li>
-									<li><a href=""><i class="fas fa-book"></i> {{$course->no_of_module}} Modules</a></li>
-								</ul>
+							<div class="course-meta mt10 ">
+								<span class="course-category"><a href="#"><i class="fas fa-clock"></i> {{ $course->duration }}</a></span>
+								<span class="course-author"><a href="#"><i class="fas fa-book"></i> {{ $course->no_of_module }} Modules</a></span>
 							</div>
 						</div>
 						<div class="more-btn text-center" >
 							<div class="course-type-list">	
-								<a class="outline" href="javascript:void(0)" onclick="lead_capture_form_btn({{ $course->category_id }},'')"><i class="fas fa-download"></i> Brochure</a>
+								<span class="btn-outline" onclick="lead_capture_form_btn({{ $course->category_id }},'')"><i class="fas fa-download"></i> Brochure</span>
 							</div>
 							<div class="course-type-list">														
 								<a href="{{ URL::to('/courses') }}/{{ $course->slug }}" >View More <i class="fas fa-caret-right"></i></a>
@@ -418,37 +416,15 @@
 						</div>
 
 						<div id="testimonial-slide-item" class="testimonial-slide-area">
-							<div class="student-qoute "  >
-								<p>“This was our first time lorem ipsum and we <b> were very pleased with the whole experience</b>. Your price was lower than other companies. Our experience was good from start to finish, so we’ll be back in the future lorem ipsum diamet.”</p>
-								<div class="student-name-designation">
-									<span class="st-name bold-font">Robertho Garcia </span>
-									<span class="st-designation">Graphic Designer</span>
+							@foreach(getTestimonials() as $value)
+								<div class="student-qoute "  >
+									<p>{!!$value->comment!!}</p>
+									<div class="student-name-designation">
+										<span class="st-name bold-font text-white">{{$value->name}}</span>
+										<span class="st-designation text-white">{{ $value->dasignation }}</span>
+									</div>
 								</div>
-							</div>
-
-							<div class="student-qoute "  >
-								<p>“This was our first time lorem ipsum and we <b> were very pleased with the whole experience</b>. Your price was lower than other companies. Our experience was good from start to finish, so we’ll be back in the future lorem ipsum diamet.”</p>
-								<div class="student-name-designation">
-									<span class="st-name bold-font">Robertho Garcia </span>
-									<span class="st-designation">Graphic Designer</span>
-								</div>
-							</div>
-
-							<div class="student-qoute "  >
-								<p>“This was our first time lorem ipsum and we <b> were very pleased with the whole experience</b>. Your price was lower than other companies. Our experience was good from start to finish, so we’ll be back in the future lorem ipsum diamet.”</p>
-								<div class="student-name-designation">
-									<span class="st-name bold-font">Robertho Garcia </span>
-									<span class="st-designation">Graphic Designer</span>
-								</div>
-							</div>
-
-							<div class="student-qoute">
-								<p>“This was our first time lorem ipsum and we <b> were very pleased with the whole experience</b>. Your price was lower than other companies. Our experience was good from start to finish, so we’ll be back in the future lorem ipsum diamet.”</p>
-								<div class="student-name-designation">
-									<span class="st-name bold-font">Robertho Garcia </span>
-									<span class="st-designation">Graphic Designer</span>
-								</div>
-							</div>
+							@endforeach
 						</div>
 					</div>
 				</div>
@@ -516,13 +492,13 @@
 													</h3>
 												</div>
 												<div class="course-meta">
-													<span class="course-category"><a href="#"><i class="fas fa-clock"></i> {{ $course->duration }}</a></span>
-													<span class="course-author"><a href="#"><i class="fas fa-user"></i> {{ $course->no_of_module }} Modules</a></span>
+													<span class="course-category"><i class="fas fa-clock"></i> {{ $course->duration }}</span>
+													<span class="course-author"><i class="fas fa-book"></i> {{ $course->no_of_module }} Modules</span>
 												</div>
 											</div>
 											<div class="more-btn text-center" >
 												<div class="course-type-list">	
-													<a class="outline" href="javascript:void(0)" onclick="lead_capture_form_btn({{ $course->category_id }},'')"><i class="fas fa-download"></i> Brochure</a>
+													<span class="btn-outline" onclick="lead_capture_form_btn({{ $course->category_id }},'')"><i class="fas fa-download"></i> Brochure</span>
 												</div>
 												<div class="course-type-list">														
 													<a href="{{ URL::to('/courses') }}/{{ $course->slug }}" >View More <i class="fas fa-caret-right"></i></a>
@@ -738,8 +714,8 @@
 									<h3 class="latest-title bold-font"><a href="#">Affiliate Marketing A Beginner’s Guide.</a></h3>
 									<div class="course-viewer ul-li">
 										<ul>
-											<li><a href=""><i class="fas fa-user"></i> 1.220</a></li>
-											<li><a href=""><i class="fas fa-comment-dots"></i> 1.015</a></li>
+											<li><span><i class="fas fa-user"></i> 1.220</span></li>
+											<li><span><i class="fas fa-comment-dots"></i> 1.015</span></li>
 										</ul>
 									</div>
 								</div>
@@ -760,8 +736,8 @@
 										<h3 class="latest-title bold-font"><a href="#">No.1 The Best Online Course 2018.</a></h3>
 										<div class="course-viewer ul-li">
 											<ul>
-												<li><a href=""><i class="fas fa-user"></i> 1.220</a></li>
-												<li><a href=""><i class="fas fa-comment-dots"></i> 1.015</a></li>
+												<li><span><i class="fas fa-user"></i> 1.220</span></li>
+												<li><span><i class="fas fa-comment-dots"></i> 1.015</span></li>
 											</ul>
 										</div>
 									</div>

@@ -96,7 +96,7 @@
 														</div>	
 														<div class="more-btn text-center" >
 															<div class="course-type-list">	
-																<a class="outline" href="javascript:void(0)" onclick="lead_capture_form_btn('',{{ $value->id }})"><i class="fas fa-download"></i> Brochure</a>
+																<span class="btn-outline" onclick="lead_capture_form_btn('',{{ $value->id }})"><i class="fas fa-download"></i> Brochure</span>
 															</div>
 															<div class="course-type-list">														
 																<a href="{{ URL::to('/centers') }}/{{ $value->slug }}" >View More <i class="fas fa-caret-right"></i></a>
@@ -162,7 +162,7 @@
 								</div>
 								<div class="more-btn text-center" >
 									<div class="course-type-list">	
-										<a class="outline" href="javascript:void(0)" onclick="lead_capture_form_btn({{ $value->id }},'')"><i class="fas fa-download"></i> Brochure</a>
+										<span class="btn-outline" href="javascript:void(0)" onclick="lead_capture_form_btn({{ $value->id }},'')"><i class="fas fa-download"></i> Brochure</span>
 									</div>
 									<div class="course-type-list">														
 										<a href="{{ URL::to('/course-category') }}/{{ $value->slug }}" >View More <i class="fas fa-caret-right"></i></a>

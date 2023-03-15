@@ -58,6 +58,13 @@
 												<textarea class="form-control" name="footer_about" id="footer_about" placeholder="Enter footer about Here" >{{ $settings['footer_about'] }} </textarea>
 											</div>
 										</div>
+
+										<div class="form-group row">
+											<label for="footer_description" class="col-sm-3 text-right control-label col-form-label">Footer Description</label>
+											<div class="col-sm-9">
+												<textarea class="form-control editor" name="footer_description" id="footer_description" placeholder="Enter footer about Here" >{{ (isset($settings['footer_description']))?$settings['footer_description']:'' }} </textarea>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -71,6 +78,12 @@
 											<label for="mobile" class="col-sm-3 text-right control-label col-form-label">Mobile Number</label>
 											<div class="col-sm-9">
 												<input type="text" class="form-control" name="mobile" id="mobile" value="{{ (isset($settings['mobile']))?$settings['mobile']:'' }}" >    
+											</div>
+										</div>
+										<div class="form-group row">
+											<label for="whatsapp" class="col-sm-3 text-right control-label col-form-label">Whatsapp Number</label>
+											<div class="col-sm-9">
+												<input type="text" class="form-control" name="whatsapp" id="whatsapp" value="{{ (isset($settings['whatsapp']))?$settings['whatsapp']:'' }}" >    
 											</div>
 										</div>
 										<div class="form-group row">
@@ -104,12 +117,6 @@
 											<label for="facebook" class="col-sm-3 text-right control-label col-form-label">Facebook Link</label>
 											<div class="col-sm-9">
 												<input type="text" class="form-control" name="facebook" id="facebook" placeholder="Enter Facebook Link Here" value="{{ (isset($settings['facebook']))?$settings['facebook']:'' }}" >    
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="whatsapp" class="col-sm-3 text-right control-label col-form-label">Whatsapp No.</label>
-											<div class="col-sm-9">
-												<input type="text" class="form-control" name="whatsapp" id="whatsapp" placeholder="Enter Whatsapp Link Here" value="{{ (isset($settings['whatsapp']))?$settings['whatsapp']:'' }}" >
 											</div>
 										</div>
 										<div class="form-group row">

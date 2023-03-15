@@ -75,7 +75,6 @@
 															<a href="{{ URL::to('/courses') }}/{{ $value->slug }}">{{ $value->course_name }}</a>
 														</h3>
 														<div class="course-meta">
-															<span class="course-category bold-font"><a href="#">{{ $value->category }}</a></span>
 															<div class="course-rate ul-li">
 																<ul class="rating">
 																	<li class="active"><i class="fas fa-star"></i></li>
@@ -85,13 +84,14 @@
 																	<li class="active"><i class="fas fa-star"></i></li>
 																</ul>
 															</div>
+															<span class="course-category bold-font"><a href="#">{{ thousandsCurrencyFormat($value->number_of_rating) }} Rating </a></span>
 														</div>
 													</div>
 												</div>
 											</td>
 											
-											<td> {{ $value->duration}} </td>
-											<td> {{ $value->no_of_module }} Modules </td>
+											<td> <i class="fas fa-clock"></i> {{ $value->duration}} </td>
+											<td> <i class="fas fa-book"></i> {{ $value->no_of_module }} Modules </td>
 											<td>
 												<div class="course-type-list">														
 													<a href="javascript:void(0)" onclick="lead_capture_form_btn({{ $value->category_id }},'')"><i class="fas fa-download"></i> Brochure</a>
@@ -140,7 +140,6 @@
 													</div>
 													<div class="course-meta">
 														<span class="course-category"><a href="#">{{ $value->category }}</a></span>
-														<span class="course-author"><a href="#">250 Students</a></span>
 													</div>
 												</div>
 											</div>
@@ -270,14 +269,10 @@
 								<div class="course-short-description mb10" >
 									{!! substr($value->excerpt,0,100); !!}...
 								</div>
-								<div class="course-meta">
-									<span class="course-category"><a href="{{ URL::to('/courses') }}/{{ $value->slug }}">Web Design</a></span>
-									<span class="course-author"><a href="{{ URL::to('/courses') }}/{{ $value->slug }}">250 Students</a></span>
-								</div>
 							</div>
 							<div class="more-btn text-center" >
 								<div class="course-type-list">	
-									<a class="outline" href="javascript:void(0)" onclick="lead_capture_form_btn({{ $value->id }},'')"><i class="fas fa-download"></i> Brochure</a>
+									<span class="btn-outline" href="javascript:void(0)" onclick="lead_capture_form_btn({{ $value->id }},'')"><i class="fas fa-download"></i> Brochure</span>
 								</div>
 								<div class="course-type-list">														
 									<a href="{{ URL::to('/course-category') }}/{{ $value->slug }}" >View More <i class="fas fa-caret-right"></i></a>

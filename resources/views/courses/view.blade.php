@@ -244,14 +244,13 @@
 								</div>
 								
 								<div class="student-number bold-font">
-									{{ thousandsCurrencyFormat($contentMain->number_of_enrolled) }} Enrolled
+									{{ thousandsCurrencyFormat($contentMain->number_of_rating) }} Rating
 								</div>
 							</div>
 							<div class="couse-feature ul-li-block">
 								<ul>
+									<li>Enrolled <span>{{ thousandsCurrencyFormat($contentMain->number_of_enrolled) }} Enrolled </span></li>
 									<li>Modules <span>{{ $contentMain->no_of_module }} Modules</span></li>
-									<li>Language  <span>English, France</span></li>
-									<li>Video  <span>8 Hours</span></li>
 									<li>Duration <span>{{ $contentMain->duration }}</span></li>
 									<li>Call  <a href="tel:{{ get_theme_setting('mobile') }}" ><span>+91 {{ get_theme_setting('mobile') }}</span></a> </li>
 								</ul>
@@ -299,7 +298,7 @@
 						<h3>Student<span> Speaks.</span></h3>
 					</div>
 					<div  id="testimonial-slide-item" class="testimonial-slide-area">
-						@foreach(getTestimonials("Course") as $value)
+						@foreach(getTestimonials() as $value)						
 						<div class="student-qoute">
 							{!! $value->comment !!}
 							<div class="student-name-designation">
@@ -347,17 +346,17 @@
 									<div class="blakish-overlay"></div>
 								</div>
 								<div class="best-course-text">
-									<div class="course-title mb20 headline relative-position">
+									<div class="course-title mb20 headline relative-position height-60">
 										<h3><a href="{{ URL::to('/courses') }}/{{ $value->slug }}">{{ $value->name }}</a></h3>
 									</div>
 									<div class="course-meta">
-										<span class="course-category"><a href="#"><i class="fas fa-clock"></i> {{ $contentMain->duration }}</a></span>
-										<span class="course-author"><a href="#"><i class="fas fa-user"></i> {{ thousandsCurrencyFormat($contentMain->number_of_enrolled) }} Students</a></span>
+										<span class="course-category"><i class="fas fa-clock"></i> {{ $value->duration }}</span>
+										<span class="course-author"><i class="fas fa-book"></i> {{ $value->no_of_module }} Modules</span>
 									</div>
 								</div>
 								<div class="more-btn text-center" >
 									<div class="course-type-list">	
-										<a class="outline" href="javascript:void(0)" onclick="lead_capture_form_btn({{ $value->category_id }},'')"><i class="fas fa-download"></i> Brochure</a>
+										<span class="btn-outline" href="javascript:void(0)" onclick="lead_capture_form_btn({{ $value->category_id }},'')"><i class="fas fa-download"></i> Brochure</span>
 									</div>
 									<div class="course-type-list">														
 										<a href="{{ URL::to('/courses') }}/{{ $value->slug }}" >View More <i class="fas fa-caret-right"></i></a>

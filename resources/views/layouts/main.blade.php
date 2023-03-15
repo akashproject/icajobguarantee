@@ -73,9 +73,8 @@
     <script src="{{ url('assets/js/jquery.counterup.min.js') }}"></script>
     <script src="{{ url('assets/js/waypoints.min.js') }}"></script>
     <script src="{{ url('assets/js/jquery-ui.js') }}"></script>
-    <script src="{{ url('assets/js/gmap3.min.js') }}"></script>
-    <script src="{{ url('assets/js/switch.js') }}"></script>
-    <script src="http://maps.google.com/maps/api/js?key=AIzaSyC61_QVqt9LAhwFdlQmsNwi5aUJy9B2SyA"></script>
+    <!-- <script src="{{ url('assets/js/gmap3.min.js') }}"></script> -->
+    <!-- <script src="{{ url('assets/js/switch.js') }}"></script> -->
     <script src="{{ url('assets/js/script.js') }}"></script>
 </body>
 

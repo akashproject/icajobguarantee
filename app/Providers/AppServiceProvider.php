@@ -47,14 +47,32 @@ class AppServiceProvider extends ServiceProvider
 
 
             //info Menu
-            $moreinfo = array(
+            $footerMenu = array(
                 '/about-us' => 'About Us',
                 '/privacy-policy' => 'Privacy Policy',
                 '/terms-conditions' => "Terms & Conditions",
                 '/contact-us' => "Contact Us",
 
             );
-            $view->with('moreinfo', $moreinfo);
+            $view->with('footerMenu', $footerMenu);
+
+            //student Menu
+            $studentMenu = array(
+                '/course-category/career-course' => 'Career Courses',
+                '/centers' => 'Centers',
+                '/university' => "University",
+                '/online-courses' => "Online Courses",
+            );
+            $view->with('studentMenu', $studentMenu);
+
+             //student Menu
+             $termsMenu = array(
+                '/course-category/career-course' => 'Career Courses',
+                '/centers' => 'Centers',
+                '/university' => "University",
+                '/online-courses' => "Online Courses",
+            );
+            $view->with('termsMenu', $termsMenu);
 
             // Category Menu
             $media = Media::all();

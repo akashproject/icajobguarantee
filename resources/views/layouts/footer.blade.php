@@ -11,35 +11,30 @@
                                     <img src="{{url('assets/images/logo.png')}}" alt="">
                                 </div>
                                 <div class="footer-about-text">
-                                    <p>We take our mission of increasing global access to quality education seriously. We connect learners to the best universities and institutions from around the world.</p>
-                                    <p>Lorem ipsum dolor sit amet we take our mission of increasing global access to quality education seriously. </p>
+                                    {!! get_theme_setting('footer_description') !!}
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="footer-widget">
                                 <div class="footer-menu ul-li-block">
-                                    <h2 class="widget-title">Useful Links</h2>
+                                    <h2 class="widget-title">Student Needfull </h2>
                                     <ul>
-                                        <li><a href="#"><i class="fas fa-caret-right"></i>About Us</a></li>
-                                        <li><a href="#"><i class="fas fa-caret-right"></i>Graphic Design</a></li>
-                                        <li><a href="#"><i class="fas fa-caret-right"></i>Mobile Apps</a></li>
-                                        <li><a href="#"><i class="fas fa-caret-right"></i>Responsive Website</a></li>
-                                        <li><a href="#"><i class="fas fa-caret-right"></i>Graphic Design</a></li>
-                                        <li><a href="#"><i class="fas fa-caret-right"></i>Mobile Apps</a></li>
+                                        @foreach ($studentMenu as $key => $menuItem)
+                                        <li><a href="{{ url($key) }}"><i class="fas fa-caret-right"></i>{{ $menuItem }}</a></li>
+                                        @endforeach
+                                       
                                     </ul>
                                 </div>
                             </div>
                             <div class="footer-menu ul-li-block">
-                                <h2 class="widget-title">Account Info</h2>
+                                <h2 class="widget-title">Infomation Info</h2>
                                 <ul>
-                                    <li><a href="#"><i class="fas fa-caret-right"></i>Setting Account</a></li>
-                                    <li><a href="#"><i class="fas fa-caret-right"></i>Login & Register</a></li>
-                                    <li><a href="#"><i class="fas fa-caret-right"></i>Contact Us</a></li>
-                                    <li><a href="#"><i class="fas fa-caret-right"></i>Graphic Design</a></li>
-                                    <li><a href="#"><i class="fas fa-caret-right"></i>Mobile Apps</a></li>
-                                    <li><a href="#"><i class="fas fa-caret-right"></i>Responsive Website</a></li>
-                                </ul>
+                                        @foreach ($footerMenu as $key => $menuItem)
+                                        <li><a href="{{ url($key) }}"><i class="fas fa-caret-right"></i>{{ $menuItem }}</a></li>
+                                        @endforeach
+                                       
+                                    </ul>
                             </div>
                         </div>
                         <div class="col-md-3">

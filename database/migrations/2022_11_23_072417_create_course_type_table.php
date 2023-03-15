@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('title');
             $table->string('slug');
-            $table->string('description');       
+            $table->text('description');       
+            $table->text('excerpt');       
             $table->integer('banner_image')->nullable();
             $table->integer('featured_image')->nullable();     
             $table->integer('brochure_id')->nullable();            

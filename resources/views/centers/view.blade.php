@@ -243,7 +243,7 @@
 													<span class="info-text">
 														<a href="javascript:void(0)" > {{ $contentMain->address }} </a>
 														<br>
-														<a href=""  class="info-id"> Get Direction </a>
+														<a href="#"  class="info-id"> Get Direction </a>
 													</span>
 												</div>
 											</div>

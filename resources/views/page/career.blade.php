@@ -31,7 +31,7 @@
 					<ul class="career-filter" >
 						@foreach(getJobTypes() as $value)
 						<li class="career-item" >
-							<a href="" class="career-category" > {{$value->name}} </a>
+							<a href="#" class="career-category" > {{$value->name}} </a>
 						</li>
 						@endforeach
 					</ul>
