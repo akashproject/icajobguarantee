@@ -348,7 +348,7 @@
 						<div class="col-md-3">
 							<div class="best-course-pic-text relative-position">
 								<div class="best-course-pic relative-position">
-									<img src="{{ URL::to('/') }}/assets/img/course/bc-1.jpg" alt="">
+									<img src="{{ (isset($value->featured_image))?getSizedImage('',$value->featured_image):url('/assets/img/course/bc-1.jpg') }}" alt="">
 									<div class="course-rate ul-li">
 										<ul>
 											<li><i class="fas fa-star"></i></li>
@@ -370,10 +370,14 @@
 									<div class="course-short-description mb10" >
 										{!! substr($value->excerpt,0,100); !!}...
 									</div>
-									<div class="course-meta">
-										<span class="course-category"><a href="{{ URL::to('/courses') }}/{{ $value->slug }}">Web Design</a></span>
-										<span class="course-author"><a href="{{ URL::to('/courses') }}/{{ $value->slug }}">250 Students</a></span>
+								</div>
+								<div class="more-btn text-center" >
+									<div class="course-type-list">	
+										<span class="btn-outline" href="javascript:void(0)" onclick="lead_capture_form_btn({{ $value->id }},'')"><i class="fas fa-download"></i> Brochure</span>
 									</div>
+									<div class="course-type-list">														
+										<a href="{{ URL::to('/course-category') }}/{{ $value->slug }}" >View More <i class="fas fa-caret-right"></i></a>
+									</div>														
 								</div>
 							</div>
 						</div>

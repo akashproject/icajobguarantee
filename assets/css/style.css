@@ -216,10 +216,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .pb10 {
   padding-bottom: 10px; }
+
 .height-60 {
   height: 60px;
 }
 
+ul.product-tab.index-category-tab li.active {
+  color: #393185;
+  background: transparent;
+}
 
 .gradient-bg, .modal-body .nws-button button, .teacher-pic-content .teacher-img-content:after, .course-details-category li:hover,ul.product-tab li.active {
   background: #393185;
@@ -356,14 +361,12 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 55px;
   font-weight: 300;
   color: #333333; }
-  .section-title h2 span {
-    font-weight: 700; }
 
 .section-title h3 {
   font-size: 34px;
   font-weight: 300;
   color: #333333; }
-  .section-title h3 span {
+  .section-title h2 span,.section-title h3 span {
     font-weight: 700;color: #393185; }
 
 .section-title-2 h2 {

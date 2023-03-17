@@ -360,6 +360,14 @@
 	.pt150 {
 		padding-top: 75px;
 	}
+
+	.panel-group .panel-title .btn-link {
+		padding: 0px 0px 8px;
+		font-size: 15px;
+	}
+	.faq-secound-home-version {
+		padding: 110px 0px 0px 0px;
+	}
 }
 
 @media screen and (max-width: 480px) { 
@@ -461,7 +469,12 @@
 	}
 	.about-btn .genius-btn {
 		margin-right: 5px;
-		padding: 0px 5px;
+		padding: 0px 11px;
+		height: 44px;
+		line-height: 45px;
+	}
+	.genius-btn a {
+		font-size: 13px;
 	}
 	.faq-secound-home-version ul.product-tab li {
 		margin-bottom: 20px;

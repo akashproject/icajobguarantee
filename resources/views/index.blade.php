@@ -444,7 +444,7 @@
 			<div class="faq-tab mb65">
 				<div class="faq-tab-ques  ul-li">
 					<div class="tab-button text-center ">
-						<ul class="product-tab">
+						<ul class="product-tab index-category-tab">
 							@foreach($courseTypes as $key => $value)
 							<li rel="tab{{$key}}"> {{ $value->name }} </li>
 							@endforeach
@@ -500,7 +500,7 @@
 												<div class="course-type-list">	
 													<span class="btn-outline" onclick="lead_capture_form_btn({{ $course->category_id }},'')"><i class="fas fa-download"></i> Brochure</span>
 												</div>
-												<div class="course-type-list">														
+												<div class="course-type-list">		
 													<a href="{{ URL::to('/courses') }}/{{ $course->slug }}" >View More <i class="fas fa-caret-right"></i></a>
 												</div>														
 											</div>

@@ -118,7 +118,7 @@
 										<span>Course <b>Section:</b></span>
 										<ul class="product-tab ">
 											<li class="active" rel="tab1"> Summary </li>
-											<li rel="tab2"> Criteria </li>
+											<li rel="tab2"> Features </li>
 											<li rel="tab3"> Highlights </li>
 											<li rel="tab4">  Curriculum  </li>
 										</ul>

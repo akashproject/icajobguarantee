@@ -211,7 +211,6 @@
             </div>
         </div>
     </div>
-
     <!-- The Modal -->
     <div class="modal fade" id="franchise-lead-generation-form" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">

@@ -90,7 +90,7 @@
 														<div class="product-text-content text-center mb20">
 															<div class="best-title-price">
 																<div class="course-title headline">
-																	<h3><a href="{{ URL::to('/centers') }}/{{ $value->slug }}">{{ $value->name }}</a></h3>
+																	<h3><a target="_blank" href="{{ URL::to('/centers') }}/{{ $value->slug }}">{{ $value->name }}</a></h3>
 																</div>
 															</div>															
 														</div>	
@@ -99,7 +99,7 @@
 																<span class="btn-outline" onclick="lead_capture_form_btn('',{{ $value->id }})"><i class="fas fa-download"></i> Brochure</span>
 															</div>
 															<div class="course-type-list">														
-																<a href="{{ URL::to('/centers') }}/{{ $value->slug }}" >View More <i class="fas fa-caret-right"></i></a>
+																<a target="_blank" href="{{ URL::to('/centers') }}/{{ $value->slug }}" >View More <i class="fas fa-caret-right"></i></a>
 															</div>														
 														</div>														
 													</div>
@@ -144,7 +144,7 @@
 										</ul>
 									</div>
 									<div class="course-details-btn">
-										<a href="{{ URL::to('/course-category') }}/{{ $value->slug }}">Know More <i class="fas fa-arrow-right"></i></a>
+										<a  target="_blank" href="{{ URL::to('/course-category') }}/{{ $value->slug }}">Know More <i class="fas fa-arrow-right"></i></a>
 									</div>
 									<div class="blakish-overlay"></div>
 								</div>
@@ -154,10 +154,6 @@
 									</div>
 									<div class="course-short-description mb10" >
 										{!! substr($value->excerpt,0,100); !!}...
-									</div>
-									<div class="course-meta">
-										<span class="course-category"><a href="{{ URL::to('/courses') }}/{{ $value->slug }}">Web Design</a></span>
-										<span class="course-author"><a href="{{ URL::to('/courses') }}/{{ $value->slug }}">250 Students</a></span>
 									</div>
 								</div>
 								<div class="more-btn text-center" >

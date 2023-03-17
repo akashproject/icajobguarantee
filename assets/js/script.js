@@ -400,7 +400,7 @@ sponsorSlide: function (){
 		smartSpeed: 1000,
 		responsive:{
 			0:{
-				items:1,
+				items:2,
 			},
 			400:{
 				items:2,
@@ -1207,7 +1207,7 @@ jQuery.validator.addMethod('email_rule', function (value, element) {
 			}
 		});
 		$.ajax({
-			url: `http://${window.location.hostname}/icajobguarantee/submit-mobile-otp`,
+			url: `${globalUrl}submit-mobile-otp`,
 			type: "post",
 			data: {
 				mobile: mobileNo,
@@ -1237,7 +1237,7 @@ jQuery.validator.addMethod('email_rule', function (value, element) {
 			}
 		});
 		$.ajax({
-			url: `http://${window.location.hostname}/icajobguarantee/capture-lead`,
+			url: `${globalUrl}capture-lead`,
 			type: "post",
 			data: form.serialize(),
 			success: function(result) {
@@ -1263,7 +1263,7 @@ function getCenters(course_id,center_id) {
 		}
 	});
 	$.ajax({
-		url: `http://${window.location.hostname}/icajobguarantee/get-centers`,
+		url: `${globalUrl}get-centers`,
 		type: "post",
 		data: {
 			"course_id":course_id,

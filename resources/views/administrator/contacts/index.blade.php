@@ -35,7 +35,7 @@
 								<td>{{ $value->email }}</td>													
 								<td>{{ $value->mobile }}</td>													
 								<td>									
-									<a href="{{ url('administrator/view-contact') }}/{{ $value->id }}" class="btn btn-primary btn-lg">Edit</a>
+									<a href="{{ url('administrator/view-contact') }}/{{ $value->id }}" class="btn btn-success btn-lg">View</a>
 								</td>
 							</tr>
 							@endforeach							

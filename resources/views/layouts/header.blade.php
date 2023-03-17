@@ -12,7 +12,7 @@
 								<a href="{{ url('/courses') }}"> Courses <i class="fas fa-caret-down" style="color: #fff;"></i></a>
 									<ul class="sub-menu">
 										@foreach($courseTypes as $key => $value)
-										<li><a href="{{url('/course-category')}}/{{$value->slug}}">{{$value->name}}</a></li>
+										<li><a target="_blank" href="{{url('/course-category')}}/{{$value->slug}}">{{$value->name}}</a></li>
 										@endforeach												
 									</ul>
 							</div>

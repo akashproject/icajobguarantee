@@ -68,11 +68,11 @@
 											<td>
 												<div class="course-list-img-text">
 													<div class="course-list-img">
-														<img src="{{ URL::to('/') }}/assets//img/course/cl-1.jpg" alt="">
+														<img src="{{ (isset($course->featured_image))?getSizedImage('thumb',$course->featured_image):URL::to('/assets/img/course/cl-1.jpg') }}" alt="">
 													</div>
 													<div class="course-list-text">
 														<h3>
-															<a href="{{ URL::to('/courses') }}/{{ $value->slug }}">{{ $value->course_name }}</a>
+															<a target="_blank" href="{{ URL::to('/courses') }}/{{ $value->slug }}">{{ $value->course_name }}</a>
 														</h3>
 														<div class="course-meta">
 															<span class="course-category bold-font"><a href="#">{{ $value->category }}</a></span>
@@ -97,7 +97,7 @@
 													<a href="javascript:void(0)" onclick="lead_capture_form_btn({{ $value->category_id }},'')"><i class="fas fa-download"></i> Brochure</a>
 												</div>
 												<div class="course-type-list">														
-													<a href="{{ URL::to('/courses') }}/{{ $value->slug }}" >Know More <i class="fas fa-caret-right"></i></a>
+													<a target="_blank" href="{{ URL::to('/courses') }}/{{ $value->slug }}" >Know More <i class="fas fa-caret-right"></i></a>
 												</div>
 												
 											</td>
@@ -110,11 +110,11 @@
 								<div class="best-course-area best-course-v2">
 									<div class="row">
 									@if($courses)
-										@foreach ($courses as $value)
+										@foreach ($courses as $course)
 										<div class="col-md-4">
-											<div class="best-course-pic-text relative-position">
+										<div class="best-course-pic-text relative-position">
 												<div class="best-course-pic relative-position">
-													<img src="{{ URL::to('/assets/img/course/bc-1.jpg') }}" alt="">
+													<img src="{{ (isset($course->featured_image))?getSizedImage('',$course->featured_image):URL::to('/assets/img/course/bc-1.jpg') }}" alt="">
 													<div class="trend-badge-2 text-center text-uppercase">
 														<i class="fas fa-bolt"></i>
 														<span>Trending</span>
@@ -127,20 +127,33 @@
 															<li><i class="fas fa-star"></i></li>
 															<li><i class="fas fa-star"></i></li>
 															<li><i class="fas fa-star"></i></li>
-														</ul>
+														</ul>													
 													</div>
+													
 													<div class="course-details-btn">
-														<a href="{{ URL::to('/courses') }}/{{ $value->slug }}">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
+														<a href="courses/{{ $course->slug }}">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
 													</div>
 													<div class="blakish-overlay"></div>
 												</div>
 												<div class="best-course-text">
-													<div class="course-title mb20 headline relative-position">
-														<h3><a href="{{ URL::to('/courses') }}/{{ $value->slug }}">{{ $value->course_name }}</a></h3>
+													<div class="course-title mb20 headline relative-position height-60">
+														<h3><a href="courses/{{ $course->slug }}"> {{ $course->name }} </a> 
+														<span class="trend-bestseller text-uppercase bold-font">
+															<i class="fas fa-bolt"></i> Bestseller</span> 
+														</h3>
 													</div>
 													<div class="course-meta">
-														<span class="course-category"><a href="#">{{ $value->category }}</a></span>
+														<span class="course-category"><i class="fas fa-clock"></i> {{ $course->duration }}</span>
+														<span class="course-author"><i class="fas fa-book"></i> {{ $course->no_of_module }} Modules</span>
 													</div>
+												</div>
+												<div class="more-btn text-center" >
+													<div class="course-type-list">	
+														<span class="btn-outline" onclick="lead_capture_form_btn({{ $course->category_id }},'')"><i class="fas fa-download"></i> Brochure</span>
+													</div>
+													<div class="course-type-list">		
+														<a href="{{ URL::to('/courses') }}/{{ $course->slug }}" >View More <i class="fas fa-caret-right"></i></a>
+													</div>														
 												</div>
 											</div>
 										</div>
@@ -158,7 +171,7 @@
 				<div class="col-md-3">
 					<div class="side-bar">
 						<div class="side-bar-widget  first-widget">
-							<h2 class="widget-title text-capitalize"><span>Find {{check_device('desktop')}}</span>Your Course.</h2>
+							<h2 class="widget-title text-capitalize"><span>Find </span>Your Course.</h2>
 							<div class="listing-filter-form pb30">
 								
 								<div class="filter-select mb20">
@@ -258,7 +271,7 @@
 									</ul>
 								</div>
 								<div class="course-details-btn">
-									<a href="{{ URL::to('/course-category') }}/{{ $value->slug }}">Know More <i class="fas fa-arrow-right"></i></a>
+									<a target="_blank" href="{{ URL::to('/course-category') }}/{{ $value->slug }}">Know More <i class="fas fa-arrow-right"></i></a>
 								</div>
 								<div class="blakish-overlay"></div>
 							</div>
@@ -276,7 +289,7 @@
 									<span class="btn-outline" onclick="lead_capture_form_btn({{ $value->id }},'')"><i class="fas fa-download"></i> Brochure</span>
 								</div>
 								<div class="course-type-list">														
-									<a href="{{ URL::to('/course-category') }}/{{ $value->slug }}" >View More <i class="fas fa-caret-right"></i></a>
+									<a target="_blank" href="{{ URL::to('/course-category') }}/{{ $value->slug }}" >View More <i class="fas fa-caret-right"></i></a>
 								</div>														
 							</div>
 						</div>
