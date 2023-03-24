@@ -82,17 +82,12 @@
 											<option value="9">Nearest</option>											
 										</select>
 									</div>
-									<div class="tab-button blog-button ul-li text-center float-right">
-										<ul class="product-tab">
-											<li class="active" rel="tab1"><i class="fas fa-th"></i></li>
-											<li rel="tab2"> <i class="fas fa-list"></i></li>
-										</ul>
-									</div>
 								</div>
 								<div class="product-showcase">
 									<div class="genius-shop-item">
 										<div class="tab-container">
-											<div id="tab1" class="tab-content-1 best-product-section">
+											<div id="tab1" class="best-product-section">
+												@if(count($centers) >0 )
 												<div class="row">
 													@foreach($centers as $value)
 													<div class="col-md-4">
@@ -109,216 +104,57 @@
 															</div>	
 															<div class="more-btn text-center" >
 																<div class="course-type-list">	
-																	<span class="btn-outline" onclick="lead_capture_form_btn('',{{ $value->id }})"><i class="fas fa-download"></i> Brochure</span>
+																	<span class="btn-filled" onclick="lead_capture_form_btn('',{{ $value->id }})"><i class="fas fa-download"></i> Brochure</span>
 																</div>
 																<div class="course-type-list">														
-																	<a href="{{ URL::to('/centers') }}/{{ $value->slug }}" >View More <i class="fas fa-caret-right"></i></a>
+																	<a  class="btn-outline" href="{{ URL::to('/centers') }}/{{ $value->slug }}" >View More <i class="fas fa-caret-right"></i></a>
 																</div>														
 															</div>														
 														</div>
 													</div>
 													@endforeach													
 												</div>
-											</div><!-- tab-1 -->
-
-											<div id="tab2" class="tab-content-1 course-page-section">
-												<div class="course-list-view">
-													<table>
-														<tr class="list-head">
-															<th>COURSE NAME</th>
-															<th>COURSE TYPE</th>
-															<th>STARTS</th>
-															<th>LENGTH</th>
-														</tr>
-														<tr>
-															<td>
-																<div class="course-list-img-text">
-																	<div class="course-list-img">
-																		<img src="assets/img/course/cl-1.jpg" alt="">
-																	</div>
-																	<div class="course-list-text">
-																		<h3><a href="#">Fully Responsive Web Design & Development.</a></h3>
-																		<div class="course-meta">
-																			<span class="course-category bold-font"><a href="#">$120.25</a></span>
-																			<div class="course-rate ul-li">
-																				<ul>
-																					<li><i class="fas fa-star"></i></li>
-																					<li><i class="fas fa-star"></i></li>
-																					<li><i class="fas fa-star"></i></li>
-																					<li><i class="fas fa-star"></i></li>
-																					<li><i class="fas fa-star"></i></li>
-																				</ul>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</td>
-															<td>
-																<div class="course-type-list">
-																	<span>Graphic Design & 3D</span>
-																</div>
-															</td>
-															<td>6-06-2018</td>
-															<td>3 Months</td>
-														</tr>
-														<tr>
-															<td>
-																<div class="course-list-img-text">
-																	<div class="course-list-img">
-																		<img src="assets/img/course/cl-2.jpg" alt="">
-																	</div>
-																	<div class="course-list-text">
-																		<h3><a href="#">Fully Responsive Web Design & Development.</a></h3>
-																		<div class="course-meta">
-																			<span class="course-category bold-font"><a href="#">$120.25</a></span>
-																			<div class="course-rate ul-li">
-																				<ul>
-																					<li><i class="fas fa-star"></i></li>
-																					<li><i class="fas fa-star"></i></li>
-																					<li><i class="fas fa-star"></i></li>
-																					<li><i class="fas fa-star"></i></li>
-																					<li><i class="fas fa-star"></i></li>
-																				</ul>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</td>
-															<td>
-																<div class="course-type-list">
-																	<span>Graphic Design & 3D</span>
-																</div>
-															</td>
-															<td>6-06-2018</td>
-															<td>3 Months</td>
-														</tr>
-														<tr>
-															<td>
-																<div class="course-list-img-text">
-																	<div class="course-list-img">
-																		<img src="assets/img/course/cl-3.jpg" alt="">
-																	</div>
-																	<div class="course-list-text">
-																		<h3><a href="#">Fully Responsive Web Design & Development.</a></h3>
-																		<div class="course-meta">
-																			<span class="course-category bold-font"><a href="#">$120.25</a></span>
-																			<div class="course-rate ul-li">
-																				<ul>
-																					<li><i class="fas fa-star"></i></li>
-																					<li><i class="fas fa-star"></i></li>
-																					<li><i class="fas fa-star"></i></li>
-																					<li><i class="fas fa-star"></i></li>
-																					<li><i class="fas fa-star"></i></li>
-																				</ul>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</td>
-															<td>
-																<div class="course-type-list">
-																	<span>Graphic Design & 3D</span>
-																</div>
-															</td>
-															<td>6-06-2018</td>
-															<td>3 Months</td>
-														</tr>
-														<tr>
-															<td>
-																<div class="course-list-img-text">
-																	<div class="course-list-img">
-																		<img src="assets/img/course/cl-4.jpg" alt="">
-																	</div>
-																	<div class="course-list-text">
-																		<h3><a href="#">Fully Responsive Web Design & Development.</a></h3>
-																		<div class="course-meta">
-																			<span class="course-category bold-font"><a href="#">$120.25</a></span>
-																			<div class="course-rate ul-li">
-																				<ul>
-																					<li><i class="fas fa-star"></i></li>
-																					<li><i class="fas fa-star"></i></li>
-																					<li><i class="fas fa-star"></i></li>
-																					<li><i class="fas fa-star"></i></li>
-																					<li><i class="fas fa-star"></i></li>
-																				</ul>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</td>
-															<td>
-																<div class="course-type-list">
-																	<span>Graphic Design & 3D</span>
-																</div>
-															</td>
-															<td>6-06-2018</td>
-															<td>3 Months</td>
-														</tr>
-														<tr>
-															<td>
-																<div class="course-list-img-text">
-																	<div class="course-list-img">
-																		<img src="assets/img/course/cl-5.jpg" alt="">
-																	</div>
-																	<div class="course-list-text">
-																		<h3><a href="#">Fully Responsive Web Design & Development.</a></h3>
-																		<div class="course-meta">
-																			<span class="course-category bold-font"><a href="#">$120.25</a></span>
-																			<div class="course-rate ul-li">
-																				<ul>
-																					<li><i class="fas fa-star"></i></li>
-																					<li><i class="fas fa-star"></i></li>
-																					<li><i class="fas fa-star"></i></li>
-																					<li><i class="fas fa-star"></i></li>
-																					<li><i class="fas fa-star"></i></li>
-																				</ul>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</td>
-															<td>
-																<div class="course-type-list">
-																	<span>Graphic Design & 3D</span>
-																</div>
-															</td>
-															<td>6-06-2018</td>
-															<td>3 Months</td>
-														</tr>
-														<tr>
-															<td>
-																<div class="course-list-img-text">
-																	<div class="course-list-img">
-																		<img src="assets/img/course/cl-1.jpg" alt="">
-																	</div>
-																	<div class="course-list-text">
-																		<h3><a href="#">Fully Responsive Web Design & Development.</a></h3>
-																		<div class="course-meta">
-																			<span class="course-category bold-font"><a href="#">$120.25</a></span>
-																			<div class="course-rate ul-li">
-																				<ul>
-																					<li><i class="fas fa-star"></i></li>
-																					<li><i class="fas fa-star"></i></li>
-																					<li><i class="fas fa-star"></i></li>
-																					<li><i class="fas fa-star"></i></li>
-																					<li><i class="fas fa-star"></i></li>
-																				</ul>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</td>
-															<td>
-																<div class="course-type-list">
-																	<span>Graphic Design & 3D</span>
-																</div>
-															</td>
-															<td>6-06-2018</td>
-															<td>3 Months</td>
-														</tr>
-													</table>
+												@else 
+												<div class="message-title"> 
+													<h3> There is no center on your location! Check ICA Online </h3> 
 												</div>
-											</div><!-- /tab-2 -->
+												<div class="row"  style="justify-content: center;">
+													<div class="col-md-4">
+														<div class="best-course-pic-text">
+															<div class="best-course-pic relative-position">
+																<img src="http://localhost/icajobguarantee/assets/img/course/bc-1.jpg" alt="">
+																
+																<div class="course-rate ul-li">
+																	<ul>
+																		<li><i class="fas fa-star"></i></li>
+																		<li><i class="fas fa-star"></i></li>
+																		<li><i class="fas fa-star"></i></li>
+																		<li><i class="fas fa-star"></i></li>
+																		<li><i class="fas fa-star"></i></li>
+																	</ul>
+																</div>
+																<div class="course-details-btn">
+																	<a href="https://www.icacourse.in/">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
+																</div>
+																<div class="blakish-overlay"></div>
+															</div>
+															<div class="best-course-text text-center">
+																<div class="course-title mb20 headline relative-position">
+																	<h3>
+																		<a href="https://www.icacourse.in/"> ICA Online Course </a>
+																	</h3>
+																</div>
+															</div>
+															<div class="more-btn text-center">
+																<div class="course-type-list">
+																	<a class="btn-outline" href="https://www.icacourse.in/">Visit Online <i class="fas fa-caret-right"></i></a>
+																</div>														
+															</div>	
+														</div>
+													</div>
+												</div>
+												@endif
+											</div><!-- tab-1 -->
 										</div>
 									</div>
 								</div>
@@ -373,10 +209,10 @@
 								</div>
 								<div class="more-btn text-center" >
 									<div class="course-type-list">	
-										<span class="btn-outline" href="javascript:void(0)" onclick="lead_capture_form_btn({{ $value->id }},'')"><i class="fas fa-download"></i> Brochure</span>
+										<a class="btn-filled" href="javascript:void(0)" onclick="lead_capture_form_btn({{ $value->id }},'')"><i class="fas fa-download"></i> Brochure</a>
 									</div>
 									<div class="course-type-list">														
-										<a href="{{ URL::to('/course-category') }}/{{ $value->slug }}" >View More <i class="fas fa-caret-right"></i></a>
+										<a class="btn-outline" href="{{ URL::to('/course-category') }}/{{ $value->slug }}" >View More <i class="fas fa-caret-right"></i></a>
 									</div>														
 								</div>
 							</div>

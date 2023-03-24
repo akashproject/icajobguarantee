@@ -94,6 +94,20 @@ CREATE TABLE `cities` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `contacts`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `contacts` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `mobile` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `message` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `course_type`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -493,3 +507,4 @@ INSERT INTO `migrations` VALUES (44,'2023_02_22_113616_create_brochures_table',2
 INSERT INTO `migrations` VALUES (45,'2022_11_25_055617_create_pages_table',21);
 INSERT INTO `migrations` VALUES (46,'2023_03_13_082934_create_jobs_table',22);
 INSERT INTO `migrations` VALUES (47,'2023_03_13_091940_create_job_types_table',22);
+INSERT INTO `migrations` VALUES (48,'2023_03_14_110002_create_contacts_table',23);

@@ -15,6 +15,7 @@ use App\Models\JobType;
 
 if (! function_exists('check_device')) {
     function check_device($param = null){
+        $device = "";
         switch ($param) {
             case 'desktop':
                 $device = Agent::isDesktop();

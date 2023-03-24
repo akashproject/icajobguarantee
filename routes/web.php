@@ -144,7 +144,6 @@ Route::post('/submit-review', [App\Http\Controllers\ReviewController::class, 'cr
 //Route::get('/blogs', [App\Http\Controllers\BlogController::class, 'index'])->name('blogs');
 
 //Capture Leads
-//Route::get('/home', [App\Http\Controllers\IndexController::class, 'index'])->name('home');
 Route::post('/save-contact', [App\Http\Controllers\PageController::class, 'saveContact'])->name('save-contact');
 Route::post('/submit-mobile-otp', [App\Http\Controllers\IndexController::class, 'submitMobileOtp'])->name('submit-mobile-otp');
 Route::post('/capture-lead', [App\Http\Controllers\IndexController::class, 'captureLead'])->name('capture-lead');

@@ -326,7 +326,7 @@
 						<div class="col-md-3">
 							<div class="best-course-pic-text">
 								<div class="best-course-pic relative-position">
-									<img src="{{ URL::to('/') }}/assets/img/course/bc-1.jpg" alt="">
+									<img src="{{ (isset($course->featured_image))?getSizedImage('',$course->featured_image):URL::to('/assets/img/course/bc-1.jpg') }}" alt="">
 									<div class="trend-badge-2 text-center text-uppercase">
 										<i class="fas fa-bolt"></i>
 										<span>Trending</span>
@@ -356,10 +356,10 @@
 								</div>
 								<div class="more-btn text-center" >
 									<div class="course-type-list">	
-										<span class="btn-outline" href="javascript:void(0)" onclick="lead_capture_form_btn({{ $value->category_id }},'')"><i class="fas fa-download"></i> Brochure</span>
+										<a class="btn-filled" href="javascript:void(0)" onclick="lead_capture_form_btn({{ $value->category_id }},'')"><i class="fas fa-download"></i> Brochure</a>
 									</div>
 									<div class="course-type-list">														
-										<a href="{{ URL::to('/courses') }}/{{ $value->slug }}" >View More <i class="fas fa-caret-right"></i></a>
+										<a class="btn-outline" href="{{ URL::to('/courses') }}/{{ $value->slug }}" >View More <i class="fas fa-caret-right"></i></a>
 									</div>														
 								</div>	
 							</div>

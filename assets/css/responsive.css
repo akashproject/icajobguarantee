@@ -38,12 +38,6 @@
 	.header-info li:after {
 		display: none;
 	}
-	.nav-menu-4 .login-cart-lang li:before {
-		display: none;
-	}
-	.nav-menu-4 .login-cart-lang li {
-		margin: 0 5px;
-	}
 	.genius-btn {
 		padding: 0px 10px;
 	}
@@ -63,13 +57,11 @@
 		max-width: 610px;
 	}
 }
-
 @media screen and (min-width: 991px) { 
 	.mb150 {
 		margin-bottom: 100px;
 	}
 }
-
 @media screen and (max-width: 991px) { 
 	.navbar-header {
 		width: 80%;
@@ -147,22 +139,11 @@
 	.course-viewer li {
 		padding: 5px 5px;
 	}
-	.header_3 {
-		padding-top: 15px;
-		padding-bottom: 45px;
-	}
-	.header_3 .navbar-header {
-		position: inherit;
-		width: 100%;
-		margin-bottom: 10px;
-		text-align: center;
-	}
 	.header-info {
 		display: inherit; 
 		margin-left: 0;
 		text-align: center;
 	}
-	.header_3 {display: none;}
 	.altranative-header {display: block;}
 	.counter-icon-number:before {
 		display: none;
@@ -202,40 +183,18 @@
 	}
 }
 @media screen and (max-width: 767px) { 
-	html {
-		overflow-x: hidden;
-	}
-	.slider-bg-1, .slider-bg-2, .slider-bg-3, .slider-bg-4, .slider-bg-5 {
-		height: 65vh;
-	}
-	.search-course-section {
-		padding: 45px 0px 40px 0px; 
-	}
-	.popular-course-section {
-		padding-bottom: 40px;
-	}
-	.bg-mockup {
-		display: none;
-	}
 	.about-resigter-form {
 		margin: 0 auto;
 		border-radius: 4px;
 		background-color: #17d0cf;
 		margin-bottom: 20px;
 	}
-	.section-title h2 {
-		font-size: 40px;
-	}
 	.latest-area-content {
 		max-width: 400px;
 		margin: 0 auto;
 		margin-bottom: 30px;
 	}
-	.best-course-pic-text {
-		max-width: 270px;
-		margin: 0 auto;
-		margin-bottom: 10px;
-	}
+	
 	.about-us-section {
 		padding: 65px 0px
 	}
@@ -360,27 +319,15 @@
 	.pt150 {
 		padding-top: 75px;
 	}
-
-	.panel-group .panel-title .btn-link {
-		padding: 0px 0px 8px;
-		font-size: 15px;
-	}
 	.faq-secound-home-version {
 		padding: 110px 0px 0px 0px;
 	}
 }
-
 @media screen and (max-width: 480px) { 
-	.color-switcher {
-		display: none;
-	}
 	.section-title.mb20.headline.text-left {
 		text-align: center !important;
 	}
-	.navbar-header {
-		width: 180px;
-		right: -30px;
-	}
+	
 	.cart-search {
 		top: 16px;
 		right: 15px;
@@ -415,9 +362,6 @@
 	}
 	.course-item-pic-text {
 		max-width: 370px;
-	}
-	.section-title h2 {
-		font-size: 36px;
 	}
 	.product-img-text {
 		max-width: 370px;
@@ -466,12 +410,6 @@
 	}
 	.home-secound-course-search .search-app .search-app-content h2 {
 		font-size: 30px;
-	}
-	.about-btn .genius-btn {
-		margin-right: 5px;
-		padding: 0px 11px;
-		height: 44px;
-		line-height: 45px;
 	}
 	.genius-btn a {
 		font-size: 13px;
@@ -703,9 +641,6 @@
 	.shorting-filter {
 		margin-top: 0;
 	}
-	.shorting-filter span {
-		display: none;
-	}
 	.navbar-header {
 		width: 80%;
 	}
@@ -792,9 +727,6 @@
 	}
 	.section-title .subtitle {
 		letter-spacing: 3px;
-	}
-	.section-title h2 {
-		font-size: 30px;
 	}
 	.about-btn {
 		text-align: center;

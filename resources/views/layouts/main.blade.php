@@ -47,9 +47,13 @@
     <link href="{{ url('assets/css/lightbox.css') }}" rel="stylesheet">
     <link href="{{ url('assets/css/progess.css') }}" rel="stylesheet">
     <link href="{{ url('assets/css/animate.min.css') }}" rel="stylesheet">
-    <link href="{{ url('assets/css/style.css') }}" rel="stylesheet">
     <link href="{{ url('assets/css/responsive.css') }}" rel="stylesheet">
-    <link href="{{ url('assets/css/colors/switch.css') }}" rel="stylesheet">
+    @if(check_device('desktop'))
+    <link href="{{ url('assets/css/style.css') }}" rel="stylesheet">
+    @else
+    <link href="{{ url('assets/css/mobile.css') }}" rel="stylesheet">
+    @endif
+    
     <link href="{{ url('assets/css/colors/color-7.css') }}" rel="alternate stylesheet" type="text/css" title="color-7">
     @yield('style')
 
@@ -76,8 +80,6 @@
     <script src="{{ url('assets/js/jquery.counterup.min.js') }}"></script>
     <script src="{{ url('assets/js/waypoints.min.js') }}"></script>
     <script src="{{ url('assets/js/jquery-ui.js') }}"></script>
-    <!-- <script src="{{ url('assets/js/gmap3.min.js') }}"></script> -->
-    <!-- <script src="{{ url('assets/js/switch.js') }}"></script> -->
     <script src="{{ url('assets/js/script.js') }}"></script>
 </body>
 

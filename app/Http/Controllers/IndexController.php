@@ -9,12 +9,18 @@ use App\Models\Course;
 use App\Models\CourseType;
 use App\Models\Center;
 use App\Models\City;
+use App\Models\State;
 
 class IndexController extends Controller
 {
     //
     public $_statusOK = 200;
     public $_statusErr = 500;
+
+    public function __construct()
+    {
+        $this->layout = (check_device('mobile'))?"mobile.":'';
+    }
 
     public function index() {
         # code...
@@ -26,7 +32,7 @@ class IndexController extends Controller
             ->orderBy('courses.id', 'asc')
             ->get();
             $courseTypes = CourseType::where('status', 1)->get();
-            return view('index',compact('courses','courseTypes'));
+            return view($this->layout.'index',compact('courses','courseTypes'));
         } catch(\Illuminate\Database\QueryException $e){
             //throw $th;
         }
@@ -94,9 +100,12 @@ class IndexController extends Controller
             $postData['firstname'] = current(explode(" ",$data['name']));
             unset($nameArray['0']);
             $postData['lastname'] = implode(" ",$nameArray);
+
             $city  = Center::where("name",$data['center'])->first();
             $postData['city'] = City::where("id",$city->city_id)->first()->name;
+
             $response = $this->classroomLeadCaptureLeadToExtraage($postData);
+
             return response()->json($response, $this->_statusOK);
         } catch(\Illuminate\Database\QueryException $e){
             //throw $th;
@@ -104,9 +113,7 @@ class IndexController extends Controller
     }
 
     public function classroomLeadCaptureLeadToExtraage($postData){
-        $url = "https://prodapi.extraaedge.com/api/WebHook/addLead"; 
-        //https://prodapi.extraaedge.com/api/WebHook/addLead
-		
+        $url = "https://prodapi.extraaedge.com/api/WebHook/addLead"; 		
         $curl = curl_init();
         $data = array(
             'AuthToken' => 'ICA-06-12-2017',
@@ -130,7 +137,7 @@ class IndexController extends Controller
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
         $headers = array(
-        "Content-Type: application/json",
+            "Content-Type: application/json",
         );
         curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
         curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
@@ -140,5 +147,27 @@ class IndexController extends Controller
         $resp = curl_exec($curl);
         curl_close($curl);
         return json_decode($resp);
+    }
+
+    public function captureLeadToDB($postData){
+        try {
+            $data = array(
+                'role' => 'lead',
+                'name' => $postData['name'],
+                'email' => $postData['email'],
+                'mobile' => $postData['mobile'],
+                'center' => $postData['center'],
+                'status' => $postData['status'],
+                'pincode' => $postData['pincode'],
+                'latitude' => $postData['latitude'],
+                'longitude' => $postData['longitude'],
+                'utm_source' => $postData['utm_source'],
+                'utm_campaign' => $postData['utm_campaign'],
+            );
+            $lead = Lead::create($data);
+            return response()->json($lead, $this->_statusOK);
+        } catch(\Illuminate\Database\QueryException $e){
+            //throw $th;
+        }
     }
 }

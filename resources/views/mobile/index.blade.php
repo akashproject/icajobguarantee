@@ -6,7 +6,7 @@
 		============================================= -->
 		<section id="slide" class="slider-section">
 			<div id="slider-item" class="slider-item-details">
-				<div  class="slider-area slider-bg-1 relative-position" style="background-image: url({{ getSizedImage('','33')}} );" >
+				<div  class="slider-area slider-bg-1 relative-position" style="background-image: url({{ getSizedImage('mobile','33')}} );" >
 					<div class="slider-text">
 						<div class="section-title mb20 headline text-center">
 							<div class="layer-1-1">
@@ -26,7 +26,7 @@
 					</div>
 
 				</div>
-				<div class="slider-area slider-bg-2 relative-position" style="background-image: url({{ getSizedImage('','33')}} );">
+				<div class="slider-area slider-bg-2 relative-position" style="background-image: url({{ getSizedImage('mobile','33')}} );">
 					<div class="slider-text">
 						<div class="section-title mb20 headline text-center">
 							<div class="layer-1-1">
@@ -58,7 +58,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="slider-area slider-bg-3 relative-position" style="background-image: url({{ getSizedImage('','33')}} );">
+				<div class="slider-area slider-bg-3 relative-position" style="background-image: url({{ getSizedImage('mobile','33')}} );">
 					<div class="slider-text">
 						<div class="layer-1-2">
 							<div class="coming-countdown ul-li">
@@ -102,7 +102,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="slider-area slider-bg-4 relative-position" style="background-image: url({{ getSizedImage('','33')}} );">
+				<div class="slider-area slider-bg-4 relative-position" style="background-image: url({{ getSizedImage('mobile','33')}} );">
 					<div class="slider-text">
 						<div class="section-title mb20 headline text-center">
 							<span class="subtitle text-uppercase">EDUCATION & TRAINING ORGANIZATION</span>
@@ -285,7 +285,7 @@
 					<div class="col-md-7">
 						<div class="about-us-text">
 							<div class="section-title relative-position mb20 headline text-left "  >
-								<span class="subtitle ml42 text-uppercase">SORT ABOUT US</span>
+								<span class="subtitle text-uppercase">SORT ABOUT US</span>
 								<h2>We are <span>Genius Course</span>
 								work since 1980.</h2>
 								<p>We take our mission of increasing global access to quality education seriously. We connect learners to the best universities and institutions from around the world.</p>
@@ -498,10 +498,10 @@
 											</div>
 											<div class="more-btn text-center" >
 												<div class="course-type-list">	
-													<a class="btn-filled" href="javascript:void(0)" onclick="lead_capture_form_btn({{ $course->category_id }},'')"><i class="fas fa-download"></i> Brochure</a>
+													<span class="btn-outline" onclick="lead_capture_form_btn({{ $course->category_id }},'')"><i class="fas fa-download"></i> Brochure</span>
 												</div>
-												<div class="course-type-list">														
-													<a class="btn-outline" href="{{ URL::to('/courses') }}/{{ $course->slug }}" >View More <i class="fas fa-caret-right"></i></a>
+												<div class="course-type-list">		
+													<a href="{{ URL::to('/courses') }}/{{ $course->slug }}" >View More <i class="fas fa-caret-right"></i></a>
 												</div>														
 											</div>
 										</div>
@@ -538,7 +538,7 @@
 				</div>
 				<div class="category-item">
 					<div class="row">
-						<div class="col-md-3">
+						<div class="col-md-3 col-sm-6">
 							<div class="category-icon-title text-center "  >
 								<div class="category-icon">
 									<i class="text-gradiant flaticon-technology"></i>
@@ -550,7 +550,7 @@
 						</div>
 						<!-- /category -->
 
-						<div class="col-md-3">
+						<div class="col-md-3 col-sm-6">
 							<div class="category-icon-title text-center "  >
 								<div class="category-icon">
 									<i class="text-gradiant flaticon-app-store"></i>
@@ -562,7 +562,7 @@
 						</div>
 						<!-- /category -->
 
-						<div class="col-md-3">
+						<div class="col-md-3 col-sm-6">
 							<div class="category-icon-title text-center "  >
 								<div class="category-icon">
 									<i class="text-gradiant flaticon-artist-tools"></i>
@@ -574,7 +574,7 @@
 						</div>
 						<!-- /category -->
 
-						<div class="col-md-3">
+						<div class="col-md-3 col-sm-6">
 							<div class="category-icon-title text-center "  >
 								<div class="category-icon">
 									<i class="text-gradiant flaticon-business"></i>
@@ -586,7 +586,7 @@
 						</div>
 						<!-- /category -->
 
-						<div class="col-md-3">
+						<div class="col-md-3 col-sm-6">
 							<div class="category-icon-title text-center "  >
 								<div class="category-icon">
 									<i class="text-gradiant flaticon-dna"></i>
@@ -598,7 +598,7 @@
 						</div>
 						<!-- /category -->
 
-						<div class="col-md-3">
+						<div class="col-md-3 col-sm-6">
 							<div class="category-icon-title text-center "  >
 								<div class="category-icon">
 									<i class="text-gradiant flaticon-cogwheel"></i>
@@ -610,7 +610,7 @@
 						</div>
 						<!-- /category -->
 
-						<div class="col-md-3">
+						<div class="col-md-3 col-sm-6">
 							<div class="category-icon-title text-center "  >
 								<div class="category-icon">
 									<i class="text-gradiant flaticon-technology-1"></i>
@@ -622,7 +622,7 @@
 						</div>
 						<!-- /category -->
 
-						<div class="col-md-3">
+						<div class="col-md-3 col-sm-6">
 							<div class="category-icon-title text-center "  >
 								<div class="category-icon">
 									<i class="text-gradiant flaticon-technology-2"></i>

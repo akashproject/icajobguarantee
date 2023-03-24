@@ -30,16 +30,6 @@
 				<div class="col-md-9">
 					<div class="short-filter-tab">
 						<div class="shorting-filter  float-left">
-							<span><b>View</b> By </span>
-							<select>
-								<option value="9" selected="">9 Course</option>
-								<option value="10">7 Course</option>
-								<option value="11">2 Course</option>
-								<option value="12">0 Course </option>
-							</select>
-						</div>
-						
-						<div class="shorting-filter float-right">
 							<span><b>Sort</b> By</span>
 							<select>
 								<option value="9" selected="">Popularity</option>
@@ -48,6 +38,8 @@
 								<option value="12">Most Shared</option>
 							</select>
 						</div>
+						
+						
 					</div>
 
 					<div class="genius-post-item">
@@ -94,10 +86,10 @@
 											<td> <i class="fas fa-book"></i> {{ $value->no_of_module }} Modules </td>
 											<td>
 												<div class="course-type-list">														
-													<a href="javascript:void(0)" onclick="lead_capture_form_btn({{ $value->category_id }},'')"><i class="fas fa-download"></i> Brochure</a>
+													<a class="btn-filled" href="javascript:void(0)" onclick="lead_capture_form_btn({{ $value->category_id }},'')"><i class="fas fa-download"></i> Brochure</a>
 												</div>
 												<div class="course-type-list">														
-													<a target="_blank" href="{{ URL::to('/courses') }}/{{ $value->slug }}" >Know More <i class="fas fa-caret-right"></i></a>
+													<a class="btn-outline" target="_blank" href="{{ URL::to('/courses') }}/{{ $value->slug }}" >Know More <i class="fas fa-caret-right"></i></a>
 												</div>
 												
 											</td>
@@ -149,10 +141,10 @@
 												</div>
 												<div class="more-btn text-center" >
 													<div class="course-type-list">	
-														<span class="btn-outline" onclick="lead_capture_form_btn({{ $course->category_id }},'')"><i class="fas fa-download"></i> Brochure</span>
+														<a class="btn-filled" href="javascript:void(0)" onclick="lead_capture_form_btn({{ $course->category_id }},'')"><i class="fas fa-download"></i> Brochure</a>
 													</div>
 													<div class="course-type-list">		
-														<a href="{{ URL::to('/courses') }}/{{ $course->slug }}" >View More <i class="fas fa-caret-right"></i></a>
+														<a class="btn-outline" href="{{ URL::to('/courses') }}/{{ $course->slug }}" >View More <i class="fas fa-caret-right"></i></a>
 													</div>														
 												</div>
 											</div>
@@ -286,10 +278,10 @@
 							</div>
 							<div class="more-btn text-center" >
 								<div class="course-type-list">	
-									<span class="btn-outline" onclick="lead_capture_form_btn({{ $value->id }},'')"><i class="fas fa-download"></i> Brochure</span>
+									<a class="btn-filled" href="javascript:void(0)" onclick="lead_capture_form_btn({{ $value->id }},'')"><i class="fas fa-download"></i> Brochure</a>
 								</div>
 								<div class="course-type-list">														
-									<a target="_blank" href="{{ URL::to('/course-category') }}/{{ $value->slug }}" >View More <i class="fas fa-caret-right"></i></a>
+									<a class="btn-outline" target="_blank" href="{{ URL::to('/course-category') }}/{{ $value->slug }}" >View More <i class="fas fa-caret-right"></i></a>
 								</div>														
 							</div>
 						</div>

@@ -9,17 +9,13 @@ Author:         HTMLMATE Team
 
 -------------------------------------------------------------------------------- */
 (function() {
-
 	"use strict";
-
 	var Genius = {
 		init: function() {
 			this.Basic.init();  
 		},
-
 		Basic: {
 			init: function() {
-
 				this.preloader();
 				this.menuBar();
 				this.onePageNav();
@@ -53,6 +49,7 @@ Author:         HTMLMATE Team
 				this.countDown();
 				this.switchOpen();
 				this.quickScroll();
+				this.getGeoLocation();
 			},
 
 
@@ -116,11 +113,14 @@ quickScroll2: function (){
 	});
 },
 
+getGeoLocation: function(){
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(showPosition);
+	}
+},
+
 /* - End of menu bar
 ================================================*/
-
-
-
 
 /* Start Of counter-up
 ================================================*/
@@ -129,12 +129,9 @@ counterUp: function (){
 		delay: 50,
 		time: 2000,
 	});
-
 },
 /* - End Of counter-up
 ================================================*/
-
-
 
 /* Start Of course slide
 ================================================*/
@@ -1275,4 +1272,8 @@ function getCenters(course_id,center_id) {
 			$('#lead-generation-form').modal('show');
 		}
 	});
+}
+
+function showPosition(position) {
+	console.log(position.coords.latitude,position.coords.longitude);
 }

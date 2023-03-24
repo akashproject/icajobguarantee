@@ -1,47 +1,13 @@
-/*----------------------------------------------------
-@File: Default Styles
-@Author: Team HTMLMATE
-@URL: https://www.htmlmate.com
-
-This file contains the styling for the actual theme, this
-is the file you need to edit to change the look of the
-theme.
----------------------------------------------------- */
-/*=====================================================================
-@Template Name: Genius Course
-@Author: HTMLMATE
-
-
-
-@Default Styles
-
-Table of Content:
-01/ Variables,Global
-02/ Header Section
-03/ Slider Section
-04/ Search Course Section
-05/ Popular Course Section
-06/ About Section
-07/ Testimonial Section
-08/ Latest area Section
-09/ Best course Section
-10/ Teacher Section
-11/ Best product section
-12/ FAQ section
-13/ Course category section
-14/ why choose us section
-15/ contact section
-16/ blog section
-17/ check out section
-18/ Course section
-19/ footer
- 
-
-
-=====================================================================*/
-/*Variables*/
-/*----------------------------------------------------*/
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,700,700i,900,900i");
+html {
+    overflow-x: hidden;
+}
+#slider-item .owl-dots {
+    position: absolute;
+    bottom: 9px;
+    left: 0;
+    right: 0;
+}
 #course-btn .genius-btn {
   margin: 0 auto; }
 
@@ -358,7 +324,7 @@ ul.product-tab.index-category-tab li.active {
     left: inherit; }
 
 .section-title h2 {
-  font-size: 55px;
+  font-size: 27px;
   font-weight: 300;
   color: #333333; }
 
@@ -370,7 +336,7 @@ ul.product-tab.index-category-tab li.active {
     font-weight: 700;color: #393185; }
 
 .section-title-2 h2 {
-  font-size: 38px;
+  font-size: 28px;
   color: #333333;
   font-weight: 300;
   position: relative; }
@@ -636,6 +602,7 @@ nav.navbar-menu.inside-navbar .nav-menu {
   .header-style-2 .search-body {
     top: 70px;
     right: 0px; }
+
 .header-info {
   display: inline-block;
   margin-left: 50px; }
@@ -696,60 +663,10 @@ nav.navbar-menu.inside-navbar .nav-menu {
   text-align: left;
   width: 85%;
 }
-
-.nav-menu-4 {
-  background-color: #fff;
-  border-radius: 4px;
-  padding: 25px 20px 25px 20px;
-  position: absolute;
-  line-height: 25px;
-  left: 0;
-  right: 0;
-  max-width: 1170px;
-  margin: 0 auto;
-  bottom: -30px; }
-  .nav-menu-4 .nav-menu li a {
-    color: #333333; }
-  .nav-menu-4 .nav-menu {
-    padding-top: 0; }
-  .nav-menu-4 select {
-    font-size: 15px;
-    margin-top: 0;
-    padding: 0;
-    width: 70px; }
-  .nav-menu-4 .select-lang {
-    border-left: none;
-    margin-left: 0; }
-  .nav-menu-4 .login-cart-lang ul {
-    float: right; }
-  .nav-menu-4 .login-cart-lang li {
-    margin: 0 20px;
-    position: relative; }
-    .nav-menu-4 .login-cart-lang li:before {
-      position: absolute;
-      height: 40px;
-      width: 1px;
-      background-color: #eee;
-      top: -8px;
-      left: -20px;
-      content: ''; }
-    .nav-menu-4 .login-cart-lang li i {
-      font-size: 13px; }
-  .nav-menu-4 .login-cart-lang .cart_search {
-    height: 25px;
-    width: 25px;
-    background-color: #dddddd;
-    color: #fff;
-    border-radius: 100%;
-    line-height: 22px;
-    text-align: center; }
-  .nav-menu-4 .login-cart-lang .login a {
-    color: #393185; }
-  .nav-menu-4 .login-cart-lang button {
-    background-color: transparent;
-    border: none;
-    color: #fff; }
-
+.navbar-header {
+  width: 80%;
+  right: -48px;
+}
 .search-body {
   top: 55px;
   right: 0px;
@@ -1127,7 +1044,6 @@ button.alt-menu-btn.float-left {
     font-size: 18px;
     color: #fff;
     margin: 0px 10px; }
-
 .modal-body .log-in-text {
   text-transform: uppercase;
   color: #fff;
@@ -1363,7 +1279,8 @@ button.alt-menu-btn.float-left {
 /*Search Course*/
 /*----------------------------------------------------*/
 .search-course-section {
-  padding: 125px 0px 125px 0px; }
+    padding: 0; 
+}
 
 .search-course input, .search-course .register-form-area select, .register-form-area .search-course select, .search-course .register-form-area textarea, .register-form-area .search-course textarea,
 .subs-form input,
@@ -1557,9 +1474,11 @@ button.alt-menu-btn.float-left {
 /*popular Course*/
 /*----------------------------------------------------*/
 .popular-course-section {
-  padding-bottom: 125px; }
+    padding-bottom: 40px;
+}
+
   .popular-course-section .section-title .subtitle {
-    margin-left: 42px; }
+    margin-left: 0; }
 
 .course-meta {
   display: inline-block;
@@ -1592,15 +1511,15 @@ button.alt-menu-btn.float-left {
   bottom: 25px;
   position: absolute; }
 
-.course-title h3 {
-  color: #333333;
-  font-size: 22px;
-  margin-bottom: 5px;
-  font-weight: 500;
-  line-height: 30px;
-  -webkit-transition: .3s all ease-in-out;
-  -o-transition: .3s all ease-in-out;
-  transition: .3s all ease-in-out; 
+  .course-title h3 {
+    color: #333333;
+    font-size: 18px;
+    margin-bottom: 5px;
+    font-weight: 500;
+    line-height: 22px;
+    -webkit-transition: .3s all ease-in-out;
+    -o-transition: .3s all ease-in-out;
+    transition: .3s all ease-in-out;
 }
 .trend-badge {
   top: -6px;
@@ -1775,18 +1694,16 @@ button.alt-menu-btn.float-left {
   text-transform: uppercase;
   background-color: #ff5b10; }
 
-.bg-mockup {
-  position: absolute;
-  top: 10px;
-  left: -6px;
-  z-index: 1; }
+  .bg-mockup {
+    display: none;
+    }
 
 .about-us-text {
   padding-top: 35px; }
   .about-us-text .section-title {
     margin-bottom: 60px; }
     .about-us-text .section-title p {
-      font-size: 22px;
+      font-size: 18px;
       font-weight: 500;
       color: #333333;
       margin-top: 20px; }
@@ -1824,15 +1741,15 @@ button.alt-menu-btn.float-left {
 
 .home-secound .about-resigter-form {
   background-image: url(../img/about/abt.jpg);
+  margin: 0 auto;
   max-width: 420px;
-  margin-top: 5px;
   padding: 50px;
-  margin-left: 30px;
   border-radius: 5px;
   position: relative;
   z-index: 2;
   -webkit-box-shadow: 10px 10px 30px 10px rgba(0, 0, 0, 0.1);
   box-shadow: 10px 10px 30px 10px rgba(0, 0, 0, 0.1); }
+
   .home-secound .about-resigter-form:after {
     content: '';
     position: absolute;
@@ -2255,11 +2172,15 @@ button.alt-menu-btn.float-left {
   padding: 50px 0px 50px 0px; }
 
 .best-course-pic-text {
+  margin: 0 auto;
+  margin-bottom: 10px;
+  max-width: initial;
   border-radius: 4px;
   margin-top: 20px;
   background: #fff; }
+
   .best-course-pic-text .course-title h3 {
-    font-size: 16px;
+    font-size: 23px;
     line-height: 24px;
   }
   .best-course-pic-text .course-type-title h3 {
@@ -3304,16 +3225,16 @@ ul.product-tab li.active:after {
       content: '';
       background-color: #4a8ec0;
       top: 22px; }
-  .panel-group .panel-title .btn-link {
-    display: block;
-    padding: 15px 0px 15px;
-    position: relative;
-    width: 99%;
-    text-align: left;
-    text-decoration: none;
-    font-size: 22px;
-    font-weight: 500;
-    color: #393185; }
+      .panel-group .panel-title .btn-link {
+        display: block;
+        padding: 0 0px 15px;
+        position: relative;
+        width: 99%;
+        text-align: left;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        color: #393185;}
     .panel-group .panel-title .btn-link:before {
       content: '\f139';
       position: absolute;
@@ -4176,14 +4097,14 @@ ul.product-tab li.active:after {
       font-size: 16px;
       font-weight: 700;
       color: #333333; }
-  .course-type-list .btn-filled {
+  .course-page-section .course-type-list a,.course-type-list a {
     background-color: #393185;
     color: #fff;
     padding: 11px;
     border-radius: 4px; 
     width: 100%; 
     }
-    .course-type-list .btn-outline {
+    .btn-outline {
       background: #fff;
       color: #393185;
       border: 1px solid;
@@ -5118,16 +5039,4 @@ span.success-icon {
 
 .alert.alert-danger ul {
   margin: 0;
-}
-.message-title {
-  width: 100%;
-}
-.message-title h3 {
-  text-align: center;
-  background-color: #cdcff5;
-  padding: 9px 20px;
-  font-size: 16px;
-  font-weight: 600;
-  color: green;
-  border: 1px solid #afc5af;
 }
