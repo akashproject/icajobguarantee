@@ -1275,5 +1275,10 @@ function getCenters(course_id,center_id) {
 }
 
 function showPosition(position) {
-	console.log(position.coords.latitude,position.coords.longitude);
+	jQuery.cookie("lat", position.coords.latitude);
+	jQuery.cookie("lng", position.coords.longitude);
+	if(!jQuery.cookie("reloadFlag")){
+		location.reload();
+		jQuery.cookie("reloadFlag",true);
+	}
 }

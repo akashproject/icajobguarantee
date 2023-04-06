@@ -59,7 +59,10 @@ class CenterController extends Controller
                 'slug' => 'required',
                 'courses' => 'required',
                 'description' => 'required',
+                'state_id' => 'center_pincode',
                 'state_id' => 'required',
+                'lat' => 'required',
+                'lng' => 'required',
             ]);
             $data['courses'] = json_encode($data['courses']);
             $data['pincode'] = json_encode(explode(",",$data['pincode']));

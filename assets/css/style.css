@@ -155,9 +155,10 @@ select:visited {
 .fa-clock {
   color: #6363ff;
 }
-.fa-book {
+.fa-book,.fa-map-marker {
   color: #eb4141;
 }
+
 .headline h1,
 .headline h2,
 .headline h3,

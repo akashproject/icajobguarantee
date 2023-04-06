@@ -18,7 +18,12 @@ class CenterController extends Controller
     {
         try {
             $contentMain = State::where('slug', $slug)->first();
-            $centers = Center::where('state_id', $contentMain->id)->where('status', 1)->get();
+            $centers = Center::where('state_id', $contentMain->id);
+            $centers->where('status', 1);
+            if(isset($_COOKIE['lng']) && isset($_COOKIE['lat'])){
+                $centers->orderBy(DB::raw('POW((lng-'."22.707401".'),2) + POW((lat-'."88.387015".'),2)'));
+            }
+            $centers = $centers->get();
             $states = State::where('status', 1)->get();
             $cities = City::where('state_id', $contentMain->id)->where('status', 1)->orderBy("name","asc")->get();
             return view('centers.index',compact('centers','states','contentMain','cities'));

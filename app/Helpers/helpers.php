@@ -10,6 +10,7 @@ use App\Models\Center;
 use App\Models\Course;
 use App\Models\CourseType;
 use App\Models\State;
+use App\Models\City;
 use App\Models\Job;
 use App\Models\JobType;
 
@@ -158,6 +159,28 @@ if (! function_exists('getStates')) {
     }
 }
 
+if (! function_exists('getStateById')) {
+    function getStateById($id){
+        try {
+            $state = State::findOrFail($id);
+            return $state;
+        } catch(\Illuminate\Database\QueryException $e){
+            throw $e;
+        }
+    }
+}
+
+if (! function_exists('getCityById')) {
+    function getCityById($id){
+        try {
+            $state = City::findOrFail($id);
+            return $state;
+        } catch(\Illuminate\Database\QueryException $e){
+            throw $e;
+        }
+    }
+}
+
 if (! function_exists('getCenters')) {
     function getCenters($course_id=null, $center_id=null){
         $centers = DB::table('centers');
@@ -167,7 +190,17 @@ if (! function_exists('getCenters')) {
         if($center_id){
             $centers->where('id',$center_id);
         } 
-        $centers = $centers->where('status',"1")->get();
+        $centers = $centers->where('status',"1");
+
+        //$radies = getRadius($_COOKIE['lat'],$_COOKIE['lng']);
+        //$centers->whereBetween('lng', [$radies['minLon'], $radies['maxLon']]);
+        //$centers->whereBetween('lat', [$radies['minLat'], $radies['maxLat']]);
+        if(isset($_COOKIE['lng']) && isset($_COOKIE['lat'])){
+            $centers->orderBy(DB::raw('POW((lng-'.$_COOKIE['lng'].'),2) + POW((lat-'.$_COOKIE['lat'].'),2)'));
+        }
+        
+        
+        $centers = $centers->get();       
         return $centers;
     }
 }
@@ -220,6 +253,33 @@ if (! function_exists('getJobTypes')) {
     function getJobTypes(){
         try {
             return $jobtypes = JobType::where('status', 1)->get();
+        } catch(\Illuminate\Database\QueryException $e){
+            throw $e;
+        }
+    }
+}
+
+if (! function_exists('getRadius')) {
+    function getRadius($lat,$lon){
+        try {
+            $R = 3960;  // earth's mean radius
+            $rad = '1000';
+            // first-cut bounding box (in degrees)
+            $maxLat = $lat + rad2deg($rad/$R);
+            $minLat = $lat - rad2deg($rad/$R);
+            // compensate for degrees longitude getting smaller with increasing latitude
+            $maxLon = $lon + rad2deg($rad/$R/cos(deg2rad($lat)));
+            $minLon = $lon - rad2deg($rad/$R/cos(deg2rad($lat)));
+
+            $radies = array(
+                'lat' => $lat,
+                'lon' => $lon,
+                'maxLat' => number_format((float)$maxLat, 6, '.', ''),
+                'minLat' => number_format((float)$minLat, 6, '.', ''),
+                'maxLon' => number_format((float)$maxLon, 6, '.', ''),
+                'minLon' => number_format((float)$minLon, 6, '.', ''),
+            );
+            return $radies;
         } catch(\Illuminate\Database\QueryException $e){
             throw $e;
         }

@@ -102,6 +102,9 @@
 																	</div>
 																</div>															
 															</div>	
+															<div class="course-meta mb10 text-center">
+																<span class="course-category"><a href="{{ url('/state/'.getStateById($value->state_id)->slug) }}"><i class="fas fa-map-marker"></i> {{ getStateById($value->state_id)->name }}</a> ,<a href="{{ url('/city/'.getCityById($value->city_id)->slug) }}"> {{ getCityById($value->city_id)->name }} </a></span>
+															</div>
 															<div class="more-btn text-center" >
 																<div class="course-type-list">	
 																	<span class="btn-filled" onclick="lead_capture_form_btn('',{{ $value->id }})"><i class="fas fa-download"></i> Brochure</span>

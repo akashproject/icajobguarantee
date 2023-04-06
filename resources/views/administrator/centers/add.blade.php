@@ -98,12 +98,23 @@
 							</div>
 						</div>
 						<div class="form-group row">
+							<label for="lat" class="col-sm-3 text-right control-label col-form-label">Lattitude</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" name="lat" id="lat" placeholder="Enter Name Here" >
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="lng" class="col-sm-3 text-right control-label col-form-label">Longitude</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" name="lng" id="lng" placeholder="Slug Here" >
+							</div>
+						</div>
+						<div class="form-group row">
 							<label for="center_pincode" class="col-sm-3 text-right control-label col-form-label">Center's Pincode</label>
 							<div class="col-sm-9">
 							<input type="text" class="form-control" name="center_pincode" id="center_pincode" placeholder="Enter Center Pincode Here" value="" >
 							</div>
 						</div>
-						
 						<div class="form-group row">
 							<label for="pincode" class="col-sm-3 text-right control-label col-form-label">Pincode</label>
 							<div class="col-sm-9">
