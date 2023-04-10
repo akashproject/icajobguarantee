@@ -375,6 +375,12 @@ ul.product-tab.index-category-tab li.active {
   color: #333333;
   font-weight: 300;
   position: relative; }
+
+.section-title-2 h3 {
+  font-size: 20px;
+  color: #333333;
+  font-weight: 300;
+  position: relative; }
 .why-choose-us-section .section-title-2 h2 span {
     font-weight: 700;
     color: #ffffff;
@@ -419,6 +425,33 @@ ul.product-tab.index-category-tab li.active {
     visibility: visible;
     background: linear-gradient(to right, #000000 0%, #1d1d1d 51%, #fdfdfd 100%);
   }
+  .center-image {
+    position: absolute;
+    top: -54px;
+    padding: 6px;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.center-info-banner {
+  margin-left: 174px;
+  margin-bottom: 0;
+  padding: 15px 0 78px 0;
+  color: #333;
+}
+
+.center-info-banner-description {
+  margin: 0.9rem 0 0.5rem 0;
+  font-size: 14px;
+}
+
+
+.fa-star {
+  color: #ffc926;
+}
+.display-block {
+  display: block;
+}
   .page-breadcrumb-title {
     margin-top: 0.5rem;
   }
@@ -4216,7 +4249,7 @@ ul.product-tab li.active:after {
       width: 49%;
       font-size: 16px; }
 .course-single-text p {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 300;
   margin-bottom: 30px;
   color: #333333; }
@@ -4525,6 +4558,15 @@ ul.product-tab li.active:after {
   float: right;
   color: #393185;
   font-size: 14px; }
+  
+  .center-banner-comment-ratting {
+    display: inline-block;
+}
+  .center-banner-student-enrolled {
+    color: #393185;
+    font-size: 14px;
+    display: inline-block;
+}
 
 .enrolled-student {
   display: inline-block;

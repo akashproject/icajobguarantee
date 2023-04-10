@@ -3,19 +3,30 @@
     @section('content')
 	<!-- Start of breadcrumb section
 		============================================= -->
-		<section id="breadcrumb" class="breadcrumb-section relative-position backgroud-style">
-			<div class="blakish-overlay"></div>
-			<div class="container">
-				<div class="page-breadcrumb-content">
-					
-					<div class="page-breadcrumb-title">
-						<h2 class="breadcrumb-head black bold">{{$contentMain->name}}</h2>
+		<section id="breadcrumb" class="breadcrumb-section backgroud-style" style="padding-top: 180px;padding-bottom: 1px;">
+			<div class="container-fluid bg-white">
+				<div class="container relative-position">
+					<div class="text-center center-image">
+						<img src="https://dummyimage.com/140x140" >
 					</div>
-					<div class="page-breadcrumb-description">
-						{!! $contentMain->excerpt !!}
-					</div>
-					<div class="page-breadcrumb-option">
-						<p>{!! $contentMain->criteria !!} </p>
+					<div class="center-info-banner">
+						<h2 class="">ICA Edu Skills | {{ $contentMain->name }}</h2>
+						<div class="center-info-banner-description" >{!! $contentMain->excerpt !!}</div>
+						<p> <a href="{{ url('/state/'.getStateById($contentMain->state_id)->slug) }}"><i class="fas fa-map-marker"></i> {{ getStateById($contentMain->state_id)->name }}</a>, <a href="{{ url('/city/'.getCityById($contentMain->city_id)->slug) }}"> {{ getCityById($contentMain->city_id)->name }} </a></p>
+						<div class="display-block">
+							<div class="center-banner-comment-ratting ul-li">
+								<ul>
+									<li><i class="fas fa-star"></i></li>
+									<li><i class="fas fa-star"></i></li>
+									<li><i class="fas fa-star"></i></li>
+									<li><i class="fas fa-star"></i></li>
+									<li><i class="fas fa-star"></i></li>
+								</ul>
+							</div>
+							<div class="center-banner-student-enrolled bold-font">
+								(768) Rating | 2.5k Enrolled
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -94,10 +105,11 @@
 									<div class="course-details-category ul-li tab-button text-left mb25 tab-button text-left mb25">
 										<ul class="product-tab ">
 											<li class="active" rel="tab1">Summary</li>
-											<li rel="tab2"> Criteria </li>
-											<li rel="tab3"> Highlights </li>
-											<li rel="tab4">  Gallery  </li>
-											<li rel="tab5">  Map  </li>
+											<li rel="tab2"> Highlights </li>
+											<li rel="tab3"> Admission </li>
+											<li rel="tab4"> Placements </li>
+											<li rel="tab5"> Gallery  </li>
+											<li rel="tab6"> Map </li>
 										</ul>
 									</div>
 									<!-- /tab-head -->
@@ -117,29 +129,27 @@
 										<!-- #tab1 -->
 
 										<div id="tab2" class="tab-content-1 pt35">
-											<div class="course-details-content criteria">
-												
-											</div>
-										</div>
-										<!-- #tab2 -->
-
-										<div id="tab3" class="tab-content-1 pt35">
 											<div class="center-details-content highlights">
 												<div class="affiliate-market-guide mb65">
 													<div class="section-title-2 mb20 headline text-left">
-														<h2><span>ICA Shantipuram</span> Quick Training Highlights</h2>
+														<h3><span>ICA Centre</span> Quick Training Highlights</h3>
 													</div>
 													{!! $contentMain->highlights !!}
 												</div>
 											</div>
 										</div>
 										<!-- #tab3 -->
-
+										<div id="tab3" class="tab-content-1 pt35">
+											<h3><span>ICA Centre</span> Quick Admission Process</h3>
+										</div>
 										<div id="tab4" class="tab-content-1 pt35">
+											<h3><span>ICA Centre</span> Our Placements</h3>
+										</div>
+										<div id="tab5" class="tab-content-1 pt35">
 											<div class="course-details-content">
 												<div class="affiliate-market-guide mb65">
 													<div class="section-title-2 mb20 headline text-left">
-														<h2><span>Affiliate Marketing</span> A Begginer's Guide</h2>
+														<h3><span>Affiliate Marketing</span> A Begginer's Guide</h3>
 													</div>
 
 													<div class="row">
@@ -161,11 +171,11 @@
 											</div>
 										</div>
 										<!-- #tab4 -->
-										<div id="tab5" class="tab-content-1 pt35">
+										<div id="tab6" class="tab-content-1 pt35">
 											<div class="course-details-content">
 												<div class="affiliate-market-guide mb65">
 													<div class="section-title-2 mb20 headline text-left">
-														<h2><span>Affiliate Marketing</span> A Begginer's Guide</h2>
+														<h3><span>Affiliate Marketing</span> A Begginer's Guide</h3>
 													</div>
 													<div class="affiliate-market-accordion">
 													{!! $contentMain->gmap_location !!}
@@ -183,32 +193,9 @@
 					</div>
 
 					<div class="col-md-4">
-						<div class="side-bar">							
-							<div class="enrolled-student">
-								<div class="comment-ratting float-left ul-li">
-									<ul>
-										<li><i class="fas fa-star"></i></li>
-										<li><i class="fas fa-star"></i></li>
-										<li><i class="fas fa-star"></i></li>
-										<li><i class="fas fa-star"></i></li>
-										<li><i class="fas fa-star"></i></li>
-									</ul>
-								</div>
-								<div class="student-number bold-font">
-									2.5k Enrolled
-								</div>
-							</div>
-							<div class="couse-feature ul-li-block">
-								<ul>
-									<li>Lectures <span>20 Lectures</span></li>
-									<li>Language  <span>Hindi, English</span></li>
-									<li>Video  <span>8 Hours</span></li>
-									<li>Duration <span>30 Days</span></li>
-									<li>Includes  <span>Breakfast</span></li>
-								</ul>
-							</div>							
+						<div class="side-bar">													
 							<div class="side-bar-widget">
-								<h2 class="widget-title text-capitalize"><span>Related </span>News.</h2>
+								<h2 class="widget-title text-capitalize"><span>Contact </span>Us.</h2>
 								<div class="latest-news-posts">
 									<ul class="side-bar-widget-contact-info" >
 										<li>
@@ -250,20 +237,16 @@
 										</li>
 									</ul>
 								</div>
-							</div>
-							
+							</div>			
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
-	
 	<!-- End of course details section
 		============================================= -->	
-		
 	<!-- Start of testimonial secound section
 	============================================= -->
-
 	<section id="alumni" class="testimonial_2_section">
 		<div class="container">
 			<div class="testimonial-slide">
@@ -285,6 +268,32 @@
 			</div>
 		</div>
 	</section>
+	<!-- End  of testimonial secound section
+	============================================= -->
+		
+	<!-- Start of testimonial secound section
+	============================================= -->
+		<section id="alumni" class="testimonial_2_section">
+			<div class="container">
+				<div class="testimonial-slide">
+					<div class="section-title mb20 headline text-center">
+						<span class="subtitle text-uppercase">About This Course </span>
+						<h3>Student<span> Speaks.</span></h3>
+					</div>
+					<div  id="testimonial-slide-item" class="testimonial-slide-area">
+						@foreach(getTestimonials("Course",$contentMain->id) as $value)
+						<div class="student-qoute">
+							{!! $value->comment !!}
+							<div class="student-name-designation">
+								<span class="st-name bold-font">{{ $value->name }}</span>
+								<span class="st-designation">{{ $value->dasignation }}</span>
+							</div>
+						</div>
+						@endforeach
+					</div>
+				</div>
+			</div>
+		</section>
 	<!-- End  of testimonial secound section
 	============================================= -->
 
