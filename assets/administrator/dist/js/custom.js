@@ -185,7 +185,7 @@ $(function() {
             }
         });
         $.ajax({
-            url: `/icajobguarantee/administrator/search-media`,
+            url: `${globalUrl}administrator/search-media`,
             type: "post",
             data: {
                 keyword: keyword,
@@ -195,7 +195,38 @@ $(function() {
             }
         });
     });
+
+    $('#tags').on('keyup',function(){
+        let keyword = $(this).val();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            url: `${globalUrl}administrator/get-tags`,
+            type: "post",
+            data: {
+                keyword: keyword,
+            },
+            success: function(result) {
+                $(".tag-content").html(result)
+            }
+        });
+    });
+
+    $(document).on("click",".tag-content ul li", function(){
+        let tagValue = $(".tag-values").html();
+        let nTagValue = '<a href="javascript:void(0)" ><input type="hidden" name="tags[]" value="'+$(this).attr("data-id")+'"><span class="mdi mdi-tag-remove"></span>'+$(this).text()+'</a>';
+        let result = tagValue.concat(nTagValue);
+        $(".tag-values").html(result);
+        $(".tag-content").html("");
+    });
     
+    $(document).on("click",".tag-values a .mdi-tag-remove", function(){
+        $(this).parent().remove();
+    });
+
     jQuery('.open-popup-link').magnificPopup({
         type: 'inline',
         midClick: true,
@@ -244,6 +275,7 @@ $(function() {
     })
 
 });
+
 function setMedia(){
     $("#"+fieldId).val(imageId);
     $("#"+fieldId).parent().children("img").attr("src",imagePath)
@@ -258,7 +290,7 @@ function getCitiesByStateId(event){
         }
     });
     $.ajax({
-        url: `/icajobguarantee/administrator/get-city-by-state-id`,
+        url: `${globalUrl}administrator/get-city-by-state-id`,
         type: "post",
         data: {
             state_id: state_id,

@@ -65,6 +65,8 @@ CREATE TABLE `centers` (
   `city_id` int(11) DEFAULT NULL,
   `pincode` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `center_pincode` int(11) DEFAULT NULL,
+  `lat` float(10,6) NOT NULL,
+  `lng` float(10,6) NOT NULL,
   `tags` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `enable_otp` tinyint(1) NOT NULL DEFAULT 1,
   `meta_description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -266,6 +268,27 @@ CREATE TABLE `jobs` (
   `experince` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `salary` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` tinyint(1) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `leads`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `leads` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `mobile` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `center` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pincode` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `latitude` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `longitude` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `utm_source` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `utm_campaign` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `role` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -508,3 +531,4 @@ INSERT INTO `migrations` VALUES (45,'2022_11_25_055617_create_pages_table',21);
 INSERT INTO `migrations` VALUES (46,'2023_03_13_082934_create_jobs_table',22);
 INSERT INTO `migrations` VALUES (47,'2023_03_13_091940_create_job_types_table',22);
 INSERT INTO `migrations` VALUES (48,'2023_03_14_110002_create_contacts_table',23);
+INSERT INTO `migrations` VALUES (50,'2023_03_24_123250_create_leads_table',24);

@@ -1,9 +1,5 @@
 <?php
-use App\Models\Media;
-use App\Models\Setting;
-use App\Models\Review;
-use App\Models\Testimonial;
-use App\Models\Faq;
+
 use Illuminate\Support\Facades\DB;
 use Jenssegers\Agent\Facades\Agent;
 use App\Models\Center;
@@ -13,6 +9,11 @@ use App\Models\State;
 use App\Models\City;
 use App\Models\Job;
 use App\Models\JobType;
+use App\Models\Media;
+use App\Models\Setting;
+use App\Models\Review;
+use App\Models\Testimonial;
+use App\Models\Faq;
 
 if (! function_exists('check_device')) {
     function check_device($param = null){

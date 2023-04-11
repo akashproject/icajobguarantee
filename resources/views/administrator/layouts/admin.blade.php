@@ -65,7 +65,9 @@
 		@include('administrator.includes.footer')
 	</div>
 <!-- All Jquery -->
-
+<script>
+    let globalUrl = "{{ env("APP_URL") }}"
+</script>
 <script src="{{ url('assets/administrator/libs/jquery/dist/jquery.min.js') }}"></script>
 <script src="{{ url('assets/administrator/libs/popper.js/dist/umd/popper.min.js') }}"></script>
 <script src="{{ url('assets/administrator/libs/bootstrap/dist/js/bootstrap.min.js') }}"></script>

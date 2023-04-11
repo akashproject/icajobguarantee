@@ -14876,3 +14876,29 @@ File: scss
   font-size: 23px;
   color: red;
 }
+.tag-content {
+  border: 1px solid #ccc;
+}
+.tag-content ul {
+  margin: 0;
+  padding: 0;
+}
+
+.tag-content ul li {
+  list-style: none;
+  padding: 8px;
+  background: #f1f1f1;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 3px;
+}
+
+.tag-values {
+  background: #f1f1f1;
+  padding: 6px;
+}
+.tag-values a {
+  margin-right: 5px;
+}

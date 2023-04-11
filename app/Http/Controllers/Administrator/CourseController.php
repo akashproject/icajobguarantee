@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Course;
 use App\Models\CourseType;
 use App\Models\Curriculum;
+use App\Models\Tag;
 
 class CourseController extends Controller
 {
@@ -33,6 +34,10 @@ class CourseController extends Controller
     {
         try {
             $course = Course::find($id);
+            if ($course->tags != '') {
+                $course->tags = Tag::select('id','name')->whereIn("id",json_decode($course->tags))->get();
+            }
+            
             $courseType = CourseType::all();
             return view('administrator.courses.show',compact('course','courseType'));
         } catch(\Illuminate\Database\QueryException $e){
@@ -56,8 +61,11 @@ class CourseController extends Controller
                 'slug' => 'required',
                 'no_of_module' => 'required',
             ]);
-            // echo "<pre>"; print_r($data);
-            // exit;
+
+            if(isset($data['tags'])) {
+                $data['tags'] = json_encode($data['tags']);
+            }
+
             if($data['course_id'] <= 0){
                 $course = Course::create($data);
                 if($course->id){

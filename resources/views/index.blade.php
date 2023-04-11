@@ -6,7 +6,7 @@
 		============================================= -->
 		<section id="slide" class="slider-section">
 			<div id="slider-item" class="slider-item-details">
-				<div  class="slider-area slider-bg-1 relative-position" style="background-image: url({{ getSizedImage('','33')}} );" >
+				<div  class="slider-area slider-bg-1 relative-position" style="background-image: url(https://dummyimage.com/1920x980);" >
 					<div class="slider-text">
 						<div class="section-title mb20 headline text-center">
 							<div class="layer-1-1">
@@ -26,7 +26,7 @@
 					</div>
 
 				</div>
-				<div class="slider-area slider-bg-2 relative-position" style="background-image: url({{ getSizedImage('','33')}} );">
+				<div class="slider-area slider-bg-2 relative-position" style="background-image: url(https://dummyimage.com/1920x980);">
 					<div class="slider-text">
 						<div class="section-title mb20 headline text-center">
 							<div class="layer-1-1">
@@ -58,7 +58,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="slider-area slider-bg-3 relative-position" style="background-image: url({{ getSizedImage('','33')}} );">
+				<div class="slider-area slider-bg-3 relative-position" style="background-image: url(https://dummyimage.com/1920x980);">
 					<div class="slider-text">
 						<div class="layer-1-2">
 							<div class="coming-countdown ul-li">
@@ -102,7 +102,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="slider-area slider-bg-4 relative-position" style="background-image: url({{ getSizedImage('','33')}} );">
+				<div class="slider-area slider-bg-4 relative-position" style="background-image: url(https://dummyimage.com/1920x980);">
 					<div class="slider-text">
 						<div class="section-title mb20 headline text-center">
 							<span class="subtitle text-uppercase">EDUCATION & TRAINING ORGANIZATION</span>

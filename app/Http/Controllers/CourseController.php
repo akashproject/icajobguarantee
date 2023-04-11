@@ -8,7 +8,7 @@ use App\Models\Course;
 use App\Models\CourseType;
 use App\Models\Curriculum;
 use App\Models\Review;
-
+use App\Models\Tag;
 class CourseController extends Controller
 {
 
@@ -41,6 +41,9 @@ class CourseController extends Controller
         try {
 
             $contentMain = Course::where('slug', $slug)->first();
+            if ($contentMain->tags) {
+                $contentMain->tags = Tag::select('name','slug')->whereIn("id",json_decode($contentMain->tags))->get();
+            }
             $course_id = $contentMain->type_id;
             $carriculams = Curriculum::where('course_id',$contentMain->id)->get();
 

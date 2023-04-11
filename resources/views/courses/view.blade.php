@@ -264,6 +264,18 @@
 								</div>
 							</div>
 						</div>
+						<div class="side-bar-widget">
+							<h2 class="widget-title text-capitalize">Popular <span>Tag's.</span></h2>
+							<div class="tag-clouds ul-li">
+								<ul>
+									@if(isset($contentMain->tags))
+									@foreach($contentMain->tags as $value)
+										<li><a href="{{url('tags')}}/{{$value->slug}}">{{$value->name}}</a></li>
+									@endforeach
+									@endif
+								</ul>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

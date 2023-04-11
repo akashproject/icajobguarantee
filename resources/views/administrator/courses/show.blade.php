@@ -49,18 +49,6 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="price" class="col-sm-3 text-right control-label col-form-label">Actual Price</label>
-							<div class="col-sm-9">
-								<input type="text" class="form-control" name="price" id="price" placeholder="Enter Actual Price Here" value="{{ $course->price }}" >
-							</div>
-						</div>
-						<div class="form-group row">
-							<label for="offer_price" class="col-sm-3 text-right control-label col-form-label">Offer Price</label>
-							<div class="col-sm-9">
-								<input type="text" class="form-control" name="offer_price" id="offer_price" placeholder="Enter Offer Price Here" value="{{ $course->offer_price }}" >
-							</div>
-						</div>
-						<div class="form-group row">
 							<label for="duration" class="col-sm-3 text-right control-label col-form-label">Course Duration</label>
 							<div class="col-sm-9">
 								<input type="text" class="form-control" name="duration" id="duration" placeholder="Enter Course Duration" value="{{ $course->duration }}" >
@@ -88,28 +76,7 @@
 							<label for="no_of_module" class="col-sm-3 text-left control-label col-form-label">Curriculum</label>
 							<div class="col-sm-9">
 								<a href="{{ url('administrator/curriculum') }}/{{ $course->id }}" class="btn btn-primary">Curriculum Detail</a>
-								<!-- @for( $i = 1; $i<=$course->no_of_module; $i++ )
-									<div class="form-group row">
-										<label for="no_of_module" class="col-sm-3 text-right control-label col-form-label">Module {{$i}}</label>
-										<div class="col-sm-9">
-											<input type="text" class="form-control" name="curriculum[{{$i}}]['modulename']" id="curriculum" placeholder="Enter Module Name" >
-											<div class="form-group row">
-												<label for="no_of_module" class="col-sm-2 text-right control-label col-form-label">Lecture</label>
-												<div class="col-md-8" >
-													<input type="text" class="form-control" name="curriculum[{{$i}}]['lecture][]" id="lecture" placeholder="Enter Lecture" >
-												</div>
-												<div class="col-md-2" >
-													<span class="addLecture" > 
-														<i class="mdi mdi-plus-circle-outline"></i>
-													</span>
-													<span class="removeLecture" > 
-														<i class="mdi mdi-minus-circle-outline"></i> 
-													</span>
-												</div>
-											</div>
-										</div>
-									</div>
-								@endfor -->
+								
 							</div>
 						</div>
 						<div class="form-group row">
@@ -139,7 +106,21 @@
 						<div class="form-group row">
 							<label for="tags" class="col-md-12 text-left control-label col-form-label">Tags</label>
 							<div class="col-sm-12">
-								<textarea class="form-control" name="tags" id="meta_description" placeholder="Enter Tags Here" ></textarea>
+								<input type="text" class="form-control" id="tags" placeholder="Enter Tags Here" ></input>
+							</div>
+							<div class="col-sm-12">
+								<div class="tag-values">
+									@if(isset($course->tags))
+									@foreach($course->tags as $value)
+									<a href="javascript:void(0)"><input type="hidden" name="tags[]" value="{{$value->id}}"><span class="mdi mdi-tag-remove"></span>{{$value->name}}</a>
+									@endforeach
+									@endif
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<div class="tag-content" >
+
+								</div>
 							</div>
 						</div>
 						<div class="form-group row">

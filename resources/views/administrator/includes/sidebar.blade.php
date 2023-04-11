@@ -138,6 +138,8 @@
 
                         </li>
 
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark" href="{{ url('administrator/tags') }}" aria-expanded="false"><i class="mdi mdi-tag"></i><span class="hide-menu">Tags</span></a></li>
+
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark" href="{{ url('administrator/reviews') }}" aria-expanded="false"><i class="mdi mdi-star"></i><span class="hide-menu">Reviews</span></a></li>
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark" href="{{ url('administrator/contacts') }}" aria-expanded="false"><i class="mdi mdi-email"></i><span class="hide-menu">Contacts</span></a></li>

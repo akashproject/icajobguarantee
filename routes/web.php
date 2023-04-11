@@ -12,7 +12,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/clear-cache', function() {
+    $exitCode = Artisan::call('cache:clear');
+    // return what you want
+});
 
 Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () {
     //Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 'create'])->name('admin-register');
@@ -105,6 +108,14 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::get('/view-job-type/{id}', [App\Http\Controllers\Administrator\JobController::class, 'showJobType'])->name('admin-view-job-type');
         Route::post('/save-job-type', [App\Http\Controllers\Administrator\JobController::class, 'saveJobType'])->name('admin-save-job-type');
  
+        //Course Type
+        Route::get('/tags', [App\Http\Controllers\Administrator\TagController::class, 'index'])->name('admin-tags');
+        Route::post('/get-tags', [App\Http\Controllers\Administrator\TagController::class, 'getTags'])->name('admin-get-tags');
+        Route::get('/add-tag', [App\Http\Controllers\Administrator\TagController::class, 'add'])->name('admin-add-tag');
+        Route::get('/view-tag/{id}', [App\Http\Controllers\Administrator\TagController::class, 'show'])->name('admin-view-tag');
+        Route::post('/save-tag', [App\Http\Controllers\Administrator\TagController::class, 'save'])->name('admin-save-tag');
+        Route::get('/delete-tag/{id}', [App\Http\Controllers\Administrator\TagController::class, 'delete'])->name('admin-delete-tag');
+        
         //Review
         Route::get('/reviews', [App\Http\Controllers\Administrator\ReviewController::class, 'index'])->name('admin-reviews');
         Route::get('/view-review/{id}', [App\Http\Controllers\Administrator\ReviewController::class, 'show'])->name('admin-view-review');
@@ -143,6 +154,7 @@ Route::get('/city/{slug}', [App\Http\Controllers\CenterController::class, 'city'
 Route::post('/submit-review', [App\Http\Controllers\ReviewController::class, 'create'])->name('submit-review');
 //Route::get('/blogs', [App\Http\Controllers\BlogController::class, 'index'])->name('blogs');
 
+Route::get('/tags/{slug}', [App\Http\Controllers\TagController::class, 'index'])->name('tags');
 //Capture Leads
 Route::post('/save-contact', [App\Http\Controllers\PageController::class, 'saveContact'])->name('save-contact');
 Route::post('/submit-mobile-otp', [App\Http\Controllers\IndexController::class, 'submitMobileOtp'])->name('submit-mobile-otp');
