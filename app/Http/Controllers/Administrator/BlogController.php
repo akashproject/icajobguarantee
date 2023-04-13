@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Blog;
 use App\Models\Author;
+use App\Models\Tag;
 
 class BlogController extends Controller
 {
@@ -36,6 +37,9 @@ class BlogController extends Controller
         try {
             $authors = Author::all();
             $blog = Blog::findorFail($id);
+            if ($blog->tags != '') {
+                $blog->tags = Tag::select('id','name')->whereIn("id",json_decode($blog->tags))->get();
+            }
             return view('administrator.blogs.show',compact('blog','authors'));
         } catch(\Illuminate\Database\QueryException $e){
         }        

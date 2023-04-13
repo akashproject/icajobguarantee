@@ -165,7 +165,7 @@ Route::get('/state/{slug}', [App\Http\Controllers\CenterController::class, 'stat
 Route::get('/city/{slug}', [App\Http\Controllers\CenterController::class, 'city'])->name('city');
 
 Route::post('/submit-review', [App\Http\Controllers\ReviewController::class, 'create'])->name('submit-review');
-//Route::get('/blogs', [App\Http\Controllers\BlogController::class, 'index'])->name('blogs');
+Route::get('/article/{slug}', [App\Http\Controllers\BlogController::class, 'view'])->name('view-article');
 
 Route::get('/tags/{slug}', [App\Http\Controllers\TagController::class, 'index'])->name('tags');
 //Capture Leads

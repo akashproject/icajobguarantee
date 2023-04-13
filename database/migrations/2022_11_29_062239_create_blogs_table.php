@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('featured_image')->nullable();
             $table->text('description')->nullable(); 
             $table->text('excerpt')->nullable();   
+            $table->text('tags')->nullable();
             $table->boolean('enable_otp')->default('1');
             $table->text('meta_description')->nullable();
             $table->text('schema')->nullable();

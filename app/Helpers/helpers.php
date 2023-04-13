@@ -14,6 +14,7 @@ use App\Models\Setting;
 use App\Models\Review;
 use App\Models\Testimonial;
 use App\Models\Faq;
+use App\Models\Author;
 
 if (! function_exists('check_device')) {
     function check_device($param = null){
@@ -64,7 +65,7 @@ if (! function_exists('thousandsCurrencyFormat')) {
 if (! function_exists('get_theme_setting')) {
     function get_theme_setting($value){
         $media = Setting::where('key',$value)->first();
-        return $media->value;
+        return (isset($media->value))?$media->value:"null";
     }
 }
 
@@ -284,5 +285,27 @@ if (! function_exists('getRadius')) {
         } catch(\Illuminate\Database\QueryException $e){
             throw $e;
         }
+    }
+}
+
+if (! function_exists('getBlogs')) {
+    function getBlogs($blog_id=null, $course_id=null, $tag_id=null){
+        $blogs = DB::table('blogs');
+        // if($course_id){
+        //     $centers->where('courses','like', '%"' . $course_id . '"%');
+        // } 
+        // if($center_id){
+        //     $centers->where('id',$center_id);
+        // } 
+        $blogs = $blogs->where('status',"1");
+        $blogs = $blogs->get();       
+        return $blogs;
+    }
+}
+
+if (! function_exists('getAuthorById')) {
+    function getAuthorById($author_id=null){
+        $author = Author::findOrFail($author_id);
+        return $author;
     }
 }

@@ -43,11 +43,11 @@
 						</div>
 						<div class="form-group row">
 							<label for="author_id" class="col-sm-3 text-right control-label col-form-label">Author</label>
-							<div class="col-sm-8">
+							<div class="col-sm-9">
 								<select name="author_id" id="author_id" class="select2 form-control custom-select" style="width: 100%; height:36px;">	
 									<option value="" >  Select Author </option>
 									@foreach ($authors as $value)
-									<option value="{{  $value->id }}" > {{  $value->name }} </option>
+									<option value="{{  $value->id }}" {{ ( $value->id ==  $blog->author_id )? 'selected' : '' }} > {{  $value->name }} </option>
 									@endforeach
 								<select>
 							</div>
@@ -64,7 +64,7 @@
 								<div class="tag-values">
 									@if(isset($blog->tags))
 									@foreach($blog->tags as $value)
-									<a href="javascript:void(0)"><input type="hidden" name="tags[]" value="{{$value->id}}"><span class="mdi mdi-tag-remove"></span>{{$value->name}}</a>
+										<a href="javascript:void(0)"><input type="hidden" name="tags[]" value="{{$value->id}}"><span class="mdi mdi-tag-remove"></span>{{$value->name}}</a>
 									@endforeach
 									@endif
 								</div>

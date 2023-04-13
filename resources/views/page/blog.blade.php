@@ -55,156 +55,44 @@
 									<div class="tab-container">
 										<div id="tab1" class="tab-content-1 pt35">
 											<div class="row">
+											@foreach(getBlogs() as $value)
 												<div class="col-md-6">
 													<div class="blog-post-img-content">
 														<div class="blog-img-date relative-position">
-															<div class="blog-thumnile">
-																<img src="assets/img/blog/bp-1.jpg" alt="">
-															</div>
+															<a class="blog-thumnile" href="{{ url('article'); }}/{{$value->featured_image}}">
+																<img src="{{ getSizedImage('mobile',$value->featured_image) }}" alt="">
+															</a>
 															<div class="course-price text-center gradient-bg">
 																<span>26 April 2018</span>
 															</div>
 														</div>
 														<div class="blog-title-content headline">
-															<h3><a href="#">Affiliate Marketing A Beginner’s Guide.</a></h3>
+															<h3><a href="{{ url('article'); }}/{{$value->slug}}">{{$value->name}}</a></h3>
 															<div class="blog-content">
-																Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
+																{!!$value->excerpt!!}
 															</div>
 
 															<div class="view-all-btn bold-font">
-																<a href="#">Read More <i class="fas fa-chevron-circle-right"></i></a>
+																<a href="{{ url('article'); }}/{{$value->slug}}">Read More <i class="fas fa-chevron-circle-right"></i></a>
 															</div>
 														</div>
 													</div>
 												</div>
-
-												<div class="col-md-6">
-													<div class="blog-post-img-content">
-														<div class="blog-img-date relative-position">
-															<div class="blog-thumnile">
-																<img src="assets/img/blog/bp-2.jpg" alt="">
-															</div>
-															<div class="course-price text-center gradient-bg">
-																<span>26 April 2018</span>
-															</div>
-														</div>
-														<div class="blog-title-content headline">
-															<h3><a href="#">Affiliate Marketing A Beginner’s Guide.</a></h3>
-															<div class="blog-content">
-																Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
-															</div>
-
-															<div class="view-all-btn bold-font">
-																<a href="#">Read More <i class="fas fa-chevron-circle-right"></i></a>
-															</div>
-														</div>
-													</div>
-												</div>
-
-												<div class="col-md-6">
-													<div class="blog-post-img-content">
-														<div class="blog-img-date relative-position">
-															<div class="blog-thumnile">
-																<img src="assets/img/blog/bp-3.jpg" alt="">
-															</div>
-															<div class="course-price text-center gradient-bg">
-																<span>26 April 2018</span>
-															</div>
-														</div>
-														<div class="blog-title-content headline">
-															<h3><a href="#">Affiliate Marketing A Beginner’s Guide.</a></h3>
-															<div class="blog-content">
-																Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
-															</div>
-
-															<div class="view-all-btn bold-font">
-																<a href="#">Read More <i class="fas fa-chevron-circle-right"></i></a>
-															</div>
-														</div>
-													</div>
-												</div>
-
-												<div class="col-md-6">
-													<div class="blog-post-img-content">
-														<div class="blog-img-date relative-position">
-															<div class="blog-thumnile">
-																<img src="assets/img/blog/bp-4.jpg" alt="">
-															</div>
-															<div class="course-price text-center gradient-bg">
-																<span>26 April 2018</span>
-															</div>
-														</div>
-														<div class="blog-title-content headline">
-															<h3><a href="#">Affiliate Marketing A Beginner’s Guide.</a></h3>
-															<div class="blog-content">
-																Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
-															</div>
-
-															<div class="view-all-btn bold-font">
-																<a href="#">Read More <i class="fas fa-chevron-circle-right"></i></a>
-															</div>
-														</div>
-													</div>
-												</div>
-
-												<div class="col-md-6">
-													<div class="blog-post-img-content">
-														<div class="blog-img-date relative-position">
-															<div class="blog-thumnile">
-																<img src="assets/img/blog/bp-5.jpg" alt="">
-															</div>
-															<div class="course-price text-center gradient-bg">
-																<span>26 April 2018</span>
-															</div>
-														</div>
-														<div class="blog-title-content headline">
-															<h3><a href="#">Affiliate Marketing A Beginner’s Guide.</a></h3>
-															<div class="blog-content">
-																Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
-															</div>
-
-															<div class="view-all-btn bold-font">
-																<a href="#">Read More <i class="fas fa-chevron-circle-right"></i></a>
-															</div>
-														</div>
-													</div>
-												</div>
-
-												<div class="col-md-6">
-													<div class="blog-post-img-content">
-														<div class="blog-img-date relative-position">
-															<div class="blog-thumnile">
-																<img src="assets/img/blog/bp-1.jpg" alt="">
-															</div>
-															<div class="course-price text-center gradient-bg">
-																<span>26 April 2018</span>
-															</div>
-														</div>
-														<div class="blog-title-content headline">
-															<h3><a href="#">Affiliate Marketing A Beginner’s Guide.</a></h3>
-															<div class="blog-content">
-																Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
-															</div>
-
-															<div class="view-all-btn bold-font">
-																<a href="#">Read More <i class="fas fa-chevron-circle-right"></i></a>
-															</div>
-														</div>
-													</div>
-												</div>
+											@endforeach
 											</div>
 										</div><!-- 1st tab -->
 
 										<div id="tab2" class="tab-content-1 pt35">
 											<div class="blog-list-view">
+											@foreach(getBlogs() as $value)
 												<div class="list-blog-item">
 													<div class="row">
 														<div class="col-md-6">
 															<div class="blog-post-img-content">
 																<div class="blog-img-date relative-position">
-																	<div class="blog-thumnile">
-																		<img src="assets/img/blog/bp-1.jpg" alt="">
-																	</div>
+																	<a href="{{ url('article'); }}/{{$value->slug}}" class="blog-thumnile">
+																		<img src="{{ getSizedImage('mobile',$value->featured_image) }}" alt="">
+																	</a>
 																	<div class="course-price text-center gradient-bg">
 																		<span>26 April 2018</span>
 																	</div>
@@ -213,163 +101,19 @@
 														</div>
 														<div class="col-md-6">
 															<div class="blog-title-content headline">
-																<h3><a href="#">Affiliate Marketing A Beginner’s Guide.</a></h3>
+																<h3><a href="{{ url('article'); }}/{{$value->slug}}">{{ $value->name }}</a></h3>
 																<div class="blog-content">
-																	Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
+																	{{ $value->excerpt }} 
 																</div>
 
 																<div class="view-all-btn bold-font">
-																	<a href="#">Read More <i class="fas fa-chevron-circle-right"></i></a>
+																	<a href="{{ url('article'); }}/{{$value->slug}}">Read More <i class="fas fa-chevron-circle-right"></i></a>
 																</div>
 															</div>
 														</div>
 													</div>
 												</div>
-
-												<div class="list-blog-item">
-													<div class="row">
-														<div class="col-md-6">
-															<div class="blog-post-img-content">
-																<div class="blog-img-date relative-position">
-																	<div class="blog-thumnile">
-																		<img src="assets/img/blog/bp-5.jpg" alt="">
-																	</div>
-																	<div class="course-price text-center gradient-bg">
-																		<span>26 April 2018</span>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<div class="col-md-6">
-															<div class="blog-title-content headline">
-																<h3><a href="#">Affiliate Marketing A Beginner’s Guide.</a></h3>
-																<div class="blog-content">
-																	Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
-																</div>
-
-																<div class="view-all-btn bold-font">
-																	<a href="#">Read More <i class="fas fa-chevron-circle-right"></i></a>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-
-												<div class="list-blog-item">
-													<div class="row">
-														<div class="col-md-6">
-															<div class="blog-post-img-content">
-																<div class="blog-img-date relative-position">
-																	<div class="blog-thumnile">
-																		<img src="assets/img/blog/bp-4.jpg" alt="">
-																	</div>
-																	<div class="course-price text-center gradient-bg">
-																		<span>26 April 2018</span>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<div class="col-md-6">
-															<div class="blog-title-content headline">
-																<h3><a href="#">Affiliate Marketing A Beginner’s Guide.</a></h3>
-																<div class="blog-content">
-																	Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
-																</div>
-
-																<div class="view-all-btn bold-font">
-																	<a href="#">Read More <i class="fas fa-chevron-circle-right"></i></a>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-
-												<div class="list-blog-item">
-													<div class="row">
-														<div class="col-md-6">
-															<div class="blog-post-img-content">
-																<div class="blog-img-date relative-position">
-																	<div class="blog-thumnile">
-																		<img src="assets/img/blog/bp-1.jpg" alt="">
-																	</div>
-																	<div class="course-price text-center gradient-bg">
-																		<span>26 April 2018</span>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<div class="col-md-6">
-															<div class="blog-title-content headline">
-																<h3><a href="#">Affiliate Marketing A Beginner’s Guide.</a></h3>
-																<div class="blog-content">
-																	Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
-																</div>
-
-																<div class="view-all-btn bold-font">
-																	<a href="#">Read More <i class="fas fa-chevron-circle-right"></i></a>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-
-												<div class="list-blog-item">
-													<div class="row">
-														<div class="col-md-6">
-															<div class="blog-post-img-content">
-																<div class="blog-img-date relative-position">
-																	<div class="blog-thumnile">
-																		<img src="assets/img/blog/bp-2.jpg" alt="">
-																	</div>
-																	<div class="course-price text-center gradient-bg">
-																		<span>26 April 2018</span>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<div class="col-md-6">
-															<div class="blog-title-content headline">
-																<h3><a href="#">Affiliate Marketing A Beginner’s Guide.</a></h3>
-																<div class="blog-content">
-																	Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
-																</div>
-
-																<div class="view-all-btn bold-font">
-																	<a href="#">Read More <i class="fas fa-chevron-circle-right"></i></a>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-
-												<div class="list-blog-item">
-													<div class="row">
-														<div class="col-md-6">
-															<div class="blog-post-img-content">
-																<div class="blog-img-date relative-position">
-																	<div class="blog-thumnile">
-																		<img src="assets/img/blog/bp-3.jpg" alt="">
-																	</div>
-																	<div class="course-price text-center gradient-bg">
-																		<span>26 April 2018</span>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<div class="col-md-6">
-															<div class="blog-title-content headline">
-																<h3><a href="#">Affiliate Marketing A Beginner’s Guide.</a></h3>
-																<div class="blog-content">
-																	Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
-																</div>
-
-																<div class="view-all-btn bold-font">
-																	<a href="#">Read More <i class="fas fa-chevron-circle-right"></i></a>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
+											@endforeach
 											</div>
 										</div><!-- 2nd tab -->
 									</div>
