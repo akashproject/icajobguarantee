@@ -20,7 +20,7 @@
 								<h2>{{ $contentMain->name }}</h2>
 
 								<div class="date-meta text-uppercase">
-									<a href="" ><i class="fas fa-calendar-alt"></i> {{ date('d M,Y', strtotime($contentMain->created_at)); }}</a>
+									<a href="" ><i class="fas fa-calendar-alt"></i> {{ date('d M Y', strtotime($contentMain->created_at)); }}</a>
 									<a href="{{url('author')}}/{{ getAuthorById($contentMain->author_id)->slug }}" ><i class="fas fa-user"></i> {{ getAuthorById($contentMain->author_id)->name }} </a>
 									<a href="" ><i class="fas fa-comment-dots"></i> {{ $reviewRatings['reviewCount'] }} COMMENTS</a>
 								</div>
@@ -97,7 +97,6 @@
 
 							<div class="side-bar-widget">
 								<h2 class="widget-title text-capitalize"><span>Related </span>News.</h2>
-									
 									@foreach($tranding as $value)
 									<div class="latest-news-posts">
 										<div class="latest-news-area">
@@ -135,29 +134,6 @@
 								</div>
 							</div>
 
-							<div class="side-bar-widget">
-								<h2 class="widget-title text-capitalize"><span>Featured</span> Course.</h2>
-								<div class="featured-course">
-									<div class="best-course-pic-text relative-position">
-										<div class="best-course-pic relative-position">
-											<img src="assets/img/blog/fb-1.jpg" alt="">
-											<div class="trend-badge-2 text-center text-uppercase">
-												<i class="fas fa-bolt"></i>
-												<span>Trending</span>
-											</div>
-										</div>
-										<div class="best-course-text">
-											<div class="course-title mb20 headline relative-position">
-												<h3><a href="#">Fully Responsive Web Design &amp; Development.</a></h3>
-											</div>
-											<div class="course-meta">
-												<span class="course-category"><a href="#">Web Design</a></span>
-												<span class="course-author"><a href="#">250 Students</a></span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
 						</div>
 					</div>
 				</div>
