@@ -15,6 +15,8 @@ use App\Models\Review;
 use App\Models\Testimonial;
 use App\Models\Faq;
 use App\Models\Author;
+use App\Models\Tag;
+use App\Models\Category;
 
 if (! function_exists('check_device')) {
     function check_device($param = null){
@@ -307,5 +309,19 @@ if (! function_exists('getAuthorById')) {
     function getAuthorById($author_id=null){
         $author = Author::findOrFail($author_id);
         return $author;
+    }
+}
+
+if (! function_exists('getTags')) {
+    function getTags(){
+        $tags = Tag::orderBy("id", "DESC")->take(10)->get();
+        return $tags;
+    }
+}
+
+if (! function_exists('getCategories')) {
+    function getCategories(){
+        $categories = Category::orderBy("id", "DESC")->take(10)->get();
+        return $categories;
     }
 }

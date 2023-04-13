@@ -115,6 +115,13 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::post('/save-blog', [App\Http\Controllers\Administrator\BlogController::class, 'save'])->name('admin-save-blog');
         Route::get('/delete-blog/{id}', [App\Http\Controllers\Administrator\BlogController::class, 'delete'])->name('admin-delete-blog');
 
+         //Categories
+        Route::get('/categories', [App\Http\Controllers\Administrator\CategoryController::class, 'index'])->name('admin-categories');
+        Route::get('/add-category', [App\Http\Controllers\Administrator\CategoryController::class, 'add'])->name('admin-add-category');
+        Route::get('/view-category/{id}', [App\Http\Controllers\Administrator\CategoryController::class, 'show'])->name('admin-view-category');
+        Route::post('/save-category', [App\Http\Controllers\Administrator\CategoryController::class, 'save'])->name('admin-save-category');
+        Route::get('/delete-category/{id}', [App\Http\Controllers\Administrator\CategoryController::class, 'delete'])->name('admin-delete-category');
+
         Route::get('/authors', [App\Http\Controllers\Administrator\AuthorController::class, 'index'])->name('admin-authors');
         Route::get('/add-author', [App\Http\Controllers\Administrator\AuthorController::class, 'Add'])->name('admin-add-author');
         Route::get('/view-author/{id}', [App\Http\Controllers\Administrator\AuthorController::class, 'show'])->name('admin-view-author');
@@ -166,6 +173,7 @@ Route::get('/city/{slug}', [App\Http\Controllers\CenterController::class, 'city'
 
 Route::post('/submit-review', [App\Http\Controllers\ReviewController::class, 'create'])->name('submit-review');
 Route::get('/article/{slug}', [App\Http\Controllers\BlogController::class, 'view'])->name('view-article');
+Route::get('/category/{slug}', [App\Http\Controllers\BlogController::class, 'getByCategory'])->name('view-category');
 
 Route::get('/tags/{slug}', [App\Http\Controllers\TagController::class, 'index'])->name('tags');
 //Capture Leads

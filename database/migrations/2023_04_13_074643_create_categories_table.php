@@ -13,16 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('course_type', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('title');
             $table->string('slug');
-            $table->text('description');       
-            $table->text('excerpt');       
+            $table->text('description')->nullable();       
+            $table->text('excerpt')->nullable();       
             $table->integer('banner_image')->nullable();
             $table->integer('featured_image')->nullable();     
-            $table->integer('brochure_id')->nullable();            
             $table->integer('parent_id')->nullable();
             $table->boolean('enable_otp')->default('1');
             $table->text('meta_description')->nullable();
@@ -43,6 +42,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('course_type');
+        Schema::dropIfExists('categories');
     }
 };

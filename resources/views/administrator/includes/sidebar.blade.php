@@ -120,6 +120,7 @@
 
                                 <li class="sidebar-item"><a href="{{ url('administrator/add-blog') }}" class="sidebar-link"><i class="mdi mdi-file-document-box"></i><span class="hide-menu"> Add Blog </span></a></li>
 
+                                <li class="sidebar-item"><a href="{{ url('administrator/categories') }}" class="sidebar-link"><i class="mdi mdi-account"></i><span class="hide-menu"> Categories </span></a></li>
                                 <li class="sidebar-item"><a href="{{ url('administrator/authors') }}" class="sidebar-link"><i class="mdi mdi-account"></i><span class="hide-menu"> Authors </span></a></li>
 
                                 

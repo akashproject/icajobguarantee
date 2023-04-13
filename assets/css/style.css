@@ -4004,30 +4004,28 @@ ul.product-tab li.active:after {
   padding: 80px 0px;
   border-bottom: 1px solid #ccc; }
 
-.blog-details-content h2 {
-  font-size: 35px;
-  color: #333333;
-  font-weight: 500; }
-
 .blog-details-content .date-meta {
   margin-top: 15px;
   border-bottom: 1px solid #eee;
   padding-bottom: 20px;
   margin-bottom: 30px; }
-  .blog-details-content .date-meta span {
+  .blog-details-content .date-meta a {
     font-size: 13px;
     color: #ccc;
     font-weight: 700;
     margin-right: 20px; }
-    .blog-details-content .date-meta span i {
+    .blog-details-content .date-meta a i {
       color: #393185; }
 
-.blog-details-content h3 {
+.blog-details-content h2,.blog-details-content h3 {
   font-size: 20px;
   font-weight: 700;
   color: #333333;
   margin-bottom: 30px; }
-
+  .blog-details-content h4 {
+    font-size: 18px;
+    color: #333;
+}
 .blog-details-content p {
   font-size: 20px;
   color: #333333;

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Blog;
 use App\Models\Author;
 use App\Models\Tag;
+use App\Models\Category;
 
 class BlogController extends Controller
 {
@@ -25,7 +26,8 @@ class BlogController extends Controller
     public function add() {
         try {
             $authors = Author::all();
-            return view('administrator.blogs.add',compact('authors'));
+            $category = Category::all();
+            return view('administrator.blogs.add',compact('authors','category'));
         } catch(\Illuminate\Database\QueryException $e){
             //throw $th;
         }
@@ -36,11 +38,13 @@ class BlogController extends Controller
     {
         try {
             $authors = Author::all();
+            $category = Category::all();
             $blog = Blog::findorFail($id);
+            $blog->category_id = json_decode($blog->category_id);
             if ($blog->tags != '') {
                 $blog->tags = Tag::select('id','name')->whereIn("id",json_decode($blog->tags))->get();
             }
-            return view('administrator.blogs.show',compact('blog','authors'));
+            return view('administrator.blogs.show',compact('blog','authors','category'));
         } catch(\Illuminate\Database\QueryException $e){
         }        
     }
@@ -52,7 +56,7 @@ class BlogController extends Controller
                 'title' => 'required',
                 'slug' => 'required',
             ]);
-           
+            $data['category_id'] = json_encode($data['category_id']);
             if($data['blog_id'] <= 0){
                 Blog::create($data);
             } else {

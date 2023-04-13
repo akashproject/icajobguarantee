@@ -65,6 +65,17 @@
 					</div>
 					<div class="col-md-4">	
 						<div class="form-group row">
+							<label for="type_id" class="col-sm-12 text-left control-label col-form-label">Cateogry</label>
+							<div class="col-sm-12">
+								<select name="type_id" id="type_id" class="select2 form-control custom-select" style="width: 100%; height:36px;">	
+									<option value="" > Uncategorized </option>
+									@foreach ($category as $value)
+									<option value="{{  $value->id }}" > {{  $value->name }} </option>
+									@endforeach
+								<select>
+							</div>
+						</div>
+						<div class="form-group row">
 							<label for="tags" class="col-md-12 text-left control-label col-form-label">Tags</label>
 							<div class="col-sm-12">
 								<input type="text" class="form-control" id="tags" placeholder="Enter Tags Here" ></input>

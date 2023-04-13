@@ -55,7 +55,7 @@
 									<div class="tab-container">
 										<div id="tab1" class="tab-content-1 pt35">
 											<div class="row">
-											@foreach(getBlogs() as $value)
+											@foreach($blogs as $value)
 												<div class="col-md-6">
 													<div class="blog-post-img-content">
 														<div class="blog-img-date relative-position">
@@ -148,9 +148,12 @@
 									<h2 class="widget-title text-capitalize">blog <span>Categories.</span></h2>
 									<div class="post-categori ul-li-block">
 										<ul>
-											@foreach(getCategories() as $value)
-											<li class="cat-item"><a href="#">{{$value->name}}</a></li>
-											@endforeach
+											<li class="cat-item"><a href="#">Design Graphic Book</a></li>
+											<li class="cat-item"><a href="#">Student Bag’s</a></li>
+											<li class="cat-item"><a href="#">Education T-shirt</a></li>
+											<li class="cat-item"><a href="#">Student Watch</a></li>
+											<li class="cat-item"><a href="#">Tutorial Videos</a></li>
+											<li class="cat-item"><a href="#">Other Products</a></li>
 										</ul>
 									</div>
 								</div>
@@ -200,9 +203,14 @@
 									<h2 class="widget-title text-capitalize">Popular <span>Tag's.</span></h2>
 									<div class="tag-clouds ul-li">
 										<ul>
-											@foreach(getTags() as $value)
-												<li><a href="{{url('tags')}}/{{$value->slug}}">{{$value->name}}</a></li>
-											@endforeach
+											<li><a href="#">fruits</a></li>
+											<li><a href="#">veegetable</a></li>
+											<li><a href="#">juices</a></li>
+											<li><a href="#">natural food</a></li>
+											<li><a href="#">food</a></li>
+											<li><a href="#">bread</a></li>
+											<li><a href="#">natural</a></li>
+											<li><a href="#">healthy</a></li>
 										</ul>
 									</div>
 								</div>

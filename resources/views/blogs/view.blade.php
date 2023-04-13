@@ -2,26 +2,6 @@
 
     @section('content')
 
-   	<!-- Start of breadcrumb section
-		============================================= -->
-		<section id="breadcrumb" class="breadcrumb-section relative-position backgroud-style">
-			<div class="blakish-overlay"></div>
-			<div class="container">
-				<div class="page-breadcrumb-content text-center">
-					<div class="page-breadcrumb-title">
-						<h2 class="breadcrumb-head black bold">Genius <span>Blog</span></h2>
-					</div>
-					<div class="page-breadcrumb-item ul-li">
-						<ul class="breadcrumb text-uppercase black">
-							<li class="breadcrumb-item"><a href="#">Home</a></li>
-							<li class="breadcrumb-item active">blog Single</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</section>
-	<!-- End of breadcrumb section
-		============================================= -->
 		@php
 			$reviewRatings = get_reviews_ratings("Blog",$contentMain->id);
 		@endphp
@@ -40,9 +20,9 @@
 								<h2>{{ $contentMain->name }}</h2>
 
 								<div class="date-meta text-uppercase">
-									<span><i class="fas fa-calendar-alt"></i>{{ $contentMain->created_at }}</span>
-									<span><i class="fas fa-user"></i> {{ getAuthorById($contentMain->author_id)->name }} </span>
-									<span><i class="fas fa-comment-dots"></i> {{ $reviewRatings['reviewCount'] }} COMMENTS</span>
+									<a href="" ><i class="fas fa-calendar-alt"></i> {{ date('d M,Y', strtotime($contentMain->created_at)); }}</a>
+									<a href="{{url('author')}}/{{ getAuthorById($contentMain->author_id)->slug }}" ><i class="fas fa-user"></i> {{ getAuthorById($contentMain->author_id)->name }} </a>
+									<a href="" ><i class="fas fa-comment-dots"></i> {{ $reviewRatings['reviewCount'] }} COMMENTS</a>
 								</div>
 								<div class="blog-description" >
 									{!! $contentMain->description !!}
@@ -79,54 +59,16 @@
 								</div>
 							</div>
 							<div class="next-prev-post">
+								@if(isset($previous->slug))
 								<div class="next-post-item float-left">
-									<a href="#"><i class="fas fa-arrow-circle-left"></i>Previous Post</a>
+									<a href="{{url('article')}}/{{$previous->slug}}"><i class="fas fa-arrow-circle-left"></i>Previous Post</a>
 								</div>
-
+								@endif
+								@if(isset($next->slug))
 								<div class="next-post-item float-right">
-									<a href="#">Next Post<i class="fas fa-arrow-circle-right"></i></a>
+									<a href="{{url('article')}}/{{$next->slug}}">Next Post<i class="fas fa-arrow-circle-right"></i></a>
 								</div>
-							</div>
-						</div>
-
-						<div class="blog-recent-post about-teacher-2">
-							<div class="section-title-2  headline text-left">
-								<h2><span>Related</span> News</h2>
-							</div>
-							<div class="recent-post-item">
-								<div class="row">
-									<div class="col-md-6">
-										<div class="blog-post-img-content">
-											<div class="blog-img-date relative-position">
-												<div class="blog-thumnile">
-													<img src="assets/img/blog/bp-1.jpg" alt="">
-												</div>
-												<div class="course-price text-center gradient-bg">
-													<span>26 April 2018</span>
-												</div>
-											</div>
-											<div class="blog-title-content headline">
-												<h3><a href="#">Affiliate Marketing A Beginner’s Guide.</a></h3>
-											</div>
-										</div>
-									</div>
-
-									<div class="col-md-6">
-										<div class="blog-post-img-content">
-											<div class="blog-img-date relative-position">
-												<div class="blog-thumnile">
-													<img src="assets/img/blog/bp-5.jpg" alt="">
-												</div>
-												<div class="course-price text-center gradient-bg">
-													<span>26 April 2018</span>
-												</div>
-											</div>
-											<div class="blog-title-content headline">
-												<h3><a href="#">Affiliate Marketing A Beginner’s Guide.</a></h3>
-											</div>
-										</div>
-									</div>
-								</div>
+								@endif
 							</div>
 						</div>
 					</div>
@@ -143,39 +85,24 @@
 							<div class="side-bar-widget">
 								<h2 class="widget-title text-capitalize">blog <span>Categories.</span></h2>
 								<div class="post-categori ul-li-block">
-									<ul>
-										<li class="cat-item"><a href="#">Design Graphic Book</a></li>
-										<li class="cat-item"><a href="#">Student Bag’s</a></li>
-										<li class="cat-item"><a href="#">Education T-shirt</a></li>
-										<li class="cat-item"><a href="#">Student Watch</a></li>
-										<li class="cat-item"><a href="#">Tutorial Videos</a></li>
-										<li class="cat-item"><a href="#">Other Products</a></li>
-									</ul>
+										@if(isset($contentMain->categories))
+										<ul>
+										@foreach($contentMain->categories as $value)
+											<li class="cat-item"><a href="{{url('category')}}/{{$value->slug}}">{{$value->name}}</a></li>
+										@endforeach
+										</ul>
+										@endif
 								</div>
 							</div>
 
 							<div class="side-bar-widget">
 								<h2 class="widget-title text-capitalize"><span>Related </span>News.</h2>
-								<div class="latest-news-posts">
-									<div class="latest-news-area">
-										<div class="latest-news-thumbnile relative-position">
-											<img src="assets/img/blog/lb-1.jpg" alt="">
-											<div class="hover-search">
-												<i class="fas fa-search"></i>
-											</div>
-											<div class="blakish-overlay"></div>
-										</div>
-										<div class="date-meta">
-											<i class="fas fa-calendar-alt"></i> 26 April 2018
-										</div>
-										<h3 class="latest-title bold-font"><a href="#">Affiliate Marketing A Beginner’s Guide.</a></h3>
-									</div>
-									<!-- /post -->
-
+									
+									@foreach($tranding as $value)
 									<div class="latest-news-posts">
 										<div class="latest-news-area">
 											<div class="latest-news-thumbnile relative-position">
-												<img src="assets/img/blog/lb-2.jpg" alt="">
+												<img src="{{ getSizedImage('thumb',$contentMain->featured_image) }}" alt="">
 												<div class="hover-search">
 													<i class="fas fa-search"></i>
 												</div>
@@ -184,13 +111,13 @@
 											<div class="date-meta">
 												<i class="fas fa-calendar-alt"></i> 26 April 2018
 											</div>
-											<h3 class="latest-title bold-font"><a href="#">No.1 The Best Online Course 2018.</a></h3>
+											<h3 class="latest-title bold-font"><a href="{{ url('article') }}/{{ $value->slug }}"> {{ $value->name }}</a></h3>
 										</div>
 										<!-- /post -->
 									</div>
-
+									@endforeach
 									<div class="view-all-btn bold-font">
-										<a href="#">View All News <i class="fas fa-chevron-circle-right"></i></a>
+										<a href="{{ url('blogs') }}">View All News <i class="fas fa-chevron-circle-right"></i></a>
 									</div>
 								</div>
 							</div>
@@ -199,14 +126,11 @@
 								<h2 class="widget-title text-capitalize">Popular <span>Tag's.</span></h2>
 								<div class="tag-clouds ul-li">
 									<ul>
-										<li><a href="#">fruits</a></li>
-										<li><a href="#">veegetable</a></li>
-										<li><a href="#">juices</a></li>
-										<li><a href="#">natural food</a></li>
-										<li><a href="#">food</a></li>
-										<li><a href="#">bread</a></li>
-										<li><a href="#">natural</a></li>
-										<li><a href="#">healthy</a></li>
+										@if(isset($contentMain->tags))
+										@foreach($contentMain->tags as $value)
+											<li><a href="{{url('tags')}}/{{$value->slug}}">{{$value->name}}</a></li>
+										@endforeach
+										@endif
 									</ul>
 								</div>
 							</div>
