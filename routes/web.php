@@ -108,7 +108,20 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::get('/view-job-type/{id}', [App\Http\Controllers\Administrator\JobController::class, 'showJobType'])->name('admin-view-job-type');
         Route::post('/save-job-type', [App\Http\Controllers\Administrator\JobController::class, 'saveJobType'])->name('admin-save-job-type');
  
-        //Course Type
+        //Blogs
+        Route::get('/blogs', [App\Http\Controllers\Administrator\BlogController::class, 'index'])->name('admin-blogs');
+        Route::get('/add-blog', [App\Http\Controllers\Administrator\BlogController::class, 'Add'])->name('admin-add-blog');
+        Route::get('/view-blog/{id}', [App\Http\Controllers\Administrator\BlogController::class, 'show'])->name('admin-view-blog');
+        Route::post('/save-blog', [App\Http\Controllers\Administrator\BlogController::class, 'save'])->name('admin-save-blog');
+        Route::get('/delete-blog/{id}', [App\Http\Controllers\Administrator\BlogController::class, 'delete'])->name('admin-delete-blog');
+
+        Route::get('/authors', [App\Http\Controllers\Administrator\AuthorController::class, 'index'])->name('admin-authors');
+        Route::get('/add-author', [App\Http\Controllers\Administrator\AuthorController::class, 'Add'])->name('admin-add-author');
+        Route::get('/view-author/{id}', [App\Http\Controllers\Administrator\AuthorController::class, 'show'])->name('admin-view-author');
+        Route::post('/save-author', [App\Http\Controllers\Administrator\AuthorController::class, 'save'])->name('admin-save-author');
+        Route::get('/delete-author/{id}', [App\Http\Controllers\Administrator\AuthorController::class, 'delete'])->name('admin-delete-author');
+
+        //Tags
         Route::get('/tags', [App\Http\Controllers\Administrator\TagController::class, 'index'])->name('admin-tags');
         Route::post('/get-tags', [App\Http\Controllers\Administrator\TagController::class, 'getTags'])->name('admin-get-tags');
         Route::get('/add-tag', [App\Http\Controllers\Administrator\TagController::class, 'add'])->name('admin-add-tag');

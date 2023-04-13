@@ -11,7 +11,10 @@ use App\Models\Review;
 use App\Models\Tag;
 class CourseController extends Controller
 {
-
+    public function __construct()
+    {
+        $this->layout = (check_device('mobile'))?"mobile.":'';
+    }
     public function courseListByCategory($slug)
     {
         try {
@@ -58,7 +61,7 @@ class CourseController extends Controller
             $utm_campaign = $contentMain->utm_campaign;
             $utm_source = $contentMain->utm_source;
 
-            return view('courses.view',compact('model','contentMain','course_id','carriculams','courses'));
+            return view($this->layout.'courses.view',compact('model','contentMain','course_id','carriculams','courses'));
         } catch(\Illuminate\Database\QueryException $e){
         }
     }

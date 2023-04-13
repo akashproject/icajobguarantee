@@ -12,6 +12,6 @@ class Blog extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'id','title','slug','banner_image','featured_image','description','seo_description','excerpt','category','tag','author_id','schema','enable_otp','utm_campaign','utm_source','status','created_at'
+        'id','category_id','author_id','name','title','slug','featured_image','description','seo_description','excerpt','category','tag','author_id','schema','enable_otp','utm_campaign','utm_source','status','created_at'
     ];
 }

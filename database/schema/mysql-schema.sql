@@ -9,18 +9,17 @@ DROP TABLE IF EXISTS `blogs`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `blogs` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `banner_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `featured_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `seo_description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `excerpt` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `category` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tag` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `author_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `schema` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `excerpt` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `enable_otp` tinyint(1) NOT NULL DEFAULT 1,
+  `meta_description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `schema` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `robots` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'index, follow',
+  `canonical` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `utm_campaign` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Google-Organic',
   `utm_source` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'SEO',
   `status` tinyint(1) NOT NULL DEFAULT 1,
@@ -436,6 +435,30 @@ CREATE TABLE `states` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `tags`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tags` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `excerpt` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `banner_image` int(11) DEFAULT NULL,
+  `enable_otp` tinyint(1) NOT NULL DEFAULT 1,
+  `meta_description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `schema` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `robots` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'index, follow',
+  `canonical` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `utm_campaign` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Google-Organic',
+  `utm_source` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'SEO',
+  `status` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `testimonials`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -510,7 +533,6 @@ CREATE TABLE `users` (
 INSERT INTO `migrations` VALUES (2,'2014_10_12_100000_create_password_resets_table',1);
 INSERT INTO `migrations` VALUES (3,'2019_08_19_000000_create_failed_jobs_table',1);
 INSERT INTO `migrations` VALUES (4,'2019_12_14_000001_create_personal_access_tokens_table',1);
-INSERT INTO `migrations` VALUES (14,'2022_11_29_062239_create_blogs_table',5);
 INSERT INTO `migrations` VALUES (18,'2014_10_12_000000_create_users_table',7);
 INSERT INTO `migrations` VALUES (20,'2022_12_15_104615_create_states_table',9);
 INSERT INTO `migrations` VALUES (21,'2022_12_15_104917_create_cities_table',9);
@@ -532,3 +554,5 @@ INSERT INTO `migrations` VALUES (46,'2023_03_13_082934_create_jobs_table',22);
 INSERT INTO `migrations` VALUES (47,'2023_03_13_091940_create_job_types_table',22);
 INSERT INTO `migrations` VALUES (48,'2023_03_14_110002_create_contacts_table',23);
 INSERT INTO `migrations` VALUES (50,'2023_03_24_123250_create_leads_table',24);
+INSERT INTO `migrations` VALUES (52,'2023_04_11_082042_create_tags_table',25);
+INSERT INTO `migrations` VALUES (53,'2022_11_29_062239_create_blogs_table',26);

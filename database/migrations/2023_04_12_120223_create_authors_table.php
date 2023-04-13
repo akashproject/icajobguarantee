@@ -13,22 +13,25 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('blogs', function (Blueprint $table) {
+        Schema::create('authors', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('title')->nullable();
-            $table->string('slug')->nullable();
-            $table->string('featured_image')->nullable();
-            $table->text('description')->nullable(); 
-            $table->text('excerpt')->nullable();   
-            $table->boolean('enable_otp')->default('1');
+            $table->string('slug');
+            $table->text('bio')->nullable();
+            $table->integer('featured_image')->nullable();
+            $table->string('qualification',100)->nullable();
+            $table->string('certification',100)->nullable();
+            $table->string('profession',100)->nullable();
+            $table->string('organization',100)->nullable();
+            $table->string('linkedin',255)->nullable();
+            $table->string('title');
             $table->text('meta_description')->nullable();
             $table->text('schema')->nullable();
             $table->string('robots',150)->default('index, follow');           
             $table->string('canonical')->nullable();           
             $table->string('utm_campaign',100)->default('Google-Organic');
             $table->string('utm_source',100)->default('SEO');
-            $table->boolean('status',100)->default('1');    
+            $table->enum('status', ['0', '1']);
             $table->timestamps();
         });
     }
@@ -40,6 +43,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('blogs');
+        Schema::dropIfExists('authors');
     }
 };

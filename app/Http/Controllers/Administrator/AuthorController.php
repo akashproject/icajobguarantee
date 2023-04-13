@@ -4,17 +4,16 @@ namespace App\Http\Controllers\Administrator;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Blog;
 use App\Models\Author;
 
-class BlogController extends Controller
+class AuthorController extends Controller
 {
     //
     public function index()
     {
         try {
-            $blogs = Blog::all();
-            return view('administrator.blogs.index',compact('blogs'));
+            $authors = Author::all();
+            return view('administrator.authors.index',compact('authors'));
 
         } catch(\Illuminate\Database\QueryException $e){
             //throw $th;
@@ -23,8 +22,7 @@ class BlogController extends Controller
 
     public function add() {
         try {
-            $authors = Author::all();
-            return view('administrator.blogs.add',compact('authors'));
+            return view('administrator.authors.add');
         } catch(\Illuminate\Database\QueryException $e){
             //throw $th;
         }
@@ -34,9 +32,8 @@ class BlogController extends Controller
     public function show($id)
     {
         try {
-            $authors = Author::all();
-            $blog = Blog::findorFail($id);
-            return view('administrator.blogs.show',compact('blog','authors'));
+            $author = Author::findorFail($id);
+            return view('administrator.authors.show',compact('author'));
         } catch(\Illuminate\Database\QueryException $e){
         }        
     }
@@ -49,13 +46,13 @@ class BlogController extends Controller
                 'slug' => 'required',
             ]);
            
-            if($data['blog_id'] <= 0){
-                Blog::create($data);
+            if($data['author_id'] <= 0){
+                Author::create($data);
             } else {
-                $institute = Blog::findOrFail($data['blog_id']);
+                $institute = Author::findOrFail($data['author_id']);
                 $institute->update($data);
             }
-            return redirect()->back()->with('message', 'Blog updated successfully!');
+            return redirect()->back()->with('message', 'Author updated successfully!');
         } catch(\Illuminate\Database\QueryException $e){
             var_dump($e->getMessage()); 
         }
