@@ -199,21 +199,7 @@
 
 							</div>
 						</div>
-						<div class="side-bar-widget">
-							<h2 class="widget-title text-capitalize">Popular <span>Tag's.</span></h2>
-							<div class="tag-clouds ul-li">
-								<ul>
-									<li><a href="#">fruits</a></li>
-									<li><a href="#">veegetable</a></li>
-									<li><a href="#">juices</a></li>
-									<li><a href="#">natural food</a></li>
-									<li><a href="#">food</a></li>
-									<li><a href="#">bread</a></li>
-									<li><a href="#">natural</a></li>
-									<li><a href="#">healthy</a></li>
-								</ul>
-							</div>
-						</div>
+						
 					</div>
 				</div>
 			</div>

@@ -45,15 +45,21 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="price" class="col-sm-3 text-right control-label col-form-label">Actual Price</label>
+							<label for="excerpt" class="col-sm-3 text-right control-label col-form-label">Exerpt</label>
 							<div class="col-sm-9">
-								<input type="text" class="form-control" name="price" id="price" placeholder="Enter Actual Price Here" >
+								<textarea class="form-control" name="excerpt" id="excerpt" placeholder="Enter excerpt Here" ></textarea>
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="offer_price" class="col-sm-3 text-right control-label col-form-label">Offer Price</label>
+							<label for="course_video_title" class="col-sm-3 text-right control-label col-form-label">Video Title</label>
 							<div class="col-sm-9">
-								<input type="text" class="form-control" name="offer_price" id="offer_price" placeholder="Enter Offer Price Here" >
+								<input type="text" class="form-control" name="course_video_title" id="course_video_title" placeholder="Enter Video Title Here" >
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="course_video_link" class="col-sm-3 text-right control-label col-form-label">Video Link</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" name="course_video_link" id="course_video_link" placeholder="Enter Video Title Here" >
 							</div>
 						</div>
 						<div class="form-group row">
@@ -139,7 +145,7 @@
 								</a>	
 								@if(isset($course->featured_image))
 									<a href="javascript:void(0)" class="removeImage" style="color: #c90f0f;font-weight: 600;"> Remove Image </a>	
-								@endif					
+								@endif
 							</div>
 						</div>
 						<div class="form-group row">
@@ -151,6 +157,18 @@
 								</a>	
 								@if(isset($course->banner_image))
 									<a href="javascript:void(0)" class="removeImage" style="color: #c90f0f;font-weight: 600;"> Remove Image </a>	
+								@endif					
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="course_video_image" class="col-md-6 text-left control-label col-form-label">Video Thumbnail</label>
+							<div class="col-sm-6 text-center">
+								<a href="#imageBox" class="image-profile open-popup-link">
+									<img src="https://dummyimage.com/150x150?text=Add%20Image" alt="">
+									<input type="hidden" name="course_video_image" id="course_video_image" value="" >	
+								</a>	
+								@if(isset($course->course_video_image))
+									<a href="javascript:void(0)" class="removeImage" style="color: #c90f0f;font-weight: 600;"> Remove Image </a>
 								@endif					
 							</div>
 						</div>

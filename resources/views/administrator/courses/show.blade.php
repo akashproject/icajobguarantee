@@ -49,6 +49,18 @@
 							</div>
 						</div>
 						<div class="form-group row">
+							<label for="course_video_title" class="col-sm-3 text-right control-label col-form-label">Video Title</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" name="course_video_title" id="course_video_title" placeholder="Enter Video Title Here" value="{{ $course->course_video_title }}">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="course_video_link" class="col-sm-3 text-right control-label col-form-label">Video Link</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" name="course_video_link" id="course_video_link" placeholder="Enter Video Title Here" value="{{ $course->course_video_link }}" >
+							</div>
+						</div>
+						<div class="form-group row">
 							<label for="duration" class="col-sm-3 text-right control-label col-form-label">Course Duration</label>
 							<div class="col-sm-9">
 								<input type="text" class="form-control" name="duration" id="duration" placeholder="Enter Course Duration" value="{{ $course->duration }}" >
@@ -76,7 +88,6 @@
 							<label for="no_of_module" class="col-sm-3 text-left control-label col-form-label">Curriculum</label>
 							<div class="col-sm-9">
 								<a href="{{ url('administrator/curriculum') }}/{{ $course->id }}" class="btn btn-primary">Curriculum Detail</a>
-								
 							</div>
 						</div>
 						<div class="form-group row">
@@ -156,13 +167,25 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="tags" class="col-md-6 text-left control-label col-form-label">Banner Image</label>
+							<label for="banner_image" class="col-md-6 text-left control-label col-form-label">Banner Image</label>
 							<div class="col-sm-6 text-center">
 								<a href="#imageBox" class="image-profile open-popup-link">
 									<img src="{{ (isset($course->banner_image))?getSizedImage('thumb',$course->banner_image):'https://dummyimage.com/150x150?text=Add%20Image' }}" alt="">
 									<input type="hidden" name="banner_image" id="banner_image" value="{{ $course->banner_image }}" >	
 								</a>	
 								@if(isset($course->banner_image))
+									<a href="javascript:void(0)" class="removeImage" style="color: #c90f0f;font-weight: 600;"> Remove Image </a>	
+								@endif					
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="course_video_image" class="col-md-6 text-left control-label col-form-label">Video Thumbnail</label>
+							<div class="col-sm-6 text-center">
+								<a href="#imageBox" class="image-profile open-popup-link">
+									<img src="{{ (isset($course->course_video_image))?getSizedImage('thumb',$course->course_video_image):'https://dummyimage.com/150x150?text=Add%20Image' }}" alt="">
+									<input type="hidden" name="course_video_image" id="course_video_image" value="{{ $course->course_video_image }}" >		
+								</a>	
+								@if(isset($course->course_video_image))
 									<a href="javascript:void(0)" class="removeImage" style="color: #c90f0f;font-weight: 600;"> Remove Image </a>	
 								@endif					
 							</div>
