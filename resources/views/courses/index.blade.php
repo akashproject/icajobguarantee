@@ -12,7 +12,7 @@
 					</h2>
 				</div>
 				<div class="page-breadcrumb-description">
-					{{(isset($contentMain))?$contentMain->excerpt:"Courses" }}
+					{!!(isset($contentMain))?$contentMain->description:"Courses" !!}
 				</div>
 				<div class="page-breadcrumb-option">
 					

@@ -453,6 +453,12 @@ ul.product-tab.index-category-tab li.active {
 .display-block {
   display: block;
 }
+.ad-page-banner {
+  padding-top: 104px;
+  background-position: center;
+  height: 100vh;
+  overflow: auto;
+}
   .page-breadcrumb-title {
     margin-top: 0.5rem;
   }
@@ -468,7 +474,12 @@ ul.product-tab.index-category-tab li.active {
     right: 0; }
     .page-breadcrumb-description {
       font-size: 16px;
-    }
+      margin-top: 20px;
+  }
+  .page-breadcrumb-description p {
+    font-size: 18px;
+    line-height: 28px;
+}
   .breadcrumb-section .breadcrumb-head {
     font-size: 38px;
     color: #fff;
@@ -652,10 +663,10 @@ nav.navbar-menu.inside-navbar .nav-menu {
 
 .header-style-2 {
   background-color: #fff;
-  padding: 25px 0px;
+  padding: 8px 0px;
   padding-top: 0; }
   .header-style-2 .main-menu {
-    padding-top: 25px; }
+    padding-top: 6px; }
   .header-style-2 .nav-menu li a {
     color: #616161; }
     .header-style-2 .nav-menu li a:hover {
@@ -1600,7 +1611,7 @@ button.alt-menu-btn.float-left {
   display: inline-block;
   width: 100%; }
   .course-meta span {
-    font-size: 14px;
+    font-size: 15px;
     margin-right: 17px;
     position: relative; }
     .course-meta span:last-child:after {
