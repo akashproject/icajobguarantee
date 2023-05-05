@@ -3,7 +3,7 @@
     @section('content')
 	<!-- Start of breadcrumb section
 		============================================= -->
-		<section id="breadcrumb" class="breadcrumb-section backgroud-style" style="padding-top: 180px;padding-bottom: 1px;">
+		<section id="breadcrumb" class="center-inner breadcrumb-section backgroud-style">
 			<div class="container-fluid bg-white">
 				<div class="container relative-position">
 					<div class="text-center center-image">
@@ -148,10 +148,6 @@
 										<div id="tab5" class="tab-content-1 pt35">
 											<div class="course-details-content">
 												<div class="affiliate-market-guide mb65">
-													<div class="section-title-2 mb20 headline text-left">
-														<h3><span>Affiliate Marketing</span> A Begginer's Guide</h3>
-													</div>
-
 													<div class="row">
 														@foreach($gallery as $value )
 															<div class="col-md-2 photo-list" >
@@ -174,9 +170,6 @@
 										<div id="tab6" class="tab-content-1 pt35">
 											<div class="course-details-content">
 												<div class="affiliate-market-guide mb65">
-													<div class="section-title-2 mb20 headline text-left">
-														<h3><span>Affiliate Marketing</span> A Begginer's Guide</h3>
-													</div>
 													<div class="affiliate-market-accordion">
 													{!! $contentMain->gmap_location !!}
 													</div>
@@ -245,6 +238,94 @@
 		</section>
 	<!-- End of course details section
 		============================================= -->	
+
+	<!-- Start of best course
+	============================================= -->
+	<section id="best-course" class="best-course-section">
+		<div class="container">
+			<div class="section-title mb45 headline text-center">
+				<span class="subtitle text-uppercase">SEARCH OUR COURSES</span>
+				<h3>Browse Our<span> Best Course.</span></h3>
+			</div>
+			<div class="faq-tab mb65">
+				<div class="faq-tab-ques  ul-li">
+					<div class="tab-button text-center ">
+						<ul class="course-tab index-category-tab">
+							@foreach($courseType as $key => $value)
+							<li rel="course{{$key}}"> {{ $value->name }} </li>
+							@endforeach
+						</ul>
+					</div>
+					<!-- /tab-head -->
+
+					<!-- tab content -->
+					<div class="tab-container">
+						@foreach($courseType as $key => $value)
+							<!-- 1st tab -->
+							<div id="course{{$key}}" class="tab-content-1 pt35">
+								<div class="row">
+								@foreach($courses as $course)
+									@if($course->categorySlug == $value->slug)
+									<div class="col-md-3">
+										<div class="best-course-pic-text relative-position">
+											<div class="best-course-pic relative-position">
+												<img src="{{ (isset($course->featured_image))?getSizedImage('',$course->featured_image):url('assets/img/course/c-1.jpg') }}" alt="">
+												<div class="trend-badge-2 text-center text-uppercase">
+													<i class="fas fa-bolt"></i>
+													<span>Trending</span>
+												</div>
+												
+												<div class="course-rate ul-li">
+													<ul>
+														<li><i class="fas fa-star"></i></li>
+														<li><i class="fas fa-star"></i></li>
+														<li><i class="fas fa-star"></i></li>
+														<li><i class="fas fa-star"></i></li>
+														<li><i class="fas fa-star"></i></li>
+													</ul>													
+												</div>
+												
+												<div class="course-details-btn">
+													<a href="courses/{{ $course->slug }}">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
+												</div>
+												<div class="blakish-overlay"></div>
+											</div>
+											<div class="best-course-text">
+												<div class="course-title mb20 headline relative-position height-60">
+													<h3><a href="courses/{{ $course->slug }}"> {{ $course->name }} </a> 
+													 <span class="trend-bestseller text-uppercase bold-font">
+														<i class="fas fa-bolt"></i> Bestseller</span> 
+													</h3>
+												</div>
+												<div class="course-meta">
+													<span class="course-category"><i class="fas fa-clock"></i> {{ $course->duration }}</span>
+													<span class="course-author"><i class="fas fa-book"></i> {{ $course->no_of_module }} Modules</span>
+												</div>
+											</div>
+											<div class="more-btn text-center" >
+												<div class="course-type-list">	
+													<a class="btn-filled" href="javascript:void(0)" onclick="lead_capture_form_btn('',{{ $contentMain->id }})"><i class="fas fa-download"></i> Brochure</a>
+												</div>
+												<div class="course-type-list">														
+													<a class="btn-outline" href="{{ URL::to('/courses') }}/{{ $course->slug }}" >View More <i class="fas fa-caret-right"></i></a>
+												</div>														
+											</div>
+										</div>
+									</div>
+									@endif
+								@endforeach
+								</div>
+							</div>   
+							<!-- #tab1 -->
+						@endforeach						
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- /course-categori -->
+	<!-- End of best course
+	============================================= -->
 	<!-- Start of testimonial secound section
 	============================================= -->
 	<section id="alumni" class="testimonial_2_section">
@@ -255,7 +336,7 @@
 					<h3>Student<span> Speaks.</span></h3>
 				</div>
 				<div  id="testimonial-slide-item" class="testimonial-slide-area">
-					@foreach(getTestimonials("Course",$contentMain->id) as $value)
+					@foreach(getTestimonials() as $value)
 					<div class="student-qoute">
 						{!! $value->comment !!}
 						<div class="student-name-designation">
@@ -268,32 +349,6 @@
 			</div>
 		</div>
 	</section>
-	<!-- End  of testimonial secound section
-	============================================= -->
-		
-	<!-- Start of testimonial secound section
-	============================================= -->
-		<section id="alumni" class="testimonial_2_section">
-			<div class="container">
-				<div class="testimonial-slide">
-					<div class="section-title mb20 headline text-center">
-						<span class="subtitle text-uppercase">About This Course </span>
-						<h3>Student<span> Speaks.</span></h3>
-					</div>
-					<div  id="testimonial-slide-item" class="testimonial-slide-area">
-						@foreach(getTestimonials("Course",$contentMain->id) as $value)
-						<div class="student-qoute">
-							{!! $value->comment !!}
-							<div class="student-name-designation">
-								<span class="st-name bold-font">{{ $value->name }}</span>
-								<span class="st-designation">{{ $value->dasignation }}</span>
-							</div>
-						</div>
-						@endforeach
-					</div>
-				</div>
-			</div>
-		</section>
 	<!-- End  of testimonial secound section
 	============================================= -->
 

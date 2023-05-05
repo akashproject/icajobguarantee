@@ -478,8 +478,21 @@ faqTAB: function (){
 		
 	});
 
+	$("ul.course-tab").on("click", "li", function() {
+		
+		$(".tab-content-1").hide();
+		var activeTab = $(this).attr("rel"); 
+		$("#"+activeTab).fadeIn();    
+		
+		$("ul.course-tab li").removeClass("active");
+		$(this).addClass("active");
+
+		$(".tab_drawer_heading").removeClass("d_active");
+		$(".tab_drawer_heading[rel^='"+activeTab+"']").addClass("d_active");
+		
+	});
+
 	$(".courseMenu").on("click", "li", function() {
-		console.log("here");
 		$(".tab-content-1").hide();
 		var activeTab = $(this).attr("rel"); 
 		console.log("here",activeTab);
@@ -495,7 +508,6 @@ faqTAB: function (){
 
 	/* if in drawer mode */
 	$(".tab_drawer_heading").on("click", function() {
-		
 		$(".tab-content-1").hide();
 		var d_activeTab = $(this).attr("rel"); 
 		$("#"+d_activeTab).fadeIn();

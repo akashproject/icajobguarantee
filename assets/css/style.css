@@ -202,7 +202,8 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: 42px; }
 
 .mb65 {
-  margin-bottom: 65px; }
+  margin-bottom: 35px;
+}
 
 .mt60 {
   margin-top: 60px; }
@@ -256,6 +257,23 @@ ul.product-tab.index-category-tab li.active {
     background: linear-gradient(to right, #393185 0%, #616dfd 51%, #393185 100%);
     background-size: 200% auto;
     background-position: 190px; }
+
+.top-right-bar{
+  background: -webkit-linear-gradient(left, #616dfd 0%, #393185 51%, #0071b0 100%);;
+  color: #fff;
+}
+
+.top-right-bar::before {
+  position: absolute;
+  content: "";
+  width: 35px;
+  height: 100%;
+  top: 0;
+  left: -17px;
+  background: #5e6af5;
+  transform: skew(40deg);
+}
+
 
 .text-gradiant {
   background: -moz-linear-gradient(left, #616dfd 0%, #393185 100%);
@@ -418,9 +436,16 @@ ul.product-tab.index-category-tab li.active {
     left: 0;
     background-color: #393185; }
 
+.center-inner.breadcrumb-section {
+  background-image: url(../img/banner/brt-1.jpg);
+  padding-top: 240px;
+  padding-bottom: 1px;
+}
+
 .breadcrumb-section {
   background-image: url(../img/banner/brt-1.jpg);
   padding-bottom: 435px; }
+
   .breadcrumb-section .blakish-overlay {
     opacity: 0.5;
     visibility: visible;
@@ -4357,9 +4382,7 @@ ul.product-tab li.active:after {
     color: #fff; }
 
 .course-details-item {
-  border-bottom: 1px solid #e5e5e5;
-  padding-bottom: 30px;
-  margin-bottom: 30px; }
+  border-bottom: 1px solid #e5e5e5;}
 
 .affiliate-market-guide .section-title-2 h2:after,
 .course-review .section-title-2 h2:after {

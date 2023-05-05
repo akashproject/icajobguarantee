@@ -54,6 +54,12 @@ body {
     list-style: none;
     display: block; }
 
+    .fa-book, .fa-map-marker {
+      color: #eb4141;
+  }
+  .fa-star {
+    color: #ffc926;
+}
 div#preloader {
   position: fixed;
   left: 0;
@@ -588,10 +594,10 @@ nav.navbar-menu.inside-navbar .nav-menu {
 
 .header-style-2 {
   background-color: #fff;
-  padding: 25px 0px;
+  padding: 0;
   padding-top: 0; }
   .header-style-2 .main-menu {
-    padding-top: 25px; }
+    padding-top: 0; }
   .header-style-2 .nav-menu li a {
     color: #616161; }
     .header-style-2 .nav-menu li a:hover {
@@ -664,7 +670,7 @@ nav.navbar-menu.inside-navbar .nav-menu {
 
 .mail-phone .info-content {
   display: inline-block;
-  margin-left: 10px;
+  margin-left:8px;
   text-align: left;
   width: 85%;
 }
@@ -1410,17 +1416,18 @@ button.alt-menu-btn.float-left {
     .app-stor li:last-child:after {
       display: none; }
 
-.search-course-secound {
-  background-color: #fffdfd;
-  padding: 20px 0px  10px !important;
-  max-width: 1170px;
-  margin: 0 auto;
-  border-radius: 5px;
-  position: relative;
-  z-index: 2;
-  top: -40px; 
-  border: 1px solid #3c368e5e;
-}
+      .search-course-secound {
+        background-color: #fffdfd;
+        padding: 20px 0px  10px !important;
+        max-width: 1170px;
+        margin: 0 auto;
+        border-radius: 5px;
+        position: relative;
+        z-index: 2;
+        top: 0;
+        border: 1px solid #3c368e5e;
+    }
+
   .search-course-secound .counter-number .counter-count, .search-course-secound .counter-number span,
   .search-course-secound .counter-number span {
     color: #393185; }
@@ -1639,6 +1646,31 @@ button.alt-menu-btn.float-left {
   -ms-transform: scale(1.05);
   transform: scale(1.05); }
 
+  .center-info-banner {
+    margin-left: 0;
+    margin-bottom: 0;
+    padding: 100px 0 11px 0px;
+    color: #333;
+    font-size: 14px;
+}
+
+.center-info-banner h2 {
+  font-size: 20px;
+  text-align: center;
+}
+
+.center-info-banner-description {
+  margin-bottom: 10px;
+}
+.center-banner-comment-ratting {
+  display: inline-block;
+}
+.center-banner-student-enrolled {
+  color: #393185;
+  font-size: 14px;
+  display: inline-block;
+}
+
 /*---------------------------------------------------- */
 /*About Us*/
 /*----------------------------------------------------*/
@@ -1691,6 +1723,18 @@ button.alt-menu-btn.float-left {
   .bg-mockup {
     display: none;
     }
+  .center-inner.breadcrumb-section {
+    background-image: url(../img/banner/brt-1.jpg);
+    padding-top: 100px;
+  }
+  .center-image {
+    position: absolute;
+    top: -54px;
+    padding: 6px;
+    background: #fff;
+    border-radius: 5px;
+    right: calc(100% - 72%);
+}
 
 .about-us-text {
   padding-top: 35px; }

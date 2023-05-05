@@ -4,20 +4,16 @@
 	<header>
 		<div id="main-menu"  class="main-menu-container header-style-2">
 			<div class="header-top">
-				<div class="container">
+				<div class="container-fluid">
 					<div class="row">
-						<div class="col-md-5">
-							<div class="header-top-text">
-								<span>Online Course Photoshop Template</span>
-							</div>
-						</div>
 						<div class="col-md-7">
+							
+						</div>
+						<div class="col-md-5 top-right-bar">
 							<div class="header-top-bar ul-li">
 								<ul>
-									<li><i class="fas fa-envelope"></i>Mail Us crm@icagroup.in</li>
-									<li><i class="fas fa-phone-square"></i>Call Us +100 375 8899</li>
-									<li><a data-toggle="modal" data-target="#myModal" href="#">Log In</a></li>
-									<li><a href="#"><i class="fas fa-shopping-bag"></i></a></li>
+									<li><a href="mailto:{{get_theme_setting('email')}}" ><i class="fas fa-envelope"></i>Mail Us: {{get_theme_setting('email')}}</a></li>
+									<li><a href="tel:{{get_theme_setting('mobile')}}" ><i class="fas fa-phone-square"></i>Call Us: {{get_theme_setting('mobile')}}</a></li>
 								</ul>
 							</div>
 						</div>

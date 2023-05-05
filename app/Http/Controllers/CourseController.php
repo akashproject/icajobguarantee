@@ -15,6 +15,7 @@ class CourseController extends Controller
     {
         $this->layout = (check_device('mobile'))?"mobile.":'';
     }
+    
     public function courseListByCategory($slug)
     {
         try {

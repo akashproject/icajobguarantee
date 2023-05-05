@@ -533,8 +533,8 @@
 		<section id="course-category" class="course-category-section" style="background:#d0cfda">
 			<div class="container">
 				<div class="section-title mb45 headline text-center "  >
-					<span class="subtitle text-uppercase">COURSES CATEGORIES</span>
-					<h3>Browse Courses<span> By Category.</span></h3>
+					<span class="subtitle text-uppercase">Our Usps</span>
+					<h3>What <span> Makes us</span> the Best</h3>
 				</div>
 				<div class="category-item">
 					<div class="row">
@@ -544,7 +544,7 @@
 									<i class="text-gradiant flaticon-technology"></i>
 								</div>
 								<div class="category-title">
-									<h4>Responsive Website</h4>
+									<h4><span>100%</span> Job Guarantee</h4>
 								</div>
 							</div>
 						</div>
@@ -556,7 +556,7 @@
 									<i class="text-gradiant flaticon-app-store"></i>
 								</div>
 								<div class="category-title">
-									<h4>IOS Applications</h4>
+									<h4><span>120+</span> Centers across Pan India</h4>
 								</div>
 							</div>
 						</div>
@@ -568,7 +568,7 @@
 									<i class="text-gradiant flaticon-artist-tools"></i>
 								</div>
 								<div class="category-title">
-									<h4>Graphic Design</h4>
+									<h4><span>70000+</span> Registered Employers</h4>
 								</div>
 							</div>
 						</div>
@@ -580,7 +580,7 @@
 									<i class="text-gradiant flaticon-business"></i>
 								</div>
 								<div class="category-title">
-									<h4>Marketing</h4>
+									<h4><span>No.1+</span> Accounts & Finance Institute</h4>
 								</div>
 							</div>
 						</div>
@@ -592,7 +592,7 @@
 									<i class="text-gradiant flaticon-dna"></i>
 								</div>
 								<div class="category-title">
-									<h4>Science</h4>
+									<h4>Interactive Classes</h4>
 								</div>
 							</div>
 						</div>
@@ -604,7 +604,7 @@
 									<i class="text-gradiant flaticon-cogwheel"></i>
 								</div>
 								<div class="category-title">
-									<h4>Enginering</h4>
+									<h4>Practical Training</h4>
 								</div>
 							</div>
 						</div>
@@ -616,7 +616,7 @@
 									<i class="text-gradiant flaticon-technology-1"></i>
 								</div>
 								<div class="category-title">
-									<h4>Photography</h4>
+									<h4>Award Winning</h4>
 								</div>
 							</div>
 						</div>
@@ -628,7 +628,7 @@
 									<i class="text-gradiant flaticon-technology-2"></i>
 								</div>
 								<div class="category-title">
-									<h4>Mobile Application</h4>
+									<h4>Up-to-date</h4>
 								</div>
 							</div>
 						</div>

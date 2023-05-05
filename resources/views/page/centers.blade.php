@@ -85,7 +85,7 @@
 												<div class="col-md-4">
 													<div class="product-img-text">
 														<div class="product-img text-center mb10">
-															<img src="{{url('assets/img/product/bp-1.png')}}" alt="">
+															<img src="https://dummyimage.com/140x140" alt="">
 														</div>
 														<div class="product-text-content text-center mb20">
 															<div class="best-title-price">
