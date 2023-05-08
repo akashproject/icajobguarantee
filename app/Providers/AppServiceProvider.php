@@ -41,7 +41,7 @@ class AppServiceProvider extends ServiceProvider
                 '/university' => "For University",
                 '/accounts-gst-sap-tally-career-opportunities' => "Placements",
                 '/career' => "We Are Hiring",
-                '/blogs' => "Blogs",
+                '/blog' => "Blogs",
             );
             $view->with('primaryMenu', $primaryMenu);
 

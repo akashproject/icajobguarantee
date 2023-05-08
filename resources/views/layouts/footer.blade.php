@@ -156,6 +156,21 @@
     </footer>
 <!-- End of footer section
     ============================================= -->
+    @if(!check_device('desktop'))
+    <div class="sticky-footer">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-6">
+                    <a class="sticky-btn" href=""><i class="fas fa-phone"></i> Call Now</a>
+                </div>
+                <div class="col-6">
+                    <a class="sticky-btn" href=""><i class="fab fa-whatsapp"></i> Live Chat</a>
+                </div>
+            </div>  
+            
+        </div>
+    </div>
+    @endif
     <!-- The Modal -->
     <div class="modal fade" id="lead-generation-form" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">

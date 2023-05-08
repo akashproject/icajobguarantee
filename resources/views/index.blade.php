@@ -6,7 +6,7 @@
 		============================================= -->
 		<section id="slide" class="slider-section">
 			<div id="slider-item" class="slider-item-details">
-				<div class="slider-area slider-bg-1 relative-position" style="background-image: url(https://dummyimage.com/1920x980);">
+				<div class="slider-area slider-bg-1 relative-position" style="background-image: url({{url('assets/img/banner/banner-1.jpg')}});">
 					<div class="slider-text">
 						<div class="section-title mb20 headline text-center">
 							<div class="layer-1-1">
@@ -38,7 +38,7 @@
 						</div>
 					</div>
 				</div>
-				<div  class="slider-area slider-bg-2 relative-position" style="background-image: url(https://dummyimage.com/1920x980);" >
+				<div  class="slider-area slider-bg-2 relative-position" style="background-image: url({{url('assets/img/banner/banner-1.jpg')}});" >
 					<div class="slider-text">
 						<div class="section-title mb20 headline text-center">
 							<div class="layer-1-1">
@@ -58,7 +58,7 @@
 					</div>
 
 				</div>				
-				<div class="slider-area slider-bg-3 relative-position" style="background-image: url(https://dummyimage.com/1920x980);">
+				<div class="slider-area slider-bg-3 relative-position" style="background-image: url({{url('assets/img/banner/banner-1.jpg')}});">
 					<div class="slider-text">
 						<div class="section-title mb20 headline text-center">
 							<div class="layer-1-3">
@@ -77,11 +77,35 @@
 						</div>
 					</div>
 				</div>
-				<div class="slider-area slider-bg-4 relative-position" style="background-image: url(https://dummyimage.com/1920x980);">
+				<div class="slider-area slider-bg-1 relative-position" style="background-image: url({{ getSizedImage('mobile','33')}});">
 					<div class="slider-text">
 						<div class="section-title mb20 headline text-center">
-							<span class="subtitle text-uppercase">EDUCATION & TRAINING ORGANIZATION</span>
-							<h2>Get <span> Industry</span> Solution <br> <span>Recognized Certifications</span></h2>
+							<div class="layer-1-1">
+								<span class="subtitle text-uppercase">EDUCATION & TRAINING ORGANIZATION</span>
+							</div>
+							<div class="layer-1-2">
+								<h2 class="secoud-title"> Browse The <span>Best Courses.</span></h2>
+							</div>
+						</div>
+						<div class="layer-1-3">
+							<div class="search-course mb30 relative-position">
+								<form action="{{url('/courses')}}" method="get">
+									<input class="course" name="search" type="text" placeholder="Type what do you want to learn today?">
+									<div class="nws-button text-center  gradient-bg text-capitalize">
+										<button type="submit" value="Submit">Search Course</button> 
+									</div>
+								</form>
+							</div>
+							<div class="layer-1-4">
+								<div class="slider-course-category ul-li text-center">
+									<span class="float-left">BY CATEGORY:</span>
+									<ul>
+									@foreach(getCourseTypes() as $key => $value)
+										<li> <a target="_blank" href="{{url('/course-category')}}/{{$value->slug}}" > {{$value->name}} </a> </li>
+									@endforeach										
+									</ul>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -103,8 +127,8 @@
 										<i class="text-gradiant flaticon-graduation-hat"></i>
 									</div>
 									<div class="counter-number">
-										<span class="counter-count bold-font">5 </span><span>M+</span>
-										<p>Students Enrolled</p>
+										<span class="counter-count bold-font">500</span><span>T+</span>
+										<p>Satisfied Students</p>
 									</div>
 								</div>
 							</div>
@@ -116,8 +140,8 @@
 										<i class="text-gradiant flaticon-book"></i>
 									</div>
 									<div class="counter-number">
-										<span class="counter-count bold-font">122</span><span>.500+</span>
-										<p>Online Available Courses</p>
+										<span class="counter-count bold-font">30</span><span>+</span>
+										<p>Placement Offices</p>
 									</div>
 								</div>
 							</div>
@@ -129,8 +153,8 @@
 										<i class="text-gradiant flaticon-favorites-button"></i>
 									</div>
 									<div class="counter-number">
-										<span class="counter-count bold-font">15</span><span>.000+</span>
-										<p>Premium Quality Products</p>
+										<span class="counter-count bold-font">70</span><span>T+</span>
+										<p>Registered Employers</p>
 									</div>
 								</div>
 							</div>
@@ -142,8 +166,8 @@
 										<i class="text-gradiant flaticon-group"></i>
 									</div>
 									<div class="counter-number">
-										<span class="counter-count bold-font">7</span><span>.500+</span>
-										<p>Teachers Registered</p>
+										<span class="counter-count bold-font">150</span><span>M+</span>
+										<p>Periodic Campus Interviews</p>
 									</div>
 								</div>
 							</div>

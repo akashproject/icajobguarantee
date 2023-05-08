@@ -54,12 +54,15 @@ body {
     list-style: none;
     display: block; }
 
-    .fa-book, .fa-map-marker {
+  .fa-book, .fa-map-marker {
       color: #eb4141;
   }
   .fa-star {
     color: #ffc926;
-}
+  }
+  .fa-whatsapp {
+    color: #128C7E;
+  }
 div#preloader {
   position: fixed;
   left: 0;
@@ -2223,7 +2226,9 @@ button.alt-menu-btn.float-left {
   max-width: initial;
   border-radius: 4px;
   margin-top: 20px;
-  background: #fff; }
+  background: #fff; 
+  box-shadow: 0 4px 8px rgba(9,30,66,.08);
+}
 
   .best-course-pic-text .course-title h3 {
     font-size: 20px;
@@ -4152,14 +4157,16 @@ ul.product-tab li.active:after {
     border-radius: 4px; 
     width: 100%; 
     }
-    .course-type-list .btn-outline {
+    a.btn-outline {
       background: #fff;
       color: #393185;
       border: 1px solid;
+      display: block;
       width: 100%;
       padding: 10px;
       border-radius: 4px;
       cursor: pointer;
+
     } 
   .course-page-section .course-meta .course-rate li {
     color: #bbbbbb; }
@@ -5098,4 +5105,24 @@ span.success-icon {
 }
 .product-tab {
   width: 100%;
+}
+.sticky-footer {
+  margin-bottom: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 9;
+}
+
+a.sticky-btn {
+  background: #fff;
+  color: #393185;
+  border: 2px solid;
+  display: block;
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 600;
 }

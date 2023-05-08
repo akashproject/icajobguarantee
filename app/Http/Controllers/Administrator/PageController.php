@@ -57,4 +57,10 @@ class PageController extends Controller
             var_dump($e->getMessage()); 
         }
     }
+
+    public function delete($id) {
+        $course = Page::findOrFail($id);
+        $course->delete();
+        return redirect()->back()->with('message', 'Page deleted successfully!');
+    }
 }

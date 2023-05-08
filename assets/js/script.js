@@ -242,34 +242,36 @@ threeGridSlide: function (){
 ================================================*/
 courseSlide: function (){
 	$('#course-slide-item').owlCarousel({
-		margin:30,
-		responsiveClass:true,
-		nav: true,
+		loop:true,
+		margin:10,
 		dots: false,
-		autoplay: false,
+		autoplay:true,
+		nav:true,
 		navText:["<i class='fas fa-chevron-left'></i>","<i class='fas fa-chevron-right'></i>"],
-		smartSpeed: 1000,
+		responsiveClass:true,
 		responsive:{
 			0:{
-				items:1,
+				items:1.2,
+				margin:2,
 			},
 			400:{
-				items:1,
+				items:1.2,
+				margin:2,
 			},
 			600:{
-				items:1,
+				items:1.2,
+				margin:2,
 			},
 			700:{
-				items:2,
+				items:2.2,
 			},
 			800:{
-				items:3,
+				items:3.2,
 			},
 			1000:{
-				items:3,
-
+				items:3.2,
 			}
-		},
+		}
 	})
 },
 /* End Of course slide
@@ -463,6 +465,9 @@ faqTAB: function (){
 	$(".tab-content-1").hide();
 	$(".tab-content-1:first").show();
 
+	$(".course-tab-content-1").hide();
+	$(".course-tab-content-1:first").show();
+
 	/* if in tab mode */
 	$("ul.product-tab").on("click", "li", function() {
 		
@@ -480,7 +485,7 @@ faqTAB: function (){
 
 	$("ul.course-tab").on("click", "li", function() {
 		
-		$(".tab-content-1").hide();
+		$(".course-tab-content-1").hide();
 		var activeTab = $(this).attr("rel"); 
 		$("#"+activeTab).fadeIn();    
 		
@@ -517,6 +522,9 @@ faqTAB: function (){
 		
 		$("ul.product-tab li").removeClass("active");
 		$("ul.product-tab li[rel^='"+d_activeTab+"']").addClass("active");
+
+		$("ul.course-tab li").removeClass("active");
+		$("ul.course-tab li[rel^='"+d_activeTab+"']").addClass("active");
 	});
 	
 	
@@ -524,6 +532,7 @@ faqTAB: function (){
      to add border to right side
      of last tab */
      $('ul.product-tab li').last().addClass("tab_last");
+	 $('ul.course-tab li').last().addClass("tab_last");
  },
 /* End Of best product
 ================================================*/
@@ -1117,7 +1126,7 @@ jQuery.validator.addMethod('email_rule', function (value, element) {
 				}
 			});
 			$.ajax({
-				url: `http://${window.location.hostname}/icajobguarantee/submit-review`,
+				url: `${globalUrl}submit-review`,
 				type: "post",
 				data: $("#submit-review").serialize(),
 				success: function(result) {
@@ -1193,7 +1202,7 @@ jQuery.validator.addMethod('email_rule', function (value, element) {
 			}
 		});
 		$.ajax({
-			url: `/icajobguarantee/administrator/get-city-by-state-id`,
+			url: `${globalUrl}administrator/get-city-by-state-id`,
 			type: "post",
 			data: {
 				state_id: state_id,
@@ -1262,6 +1271,7 @@ jQuery.validator.addMethod('email_rule', function (value, element) {
 function lead_capture_form_btn(course_id,center_id) {
 	jQuery(".lead_steps").removeClass("active");
 	jQuery(".lead_steps.step1").addClass("active");
+	$('#lead-generation-form').modal('show');
 	getCenters(course_id,center_id);
 }
 
@@ -1280,8 +1290,7 @@ function getCenters(course_id,center_id) {
 		},
 		success: function(result) {
 			$("#lead_capture_form .center").html(result);
-			$("#lead_capture_form .course_id").val(course_id); 
-			$('#lead-generation-form').modal('show');
+			$("#lead_capture_form .course_id").val(course_id);
 		}
 	});
 }
