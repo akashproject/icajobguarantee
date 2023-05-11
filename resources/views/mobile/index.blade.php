@@ -6,7 +6,27 @@
 		============================================= -->
 		<section id="slide" class="slider-section">
 			<div id="slider-item" class="slider-item-details">
-				<div class="slider-area slider-bg-1 relative-position" style="background-image: url({{url('assets/img/banner/banner-1.jpg')}});">
+				<div  class="slider-area slider-bg-1 relative-position" style="background-image: url({{url('assets/img/banner/banner-1.jpg')}} );" >
+					<div class="slider-text">
+						<div class="section-title mb20 headline text-center">
+							<div class="layer-1-1">
+								<span class="subtitle text-uppercase">EDUCATION & TRAINING ORGANIZATION</span>
+							</div>
+							<div class="layer-1-3">
+								<h2><span>Inventive</span> Solution <br> for <span>Education</span></h2>
+							</div>
+						</div>
+						<div class="layer-1-4">
+							<div id="course-btn">
+								<div class="genius-btn  text-center text-uppercase ul-li-block bold-font">
+									<a href="{{url('/courses')}}">Our Courses <i class="fas fa-caret-right"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="slider-area slider-bg-2 relative-position" style="background-image: url({{url('assets/img/banner/banner-1.jpg')}} );">
 					<div class="slider-text">
 						<div class="section-title mb20 headline text-center">
 							<div class="layer-1-1">
@@ -21,7 +41,7 @@
 								<form action="{{url('/courses')}}" method="get">
 									<input class="course" name="search" type="text" placeholder="Type what do you want to learn today?">
 									<div class="nws-button text-center  gradient-bg text-capitalize">
-										<button type="submit" value="Submit">Search Course</button> 
+										<button type="submit" value="Submit">Search</button> 
 									</div>
 								</form>
 							</div>
@@ -38,31 +58,36 @@
 						</div>
 					</div>
 				</div>
-				<div  class="slider-area slider-bg-2 relative-position" style="background-image: url({{url('assets/img/banner/banner-1.jpg')}});" >
+				<div class="slider-area slider-bg-3 relative-position" style="background-image: url({{url('assets/img/banner/banner-1.jpg')}} );">
 					<div class="slider-text">
-						<div class="section-title mb20 headline text-center">
-							<div class="layer-1-1">
-								<span class="subtitle text-uppercase">EDUCATION & TRAINING ORGANIZATION</span>
-							</div>
-							<div class="layer-1-3">
-								<h2><span>Hone</span> In <br> Demand <span> Skills</span></h2>
-							</div>
-						</div>
-						<div class="layer-1-4">
-							<div id="course-btn">
-								<div class="genius-btn  text-center text-uppercase ul-li-block bold-font">
-									<a href="{{url('/courses')}}">Our Courses <i class="fas fa-caret-right"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
+						<div class="layer-1-2">
+							<div class="coming-countdown ul-li">
+								<ul>
+									<li class="days">
+										<span class="number"></span>
+										<span class>Days</span>
+									</li>
 
-				</div>				
-				<div class="slider-area slider-bg-3 relative-position" style="background-image: url({{url('assets/img/banner/banner-1.jpg')}});">
-					<div class="slider-text">
+									<li class="hours">
+										<span class="number"></span>
+										<span class>Hours</span>
+									</li>
+
+									<li class="minutes">
+										<span class="number"></span>
+										<span class>Minutes</span>
+									</li>
+
+									<li class="seconds">
+										<span class="number"></span>
+										<span class>Seconds</span>
+									</li>
+								</ul>
+							</div>
+						</div>
 						<div class="section-title mb20 headline text-center">
 							<div class="layer-1-3">
-								<h2 class="third-slide"> With India’s #1 <br> <span>Vocational Education.</span></h2>
+								<h2 class="third-slide"> Mobile Application Experiences : <br> <span>Mobile App Design.</span></h2>
 							</div>
 						</div>
 						<div class="layer-1-4">
@@ -74,6 +99,14 @@
 									<a href="#">contact us <i class="fas fa-caret-right"></i></a>
 								</div>
 							</div>
+						</div>
+					</div>
+				</div>
+				<div class="slider-area slider-bg-4 relative-position" style="background-image: url({{url('assets/img/banner/banner-1.jpg')}} );">
+					<div class="slider-text">
+						<div class="section-title mb20 headline text-center">
+							<span class="subtitle text-uppercase">EDUCATION & TRAINING ORGANIZATION</span>
+							<h2><span>Inventive</span> Solution <br> for <span>Education</span></h2>
 						</div>
 					</div>
 				</div>
@@ -252,25 +285,24 @@
 					<div class="col-md-7">
 						<div class="about-us-text">
 							<div class="section-title relative-position mb20 headline text-left "  >
-								<span class="subtitle ml42 text-uppercase">ABOUT US</span>
-								<h2>We are <span>Genius Course</span> work since 1980.</h2>
-								<p>India’s Leading Vocational Training Institute providing job-oriented courses in GST, Tally, Finance.</p>
+								<span class="subtitle text-uppercase">SORT ABOUT US</span>
+								<h2>We are <span>Genius Course</span>
+								work since 1980.</h2>
+								<p>We take our mission of increasing global access to quality education seriously. We connect learners to the best universities and institutions from around the world.</p>
 							</div>
 							<div class="about-content-text">
-								<p class=""  >Bringing change in education by making youth employable. What makes us the Industry Leader in the Job Market?</p>
+								<p class=""  >Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam volutpat. Ut wisi enim ad minim veniam. magna aliquam volutpat. Ut wisi enim ad minim veniam.</p>
 								<div class="about-list mb65 ul-li-block "  >
 									<ul>
-										<li>Hands on Experience with 7 Simulation Softwares</li>
-										<li>100% Job Guarantee</li>
-										<li>AnyTime Job Card- Anytime, Anywhere</li>
-										<li>120 + Centres Pan-India and 30 Placement Offices</li>
-										<li>70, 000 Registered Employers</li>
-										<li>Cutting-Edge Curriculum</li>
+										<li>Professional And Experienced Since 1980</li>
+										<li>We Connect Learners To The Best  Universities From Around The World</li>
+										<li>Our Mission Increasing Global Access To Quality Aducation</li>
+										<li>100K Online Available Courses</li>
 									</ul>
 								</div>
 								<div class="about-btn "  >
 									<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
-										<a href="/about-us">About Us <i class="fas fa-caret-right"></i></a>
+										<a href="#">About Us <i class="fas fa-caret-right"></i></a>
 									</div>
 									<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
 										<a href="#">contact us <i class="fas fa-caret-right"></i></a>
@@ -292,7 +324,7 @@
 				<div class="container">
 					<div class="section-title mb20 headline text-center "  >
 						<span class="subtitle text-uppercase">GENIUS ADVANTAGES</span>
-						<h2><span>Why Choose ICA.</span></h2>
+						<h2>Reason <span>Why Choose Genius.</span></h2>
 					</div>
 					<div id="service-slide-item" class="service-slide">
 						<div class="service-text-icon "  >
@@ -301,7 +333,7 @@
 							</div>
 							<div class="service-text">
 								<h3 class="bold-font">The Power Of Education.</h3>
-								<p>ICA Edu Skills was established in 1999 with the aim of making the youth employable by providing them with vocational courses at affordable prices</p>
+								<p>Lorem ipsum dolor sit amet consectuerer adipiscing elit set diam nonnumynibh euismod tincidun laoreet.</p>
 							</div>
 						</div>
 						<div class="service-text-icon "  >
@@ -310,7 +342,7 @@
 							</div>
 							<div class="service-text">
 								<h3 class="bold-font">Best Online Education.</h3>
-								<p>With the industry demanding skilled manpower, we realized our work must not stop at training the youth but also supporting them with placement at top MNCS.</p>
+								<p>Lorem ipsum dolor sit amet consectuerer adipiscing elit set diam nonnumynibh euismod tincidun laoreet.</p>
 							</div>
 						</div>
 						<div class="service-text-icon "  >
@@ -319,7 +351,7 @@
 							</div>
 							<div class="service-text">
 								<h3 class="bold-font">Education For All Student.</h3>
-								<p>In the end, we believe that having job-ready skills is the need of the hour. These years of hard work and dedication have established us as the leader in vocational education and the best training institute Pan-India.</p>
+								<p>Lorem ipsum dolor sit amet consectuerer adipiscing elit set diam nonnumynibh euismod tincidun laoreet.</p>
 							</div>
 						</div>
 						<div class="service-text-icon "  >
@@ -328,7 +360,52 @@
 							</div>
 							<div class="service-text">
 								<h3 class="bold-font">The Power Of Education.</h3>
-								<p>With more than 120+ centers across the country, we take pride in contributing to India’s skill development initiatives and making youth job-ready with our industry-recognized certifications.</p>
+								<p>Lorem ipsum dolor sit amet consectuerer adipiscing elit set diam nonnumynibh euismod tincidun laoreet.</p>
+							</div>
+						</div>
+						<div class="service-text-icon">
+							<div class="service-icon float-left">
+								<i class="text-gradiant flaticon-clipboard-with-pencil"></i>
+							</div>
+							<div class="service-text">
+								<h3 class="bold-font">Best Online Education.</h3>
+								<p>Lorem ipsum dolor sit amet consectuerer adipiscing elit set diam nonnumynibh euismod tincidun laoreet.</p>
+							</div>
+						</div>
+						<div class="service-text-icon">
+							<div class="service-icon float-left">
+								<i class="text-gradiant flaticon-list"></i>
+							</div>
+							<div class="service-text">
+								<h3 class="bold-font">Education For All Student.</h3>
+								<p>Lorem ipsum dolor sit amet consectuerer adipiscing elit set diam nonnumynibh euismod tincidun laoreet.</p>
+							</div>
+						</div>
+						<div class="service-text-icon">
+							<div class="service-icon float-left">
+								<i class="text-gradiant flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i>
+							</div>
+							<div class="service-text">
+								<h3 class="bold-font">The Power Of Education.</h3>
+								<p>Lorem ipsum dolor sit amet consectuerer adipiscing elit set diam nonnumynibh euismod tincidun laoreet.</p>
+							</div>
+						</div>
+						<div class="service-text-icon">
+							<div class="service-icon float-left">
+								<i class="text-gradiant flaticon-clipboard-with-pencil"></i>
+							</div>
+							<div class="service-text">
+								<h3 class="bold-font">Best Online Education.</h3>
+								<p>Lorem ipsum dolor sit amet consectuerer adipiscing elit set diam nonnumynibh euismod tincidun laoreet.</p>
+							</div>
+						</div>
+						<div class="service-text-icon">
+							<div class="service-icon float-left">
+								<i class="text-gradiant flaticon-list"></i>
+							</div>
+							<div class="service-text">
+								<h3 class="bold-font">Education For All Student.</h3>
+								<p>Lorem ipsum dolor sit amet consectuerer adipiscing elit set diam nonnumynibh euismod tincidun laoreet.</p>
 							</div>
 						</div>
 					</div>
@@ -461,7 +538,7 @@
 				</div>
 				<div class="category-item">
 					<div class="row">
-						<div class="col-md-3">
+						<div class="col-md-3 col-sm-6">
 							<div class="category-icon-title text-center "  >
 								<div class="category-icon">
 									<i class="text-gradiant flaticon-technology"></i>
@@ -473,7 +550,7 @@
 						</div>
 						<!-- /category -->
 
-						<div class="col-md-3">
+						<div class="col-md-3 col-sm-6">
 							<div class="category-icon-title text-center "  >
 								<div class="category-icon">
 									<i class="text-gradiant flaticon-app-store"></i>
@@ -485,7 +562,7 @@
 						</div>
 						<!-- /category -->
 
-						<div class="col-md-3">
+						<div class="col-md-3 col-sm-6">
 							<div class="category-icon-title text-center "  >
 								<div class="category-icon">
 									<i class="text-gradiant flaticon-artist-tools"></i>
@@ -497,7 +574,7 @@
 						</div>
 						<!-- /category -->
 
-						<div class="col-md-3">
+						<div class="col-md-3 col-sm-6">
 							<div class="category-icon-title text-center "  >
 								<div class="category-icon">
 									<i class="text-gradiant flaticon-business"></i>
@@ -509,7 +586,7 @@
 						</div>
 						<!-- /category -->
 
-						<div class="col-md-3">
+						<div class="col-md-3 col-sm-6">
 							<div class="category-icon-title text-center "  >
 								<div class="category-icon">
 									<i class="text-gradiant flaticon-dna"></i>
@@ -521,7 +598,7 @@
 						</div>
 						<!-- /category -->
 
-						<div class="col-md-3">
+						<div class="col-md-3 col-sm-6">
 							<div class="category-icon-title text-center "  >
 								<div class="category-icon">
 									<i class="text-gradiant flaticon-cogwheel"></i>
@@ -533,7 +610,7 @@
 						</div>
 						<!-- /category -->
 
-						<div class="col-md-3">
+						<div class="col-md-3 col-sm-6">
 							<div class="category-icon-title text-center "  >
 								<div class="category-icon">
 									<i class="text-gradiant flaticon-technology-1"></i>
@@ -545,7 +622,7 @@
 						</div>
 						<!-- /category -->
 
-						<div class="col-md-3">
+						<div class="col-md-3 col-sm-6">
 							<div class="category-icon-title text-center "  >
 								<div class="category-icon">
 									<i class="text-gradiant flaticon-technology-2"></i>

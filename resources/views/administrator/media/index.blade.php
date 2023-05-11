@@ -37,10 +37,13 @@
                 </div>
             </div>
             <div class="row image-thumbnail-container">
-                @foreach ($media as $value)         
+                @foreach ($media as $value)   
+                <div class="file-content text-center">      
                     <a href="#imageBox" class="image-thumbnail open-popup-link">
                         <img src="{{ getSizedImage('thumb',$value->id) }}" alt="{{$value->alternative}}" style="width:100%">
                     </a>
+                    <a target="_blank" href="{{ url('administrator/view-file') }}/{{ $value->id }}" style="display:block">Edit</a>
+                </div>
                 @endforeach
             </div>
         </div>

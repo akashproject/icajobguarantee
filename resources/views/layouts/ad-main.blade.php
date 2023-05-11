@@ -48,12 +48,7 @@
     <link href="{{ url('assets/css/progess.css') }}" rel="stylesheet">
     <link href="{{ url('assets/css/animate.min.css') }}" rel="stylesheet">
     <link href="{{ url('assets/css/responsive.css') }}" rel="stylesheet">
-    @if(check_device('desktop'))
-    <link href="{{ url('assets/css/style.css') }}" rel="stylesheet">
-    @else
-    <link href="{{ url('assets/css/mobile.css') }}" rel="stylesheet">
-    @endif
-    
+    <link href="{{ url('assets/css/ads.css') }}" rel="stylesheet">
     <link href="{{ url('assets/css/colors/color-7.css') }}" rel="alternate stylesheet" type="text/css" title="color-7">
     @yield('style')
 

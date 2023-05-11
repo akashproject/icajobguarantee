@@ -241,6 +241,7 @@ $(function() {
             $(".image-thumbnail").removeClass("active");
         }
         $(this).toggleClass("active");
+        
         // $(this).magnificPopup({
         //     // you may add other options here, e.g.:
         //     preloader: true,

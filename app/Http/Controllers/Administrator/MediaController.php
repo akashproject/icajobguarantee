@@ -18,9 +18,8 @@ class MediaController extends Controller
     public function index()
     {
         try {
-            $mediaPath = config('constant.mediaPath');
             $media = Media::all();
-            return view('administrator.media.index',compact('mediaPath','media'));
+            return view('administrator.media.index',compact('media'));
 
         } catch(\Illuminate\Database\QueryException $e){
             //throw $th;
@@ -28,54 +27,74 @@ class MediaController extends Controller
         
     }
 
+    public function view($id){
+        try {
+            $mediaPath = config('constant.absoluteMediaPath');
+            $file = Media::findOrFail($id);
+            return view('administrator.media.show',compact('mediaPath','file'));
+        } catch(\Illuminate\Database\QueryException $e){
+        } 
+    }
+
     public function save(Request $request) {
         try {
             $data = $request->all();
             $request->validate([
-                'file' => 'required|mimes:jpeg,png,jpg,gif,svg,doc,docx,pdf,mp4,m3u8,flv,wmv,avi,mov,3gp',
+                'file' => 'required|mimes:jpeg,jfif,webp,png,jpg,gif,svg,doc,docx,pdf,mp4,m3u8,flv,wmv,avi,mov,3gp',
             ]); 
             // Check is file exist        
             if (!$request->hasFile('file')) {
                 return false;
             }
-
+            $fileData = $request->file('file');
             $today = date("Y-m-d");
+            $fileDataArray = array(
+                'name' => current(explode('.',$request->file->getClientOriginalName())),
+                'type' => $request->file->getMimeType(),
+                'alternative' => "",
+                'caption' => "",
+                'description' => "",
+                'extension' => $request->file->extension(),
+                'size' => number_format((float)($request->file->getSize()/1024), 2, '.', ''),
+                'path' => config('constant.relativeMediaPath').'/'.$today,
+            );
+
+            
             $fileName = $this->rename(str_replace(" ","-",strtolower($request->file->getClientOriginalName())));
-            $path = Storage::disk('public')->putFileAs($today,$request->file('file'), $fileName);
-
-            //File successfully upload
-            if (!$path) {
-                return false;
-            }
-
-            $imageType = array("jpeg","png","jpg","webp");
-            if(in_array($request->file->extension(), $imageType)){
-                $image = Image::make($request->file('file')->getRealPath());
+            
+            
+            $imageType = array("jpeg","png","jpg","jfif","webp");
+            if(in_array($fileDataArray['extension'], $imageType)){
+                $image = Image::make($fileData->getRealPath());
                 $dimension = $image->width().'x'.$image->height();
                 if($image->width() >= 768){
                     $this->resizeMobile('profile',$fileName,$request);
                 }
                 $image->resize(120, 120)->save(public_path('upload/'.date("Y-m-d")).'/'."thumb_".$fileName);
             }
-            
-            $fileArray = array(
-                'name' => current(explode('.',$request->file->getClientOriginalName())),
-                'type' => $request->file->getMimeType(),
-                'filename' => $fileName,
-                'alternative' => "",
-                'caption' => "",
-                'description' => "",
-                'extension' => $request->file->extension(),
-                'size' => number_format((float)($request->file->getSize()/1024), 2, '.', ''),
-                'dimension' => (isset($dimension))?$dimension:'', 
-                'path' => config('constant.relativeMediaPath').'/'.$today,
-            );  
 
-            Media::create($fileArray);
-            return response()->json($fileArray,$this->_statusOK);
+            if(!$request->file('file')->move(public_path('upload/'.date("Y-m-d")),$fileName)){
+                return false;
+            }
+            
+            $fileDataArray['filename'] = $fileName;
+            $fileDataArray['dimension'] = (isset($dimension))?$dimension:'';
+            $media = Media::create($fileDataArray);
+            return response()->json($media,$this->_statusOK);
             //return redirect()->back()->with('message', 'Page updated successfully!');
         } catch(\Illuminate\Database\QueryException $e){
             //var_dump($e->getMessage()); 
+        }
+    }
+
+    public function updateFile(Request $request) {
+        try {
+            $data = $request->all();
+            $faq = Media::findOrFail($data['file_id']);
+            $faq->update($data);
+            return redirect()->back()->with('message', 'File updated successfully!');
+        } catch(\Illuminate\Database\QueryException $e){
+            var_dump($e->getMessage()); 
         }
     }
 
@@ -90,7 +109,8 @@ class MediaController extends Controller
     }
 
     public function rename($filename){
-        if(!Storage::disk('public')->exists(date("Y-m-d").'/'.$filename)){
+        
+        if(!file_exists(public_path('upload/'.date("Y-m-d")).'/'.$filename)){
             return $filename;
         } else {
             if($this->counter > 1){
@@ -123,6 +143,12 @@ class MediaController extends Controller
             return response()->json(['error' => $e->errorInfo[2]], 401);
         }
         
+    }
+
+    public function delete($id) {
+        $course = Media::findOrFail($id);
+        $course->delete();
+        return redirect('/administrator/media');
     }
 
 }

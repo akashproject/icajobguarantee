@@ -42,8 +42,13 @@ if (! function_exists('check_device')) {
 if (! function_exists('getSizedImage')) {
     function getSizedImage($size = '',$id) {
         $size = ($size)?$size.'_':"";
-        $media = Media::findOrFail($id);
-        return $filename = env('APP_URL').$media->path.'/'.$size.$media->filename;
+        $media = DB::table('media')->where('id',$id)->first();
+        // $media = Media::findOrFail($id);
+        if($media){
+            return $filename = env('APP_URL').$media->path.'/'.$size.$media->filename;
+        } else {
+            return false;
+        }
     }
 }
 

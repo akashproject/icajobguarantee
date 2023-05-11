@@ -17,6 +17,10 @@ Route::get('/clear-cache', function() {
     // return what you want
 });
 
+Route::get('/linkstorage', function () {
+   echo Artisan::call('storage:link');
+});
+
 Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () {
     //Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 'create'])->name('admin-register');
     Route::get('/login', [App\Http\Controllers\Administrator\AdminAuthController::class, 'login'])->name('admin-login');
@@ -71,7 +75,10 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
 
         // Media 
         Route::get('/media', [App\Http\Controllers\Administrator\MediaController::class, 'index'])->name('admin-media');
+        Route::get('/view-file/{id}', [App\Http\Controllers\Administrator\MediaController::class, 'view'])->name('admin-view-file');
         Route::post('/upload', [App\Http\Controllers\Administrator\MediaController::class, 'save'])->name('admin-save-media');
+        Route::post('/save-file', [App\Http\Controllers\Administrator\MediaController::class, 'updateFile'])->name('admin-save-file');
+        Route::get('/delete-file/{id}', [App\Http\Controllers\Administrator\MediaController::class, 'delete'])->name('admin-delete-job');
         Route::post('/search-media', [App\Http\Controllers\Administrator\MediaController::class, 'search'])->name('admin-search-media');
 
         //Testimonials

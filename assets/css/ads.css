@@ -1,45 +1,3 @@
-/*----------------------------------------------------
-@File: Default Styles
-@Author: Team HTMLMATE
-@URL: https://www.htmlmate.com
-
-This file contains the styling for the actual theme, this
-is the file you need to edit to change the look of the
-theme.
----------------------------------------------------- */
-/*=====================================================================
-@Template Name: Genius Course
-@Author: HTMLMATE
-
-
-
-@Default Styles
-
-Table of Content:
-01/ Variables,Global
-02/ Header Section
-03/ Slider Section
-04/ Search Course Section
-05/ Popular Course Section
-06/ About Section
-07/ Testimonial Section
-08/ Latest area Section
-09/ Best course Section
-10/ Teacher Section
-11/ Best product section
-12/ FAQ section
-13/ Course category section
-14/ why choose us section
-15/ contact section
-16/ blog section
-17/ check out section
-18/ Course section
-19/ footer
- 
-
-
-=====================================================================*/
-/*Variables*/
 /*----------------------------------------------------*/
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,700,700i,900,900i");
 #course-btn .genius-btn {
@@ -226,6 +184,60 @@ h1, h2, h3, h4, h5, h6 {
 .justify-content-center{
   justify-content: center;
 }
+
+.ad-banner-content {
+  color: #323232;
+  margin-top: 2.5rem;
+}
+
+.ad-banner-title h1 {
+  color: #393185;
+  line-height: 3.5rem;
+  font-size: 54px;
+}
+
+.ad-banner-option {
+  margin: 2rem 0;
+}
+
+.ad-banner-option span {
+  display: inline-block;
+}
+.ad-banner-option .apply-now {
+  padding: 12px;
+  border: 2px solid;
+  border-radius: 6px;
+  margin: 0 1rem;
+  color: #3f3a98;
+  font-size: 18px;
+  font-weight: 600;
+}
+.ad-banner-sub-title {
+  margin: 1.2rem 0;
+}
+.ad-banner-sub-title h2 {
+  font-size: 22px;
+}
+
+.highlights-section {
+  padding: 30px 0;
+}
+
+.highlights {
+  padding-top: 12px;
+  box-shadow: 0px 0px 7px 3px #cccccc87;
+  margin: 0.5rem 0;
+  height: 160px;
+  background: #ffffff;
+}
+
+.highlights h6 {
+  margin: 1.5rem 0;
+  color: #333;
+  font-weight: 600;
+}
+
+
 ul.product-tab.index-category-tab li.active,ul.course-tab.index-category-tab li.active {
   color: #393185;
   background: transparent;
@@ -452,11 +464,6 @@ ul.product-tab.index-category-tab li.active,ul.course-tab.index-category-tab li.
   background-image: url(../img/banner/brt-1.jpg);
   padding-bottom: 435px; }
 
-  .breadcrumb-section .blakish-overlay {
-    opacity: 0.5;
-    visibility: visible;
-    background: linear-gradient(to right, #000000 0%, #1d1d1d 51%, #fdfdfd 100%);
-  }
   .center-image {
     position: absolute;
     top: -54px;
@@ -490,10 +497,13 @@ color: #128C7E;
   display: block;
 }
 .ad-page-banner {
-  padding-top: 104px;
   background-position: center;
-  height: 100vh;
   overflow: auto;
+  padding-top: 104px;
+  background: #eaeaea;
+}
+.highlighted-content-wrapper {
+  padding: 1.2rem;
 }
   .page-breadcrumb-title {
     margin-top: 0.5rem;
@@ -2191,17 +2201,18 @@ button.alt-menu-btn.float-left {
     z-index: 1; }
 
 .blakish-overlay {
+  opacity: 0.5;
+  visibility: visible;
+  background: linear-gradient(to right, #000000 0%, #1d1d1d 51%, #fdfdfd 100%);
   top: 0;
-  opacity: 0;
   width: 100%;
   height: 100%;
   border-radius: 4px;
   position: absolute;
-  visibility: hidden;
   -webkit-transition: .3s all ease-in-out;
   -o-transition: .3s all ease-in-out;
   transition: .3s all ease-in-out;
-  background-color: rgba(0, 0, 0, 0.65); }
+}
 
 .latest-news-area {
   display: inline-block;

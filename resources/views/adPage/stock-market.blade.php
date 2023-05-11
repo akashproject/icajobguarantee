@@ -1,20 +1,34 @@
 @extends('layouts.ad-main')
     @section('content')
-    <section id="breadcrumb" class="ad-page-banner breadcrumb-section relative-position backgroud-style" style="background-image: url({{ (isset($category->banner_image))?getSizedImage('',$category->banner_image):url('assets/img/banner/brt-1.jpg') }});">
-		<div class="blakish-overlay"></div>
+    <section id="breadcrumb" class="ad-page-banner relative-position backgroud-style">
 		<div class="container">
-			<div class="page-breadcrumb-content">
-				<div class="page-breadcrumb-title">
-                    <h1>Advanced Certification in Data Science and AI</h1>
+			<div class="row">
+				<div class="col-md-7">
+					<div class="ad-banner-content">
+						<div class="ad-banner-title">
+							<h1>Advanced Certification in Data Science and AI</h1>
+						</div>
+						<div class="ad-banner-sub-title">
+							<h2> Learn from IIT Madras Faculty &amp; Industry Experts with Campus Immersion at IIT Madras </h2>
+						</div>
+						<div class="ad-banner-description">
+							{!!(isset($contentMain))?$contentMain->description:"Course description" !!}
+						</div>
+						<div class="ad-banner-option">
+							<span class="enroll-btn genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
+								<a onclick="lead_capture_form_btn('',3)" href="javascript:void(0)"> Download Brochure </a>
+							</span>
+
+							<span class="apply-now">
+								<a onclick="lead_capture_form_btn('',3)" href="javascript:void(0)"> Apply Now </a>
+							</span>
+						</div>
+					</div>
 				</div>
-                <div class="job-opportunity-text">
-                    <h2> Learn from IIT Madras Faculty &amp; Industry Experts with Campus Immersion at IIT Madras <h2>
-                </div>
-				<div class="page-breadcrumb-description">
-					{!!(isset($contentMain))?$contentMain->description:"Courses" !!}
-				</div>
-				<div class="page-breadcrumb-option">
-                    <a class="btn-filled" href="javascript:void(0)" onclick="lead_capture_form_btn('',3)"><i class="fas fa-download"></i> Brochure</a>
+				<div class="col-md-5">
+					<div class="highlighted-content-wrapper text-center">
+						<img src="https://www.icajobguarantee.com/wp-content/uploads/2021/12/features-3.png">
+					</div>
 				</div>
 			</div>
 		</div>
@@ -84,157 +98,85 @@
 	<!-- End of Search Courses
 		============================================= -->
 
-	<!-- Start latest section
+	<!-- Hightlists section
 		============================================= -->
-		<section id="latest-area" class="latest-area-section home-page-three">
+		<section id="key-highlights" class="highlights-section">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-4">
-						<div class="latest-area-content">
-							<div class="section-title-2 mb65 headline text-left "  >
-								<h2>Latest <span>News.</span></h2>
+					<div class="col-md-5">
+						<img src="https://dummyimage.com/465">
+					</div>
+					<div class="col-md-7">
+						<div class="section-title mb20 headline text-center">
+							<span class="subtitle text-uppercase">Key Highlights </span>
+							<h3>Best Prefferd<span> Modules.</span></h3>
+						</div>
+						<div class="row text-center">
+							<div class="col-md-4"> 
+								<div class="highlights" >
+									<img src="https://dummyimage.com/65" >
+									<h6> 100% Job Assurance Courses </h6>
+								</div>
 							</div>
-							<div class="latest-news-posts">
-								<div class="latest-news-area "  >
-									<div class="latest-news-thumbnile relative-position">
-										<img src="assets/img/blog/lb-1.jpg" alt="">
-										<div class="hover-search">
-											<i class="fas fa-search"></i>
-										</div>
-										<div class="blakish-overlay"></div>
-									</div>
-									<div class="date-meta">
-										<i class="fas fa-calendar-alt"></i> 26 April 2018
-									</div>
-									<h3 class="latest-title bold-font"><a href="#">Affiliate Marketing A Beginner’s Guide.</a></h3>
-									<div class="course-viewer ul-li">
-										<ul>
-											<li><a href=""><i class="fas fa-user"></i> 1.220</a></li>
-											<li><a href=""><i class="fas fa-comment-dots"></i> 1.015</a></li>
-										</ul>
-									</div>
+							<div class="col-md-4"> 
+								<div class="highlights" >
+									<img src="https://dummyimage.com/65" >
+									<h6> 200+ Tools </h6>
 								</div>
-								<!-- /post -->
-
-								<div class="latest-news-posts "  >
-									<div class="latest-news-area">
-										<div class="latest-news-thumbnile relative-position">
-											<img src="assets/img/blog/lb-2.jpg" alt="">
-											<div class="hover-search">
-												<i class="fas fa-search"></i>
-											</div>
-											<div class="blakish-overlay"></div>
-										</div>
-										<div class="date-meta">
-											<i class="fas fa-calendar-alt"></i> 26 April 2018
-										</div>
-										<h3 class="latest-title bold-font"><a href="#">No.1 The Best Online Course 2018.</a></h3>
-										<div class="course-viewer ul-li">
-											<ul>
-												<li><a href=""><i class="fas fa-user"></i> 1.220</a></li>
-												<li><a href=""><i class="fas fa-comment-dots"></i> 1.015</a></li>
-											</ul>
-										</div>
-									</div>
-									<!-- /post -->
+							</div>
+							<div class="col-md-4"> 
+								<div class="highlights" >
+									<img src="https://dummyimage.com/65" >
+									<h6> 9 Super Specializations </h6>
 								</div>
-
-								<div class="view-all-btn bold-font "  >
-									<a href="#">View All News <i class="fas fa-chevron-circle-right"></i></a>
+							</div>
+							<div class="col-md-4"> 
+								<div class="highlights" >
+									<img src="https://dummyimage.com/65" >
+									<h6> Industry Case Study </h6>
+								</div>
+							</div>
+							<div class="col-md-4"> 
+								<div class="highlights" >
+									<img src="https://dummyimage.com/65" >
+									<h6> 160 Hrs Assignments </h6>
+								</div>
+							</div>
+							<div class="col-md-4"> 
+								<div class="highlights" >
+									<img src="https://dummyimage.com/65" >
+									<h6> 100% Placement Support </h6>
 								</div>
 							</div>
 						</div>
 					</div>
-					<!-- /latest-news -->
-					<div class="col-md-4">
-						<div class="latest-area-content">
-							<div class="section-title-2 mb65 headline text-left "  >
-								<h2>Upcoming <span>Events.</span></h2>
-							</div>
-							<div class="latest-events "  >
-								<div class="latest-event-item">
-									<div class="events-date  relative-position text-center">
-										<div class="gradient-bdr"></div>
-										<span class="event-date bold-font">22</span>
-										April 2018
-									</div>
-									<div class="event-text">
-										<h3 class="latest-title bold-font"><a href="#">Fully Responsive Web Design & Development.</a></h3>
-										<div class="course-meta">
-											<span class="course-category"><a href="#">Web Design</a></span>
-											<span class="course-author"><a href="#">Koke</a></span>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="latest-events "  >
-								<div class="latest-event-item">
-									<div class="events-date  relative-position text-center">
-										<div class="gradient-bdr"></div>
-										<span class="event-date bold-font">07</span>
-										August 2018
-									</div>
-									<div class="event-text">
-										<h3 class="latest-title bold-font"><a href="#">Introduction to Mobile Application Development.</a></h3>
-										<div class="course-meta">
-											<span class="course-category"><a href="#">Web Design</a></span>
-											<span class="course-author"><a href="#">Koke</a></span>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="latest-events "  >
-								<div class="latest-event-item">
-									<div class="events-date  relative-position text-center">
-										<div class="gradient-bdr"></div>
-										<span class="event-date bold-font">30</span>
-										Sept 2018
-									</div>
-									<div class="event-text">
-										<h3 class="latest-title bold-font"><a href="#">IOS Apps Programming & Development.</a></h3>
-										<div class="course-meta">
-											<span class="course-category"><a href="#">Web Design</a></span>
-											<span class="course-author"><a href="#">Koke</a></span>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="view-all-btn bold-font "  >
-								<a  href="#">Check Calendar   <i class="fas fa-calendar-alt"></i></a>
-							</div>
-						</div>
-					</div>
-					<!-- /events -->
-
-					<div class="col-md-4">
-						<div class="latest-area-content">
-							<div class="section-title-2 mb65 headline text-left "  >
-								<h2>Latest <span>Video.</span></h2>
-							</div>
-							<div class="latest-video-poster relative-position mb20 "  >
-								<img src="{{url('assets/img/banner/v-1.jpg')}}" alt="">
-								<div class="video-play-btn text-center gradient-bg">
-									<a class="popup-with-zoom-anim" href="https://www.youtube.com/watch?v=-g4TnixUdSc"><i class="fas fa-play"></i></a>
-								</div>
-							</div>
-							<h3 class="latest-title bold-font "  ><a href="#">Learning IOS Apps in Amsterdam.</a></h3>
-							<p class="mb25 "  >Lorem ipsum dolor sit amet, consectetuer delacosta adipiscing elit, sed diam nonummy.</p>
-							<div class="view-all-btn bold-font "  >
-								<a href="#">View All Videos <i class="fas fa-chevron-circle-right"></i></a>
-							</div>
-						</div>
-					</div>
-					<!-- /. -->
 				</div>
 			</div>
 		</section>
-	<!-- End latest section
+
+	<!-- End Hightlists section
+	============================================= -->
+	<!-- Start secound testimonial section
 		============================================= -->
-	
-	
+		<section id="sponsor" class="sponsor-section">
+			<div class="container">
+				<div class="section-title mb35 headline text-center">
+					<span class="subtitle text-uppercase">Student Placement</span>
+					<h3>Our Alumni <span>Worked At.</span></h3>
+				</div>
+				<div class="row" >
+					@foreach(getPlacements() as $value)
+						<div class="col-md-2 col-lg-2 col-6 mt10 mb20" >
+							<div class="placement-grid" >
+								<img src="{{ (isset($value->featured_image))?getSizedImage('',$value->featured_image):'https://dummyimage.com/140x140' }}" alt="">		
+							</div>
+						</div>
+					@endforeach
+				</div>
+			</div>
+		</section>
+	<!-- End secound testimonial section
+		============================================= -->
     @endsection
 @section('script')
 <!-- ============================================================== -->

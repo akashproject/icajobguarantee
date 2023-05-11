@@ -183,13 +183,16 @@ fourGridSlide: function (){
 		smartSpeed: 1000,
 		responsive:{
 			0:{
-				items:1,
+				items:2,
+				margin:5,
 			},
 			400:{
-				items:1,
+				items:2,
+				margin:5,
 			},
 			600:{
-				items:1,
+				items:2,
+				margin:5,
 			},
 			700:{
 				items:3,

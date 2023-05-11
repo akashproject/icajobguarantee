@@ -547,7 +547,7 @@
 	}
 	#slider-item .genius-btn {
 		border: 2px solid #17d0cf;
-		width: 155px;
+		width: auto;
 		margin: 0 auto;
 		margin-top: 20px;
 		height: 40px;

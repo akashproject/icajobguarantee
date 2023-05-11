@@ -12,6 +12,11 @@ class AdPageController extends Controller
         try {
             //echo $slug; exit;
             $contentMain = Adspage::where('slug', $slug)->firstOrFail();
+
+            if ($contentMain->center_id) {
+                # code...
+                echo $contentMain->center_id;
+            }
             //$contentMain = Adspage::all();
             //$contentMain = $contentMain->firstOrFail();
             //print_r($contentMain->template); exit;
