@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('name',100);
             $table->string('course_id',100);
             $table->string('dasignation',200);
+            $table->integer('placed_at')->nullable();
             $table->text('comment');
             $table->text('video')->nullable();
             $table->string('model')->nullable();

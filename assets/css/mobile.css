@@ -2302,7 +2302,15 @@ button.alt-menu-btn.float-left {
 
 .course-rate li {
   color: #ffc926; }
-
+  .trend-badge-3 {
+    left: 0;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    position: absolute;
+    z-index: 99;
+    top: 0px;
+}
 .trend-badge-2 {
   top: -18px;
   left: -50px;

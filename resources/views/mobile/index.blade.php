@@ -206,9 +206,8 @@
 					<div class="course-item-pic-text">
 						<div class="course-pic relative-position mb25">
 							<img src="{{ (isset($course->featured_image))?getSizedImage('',$course->featured_image):'assets/img/course/c-1.jpg' }}" alt="">
-							<div class="trend-badge-2 text-center text-uppercase">
-								<i class="fas fa-bolt"></i>
-								<span>Career</span>
+							<div class="trend-badge-3 text-center text-uppercase">
+								<img src="{{url('assets/img/jg-logo.webp')}}" >
 							</div>
 							<div class="course-details-btn">
 								<a href="courses/{{ $course->slug }}">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>

@@ -75,7 +75,7 @@
     <script src="{{ url('assets/js/jquery.counterup.min.js') }}"></script>
     <script src="{{ url('assets/js/waypoints.min.js') }}"></script>
     <script src="{{ url('assets/js/jquery-ui.js') }}"></script>
-    <script src="{{ url('assets/js/script.js') }}"></script>
+    <script src="{{ url('assets/js/ad-script.js') }}"></script>
 </body>
 
 </html>

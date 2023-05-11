@@ -46,17 +46,17 @@
 					</div>
 					<div class="col-md-5">	
 						<div class="form-group row">
-							<label for="type_id" class="col-sm-3 text-left control-label col-form-label">Cateogry</label>
+							<label for="course_type_id" class="col-sm-3 text-right control-label col-form-label">Courses</label>
 							<div class="col-sm-9">
-								<select name="course_type_id" id="course_type_id" class="select2 form-control custom-select" style="width: 100%; height:36px;">	
+								<select name="course_type_id[]" id="course_type_id" class="select2 form-control custom-select" style="width: 100%; height:136px;" multiple>	
 									<option value="">Select Course Type</option>
-									@foreach ($courseType as $value)
-									<option value="{{  $value->id }}" > {{  $value->name }} </option>
+									@foreach($courseCategories as $category)
+									<option value="{{ $category->id }}" >{{ $category->name }}</option>
 									@endforeach
 								<select>
 							</div>
 						</div>
-						<div class="form-group row">
+						<!-- <div class="form-group row">
 							<label for="center_id" class="col-sm-3 text-left control-label col-form-label">Centers</label>
 							<div class="col-sm-9">
 								<select name="center_id" id="center_id" class="select2 form-control custom-select" style="width: 100%; height:36px;">	
@@ -66,7 +66,7 @@
 									@endforeach
 								<select>
 							</div>
-						</div>
+						</div> -->
 						<div class="form-group row">
 							<label for="template" class="col-sm-3 text-right control-label col-form-label">Template</label>
 							<div class="col-sm-9">

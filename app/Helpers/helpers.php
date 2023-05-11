@@ -17,6 +17,7 @@ use App\Models\Faq;
 use App\Models\Author;
 use App\Models\Tag;
 use App\Models\Category;
+use App\Models\Curriculum;
 
 if (! function_exists('check_device')) {
     function check_device($param = null){
@@ -242,6 +243,16 @@ if (! function_exists('getCourseTypes')) {
     function getCourseTypes(){
         try {
             return $courseTypes = CourseType::where('status', 1)->get();
+        } catch(\Illuminate\Database\QueryException $e){
+            throw $e;
+        }
+    }
+}
+
+if (! function_exists('getCourseCarriculams')) {
+    function getCourseCarriculams($id){
+        try {
+            return $carriculams = Curriculum::where('course_id',$id)->get();
         } catch(\Illuminate\Database\QueryException $e){
             throw $e;
         }

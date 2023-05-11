@@ -198,12 +198,11 @@ fourGridSlide: function (){
 				items:3,
 			},
 			800:{
-				items:5,
-				margin:5,
+				items:4,
 			},
 			1000:{
-				items:5,
-				margin:5,
+				items:4,
+
 			}
 		},
 	})
@@ -466,11 +465,11 @@ bestproductSlide: function (){
 /* Start Of best product
 ================================================*/
 faqTAB: function (){
-	$(".tab-content-1").hide();
-	$(".tab-content-1:first").show();
+	//$(".tab-content-1").hide();
+	//$(".tab-content-1:first").show();
 
-	$(".course-tab-content-1").hide();
-	$(".course-tab-content-1:first").show();
+	// $(".course-tab-content-1").hide();
+	// $(".course-tab-content-1:first").show();
 
 	/* if in tab mode */
 	$("ul.product-tab").on("click", "li", function() {
@@ -1086,6 +1085,12 @@ jQuery(document).ready(function (){
 jQuery(".gotoCourseCategory").on("change",function (){
 	window.location.href = $(this).val();
 });
+
+jQuery(".course-detail-tab-btn").on("click",function (){
+	$(".course-view-content").removeClass("active");
+	let id = $(this).attr("data-id");
+	$("#"+id).addClass("active");
+})
 
 jQuery(".gotoStep1").on("click",function(){
 	jQuery(".step1").show();

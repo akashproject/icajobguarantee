@@ -24,9 +24,9 @@ class AdPageController extends Controller
 
     public function add() {
         try {
-            $courseType = CourseType::all();
+            $courseCategories = CourseType::all();
             $centers = Center::all();
-            return view('administrator.adPages.add',compact('courseType','centers'));
+            return view('administrator.adPages.add',compact('courseCategories','centers'));
         } catch(\Illuminate\Database\QueryException $e){
             //throw $th;
         }
@@ -35,10 +35,10 @@ class AdPageController extends Controller
     public function show($id)
     {
         try {
-            $courseType = CourseType::all();
+            $courseCategories = CourseType::all();
             $centers = Center::all();
             $adPage = Adspage::findorFail($id);
-            return view('administrator.adPages.show',compact('adPage','courseType','centers'));
+            return view('administrator.adPages.show',compact('adPage','courseCategories','centers'));
         } catch(\Illuminate\Database\QueryException $e){
         }        
     }
@@ -51,6 +51,7 @@ class AdPageController extends Controller
                 'slug' => 'required',
             ]);
            
+            $data['course_type_id'] = json_encode($data['course_type_id']);
             if($data['adPage_id'] <= 0){
                 Adspage::create($data);
             } else {
