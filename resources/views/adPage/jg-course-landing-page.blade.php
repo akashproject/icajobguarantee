@@ -103,46 +103,46 @@
 		<section id="key-highlights" class="highlights-section">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-5">
+					<div class="col-md-5 mb20 text-center">
 						<img src="https://dummyimage.com/465">
 					</div>
-					<div class="col-md-7">
+					<div class="col-md-7 mt10">
 						<div class="section-title mb20 headline text-center">
 							<span class="subtitle text-uppercase">Key Highlights </span>
 							<h3>Best Prefferd<span> Modules.</span></h3>
 						</div>
 						<div class="row text-center">
-							<div class="col-md-4"> 
+							<div class="col-md-4 col-6"> 
 								<div class="key-highlights" >
 									<img src="https://dummyimage.com/65" >
 									<h6> 100% Job Assurance Courses </h6>
 								</div>
 							</div>
-							<div class="col-md-4"> 
+							<div class="col-md-4 col-6"> 
 								<div class="key-highlights" >
 									<img src="https://dummyimage.com/65" >
 									<h6> 200+ Tools </h6>
 								</div>
 							</div>
-							<div class="col-md-4"> 
+							<div class="col-md-4 col-6"> 
 								<div class="key-highlights" >
 									<img src="https://dummyimage.com/65" >
 									<h6> 9 Super Specializations </h6>
 								</div>
 							</div>
-							<div class="col-md-4"> 
+							<div class="col-md-4 col-6"> 
 								<div class="key-highlights" >
 									<img src="https://dummyimage.com/65" >
 									<h6> Industry Case Study </h6>
 								</div>
 							</div>
-							<div class="col-md-4"> 
+							<div class="col-md-4 col-6"> 
 								<div class="key-highlights" >
 									<img src="https://dummyimage.com/65" >
 									<h6> 160 Hrs Assignments </h6>
 								</div>
 							</div>
-							<div class="col-md-4"> 
+							<div class="col-md-4 col-6"> 
 								<div class="key-highlights" >
 									<img src="https://dummyimage.com/65" >
 									<h6> 100% Placement Support </h6>
@@ -182,7 +182,7 @@
 	<section id="best-course" class="best-course-section">
 		<div class="container">
 			<div class="section-title mb45 headline text-center">
-				<span class="subtitle text-uppercase">SEARCH OUR COURSES</span>
+				<span class="subtitle text-uppercase">BROWSE COURSES</span>
 				<h3>Browse Our<span> Best Course.</span></h3>
 			</div>
 			<div class="faq-tab mb65">
@@ -269,7 +269,7 @@
 			@foreach($courses as $key => $course)
 				<div id="course-view-{{$course->id}}" class="course-view-content {{ ($key == 0)?'active':'' }}">
 					<div class="section-title mb45 headline text-center">
-						<span class="subtitle text-uppercase">SEARCH OUR COURSES</span>
+						<span class="subtitle text-uppercase">COURSES DETAILS</span>
 						<h3><span>  {{ $course->name }}.</span></h3>
 					</div>
 					<div class="row" >
@@ -428,6 +428,123 @@
 
 	<!-- Start of testimonial secound section
 	============================================= -->
+	<section id="certificate" class="certification-section">
+		<div class="container">
+			<div class="certificate-slide">
+				<div class="section-title mb20 headline text-center">
+					<span class="subtitle text-uppercase">Certification</span>
+					<h3>Issued<span> Certificates.</span></h3>
+				</div>
+				<div id="certificate-slide-item" class="certificate-slide-area">
+					<div class="certificate-list row">
+						<div class="col-md-8" >
+							<div class="section-title-2 mb65 headline text-left">
+								<h2>CIA<span> Certificate.</span></h2>
+							</div>
+							<p>  I had zero confidence level. Thanks to rigorous mock interview sessions I was able to crack all the interview rounds and today my dream to work in an MNC came true..." </p>
+							<ul>
+								<li>I had zero confidence level. Thanks to rigorous mock interview sessions</li>
+								<li>I had zero confidence level. Thanks to rigorous mock interview sessions</li>
+							</ul>
+							<p>  I had zero confidence level. Thanks to rigorous mock interview sessions I was able to crack all the interview rounds and today my dream to work in an MNC came true..." </p>
+							<p>  I had zero confidence level. Thanks to rigorous mock interview sessions I was able to crack all the interview rounds and today my dream to work in an MNC came true..." </p>
+						</div>
+						<div class="col-md-4" >
+							<img src="{{getSizedImage('',63)}}" >
+							<div class="course-side-bar-widget">
+								<div class="genius-btn gradient-bg text-center text-uppercase float-left bold-font">
+									<a onclick="lead_capture_form_btn(1,'')" href="javascript:void(0)">  Apply Certificate <i class="fas fa-angle-double-right"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="certificate-list row">
+						<div class="col-md-8" >
+							<div class="section-title-2 mb65 headline text-left">
+								<h2>MicroSoft<span> Certificate.</span></h2>
+							</div>
+							<p>  I had zero confidence level. Thanks to rigorous mock interview sessions I was able to crack all the interview rounds and today my dream to work in an MNC came true..." </p>
+							<ul>
+								<li>I had zero confidence level. Thanks to rigorous mock interview sessions</li>
+								<li>I had zero confidence level. Thanks to rigorous mock interview sessions</li>
+							</ul>
+							<p>  I had zero confidence level. Thanks to rigorous mock interview sessions I was able to crack all the interview rounds and today my dream to work in an MNC came true..." </p>
+							<p>  I had zero confidence level. Thanks to rigorous mock interview sessions I was able to crack all the interview rounds and today my dream to work in an MNC came true..." </p>
+						</div>
+						<div class="col-md-4" >
+							<img src="{{getSizedImage('',62)}}" >
+							<div class="course-side-bar-widget">
+								<div class="genius-btn gradient-bg text-center text-uppercase float-left bold-font">
+									<a onclick="lead_capture_form_btn(1,'')" href="javascript:void(0)"> Apply Certificate <i class="fas fa-angle-double-right"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="certificate-list row">
+						<div class="col-md-8" >
+							<div class="section-title-2 mb65 headline text-left">
+								<h2>SAP<span> Certificate.</span></h2>
+							</div>
+							<p>  I had zero confidence level. Thanks to rigorous mock interview sessions I was able to crack all the interview rounds and today my dream to work in an MNC came true..." </p>
+							<ul>
+								<li>I had zero confidence level. Thanks to rigorous mock interview sessions</li>
+								<li>I had zero confidence level. Thanks to rigorous mock interview sessions</li>
+							</ul>
+							<p>  I had zero confidence level. Thanks to rigorous mock interview sessions I was able to crack all the interview rounds and today my dream to work in an MNC came true..." </p>
+							<p>  I had zero confidence level. Thanks to rigorous mock interview sessions I was able to crack all the interview rounds and today my dream to work in an MNC came true..." </p>
+						</div>
+						<div class="col-md-4" >
+							<img src="{{ getSizedImage('',61) }}" >
+							<div class="course-side-bar-widget">
+								<div class="genius-btn gradient-bg text-center text-uppercase float-left bold-font">
+									<a onclick="lead_capture_form_btn(1,'')" href="javascript:void(0)">  Apply Certificate <i class="fas fa-angle-double-right"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End  of testimonial secound section
+	============================================= -->
+
+	<!-- Start of testimonial secound section
+	============================================= -->
+	<section id="galleries" class="galleries-section">
+		<div class="container">
+			<div class="testimonial-slide">
+				<div class="section-title mb20 headline text-center">
+					<span class="subtitle text-uppercase">galleries</span>
+					<h3>Classroom<span> Views.</span></h3>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="photo-list ul-li">
+							<ul>
+							@foreach(getGallery() as $key => $gallery)
+								<li>
+									<img src="{{ getSizedImage('',$gallery->image_id) }}" alt="">
+									<div class="blakish-overlay"></div>
+									<div class="pop-up-icon">
+										<a href="{{ getSizedImage('',$gallery->image_id) }}" data-lightbox="roadtrip">
+											<i class="fas fa-search"></i>
+										</a>
+									</div>
+								</li>
+							@endforeach
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End  of testimonial secound section
+	============================================= -->
+
+	<!-- Start of testimonial secound section
+	============================================= -->
 	<section id="alumni" class="testimonial_2_section">
 		<div class="container">
 			<div class="testimonial-slide">
@@ -436,12 +553,20 @@
 					<h3>Student<span> Speaks.</span></h3>
 				</div>
 				<div  id="testimonial-slide-item" class="testimonial-slide-area">
-					@foreach(getTestimonials() as $value)						
+					@foreach(getTestimonials() as $testimonial)						
 					<div class="student-qoute">
-						{!! $value->comment !!}
+						<div class="course-pic relative-position text-center">
+							<div class="circle-img">
+								<img src="{{ (isset($testimonial->featured_image))?getSizedImage('',$testimonial->featured_image):'https://dummyimage.com/140x140' }}" alt="">	
+							</div>					
+						</div>
+						{!! $testimonial->comment !!}
 						<div class="student-name-designation">
-							<span class="st-name bold-font">{{ $value->name }}</span>
-							<span class="st-designation">{{ $value->dasignation }}</span>
+							<span class="st-name bold-font">{{ $testimonial->name }}</span>
+							<span class="st-designation">{{ $testimonial->dasignation }}</span>
+						</div>
+						<div class="alumni-placed-at text-center">
+							<img src="{{ (getRecruterById($testimonial->placed_at)->featured_image)?getSizedImage('',getRecruterById($testimonial->placed_at)->featured_image):'https://dummyimage.com/32' }}" >
 						</div>
 					</div>
 					@endforeach

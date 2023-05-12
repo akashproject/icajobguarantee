@@ -209,7 +209,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 6px;
   margin: 0 1rem;
   color: #3f3a98;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 600;
 }
 .ad-banner-sub-title {
@@ -359,20 +359,21 @@ ul.product-tab.index-category-tab li.active,ul.course-tab.index-category-tab li.
     color: #343434;
   }
   .circle-img {
-    width: 140px;
-    height: 140px;
+    width: 107px;
+    height: 107px;
     border-radius: 50%;
     overflow: hidden;
     margin: 1.5rem auto;
-  }
+}
   .circle-img img {
     width: 140px !important;
   }
   .alumni-content {
     padding: 0 1.2rem;
     font-size: 12px;
+    height: 30px;
   }
-
+  
   .alumni-content p{
     margin: 0;
   }
@@ -1771,10 +1772,11 @@ button.alt-menu-btn.float-left {
   opacity: 1;
   visibility: visible; }
 
-.owl-nav {
+/* .owl-nav {
   right: 0;
   top: -90px;
-  position: absolute; }
+  position: absolute; } */
+
   .owl-nav .owl-prev, .owl-nav .owl-next {
     float: left;
     width: 60px;
@@ -1783,7 +1785,8 @@ button.alt-menu-btn.float-left {
     text-align: center;
     margin: 0 5px;
     border-radius: 4px;
-    background-color: #f7f7f7; }
+    background-color: #3d3791;
+    color: #fff; }
 
 .popular-two {
   background-color: #f7f7f7;
@@ -2078,6 +2081,7 @@ button.alt-menu-btn.float-left {
 .testimonial-slide .student-qoute {
   border: 2px solid #3080b6;
   padding: 30px;
+  padding-bottom: 0;
   border-radius: 5px;
   position: relative; }
   .testimonial-slide .student-qoute:after {
@@ -2169,8 +2173,8 @@ button.alt-menu-btn.float-left {
   .owl-nav .testimonial_2_section .owl-next,
   .testimonial_2_section .testimonial-slide-area .owl-next,
   .testimonial-slide-area .testimonial_2_section .owl-next {
-    background-color: #f7f7f7;
-    color: #999999; }
+    background-color: #3d3791;
+    color: #f7f7f7; }
 
 .third-testimoinial-section {
   padding: 100px 0px 40px; }
@@ -2310,8 +2314,8 @@ button.alt-menu-btn.float-left {
     display: block;
     width: 100%; }
 
-.sponsor-section {
-  padding: 30px 0px 35px 0px; }
+.sponsor-section,.certification-section {
+  padding: 50px 0px}
 
 .sponsor-pic {
   position: relative;
@@ -3275,7 +3279,7 @@ button.alt-menu-btn.float-left {
 
 ul.product-tab li,ul.course-tab li {
   cursor: pointer;
-  margin: 0px 40px 0px 0px;
+  margin:0px 5px 15px 0px;
   font-size: 18px;
   position: relative;
   color: #777777;
@@ -3418,14 +3422,17 @@ ul.product-tab li.active:after,ul.course-tab li.active:after {
       content: '';
       background-color: #4a8ec0;
       top: 22px; }
+      .faq-tab .panel-group .panel-title .btn-link{
+        padding: 10px;
+      }
   .panel-group .panel-title .btn-link {
     display: block;
-    padding: 15px 0px 15px;
+    padding: 0;
     position: relative;
     width: 99%;
     text-align: left;
     text-decoration: none;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 500;
     color: #393185; }
     .panel-group .panel-title .btn-link:before {
@@ -4506,7 +4513,7 @@ a.comment-reply-link {
   font-size: 500;
   position: relative; }
   .affiliate-market-accordion .panel-title .ac-head span {
-    font-size: 50px;
+    font-size: 38px;
     font-weight: 500;
     float: left;
     line-height: 1;
@@ -4514,9 +4521,6 @@ a.comment-reply-link {
     -webkit-transition: .3s all ease-in-out;
     -o-transition: .3s all ease-in-out;
     transition: .3s all ease-in-out; }
-
-.affiliate-market-accordion .panel-group .btn-link.collapsed span {
-  color: #eeeeee !important; }
 
 .affiliate-market-accordion .panel-group .panel-title .btn-link span {
   color: #393185; }
@@ -4951,9 +4955,11 @@ a.comment-reply-link {
       margin-right: 10px;
       color: #393185; }
 
-.footer-widget .photo-list li {
-  position: relative;
-  margin-bottom: 3px; }
+  .photo-list li {
+    position: relative;
+    margin-bottom: 3px;
+    width: 16.15%;
+}
   .pop-up-icon {
     position: absolute;
     top: 50%;
@@ -5297,4 +5303,31 @@ span.success-icon {
   font-weight: 600;
   color: green;
   border: 1px solid #afc5af;
+}
+
+.alumni-placed-at {
+  height: 75px;
+  margin: 1.2rem;
+}
+.alumni-placed-at img {
+  width: 19%;
+  margin: auto;
+}
+
+.galleries-section {
+  padding: 50px 0;
+}
+.certificate-list {
+  margin: 2rem 0;
+}
+
+.testimonial-slide-area .owl-item {
+  padding-top: 90px;
+}
+
+.testimonial-slide-area .course-pic {
+  overflow: hidden;
+  border-radius: 4px;
+  position: absolute;
+  top: -106px;
 }

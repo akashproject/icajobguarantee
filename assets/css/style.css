@@ -304,10 +304,6 @@ ul.product-tab.index-category-tab li.active,ul.course-tab.index-category-tab li.
 .bold-font {
   font-weight: 700; }
 
-  .alumni-name h3 {
-  font-size: 18px;
-}
-
   .circle-img {
     width: 140px;
     height: 140px;
@@ -321,6 +317,7 @@ ul.product-tab.index-category-tab li.active,ul.course-tab.index-category-tab li.
   .alumni-content {
     padding: 0 1.2rem;
     font-size: 12px;
+    height: 30px;
   }
 
   .alumni-content p{
@@ -1728,7 +1725,8 @@ button.alt-menu-btn.float-left {
     text-align: center;
     margin: 0 5px;
     border-radius: 4px;
-    background-color: #f7f7f7; }
+    background-color: #3d3791;
+    color: #fff; }
 
 .popular-two {
   background-color: #f7f7f7;
@@ -5243,4 +5241,17 @@ span.success-icon {
   font-weight: 600;
   color: green;
   border: 1px solid #afc5af;
+}
+
+.alumni-name h3 {
+  font-size: 18px;
+}
+
+.alumni-placed-at {
+  height: 75px;
+  margin: 1.2rem;
+}
+.alumni-placed-at img {
+  width: 50%;
+  margin: auto;
 }

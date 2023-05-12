@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Testimonial;
 use App\Models\Course;
-
+use App\Models\Recruiter;
 class TestimonialController extends Controller
 {
     //
@@ -22,8 +22,10 @@ class TestimonialController extends Controller
 
     public function add() {
         try {
+            
             $courses = Course::all();
-            return view('administrator.testimonials.add',compact('courses'));
+            $recruiters = Recruiter::all();
+            return view('administrator.testimonials.add',compact('courses','recruiters'));
         } catch(\Illuminate\Database\QueryException $e){
             //throw $th;
         }
@@ -34,7 +36,8 @@ class TestimonialController extends Controller
         try {
             $testimonial = Testimonial::findOrFail($id);
             $courses = Course::all();
-            return view('administrator.testimonials.show',compact('testimonial','courses'));
+            $recruiters = Recruiter::all();
+            return view('administrator.testimonials.show',compact('testimonial','courses','recruiters'));
         } catch(\Illuminate\Database\QueryException $e){
         }        
     }
@@ -47,7 +50,6 @@ class TestimonialController extends Controller
                 'comment' => 'required',
                 'course_id' => 'required',
             ]);
-            $data['model'] = json_encode($data['model']);
             if($data['testimonial_id'] <= 0){
                 Testimonial::create($data);
             } else {

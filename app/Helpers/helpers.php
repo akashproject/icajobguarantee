@@ -158,6 +158,13 @@ if (! function_exists('getPlacements')) {
     }
 }
 
+if (! function_exists('getRecruterById')) {
+    function getRecruterById($id=""){
+        $recruiter = DB::table('recruiters')->where('id',$id)->first();
+        return $recruiter;
+    }
+}
+
 if (! function_exists('getStates')) {
     function getStates(){
         try {
@@ -212,6 +219,17 @@ if (! function_exists('getCenters')) {
         
         $centers = $centers->get();       
         return $centers;
+    }
+}
+
+if (! function_exists('getGallery')) {
+    function getGallery($course_id=null, $center_id=null){
+        $gallery = DB::table('gallery');
+        if($center_id){
+            $gallery->where("center_id",$center_id);
+        } 
+        $gallery = $gallery->get();       
+        return $gallery;
     }
 }
 

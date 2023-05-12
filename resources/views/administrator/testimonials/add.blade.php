@@ -71,7 +71,18 @@
 									@endforeach
 								</select>
 							</div>
-						</div>						
+						</div>	
+						<div class="form-group row">
+							<label for="state" class="col-sm-3 text-right control-label col-form-label"> Placed At </label>
+							<div class="col-sm-9">
+								<select name="placed_at" id="placed_at" class="select2 form-control custom-select" style="width: 100%; height:36px;">	
+									<option value="">Select Placed At</option>
+									@foreach ($recruiters as $value)
+									<option value="{{ $value->id }}" > {{ $value->name }} </option>
+									@endforeach
+								</select>
+							</div>
+						</div>							
 						<div class="form-group row">
 							<label for="state" class="col-sm-3 text-right control-label col-form-label">Status</label>
 							<div class="col-sm-9">

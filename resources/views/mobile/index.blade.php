@@ -50,7 +50,7 @@
 									<span class="float-left">BY CATEGORY:</span>
 									<ul>
 									@foreach(getCourseTypes() as $key => $value)
-										<li> <a target="_blank" href="{{url('/course-category')}}/{{$value->slug}}" > {{$value->name}} </a> </li>
+										<li> <a target="_blank" href="{{url('/category')}}/{{$value->slug}}" > {{$value->name}} </a> </li>
 									@endforeach										
 									</ul>
 								</div>
@@ -202,7 +202,7 @@
 				</div>
 				<div id="course-slide-item" class="course-slide">
 					@foreach($courses as $course)
-					@if($course->categorySlug == "career-course")
+					@if($course->category_id == "1")
 					<div class="course-item-pic-text">
 						<div class="course-pic relative-position mb25">
 							<img src="{{ (isset($course->featured_image))?getSizedImage('',$course->featured_image):'assets/img/course/c-1.jpg' }}" alt="">

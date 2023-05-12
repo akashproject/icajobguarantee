@@ -176,7 +176,7 @@ Route::get('/', [App\Http\Controllers\IndexController::class, 'index'])->name('i
 
 // Courses
 //Route::get('/courses', [App\Http\Controllers\CourseController::class, 'index'])->name('courses');
-Route::get('/course-category/{slug}', [App\Http\Controllers\CourseController::class, 'courseListByCategory'])->name('course-category');
+Route::get('/category/{slug}', [App\Http\Controllers\CourseController::class, 'courseListByCategory'])->name('course-category');
 Route::get('/courses/{slug}', [App\Http\Controllers\CourseController::class, 'viewCourse'])->name('view-courses');
 Route::get('/search/{slug}', [App\Http\Controllers\CourseController::class, 'search'])->name('search-courses');
 
@@ -187,8 +187,8 @@ Route::get('/state/{slug}', [App\Http\Controllers\CenterController::class, 'stat
 Route::get('/city/{slug}', [App\Http\Controllers\CenterController::class, 'city'])->name('city');
 
 Route::post('/submit-review', [App\Http\Controllers\ReviewController::class, 'create'])->name('submit-review');
-Route::get('/article/{slug}', [App\Http\Controllers\BlogController::class, 'view'])->name('view-article');
-Route::get('/category/{slug}', [App\Http\Controllers\BlogController::class, 'getByCategory'])->name('view-category');
+// Route::get('/article/{slug}', [App\Http\Controllers\BlogController::class, 'view'])->name('view-article');
+// Route::get('/category/{slug}', [App\Http\Controllers\BlogController::class, 'getByCategory'])->name('view-category');
 
 Route::get('/tags/{slug}', [App\Http\Controllers\TagController::class, 'index'])->name('tags');
 //Capture Leads

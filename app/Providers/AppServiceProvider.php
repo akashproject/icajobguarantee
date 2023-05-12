@@ -58,7 +58,7 @@ class AppServiceProvider extends ServiceProvider
 
             //student Menu
             $studentMenu = array(
-                '/course-category/career-course' => 'Career Courses',
+                '/category/career-course' => 'Career Courses',
                 '/centers' => 'Centers',
                 '/university' => "University",
                 '/online-courses' => "Online Courses",
@@ -67,7 +67,7 @@ class AppServiceProvider extends ServiceProvider
 
              //student Menu
              $termsMenu = array(
-                '/course-category/career-course' => 'Career Courses',
+                '/category/career-course' => 'Career Courses',
                 '/centers' => 'Centers',
                 '/university' => "University",
                 '/online-courses' => "Online Courses",

@@ -180,7 +180,7 @@
 										<option value="" selected="">All Categories </option>
 									@if(getCourseTypes())
 										@foreach (getCourseTypes() as $value)
-										<option value="{{ URL::to('/course-category') }}/{{ $value->slug }}" {{ (isset($category->slug) && ($value->slug == $category->slug)) ?"selected":"" }}> {{ $value->name }} </option>
+										<option value="{{ URL::to('/category') }}/{{ $value->slug }}" {{ (isset($category->slug) && ($value->slug == $category->slug)) ?"selected":"" }}> {{ $value->name }} </option>
 										@endforeach	
 									@endif		
 									</select>
@@ -256,13 +256,13 @@
 									</ul>
 								</div>
 								<div class="course-details-btn">
-									<a target="_blank" href="{{ URL::to('/course-category') }}/{{ $value->slug }}">Know More <i class="fas fa-arrow-right"></i></a>
+									<a target="_blank" href="{{ URL::to('/category') }}/{{ $value->slug }}">Know More <i class="fas fa-arrow-right"></i></a>
 								</div>
 								<div class="blakish-overlay"></div>
 							</div>
 							<div class="best-course-text">
 								<div class="course-type-title mb10 headline relative-position">
-									<h3><a target="_blank" href="{{ URL::to('/course-category') }}/{{ $value->slug }}">{{ $value->name }}</a></h3>
+									<h3><a target="_blank" href="{{ URL::to('/category') }}/{{ $value->slug }}">{{ $value->name }}</a></h3>
 								</div>
 								<div class="course-short-description mb10" >
 									{!! substr($value->excerpt,0,100); !!}...
@@ -273,7 +273,7 @@
 									<a class="btn-filled" href="javascript:void(0)" onclick="lead_capture_form_btn({{ $value->id }},'')"><i class="fas fa-download"></i> Brochure</a>
 								</div>
 								<div class="course-type-list">
-									<a class="btn-outline" target="_blank" href="{{ URL::to('/course-category') }}/{{ $value->slug }}" >View More <i class="fas fa-caret-right"></i></a>
+									<a class="btn-outline" target="_blank" href="{{ URL::to('/category') }}/{{ $value->slug }}" >View More <i class="fas fa-caret-right"></i></a>
 								</div>														
 							</div>
 						</div>

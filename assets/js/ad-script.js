@@ -28,6 +28,7 @@ Author:         HTMLMATE Team
 				this.bannerParalax();
 				this.serviceSlide();
 				this.testimonialSlide();
+				this.certificateSlide();
 				this.videoPopup();
 				this.sponsorSlide();
 				this.bestproductSlide();
@@ -366,6 +367,21 @@ testimonialSlide: function (){
 
 			}
 		},
+	})
+},
+
+certificateSlide: function (){
+	$('#certificate-slide-item').owlCarousel({
+		margin:50,
+		responsiveClass:true,
+		nav: true,
+		autoplay: false,
+		navText:["<i class='fas fa-chevron-left'></i>","<i class='fas fa-chevron-right'></i>"],
+		//autoplay: true,
+		loop: true,
+		dots: false,
+		smartSpeed: 1000,
+		items:1,
 	})
 },
 /* End Of service slide

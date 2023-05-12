@@ -320,6 +320,7 @@ ul.product-tab.index-category-tab li.active {
   .alumni-content {
     padding: 0 1.2rem;
     font-size: 12px;
+    height: 30px;
   }
 
   .alumni-content p{
@@ -1614,7 +1615,8 @@ button.alt-menu-btn.float-left {
     text-align: center;
     margin: 0 5px;
     border-radius: 4px;
-    background-color: #f7f7f7; }
+    background-color: #3d3791;
+    color: #fff; }
 
 .popular-two {
   background-color: #f7f7f7;
@@ -5147,4 +5149,12 @@ a.sticky-btn {
   cursor: pointer;
   font-size: 20px;
   font-weight: 600;
+}
+.alumni-placed-at {
+  height: 75px;
+  margin: 1.2rem;
+}
+.alumni-placed-at img {
+  width: 50%;
+  margin: auto;
 }

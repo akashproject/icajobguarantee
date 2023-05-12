@@ -616,6 +616,10 @@
 	.product-img img {
 		margin: auto;
 	}
+
+	.photo-list li {
+		width: 49%;
+	}
 }
 @media screen and (max-width: 420px) { 
 	.widget-title {
