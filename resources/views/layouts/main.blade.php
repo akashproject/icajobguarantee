@@ -73,6 +73,12 @@
     @include('layouts.header')
     @yield('content')
     @include('layouts.footer')
+    
+    @if(get_theme_setting('ajax_submit') == 1)
+        @include('common.formSubmitByAjax')
+    @else 
+        @include('common.formSubmitByPageLoad')
+    @endif
     <script>
         let globalUrl = "{{ env("APP_URL") }}"
     </script>

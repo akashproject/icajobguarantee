@@ -341,7 +341,7 @@ serviceSlide: function (){
 ================================================*/
 testimonialSlide: function (){
 	$('#testimonial-slide-item').owlCarousel({
-		margin:85,
+		margin:10,
 		responsiveClass:true,
 		nav: true,
 		autoplay: false,
@@ -360,10 +360,10 @@ testimonialSlide: function (){
 				items:1,
 			},
 			700:{
-				items:1,
+				items:2,
 			},
 			1000:{
-				items:2,
+				items:3,
 
 			}
 		},

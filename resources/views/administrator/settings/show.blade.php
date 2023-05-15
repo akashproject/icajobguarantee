@@ -53,6 +53,16 @@
 										</div>
 
 										<div class="form-group row">
+											<label for="ajax_submit" class="col-sm-3 text-right control-label col-form-label">Ajax Form Submit </label>
+											<div class="col-sm-9">
+												<select name="ajax_submit" id="ajax_submit" class="select2 form-control custom-select" style="width: 100%; height:36px;">	
+													<option value="1" {{ ($settings["ajax_submit"] == "1")?"selected":"" }} > Yes </option>
+													<option value="0" {{ ($settings["ajax_submit"] == "0")?"selected":"" }} > No </option>
+												<select>
+											</div>
+										</div>
+
+										<div class="form-group row">
 											<label for="footer_about" class="col-sm-3 text-right control-label col-form-label">Footer About</label>
 											<div class="col-sm-9">
 												<textarea class="form-control" name="footer_about" id="footer_about" placeholder="Enter footer about Here" >{{ $settings['footer_about'] }} </textarea>

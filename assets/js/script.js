@@ -1275,8 +1275,8 @@ jQuery.validator.addMethod('email_rule', function (value, element) {
 function lead_capture_form_btn(course_id,center_id) {
 	jQuery(".lead_steps").removeClass("active");
 	jQuery(".lead_steps.step1").addClass("active");
-	$('#lead-generation-form').modal('show');
-	getCenters(course_id,center_id);
+	jQuery('#lead-generation-form').modal('show');
+	//getCenters(course_id,center_id);
 }
 
 function getCenters(course_id,center_id) {

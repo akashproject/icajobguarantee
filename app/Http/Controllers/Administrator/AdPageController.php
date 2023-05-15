@@ -63,4 +63,10 @@ class AdPageController extends Controller
             var_dump($e->getMessage()); 
         }
     }
+
+    public function delete($id) {
+        $course = Adspage::findOrFail($id);
+        $course->delete();
+        return redirect('/administrator/ad-pages');
+    }
 }

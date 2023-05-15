@@ -363,7 +363,7 @@ ul.product-tab.index-category-tab li.active,ul.course-tab.index-category-tab li.
     height: 107px;
     border-radius: 50%;
     overflow: hidden;
-    margin: 1.5rem auto;
+    margin: 6px;
 }
   .circle-img img {
     width: 140px !important;
@@ -2154,12 +2154,14 @@ button.alt-menu-btn.float-left {
     color: #333333; }
 
 .testimonial_2_section {
-  padding-top: 100px; }
+  padding-top: 100px;
+  background: #f7f7f7; }
   .testimonial_2_section .section-title-2 h2,
   .testimonial_2_section .section-title-2 span {
     color: #333333; }
   .testimonial_2_section .student-qoute {
-    border: 2px solid #f7f7f7; }
+    border: 2px solid #f7f7f7; 
+    background: #fff;}
     .testimonial_2_section .student-qoute p {
       color: #000000; }
       .testimonial_2_section .student-qoute p b {
@@ -5327,7 +5329,12 @@ span.success-icon {
 
 .testimonial-slide-area .course-pic {
   overflow: hidden;
-  border-radius: 4px;
   position: absolute;
-  top: -106px;
+  top: -92px;
+  background: #f7f6f6;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  border: 1px solid #ccc;
+  left: calc(100% - 66%);
 }
