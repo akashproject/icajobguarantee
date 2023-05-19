@@ -3,19 +3,32 @@
     @section('content')
     <!-- Start of breadcrumb section
 		============================================= -->
-    <section id="breadcrumb" class="breadcrumb-section relative-position backgroud-style" style="background-image: url({{ (isset($contentMain->banner_image))?getSizedImage('',$contentMain->banner_image):url('assets/img/banner/brt-1.jpg') }});">
+	<section id="breadcrumb" class="inner-banner relative-position backgroud-style"  style="background-image: url({{ (isset($contentMain->banner_image))?getSizedImage('',$contentMain->banner_image):url('assets/img/banner/brt-1.jpg') }});">
 		<div class="container">
-			<div class="page-breadcrumb-content">
-				<div class="page-breadcrumb-title">
-					<h1 class="page-heading bold">
-						Career Growth Begins With
-					</h1>
+			<div class="row">
+				<div class="col-md-9">
+
+					<div class="inner-banner-breadcrumb" >
+						<span class="breadcrumbElement"> 
+							<a href="{{url('/')}}" > Home </a> 
+						</span>
+						<span class="breadcrumbElement"> 
+							 <i class="fas fa-chevron-right"> </i>
+						</span> 
+						<span class="breadcrumbElement"> 
+							{{(isset($contentMain))?$contentMain->name:"Default Page" }}
+						 </span>
+					</div>
+					<div class="inner-banner-content">
+						<div class="inner-banner-title">
+							<h1>{{(isset($contentMain))?$contentMain->name:"Default Page" }}</h1>
+						</div>
+						<div class="inner-banner-description">
+							{!! (isset($contentMain))?$contentMain->description:"Default Description" !!}
+						</div>
+					</div>
 				</div>
-				<div class="page-subheading">
-					<h2> Right Placement. </h2>
-					<h3> Gain the upper hand through our extensive network of world-renowned industry and placement partners. </h3>
-				</div>
-				<div class="page-description mt10">
+				<div class="col-md-3">
 					
 				</div>
 			</div>
@@ -154,6 +167,8 @@
 			</div>
 		</section>
 
+	
+
 	<!-- Start secound testimonial section
 		============================================= -->
 		<section id="sponsor" class="sponsor-section">
@@ -175,6 +190,42 @@
 		</section>
 	<!-- End secound testimonial section
 		============================================= -->
+
+	<!-- Start secound testimonial section
+		============================================= -->
+		<section id="sponsor" class="sponsor-section">
+			<div class="container">
+				<div class="section-title mb35 headline text-center">
+					<span class="subtitle text-uppercase">Student Placement</span>
+					<h3>Our Alumni <span>Worked At.</span></h3>
+				</div>
+				<div class="row" >
+					<div class="col-md-3 text-center" >
+						<h2> <span>Congrations</span><br>To Our Students </h2>
+						<p> Students Placement of Jan 2023 </p>
+					</div>
+					<div class="col-md-9" >
+						@foreach(getPlacements() as $value)
+						<div class="placed-grid-box text-center">
+							<div class="image-box">
+								<img src="https://dummyimage.com/140">
+							</div>
+							<div class="box-title mt10">
+								<h4>Akash Dutta</h4>
+							</div>
+							<div class="box-content">
+								<p> Placed At: </p>
+								<img src="https://dummyimage.com/32">
+							</div>
+						</div>
+						@endforeach
+					</div>
+				</div>
+			</div>
+		</section>
+	<!-- End secound testimonial section
+		============================================= -->
+
 	<!-- Start secound testimonial section
 		============================================= -->
 		<section id="sponsor" class="best-course-section student_benefits">
@@ -230,35 +281,7 @@
 	</section>
 
 	
-	<!-- Start secound testimonial section
-		============================================= -->
-		<section id="testimonial-secound" class="secound-testimoinial-section">
-			<div class="container">
-				<div class="testimonial-slide">
-					<div class="section-title mb35 headline text-center">
-						<span class="subtitle text-uppercase">Student Testimoinial</span>
-						<h3>What are they <span>saying about us.</span></h3>
-					</div>
-
-					<div class="testimonial-secound-slide-area">
-						@foreach(getTestimonials() as $value)
-						<div class="student-qoute text-center">
-							<div class="circle-img">
-								<img src="{{ (isset($value->featured_image))?getSizedImage('',	$value->featured_image):'https://dummyimage.com/140x140' }}" alt="">	
-							</div>
-							<p>{!!$value->comment!!}</p>
-							<div class="student-name-designation">
-								<span class="st-name bold-font">{{$value->name}}</span>
-								<span class="st-designation"> {{ $value->dasignation }}</span>
-							</div>
-						</div>
-						@endforeach
-					</div>
-				</div>
-			</div>
-		</section>
-	<!-- End secound testimonial section
-		============================================= -->
+	
     @endsection
 @section('script')
 <!-- ============================================================== -->

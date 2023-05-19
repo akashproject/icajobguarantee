@@ -508,10 +508,13 @@ color: #128C7E;
   background-position: center;
   overflow: auto;
   padding-top: 104px;
-  background: #eaeaea;
+  background-repeat: no-repeat;
 }
+
 .highlighted-content-wrapper {
   padding: 1.2rem;
+  color: #1b1b1b;
+  font-weight: 500;
 }
   .page-breadcrumb-title {
     margin-top: 0.5rem;
@@ -5337,4 +5340,7 @@ span.success-icon {
   height: 120px;
   border: 1px solid #ccc;
   left: calc(100% - 66%);
+}
+.nws-button {
+  padding: 0 65px;
 }

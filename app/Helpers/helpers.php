@@ -44,7 +44,7 @@ if (! function_exists('getSizedImage')) {
     function getSizedImage($size = '',$id) {
         $size = ($size)?$size.'_':"";
         $media = DB::table('media')->where('id',$id)->first();
-        // $media = Media::findOrFail($id);
+       
         if($media){
             return $filename = env('APP_URL').$media->path.'/'.$size.$media->filename;
         } else {

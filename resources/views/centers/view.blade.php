@@ -7,7 +7,7 @@
 			<div class="container-fluid bg-white">
 				<div class="container relative-position">
 					<div class="text-center center-image">
-						<img src="{{ (getSizedImage('',$contentMain->featured_image)) ? getSizedImage('',$contentMain->featured_image) : 'https://dummyimage.com/140' }}" >
+						<img src="{{ (getSizedImage('',$contentMain->featured_image)) ? getSizedImage('',$contentMain->featured_image) : url('assets/img/logo/center-logo.webp') }}" >
 					</div>
 					<div class="center-info-banner">
 						<h2 class="">ICA Edu Skills | {{ $contentMain->name }}</h2>

@@ -1,6 +1,6 @@
 @extends('layouts.ad-main')
     @section('content')
-    <section id="breadcrumb" class="ad-page-banner relative-position backgroud-style">
+    <section id="breadcrumb" class="ad-page-banner relative-position backgroud-style" style="background-image: url({{ (isset($contentMain->banner_image))?getSizedImage('',$contentMain->banner_image):url('assets/img/banner/brt-1.jpg') }});" >
 		<div class="container">
 			<div class="row">
 				<div class="col-md-7">
@@ -27,7 +27,22 @@
 				</div>
 				<div class="col-md-5">
 					<div class="highlighted-content-wrapper text-center">
-						<img src="https://www.icajobguarantee.com/wp-content/uploads/2021/12/features-3.png">
+						<div class="latest-area-content mt60" >
+							
+							<div class="latest-video-poster relative-position mb20">
+								<img src="{{url('assets/img/letest-video.webp')}}" alt="">
+								<div class="video-play-btn text-center gradient-bg">
+									<a class="popup-with-zoom-anim" href="https://youtu.be/vV1urFhrijY"><i class="fas fa-play"></i></a>
+								</div>
+							</div>
+							<div class="vidoe-text">
+								<h3 class="latest-title bold-font"><a href="#">Learning With ICA Edu Skills.</a></h3>
+								<p class="mb25">Certified Industrial Accountant | Accounts Training Institute | Placement Support | ICA Edu Skills.</p>
+							</div>
+							<div class="view-all-btn bold-font">
+								<a href="https://www.youtube.com/@ICAEduSkills">View All Videos <i class="fas fa-chevron-circle-right"></i></a>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

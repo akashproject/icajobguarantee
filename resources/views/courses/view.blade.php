@@ -25,29 +25,43 @@
 				</div>
 			</div>
 		</div>
-    <!-- Start of breadcrumb section
+		<!-- Start of breadcrumb section
 		============================================= -->
-		<section id="breadcrumb" class="breadcrumb-section relative-position backgroud-style" style="background-image: url({{ (isset($category->banner_image))?getSizedImage('',$category->banner_image):url('assets/img/banner/brt-1.jpg') }});" >
-			<div class="blakish-overlay"></div>
-			<div class="container">
-				<div class="page-breadcrumb-content">
-					<span class="trend-bestseller text-uppercase bold-font">
-						<i class="fas fa-bolt"></i> Bestseller</span>
-					<div class="page-breadcrumb-title">
-						<h2 class="breadcrumb-head black bold">{{$contentMain->name}}</h2>
+	<section id="breadcrumb" class="inner-banner relative-position backgroud-style"  style="background-image: url({{ (isset($contentMain->banner_image))?getSizedImage('',$contentMain->banner_image):url('assets/img/banner/brt-1.jpg') }});">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9">
+
+					<div class="inner-banner-breadcrumb" >
+						<span class="breadcrumbElement"> 
+							<a href="{{url('/')}}" > Home </a> 
+						</span>
+						<span class="breadcrumbElement"> 
+							 <i class="fas fa-chevron-right"> </i>
+						</span> 
+						<span class="breadcrumbElement"> 
+							{{(isset($contentMain))?$contentMain->name:"Default Page" }}
+						 </span>
 					</div>
-					<div class="page-breadcrumb-description">
-						{!! $contentMain->excerpt !!}
-					</div>
-					<div class="page-breadcrumb-option">
-						<p>{!! $contentMain->criteria !!} </p>
+					<div class="inner-banner-content">
+						<div class="inner-banner-title">
+							<h1>{{(isset($contentMain))?$contentMain->name:"Default Page" }}</h1>
+						</div>
+						<div class="inner-banner-description">
+							{!! (isset($contentMain))?$contentMain->excerpt:"Default Description" !!}
+							{!! $contentMain->criteria !!}
+						</div>
 					</div>
 				</div>
+				<div class="col-md-3">
+					
+				</div>
 			</div>
-		</section>
+		</div>
+	</section>
 	<!-- End of breadcrumb section
 		============================================= -->
-
+   
 		<section id="search-course" class="search-course-section search-course-secound">
 			<div class="container">
 				<div class="search-counter-up">

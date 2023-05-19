@@ -77,38 +77,6 @@
 						</div>
 					</div>
 				</div>
-				<div class="slider-area slider-bg-1 relative-position" style="background-image: url({{ getSizedImage('mobile','33')}});">
-					<div class="slider-text">
-						<div class="section-title mb20 headline text-center">
-							<div class="layer-1-1">
-								<span class="subtitle text-uppercase">EDUCATION & TRAINING ORGANIZATION</span>
-							</div>
-							<div class="layer-1-2">
-								<h2 class="secoud-title"> Browse The <span>Best Courses.</span></h2>
-							</div>
-						</div>
-						<div class="layer-1-3">
-							<div class="search-course mb30 relative-position">
-								<form action="{{url('/courses')}}" method="get">
-									<input class="course" name="search" type="text" placeholder="Type what do you want to learn today?">
-									<div class="nws-button text-center  gradient-bg text-capitalize">
-										<button type="submit" value="Submit">Search Course</button> 
-									</div>
-								</form>
-							</div>
-							<div class="layer-1-4">
-								<div class="slider-course-category ul-li text-center">
-									<span class="float-left">BY CATEGORY:</span>
-									<ul>
-									@foreach(getCourseTypes() as $key => $value)
-										<li> <a target="_blank" href="{{url('/category')}}/{{$value->slug}}" > {{$value->name}} </a> </li>
-									@endforeach										
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
 			</div>
 		</section>
 	<!-- End of slider section
@@ -372,7 +340,12 @@
 						<div id="testimonial-slide-item" class="testimonial-slide-area">
 							@foreach(getTestimonials() as $value)
 								<div class="student-qoute "  >
-									<p>{!!$value->comment!!}</p>
+									<div class="course-pic relative-position text-center">
+										<div class="circle-img">
+											<img src="{{ (isset($value->featured_image))?getSizedImage('',$value->featured_image):'https://dummyimage.com/140x140' }}" alt="">	
+										</div>					
+									</div>
+									{!!$value->comment!!}
 									<div class="student-name-designation">
 										<span class="st-name bold-font text-white">{{$value->name}}</span>
 										<span class="st-designation text-white">{{ $value->dasignation }}</span>
@@ -616,7 +589,7 @@
 								<p><a href="#">{{ $testimonial->dasignation }} At</a> </p>
 							</div>	
 							<div class="alumni-placed-at text-center">
-								<img src="{{ (false)?getSizedImage('',getRecruterById($testimonial->placed_at)->featured_image):'https://dummyimage.com/32' }}" >
+								<img src="{{ ($testimonial->placed_at)?getSizedImage('',getRecruterById($testimonial->placed_at)->featured_image):'https://dummyimage.com/32' }}" >
 							</div>	
 						</div>
 					</div>
@@ -777,17 +750,17 @@
 								<h2>Latest <span>Video.</span></h2>
 							</div>
 							<div class="latest-video-poster relative-position mb20">
-								<img src="assets/img/banner/v-1.jpg" alt="">
+								<img src="{{url('assets/img/letest-video.webp')}}" alt="">
 								<div class="video-play-btn text-center gradient-bg">
-									<a class="popup-with-zoom-anim" href="https://www.youtube.com/watch?v=-g4TnixUdSc"><i class="fas fa-play"></i></a>
+									<a class="popup-with-zoom-anim" href="https://youtu.be/vV1urFhrijY"><i class="fas fa-play"></i></a>
 								</div>
 							</div>
 							<div class="vidoe-text">
-								<h3 class="latest-title bold-font"><a href="#">Learning IOS Apps in Amsterdam.</a></h3>
-								<p class="mb25">Lorem ipsum dolor sit amet, consectetuer delacosta adipiscing elit, sed diam nonummy.</p>
+								<h3 class="latest-title bold-font"><a href="#">Learning With ICA Edu Skills.</a></h3>
+								<p class="mb25">Certified Industrial Accountant | Accounts Training Institute | Placement Support | ICA Edu Skills.</p>
 							</div>
 							<div class="view-all-btn bold-font">
-								<a href="#">View All Videos <i class="fas fa-chevron-circle-right"></i></a>
+								<a href="https://www.youtube.com/@ICAEduSkills">View All Videos <i class="fas fa-chevron-circle-right"></i></a>
 							</div>
 						</div>
 					</div>

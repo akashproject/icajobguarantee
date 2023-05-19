@@ -1,22 +1,20 @@
 <div class="contact-info">
-    <input class="name" name="name" type="text" placeholder="Enter Your Name" autocomplete="off" required>
+    <input id="formFieldName" name="name" type="text" placeholder="Enter Your Name" autocomplete="off" required>
 </div>
 <div class="contact-info">
-    <input class="email" name="email" type="email" placeholder="Enter Your Email" autocomplete="off" required>
+    <input id="formFieldEmail" name="email" type="email" placeholder="Enter Your Email" autocomplete="off" required>
 </div>
 <div class="contact-info">
-    <input class="mobile" name="mobile" type="number" placeholder="Enter Your Mobile" autocomplete="off" required>
+    <input id="formFieldMobile" name="mobile" type="number" placeholder="Enter Your Mobile" autocomplete="off" required>
 </div>
-<div class="register-form-area">
-    <select class="center" name="center" required>
-        @php
-            $centers = getCenters('',isset($center_id)?$center_id:'');
-        @endphp
-        @if(count($centers) > 1)
-        <option value="" selected> Select Location </option>
-        @endif
-        @foreach($centers as $value)
-            <option value="{{$value->name}}" > {{$value->name}} </option>
-        @endforeach
-    </select>
+<div class="contact-info">
+    <input id="formFieldPincode" id="pincode" name="pincode" type="number" placeholder="Enter Your Address Pincode" autocomplete="off" required>
 </div>
+<input type="hidden" name="course_id" value="">
+<input type="hidden" id="formFieldOtpResponse" value="">
+<input type="hidden" name="utm_campaign" value="{{ isset($contentMain->utm_campaign)?$contentMain->utm_campaign:'' }}">
+<input type="hidden" name="utm_source" value="{{ isset($contentMain->utm_source)?$contentMain->utm_source:'' }}">
+<input type="hidden" name ="utm_term" value="<?php echo (isset($_GET['utm_term']))?$_GET['utm_term']:""; ?>" >  
+<input type="hidden" name ="utm_device" value="<?php echo (isset($_GET['utm_device']))?$_GET['utm_device']:""; ?>" >  
+<input type="hidden" name ="utm_adgroup" value="<?php echo (isset($_GET['utm_adgroup']))?$_GET['utm_adgroup']:""; ?>" >  
+<input type="hidden" name ="utm_content" value="<?php echo (isset($_GET['utm_content']))?$_GET['utm_content']:""; ?>" >   

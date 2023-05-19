@@ -87,6 +87,12 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::get('/view-testimonial/{id}', [App\Http\Controllers\Administrator\TestimonialController::class, 'show'])->name('admin-view-testimonial');
         Route::post('/save-testimonial', [App\Http\Controllers\Administrator\TestimonialController::class, 'save'])->name('admin-save-testimonial');
 
+        //Placements
+        Route::get('/placements', [App\Http\Controllers\Administrator\PlacementController::class, 'index'])->name('admin-placements');
+        Route::get('/add-placement', [App\Http\Controllers\Administrator\PlacementController::class, 'add'])->name('admin-add-placement');
+        Route::get('/view-placement/{id}', [App\Http\Controllers\Administrator\PlacementController::class, 'show'])->name('admin-view-placement');
+        Route::post('/save-placement', [App\Http\Controllers\Administrator\PlacementController::class, 'save'])->name('admin-save-placement');
+
         //Faqs
         Route::get('/faqs', [App\Http\Controllers\Administrator\FaqController::class, 'index'])->name('admin-faqs');
         Route::get('/add-faq', [App\Http\Controllers\Administrator\FaqController::class, 'add'])->name('admin-add-faq');
@@ -197,4 +203,5 @@ Route::post('/submit-mobile-otp', [App\Http\Controllers\IndexController::class, 
 Route::post('/capture-lead', [App\Http\Controllers\IndexController::class, 'captureLead'])->name('capture-lead');
 Route::post('/get-centers', [App\Http\Controllers\IndexController::class, 'getCenters'])->name('get-centers');
 Route::post('/get-city-by-state-id', [App\Http\Controllers\Administrator\CenterController::class, 'getCitiesByStateId'])->name('get-city-by-state-id');
+Route::any('/center/get-center-by-pincode', [App\Http\Controllers\IndexController::class, 'getCenterByPincode'])->name('get-center-by-pincode');
 Auth::routes();

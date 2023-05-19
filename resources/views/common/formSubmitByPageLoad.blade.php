@@ -19,9 +19,6 @@
                     @csrf
                     <div class="lead_steps step1 active" > 
                         @include('common.leadCaptureFormField')
-                        <div class="nws-button text-center white text-capitalize">
-                            <button class="form_step_1" type="submit">Next</button> 
-                        </div>
                     </div>
                     <div class="lead_steps step2">
                         <div class="otp-content">
@@ -30,18 +27,11 @@
                             <p class="response_status" style="color: #000;"></p>
                         </div> 
                         <div class="contact-info">
-                            <input class="verify_otp" name="verify_otp" type="text" placeholder="Enter One Time Password" autocomplete="off" required>
-                        </div>
-                        <div class="nws-button text-center white text-capitalize">
-                            <button class="apply_now" type="button">Apply Now</button> 
+                            <input class="verify_otp" name="verify_otp" type="text" placeholder="Enter One Time Password" autocomplete="off" >
                         </div>
                     </div>
-                    <div class="lead_steps step3">
-                        <div class="form-success-content">
-                            <span class="success-icon"> <i class="fas fa-check"></i> </span>
-                            <h4> Thank You! Your Application Submitted Successfully </h4>
-                            <p> <strong> Brochure </strong> has been sent your email address </p>
-                        </div>
+                    <div class="nws-button text-center white text-capitalize">
+                        <button class="submit_classroom_lead_generation_form form_step_1" type="submit"> Submit </button> 
                     </div>
                 </form>  
             </div>

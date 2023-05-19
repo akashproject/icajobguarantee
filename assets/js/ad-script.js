@@ -20,7 +20,6 @@ Author:         HTMLMATE Team
 				this.menuBar();
 				this.onePageNav();
 				this.quickScroll2();
-				this.counterUp();
 				this.courseSlide();
 				this.fourGridSlide();
 				this.threeGridSlide();
@@ -99,6 +98,7 @@ onePageNav: function (){
 	})
 
 },
+
 quickScroll2: function (){
 	$('.quick-menu').on("click", "a", function(){
 		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -1176,8 +1176,20 @@ jQuery.validator.addMethod('email_rule', function (value, element) {
 				maxlength: 10,
 				minlength: 10
 			},
-			center: {
+			pincode: {
 				required: true,
+				maxlength: 6,
+				minlength: 6,
+				// remote: {
+				// 	url:`${globalUrl}center/get-center-by-pincode`,
+				// 	success: function(data){
+				// 		console.log(data);
+				// 		console.log(data.name);
+				// 		jQuery("#formFieldCenter").val(data.name);
+				// 		// let value = JSON.parse(data);
+				// 		// console.log(value);
+				// 	}
+				// }
 			},
 		},
 		messages: {
@@ -1190,32 +1202,48 @@ jQuery.validator.addMethod('email_rule', function (value, element) {
 			mobile: {
 				required: "Please enter valid mobile number",
 			},
-			center: {
-				required: "Please select you location",
+			pincode: {
+				required: "Please enter valid pincode",
 			},
 		},
 		submitHandler: function(form) {
-			var formId = "lead_capture_form";
-			let checkEnable = jQuery("#" + formId + " .is_enable_otp").val();
-			if(!checkEnable) {
-				captureLead(form)
-			} else {     
-				sendMobileOtp(formId);
-				return false;
+			var formId = jQuery(".submit_classroom_lead_generation_form").closest("form").attr('id');
+			if(`${isEnableOtp}` == 0 && `${isAjaxSubmit}` == 0){
+				console.log("if 1");
+				form.submit();
 			}
-			return false;
-		}
-	});
 
-	jQuery(".apply_now").on("click",function (){
-		var verifyOtp = jQuery("#lead_capture_form .verify_otp").val();
-		var responsedOtp = jQuery("#lead_capture_form .responsed_otp").val();
-		if (verifyOtp == '' || verifyOtp !== responsedOtp) {
-			jQuery("#lead_capture_form .response_status").html("OTP is Invalid");
-			return false;
+			if(`${isEnableOtp}` == 1 && `${isAjaxSubmit}` == 0){
+				if(jQuery("#" + formId + " #formFieldOtpResponse").val() == ""){
+					console.log("if 2");
+					sendMobileOtp(formId);
+					return false;
+				}
+				if(jQuery("#" + formId + " .verify_otp").val() != '' && jQuery("#" + formId + " #formFieldOtpResponse").val() == jQuery("#" + formId + " .verify_otp").val()){
+					console.log("if 3");
+					form.submit();
+				} else {
+					jQuery("#" + formId + " .response_status").html("OTP is Invalid");
+					return false;
+				}
+			}
+
+			if(`${isEnableOtp}` == 1 && `${isAjaxSubmit}` == 1){
+				console.log("4");
+				if(jQuery("#" + formId + " #formFieldOtpResponse").val() == ""){
+					sendMobileOtp(formId);
+					return false;
+				}
+				if(jQuery("#" + formId + " .verify_otp").val() != '' && jQuery("#" + formId + " #formFieldOtpResponse").val() == jQuery("#" + formId + " .verify_otp").val()){
+					console.log("5");
+					captureLead(form,formId);
+				} else {
+					jQuery("#" + formId + " .response_status").html("OTP is Invalid");
+					return false;
+				}
+			}
+			return false; // required to block normal submit since you used ajax
 		}
-		captureLead($(this).closest("form"));
-		
 	});
 
 	jQuery(".state").on("change",function(){
@@ -1258,11 +1286,10 @@ jQuery.validator.addMethod('email_rule', function (value, element) {
 			success: function(result) {
 				if (result) {
 					console.log(result);
-					jQuery("#" + formId + " .responsed_otp").val(result.otp_value);
+					jQuery("#" + formId + " #formFieldOtpResponse").val(result.otp_value);
 					jQuery("#" + formId + " .lastDigit").text(result.lastdigit);
 					jQuery("#" + formId + " .lead_steps").removeClass("active");
 					jQuery("#" + formId + " .lead_steps.step2").addClass("active");
-					
 					return true;
 				} else {
 					jQuery("#" + formId + " .response_status").html("OTP Sent Failed! Please Try Again Later");
@@ -1272,8 +1299,7 @@ jQuery.validator.addMethod('email_rule', function (value, element) {
 		});
 	}
 
-	function captureLead(form){
-		var formId = form.attr('id');
+	function captureLead(form,formId){
 		$.ajaxSetup({
 			headers: {
 			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -1282,22 +1308,26 @@ jQuery.validator.addMethod('email_rule', function (value, element) {
 		$.ajax({
 			url: `${globalUrl}capture-lead`,
 			type: "post",
-			data: form.serialize(),
+			data: jQuery(form).serialize(),
 			success: function(result) {
-				jQuery("#" + formId + " .lead_steps").removeClass("active");
-				jQuery("#" + formId + " .lead_steps.step3").addClass("active");
+				jQuery("#" + formId + " .form_process").hide();
+				jQuery("#" + formId + " .form_success").show();
 				jQuery("#" + formId)[0].reset()
 				return true;
 			}
 		});
 	}
+
+	jQuery("#pincode").on("keyup",function(){
+		console.log(isEnableOtp);
+	})
 })();
 
 function lead_capture_form_btn(course_id,center_id) {
 	jQuery(".lead_steps").removeClass("active");
 	jQuery(".lead_steps.step1").addClass("active");
 	$('#lead-generation-form').modal('show');
-	getCenters(course_id,center_id);
+	//getCenters(course_id,center_id);
 }
 
 function getCenters(course_id,center_id) {

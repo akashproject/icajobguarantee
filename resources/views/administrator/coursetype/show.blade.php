@@ -104,17 +104,13 @@
 							<div class="form-group row">
 								<label for="meta_description" class="col-sm-3 text-right control-label col-form-label">Meta Description</label>
 								<div class="col-sm-9">
-									<textarea class="form-control" name="meta_description" id="meta_description" placeholder="Enter Meta Description Here" >
-										{{ $courseType->meta_description }}
-									</textarea>
+									<textarea class="form-control" name="meta_description" id="meta_description" placeholder="Enter Meta Description Here" >{{ $courseType->meta_description }}</textarea>
 								</div>
 							</div>
 							<div class="form-group row">
 								<label for="schema" class="col-sm-3 text-right control-label col-form-label">Schema Code</label>
 								<div class="col-sm-9">
-									<textarea class="form-control" name="schema" id="schema" placeholder="Enter Schema Code" >
-										{{ $courseType->schema }}
-									</textarea>
+									<textarea class="form-control" name="schema" id="schema" placeholder="Enter Schema Code" >{{ $courseType->schema }}</textarea>
 								</div>
 							</div>
 							<div class="form-group row">

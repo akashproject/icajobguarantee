@@ -2,22 +2,37 @@
     @section('content')
 	<!-- Start of breadcrumb section
 		============================================= -->
-		<section id="breadcrumb" class="breadcrumb-section relative-position backgroud-style">
-			<div class="blakish-overlay"></div>
-			<div class="container">
-				<div class="page-breadcrumb-content text-center">
-					<div class="page-breadcrumb-title">
-						<h2 class="breadcrumb-head black bold">Genius <span>Online Shop</span></h2>
+	<section id="breadcrumb" class="inner-banner relative-position backgroud-style"  style="background-image: url({{ (isset($contentMain->banner_image))?getSizedImage('',$contentMain->banner_image):url('assets/img/banner/brt-1.jpg') }});">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9">
+
+					<div class="inner-banner-breadcrumb" >
+						<span class="breadcrumbElement"> 
+							<a href="{{url('/')}}" > Home </a> 
+						</span>
+						<span class="breadcrumbElement"> 
+							 <i class="fas fa-chevron-right"> </i>
+						</span> 
+						<span class="breadcrumbElement"> 
+							{{(isset($contentMain))?$contentMain->name:"Default Page" }}
+						 </span>
 					</div>
-					<div class="page-breadcrumb-item ul-li">
-						<ul class="breadcrumb text-uppercase black">
-							<li class="breadcrumb-item"><a href="#">Home</a></li>
-							<li class="breadcrumb-item active">Shop</li>
-						</ul>
+					<div class="inner-banner-content">
+						<div class="inner-banner-title">
+							<h1>{{(isset($contentMain))?$contentMain->name:"Default Page" }}</h1>
+						</div>
+						<div class="inner-banner-description">
+							{!! (isset($contentMain))?$contentMain->description:"Default Description" !!}
+						</div>
 					</div>
 				</div>
+				<div class="col-md-3">
+					
+				</div>
 			</div>
-		</section>
+		</div>
+	</section>
 	<!-- End of breadcrumb section
 		============================================= -->
 
@@ -67,87 +82,6 @@
 										</form>
 									</div>
 								</div>
-
-								<div class="side-bar-widget">
-									<h2 class="widget-title text-capitalize"><span>Recent  </span>News</h2>
-									<div class="latest-news-posts">
-										<div class="latest-news-area">
-											<div class="latest-news-thumbnile relative-position">
-												<img src="{{ URL::to('/') }}/assets//img/blog/lb-1.jpg" alt="">
-												<div class="hover-search">
-													<i class="fas fa-search"></i>
-												</div>
-												<div class="blakish-overlay"></div>
-											</div>
-											<div class="date-meta">
-												<i class="fas fa-calendar-alt"></i> 26 April 2018
-											</div>
-											<h3 class="latest-title bold-font"><a href="#">Affiliate Marketing A Beginner’s Guide.</a></h3>
-										</div>
-										<!-- /post -->
-
-										<div class="latest-news-posts">
-											<div class="latest-news-area">
-												<div class="latest-news-thumbnile relative-position">
-													<img src="{{ URL::to('/') }}/assets/img/blog/lb-2.jpg" alt="">
-													<div class="hover-search">
-														<i class="fas fa-search"></i>
-													</div>
-													<div class="blakish-overlay"></div>
-												</div>
-												<div class="date-meta">
-													<i class="fas fa-calendar-alt"></i> 26 April 2018
-												</div>
-												<h3 class="latest-title bold-font"><a href="#">No.1 The Best Online Course 2018.</a></h3>
-											</div>
-											<!-- /post -->
-										</div>
-
-										<div class="view-all-btn bold-font">
-											<a href="#">View All News <i class="fas fa-chevron-circle-right"></i></a>
-										</div>
-									</div>
-								</div>
-
-								<div class="side-bar-widget">
-									<h2 class="widget-title text-capitalize">Popular <span>Tag's.</span></h2>
-									<div class="tag-clouds ul-li">
-										<ul>
-											<li><a href="#">fruits</a></li>
-											<li><a href="#">veegetable</a></li>
-											<li><a href="#">juices</a></li>
-											<li><a href="#">natural food</a></li>
-											<li><a href="#">food</a></li>
-											<li><a href="#">bread</a></li>
-											<li><a href="#">natural</a></li>
-											<li><a href="#">healthy</a></li>
-										</ul>
-									</div>
-								</div>
-
-								<div class="side-bar-widget">
-									<h2 class="widget-title text-capitalize"><span>Featured</span> Course.</h2>
-									<div class="featured-course">
-										<div class="best-course-pic-text relative-position">
-											<div class="best-course-pic relative-position">
-												<img src="{{ URL::to('/') }}/assets//img/blog/fb-1.jpg" alt="">
-												<div class="trend-badge-2 text-center text-uppercase">
-													<i class="fas fa-bolt"></i>
-													<span>Trending</span>
-												</div>
-											</div>
-											<div class="best-course-text">
-												<div class="course-title mb20 headline relative-position">
-													<h3><a href="#">Fully Responsive Web Design &amp; Development.</a></h3>
-												</div>
-												<div class="course-meta">
-													<span class="course-category"><a href="#">Web Design</a></span>
-													<span class="course-author"><a href="#">250 Students</a></span>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
 							</div>
 						</div>
 						<div class="col-md-9">
@@ -171,12 +105,12 @@
 													<div class="col-md-4">
 														<div class="product-img-text">
 															<div class="product-img text-center mb10">
-																<img src="{{url('assets/img/product/bp-1.png')}}" alt="">
+																<img src="{{ ($value->featured_image)?getSizedImage('',$value->featured_image):url('assets/img/logo/center-logo.webp') }}" alt="">
 															</div>
 															<div class="product-text-content text-center mb20">
 																<div class="best-title-price">
 																	<div class="course-title headline">
-																		<h3><a href="{{ URL::to('/centers') }}/{{ $value->slug }}">{{ $value->name }}</a></h3>
+																		<h3><a target="_blank" href="{{ URL::to('/centers') }}/{{ $value->slug }}">{{ $value->name }}</a></h3>
 																	</div>
 																</div>															
 															</div>	
@@ -185,10 +119,10 @@
 															</div>
 															<div class="more-btn text-center" >
 																<div class="course-type-list">	
-																	<span class="btn-filled" onclick="lead_capture_form_btn('',{{ $value->id }})"><i class="fas fa-download"></i> Brochure</span>
+																	<a class="btn-filled" href="javascript:void(0)" onclick="lead_capture_form_btn('',{{ $value->id }})"><i class="fas fa-download"></i> Brochure</a>
 																</div>
 																<div class="course-type-list">														
-																	<a  class="btn-outline" href="{{ URL::to('/centers') }}/{{ $value->slug }}" >View More <i class="fas fa-caret-right"></i></a>
+																	<a class="btn-outline" target="_blank" href="{{ URL::to('/centers') }}/{{ $value->slug }}" >View More <i class="fas fa-caret-right"></i></a>
 																</div>														
 															</div>														
 														</div>

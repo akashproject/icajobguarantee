@@ -998,107 +998,103 @@ searchBAR: function (){
 
 
 
-mobileMenu: function (){
-	jQuery('.mobile-menu nav').meanmenu();
-	function slideMenu() {
-		var activeState = jQuery('#menu-container .menu-list').hasClass('active');
-		jQuery('#menu-container .menu-list').animate({
-			left: activeState ? '0%' : '-100%'
-		}, 400);
-	}
-	jQuery('.alt-menu-btn').on ("click" , function(event) {
-		event.stopPropagation();
-		jQuery('.hamburger-menu').toggleClass('open');
-		jQuery('.menu-list').toggleClass('active');
-		slideMenu();
-
-		jQuery('body').toggleClass('overflow-hidden');
-	});
-},
-
-
-
-switchOpen: function (){
-	$('.color-switcher .open').on("click", function() {
-		$('.color-switcher').toggleClass("open-switcher");
-	});
-},
-
-
-countDown:  function (){
-	if ($('.coming-countdown').length > 0) {
-     // Specify the deadline date
-     var deadlineDate = new Date('Decembar 21, 2018 23:59:59').getTime();
-
-     // Cache all countdown boxes into consts
-     var countdownDays = document.querySelector('.days .number');
-     var countdownHours = document.querySelector('.hours .number');
-     var countdownMinutes = document.querySelector('.minutes .number');
-     var countdownSeconds = document.querySelector('.seconds .number');
-
-     // Update the count down every 1 second (1000 milliseconds)
-     setInterval(function () {
-       // Get current date and time
-       var currentDate = new Date().getTime();
-
-       // Calculate the distance between current date and time and the deadline date and time
-       var distance = deadlineDate - currentDate;
-
-      // Time calculations for days, hours, minutes and seconds
-      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-       // Insert the result data into individual countdown boxes
-       countdownDays.innerHTML = days;
-       countdownHours.innerHTML = hours;
-       countdownMinutes.innerHTML = minutes;
-       countdownSeconds.innerHTML = seconds;
-   }, 1000);
-     
- };
-},
-
-quickScroll: function (){
-	$(window).on("scroll", function() {
-		if ($(this).scrollTop() > 200) {
-			$('.scrollup').fadeIn();
-		} else {
-			$('.scrollup').fadeOut();
+	mobileMenu: function (){
+		jQuery('.mobile-menu nav').meanmenu();
+		function slideMenu() {
+			var activeState = jQuery('#menu-container .menu-list').hasClass('active');
+			jQuery('#menu-container .menu-list').animate({
+				left: activeState ? '0%' : '-100%'
+			}, 400);
 		}
-	});
+		jQuery('.alt-menu-btn').on ("click" , function(event) {
+			event.stopPropagation();
+			jQuery('.hamburger-menu').toggleClass('open');
+			jQuery('.menu-list').toggleClass('active');
+			slideMenu();
 
-	$('.scrollup').on("click", function()  {
-		$("html, body").animate({
-			scrollTop: 0
-		}, 800);
-		return false;
-	});
-},
+			jQuery('body').toggleClass('overflow-hidden');
+		});
+	},
 
-}
-}
-jQuery(document).ready(function (){
-	Genius.init();
-});
+	switchOpen: function (){
+		$('.color-switcher .open').on("click", function() {
+			$('.color-switcher').toggleClass("open-switcher");
+		});
+	},
 
-jQuery(".gotoCourseCategory").on("change",function (){
-	window.location.href = $(this).val();
-});
+	countDown:  function (){
+		if ($('.coming-countdown').length > 0) {
+		// Specify the deadline date
+		var deadlineDate = new Date('Decembar 21, 2018 23:59:59').getTime();
 
-jQuery(".gotoStep1").on("click",function(){
-	jQuery(".step1").show();
-	jQuery(".step2").hide();
-});
+		// Cache all countdown boxes into consts
+		var countdownDays = document.querySelector('.days .number');
+		var countdownHours = document.querySelector('.hours .number');
+		var countdownMinutes = document.querySelector('.minutes .number');
+		var countdownSeconds = document.querySelector('.seconds .number');
 
-jQuery.validator.addMethod('email_rule', function (value, element) {
-	if (/^([a-zA-Z0-9_\-\.]+)\+?([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/.test(value)) {
-	  return true;
-	} else {
-	  return false;
+		// Update the count down every 1 second (1000 milliseconds)
+		setInterval(function () {
+		// Get current date and time
+		var currentDate = new Date().getTime();
+
+		// Calculate the distance between current date and time and the deadline date and time
+		var distance = deadlineDate - currentDate;
+
+		// Time calculations for days, hours, minutes and seconds
+		var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+		// Insert the result data into individual countdown boxes
+		countdownDays.innerHTML = days;
+		countdownHours.innerHTML = hours;
+		countdownMinutes.innerHTML = minutes;
+		countdownSeconds.innerHTML = seconds;
+	}, 1000);
+		
 	};
-});
+	},
+
+	quickScroll: function (){
+		$(window).on("scroll", function() {
+			if ($(this).scrollTop() > 200) {
+				$('.scrollup').fadeIn();
+			} else {
+				$('.scrollup').fadeOut();
+			}
+		});
+
+		$('.scrollup').on("click", function()  {
+			$("html, body").animate({
+				scrollTop: 0
+			}, 800);
+			return false;
+		});
+	},
+}
+}
+	jQuery(document).ready(function (){
+		Genius.init();
+	});
+
+	jQuery(".gotoCourseCategory").on("change",function (){
+		window.location.href = $(this).val();
+	});
+
+	jQuery(".gotoStep1").on("click",function(){
+		jQuery(".lead_steps").removeClass("active");
+		jQuery(".lead_steps.step2").addClass("active");
+	});
+
+	jQuery.validator.addMethod('email_rule', function (value, element) {
+		if (/^([a-zA-Z0-9_\-\.]+)\+?([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/.test(value)) {
+		return true;
+		} else {
+		return false;
+		};
+	});
 
 	$("#submit-review").validate({
 		rules: {
@@ -1155,8 +1151,20 @@ jQuery.validator.addMethod('email_rule', function (value, element) {
 				maxlength: 10,
 				minlength: 10
 			},
-			center: {
+			pincode: {
 				required: true,
+				maxlength: 6,
+				minlength: 6,
+				// remote: {
+				// 	url:`${globalUrl}center/get-center-by-pincode`,
+				// 	success: function(data){
+				// 		console.log(data);
+				// 		console.log(data.name);
+				// 		jQuery("#formFieldCenter").val(data.name);
+				// 		// let value = JSON.parse(data);
+				// 		// console.log(value);
+				// 	}
+				// }
 			},
 		},
 		messages: {
@@ -1169,32 +1177,48 @@ jQuery.validator.addMethod('email_rule', function (value, element) {
 			mobile: {
 				required: "Please enter valid mobile number",
 			},
-			center: {
-				required: "Please select you location",
+			pincode: {
+				required: "Please enter valid pincode",
 			},
 		},
 		submitHandler: function(form) {
-			var formId = "lead_capture_form";
-			let checkEnable = jQuery("#" + formId + " .is_enable_otp").val();
-			if(!checkEnable) {
-				captureLead(form)
-			} else {     
-				sendMobileOtp(formId);
-				return false;
+			var formId = jQuery(".submit_classroom_lead_generation_form").closest("form").attr('id');
+			if(`${isEnableOtp}` == 0 && `${isAjaxSubmit}` == 0){
+				console.log("if 1");
+				form.submit();
 			}
-			return false;
-		}
-	});
 
-	jQuery(".apply_now").on("click",function (){
-		var verifyOtp = jQuery("#lead_capture_form .verify_otp").val();
-		var responsedOtp = jQuery("#lead_capture_form .responsed_otp").val();
-		if (verifyOtp == '' || verifyOtp !== responsedOtp) {
-			jQuery("#lead_capture_form .response_status").html("OTP is Invalid");
-			return false;
+			if(`${isEnableOtp}` == 1 && `${isAjaxSubmit}` == 0){
+				if(jQuery("#" + formId + " #formFieldOtpResponse").val() == ""){
+					console.log("if 2");
+					sendMobileOtp(formId);
+					return false;
+				}
+				if(jQuery("#" + formId + " .verify_otp").val() != '' && jQuery("#" + formId + " #formFieldOtpResponse").val() == jQuery("#" + formId + " .verify_otp").val()){
+					console.log("if 3");
+					form.submit();
+				} else {
+					jQuery("#" + formId + " .response_status").html("OTP is Invalid");
+					return false;
+				}
+			}
+
+			if(`${isEnableOtp}` == 1 && `${isAjaxSubmit}` == 1){
+				console.log("4");
+				if(jQuery("#" + formId + " #formFieldOtpResponse").val() == ""){
+					sendMobileOtp(formId);
+					return false;
+				}
+				if(jQuery("#" + formId + " .verify_otp").val() != '' && jQuery("#" + formId + " #formFieldOtpResponse").val() == jQuery("#" + formId + " .verify_otp").val()){
+					console.log("5");
+					captureLead(form,formId);
+				} else {
+					jQuery("#" + formId + " .response_status").html("OTP is Invalid");
+					return false;
+				}
+			}
+			return false; // required to block normal submit since you used ajax
 		}
-		captureLead($(this).closest("form"));
-		
 	});
 
 	jQuery(".state").on("change",function(){
@@ -1237,11 +1261,10 @@ jQuery.validator.addMethod('email_rule', function (value, element) {
 			success: function(result) {
 				if (result) {
 					console.log(result);
-					jQuery("#" + formId + " .responsed_otp").val(result.otp_value);
+					jQuery("#" + formId + " #formFieldOtpResponse").val(result.otp_value);
 					jQuery("#" + formId + " .lastDigit").text(result.lastdigit);
 					jQuery("#" + formId + " .lead_steps").removeClass("active");
 					jQuery("#" + formId + " .lead_steps.step2").addClass("active");
-					
 					return true;
 				} else {
 					jQuery("#" + formId + " .response_status").html("OTP Sent Failed! Please Try Again Later");
@@ -1251,8 +1274,7 @@ jQuery.validator.addMethod('email_rule', function (value, element) {
 		});
 	}
 
-	function captureLead(form){
-		var formId = form.attr('id');
+	function captureLead(form,formId){
 		$.ajaxSetup({
 			headers: {
 			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -1261,15 +1283,34 @@ jQuery.validator.addMethod('email_rule', function (value, element) {
 		$.ajax({
 			url: `${globalUrl}capture-lead`,
 			type: "post",
-			data: form.serialize(),
+			data: jQuery(form).serialize(),
 			success: function(result) {
-				jQuery("#" + formId + " .lead_steps").removeClass("active");
-				jQuery("#" + formId + " .lead_steps.step3").addClass("active");
+				jQuery("#" + formId + " .form_process").hide();
+				jQuery("#" + formId + " .form_success").show();
 				jQuery("#" + formId)[0].reset()
 				return true;
 			}
 		});
 	}
+
+	// jQuery("#pincode").on("keyup",function(){
+	// 	jQuery(".form_step_1").prop('disabled', true);
+	// 	$.ajaxSetup({
+	// 		headers: {
+	// 		'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+	// 		}
+	// 	});
+	// 	$.ajax({
+	// 		url: `${globalUrl}get-center-by-pincode`,
+	// 		type: "post",
+	// 		data: {
+	// 			"pincode":jQuery(this).val()
+	// 		},
+	// 		success: function(result) {
+	// 			jQuery(".form_step_1").prop('disabled', false);
+	// 		}
+	// 	});
+	// })
 })();
 
 function lead_capture_form_btn(course_id,center_id) {

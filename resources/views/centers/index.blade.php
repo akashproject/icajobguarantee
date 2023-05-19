@@ -2,22 +2,37 @@
     @section('content')
 	<!-- Start of breadcrumb section
 		============================================= -->
-		<section id="breadcrumb" class="breadcrumb-section relative-position backgroud-style">
-			<div class="blakish-overlay"></div>
-			<div class="container">
-				<div class="page-breadcrumb-content text-center">
-					<div class="page-breadcrumb-title">
-						<h2 class="breadcrumb-head black bold">Genius <span>Online Shop</span></h2>
+	<section id="breadcrumb" class="inner-banner relative-position backgroud-style"  style="background-image: url({{ (isset($contentMain->banner_image))?getSizedImage('',$contentMain->banner_image):url('assets/img/banner/brt-1.jpg') }});">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9">
+
+					<div class="inner-banner-breadcrumb" >
+						<span class="breadcrumbElement"> 
+							<a href="{{url('/')}}" > Home </a> 
+						</span>
+						<span class="breadcrumbElement"> 
+							 <i class="fas fa-chevron-right"> </i>
+						</span> 
+						<span class="breadcrumbElement"> 
+							{{(isset($contentMain))?$contentMain->name:"Default Page" }}
+						 </span>
 					</div>
-					<div class="page-breadcrumb-item ul-li">
-						<ul class="breadcrumb text-uppercase black">
-							<li class="breadcrumb-item"><a href="#">Home</a></li>
-							<li class="breadcrumb-item active">Shop</li>
-						</ul>
+					<div class="inner-banner-content">
+						<div class="inner-banner-title">
+							<h1>{{(isset($contentMain))?$contentMain->name:"Default Page" }}</h1>
+						</div>
+						<div class="inner-banner-description">
+							{!! (isset($contentMain))?$contentMain->description:"Default Description" !!}
+						</div>
 					</div>
 				</div>
+				<div class="col-md-3">
+					
+				</div>
 			</div>
-		</section>
+		</div>
+	</section>
 	<!-- End of breadcrumb section
 		============================================= -->
 
@@ -93,12 +108,12 @@
 													<div class="col-md-4">
 														<div class="product-img-text">
 															<div class="product-img text-center mb10">
-																<img src="{{url('assets/img/product/bp-1.png')}}" alt="">
+																<img src="{{ ($value->featured_image)?getSizedImage('',$value->featured_image):url('assets/img/logo/center-logo.webp') }}" alt="">
 															</div>
 															<div class="product-text-content text-center mb20">
 																<div class="best-title-price">
 																	<div class="course-title headline">
-																		<h3><a href="{{ URL::to('/centers') }}/{{ $value->slug }}">{{ $value->name }}</a></h3>
+																		<h3><a target="_blank" href="{{ URL::to('/centers') }}/{{ $value->slug }}">{{ $value->name }}</a></h3>
 																	</div>
 																</div>															
 															</div>	
@@ -107,15 +122,15 @@
 															</div>
 															<div class="more-btn text-center" >
 																<div class="course-type-list">	
-																	<span class="btn-filled" onclick="lead_capture_form_btn('',{{ $value->id }})"><i class="fas fa-download"></i> Brochure</span>
+																	<a class="btn-filled" href="javascript:void(0)" onclick="lead_capture_form_btn('',{{ $value->id }})"><i class="fas fa-download"></i> Brochure</a>
 																</div>
 																<div class="course-type-list">														
-																	<a  class="btn-outline" href="{{ URL::to('/centers') }}/{{ $value->slug }}" >View More <i class="fas fa-caret-right"></i></a>
+																	<a class="btn-outline" target="_blank" href="{{ URL::to('/centers') }}/{{ $value->slug }}" >View More <i class="fas fa-caret-right"></i></a>
 																</div>														
 															</div>														
 														</div>
 													</div>
-													@endforeach													
+													@endforeach		
 												</div>
 												@else 
 												<div class="message-title"> 

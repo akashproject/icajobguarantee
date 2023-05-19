@@ -2,19 +2,32 @@
     @section('content')
 	<!-- Start of breadcrumb section
 		============================================= -->
-	<section id="breadcrumb" class="breadcrumb-section relative-position backgroud-style" style="background-image: url({{ (isset($contentMain->banner_image))?getSizedImage('',$contentMain->banner_image):url('assets/img/banner/brt-1.jpg') }});">
-		<div class="blakish-overlay"></div>
+	<section id="breadcrumb" class="inner-banner relative-position backgroud-style"  style="background-image: url({{ (isset($contentMain->banner_image))?getSizedImage('',$contentMain->banner_image):url('assets/img/banner/brt-1.jpg') }});">
 		<div class="container">
-			<div class="page-breadcrumb-content">
-				<div class="page-breadcrumb-title">
-					<h2 class="breadcrumb-head black bold">
-						{{(isset($contentMain))?$contentMain->name:"Default Page" }}
-					</h2>
+			<div class="row">
+				<div class="col-md-9">
+
+					<div class="inner-banner-breadcrumb" >
+						<span class="breadcrumbElement"> 
+							<a href="{{url('/')}}" > Home </a> 
+						</span>
+						<span class="breadcrumbElement"> 
+							 <i class="fas fa-chevron-right"> </i>
+						</span> 
+						<span class="breadcrumbElement"> 
+							{{(isset($contentMain))?$contentMain->name:"Default Page" }}
+						 </span>
+					</div>
+					<div class="inner-banner-content">
+						<div class="inner-banner-title">
+							<h1>{{(isset($contentMain))?$contentMain->name:"Default Page" }}</h1>
+						</div>
+						<div class="inner-banner-description">
+							{!! (isset($contentMain))?$contentMain->description:"Default Description" !!}
+						</div>
+					</div>
 				</div>
-				<div class="page-breadcrumb-description">
-					{!! (isset($contentMain))?$contentMain->description:"Default Description" !!}
-				</div>
-				<div class="page-breadcrumb-option">
+				<div class="col-md-3">
 					
 				</div>
 			</div>
@@ -85,7 +98,7 @@
 												<div class="col-md-4">
 													<div class="product-img-text">
 														<div class="product-img text-center mb10">
-															<img src="{{ getSizedImage('',$value->featured_image)}}" alt="">
+															<img src="{{ ($value->featured_image)?getSizedImage('',$value->featured_image):url('assets/img/logo/center-logo.webp') }}" alt="">
 														</div>
 														<div class="product-text-content text-center mb20">
 															<div class="best-title-price">

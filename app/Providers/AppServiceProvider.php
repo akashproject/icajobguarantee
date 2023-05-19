@@ -39,7 +39,7 @@ class AppServiceProvider extends ServiceProvider
                 '/centers' => "Centers",                
                 '/franchise-opportunity' => "For Franchise",               
                 '/university' => "For University",
-                '/accounts-gst-sap-tally-career-opportunities' => "Placements",
+                '/placements' => "Placements",
                 '/career' => "We Are Hiring",
                 '/blog' => "Blogs",
             );
@@ -58,7 +58,7 @@ class AppServiceProvider extends ServiceProvider
 
             //student Menu
             $studentMenu = array(
-                '/category/career-course' => 'Career Courses',
+                '/category/career-courses' => 'Career Courses',
                 '/centers' => 'Centers',
                 '/university' => "University",
                 '/online-courses' => "Online Courses",
@@ -67,7 +67,7 @@ class AppServiceProvider extends ServiceProvider
 
              //student Menu
              $termsMenu = array(
-                '/category/career-course' => 'Career Courses',
+                '/category/career-courses' => 'Career Courses',
                 '/centers' => 'Centers',
                 '/university' => "University",
                 '/online-courses' => "Online Courses",

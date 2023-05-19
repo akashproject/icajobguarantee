@@ -3,7 +3,7 @@
 @endif
 <!-- Start of Header section
 	============================================= -->
-	<header>
+	<header class="custom-header-style">
 		<div id="main-menu"  class="main-menu-container header-style-2">
 			<div class="header-top">
 				<div class="container-fluid">

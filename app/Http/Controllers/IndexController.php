@@ -23,7 +23,6 @@ class IndexController extends Controller
     }
 
     public function index() {
-        # code...
         try {
             $courses = DB::table('courses')
             ->join('course_type', 'course_type.id', '=', 'courses.type_id')
@@ -50,6 +49,11 @@ class IndexController extends Controller
             $option .= '<option value="'.$value->name.'" > '.$value->name.' </option>';
         }
         return response()->json($option, $this->_statusOK);
+    }
+
+    public function getCenterByPincode(Request $request) {
+        $center = DB::table('centers')->select('name')->where('pincode','like', '%"' . $request->pincode . '"%')->first();
+        return response()->json($center, $this->_statusOK);
     }
 
     public function submitMobileOtp(Request $request){
@@ -100,13 +104,19 @@ class IndexController extends Controller
             $postData['firstname'] = current(explode(" ",$data['name']));
             unset($nameArray['0']);
             $postData['lastname'] = implode(" ",$nameArray);
-
-            $city  = Center::where("name",$data['center'])->first();
-            $postData['city'] = City::where("id",$city->city_id)->first()->name;
+            $postData['city'] = "";
+            $postData['center'] = "";
+            // $city  = Center::where("name",$data['center'])->first();
+            // $postData['city'] = City::where("id",$city->city_id)->first()->name;
 
             $response = $this->classroomLeadCaptureLeadToExtraage($postData);
 
-            return response()->json($response, $this->_statusOK);
+            if(get_theme_setting('ajax_submit') == 1) {
+                return response()->json($response, $this->_statusOK);
+            } else {
+                return redirect('/thank-you');
+            }
+            
         } catch(\Illuminate\Database\QueryException $e){
             //throw $th;
         }
@@ -166,6 +176,14 @@ class IndexController extends Controller
             );
             $lead = Lead::create($data);
             return response()->json($lead, $this->_statusOK);
+        } catch(\Illuminate\Database\QueryException $e){
+            //throw $th;
+        }
+    }
+
+    public function thankyou(){
+        try {
+            return view('thank-you');
         } catch(\Illuminate\Database\QueryException $e){
             //throw $th;
         }

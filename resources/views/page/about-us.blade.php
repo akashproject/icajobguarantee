@@ -1,32 +1,30 @@
 @extends('layouts.main')
-
     @section('content')
-
-	
 	<!-- Start of breadcrumb section
 		============================================= -->
-		<section id="breadcrumb" class="breadcrumb-section relative-position backgroud-style" style="background-image: url({{ (isset($contentMain->banner_image))?getSizedImage('',$contentMain->banner_image):url('assets/img/banner/brt-1.jpg') }});">
-			<div class="blakish-overlay"></div>
-			<div class="container">
-				<div class="page-breadcrumb-content">
-					<div class="page-breadcrumb-title">
-						<h2 class="breadcrumb-head black bold">
-							{{(isset($contentMain))?$contentMain->name:"Default Page" }}
-						</h2>
-					</div>
-					<div class="page-breadcrumb-description">
-						{!! (isset($contentMain))?$contentMain->description:"Default Description" !!}
-					</div>
-					<div class="page-breadcrumb-option">
-						
+	<section id="breadcrumb" class="inner-banner relative-position backgroud-style"  style="background-image: url({{ (isset($contentMain->banner_image))?getSizedImage('',$contentMain->banner_image):url('assets/img/banner/brt-1.jpg') }});">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-7">
+					<div class="inner-banner-content">
+						<div class="inner-banner-title">
+							<h1>Advanced Certification in Data Science and AI</h1>
+						</div>
+						<div class="inner-banner-sub-title">
+							<h2> Learn from IIT Madras Faculty &amp; Industry Experts with Campus Immersion at IIT Madras </h2>
+						</div>
+						<div class="inner-banner-description">
+						</div>
 					</div>
 				</div>
+				<div class="col-md-5">
+					
+				</div>
 			</div>
-		</section>
+		</div>
+	</section>
 	<!-- End of breadcrumb section
 		============================================= -->
-
-
 	<!-- Start of about us content
 		============================================= -->
 		<section id="about-page" class="about-page-section">
