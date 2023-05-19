@@ -609,7 +609,7 @@
 					<h2>Our Alumni <span>Worked At.</span></h2>
 				</div>
 				<div class="sponsor-item sponsor-1 " >
-					@foreach(getPlacements() as $value)
+					@foreach(getRecruiters() as $value)
 					<div class="sponsor-pic text-center">
 						<img src="{{ getSizedImage('',$value->featured_image) }}" alt="">
 					</div>

@@ -178,7 +178,7 @@
 					<h3>Our Alumni <span>Worked At.</span></h3>
 				</div>
 				<div class="row" >
-					@foreach(getPlacements() as $value)
+					@foreach(getRecruiters() as $value)
 						<div class="col-md-2 col-lg-2 col-6 mt10 mb20" >
 							<div class="placement-grid" >
 								<img src="{{ (isset($value->featured_image))?getSizedImage('',$value->featured_image):'https://dummyimage.com/140x140' }}" alt="">		
@@ -193,7 +193,7 @@
 
 	<!-- Start secound testimonial section
 		============================================= -->
-		<section id="sponsor" class="sponsor-section">
+		<section id="sponsor" class="best-course-section">
 			<div class="container">
 				<div class="section-title mb35 headline text-center">
 					<span class="subtitle text-uppercase">Student Placement</span>
@@ -205,17 +205,17 @@
 						<p> Students Placement of Jan 2023 </p>
 					</div>
 					<div class="col-md-9" >
-						@foreach(getPlacements() as $value)
+						@foreach(getJoinees() as $value)
 						<div class="placed-grid-box text-center">
 							<div class="image-box">
-								<img src="https://dummyimage.com/140">
+								<img src="{{ (isset($value->featured_image))?getSizedImage('',$value->featured_image):'https://dummyimage.com/140x140' }}">
 							</div>
 							<div class="box-title mt10">
-								<h4>Akash Dutta</h4>
+								<h4>{{ $value->name }}</h4>
 							</div>
 							<div class="box-content">
 								<p> Placed At: </p>
-								<img src="https://dummyimage.com/32">
+								<img src="{{ ($value->placed_at)?getSizedImage('',getRecruterById($value->placed_at)->featured_image):'https://dummyimage.com/32' }}">
 							</div>
 						</div>
 						@endforeach
@@ -228,7 +228,7 @@
 
 	<!-- Start secound testimonial section
 		============================================= -->
-		<section id="sponsor" class="best-course-section student_benefits">
+		<section id="sponsor" class="sponsor-section student_benefits">
 			<div class="container">
 				<div class="section-title mb35 headline text-center">
 					<span class="subtitle text-uppercase">Student benefits</span>

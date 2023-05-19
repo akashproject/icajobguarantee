@@ -180,7 +180,7 @@
 					<h3>Our Alumni <span>Worked At.</span></h3>
 				</div>
 				<div class="row" >
-					@foreach(getPlacements() as $value)
+					@foreach(getRecruiters() as $value)
 						<div class="col-md-2 col-lg-2 col-6 mt10 mb20" >
 							<div class="placement-grid" >
 								<img src="{{ (isset($value->featured_image))?getSizedImage('',$value->featured_image):'https://dummyimage.com/140x140' }}" alt="">		

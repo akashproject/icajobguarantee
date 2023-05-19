@@ -144,8 +144,8 @@ if (! function_exists('getFaqs')) {
     }
 }
 
-if (! function_exists('getPlacements')) {
-    function getPlacements($model="",$model_id=""){
+if (! function_exists('getRecruiters')) {
+    function getRecruiters($model="",$model_id=""){
         $placements = DB::table('recruiters');
         if($model){
             $placements->where('model',$model);
@@ -153,6 +153,17 @@ if (! function_exists('getPlacements')) {
         if($model_id){
             $placements->where('model_id',$model_id);
         }   
+        $placements = $placements->where('status',"1")->get();
+        return $placements;
+    }
+}
+
+if (! function_exists('getJoinees')) {
+    function getJoinees($center_id=null){
+        $placements = DB::table('placements');
+        if($center_id){
+            $placements->where('center_id',$center_id);
+        } 
         $placements = $placements->where('status',"1")->get();
         return $placements;
     }

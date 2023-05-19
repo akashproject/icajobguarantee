@@ -246,7 +246,7 @@
 					<h2>Get placed <span> where you belong.</span></h2>
 				</div>
 				<div class="sponsor-item sponsor-1">
-					@foreach(getPlacements() as $value)
+					@foreach(getRecruiters() as $value)
 					<div class="sponsor-pic text-center">
 						<img src="{{ getSizedImage('',$value->featured_image) }}" alt="">
 					</div>
@@ -355,6 +355,11 @@
 				<div  id="testimonial-slide-item" class="testimonial-slide-area">
 					@foreach(getTestimonials() as $value)
 					<div class="student-qoute">
+						<div class="course-pic relative-position text-center">
+							<div class="circle-img">
+								<img src="{{ (isset($value->featured_image))?getSizedImage('',$value->featured_image):'https://dummyimage.com/140x140' }}" alt="">	
+							</div>					
+						</div>
 						{!! $value->comment !!}
 						<div class="student-name-designation">
 							<span class="st-name bold-font">{{ $value->name }}</span>

@@ -620,6 +620,10 @@
 	.photo-list li {
 		width: 49%;
 	}
+
+	.placed-grid-box {
+		width: 32%;
+	}
 }
 @media screen and (max-width: 420px) { 
 	.widget-title {
