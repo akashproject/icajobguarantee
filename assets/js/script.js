@@ -162,14 +162,27 @@ mainSlide: function (){
 			},
 			1000:{
 				items:1,
-
 			}
 		},
 	})
 },
 /* End Of course slide
 ================================================*/
-
+/* Start Of course slide
+================================================*/
+oneGridSlide: function (){
+	$('#one-grid-slide').owlCarousel({
+		margin:0,
+		responsiveClass:true,
+		nav: true,
+		dots: true,
+		autoplay: false,
+		navText:["<i class='fas fa-chevron-left'></i>","<i class='fas fa-chevron-right'></i>"],
+		smartSpeed: 1000,
+	})
+},
+/* End Of course slide
+================================================*/
 /* Start Of course slide
 ================================================*/
 fourGridSlide: function (){
@@ -1098,6 +1111,9 @@ searchBAR: function (){
 
 	$("#submit-review").validate({
 		rules: {
+			stars: {
+				required: true,
+			},
 			reviewer_name: {
 				required: true,
 			},
@@ -1105,18 +1121,27 @@ searchBAR: function (){
 				required: true,
 			},
 			title: {
+				required: true,
+			},
+			review: {
 				required: true,
 			},
 		},
 		messages: {
+			stars: {
+				required: "Please select rating",
+			},
 			reviewer_name: {
-				required: "Please enter title",
+				required: "Please enter your name",
 			},
 			reviewer_email: {
-				required: "Please enter valid email",
+				required: "Please enter your email",
 			},
 			title: {
-				required: "Please enter message",
+				required: "Please enter subject",
+			},
+			review: {
+				required: "Submit your review",
 			},
 		}, 
 		submitHandler: function(form) {
@@ -1311,13 +1336,31 @@ searchBAR: function (){
 	// 		}
 	// 	});
 	// })
+
+	jQuery(".course-header-menu").on("mouseenter",function(){
+		jQuery(".submenu-courses").show();
+	});
+
+	jQuery(".desktop-menu li").on('mouseenter',function(){
+		jQuery(".category-courses-submenu").removeClass("active");
+		jQuery("#"+jQuery(this).attr("data-id")).addClass("active");
+	});
+
+	jQuery(".course-header-menu").on('mouseleave',function(){
+		jQuery(".submenu-courses").hide();
+	});
+
 })();
 
 function lead_capture_form_btn(course_id,center_id) {
 	jQuery(".lead_steps").removeClass("active");
 	jQuery(".lead_steps.step1").addClass("active");
 	jQuery('#lead-generation-form').modal('show');
-	//getCenters(course_id,center_id);
+	console.log(course_id);
+	console.log(center_id);
+	if (center_id) {
+		getCenters(course_id,center_id);
+	}
 }
 
 function getCenters(course_id,center_id) {

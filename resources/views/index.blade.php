@@ -6,18 +6,18 @@
 		============================================= -->
 		<section id="slide" class="slider-section">
 			<div id="slider-item" class="slider-item-details">
-				<div class="slider-area slider-bg-1 relative-position" style="background-image: url({{url('assets/img/banner/banner-1.jpg')}});">
-					<div class="slider-text">
-						<div class="section-title mb20 headline text-center">
-							<div class="layer-1-1">
-								<span class="subtitle text-uppercase">EDUCATION & TRAINING ORGANIZATION</span>
-							</div>
-							<div class="layer-1-2">
-								<h2 class="secoud-title"> Browse The <span>Best Courses.</span></h2>
-							</div>
-						</div>
-						<div class="layer-1-3">
-							<div class="search-course mb30 relative-position">
+				<div  class="slider-area slider-bg-5 relative-position" style="background-image: url({{url('assets/img/banner/banner-1.jpg')}});">
+ 					<div class="slider-text">
+ 						<div class="section-title mb20 headline text-left ">
+ 							<div class="layer-1-1">
+ 								<span class="subtitle ml42 text-uppercase">EDUCATION & TRAINING ORGANIZATION</span>
+ 							</div>
+ 							<div class="layer-1-3">
+							 	<h2 class="secoud-title"> Browse The <span>Best Courses</span></h2>
+ 							</div>
+ 						</div>
+ 						<div class="layer-1-4">
+						 	<div class="search-course mb30 relative-position">
 								<form action="{{url('/courses')}}" method="get">
 									<input class="course" name="search" type="text" placeholder="Type what do you want to learn today?">
 									<div class="nws-button text-center  gradient-bg text-capitalize">
@@ -35,38 +35,38 @@
 									</ul>
 								</div>
 							</div>
-						</div>
-					</div>
-				</div>
-				<div  class="slider-area slider-bg-2 relative-position" style="background-image: url({{url('assets/img/banner/banner-1.jpg')}});" >
-					<div class="slider-text">
-						<div class="section-title mb20 headline text-center">
-							<div class="layer-1-1">
-								<span class="subtitle text-uppercase">EDUCATION & TRAINING ORGANIZATION</span>
-							</div>
-							<div class="layer-1-3">
-								<h2><span>Hone</span> In <br> Demand <span> Skills</span></h2>
-							</div>
-						</div>
-						<div class="layer-1-4">
-							<div id="course-btn">
-								<div class="genius-btn  text-center text-uppercase ul-li-block bold-font">
-									<a href="{{url('/courses')}}">Our Courses <i class="fas fa-caret-right"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-
-				</div>				
-				<div class="slider-area slider-bg-3 relative-position" style="background-image: url({{url('assets/img/banner/banner-1.jpg')}});">
-					<div class="slider-text">
-						<div class="section-title mb20 headline text-center">
-							<div class="layer-1-3">
-								<h2 class="third-slide"> With India’s #1 <br> <span>Vocational Education.</span></h2>
-							</div>
-						</div>
-						<div class="layer-1-4">
-							<div class="about-btn text-center">
+ 						</div>
+ 					</div>
+ 				</div>
+				<div class="slider-area slider-bg-5 relative-position" style="background-image: url({{url('assets/img/banner/banner-1.jpg')}});">
+ 					<div class="slider-text">
+ 						<div class="section-title mb20 headline text-left ">
+ 							<div class="layer-1-1">
+ 								<span class="subtitle ml42 text-uppercase">EDUCATION & TRAINING ORGANIZATION</span>
+ 							</div>
+ 							<div class="layer-1-3">
+								 <h2><span>Learn</span> In <br> Demand <span> Skills</span></h2>
+ 							</div>
+ 						</div>
+ 						<div class="layer-1-4">
+ 							<div class="genius-btn  text-center text-uppercase ul-li-block bold-font">
+								 <a href="{{url('/courses')}}">Our Courses <i class="fas fa-caret-right"></i></a>
+ 							</div>
+ 						</div>
+ 					</div>
+ 				</div>		
+				<div  class="slider-area slider-bg-5 relative-position" style="background-image: url({{url('assets/img/banner/banner-1.jpg')}});">
+ 					<div class="slider-text">
+ 						<div class="section-title mb20 headline text-left ">
+ 							<div class="layer-1-1">
+ 								<span class="subtitle ml42 text-uppercase">EDUCATION & TRAINING ORGANIZATION</span>
+ 							</div>
+ 							<div class="layer-1-3">
+							 	<h2 class="third-slide"> With India’s #1 <br> <span>Vocational Education.</span></h2>
+ 							</div>
+ 						</div>
+ 						<div class="layer-1-4">
+							<div class="about-btn text-left">
 								<div class="genius-btn text-center text-uppercase ul-li-block bold-font">
 									<a href="#">About Us <i class="fas fa-caret-right"></i></a>
 								</div>
@@ -75,8 +75,8 @@
 								</div>
 							</div>
 						</div>
-					</div>
-				</div>
+ 					</div>
+ 				</div>	
 			</div>
 		</section>
 	<!-- End of slider section
@@ -252,7 +252,7 @@
 						<div class="about-us-text">
 							<div class="section-title relative-position mb20 headline text-left "  >
 								<span class="subtitle ml42 text-uppercase">ABOUT US</span>
-								<h2>We are <span>Genius Course</span> work since 1980.</h2>
+								<h2><span>Revolutionizing</span> skill development, one person at a time.</h2>
 								<p>India’s Leading Vocational Training Institute providing job-oriented courses in GST, Tally, Finance.</p>
 							</div>
 							<div class="about-content-text">
@@ -449,12 +449,6 @@
 	<!-- End of best course
 	============================================= -->
 
-	<!-- Start of course teacher
-		============================================= -->
-	
-	<!-- End of course teacher
-		============================================= -->
-
 	<!-- Start Course category
 		============================================= -->
 		<section id="course-category" class="course-category-section" style="background:#d0cfda">
@@ -630,52 +624,26 @@
 								<h2>Latest <span>News.</span></h2>
 							</div>
 							<div class="latest-news-posts">
+								@foreach(getBlogs() as $value)
 								<div class="latest-news-area">
 									<div class="latest-news-thumbnile relative-position">
-										<img src="assets/img/blog/lb-1.jpg" alt="">
+										<img src="{{ $value->source_url }}" alt="{{ $value->title->rendered }}">
 										<div class="hover-search">
 											<i class="fas fa-search"></i>
 										</div>
 										<div class="blakish-overlay"></div>
 									</div>
 									<div class="date-meta">
-										<i class="fas fa-calendar-alt"></i> 26 April 2018
+										<i class="fas fa-calendar-alt"></i> {{ date("d M Y",strtotime($value->date))}}
 									</div>
-									<h3 class="latest-title bold-font"><a href="#">Affiliate Marketing A Beginner’s Guide.</a></h3>
-									<div class="course-viewer ul-li">
-										<ul>
-											<li><span><i class="fas fa-user"></i> 1.220</span></li>
-											<li><span><i class="fas fa-comment-dots"></i> 1.015</span></li>
-										</ul>
-									</div>
+									<h3 class="latest-title bold-font"><a target="_blank" href="{{ $value->link }}">{{ $value->title->rendered }}</a></h3>
+									
 								</div>
 								<!-- /post -->
-
-								<div class="latest-news-posts">
-									<div class="latest-news-area">
-										<div class="latest-news-thumbnile relative-position">
-											<img src="assets/img/blog/lb-2.jpg" alt="">
-											<div class="hover-search">
-												<i class="fas fa-search"></i>
-											</div>
-											<div class="blakish-overlay"></div>
-										</div>
-										<div class="date-meta">
-											<i class="fas fa-calendar-alt"></i> 26 April 2018
-										</div>
-										<h3 class="latest-title bold-font"><a href="#">No.1 The Best Online Course 2018.</a></h3>
-										<div class="course-viewer ul-li">
-											<ul>
-												<li><span><i class="fas fa-user"></i> 1.220</span></li>
-												<li><span><i class="fas fa-comment-dots"></i> 1.015</span></li>
-											</ul>
-										</div>
-									</div>
-									<!-- /post -->
-								</div>
-
+								@endforeach
+								
 								<div class="view-all-btn bold-font">
-									<a href="#">View All News <i class="fas fa-chevron-circle-right"></i></a>
+									<a target="_blank" href="/blog">View All News <i class="fas fa-chevron-circle-right"></i></a>
 								</div>
 							</div>
 						</div>
@@ -694,9 +662,9 @@
 										April 2018
 									</div>
 									<div class="event-text">
-										<h3 class="latest-title bold-font"><a href="#">Fully Responsive Web Design & Development.</a></h3>
+										<h3 class="latest-title bold-font"><a href="#">Job Fair Program</a></h3>
 										<div class="course-meta">
-											<span class="course-category"><a href="#">Web Design</a></span>
+											<span class="course-category"><a href="#">Salt Lake</a></span>
 											<span class="course-author"><a href="#">Koke</a></span>
 										</div>
 									</div>
@@ -711,9 +679,9 @@
 										August 2018
 									</div>
 									<div class="event-text">
-										<h3 class="latest-title bold-font"><a href="#">Introduction to Mobile Application Development.</a></h3>
+										<h3 class="latest-title bold-font"><a href="#">University Seminar Program </a></h3>
 										<div class="course-meta">
-											<span class="course-category"><a href="#">Web Design</a></span>
+											<span class="course-category"><a href="#">Dalhousi</a></span>
 											<span class="course-author"><a href="#">Koke</a></span>
 										</div>
 									</div>
@@ -730,7 +698,7 @@
 									<div class="event-text">
 										<h3 class="latest-title bold-font"><a href="#">IOS Apps Programming & Development.</a></h3>
 										<div class="course-meta">
-											<span class="course-category"><a href="#">Web Design</a></span>
+											<span class="course-category"><a href="#">Chowringhee</a></span>
 											<span class="course-author"><a href="#">Koke</a></span>
 										</div>
 									</div>

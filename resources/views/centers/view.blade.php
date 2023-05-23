@@ -106,7 +106,6 @@
 										<ul class="product-tab ">
 											<li class="active" rel="tab1">Summary</li>
 											<li rel="tab2"> Highlights </li>
-											<li rel="tab3"> Admission </li>
 											<li rel="tab4"> Placements </li>
 											<li rel="tab5"> Gallery  </li>
 											<li rel="tab6"> Map </li>
@@ -139,11 +138,23 @@
 											</div>
 										</div>
 										<!-- #tab3 -->
-										<div id="tab3" class="tab-content-1 pt35">
-											<h3><span>ICA Centre</span> Quick Admission Process</h3>
-										</div>
 										<div id="tab4" class="tab-content-1 pt35">
-											<h3><span>ICA Centre</span> Our Placements</h3>
+											
+											@foreach(getJoinees($contentMain->id) as $value)
+											<div class="placed-grid-box">
+												<div class="image-box">
+													<img src="{{ (isset($value->featured_image))?getSizedImage('',$value->featured_image):'https://dummyimage.com/140x140' }}">
+												</div>
+												<div class="box-content">
+													<div class="box-title mt10">
+														<h4>{{ $value->name }}</h4>
+													</div>
+													<p> Course : <strong ><a target="_blank" href="/courses/{{getCourseById($value->course_id)->slug }}"> {{ getCourseById($value->course_id)->name }}</a> </strong> </p>
+													<p> Placed At: <strong >{{ $value->placed_at }} </strong> </p>
+													<p> CTC: Rs. <strong >{{ number_format($value->joining_salary) }}/- </strong> </p>
+												</div>
+											</div>
+											@endforeach
 										</div>
 										<div id="tab5" class="tab-content-1 pt35">
 											<div class="course-details-content">
@@ -158,7 +169,6 @@
 																		<i class="fas fa-search"></i>
 																	</a>
 																</div>
-																
 															</div>
 														@endforeach
 													</div>

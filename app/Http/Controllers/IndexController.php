@@ -98,16 +98,23 @@ class IndexController extends Controller
 
     public function captureLead(Request $request){
         try {
+            
             $data = $request->all();
             $postData = $data;
             $nameArray = explode(" ",$data['name']);
             $postData['firstname'] = current(explode(" ",$data['name']));
             unset($nameArray['0']);
             $postData['lastname'] = implode(" ",$nameArray);
-            $postData['city'] = "";
-            $postData['center'] = "";
-            // $city  = Center::where("name",$data['center'])->first();
-            // $postData['city'] = City::where("id",$city->city_id)->first()->name;
+
+
+            if (isset($postData['center']) && $postData['center'] != ''){
+                $city  = Center::where("name",$data['center'])->first();
+                $postData['city'] = City::where("id",$city->city_id)->first()->name;
+            } else {
+                $postData['city'] = "";
+                $postData['center'] = "";
+            }
+           
 
             $response = $this->classroomLeadCaptureLeadToExtraage($postData);
 
@@ -119,6 +126,7 @@ class IndexController extends Controller
             
         } catch(\Illuminate\Database\QueryException $e){
             //throw $th;
+
         }
     }
 

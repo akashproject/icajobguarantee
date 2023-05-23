@@ -32,21 +32,17 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="bio" class="col-sm-3 text-right control-label col-form-label">Bio</label>
-							<div class="col-sm-9">
-								<textarea class="form-control editor" name="bio"  id="mceEditor" placeholder="Enter comment Here" >
-								{!! $placement->bio !!}
-								</textarea>
-							</div>
-						</div>
-						<div class="form-group row">
 							<label for="dasignation" class="col-sm-3 text-right control-label col-form-label">Dasignation</label>
 							<div class="col-sm-9">
 								<input type="text" class="form-control" name="dasignation" id="dasignation" placeholder="Enter Dasignation Here" value="{{ $placement->dasignation }}">
 							</div>
 						</div>
-					</div>
-					<div class="col-md-5">
+						<div class="form-group row">
+							<label for="placed_at" class="col-sm-3 text-right control-label col-form-label">Placed at</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" name="placed_at" id="placed_at" placeholder="Enter Name Here" value="{{ $placement->placed_at }}" >
+							</div>
+						</div>	
 						<div class="form-group row">
 							<label for="state" class="col-sm-3 text-right control-label col-form-label"> Center Enrolled </label>
 							<div class="col-sm-9">
@@ -68,18 +64,15 @@
 									@endforeach
 								</select>
 							</div>
-						</div>		
+						</div>	
 						<div class="form-group row">
-							<label for="state" class="col-sm-3 text-right control-label col-form-label"> Placed At </label>
+							<label for="joining_salary" class="col-sm-3 text-right control-label col-form-label">Joining Salary</label>
 							<div class="col-sm-9">
-								<select name="placed_at" id="placed_at" class="select2 form-control custom-select" style="width: 100%; height:36px;">	
-									<option value="">Select Placed At</option>
-									@foreach ($recruiters as $value)
-									<option value="{{ $value->id }}" {{ ( $placement->placed_at ==  $value->id )? 'selected' : '' }} > {{ $value->name }} </option>
-									@endforeach
-								</select>
+								<input type="text" class="form-control" name="joining_salary" id="joining_salary" placeholder="Enter Joining Salary Here" value="{{ $placement->joining_salary }}" >
 							</div>
-						</div>					
+						</div>		
+					</div>
+					<div class="col-md-5">			
 						<div class="form-group row">
 							<label for="state" class="col-sm-3 text-right control-label col-form-label">Status</label>
 							<div class="col-sm-9">
@@ -103,56 +96,6 @@
 							</div>
 						</div>
 					</div>
-				</div>
-				<h4 class="card-title"> Search Engine Options </h4>
-				<div class="row">
-					<div class="col-md-7" >
-						<div class="form-group row">
-							<label for="title" class="col-sm-3 text-right control-label col-form-label">Title</label>
-							<div class="col-sm-9">
-								<input type="text" class="form-control" name="title" id="title" placeholder="Title Here" value="{{ $course->title }}" >
-							</div>
-						</div>
-						<div class="form-group row">
-							<label for="meta_description" class="col-sm-3 text-right control-label col-form-label">Meta Description</label>
-							<div class="col-sm-9">
-								<textarea class="form-control" name="meta_description" id="meta_description" placeholder="Enter Meta Description Here" >{{ $course->meta_description }}</textarea>
-							</div>
-						</div>
-						<div class="form-group row">
-							<label for="schema" class="col-sm-3 text-right control-label col-form-label">Schema Code</label>
-							<div class="col-sm-9">
-								<textarea class="form-control" name="schema" id="schema" placeholder="Enter Schema Code" >{{ $course->schema }}</textarea>
-							</div>
-						</div>
-						<div class="form-group row">
-							<label for="utm_campaign" class="col-sm-3 text-right control-label col-form-label">Campaign</label>
-							<div class="col-sm-9">
-								<input type="text" class="form-control" name="utm_campaign" id="utm_campaign" placeholder="Enter Utm Campaign Here" value="{{ $course->utm_campaign }}">
-							</div>
-						</div>
-
-						<div class="form-group row">
-							<label for="utm_source" class="col-sm-3 text-right control-label col-form-label">Source</label>
-							<div class="col-sm-9">
-								<input type="text" class="form-control" name="utm_source" id="utm_source" placeholder="Enter Utm Source Here"  value="{{ $course->utm_source }}">
-							</div>
-						</div>
-
-						<div class="form-group row">
-							<label for="robots" class="col-sm-3 text-right control-label col-form-label">Robots Content</label>
-							<div class="col-sm-9">
-							<input type="text" class="form-control" name="robots" id="robots" placeholder="Enter Center Pincode Here" value="{{ $course->robots }}" >
-							</div>
-						</div>
-						<div class="form-group row">
-							<label for="canonical" class="col-sm-3 text-right control-label col-form-label">Cronical Url</label>
-							<div class="col-sm-9">
-							<input type="text" class="form-control" name="canonical" id="canonical" placeholder="Enter Center Pincode Here" value="{{ $course->canonical }}">
-							</div>
-						</div>
-					</div>
-					
 				</div>
 			</div>
 

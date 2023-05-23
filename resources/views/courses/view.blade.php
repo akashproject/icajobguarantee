@@ -327,6 +327,11 @@
 					<div  id="testimonial-slide-item" class="testimonial-slide-area">
 						@foreach(getTestimonials() as $value)						
 						<div class="student-qoute">
+							<div class="course-pic relative-position text-center">
+								<div class="circle-img">
+									<img src="{{ (isset($value->featured_image))?getSizedImage('',$value->featured_image):'https://dummyimage.com/140x140' }}" alt="">	
+								</div>					
+							</div>
 							{!! $value->comment !!}
 							<div class="student-name-designation">
 								<span class="st-name bold-font">{{ $value->name }}</span>
@@ -347,17 +352,18 @@
 					<h3>Check<span> Related Course.</span></h3>
 				</div>
 				<div class="best-course-area mb10">
-					<div class="row">
+					<div class="row justify-content-center">
 					@if($courses)
-						@foreach ($courses as $value)
+						@foreach($courses as $course)
 						<div class="col-md-3">
-							<div class="best-course-pic-text">
+							<div class="best-course-pic-text relative-position">
 								<div class="best-course-pic relative-position">
-									<img src="{{ (isset($course->featured_image))?getSizedImage('',$course->featured_image):URL::to('/assets/img/course/bc-1.jpg') }}" alt="">
+									<img src="{{ (isset($course->featured_image))?getSizedImage('',$course->featured_image):'assets/img/course/c-1.jpg' }}" alt="">
 									<div class="trend-badge-2 text-center text-uppercase">
 										<i class="fas fa-bolt"></i>
 										<span>Trending</span>
 									</div>
+									
 									<div class="course-rate ul-li">
 										<ul>
 											<li><i class="fas fa-star"></i></li>
@@ -365,33 +371,34 @@
 											<li><i class="fas fa-star"></i></li>
 											<li><i class="fas fa-star"></i></li>
 											<li><i class="fas fa-star"></i></li>
-										</ul>
+										</ul>													
 									</div>
+									
 									<div class="course-details-btn">
-										<a href="{{ URL::to('/courses') }}/{{ $value->slug }}">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
+										<a href="courses/{{ $course->slug }}">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
 									</div>
 									<div class="blakish-overlay"></div>
 								</div>
 								<div class="best-course-text">
 									<div class="course-title mb20 headline relative-position height-60">
-										<h3><a href="{{ URL::to('/courses') }}/{{ $value->slug }}">{{ $value->name }}</a></h3>
-									</div>
-									<div class="course-short-description mb10" >
-										{!! substr($value->excerpt,0,100); !!}...
+										<h3><a href="courses/{{ $course->slug }}"> {{ $course->name }} </a> 
+											<span class="trend-bestseller text-uppercase bold-font">
+											<i class="fas fa-bolt"></i> Bestseller</span> 
+										</h3>
 									</div>
 									<div class="course-meta">
-										<span class="course-category"><i class="fas fa-clock"></i> {{ $value->duration }}</span>
-										<span class="course-author"><i class="fas fa-book"></i> {{ $value->no_of_module }} Modules</span>
+										<span class="course-category"><i class="fas fa-clock"></i> {{ $course->duration }}</span>
+										<span class="course-author"><i class="fas fa-book"></i> {{ $course->no_of_module }} Modules</span>
 									</div>
 								</div>
 								<div class="more-btn text-center" >
 									<div class="course-type-list">	
-										<a class="btn-filled" href="javascript:void(0)" onclick="lead_capture_form_btn({{ $value->category_id }},'')"><i class="fas fa-download"></i> Brochure</a>
+										<a class="btn-filled" href="javascript:void(0)" onclick="lead_capture_form_btn({{ $course->category_id }},'')"><i class="fas fa-download"></i> Brochure</a>
 									</div>
 									<div class="course-type-list">														
-										<a class="btn-outline" href="{{ URL::to('/courses') }}/{{ $value->slug }}" >View More <i class="fas fa-caret-right"></i></a>
+										<a class="btn-outline" href="{{ URL::to('/courses') }}/{{ $course->slug }}" >View More <i class="fas fa-caret-right"></i></a>
 									</div>														
-								</div>	
+								</div>
 							</div>
 						</div>
 						<!-- /course -->
@@ -472,7 +479,7 @@
 													@endfor
 												</ul>
 											</div>
-											<div class="time-comment float-right">{{ $review->created_at }}</div>
+											<div class="time-comment float-right">{{ date("D m, Y", strtotime($review->created_at)) }}</div>
 										</div>
 										<div class="author-designation-comment">
 											<h3>{{$review->title}}</h3>
@@ -497,7 +504,7 @@
 											<span>Your Rating: </span>
 											<form class="rating">
 												<label>
-													<input type="radio" name="stars" value="1" />
+													<input type="radio" name="stars" value="1" required/>
 													<span class="icon"><i class="fas fa-star"></i></span>
 												</label>
 												<label>

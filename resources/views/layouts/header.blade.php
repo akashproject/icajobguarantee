@@ -27,13 +27,37 @@
 					<div class="navbar-default">
 						<div class="navbar-header float-left">
 							<a class="navbar-brand text-uppercase" href="{{ url('/') }}"><img src="{{ url('assets/images/logo.png') }}" alt="ICA Edu Skills"></a>
-							<div class="menu-item-has-children ul-li-block enroll-btn header-btn gradient-bg text-center text-uppercase ul-li-block bold-font" style="margin: 0;">
+							<div class="menu-item-has-children ul-li-block enroll-btn header-btn gradient-bg text-center text-uppercase ul-li-block bold-font position-relative course-header-menu" style="margin: 0;">
 								<a href="{{ url('/courses') }}"> Courses <i class="fas fa-caret-down" style="color: #fff;"></i></a>
-									<ul class="sub-menu">
-										@foreach($courseTypes as $key => $value)
-										<li><a target="_blank" href="{{url('/category')}}/{{$value->slug}}">{{$value->name}}</a></li>
-										@endforeach												
-									</ul>
+								<ul class="sub-menu desktop-menu">
+									@foreach($courseTypes as $key => $value)
+									<li data-id="category-{{ $value->slug }}" >
+										<a target="_blank" href="{{url('/category')}}/{{$value->slug}}">{{$value->name}}</a>
+									</li>
+									@endforeach												
+								</ul>
+								<div class="submenu-courses">
+									@foreach($courseTypes as $key => $value)
+										<div  id="category-{{ $value->slug }}" class="category-courses-submenu {{ ($key == '0')?'active':'' }}">
+											@foreach($value->courses as $course)
+											<div class="menu-course" >
+												<div class="course-list-img">
+													<img src="{{ (isset($course->featured_image))?getSizedImage('thumb',$course->featured_image):URL::to('/assets/img/course/cl-1.jpg') }}" alt="">
+												</div>
+												<div class="course-content">
+													<h6 class="">
+														<a href="courses/{{ $course->slug }}"> {{ $course->name }} </a> 
+													</h6>
+													<div class="course-meta mt10 ">
+														<span class="course-duration"><a href="#"><i class="fas fa-clock"></i>  {{ $course->duration}} </a></span>
+														<span class="course-modules"><a href="#"><i class="fas fa-book"></i> {{ $course->no_of_module}} Modules </a></span>
+													</div>
+												</div>
+											</div>
+											@endforeach
+										</div>
+									@endforeach		
+								</div>
 							</div>
 						</div><!-- /.navbar-header -->						
 						<!-- <div class="cart-search float-right ul-li">

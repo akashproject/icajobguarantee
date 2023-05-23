@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
 use App\Models\Media;
 use App\Models\CourseType;
+use Illuminate\Support\Facades\DB;
 
 use View;
 
@@ -90,6 +91,11 @@ class AppServiceProvider extends ServiceProvider
             $view->with('courseMenu', $courseMenu);
 
             $courseTypes = CourseType::All();
+            foreach ($courseTypes as $key => $value) {
+                $courses = DB::table('courses')->where("type_id",$value->id)->get();
+                $courseTypes[$key]->courses = $courses;
+            }
+
             $view->with('courseTypes', $courseTypes);
 
 

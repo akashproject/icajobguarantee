@@ -200,22 +200,19 @@
 					<h3>Our Alumni <span>Worked At.</span></h3>
 				</div>
 				<div class="row" >
-					<div class="col-md-3 text-center" >
-						<h2> <span>Congrations</span><br>To Our Students </h2>
-						<p> Students Placement of Jan 2023 </p>
-					</div>
-					<div class="col-md-9" >
+					<div class="col-md-12" >
 						@foreach(getJoinees() as $value)
-						<div class="placed-grid-box text-center">
+						<div class="placed-grid-box">
 							<div class="image-box">
 								<img src="{{ (isset($value->featured_image))?getSizedImage('',$value->featured_image):'https://dummyimage.com/140x140' }}">
 							</div>
-							<div class="box-title mt10">
-								<h4>{{ $value->name }}</h4>
-							</div>
 							<div class="box-content">
-								<p> Placed At: </p>
-								<img src="{{ ($value->placed_at)?getSizedImage('',getRecruterById($value->placed_at)->featured_image):'https://dummyimage.com/32' }}">
+								<div class="box-title mt10">
+									<h4>{{ $value->name }}</h4>
+								</div>
+								<p> Studied From : <strong ><a target="_blank" href="/centers/{{getCenterById($value->center_id)->slug }}"> {{ getCenterById($value->center_id)->name }}</a> </strong> </p>
+								<p> Placed At: <strong >{{ $value->placed_at }} </strong> </p>
+								<p> Joining Salary: <strong >{{ number_format($value->joining_salary) }} </strong ></p>
 							</div>
 						</div>
 						@endforeach

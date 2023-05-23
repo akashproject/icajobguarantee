@@ -307,6 +307,28 @@ ul.product-tab.index-category-tab li.active {
     font-size: 15px;
     color: #343434;
   }
+  .testimonial-slide-area .owl-item {
+    padding-top: 90px;
+  }
+  
+  .testimonial-slide-area .course-pic {
+    overflow: hidden;
+    position: absolute;
+    top: -92px;
+    background: #f7f6f6;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    border: 1px solid #ccc;
+    left: calc(100% - 66%);
+}
+
+  .testimonial-slide-area .student-qoute .course-pic .circle-img {
+    width: 107px;
+    height: 107px;
+    margin: 6px;
+  }
+
   .circle-img {
     width: 140px;
     height: 140px;
@@ -314,6 +336,7 @@ ul.product-tab.index-category-tab li.active {
     overflow: hidden;
     margin: 1.5rem auto;
   }
+
   .circle-img img {
     width: 140px !important;
   }
@@ -918,7 +941,9 @@ nav.navbar-menu.inside-navbar .nav-menu {
 
 .menu-item-has-children li:hover {
   margin-left: 3px; }
-
+  .submenu-courses {
+    display: none;
+}
 .sub-menu {
   width: 300px;
   display: table;
@@ -5207,6 +5232,9 @@ a.sticky-btn {
 .alumni-placed-at img {
   width: 50%;
   margin: auto;
+}
+.register-form-area .nws-button {
+  padding: 0;
 }
 .nws-button {
   padding: 0 65px;

@@ -27,7 +27,7 @@ class PlacementController extends Controller
             
             $courses = Course::all();
             $recruiters = Recruiter::all();
-            $centers = Course::all();
+            $centers = Center::all();
             return view('administrator.placements.add',compact('centers','courses','recruiters'));
         } catch(\Illuminate\Database\QueryException $e){
             //throw $th;
@@ -40,7 +40,7 @@ class PlacementController extends Controller
             $placement = Placement::findOrFail($id);
             $courses = Course::all();
             $recruiters = Recruiter::all();
-            $centers = Course::all();
+            $centers = Center::all();
             return view('administrator.placements.show',compact('placement','courses','centers','recruiters'));
         } catch(\Illuminate\Database\QueryException $e){
         }        
@@ -51,7 +51,6 @@ class PlacementController extends Controller
             $data = $request->all();
             $validatedData = $request->validate([
                 'name' => 'required',
-                'bio' => 'required',
                 'course_id' => 'required',
                 'placed_at' => 'required',
             ]);

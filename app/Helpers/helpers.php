@@ -87,7 +87,8 @@ if (! function_exists('get_reviews_ratings')) {
             $reviews->where('model_id',$model_id);
         } 
         $reviews->where('status',"1");     
-        $reviews = $reviews->get();                      
+        $reviews = $reviews->paginate(10);;   
+                           
         $total = $reviews->sum('rating');
 
         if(count($reviews) <= 0){
@@ -164,7 +165,7 @@ if (! function_exists('getJoinees')) {
         if($center_id){
             $placements->where('center_id',$center_id);
         } 
-        $placements = $placements->where('status',"1")->get();
+        $placements = $placements->where('status',"1")->inRandomOrder()->paginate(10);
         return $placements;
     }
 }
@@ -201,8 +202,8 @@ if (! function_exists('getStateById')) {
 if (! function_exists('getCityById')) {
     function getCityById($id){
         try {
-            $state = City::findOrFail($id);
-            return $state;
+            $city = DB::table('cities')->where('id',$id)->first();
+            return $city;
         } catch(\Illuminate\Database\QueryException $e){
             throw $e;
         }
@@ -226,10 +227,19 @@ if (! function_exists('getCenters')) {
         if(isset($_COOKIE['lng']) && isset($_COOKIE['lat'])){
             $centers->orderBy(DB::raw('POW((lng-'.$_COOKIE['lng'].'),2) + POW((lat-'.$_COOKIE['lat'].'),2)'));
         }
-        
-        
         $centers = $centers->get();       
         return $centers;
+    }
+}
+
+if (!function_exists('getCenterById')) {
+    function getCenterById($center_id = null){
+        $center = DB::table('centers');
+        if($center_id){
+            $center->where('id',$center_id);
+        }
+        $center = $center->first();       
+        return $center;
     }
 }
 
@@ -265,6 +275,17 @@ if (! function_exists('getCourses')) {
         } catch(\Illuminate\Database\QueryException $e){
             throw $e;
         }
+    }
+}
+
+if (! function_exists('getCourseById')) {
+    function getCourseById($course_id = null){
+        $course = DB::table('courses');
+        if($course_id){
+            $course->where('id',$course_id);
+        }
+        $course = $course->first();       
+        return $course;
     }
 }
 
@@ -336,24 +357,45 @@ if (! function_exists('getRadius')) {
 }
 
 if (! function_exists('getBlogs')) {
-    function getBlogs($blog_id=null, $course_id=null, $tag_id=null){
-        $blogs = DB::table('blogs');
-        // if($course_id){
-        //     $centers->where('courses','like', '%"' . $course_id . '"%');
-        // } 
-        // if($center_id){
-        //     $centers->where('id',$center_id);
-        // } 
-        $blogs = $blogs->where('status',"1");
-        $blogs = $blogs->get();       
-        return $blogs;
-    }
-}
+    function getBlogs(){
+        try {
+            // Get Post
+            $url = "https://ica.scriptcrown.com/blog/wp-json/wp/v2/posts?per_page=2";
+            $curl = curl_init($url);
+            curl_setopt($curl, CURLOPT_URL, $url);
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
-if (! function_exists('getAuthorById')) {
-    function getAuthorById($author_id=null){
-        $author = Author::findOrFail($author_id);
-        return $author;
+            //for debug only!
+            curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+            curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+
+            $resp = curl_exec($curl);
+            curl_close($curl);
+
+            $post = json_decode($resp);
+
+            foreach ($post as $key => $value) {
+               
+                $url = "https://ica.scriptcrown.com/blog/wp-json/wp/v2/media/".$value->featured_media;
+
+                $curl = curl_init($url);
+                curl_setopt($curl, CURLOPT_URL, $url);
+                curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+                
+                //for debug only!
+                curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+                curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+                
+                $resp = curl_exec($curl);
+                curl_close($curl);
+                $media = json_decode($resp);
+                $post[$key]->source_url = ($media->source_url)?$media->source_url:"";
+            }
+
+            return $post;
+        } catch (\Throwable $th) {
+           // var_dump($th);
+        }
     }
 }
 

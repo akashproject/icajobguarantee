@@ -6,42 +6,22 @@
 		============================================= -->
 		<section id="slide" class="slider-section">
 			<div id="slider-item" class="slider-item-details">
-				<div  class="slider-area slider-bg-1 relative-position" style="background-image: url({{url('assets/img/banner/banner-1.jpg')}} );" >
-					<div class="slider-text">
-						<div class="section-title mb20 headline text-center">
-							<div class="layer-1-1">
-								<span class="subtitle text-uppercase">EDUCATION & TRAINING ORGANIZATION</span>
-							</div>
-							<div class="layer-1-3">
-								<h2><span>Inventive</span> Solution <br> for <span>Education</span></h2>
-							</div>
-						</div>
-						<div class="layer-1-4">
-							<div id="course-btn">
-								<div class="genius-btn  text-center text-uppercase ul-li-block bold-font">
-									<a href="{{url('/courses')}}">Our Courses <i class="fas fa-caret-right"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-
-				</div>
-				<div class="slider-area slider-bg-2 relative-position" style="background-image: url({{url('assets/img/banner/banner-1.jpg')}} );">
-					<div class="slider-text">
-						<div class="section-title mb20 headline text-center">
-							<div class="layer-1-1">
-								<span class="subtitle text-uppercase">EDUCATION & TRAINING ORGANIZATION</span>
-							</div>
-							<div class="layer-1-2">
-								<h2 class="secoud-title"> Browse The <span>Best Courses.</span></h2>
-							</div>
-						</div>
-						<div class="layer-1-3">
-							<div class="search-course mb30 relative-position">
+				<div  class="slider-area slider-bg-5 relative-position" style="background-image: url({{url('assets/img/banner/banner-1.jpg')}});">
+ 					<div class="slider-text">
+ 						<div class="section-title mb20 headline text-left ">
+ 							<div class="layer-1-1">
+ 								<span class="subtitle ml42 text-uppercase">EDUCATION & TRAINING ORGANIZATION</span>
+ 							</div>
+ 							<div class="layer-1-3">
+							 	<h2 class="secoud-title"> Browse The <span>Best Courses</span></h2>
+ 							</div>
+ 						</div>
+ 						<div class="layer-1-4">
+						 	<div class="search-course mb30 relative-position">
 								<form action="{{url('/courses')}}" method="get">
 									<input class="course" name="search" type="text" placeholder="Type what do you want to learn today?">
 									<div class="nws-button text-center  gradient-bg text-capitalize">
-										<button type="submit" value="Submit">Search</button> 
+										<button type="submit" value="Submit">Search Course</button> 
 									</div>
 								</form>
 							</div>
@@ -55,43 +35,38 @@
 									</ul>
 								</div>
 							</div>
-						</div>
-					</div>
-				</div>
-				<div class="slider-area slider-bg-3 relative-position" style="background-image: url({{url('assets/img/banner/banner-1.jpg')}} );">
-					<div class="slider-text">
-						<div class="layer-1-2">
-							<div class="coming-countdown ul-li">
-								<ul>
-									<li class="days">
-										<span class="number"></span>
-										<span class>Days</span>
-									</li>
-
-									<li class="hours">
-										<span class="number"></span>
-										<span class>Hours</span>
-									</li>
-
-									<li class="minutes">
-										<span class="number"></span>
-										<span class>Minutes</span>
-									</li>
-
-									<li class="seconds">
-										<span class="number"></span>
-										<span class>Seconds</span>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div class="section-title mb20 headline text-center">
-							<div class="layer-1-3">
-								<h2 class="third-slide"> Mobile Application Experiences : <br> <span>Mobile App Design.</span></h2>
-							</div>
-						</div>
-						<div class="layer-1-4">
-							<div class="about-btn text-center">
+ 						</div>
+ 					</div>
+ 				</div>
+				<div class="slider-area slider-bg-5 relative-position" style="background-image: url({{url('assets/img/banner/banner-1.jpg')}});">
+ 					<div class="slider-text">
+ 						<div class="section-title mb20 headline text-left ">
+ 							<div class="layer-1-1">
+ 								<span class="subtitle ml42 text-uppercase">EDUCATION & TRAINING ORGANIZATION</span>
+ 							</div>
+ 							<div class="layer-1-3">
+								 <h2><span>Learn</span> In <br> Demand <span> Skills</span></h2>
+ 							</div>
+ 						</div>
+ 						<div class="layer-1-4">
+ 							<div class="genius-btn  text-center text-uppercase ul-li-block bold-font">
+								 <a href="{{url('/courses')}}">Our Courses <i class="fas fa-caret-right"></i></a>
+ 							</div>
+ 						</div>
+ 					</div>
+ 				</div>		
+				<div  class="slider-area slider-bg-5 relative-position" style="background-image: url({{url('assets/img/banner/banner-1.jpg')}});">
+ 					<div class="slider-text">
+ 						<div class="section-title mb20 headline text-left ">
+ 							<div class="layer-1-1">
+ 								<span class="subtitle ml42 text-uppercase">EDUCATION & TRAINING ORGANIZATION</span>
+ 							</div>
+ 							<div class="layer-1-3">
+							 	<h2 class="third-slide"> With India’s #1 <br> <span>Vocational Education.</span></h2>
+ 							</div>
+ 						</div>
+ 						<div class="layer-1-4">
+							<div class="about-btn text-left">
 								<div class="genius-btn text-center text-uppercase ul-li-block bold-font">
 									<a href="#">About Us <i class="fas fa-caret-right"></i></a>
 								</div>
@@ -100,16 +75,8 @@
 								</div>
 							</div>
 						</div>
-					</div>
-				</div>
-				<div class="slider-area slider-bg-4 relative-position" style="background-image: url({{url('assets/img/banner/banner-1.jpg')}} );">
-					<div class="slider-text">
-						<div class="section-title mb20 headline text-center">
-							<span class="subtitle text-uppercase">EDUCATION & TRAINING ORGANIZATION</span>
-							<h2><span>Inventive</span> Solution <br> for <span>Education</span></h2>
-						</div>
-					</div>
-				</div>
+ 					</div>
+ 				</div>	
 			</div>
 		</section>
 	<!-- End of slider section
@@ -284,24 +251,25 @@
 					<div class="col-md-7">
 						<div class="about-us-text">
 							<div class="section-title relative-position mb20 headline text-left "  >
-								<span class="subtitle text-uppercase">SORT ABOUT US</span>
-								<h2>We are <span>Genius Course</span>
-								work since 1980.</h2>
-								<p>We take our mission of increasing global access to quality education seriously. We connect learners to the best universities and institutions from around the world.</p>
+								<span class="subtitle ml42 text-uppercase">ABOUT US</span>
+								<h2>We are <span>Genius Course</span> work since 1980.</h2>
+								<p>India’s Leading Vocational Training Institute providing job-oriented courses in GST, Tally, Finance.</p>
 							</div>
 							<div class="about-content-text">
-								<p class=""  >Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam volutpat. Ut wisi enim ad minim veniam. magna aliquam volutpat. Ut wisi enim ad minim veniam.</p>
+								<p class=""  >Bringing change in education by making youth employable. What makes us the Industry Leader in the Job Market?</p>
 								<div class="about-list mb65 ul-li-block "  >
 									<ul>
-										<li>Professional And Experienced Since 1980</li>
-										<li>We Connect Learners To The Best  Universities From Around The World</li>
-										<li>Our Mission Increasing Global Access To Quality Aducation</li>
-										<li>100K Online Available Courses</li>
+										<li>Hands on Experience with 7 Simulation Softwares</li>
+										<li>100% Job Guarantee</li>
+										<li>AnyTime Job Card- Anytime, Anywhere</li>
+										<li>120 + Centres Pan-India and 30 Placement Offices</li>
+										<li>70, 000 Registered Employers</li>
+										<li>Cutting-Edge Curriculum</li>
 									</ul>
 								</div>
 								<div class="about-btn "  >
 									<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
-										<a href="#">About Us <i class="fas fa-caret-right"></i></a>
+										<a href="/about-us">About Us <i class="fas fa-caret-right"></i></a>
 									</div>
 									<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
 										<a href="#">contact us <i class="fas fa-caret-right"></i></a>
@@ -323,7 +291,7 @@
 				<div class="container">
 					<div class="section-title mb20 headline text-center "  >
 						<span class="subtitle text-uppercase">GENIUS ADVANTAGES</span>
-						<h2>Reason <span>Why Choose Genius.</span></h2>
+						<h2><span>Why Choose ICA.</span></h2>
 					</div>
 					<div id="service-slide-item" class="service-slide">
 						<div class="service-text-icon "  >
@@ -332,7 +300,7 @@
 							</div>
 							<div class="service-text">
 								<h3 class="bold-font">The Power Of Education.</h3>
-								<p>Lorem ipsum dolor sit amet consectuerer adipiscing elit set diam nonnumynibh euismod tincidun laoreet.</p>
+								<p>ICA Edu Skills was established in 1999 with the aim of making the youth employable by providing them with vocational courses at affordable prices</p>
 							</div>
 						</div>
 						<div class="service-text-icon "  >
@@ -341,7 +309,7 @@
 							</div>
 							<div class="service-text">
 								<h3 class="bold-font">Best Online Education.</h3>
-								<p>Lorem ipsum dolor sit amet consectuerer adipiscing elit set diam nonnumynibh euismod tincidun laoreet.</p>
+								<p>With the industry demanding skilled manpower, we realized our work must not stop at training the youth but also supporting them with placement at top MNCS.</p>
 							</div>
 						</div>
 						<div class="service-text-icon "  >
@@ -350,7 +318,7 @@
 							</div>
 							<div class="service-text">
 								<h3 class="bold-font">Education For All Student.</h3>
-								<p>Lorem ipsum dolor sit amet consectuerer adipiscing elit set diam nonnumynibh euismod tincidun laoreet.</p>
+								<p>In the end, we believe that having job-ready skills is the need of the hour. These years of hard work and dedication have established us as the leader in vocational education and the best training institute Pan-India.</p>
 							</div>
 						</div>
 						<div class="service-text-icon "  >
@@ -359,52 +327,7 @@
 							</div>
 							<div class="service-text">
 								<h3 class="bold-font">The Power Of Education.</h3>
-								<p>Lorem ipsum dolor sit amet consectuerer adipiscing elit set diam nonnumynibh euismod tincidun laoreet.</p>
-							</div>
-						</div>
-						<div class="service-text-icon">
-							<div class="service-icon float-left">
-								<i class="text-gradiant flaticon-clipboard-with-pencil"></i>
-							</div>
-							<div class="service-text">
-								<h3 class="bold-font">Best Online Education.</h3>
-								<p>Lorem ipsum dolor sit amet consectuerer adipiscing elit set diam nonnumynibh euismod tincidun laoreet.</p>
-							</div>
-						</div>
-						<div class="service-text-icon">
-							<div class="service-icon float-left">
-								<i class="text-gradiant flaticon-list"></i>
-							</div>
-							<div class="service-text">
-								<h3 class="bold-font">Education For All Student.</h3>
-								<p>Lorem ipsum dolor sit amet consectuerer adipiscing elit set diam nonnumynibh euismod tincidun laoreet.</p>
-							</div>
-						</div>
-						<div class="service-text-icon">
-							<div class="service-icon float-left">
-								<i class="text-gradiant flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i>
-							</div>
-							<div class="service-text">
-								<h3 class="bold-font">The Power Of Education.</h3>
-								<p>Lorem ipsum dolor sit amet consectuerer adipiscing elit set diam nonnumynibh euismod tincidun laoreet.</p>
-							</div>
-						</div>
-						<div class="service-text-icon">
-							<div class="service-icon float-left">
-								<i class="text-gradiant flaticon-clipboard-with-pencil"></i>
-							</div>
-							<div class="service-text">
-								<h3 class="bold-font">Best Online Education.</h3>
-								<p>Lorem ipsum dolor sit amet consectuerer adipiscing elit set diam nonnumynibh euismod tincidun laoreet.</p>
-							</div>
-						</div>
-						<div class="service-text-icon">
-							<div class="service-icon float-left">
-								<i class="text-gradiant flaticon-list"></i>
-							</div>
-							<div class="service-text">
-								<h3 class="bold-font">Education For All Student.</h3>
-								<p>Lorem ipsum dolor sit amet consectuerer adipiscing elit set diam nonnumynibh euismod tincidun laoreet.</p>
+								<p>With more than 120+ centers across the country, we take pride in contributing to India’s skill development initiatives and making youth job-ready with our industry-recognized certifications.</p>
 							</div>
 						</div>
 					</div>
@@ -417,7 +340,12 @@
 						<div id="testimonial-slide-item" class="testimonial-slide-area">
 							@foreach(getTestimonials() as $value)
 								<div class="student-qoute "  >
-									<p>{!!$value->comment!!}</p>
+									<div class="course-pic relative-position text-center">
+										<div class="circle-img">
+											<img src="{{ (isset($value->featured_image))?getSizedImage('',$value->featured_image):'https://dummyimage.com/140x140' }}" alt="">	
+										</div>					
+									</div>
+									{!!$value->comment!!}
 									<div class="student-name-designation">
 										<span class="st-name bold-font text-white">{{$value->name}}</span>
 										<span class="st-designation text-white">{{ $value->dasignation }}</span>
@@ -537,7 +465,7 @@
 				</div>
 				<div class="category-item">
 					<div class="row">
-						<div class="col-md-3 col-sm-6">
+						<div class="col-6">
 							<div class="category-icon-title text-center "  >
 								<div class="category-icon">
 									<i class="text-gradiant flaticon-technology"></i>
@@ -549,7 +477,7 @@
 						</div>
 						<!-- /category -->
 
-						<div class="col-md-3 col-sm-6">
+						<div class="col-6">
 							<div class="category-icon-title text-center "  >
 								<div class="category-icon">
 									<i class="text-gradiant flaticon-app-store"></i>
@@ -561,7 +489,7 @@
 						</div>
 						<!-- /category -->
 
-						<div class="col-md-3 col-sm-6">
+						<div class="col-6">
 							<div class="category-icon-title text-center "  >
 								<div class="category-icon">
 									<i class="text-gradiant flaticon-artist-tools"></i>
@@ -573,7 +501,7 @@
 						</div>
 						<!-- /category -->
 
-						<div class="col-md-3 col-sm-6">
+						<div class="col-6">
 							<div class="category-icon-title text-center "  >
 								<div class="category-icon">
 									<i class="text-gradiant flaticon-business"></i>
@@ -585,7 +513,7 @@
 						</div>
 						<!-- /category -->
 
-						<div class="col-md-3 col-sm-6">
+						<div class="col-6">
 							<div class="category-icon-title text-center "  >
 								<div class="category-icon">
 									<i class="text-gradiant flaticon-dna"></i>
@@ -597,7 +525,7 @@
 						</div>
 						<!-- /category -->
 
-						<div class="col-md-3 col-sm-6">
+						<div class="col-6">
 							<div class="category-icon-title text-center "  >
 								<div class="category-icon">
 									<i class="text-gradiant flaticon-cogwheel"></i>
@@ -609,7 +537,7 @@
 						</div>
 						<!-- /category -->
 
-						<div class="col-md-3 col-sm-6">
+						<div class="col-6">
 							<div class="category-icon-title text-center "  >
 								<div class="category-icon">
 									<i class="text-gradiant flaticon-technology-1"></i>
@@ -621,7 +549,7 @@
 						</div>
 						<!-- /category -->
 
-						<div class="col-md-3 col-sm-6">
+						<div class="col-6">
 							<div class="category-icon-title text-center "  >
 								<div class="category-icon">
 									<i class="text-gradiant flaticon-technology-2"></i>
@@ -658,7 +586,10 @@
 								<h3><a href="#">{{ $testimonial->name }}</a> </h3>
 							</div>	
 							<div class="alumni-content text-center">
-								<p><a href="#">{{ $testimonial->dasignation }} </a> </p>
+								<p><a href="#">{{ $testimonial->dasignation }} At</a> </p>
+							</div>	
+							<div class="alumni-placed-at text-center">
+								<img src="{{ ($testimonial->placed_at)?getSizedImage('',getRecruterById($testimonial->placed_at)->featured_image):'https://dummyimage.com/32' }}" >
 							</div>	
 						</div>
 					</div>
@@ -699,18 +630,19 @@
 								<h2>Latest <span>News.</span></h2>
 							</div>
 							<div class="latest-news-posts">
+								@foreach(getBlogs() as $value)
 								<div class="latest-news-area">
 									<div class="latest-news-thumbnile relative-position">
-										<img src="assets/img/blog/lb-1.jpg" alt="">
+										<img src="{{ $value->source_url }}" alt="{{ $value->title->rendered }}">
 										<div class="hover-search">
 											<i class="fas fa-search"></i>
 										</div>
 										<div class="blakish-overlay"></div>
 									</div>
 									<div class="date-meta">
-										<i class="fas fa-calendar-alt"></i> 26 April 2018
+										<i class="fas fa-calendar-alt"></i> {{ date("d M Y",strtotime($value->date))}}
 									</div>
-									<h3 class="latest-title bold-font"><a href="#">Affiliate Marketing A Beginner’s Guide.</a></h3>
+									<h3 class="latest-title bold-font"><a target="_blank" href="{{ $value->link }}">{{ $value->title->rendered }}</a></h3>
 									<div class="course-viewer ul-li">
 										<ul>
 											<li><span><i class="fas fa-user"></i> 1.220</span></li>
@@ -719,32 +651,10 @@
 									</div>
 								</div>
 								<!-- /post -->
-
-								<div class="latest-news-posts">
-									<div class="latest-news-area">
-										<div class="latest-news-thumbnile relative-position">
-											<img src="assets/img/blog/lb-2.jpg" alt="">
-											<div class="hover-search">
-												<i class="fas fa-search"></i>
-											</div>
-											<div class="blakish-overlay"></div>
-										</div>
-										<div class="date-meta">
-											<i class="fas fa-calendar-alt"></i> 26 April 2018
-										</div>
-										<h3 class="latest-title bold-font"><a href="#">No.1 The Best Online Course 2018.</a></h3>
-										<div class="course-viewer ul-li">
-											<ul>
-												<li><span><i class="fas fa-user"></i> 1.220</span></li>
-												<li><span><i class="fas fa-comment-dots"></i> 1.015</span></li>
-											</ul>
-										</div>
-									</div>
-									<!-- /post -->
-								</div>
-
+								@endforeach
+								
 								<div class="view-all-btn bold-font">
-									<a href="#">View All News <i class="fas fa-chevron-circle-right"></i></a>
+									<a target="_blank" href="/blog">View All News <i class="fas fa-chevron-circle-right"></i></a>
 								</div>
 							</div>
 						</div>
@@ -763,9 +673,9 @@
 										April 2018
 									</div>
 									<div class="event-text">
-										<h3 class="latest-title bold-font"><a href="#">Fully Responsive Web Design & Development.</a></h3>
+										<h3 class="latest-title bold-font"><a href="#">Job Fair Program</a></h3>
 										<div class="course-meta">
-											<span class="course-category"><a href="#">Web Design</a></span>
+											<span class="course-category"><a href="#">Salt Lake</a></span>
 											<span class="course-author"><a href="#">Koke</a></span>
 										</div>
 									</div>
@@ -780,9 +690,9 @@
 										August 2018
 									</div>
 									<div class="event-text">
-										<h3 class="latest-title bold-font"><a href="#">Introduction to Mobile Application Development.</a></h3>
+										<h3 class="latest-title bold-font"><a href="#">University Seminar Program </a></h3>
 										<div class="course-meta">
-											<span class="course-category"><a href="#">Web Design</a></span>
+											<span class="course-category"><a href="#">Dalhousi</a></span>
 											<span class="course-author"><a href="#">Koke</a></span>
 										</div>
 									</div>
@@ -799,7 +709,7 @@
 									<div class="event-text">
 										<h3 class="latest-title bold-font"><a href="#">IOS Apps Programming & Development.</a></h3>
 										<div class="course-meta">
-											<span class="course-category"><a href="#">Web Design</a></span>
+											<span class="course-category"><a href="#">Chowringhee</a></span>
 											<span class="course-author"><a href="#">Koke</a></span>
 										</div>
 									</div>
@@ -819,17 +729,17 @@
 								<h2>Latest <span>Video.</span></h2>
 							</div>
 							<div class="latest-video-poster relative-position mb20">
-								<img src="assets/img/banner/v-1.jpg" alt="">
+								<img src="{{url('assets/img/letest-video.webp')}}" alt="">
 								<div class="video-play-btn text-center gradient-bg">
-									<a class="popup-with-zoom-anim" href="https://www.youtube.com/watch?v=-g4TnixUdSc"><i class="fas fa-play"></i></a>
+									<a class="popup-with-zoom-anim" href="https://youtu.be/vV1urFhrijY"><i class="fas fa-play"></i></a>
 								</div>
 							</div>
 							<div class="vidoe-text">
-								<h3 class="latest-title bold-font"><a href="#">Learning IOS Apps in Amsterdam.</a></h3>
-								<p class="mb25">Lorem ipsum dolor sit amet, consectetuer delacosta adipiscing elit, sed diam nonummy.</p>
+								<h3 class="latest-title bold-font"><a href="#">Learning With ICA Edu Skills.</a></h3>
+								<p class="mb25">Certified Industrial Accountant | Accounts Training Institute | Placement Support | ICA Edu Skills.</p>
 							</div>
 							<div class="view-all-btn bold-font">
-								<a href="#">View All Videos <i class="fas fa-chevron-circle-right"></i></a>
+								<a href="https://www.youtube.com/@ICAEduSkills">View All Videos <i class="fas fa-chevron-circle-right"></i></a>
 							</div>
 						</div>
 					</div>

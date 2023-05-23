@@ -12,6 +12,6 @@ class Placement extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'id','featured_image','name','title','bio','course_id','dasignation','placed_at','center_id','enable_otp','meta_description','schema','robots','canonical','utm_campaign','utm_source','status','created_at',
+        'id','featured_image','name','course_id','dasignation','placed_at','joining_salary','center_id','status','created_at',
     ];
 }
