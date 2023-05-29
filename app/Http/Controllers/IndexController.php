@@ -10,6 +10,7 @@ use App\Models\CourseType;
 use App\Models\Center;
 use App\Models\City;
 use App\Models\State;
+use App\Models\Pincode;
 
 class IndexController extends Controller
 {
@@ -38,9 +39,9 @@ class IndexController extends Controller
         
     }
 
-    public function getCenters(Request $request) {
+    public function getCenter(Request $request) {
         $data = $request->all();
-        $centers = getCenters($data['course_id'], $data['center_id']);
+        $centers = getCenterById($data['course_id'], $data['center_id']);
         $option = "";
         if(count($centers) > 1){
             $option .= "<option> Select Center </option>";
@@ -52,8 +53,22 @@ class IndexController extends Controller
     }
 
     public function getCenterByPincode(Request $request) {
-        $center = DB::table('centers')->select('name')->where('pincode','like', '%"' . $request->pincode . '"%')->first();
-        return response()->json($center, $this->_statusOK);
+        $data = $request->all();
+        $response = array();
+        $pincode = DB::table('pincodes')->where("name",$data['pincode'])->first();
+        if (!$pincode) {
+            return response()->json(false, $this->_statusOK);
+        }
+
+        $response['pincode'] = $data['pincode'];
+
+        if ($pincode->center_id !== null) {
+            $center = DB::table('centers')->select('name')->where('id',$pincode->center_id)->first();
+            if($center){
+                $response['center'] = $center->name;
+            } 
+        }
+        return response()->json($response, $this->_statusOK);
     }
 
     public function submitMobileOtp(Request $request){
@@ -108,14 +123,14 @@ class IndexController extends Controller
 
 
             if (isset($postData['center']) && $postData['center'] != ''){
-                $city  = Center::where("name",$data['center'])->first();
+                $city  = Center::select("city_id")->where("name",$data['center'])->first();
                 $postData['city'] = City::where("id",$city->city_id)->first()->name;
             } else {
                 $postData['city'] = "";
                 $postData['center'] = "";
             }
            
-
+            
             $response = $this->classroomLeadCaptureLeadToExtraage($postData);
 
             if(get_theme_setting('ajax_submit') == 1) {
@@ -126,7 +141,7 @@ class IndexController extends Controller
             
         } catch(\Illuminate\Database\QueryException $e){
             //throw $th;
-
+            return response()->json($response, $this->_statusErr);
         }
     }
 
@@ -142,6 +157,7 @@ class IndexController extends Controller
             'MobileNumber' => $postData['mobile'],
             'Center' => $postData['city'],
             'Location' => $postData['center'],
+            'Pincode' => (isset($postData['pincode']))?$postData['pincode']:"",
             'LeadType' => 'DM',
             'LeadSource' => $postData['utm_source'],
             'LeadName' => $postData['utm_campaign'],
@@ -192,6 +208,16 @@ class IndexController extends Controller
     public function thankyou(){
         try {
             return view('thank-you');
+        } catch(\Illuminate\Database\QueryException $e){
+            //throw $th;
+        }
+    }
+
+    public function testCode(){
+        try {
+            echo $center = DB::table('centers')
+            ->join('cities', 'cities.id', '=', 'centers.city_id')
+            ->select('cities.*')->toSql();
         } catch(\Illuminate\Database\QueryException $e){
             //throw $th;
         }

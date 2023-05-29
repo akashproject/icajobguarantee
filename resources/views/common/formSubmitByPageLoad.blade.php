@@ -31,7 +31,7 @@
                         </div>
                     </div>
                     <div class="nws-button text-center white text-capitalize">
-                        <button class="submit_classroom_lead_generation_form form_step_1" type="submit"> Submit </button> 
+                        <button class="submit_classroom_lead_generation_form form_step_1" type="submit" disabled> Submit </button> 
                     </div>
                 </form>  
             </div>

@@ -54,9 +54,7 @@ class CenterController extends Controller
     {
         try {
             $contentMain = Center::where('slug', $slug)->first();
-            
             $courseType = CourseType::whereIn('id', json_decode($contentMain->courses))->get();
-            
             $courses = DB::table('courses')
             ->join('course_type', 'course_type.id', '=', 'courses.type_id')
             ->select('courses.*', 'courses.name as course_name','course_type.id as category_id','course_type.name as category','course_type.slug as categorySlug')
@@ -66,9 +64,9 @@ class CenterController extends Controller
            
             //$courses = Course::where('status', 1)->get();
             $states = State::where('status', 1)->get();
-            $center_id = $contentMain->id;
+            $center = $contentMain->name;
             $gallery = DB::table('gallery')->where("center_id",$contentMain->id)->get();
-            return view('centers.view',compact('contentMain','center_id','courses','courseType','gallery','states'));
+            return view('centers.view',compact('contentMain','center','courses','courseType','gallery','states'));
         } catch(\Illuminate\Database\QueryException $e){
         }
        

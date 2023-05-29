@@ -19,7 +19,7 @@
  						<div class="layer-1-4">
 						 	<div class="search-course mb30 relative-position">
 								<form action="{{url('/courses')}}" method="get">
-									<input class="course" name="search" type="text" placeholder="Type what do you want to learn today?">
+									<input class="course" name="search" type="text" placeholder="Search Your Skill ?">
 									<div class="nws-button text-center  gradient-bg text-capitalize">
 										<button type="submit" value="Submit">Search Course</button> 
 									</div>
@@ -233,11 +233,34 @@
 									<p>More Than 122K Online Available Courses</p>
 								</div>
 								<div class="register-form-area">
-									<form class="contact_form" action="#" method="POST" enctype="multipart/form-data">
-										@include('common.leadCaptureFormField')
-										<div class="nws-button text-uppercase text-center white text-capitalize">
-											<button type="submit" value="Submit">SUBMIT REQUEST </button> 
-										</div> 
+									<form id="index_lead_capture_form" class="contact_form lead_capture_form" action="{{ url('capture-lead') }}" method="POST">
+										@csrf
+										<div class="form_process" >
+											<div class="lead_steps step1 active" > 
+												@include('common.leadCaptureFormField')
+											</div>
+											<div class="lead_steps step2">
+												<div class="otp-content">
+													<h4 class="otp-heading"> OTP Verification </h4>                                   
+													<p class="message"> <span class="message"> Enter the OTP you recive at </span> +91 XXXXXX<span class="lastDigit"></span> <a href="javacript:void(0)" class="gotoStep1"> (Change) </a> </p>
+													<p class="response_status" style="color: #000;"></p>
+												</div> 
+												<div class="contact-info">
+													<input class="verify_otp" name="verify_otp" type="text" placeholder="Enter One Time Password" autocomplete="off">
+												</div>
+											</div>
+											<div class="nws-button text-center white text-capitalize">
+												<button class="submit_classroom_lead_generation_form form_step_1 disabled" type="submit">Apply Now <i class="fas fa-arrow-right" > </i> </button> 
+												<img src="https://www.icacourse.in/wp-content/themes/scriptcrown/images/loader.gif" style="width: 42px; display:none;" class="checkout_loader">
+											</div>
+										</div>
+										<div class="form_success" style="display:none">
+											<div class="form-success-content">
+												<span class="success-icon"> <i class="fas fa-check"></i> </span>
+												<h4> Thank You! Your Application Submitted Successfully </h4>
+												<p> <strong> Brochure </strong> has been sent your email address </p>
+											</div>
+										</div>
 									</form>
 								</div>
 							</div>
@@ -252,7 +275,7 @@
 						<div class="about-us-text">
 							<div class="section-title relative-position mb20 headline text-left "  >
 								<span class="subtitle ml42 text-uppercase">ABOUT US</span>
-								<h2>We are <span>Genius Course</span> work since 1980.</h2>
+								<h2><span>Revolutionizing</span> skill development, one person at a time.</h2>
 								<p>India’s Leading Vocational Training Institute providing job-oriented courses in GST, Tally, Finance.</p>
 							</div>
 							<div class="about-content-text">
@@ -269,10 +292,10 @@
 								</div>
 								<div class="about-btn "  >
 									<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
-										<a href="/about-us">About Us <i class="fas fa-caret-right"></i></a>
+										<a href="{{ url('about-us')}}">About Us <i class="fas fa-caret-right"></i></a>
 									</div>
 									<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
-										<a href="#">contact us <i class="fas fa-caret-right"></i></a>
+										<a href="{{ url('contact-us')}}">contact us <i class="fas fa-caret-right"></i></a>
 									</div>
 								</div>
 							</div>
@@ -466,9 +489,9 @@
 				<div class="category-item">
 					<div class="row">
 						<div class="col-6">
-							<div class="category-icon-title text-center "  >
+							<div class="category-icon-title text-center ">
 								<div class="category-icon">
-									<i class="text-gradiant flaticon-technology"></i>
+									<i class="text-gradiant fa fa-briefcase"></i>
 								</div>
 								<div class="category-title">
 									<h4><span>100%</span> Job Guarantee</h4>
@@ -478,9 +501,9 @@
 						<!-- /category -->
 
 						<div class="col-6">
-							<div class="category-icon-title text-center "  >
+							<div class="category-icon-title text-center ">
 								<div class="category-icon">
-									<i class="text-gradiant flaticon-app-store"></i>
+									<i class="text-gradiant fa fa-map-marker-alt"></i>
 								</div>
 								<div class="category-title">
 									<h4><span>120+</span> Centers across Pan India</h4>
@@ -490,9 +513,9 @@
 						<!-- /category -->
 
 						<div class="col-6">
-							<div class="category-icon-title text-center "  >
+							<div class="category-icon-title text-center ">
 								<div class="category-icon">
-									<i class="text-gradiant flaticon-artist-tools"></i>
+									<i class="text-gradiant fas fa-user-circle"></i>
 								</div>
 								<div class="category-title">
 									<h4><span>70000+</span> Registered Employers</h4>
@@ -502,19 +525,19 @@
 						<!-- /category -->
 
 						<div class="col-6">
-							<div class="category-icon-title text-center "  >
+							<div class="category-icon-title text-center ">
 								<div class="category-icon">
-									<i class="text-gradiant flaticon-business"></i>
+									<i class="text-gradiant fa fa-graduation-cap"></i>
 								</div>
 								<div class="category-title">
-									<h4><span>No.1+</span> Accounts & Finance Institute</h4>
+									<h4><span>No.1+</span> Accounts &amp; Finance Institute</h4>
 								</div>
 							</div>
 						</div>
 						<!-- /category -->
 
 						<div class="col-6">
-							<div class="category-icon-title text-center "  >
+							<div class="category-icon-title text-center ">
 								<div class="category-icon">
 									<i class="text-gradiant flaticon-dna"></i>
 								</div>
@@ -526,9 +549,9 @@
 						<!-- /category -->
 
 						<div class="col-6">
-							<div class="category-icon-title text-center "  >
+							<div class="category-icon-title text-center ">
 								<div class="category-icon">
-									<i class="text-gradiant flaticon-cogwheel"></i>
+									<i class="text-gradiant fa fa-laptop"></i>
 								</div>
 								<div class="category-title">
 									<h4>Practical Training</h4>
@@ -538,9 +561,9 @@
 						<!-- /category -->
 
 						<div class="col-6">
-							<div class="category-icon-title text-center "  >
+							<div class="category-icon-title text-center ">
 								<div class="category-icon">
-									<i class="text-gradiant flaticon-technology-1"></i>
+									<i class="text-gradiant fas fa-trophy"></i>
 								</div>
 								<div class="category-title">
 									<h4>Award Winning</h4>
@@ -550,9 +573,9 @@
 						<!-- /category -->
 
 						<div class="col-6">
-							<div class="category-icon-title text-center "  >
+							<div class="category-icon-title text-center ">
 								<div class="category-icon">
-									<i class="text-gradiant flaticon-technology-2"></i>
+									<i class="text-gradiant fa fa-tv"></i>
 								</div>
 								<div class="category-title">
 									<h4>Up-to-date</h4>
@@ -807,10 +830,10 @@
 				</div>
 				<div class="about-btn">
 					<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
-						<a href="#">Make Question <i class="fas fa-caret-right"></i></a>
+						<a href="{{ url('contact-us')}}">Make Question <i class="fas fa-caret-right"></i></a>
 					</div>
 					<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
-						<a href="#">contact us <i class="fas fa-caret-right"></i></a>
+						<a href="{{ url('contact-us')}}">contact us <i class="fas fa-caret-right"></i></a>
 					</div>
 				</div>
 			</div>

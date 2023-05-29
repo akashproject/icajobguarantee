@@ -9,10 +9,10 @@ use Illuminate\Support\Facades\DB;
 
 class AdPageController extends Controller
 {
-    public function index($slug)
+    public function index($slug,Request $request)
     {
         try {
-            //echo $slug; exit;
+            $center = ($request->has("center"))?$request->input('center'):null;
             $contentMain = Adspage::where('slug', $slug)->firstOrFail();
             $courseType = null;
             $courses = null;
@@ -29,7 +29,7 @@ class AdPageController extends Controller
             // $contentMain = Adspage::all();
             // $contentMain = $contentMain->firstOrFail();
             //print_r($contentMain->template); exit;
-            return view("adPage.".$contentMain->template,compact('contentMain','courseType','courses'));
+            return view("adPage.".$contentMain->template,compact('center','contentMain','courseType','courses'));
 
         } catch(\Illuminate\Database\QueryException $e){
             //throw $th;

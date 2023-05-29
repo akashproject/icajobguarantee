@@ -80,6 +80,19 @@
 
 							</div>
 							<!-- /about-text -->
+
+							<div class="row">
+								<div class="col-md-6 mb10">
+									<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font" style="margin: auto;">
+										<a target="_blank" href="{{ url('courses')}}"> Explore Courses <i class="fas fa-caret-right"></i></a>
+									</div>
+								</div>
+								<div class="col-md-6 mb10">
+									<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font" style="margin: auto;">
+										<a target="_blank" href="{{ url('franchise-opportunity')}}"> Become ICA Partner <i class="fas fa-caret-right"></i></a>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 
@@ -88,12 +101,6 @@
 							<h2 class="widget-title text-capitalize"><span>Find A Course </span>&amp; Sign up Today.</h2>
 							<div class="course-img">
 								<img src="assets/img/teacher/ct-1.jpg" alt="">
-							</div>
-							<div class="course-desc">
-								<p>Lorem ipsum dolor sit  consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.</p>
-							</div>
-							<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
-								<a href="#">VIEW ONLINE COURSES <i class="fas fa-caret-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -113,8 +120,8 @@
 						<img src="{{ url('/assets/img/awards-recognition.png')}}">
 					</div>
 					<div class="col-md-7 ">
-						<div class="text-center">
-							<h3 class="awards-recognition" > Awards & Recognition </h3>
+						<div class="text-center mt10">
+							<h3 class="awards-recognition " > Awards & Recognition </h3>
 						</div>
 						<p> When we say ICA is the ‘No.1 Training Institute in Accounts and Finance’, it’s just not us; it’s an array of brands and organisations who have recognised our hard work and accomplishments over the years. </p>
 						<p> Every year ICA is conferred with awards and titles which we wear as a badge of honour. </p>

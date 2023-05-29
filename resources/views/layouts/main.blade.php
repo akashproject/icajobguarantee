@@ -68,6 +68,7 @@
     @include('layouts.header')
     @yield('content')
     @include('layouts.footer')
+    
     {{get_theme_setting('ajax_submit')}}
     @if(get_theme_setting('ajax_submit') == 1)
         @include('common.formSubmitByAjax')

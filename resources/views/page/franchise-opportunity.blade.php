@@ -160,7 +160,7 @@
 				</div>
 				<div class="best-course-area mb10">
 					<div class="row">
-						<div class="four-grid-slide text-center">
+						<div class="tree-grid-slide text-center">
 							<div class="four-grid-box text-center">
 								<div class="circle-icon">
 									<img src="{{ url('assets/img/Area.svg') }}" >

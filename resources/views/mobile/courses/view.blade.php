@@ -25,29 +25,43 @@
 				</div>
 			</div>
 		</div>
-    <!-- Start of breadcrumb section
+		<!-- Start of breadcrumb section
 		============================================= -->
-		<section id="breadcrumb" class="breadcrumb-section relative-position backgroud-style" >
-			<div class="blakish-overlay"></div>
-			<div class="container">
-				<div class="page-breadcrumb-content">
-					<span class="trend-bestseller text-uppercase bold-font">
-						<i class="fas fa-bolt"></i> Bestseller</span>
-					<div class="page-breadcrumb-title">
-						<h2 class="breadcrumb-head black bold">{{$contentMain->name}}</h2>
+	<section id="breadcrumb" class="inner-banner relative-position backgroud-style"  style="background-image: url({{ (isset($contentMain->banner_image))?getSizedImage('',$contentMain->banner_image):url('assets/img/banner/brt-1.jpg') }});">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9">
+
+					<div class="inner-banner-breadcrumb" >
+						<span class="breadcrumbElement"> 
+							<a href="{{url('/')}}" > Home </a> 
+						</span>
+						<span class="breadcrumbElement"> 
+							 <i class="fas fa-chevron-right"> </i>
+						</span> 
+						<span class="breadcrumbElement"> 
+							{{(isset($contentMain))?$contentMain->name:"Default Page" }}
+						 </span>
 					</div>
-					<div class="page-breadcrumb-description">
-						{!! $contentMain->excerpt !!}
-					</div>
-					<div class="page-breadcrumb-option">
-						<p>{!! $contentMain->criteria !!} </p>
+					<div class="inner-banner-content">
+						<div class="inner-banner-title">
+							<h1>{{(isset($contentMain))?$contentMain->name:"Default Page" }}</h1>
+						</div>
+						<div class="inner-banner-description">
+							{!! (isset($contentMain))?$contentMain->excerpt:"Default Description" !!}
+							{!! $contentMain->criteria !!}
+						</div>
 					</div>
 				</div>
+				<div class="col-md-3">
+					
+				</div>
 			</div>
-		</section>
+		</div>
+	</section>
 	<!-- End of breadcrumb section
 		============================================= -->
-
+   
 		<section id="search-course" class="search-course-section search-course-secound">
 			<div class="container">
 				<div class="search-counter-up">
@@ -175,12 +189,10 @@
 																		<button class="btn btn-link {{ (count($carriculams) > 1)?'collapsed':'' ; }}" data-toggle="collapse" data-target="#collapse{{$key}}" aria-expanded="true" aria-controls="collapse{{$key}}">
 																			<span>{{ ($key < "9" )?"0":""}}{{$key + 1}}</span> {{$carriculam->name}}
 																		</button>
-																		<div class="course-by">
-																			BY: <b>TONI KROSS</b> 
-																		</div>
+																		
 																		<div class="leanth-course">
 																			<span>{{ $carriculam->duration }} Hours</span>
-																			<span>Adobe photoshop</span>
+																			<!-- <span>Adobe photoshop</span> -->
 																		</div>
 																	</div>
 																</div>
@@ -220,18 +232,19 @@
 
 					<div class="col-md-3">
 						<div class="side-bar">
+							@if(isset($contentMain->course_video_image) || $contentMain->course_video_image > 0)
 							<div class="latest-area-content " >
 								<div class="latest-video-poster relative-position mb20">
-									<img src="{{ url('assets/img/course/bc-1.jpg') }}" alt="">
+									<img src="{{ getSizedImage('mobile',$contentMain->course_video_image) }}" alt="">
 									<div class="video-play-btn text-center gradient-bg">
-										<a class="popup-with-zoom-anim" href="https://www.youtube.com/watch?v=-g4TnixUdSc"><i class="fas fa-play"></i></a>
+										<a class="popup-with-zoom-anim" href="{{$contentMain->course_video_link}}"><i class="fas fa-play"></i></a>
 									</div>
 								</div>
 								<div class="vidoe-text text-center">
-									<h3 class="latest-title bold-font"><a href="#">Learning IOS Apps in Amsterdam.</a></h3>
+									<h3 class="latest-title bold-font"><a href="#">{{$contentMain->course_video_title}}</a></h3>
 								</div>
-								
 							</div>
+							@endif
 							<div class="enrolled-student mt15">								
 								<div class="comment-ratting float-left ul-li">
 									<ul>
@@ -264,18 +277,18 @@
 								</div>
 							</div>
 						</div>
+						@if(isset($contentMain->tags))
 						<div class="side-bar-widget">
 							<h2 class="widget-title text-capitalize">Popular <span>Tag's.</span></h2>
 							<div class="tag-clouds ul-li">
 								<ul>
-									@if(isset($contentMain->tags))
 									@foreach($contentMain->tags as $value)
 										<li><a href="{{url('tags')}}/{{$value->slug}}">{{$value->name}}</a></li>
 									@endforeach
-									@endif
 								</ul>
 							</div>
 						</div>
+						@endif
 					</div>
 				</div>
 			</div>
@@ -312,6 +325,11 @@
 					<div  id="testimonial-slide-item" class="testimonial-slide-area">
 						@foreach(getTestimonials() as $value)						
 						<div class="student-qoute">
+							<div class="course-pic relative-position text-center">
+								<div class="circle-img">
+									<img src="{{ (isset($value->featured_image))?getSizedImage('',$value->featured_image):'https://dummyimage.com/140x140' }}" alt="">	
+								</div>					
+							</div>
 							{!! $value->comment !!}
 							<div class="student-name-designation">
 								<span class="st-name bold-font">{{ $value->name }}</span>
@@ -332,17 +350,18 @@
 					<h3>Check<span> Related Course.</span></h3>
 				</div>
 				<div class="best-course-area mb10">
-					<div class="row">
+					<div class="row justify-content-center">
 					@if($courses)
-						@foreach ($courses as $value)
+						@foreach($courses as $course)
 						<div class="col-md-3">
-							<div class="best-course-pic-text">
+							<div class="best-course-pic-text relative-position">
 								<div class="best-course-pic relative-position">
-									<img src="{{ (isset($course->featured_image))?getSizedImage('',$course->featured_image):URL::to('/assets/img/course/bc-1.jpg') }}" alt="">
+									<img src="{{ (isset($course->featured_image))?getSizedImage('',$course->featured_image):'assets/img/course/c-1.jpg' }}" alt="">
 									<div class="trend-badge-2 text-center text-uppercase">
 										<i class="fas fa-bolt"></i>
 										<span>Trending</span>
 									</div>
+									
 									<div class="course-rate ul-li">
 										<ul>
 											<li><i class="fas fa-star"></i></li>
@@ -350,30 +369,34 @@
 											<li><i class="fas fa-star"></i></li>
 											<li><i class="fas fa-star"></i></li>
 											<li><i class="fas fa-star"></i></li>
-										</ul>
+										</ul>													
 									</div>
+									
 									<div class="course-details-btn">
-										<a href="{{ URL::to('/courses') }}/{{ $value->slug }}">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
+										<a href="courses/{{ $course->slug }}">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
 									</div>
 									<div class="blakish-overlay"></div>
 								</div>
 								<div class="best-course-text">
 									<div class="course-title mb20 headline relative-position height-60">
-										<h3><a href="{{ URL::to('/courses') }}/{{ $value->slug }}">{{ $value->name }}</a></h3>
+										<h3><a href="courses/{{ $course->slug }}"> {{ $course->name }} </a> 
+											<span class="trend-bestseller text-uppercase bold-font">
+											<i class="fas fa-bolt"></i> Bestseller</span> 
+										</h3>
 									</div>
 									<div class="course-meta">
-										<span class="course-category"><i class="fas fa-clock"></i> {{ $value->duration }}</span>
-										<span class="course-author"><i class="fas fa-book"></i> {{ $value->no_of_module }} Modules</span>
+										<span class="course-category"><i class="fas fa-clock"></i> {{ $course->duration }}</span>
+										<span class="course-author"><i class="fas fa-book"></i> {{ $course->no_of_module }} Modules</span>
 									</div>
 								</div>
 								<div class="more-btn text-center" >
 									<div class="course-type-list">	
-										<a class="btn-filled" href="javascript:void(0)" onclick="lead_capture_form_btn({{ $value->category_id }},'')"><i class="fas fa-download"></i> Brochure</a>
+										<a class="btn-filled" href="javascript:void(0)" onclick="lead_capture_form_btn({{ $course->category_id }},'')"><i class="fas fa-download"></i> Brochure</a>
 									</div>
 									<div class="course-type-list">														
-										<a class="btn-outline" href="{{ URL::to('/courses') }}/{{ $value->slug }}" >View More <i class="fas fa-caret-right"></i></a>
+										<a class="btn-outline" href="{{ URL::to('/courses') }}/{{ $course->slug }}" >View More <i class="fas fa-caret-right"></i></a>
 									</div>														
-								</div>	
+								</div>
 							</div>
 						</div>
 						<!-- /course -->
@@ -454,7 +477,7 @@
 													@endfor
 												</ul>
 											</div>
-											<div class="time-comment float-right">{{ $review->created_at }}</div>
+											<div class="time-comment float-right">{{ date("D m, Y", strtotime($review->created_at)) }}</div>
 										</div>
 										<div class="author-designation-comment">
 											<h3>{{$review->title}}</h3>
@@ -479,7 +502,7 @@
 											<span>Your Rating: </span>
 											<form class="rating">
 												<label>
-													<input type="radio" name="stars" value="1" />
+													<input type="radio" name="stars" value="1" required/>
 													<span class="icon"><i class="fas fa-star"></i></span>
 												</label>
 												<label>
@@ -561,7 +584,7 @@
 							<div class="faq-tab mb35">
 								<div class="faq-tab-ques  ul-li">
                                     <div id="accordion3" class="panel-group">
-										@foreach(getFaqs("Course") as $key => $value)
+										@foreach(getFaqs("Course",null,5) as $key => $value)
                                         <div class="panel">
                                             <div class="panel-title" id="heading_{{$key}}">
                                                 <h3 class="mb-{{$key}}">

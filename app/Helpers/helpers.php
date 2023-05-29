@@ -132,7 +132,7 @@ if (! function_exists('getTestimonials')) {
 }
 
 if (! function_exists('getFaqs')) {
-    function getFaqs($model="",$model_id=""){
+    function getFaqs($model="",$model_id="",$limit=10){
         $faq = DB::table('faqs');
         if($model){
             $faq->where('model', 'like', '%"' . $model . '"%');
@@ -140,7 +140,7 @@ if (! function_exists('getFaqs')) {
         if($model_id){
             $faq->where('model_id',$model_id);
         }    
-        $faq = $faq->where('status',"1")->get();
+        $faq = $faq->where('status',"1")->paginate($limit);
         return $faq;
     }
 }
@@ -263,7 +263,7 @@ if (! function_exists('getCourses')) {
             ->select('courses.*', 'courses.name as course_name','course_type.name as category','course_type.id as category_id');
             if($search){
                 $courses->where('courses.name', 'like', '%' . $search . '%');
-                $courses->where('courses.description', 'like', '%' . $search . '%');
+                $courses->orwhere('courses.description', 'like', '%' . $search . '%');
                 $courses->orWhere('course_type.name', 'like', '%' . $search . '%');
                 $courses->orWhere('course_type.slug', 'like', '%' . $search . '%');
             }

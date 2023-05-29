@@ -6,10 +6,10 @@
 				<div class="col-md-7">
 					<div class="ad-banner-content">
 						<div class="ad-banner-title">
-							<h1>Advanced Certification in Data Science and AI</h1>
+							<h1>Looking To Be An Accounts Manager? Secure Your Career In 6 Months</h1>
 						</div>
 						<div class="ad-banner-sub-title">
-							<h2> Learn from IIT Madras Faculty &amp; Industry Experts with Campus Immersion at IIT Madras </h2>
+							<h2> Are you struggling to choose your career? Book Your Free One-To-One Counselling Session Now! </h2>
 						</div>
 						<div class="ad-banner-description">
 							{!!(isset($contentMain))?$contentMain->description:"Course description" !!}
@@ -51,7 +51,7 @@
 
 	<!-- Start of Search Courses
 		============================================= -->
-		<section id="search-course" class="search-course-section search-course-secound">
+		<section id="usp" class="search-course-section search-course-secound">
 			<div class="container">
 				<div class="search-counter-up">
 					<div class="row">
@@ -61,8 +61,8 @@
 									<i class="text-gradiant flaticon-graduation-hat"></i>
 								</div>
 								<div class="counter-number">
-									<span class="counter-count bold-font">5 </span><span>M+</span>
-									<p>Students Enrolled</p>
+									<span class="counter-count bold-font">53260</span><span>+</span>
+									<p>Number Of Jobs In Naukri</p>
 								</div>
 							</div>
 						</div>
@@ -74,8 +74,8 @@
 									<i class="text-gradiant flaticon-book"></i>
 								</div>
 								<div class="counter-number">
-									<span class="counter-count bold-font">122</span><span>.500+</span>
-									<p>Online Available Courses</p>
+									<span class="counter-count bold-font">37642</span><span>+</span>
+									<p>Number Of Jobs In Linkedin</p>
 								</div>
 							</div>
 						</div>
@@ -87,8 +87,8 @@
 									<i class="text-gradiant flaticon-favorites-button"></i>
 								</div>
 								<div class="counter-number">
-									<span class="counter-count bold-font">15</span><span>.000+</span>
-									<p>Premium Quality Products</p>
+									<span class="counter-count bold-font">13194</span><span>+</span>
+									<p>Number Of Jobs In Timejobs</p>
 								</div>
 							</div>
 						</div>
@@ -100,8 +100,8 @@
 									<i class="text-gradiant flaticon-group"></i>
 								</div>
 								<div class="counter-number">
-									<span class="counter-count bold-font">7</span><span>.500+</span>
-									<p>Teachers Registered</p>
+									<span class="counter-count bold-font">20000</span><span>/mo</span>
+									<p>Average Salary</p>
 								</div>
 							</div>
 						</div>
@@ -115,11 +115,11 @@
 
 	<!-- Hightlists section
 		============================================= -->
-		<section id="key-highlights" class="highlights-section">
+		<section id="about" class="highlights-section">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-5 mb20 text-center">
-						<img src="https://dummyimage.com/465">
+						<img src="https://www.myidcm.com/wp-content/uploads/2022/10/IDCM-Landing-Page_Image-500×580-1-1.png">
 					</div>
 					<div class="col-md-7 mt10">
 						<div class="section-title mb20 headline text-center">
@@ -136,31 +136,31 @@
 							<div class="col-md-4 col-6"> 
 								<div class="key-highlights" >
 									<img src="https://dummyimage.com/65" >
-									<h6> 200+ Tools </h6>
+									<h6> 1-6 Months Training Program </h6>
 								</div>
 							</div>
 							<div class="col-md-4 col-6"> 
 								<div class="key-highlights" >
 									<img src="https://dummyimage.com/65" >
-									<h6> 9 Super Specializations </h6>
+									<h6> 2 Lakh + Trained Annually </h6>
 								</div>
 							</div>
 							<div class="col-md-4 col-6"> 
 								<div class="key-highlights" >
 									<img src="https://dummyimage.com/65" >
-									<h6> Industry Case Study </h6>
+									<h6> 75,000 + Registered Employers </h6>
 								</div>
 							</div>
 							<div class="col-md-4 col-6"> 
 								<div class="key-highlights" >
 									<img src="https://dummyimage.com/65" >
-									<h6> 160 Hrs Assignments </h6>
+									<h6> 30+ Digital Automation Tools </h6>
 								</div>
 							</div>
 							<div class="col-md-4 col-6"> 
 								<div class="key-highlights" >
 									<img src="https://dummyimage.com/65" >
-									<h6> 100% Placement Support </h6>
+									<h6> 10+ Live Projects </h6>
 								</div>
 							</div>
 						</div>
@@ -173,28 +173,28 @@
 	============================================= -->
 	<!-- Start secound testimonial section
 		============================================= -->
-		<section id="sponsor" class="sponsor-section">
-			<div class="container">
-				<div class="section-title mb35 headline text-center">
-					<span class="subtitle text-uppercase">Student Placement</span>
-					<h3>Our Alumni <span>Worked At.</span></h3>
-				</div>
-				<div class="row" >
-					@foreach(getRecruiters() as $value)
-						<div class="col-md-2 col-lg-2 col-6 mt10 mb20" >
-							<div class="placement-grid" >
-								<img src="{{ (isset($value->featured_image))?getSizedImage('',$value->featured_image):'https://dummyimage.com/140x140' }}" alt="">		
-							</div>
-						</div>
-					@endforeach
-				</div>
+	<section id="recruiters" class="sponsor-section">
+		<div class="container">
+			<div class="section-title mb35 headline text-center">
+				<span class="subtitle text-uppercase">Student Placement</span>
+				<h3>Our Alumni <span>Worked At.</span></h3>
 			</div>
-		</section>
+			<div class="row" >
+				@foreach(getRecruiters() as $value)
+					<div class="col-md-2 col-lg-2 col-6 mt10 mb20" >
+						<div class="placement-grid" >
+							<img src="{{ (isset($value->featured_image))?getSizedImage('',$value->featured_image):'https://dummyimage.com/140x140' }}" alt="">		
+						</div>
+					</div>
+				@endforeach
+			</div>
+		</div>
+	</section>
 	<!-- End secound testimonial section
 		============================================= -->
 		<!-- Start of best course
 	============================================= -->
-	<section id="best-course" class="best-course-section">
+	<section id="course" class="best-course-section">
 		<div class="container">
 			<div class="section-title mb45 headline text-center">
 				<span class="subtitle text-uppercase">BROWSE COURSES</span>

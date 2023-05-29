@@ -4,7 +4,7 @@
 
 <!-- Start of breadcrumb section
 		============================================= -->
-		<section id="breadcrumb" class="inner-banner relative-position backgroud-style"  style="background-image: url({{ (isset($contentMain->banner_image))?getSizedImage('',$contentMain->banner_image):url('assets/img/banner/brt-1.jpg') }});">
+	<section id="breadcrumb" class="inner-banner relative-position backgroud-style"  style="background-image: url({{ (isset($contentMain->banner_image))?getSizedImage('',$contentMain->banner_image):url('assets/img/banner/brt-1.jpg') }});">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-9">
@@ -43,16 +43,14 @@
 		<section id="contact-page" class="contact-page-section">
 			<div class="container">
 				<div class="section-title mb45 headline text-center">
-					<span class="subtitle text-uppercase">SEND US A MESSAGE</span>
+					<span class="subtitle text-uppercase">SEND US MESSAGE</span>
 					<h2>Keep<span> In Touch.</span></h2>
 				</div>
 				<div class="row">
-					<div class="col-md-6" >
-						<div class="contact_faq_box shadow_1">
+					<div class="col-md-4" >
+						<div class="contact_faq_box">
 							<div class="icon">
-
 								<img src="{{ url('assets/img/customer-support-Icon.png') }}" alt="icon" class="image-fit-contain">
-
 							</div>
 							<div class="text">
 								<h4>Get instant support</h4>
@@ -61,15 +59,27 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-6">
-						<div class="contact_faq_box shadow_1">
+					<div class="col-lg-4">
+						<div class="contact_faq_box">
 							<div class="icon">
 								<img src="{{ url('assets/img/question-Icon.png') }}" alt="icon" class="image-fit-contain">
 							</div>
 							<div class="text">
-								<h4>Still have doubts?</h4>
+								<h4>For ICA Students</h4>
 								<p>Let's connect &amp; escalate all the doubts regarding the specialized course curriculum!</p>
-								<a href="mailto:{{ get_theme_setting('email') }}" class="genius-btn gradient-bg text-center text-uppercase">Contact Us <i class="fas fa-chevron-right ml-2"></i></a>
+								<a href="tel:+{{ get_theme_setting('mobile') }}" class="genius-btn gradient-bg text-center text-uppercase">Call Us<i class="fas fa-chevron-right ml-2"></i></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="contact_faq_box">
+							<div class="icon">
+								<img src="{{ url('assets/img/deal.png') }}" alt="icon" class="image-fit-contain">
+							</div>
+							<div class="text">
+								<h4>For ICA Partner?</h4>
+								<p>Let's connect &amp; escalate all the doubts regarding the specialized course curriculum!</p>
+								<a href="tel:+{{ get_theme_setting('mobile') }}" class="genius-btn gradient-bg text-center text-uppercase">Call Us<i class="fas fa-chevron-right ml-2"></i></a>
 							</div>
 						</div>
 					</div>
@@ -145,9 +155,7 @@
 								<div class="section-title  mb45 headline text-left">
 									<span class="subtitle ml42  text-uppercase">CONTACT US</span>
 									<h2><span>Get in Touch</span></h2>
-									<p>
-										Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet  ipsum dolor sit amet, consectetuer adipiscing elit.
-									</p>
+									<p> We value your feedback and inquiries. Please feel free to get in touch with us. We are here to assist you in any way we can. </p>
 								</div>
 
 								<div class="contact-address">

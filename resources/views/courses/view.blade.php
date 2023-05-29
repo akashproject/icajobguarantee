@@ -189,12 +189,10 @@
 																		<button class="btn btn-link {{ (count($carriculams) > 1)?'collapsed':'' ; }}" data-toggle="collapse" data-target="#collapse{{$key}}" aria-expanded="true" aria-controls="collapse{{$key}}">
 																			<span>{{ ($key < "9" )?"0":""}}{{$key + 1}}</span> {{$carriculam->name}}
 																		</button>
-																		<div class="course-by">
-																			BY: <b>TONI KROSS</b> 
-																		</div>
+																		
 																		<div class="leanth-course">
 																			<span>{{ $carriculam->duration }} Hours</span>
-																			<span>Adobe photoshop</span>
+																			<!-- <span>Adobe photoshop</span> -->
 																		</div>
 																	</div>
 																</div>

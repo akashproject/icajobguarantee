@@ -2,20 +2,16 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
+    <title>{{ isset($contentMain->title)?$contentMain->title:'Accounts | Finance | Taxation | Courses | Training Institute' }}</title>
+    <meta name="description" content="{{ isset($contentMain->meta_description)?$contentMain->meta_description:'' }}" />
+    <link rel="canonical" href="{{url()->current()}}"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ isset($contentMain->title)?$contentMain->title:'' }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="title" content="{{ isset($contentMain->title)?$contentMain->title:'' }}">
-    <meta name="description" content="{{ isset($contentMain->meta_description)?$contentMain->meta_description:'' }}">
-    <link rel="canonical" href="{{url()->current()}}"/>
-    <!-- All in One SEO 4.2.7.1 - aioseo.com -->
-    <meta name="description" content="{{ isset($contentMain->meta_description)?$contentMain->meta_description:'' }}" />
-    <meta name="robots" content="max-image-preview:large" />
+    <meta name="robots" content="{{ isset($contentMain->robots)?$contentMain->robots:'' }}" />
     <meta name="google-site-verification" content="_Is7-guFC312LQs0E9yYfc90B7NW6Dx--HQZrLtBeLs" />
-    <link rel="canonical" href="https://www.icajobguarantee.com/" />
-    <meta name="generator" content="All in One SEO (AIOSEO) 4.2.7.1 " />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="ICA Edu Skills" />
     <meta property="og:type" content="website" />
@@ -54,19 +50,21 @@
 
 </head>
 
-<body>
+<body class="{{ $contentMain->template }}">
     @include('layouts.ad-header')
     @yield('content')
     @include('layouts.ad-footer')
 
+    {{get_theme_setting('ajax_submit')}}
     @if(get_theme_setting('ajax_submit') == 1)
         @include('common.formSubmitByAjax')
     @else 
         @include('common.formSubmitByPageLoad')
     @endif
-
     <script>
         let globalUrl = "{{ env("APP_URL") }}"
+        let isEnableOtp = "{{ get_theme_setting('enable_otp') }}"
+        let isAjaxSubmit = "{{ get_theme_setting('ajax_submit') }}"
     </script>
     <script src="{{ url('assets/js/jquery-2.1.4.min.js') }}"></script>
     <script src="{{ url('assets/js/bootstrap.min.js') }}"></script>

@@ -23,7 +23,7 @@
 				<div class="container">
 					<div class="navbar-default">
 						<div class="navbar-header float-left">
-							<a class="navbar-brand text-uppercase" href="{{ url('/') }}"><img src="{{ url('assets/images/logo.png') }}" alt="ICA Edu Skills"></a>
+							<a class="navbar-brand text-uppercase" href="javascript:void(0)"><img src="{{ url('assets/images/logo.png') }}" alt="ICA Edu Skills"></a>
 								
 						</div><!-- /.navbar-header -->						
 						
@@ -31,7 +31,7 @@
 						<nav class="navbar-menu float-right">
 							<div class="nav-menu ul-li">
 								<ul>
-									@foreach ($primaryMenu as $key => $menuItem)
+									@foreach ($adHeaderMenu as $key => $menuItem)
 										<li class="">
 											<a href="{{ url($key) }}">{{ $menuItem }}</a>
 										</li>
@@ -41,10 +41,10 @@
 						</nav>
 
 						<div class="mobile-menu">
-							<div class="logo"><a href="index-1.html"><img src="{{ url('assets/img/logo/logo.png') }}" alt="Logo"></a></div>
+							<div class="logo"><a href="javascript:void(0)"><img src="{{ url('assets/img/logo/logo.png') }}" alt="Logo"></a></div>
 							<nav>
 								<ul>
-									@foreach ($primaryMenu as $key => $menuItem)
+									@foreach ($adHeaderMenu as $key => $menuItem)
 										<li class="">
 											<a href="{{ url($key) }}">{{ $menuItem }}</a>
 										</li>

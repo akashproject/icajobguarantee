@@ -61,9 +61,7 @@ body {
   .fa-book, .fa-map-marker {
       color: #eb4141;
   }
-  .fa-star {
-    color: #ffc926;
-  }
+
   .fa-whatsapp {
     color: #128C7E;
   }
@@ -381,7 +379,7 @@ ul.product-tab.index-category-tab li.active {
     font-weight: 700;color: #393185; }
 
 .section-title-2 h2 {
-  font-size: 28px;
+  font-size: 24px;
   color: #333333;
   font-weight: 300;
   position: relative; }
@@ -493,8 +491,8 @@ ul.product-tab.index-category-tab li.active {
 
 .inner-banner-title h1 {
   color: #fff;
-  line-height: 3.5rem;
-  font-size: 46px;
+  line-height: 2.3rem;
+  font-size: 30px;
 }
 
 .inner-banner-sub-title {
@@ -942,7 +940,7 @@ nav.navbar-menu.inside-navbar .nav-menu {
 .menu-item-has-children li:hover {
   margin-left: 3px; }
   .submenu-courses {
-    display: none;
+    display: none !important;
 }
 .sub-menu {
   width: 300px;
@@ -1182,7 +1180,7 @@ button.alt-menu-btn.float-left {
     height: 45px;
     width: 3px;
     border-radius: 4px;
-    background-color: #fff; }
+    background-color: #4b4b4b; }
   #slider-item .owl-dots .owl-dot {
     height: 20px;
     background-color: #585656;
@@ -1385,16 +1383,17 @@ button.alt-menu-btn.float-left {
   padding: 0px 20px;
   border-radius: 5px; }
 
-.search-course .nws-button,
-.subs-form .nws-button {
-  top: 0;
-  right: 0;
-  height: 60px;
-  width: 125px;
-  line-height: 60px;
-  position: absolute;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px; }
+  .search-course .nws-button, .subs-form .nws-button {
+    top: 0;
+    right: 0;
+    height: 60px;
+    width: auto;
+    line-height: 60px;
+    position: absolute;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 0;
+}
   .search-course .nws-button button,
   .subs-form .nws-button button {
     background-color: transparent;
@@ -1766,12 +1765,12 @@ button.alt-menu-btn.float-left {
   padding: 0 0px;
   overflow: visible; }
 
-.about-resigter-form {
-  z-index: 2;
-  padding: 30px;
-  max-width: 360px;
-  margin-top: 20px; }
-
+  .about-resigter-form {
+    z-index: 2;
+    padding: 10px 0;
+    max-width: 360px;
+    margin-top: 20px;
+}
 .register-content {
   position: relative; }
 
@@ -1805,7 +1804,7 @@ button.alt-menu-btn.float-left {
   color: #fff;
   border: none;
   text-transform: uppercase;
-  background-color: #ff5b10; }
+  background: linear-gradient(to right, #515694 0%, #5549ce 51%, #3a429f 100%) }
 
   .bg-mockup {
     display: none;
@@ -3336,7 +3335,7 @@ ul.product-tab li.active:after {
   margin: 0 auto; }
 
 .panel-group .panel-body {
-  color: #67a0c9;
+  color: #343333;
   position: relative; }
   .panel-group .panel-body:before {
     position: absolute;
@@ -3821,7 +3820,7 @@ ul.product-tab li.active:after {
     color: #fff; }
 
 .contact-page-section {
-  padding: 80px 0px; }
+  padding:50px 0; }
   .contact-page-section .social-contact .category-icon-title {
     width: 165px;
     float: left;
@@ -4389,8 +4388,8 @@ ul.product-tab li.active:after {
 
 .course-details-item {
   border-bottom: 1px solid #e5e5e5;
-  padding-bottom: 30px;
-  margin-bottom: 30px; }
+  padding-bottom: 15px;
+  margin-bottom: 15px; }
 
 .affiliate-market-guide .section-title-2 h2:after,
 .course-review .section-title-2 h2:after {
@@ -4404,7 +4403,7 @@ ul.product-tab li.active:after {
   border-top: none; }
 
 .affiliate-market-accordion .panel-group .panel-body {
-  padding: 10px 50px 25px 80px;
+  padding: 0;
   line-height: 1.8; }
 
 .affiliate-market-accordion .panel-group .btn-link.collapsed,
@@ -5174,11 +5173,13 @@ span.success-icon {
   border-radius: 12px;
   display: flex;
   flex-wrap: wrap;
+  padding: 20px 10px;
   align-items: flex-start;
+  box-shadow: 0px 1px 30px 1px #a8a9ab;
 }
 
 .contact_faq_box .text {
-  width: calc(100% - 130px);
+  width:calc(100% - 100px)
 }
 .shadow_1 {
   box-shadow: 0px 1px 30px 1px #ecf2ff;
@@ -5188,7 +5189,7 @@ span.success-icon {
 }
 .contact_faq_box .icon {
   width: 100px;
-  margin-right: 30px;
+  margin-right: 0;
   position: relative;
   top: 10px;
 }
@@ -5233,9 +5234,14 @@ a.sticky-btn {
   width: 50%;
   margin: auto;
 }
-.register-form-area .nws-button {
+/* .register-form-area .nws-button {
   padding: 0;
+} */
+
+form#index_lead_capture_form h4, form#index_lead_capture_form p {
+  color: #fff;
 }
+
 .nws-button {
   padding: 0 65px;
 }
@@ -5259,4 +5265,13 @@ a.sticky-btn {
 .box-content p {
   font-size: 12px;
   margin: 5px;
+}
+.teacher-faq-form label.error {
+  color: red;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.modal-body .nws-button button.disabled {
+  background: #a7a7a7;
 }

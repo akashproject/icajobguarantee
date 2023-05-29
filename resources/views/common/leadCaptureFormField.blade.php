@@ -1,15 +1,19 @@
-<div class="contact-info">
+<div class="contact-info formFieldName">
     <input id="formFieldName" name="name" type="text" placeholder="Enter Your Name" autocomplete="off" required>
 </div>
-<div class="contact-info">
+<div class="contact-info formFieldEmail">
     <input id="formFieldEmail" name="email" type="email" placeholder="Enter Your Email" autocomplete="off" required>
 </div>
-<div class="contact-info">
+<div class="contact-info formFieldMobile">
     <input id="formFieldMobile" name="mobile" type="number" placeholder="Enter Your Mobile" autocomplete="off" required>
 </div>
-<div class="contact-info">
-    <input id="formFieldPincode" id="pincode" name="pincode" type="number" placeholder="Enter Your Address Pincode" autocomplete="off" required>
-</div>
+
+@if(!isset($center))
+    <div class="contact-info formFieldPincode">
+        <input id="formFieldPincode" id="pincode" name="pincode" type="number" placeholder="Enter Your Address Pincode" autocomplete="off" required>
+    </div>
+@endif
+<input type="hidden" name="center" value="{{ (isset($center) )?$center:'' }}">
 <input type="hidden" name="course_id" value="">
 <input type="hidden" id="formFieldOtpResponse" value="">
 <input type="hidden" name="utm_campaign" value="{{ isset($contentMain->utm_campaign)?$contentMain->utm_campaign:'' }}">

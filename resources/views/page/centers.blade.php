@@ -64,16 +64,10 @@
 											<option value="9" selected="">All Cities</option>						
 										</select>
 									</div>
-
-									<form action="{{url('/centers')}}" method="get">
-										<div class="filter-search mb20">
-											<label>Search Pincode</label>
-											<input type="text" class="" name="pincode" placeholder="Search by pincode" value="">
-										</div>
-										<button type="submit" class="text-white border-none genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
-											FIND CENTER <i class="fas fa-caret-right"></i>
-										</button>
-									</form>
+									
+									<div class="enroll-btn genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font" onclick="findNearest()">
+										<a href="javascript:void(0)"> Find By Nearest <i class="fa fa-bullseye" aria-hidden="true"></i></a>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -81,13 +75,7 @@
 					<div class="col-md-9">
 						<div class="shop-product-item">
 							<div class="short-filter-tab">
-								<div class="shorting-filter  float-left">
-									<span><b>Sort</b> By</span>
-									<select>
-										<option value="" selected=""></option>											
-										<option value="9">Nearest</option>											
-									</select>
-								</div>
+								
 							</div>
 							<div class="product-showcase">
 								<div class="genius-shop-item">
@@ -108,7 +96,11 @@
 															</div>															
 														</div>	
 														<div class="course-meta mb10 text-center">
-															<span class="course-category"><a href="{{ url('/state/'.getStateById($value->state_id)->slug) }}"><i class="fas fa-map-marker"></i> {{ getStateById($value->state_id)->name }}</a> ,<a href="{{ url('/city/'.getCityById($value->city_id)->slug) }}"> {{ getCityById($value->city_id)->name }} </a></span>
+															<span class="course-category">
+																<a href="{{ url('/state/'.getStateById($value->state_id)->slug) }}"><i class="fas fa-map-marker"></i> {{ getStateById($value->state_id)->name }}</a> ,
+																<a href="{{ url('/city/'.(getCityById($value->city_id) !== null)?'adsad':'') }}"> {{ (getCityById($value->city_id) !== null)?getCityById($value->city_id)->name:'' }} </a>
+																
+															</span>
 														</div>
 														<div class="more-btn text-center" >
 															<div class="course-type-list">	

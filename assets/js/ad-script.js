@@ -1109,10 +1109,9 @@ jQuery(".course-detail-tab-btn").on("click",function (){
 })
 
 jQuery(".gotoStep1").on("click",function(){
-	jQuery(".step1").show();
-	jQuery(".step2").hide();
+	jQuery(".lead_steps").removeClass("active");
+	jQuery(".lead_steps.step2").addClass("active");
 });
-
 jQuery.validator.addMethod('email_rule', function (value, element) {
 	if (/^([a-zA-Z0-9_\-\.]+)\+?([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/.test(value)) {
 	  return true;
@@ -1120,47 +1119,6 @@ jQuery.validator.addMethod('email_rule', function (value, element) {
 	  return false;
 	};
 });
-
-	$("#submit-review").validate({
-		rules: {
-			reviewer_name: {
-				required: true,
-			},
-			reviewer_email: {
-				required: true,
-			},
-			title: {
-				required: true,
-			},
-		},
-		messages: {
-			reviewer_name: {
-				required: "Please enter title",
-			},
-			reviewer_email: {
-				required: "Please enter valid email",
-			},
-			title: {
-				required: "Please enter message",
-			},
-		}, 
-		submitHandler: function(form) {
-			$.ajaxSetup({
-				headers: {
-				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-				}
-			});
-			$.ajax({
-				url: `${globalUrl}submit-review`,
-				type: "post",
-				data: $("#submit-review").serialize(),
-				success: function(result) {
-					$(".review-success").show();
-					$("#submit-review")[0].reset();
-				}
-			});
-		}
-	})
 
 	$(".lead_capture_form").validate({
 		rules: {
@@ -1318,19 +1276,52 @@ jQuery.validator.addMethod('email_rule', function (value, element) {
 		});
 	}
 
-	jQuery("#pincode").on("keyup",function(){
-		console.log(isEnableOtp);
-	})
+	// jQuery("#pincode").on("keyup",function(){
+	// 	jQuery(".form_step_1").prop('disabled', true);
+	// 	$.ajaxSetup({
+	// 		headers: {
+	// 		'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+	// 		}
+	// 	});
+	// 	$.ajax({
+	// 		url: `${globalUrl}get-center-by-pincode`,
+	// 		type: "post",
+	// 		data: {
+	// 			"pincode":jQuery(this).val()
+	// 		},
+	// 		success: function(result) {
+	// 			jQuery(".form_step_1").prop('disabled', false);
+	// 		}
+	// 	});
+	// })
+
+	jQuery(".course-header-menu").on("mouseenter",function(){
+		jQuery(".submenu-courses").show();
+	});
+
+	jQuery(".desktop-menu li").on('mouseenter',function(){
+		jQuery(".category-courses-submenu").removeClass("active");
+		jQuery("#"+jQuery(this).attr("data-id")).addClass("active");
+	});
+
+	jQuery(".course-header-menu").on('mouseleave',function(){
+		jQuery(".submenu-courses").hide();
+	});
+
 })();
 
 function lead_capture_form_btn(course_id,center_id) {
 	jQuery(".lead_steps").removeClass("active");
 	jQuery(".lead_steps.step1").addClass("active");
-	$('#lead-generation-form').modal('show');
-	//getCenters(course_id,center_id);
+	jQuery('#lead-generation-form').modal('show');
+	console.log(course_id);
+	console.log(center_id);
+	if (center_id) {
+		getCenter(course_id,center_id);
+	}
 }
 
-function getCenters(course_id,center_id) {
+function getCenter(course_id,center_id) {
 	$.ajaxSetup({
 		headers: {
 		'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -1344,7 +1335,7 @@ function getCenters(course_id,center_id) {
 			"center_id":center_id
 		},
 		success: function(result) {
-			$("#lead_capture_form .center").html(result);
+			$("#lead_capture_form .center").val(result);
 			$("#lead_capture_form .course_id").val(course_id);
 		}
 	});

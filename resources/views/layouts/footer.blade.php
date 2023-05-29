@@ -18,20 +18,20 @@
                         <div class="col-md-6">
                             <div class="footer-widget">
                                 <div class="footer-menu ul-li-block">
-                                    <h2 class="widget-title">Student Needfull </h2>
+                                    <h2 class="widget-title">Important Links</h2>
                                     <ul>
                                         @foreach ($studentMenu as $key => $menuItem)
-                                        <li><a href="{{ url($key) }}"><i class="fas fa-caret-right"></i>{{ $menuItem }}</a></li>
+                                        <li><a target="_blank" href="{{ $key }}"><i class="fas fa-caret-right"></i>{{ $menuItem }}</a></li>
                                         @endforeach
                                        
                                     </ul>
                                 </div>
                             </div>
                             <div class="footer-menu ul-li-block">
-                                <h2 class="widget-title">Infomation Info</h2>
+                                <h2 class="widget-title">Company Info</h2>
                                 <ul>
                                         @foreach ($footerMenu as $key => $menuItem)
-                                        <li><a href="{{ url($key) }}"><i class="fas fa-caret-right"></i>{{ $menuItem }}</a></li>
+                                        <li><a target="_blank" href="{{ url($key) }}"><i class="fas fa-caret-right"></i>{{ $menuItem }}</a></li>
                                         @endforeach
                                        
                                     </ul>
@@ -137,15 +137,14 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="copy-right-text">
-                                <p>© 2018 - www.GeniusCourse.com. All rights reserved</p>
+                                <p>{{ get_theme_setting('footer_about') }}</p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="copy-right-menu-item float-right ul-li">
                                 <ul>
-                                    <li><a href="#">License</a></li>
-                                    <li><a href="#">Privacy & Policy</a></li>
-                                    <li><a href="#">Term Of Service</a></li>
+                                    <li><a href="{{ url('privacy-policy') }}">Privacy & Policy</a></li>
+                                    <li><a href="{{ url('terms-conditions') }}">Term Of Service</a></li>
                                 </ul>
                             </div>
                         </div>

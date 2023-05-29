@@ -7,7 +7,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="copy-right-text">
-                                <p>© 2018 - www.GeniusCourse.com. All rights reserved</p>
+                            <p>{{ get_theme_setting('footer_about') }}</p>
                             </div>
                         </div>
                         <div class="col-md-6">

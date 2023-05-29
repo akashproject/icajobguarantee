@@ -71,8 +71,10 @@
 												@endif	
 											</select>
 										</div>
-
-										<form action="{{url('/centers')}}" method="get">
+										<button type="submit" class="text-white border-none genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
+											Find Nearby <i class="fas fa-caret-right"></i>
+										</button>
+										<!-- <form action="{{url('/centers')}}" method="get">
 											<div class="filter-search mb20">
 												<label>Search Pincode</label>
 												<input type="text" class="" name="pincode" placeholder="Search by pincode" value="{{isset($pincode)?$pincode:''}}">
@@ -80,7 +82,7 @@
 											<button type="submit" class="text-white border-none genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
 												FIND CENTER <i class="fas fa-caret-right"></i>
 											</button>
-										</form>
+										</form> -->
 									</div>
 								</div>
 
@@ -90,13 +92,7 @@
 						<div class="col-md-9">
 							<div class="shop-product-item">
 								<div class="short-filter-tab">
-									<div class="shorting-filter  float-left">
-										<span><b>Sort</b> By</span>
-										<select>
-											<option value="" selected=""></option>											
-											<option value="9">Nearest</option>											
-										</select>
-									</div>
+									
 								</div>
 								<div class="product-showcase">
 									<div class="genius-shop-item">

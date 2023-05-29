@@ -139,7 +139,6 @@
 										</div>
 										<!-- #tab3 -->
 										<div id="tab4" class="tab-content-1 pt35">
-											
 											@foreach(getJoinees($contentMain->id) as $value)
 											<div class="placed-grid-box">
 												<div class="image-box">

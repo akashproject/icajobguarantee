@@ -39,30 +39,28 @@ class AppServiceProvider extends ServiceProvider
             $primaryMenu = array(
                 '/centers' => "Centers",                
                 '/franchise-opportunity' => "For Franchise",               
-                '/university' => "For University",
+                '/university' => "University",
                 '/placements' => "Placements",
-                '/career' => "We Are Hiring",
-                '/blog' => "Blogs",
+                '/career' => "Career",
             );
             $view->with('primaryMenu', $primaryMenu);
 
 
             //info Menu
             $footerMenu = array(
+                '#' => 'Events',
+                '/blog' => 'Blogs',
                 '/about-us' => 'About Us',
-                '/privacy-policy' => 'Privacy Policy',
-                '/terms-conditions' => "Terms & Conditions",
                 '/contact-us' => "Contact Us",
-
             );
             $view->with('footerMenu', $footerMenu);
 
             //student Menu
             $studentMenu = array(
-                '/category/career-courses' => 'Career Courses',
-                '/centers' => 'Centers',
-                '/university' => "University",
-                '/online-courses' => "Online Courses",
+                "/category/career-courses" => 'Career Courses',
+                "/centers" => "Centers",
+                "/university" => "University",
+                "https://www.icacourse.in" => "Online Courses",
             );
             $view->with('studentMenu', $studentMenu);
 
@@ -114,6 +112,19 @@ class AppServiceProvider extends ServiceProvider
             //Models
             $models =  array("Blog","Center","Course","CourseType","University");
             $view->with('models', $models);
+
+
+            //Ad Menu
+            $adHeaderMenu = array(
+                '#about' => "About Us",
+                '#recruiters' => "Recruiters",
+                '#course' => "Courses",
+                '#certificate' => 'Certificates',
+                '#galleries' => "Gallery",
+                '#alumni' => "Testimonial",
+                '#faq' => "FAQs",
+            );
+            $view->with('adHeaderMenu', $adHeaderMenu);
         });
     }
 }

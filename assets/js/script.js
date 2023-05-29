@@ -58,7 +58,6 @@ Author:         HTMLMATE Team
 /* Start Of Preloader
 ================================================*/
 preloader: function (){
-
 	jQuery(window).on('load', function(){
 		jQuery('#preloader').fadeOut('slow',function(){jQuery(this).remove();});
 	});
@@ -96,8 +95,8 @@ onePageNav: function (){
 			jQuery('.header_3').removeClass('full-width-menu')
 		}
 	})
-
 },
+
 quickScroll2: function (){
 	$('.quick-menu').on("click", "a", function(){
 		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -137,6 +136,7 @@ counterUp: function (){
 ================================================*/
 mainSlide: function (){
 	$('#slider-item').owlCarousel({
+		loop:true,
 		margin:0,
 		responsiveClass:true,
 		nav: true,
@@ -172,6 +172,7 @@ mainSlide: function (){
 ================================================*/
 oneGridSlide: function (){
 	$('#one-grid-slide').owlCarousel({
+		loop:true,
 		margin:0,
 		responsiveClass:true,
 		nav: true,
@@ -187,6 +188,7 @@ oneGridSlide: function (){
 ================================================*/
 fourGridSlide: function (){
 	$('.four-grid-slide').owlCarousel({
+		loop:true,
 		margin:30,
 		responsiveClass:true,
 		nav: true,
@@ -225,6 +227,7 @@ fourGridSlide: function (){
 ================================================*/
 threeGridSlide: function (){
 	$('.tree-grid-slide').owlCarousel({
+		loop:true,
 		margin:30,
 		responsiveClass:true,
 		nav: true,
@@ -294,8 +297,6 @@ courseSlide: function (){
 /* End Of course slide
 ================================================*/
 
-
-
 /* Start Of Date picker
 ================================================*/
 datePicker: function (){
@@ -303,7 +304,6 @@ datePicker: function (){
 },
 /* - End Start Of Date picker
 ================================================*/
-
 
 /* Start Of parallax
 ================================================*/
@@ -314,8 +314,6 @@ bannerParalax: function (){
 },
 /* End Of Preloader
 ================================================*/
-
-
 
 /* Start Of service slide
 ================================================*/
@@ -348,7 +346,6 @@ serviceSlide: function (){
 },
 /* End Of service slide
 ================================================*/
-
 
 /* Start Of service slide
 ================================================*/
@@ -384,7 +381,6 @@ testimonialSlide: function (){
 },
 /* End Of service slide
 ================================================*/
-
 
 /* Start of popup
 ================================================*/
@@ -437,7 +433,6 @@ sponsorSlide: function (){
 /* End Of service slide
 ================================================*/
 
-
 /* Start Of best product
 ================================================*/
 bestproductSlide: function (){
@@ -474,7 +469,6 @@ bestproductSlide: function (){
 },
 /* End Of best product
 ================================================*/
-
 
 /* Start Of best product
 ================================================*/
@@ -548,12 +542,11 @@ faqTAB: function (){
   /* Extra class "tab_last" 
      to add border to right side
      of last tab */
-     $('ul.product-tab li').last().addClass("tab_last");
-	 $('ul.course-tab li').last().addClass("tab_last");
- },
+	$('ul.product-tab li').last().addClass("tab_last");
+	$('ul.course-tab li').last().addClass("tab_last");
+},
 /* End Of best product
 ================================================*/
-
 
 /* Start  Contact Map section
 ================================================*/
@@ -736,6 +729,7 @@ testi_2Slide: function (){
 		nav: false,
 		autoplay: false,
 		smartSpeed: 1000,
+		loop:true,
 		responsive:{
 			0:{
 				items:1,
@@ -758,8 +752,6 @@ testi_2Slide: function (){
 },
 /* End Of service slide
 ================================================*/
-
-
 
 /* Start Of teacher secoud Slide
 ================================================*/
@@ -794,7 +786,6 @@ teacher2SLIDE: function (){
 },
 /* End Of teacher secoud Slide
 ================================================*/
-
 
 /* Start Of teacher thired Slide
 ================================================*/
@@ -903,8 +894,6 @@ testimonialSlide_3: function (){
 /* End Of service slide
 ================================================*/
 
-
-
 /* Start Of category slide
 ================================================*/
 categorySlide_3: function (){
@@ -980,7 +969,6 @@ advance3SLIDE: function (){
 /* Start Of category slide
 ================================================*/
 productRange: function (){
-
 	$( "#slider-range" ).slider({
 		range: true,
 		min: 0,
@@ -1004,12 +992,9 @@ searchBAR: function (){
 	$('.toggle-overlay').on('click', function() {
 		$('.search-body').toggleClass('search-open');
 	});
-
 },
 /* - End of search bar
 ================================================*/
-
-
 
 	mobileMenu: function (){
 		jQuery('.mobile-menu nav').meanmenu();
@@ -1109,6 +1094,38 @@ searchBAR: function (){
 		};
 	});
 
+	jQuery.validator.addMethod("validPincode",function(value, element) {
+		let response = true
+		jQuery(".checkout_loader").show();
+		console.log("hi");
+		$.ajaxSetup({
+			headers: {
+			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			}
+		});
+		$.ajax({
+			url: `${globalUrl}center/get-center-by-pincode`,
+			type: "post",
+			data: {
+				"pincode":value
+			},
+			success: function(result) {
+				jQuery(".checkout_loader").hide();
+				if(result){
+					jQuery(".submit_classroom_lead_generation_form").removeClass("disabled");
+					response = true
+				} else {
+					jQuery(".submit_classroom_lead_generation_form").addClass("disabled");
+					response = false;
+				}
+				return response;
+				// console.log(result);
+				// response = (result)?true:false;
+				// console.log(response);
+			}
+		});	
+	});
+
 	$("#submit-review").validate({
 		rules: {
 			stars: {
@@ -1162,6 +1179,14 @@ searchBAR: function (){
 		}
 	})
 
+	$('.lead_capture_form input').on('keyup', function() {
+        if ($("#lead_capture_form").valid()) {
+            $('.submit_classroom_lead_generation_form').prop('disabled', false);  
+        } else {
+            $('.submit_classroom_lead_generation_form').prop('disabled', 'disabled');
+        }
+    });
+
 	$(".lead_capture_form").validate({
 		rules: {
 			name: {
@@ -1174,22 +1199,13 @@ searchBAR: function (){
 			mobile: {
 				required: true,
 				maxlength: 10,
-				minlength: 10
+				minlength: 10,
 			},
 			pincode: {
 				required: true,
 				maxlength: 6,
 				minlength: 6,
-				// remote: {
-				// 	url:`${globalUrl}center/get-center-by-pincode`,
-				// 	success: function(data){
-				// 		console.log(data);
-				// 		console.log(data.name);
-				// 		jQuery("#formFieldCenter").val(data.name);
-				// 		// let value = JSON.parse(data);
-				// 		// console.log(value);
-				// 	}
-				// }
+				validPincode: true,
 			},
 		},
 		messages: {
@@ -1204,26 +1220,41 @@ searchBAR: function (){
 			},
 			pincode: {
 				required: "Please enter valid pincode",
+				validPincode: "Please enter valid pincode",
 			},
 		},
+		success: function (label, element) {
+			//console.log(element);
+			// 'this' refers to the form
+			// var errors = validator.numberOfInvalids();
+			// if (errors) {
+			// 	jQuery(".submit_classroom_lead_generation_form").addClass("disabled");
+			// 	//jQuery(".submit_classroom_lead_generation_form").attr("disabled",true);
+			// } else {
+			// 	jQuery(".submit_classroom_lead_generation_form").removeClass("disabled");
+			// }
+		},
 		submitHandler: function(form) {
+			jQuery(".checkout_loader").show();
 			var formId = jQuery(".submit_classroom_lead_generation_form").closest("form").attr('id');
 			if(`${isEnableOtp}` == 0 && `${isAjaxSubmit}` == 0){
-				console.log("if 1");
 				form.submit();
 			}
 
 			if(`${isEnableOtp}` == 1 && `${isAjaxSubmit}` == 0){
+
 				if(jQuery("#" + formId + " #formFieldOtpResponse").val() == ""){
 					console.log("if 2");
 					sendMobileOtp(formId);
 					return false;
 				}
+
 				if(jQuery("#" + formId + " .verify_otp").val() != '' && jQuery("#" + formId + " #formFieldOtpResponse").val() == jQuery("#" + formId + " .verify_otp").val()){
 					console.log("if 3");
 					form.submit();
 				} else {
 					jQuery("#" + formId + " .response_status").html("OTP is Invalid");
+					jQuery(".checkout_loader").hide();
 					return false;
 				}
 			}
@@ -1238,6 +1269,97 @@ searchBAR: function (){
 					console.log("5");
 					captureLead(form,formId);
 				} else {
+					jQuery("#" + formId + " .response_status").html("OTP is Invalid");
+					return false;
+				}
+			}
+			return false; // required to block normal submit since you used ajax
+		}
+	});
+
+	$("#index_lead_capture_form").validate({
+		rules: {
+			name: {
+				required: true,
+			},
+			email: {
+				required: true,
+				email_rule: true
+			},
+			mobile: {
+				required: true,
+				maxlength: 10,
+				minlength: 10,
+			},
+			pincode: {
+				required: true,
+				maxlength: 6,
+				minlength: 6,
+				// validPincode: true,
+			},
+		},
+		messages: {
+			name: {
+				required: "Please enter full name",
+			},
+			email: {
+				required: "Please enter valid email address",
+			},
+			mobile: {
+				required: "Please enter valid mobile number",
+			},
+			pincode: {
+				required: "Please enter valid pincode",
+				validPincode: "Please enter valid pincode",
+			},
+		},
+		success: function (label, element) {
+			//console.log(element);
+			// 'this' refers to the form
+			// var errors = validator.numberOfInvalids();
+			// if (errors) {
+			// 	jQuery(".submit_classroom_lead_generation_form").addClass("disabled");
+			// 	//jQuery(".submit_classroom_lead_generation_form").attr("disabled",true);
+			// } else {
+			// 	jQuery(".submit_classroom_lead_generation_form").removeClass("disabled");
+			// }
+		},
+		submitHandler: function(form) {
+			jQuery(".checkout_loader").show();
+			var formId = jQuery(".submit_classroom_lead_generation_form").closest("form").attr('id');
+			if(`${isEnableOtp}` == 0 && `${isAjaxSubmit}` == 0){
+				form.submit();
+			}
+
+			if(`${isEnableOtp}` == 1 && `${isAjaxSubmit}` == 0){
+
+				if(jQuery("#" + formId + " #formFieldOtpResponse").val() == ""){
+					console.log("if 2");
+					sendMobileOtp(formId);
+					return false;
+				}
+
+				if(jQuery("#" + formId + " .verify_otp").val() != '' && jQuery("#" + formId + " #formFieldOtpResponse").val() == jQuery("#" + formId + " .verify_otp").val()){
+					console.log("if 3");
+					form.submit();
+				} else {
+					jQuery("#" + formId + " .response_status").html("OTP is Invalid");
+					jQuery(".checkout_loader").hide();
+					return false;
+				}
+			}
+
+			if(`${isEnableOtp}` == 1 && `${isAjaxSubmit}` == 1){
+				console.log("4");
+				if(jQuery("#" + formId + " #formFieldOtpResponse").val() == ""){
+					sendMobileOtp(formId);
+					return false;
+				}
+				if(jQuery("#" + formId + " .verify_otp").val() != '' && jQuery("#" + formId + " #formFieldOtpResponse").val() == jQuery("#" + formId + " .verify_otp").val()){
+					console.log("5");
+					captureLead(form,formId);
+				} else {
+					jQuery(".checkout_loader").hide();
 					jQuery("#" + formId + " .response_status").html("OTP is Invalid");
 					return false;
 				}
@@ -1290,9 +1412,11 @@ searchBAR: function (){
 					jQuery("#" + formId + " .lastDigit").text(result.lastdigit);
 					jQuery("#" + formId + " .lead_steps").removeClass("active");
 					jQuery("#" + formId + " .lead_steps.step2").addClass("active");
+					jQuery(".checkout_loader").hide();
 					return true;
 				} else {
 					jQuery("#" + formId + " .response_status").html("OTP Sent Failed! Please Try Again Later");
+					jQuery(".checkout_loader").hide();
 					return true;
 				}
 			}
@@ -1359,11 +1483,11 @@ function lead_capture_form_btn(course_id,center_id) {
 	console.log(course_id);
 	console.log(center_id);
 	if (center_id) {
-		getCenters(course_id,center_id);
+		getCenter(course_id,center_id);
 	}
 }
 
-function getCenters(course_id,center_id) {
+function getCenter(course_id,center_id) {
 	$.ajaxSetup({
 		headers: {
 		'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -1377,7 +1501,7 @@ function getCenters(course_id,center_id) {
 			"center_id":center_id
 		},
 		success: function(result) {
-			$("#lead_capture_form .center").html(result);
+			$("#lead_capture_form .center").val(result);
 			$("#lead_capture_form .course_id").val(course_id);
 		}
 	});
@@ -1389,5 +1513,11 @@ function showPosition(position) {
 	if(!jQuery.cookie("reloadFlag")){
 		location.reload();
 		jQuery.cookie("reloadFlag",true);
+	}
+}
+
+function findNearest() {
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(showPosition);
 	}
 }

@@ -1215,16 +1215,16 @@ button.alt-menu-btn.float-left {
 #menu-container .accordion .card .submenu li.active a {
   color: #fff; }
 
-  .submenu-courses {
-    position: absolute;
-    left: 140px;
-    top: 53px;
-    color: #4c4c4c;
-    background: #fff;
-    padding: 5px;
-    width: 700px;
-    border-radius: 5px;
-    display: none;
+.submenu-courses {
+  position: absolute;
+  left: 140px;
+  top: 53px;
+  color: #4c4c4c;
+  background: #fff;
+  padding: 5px;
+  width: 700px;
+  border-radius: 5px;
+  display: none;
 }
 
 .category-courses-submenu {
@@ -1322,7 +1322,7 @@ button.alt-menu-btn.float-left {
     height: 45px;
     width: 3px;
     border-radius: 4px;
-    background-color: #fff; }
+    background-color: #4b4b4b; }
   #slider-item .owl-dots .owl-dot {
     height: 20px;
     background-color: #585656;
@@ -2127,7 +2127,7 @@ button.alt-menu-btn.float-left {
     background-color: #4175a4; }
   .owl-dots .owl-dot.active {
     width: 40px;
-    background-color: #fff; }
+    background-color: #646363; }
 
 .testimonial-slide .section-title-2 h2 {
   color: #fff; }
@@ -2683,7 +2683,7 @@ button.alt-menu-btn.float-left {
 
 .secound-teacher-section {
   background-color: #f7f7f7;
-  padding: 105px  0px; }
+  padding: 40px  0px; }
   .secound-teacher-section .teacher-img-text {
     background-color: #fff;
     padding: 20px 30px 30px 30px;
@@ -3899,7 +3899,7 @@ ul.product-tab li.active:after,ul.course-tab li.active:after {
 
 .contact-form-area_3 {
   background-color: #f7f7f7;
-  padding: 110px 0px; }
+  padding: 50px 0px; }
 
 .contact_third_form .contact-info input, .contact_third_form .contact-info .register-form-area select, .register-form-area .contact_third_form .contact-info select, .contact_third_form .contact-info .register-form-area textarea, .register-form-area .contact_third_form .contact-info textarea {
   width: 100%;
@@ -5182,11 +5182,18 @@ a.comment-reply-link {
 
 .lead_steps {
   display: none; 
-  padding: 0 65px;
 }
 
 .lead_steps.active {
   display: block;
+}
+
+.modal-body .lead_steps{
+  padding: 0 65px;
+}
+
+form#index_lead_capture_form h4, form#index_lead_capture_form p {
+  color: #fff;
 }
 
 span.success-icon {
@@ -5324,8 +5331,9 @@ span.success-icon {
   border-radius: 12px;
   display: flex;
   flex-wrap: wrap;
-  padding: 60px;
+  padding: 20px 10px;
   align-items: flex-start;
+  box-shadow: 0px 1px 30px 1px #a8a9ab;
 }
 
 .contact_faq_box .text {
@@ -5336,6 +5344,7 @@ span.success-icon {
 }
 .contact_faq_box .text p {
   margin-bottom: 20px;
+  font-size: 13px;
 }
 .contact_faq_box .icon {
   width: 100px;
@@ -5448,4 +5457,8 @@ span.success-icon {
 .awards-recognition {
   font-weight: 600;
   color: #333;
+}
+
+.modal-body .nws-button button:disabled {
+  background: #a7a7a7;
 }

@@ -192,8 +192,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .ad-banner-title h1 {
   color: #393185;
-  line-height: 3.5rem;
-  font-size: 54px;
+  line-height: 2.5rem;
+  font-size: 38px;
+  font-weight: 600;
 }
 
 .ad-banner-option {
@@ -5343,4 +5344,8 @@ span.success-icon {
 }
 .nws-button {
   padding: 0 65px;
+}
+
+.modal-body .nws-button button.disabled {
+  background: #a7a7a7;
 }
