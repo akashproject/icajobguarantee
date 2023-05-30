@@ -201,6 +201,7 @@ Route::get('/tags/{slug}', [App\Http\Controllers\TagController::class, 'index'])
 Route::post('/save-contact', [App\Http\Controllers\PageController::class, 'saveContact'])->name('save-contact');
 Route::post('/submit-mobile-otp', [App\Http\Controllers\IndexController::class, 'submitMobileOtp'])->name('submit-mobile-otp');
 Route::post('/capture-lead', [App\Http\Controllers\IndexController::class, 'captureLead'])->name('capture-lead');
+Route::post('/franchise-capture-lead', [App\Http\Controllers\IndexController::class, 'franchiseCaptureLead'])->name('capture-lead');
 Route::post('/get-center', [App\Http\Controllers\IndexController::class, 'getCenter'])->name('get-centers');
 Route::post('/get-city-by-state-id', [App\Http\Controllers\Administrator\CenterController::class, 'getCitiesByStateId'])->name('get-city-by-state-id');
 Route::post('/center/get-center-by-pincode', [App\Http\Controllers\IndexController::class, 'getCenterByPincode'])->name('get-center-by-pincode');

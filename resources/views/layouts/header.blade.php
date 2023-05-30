@@ -1,6 +1,4 @@
-@if(check_device('desktop'))
-<div id="preloader"></div>
-@endif
+
 <!-- Start of Header section
 	============================================= -->
 	<header class="custom-header-style">

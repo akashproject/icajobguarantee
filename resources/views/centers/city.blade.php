@@ -2,7 +2,7 @@
     @section('content')
 	<!-- Start of breadcrumb section
 		============================================= -->
-	<section id="breadcrumb" class="inner-banner relative-position backgroud-style"  style="background-image: url({{ (isset($contentMain->banner_image))?getSizedImage('',$contentMain->banner_image):url('assets/img/banner/brt-1.jpg') }});">
+	<section id="breadcrumb" class="inner-banner relative-position backgroud-style"  style="background-image: url({{ (isset($contentMain->banner_image))?getSizedImage('',$contentMain->banner_image):url('public/upload/2023-05-15/inner-banners.jpg') }});">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-9">
@@ -174,155 +174,110 @@
 	<!-- End of shop product section
 		============================================= -->
 
-
 	<!-- Start of recent view product
 		============================================= -->
-		<section id="best-product" class="best-product-section best-product-4">
+		<section id="courses" class="best-course-section">
 			<div class="container">
-				<div class="section-title-2 mb65 headline text-left">
-					<h2>Genius <span>Best Products.</span></h2>
+				<div class="section-title mb10 headline text-center">
+					<span class="subtitle text-uppercase">SEARCH OUR COURSES</span>
+					<h3>Check<span> Another Domain.</span></h3>
 				</div>
-				<div id="best-product-slide-item" class="best-product-slide">
-					<div class="product-img-text">
-						<div class="product-img text-center mb20">
-							<img src="assets/img/product/bp-1.png" alt="">
-						</div>
-						<div class="product-text-content relative-position">
-							<div class="best-title-price float-left">
-								<div class="course-title headline">
-									<h3><a href="#">Mobile Apps Books.</a></h3>
+				<div class="best-course-area mb10">
+					<div class="row">
+						@foreach (getCourseTypes() as $value)
+						<div class="col-md-3">
+							<div class="best-course-pic-text relative-position">
+								<div class="best-course-pic relative-position">
+									<img src="{{ (isset($value->featured_image))?getSizedImage('',$value->featured_image):url('/assets/img/course/bc-1.jpg') }}" alt="">
+									<div class="course-rate ul-li">
+										<ul>
+											<li><i class="fas fa-star"></i></li>
+											<li><i class="fas fa-star"></i></li>
+											<li><i class="fas fa-star"></i></li>
+											<li><i class="fas fa-star"></i></li>
+											<li><i class="fas fa-star"></i></li>
+										</ul>
+									</div>
+									<div class="course-details-btn">
+										<a  target="_blank" href="{{ URL::to('/category') }}/{{ $value->slug }}">Know More <i class="fas fa-arrow-right"></i></a>
+									</div>
+									<div class="blakish-overlay"></div>
 								</div>
-								<div class="price-start">
-									Start from
-									<span>$55.25</span>
+								<div class="best-course-text">
+									<div class="course-title mb10 headline relative-position">
+										<h3><a href="{{ URL::to('/category') }}/{{ $value->slug }}">{{ $value->name }}</a></h3>
+									</div>
+									<div class="course-short-description mb10" >
+										{!! substr($value->excerpt,0,100); !!}...
+									</div>
 								</div>
-							</div>
-							<div class="add-cart text-center">
-								<i class="fas fa-cart-plus"></i>
-							</div>
-						</div>
-					</div>
-
-					<div class="product-img-text">
-						<div class="product-img text-center mb20">
-							<img src="assets/img/product/bp-2.png" alt="">
-						</div>
-						<div class="product-text-content relative-position">
-							<div class="best-title-price float-left">
-								<div class="course-title headline">
-									<h3><a href="#">Mobile Apps Books.</a></h3>
-								</div>
-								<div class="price-start">
-									Start from
-									<span>$55.25</span>
-								</div>
-							</div>
-							<div class="add-cart text-center">
-								<i class="fas fa-cart-plus"></i>
-							</div>
-						</div>
-					</div>
-					<div class="product-img-text">
-						<div class="product-img text-center mb20">
-							<img src="assets/img/product/bp-3.png" alt="">
-						</div>
-						<div class="product-text-content relative-position">
-							<div class="best-title-price float-left">
-								<div class="course-title headline">
-									<h3><a href="#">Mobile Apps Books.</a></h3>
-								</div>
-								<div class="price-start">
-									Start from
-									<span>$55.25</span>
+								<div class="more-btn text-center" >
+									<div class="course-type-list">	
+										<a class="btn-filled" href="javascript:void(0)" onclick="lead_capture_form_btn({{ $value->id }},'')"><i class="fas fa-download"></i> Brochure</a>
+									</div>
+									<div class="course-type-list">														
+										<a class="btn-outline" href="{{ URL::to('/category') }}/{{ $value->slug }}" >View More <i class="fas fa-caret-right"></i></a>
+									</div>														
 								</div>
 							</div>
-							<div class="add-cart text-center">
-								<i class="fas fa-cart-plus"></i>
-							</div>
 						</div>
-					</div>
-					<div class="product-img-text">
-						<div class="product-img text-center mb20">
-							<img src="assets/img/product/bp-4.png" alt="">
-						</div>
-						<div class="product-text-content relative-position">
-							<div class="best-title-price float-left">
-								<div class="course-title headline">
-									<h3><a href="#">Mobile Apps Books.</a></h3>
-								</div>
-								<div class="price-start">
-									Start from
-									<span>$55.25</span>
-								</div>
-							</div>
-							<div class="add-cart text-center">
-								<i class="fas fa-cart-plus"></i>
-							</div>
-						</div>
-					</div>
-					<div class="product-img-text">
-						<div class="product-img text-center mb20">
-							<img src="assets/img/product/bp-5.png" alt="">
-						</div>
-						<div class="product-text-content relative-position">
-							<div class="best-title-price float-left">
-								<div class="course-title headline">
-									<h3><a href="#">Mobile Apps Books.</a></h3>
-								</div>
-								<div class="price-start">
-									Start from
-									<span>$55.25</span>
-								</div>
-							</div>
-							<div class="add-cart text-center">
-								<i class="fas fa-cart-plus"></i>
-							</div>
-						</div>
-					</div>
-					<div class="product-img-text">
-						<div class="product-img text-center mb20">
-							<img src="assets/img/product/bp-6.png" alt="">
-						</div>
-						<div class="product-text-content relative-position">
-							<div class="best-title-price float-left">
-								<div class="course-title headline">
-									<h3><a href="#">Mobile Apps Books.</a></h3>
-								</div>
-								<div class="price-start">
-									Start from
-									<span>$55.25</span>
-								</div>
-							</div>
-							<div class="add-cart text-center">
-								<i class="fas fa-cart-plus"></i>
-							</div>
-						</div>
-					</div>
-					<div class="product-img-text">
-						<div class="product-img text-center mb20">
-							<img src="assets/img/product/bp-1.png" alt="">
-						</div>
-						<div class="product-text-content relative-position">
-							<div class="best-title-price float-left">
-								<div class="course-title headline">
-									<h3><a href="#">Mobile Apps Books.</a></h3>
-								</div>
-								<div class="price-start">
-									Start from
-									<span>$55.25</span>
-								</div>
-							</div>
-							<div class="add-cart text-center">
-								<i class="fas fa-cart-plus"></i>
-							</div>
-						</div>
+						<!-- /course -->
+						@endforeach		
 					</div>
 				</div>
 			</div>
 		</section>
 	<!-- End of recent view product
 		============================================= -->
+	<!-- Start of faq section
+	============================================= -->
+		<section id="faq" class="teacher-details-area">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-9">
+					<div class="about-teacher about-faq faq-secound-home-version">
+							<div class="section-title-2  headline text-left">
+								<h2>Frequently  <span>Ask &amp; Questions.</span></h2>
+							</div>							
+							<div class="faq-tab mb35">
+								<div class="faq-tab-ques  ul-li">
+									<div id="accordion3" class="panel-group">
+										@foreach(getFaqs("Center") as $key => $value)
+										<div class="panel">
+											<div class="panel-title" id="heading_{{$key}}">
+												<h3 class="mb-{{$key}}">
+													<button class="btn btn-link" data-toggle="collapse" data-target="#collapse_{{$key}}" aria-expanded="true" aria-controls="collapse_{{$key}}">
+													{{ $value->question }}
+													</button>
+												</h3>
+											</div>
+											<div id="collapse_{{$key}}" class="collapse" aria-labelledby="heading_{{$key}}" data-parent="#accordion3">
+												<div class="panel-body">
+												{!! $value->answer !!}
+												</div>
+											</div>
+										</div>
+										@endforeach                                       
+									</div>
+									<!-- end of #accordion -->
+								</div>
+							</div>
 
+							<div class="about-btn">
+								<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
+									<a href="#">Make Question <i class="fas fa-caret-right"></i></a>
+								</div>
+								<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
+									<a href="#">contact us <i class="fas fa-caret-right"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	<!-- End of faq section
+	============================================= -->	
 
     @endsection
 @section('script')

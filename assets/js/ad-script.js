@@ -49,7 +49,6 @@ Author:         HTMLMATE Team
 				this.countDown();
 				this.switchOpen();
 				this.quickScroll();
-				this.getGeoLocation();
 			},
 
 
@@ -113,13 +112,6 @@ quickScroll2: function (){
 		}
 	});
 },
-
-getGeoLocation: function(){
-	if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(showPosition);
-	}
-},
-
 /* - End of menu bar
 ================================================*/
 
@@ -280,9 +272,6 @@ courseSlide: function (){
 },
 /* End Of course slide
 ================================================*/
-
-
-
 /* Start Of Date picker
 ================================================*/
 datePicker: function (){
@@ -1075,51 +1064,123 @@ countDown:  function (){
  };
 },
 
-quickScroll: function (){
-	$(window).on("scroll", function() {
-		if ($(this).scrollTop() > 200) {
-			$('.scrollup').fadeIn();
+	quickScroll: function (){
+		$(window).on("scroll", function() {
+			if ($(this).scrollTop() > 200) {
+				$('.scrollup').fadeIn();
+			} else {
+				$('.scrollup').fadeOut();
+			}
+		});
+
+		$('.scrollup').on("click", function()  {
+			$("html, body").animate({
+				scrollTop: 0
+			}, 800);
+			return false;
+		});
+	},
+
+}
+}
+	jQuery(document).ready(function (){
+		Genius.init();
+	});
+
+	jQuery(".gotoCourseCategory").on("change",function (){
+		window.location.href = $(this).val();
+	});
+
+	jQuery(".course-detail-tab-btn").on("click",function (){
+		$(".course-view-content").removeClass("active");
+		let id = $(this).attr("data-id");
+		$("#"+id).addClass("active");
+	})
+
+	jQuery(".gotoStep1").on("click",function(){
+		jQuery(".lead_steps").removeClass("active");
+		jQuery(".lead_steps.step2").addClass("active");
+	});
+
+	jQuery.validator.addMethod('email_rule', function (value, element) {
+		if (/^([a-zA-Z0-9_\-\.]+)\+?([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/.test(value)) {
+		return true;
 		} else {
-			$('.scrollup').fadeOut();
+		return false;
+		};
+	});
+
+	jQuery.validator.addMethod("validPincode",function(value, element) {
+		let response = true
+		//jQuery(".checkout_loader").show();
+		const pincode = ["711203", "700131", "700130", "700132"];
+		console.log(pincode);
+		console.log(getPincode);
+		return pincode.includes(value);
+	});
+
+	$("#submit-review").validate({
+		rules: {
+			stars: {
+				required: true,
+			},
+			reviewer_name: {
+				required: true,
+			},
+			reviewer_email: {
+				required: true,
+			},
+			title: {
+				required: true,
+			},
+			review: {
+				required: true,
+			},
+		},
+		messages: {
+			stars: {
+				required: "Please select rating",
+			},
+			reviewer_name: {
+				required: "Please enter your name",
+			},
+			reviewer_email: {
+				required: "Please enter your email",
+			},
+			title: {
+				required: "Please enter subject",
+			},
+			review: {
+				required: "Submit your review",
+			},
+		}, 
+		submitHandler: function(form) {
+			$.ajaxSetup({
+				headers: {
+				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+				}
+			});
+			$.ajax({
+				url: `${globalUrl}submit-review`,
+				type: "post",
+				data: $("#submit-review").serialize(),
+				success: function(result) {
+					$(".review-success").show();
+					$("#submit-review")[0].reset();
+				}
+			});
+		}
+	})
+
+	$('.lead_capture_form input').on('keyup', function() {
+		if ($("#lead_capture_form").valid()) {
+			$('.submit_classroom_lead_generation_form').prop('disabled', false);  
+		} else {
+			$('.submit_classroom_lead_generation_form').prop('disabled', 'disabled');
 		}
 	});
 
-	$('.scrollup').on("click", function()  {
-		$("html, body").animate({
-			scrollTop: 0
-		}, 800);
-		return false;
-	});
-},
-
-}
-}
-jQuery(document).ready(function (){
-	Genius.init();
-});
-
-jQuery(".gotoCourseCategory").on("change",function (){
-	window.location.href = $(this).val();
-});
-
-jQuery(".course-detail-tab-btn").on("click",function (){
-	$(".course-view-content").removeClass("active");
-	let id = $(this).attr("data-id");
-	$("#"+id).addClass("active");
-})
-
-jQuery(".gotoStep1").on("click",function(){
-	jQuery(".lead_steps").removeClass("active");
-	jQuery(".lead_steps.step2").addClass("active");
-});
-jQuery.validator.addMethod('email_rule', function (value, element) {
-	if (/^([a-zA-Z0-9_\-\.]+)\+?([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/.test(value)) {
-	  return true;
-	} else {
-	  return false;
-	};
-});
-
+	//Classroom Form Validation
 	$(".lead_capture_form").validate({
 		rules: {
 			name: {
@@ -1127,27 +1188,18 @@ jQuery.validator.addMethod('email_rule', function (value, element) {
 			},
 			email: {
 				required: true,
-				email_rule: true
+				
 			},
 			mobile: {
 				required: true,
 				maxlength: 10,
-				minlength: 10
+				minlength: 10,
 			},
 			pincode: {
 				required: true,
 				maxlength: 6,
 				minlength: 6,
-				// remote: {
-				// 	url:`${globalUrl}center/get-center-by-pincode`,
-				// 	success: function(data){
-				// 		console.log(data);
-				// 		console.log(data.name);
-				// 		jQuery("#formFieldCenter").val(data.name);
-				// 		// let value = JSON.parse(data);
-				// 		// console.log(value);
-				// 	}
-				// }
+				validPincode: true
 			},
 		},
 		messages: {
@@ -1162,39 +1214,130 @@ jQuery.validator.addMethod('email_rule', function (value, element) {
 			},
 			pincode: {
 				required: "Please enter valid pincode",
+				validPincode: "This pincode is not in India",
 			},
 		},
+		success: function (label, element) {
+			
+		},
 		submitHandler: function(form) {
+			jQuery(".checkout_loader").show();
 			var formId = jQuery(".submit_classroom_lead_generation_form").closest("form").attr('id');
 			if(`${isEnableOtp}` == 0 && `${isAjaxSubmit}` == 0){
-				console.log("if 1");
 				form.submit();
 			}
 
 			if(`${isEnableOtp}` == 1 && `${isAjaxSubmit}` == 0){
-				if(jQuery("#" + formId + " #formFieldOtpResponse").val() == ""){
+
+				if(jQuery("#" + formId + " .formFieldOtpResponse").val() == ""){
 					console.log("if 2");
 					sendMobileOtp(formId);
 					return false;
 				}
-				if(jQuery("#" + formId + " .verify_otp").val() != '' && jQuery("#" + formId + " #formFieldOtpResponse").val() == jQuery("#" + formId + " .verify_otp").val()){
+
+				if(jQuery("#" + formId + " .verify_otp").val() != '' && jQuery("#" + formId + " .formFieldOtpResponse").val() == jQuery("#" + formId + " .verify_otp").val()){
 					console.log("if 3");
 					form.submit();
 				} else {
 					jQuery("#" + formId + " .response_status").html("OTP is Invalid");
+					jQuery(".checkout_loader").hide();
 					return false;
 				}
 			}
 
 			if(`${isEnableOtp}` == 1 && `${isAjaxSubmit}` == 1){
 				console.log("4");
-				if(jQuery("#" + formId + " #formFieldOtpResponse").val() == ""){
+				if(jQuery("#" + formId + " .formFieldOtpResponse").val() == ""){
 					sendMobileOtp(formId);
 					return false;
 				}
-				if(jQuery("#" + formId + " .verify_otp").val() != '' && jQuery("#" + formId + " #formFieldOtpResponse").val() == jQuery("#" + formId + " .verify_otp").val()){
+				if(jQuery("#" + formId + " .verify_otp").val() != '' && jQuery("#" + formId + " .formFieldOtpResponse").val() == jQuery("#" + formId + " .verify_otp").val()){
 					console.log("5");
 					captureLead(form,formId);
+				} else {
+					jQuery("#" + formId + " .response_status").html("OTP is Invalid");
+					return false;
+				}
+			}
+			return false; // required to block normal submit since you used ajax
+		}
+	});
+
+	$('#franchise_lead_capture_form input').on('keyup', function() {
+		if ($("#lead_capture_form").valid()) {
+			$('.submit_classroom_lead_generation_form').prop('disabled', false);  
+		} else {
+			$('.submit_classroom_lead_generation_form').prop('disabled', 'disabled');
+		}
+	});
+
+	$('#franchise_lead_capture_form input').on('keyup', function() {
+		if ($("#franchise_lead_capture_form").valid()) {
+			$('.submit_franchise_lead_generation_form').prop('disabled', false);  
+		} else {
+			$('.submit_franchise_lead_generation_form').prop('disabled', 'disabled');
+		}
+	});
+
+	//Franchise Form Validation
+	$("#franchise_lead_capture_form").validate({
+		rules: {
+			name: {
+				required: true,
+			},
+			email: {
+				required: true,
+			},
+			mobile: {
+				required: true,
+				maxlength: 10,
+				minlength: 10,
+			},
+			
+		},
+		messages: {
+			name: {
+				required: "Please enter full name",
+			},
+			email: {
+				required: "Please enter valid email address",
+			},
+			mobile: {
+				required: "Please enter valid mobile number",
+			},
+		},
+		success: function (label, element) {
+			
+		},
+		submitHandler: function(form) {
+			jQuery(".checkout_loader").show();
+			var formId = jQuery(".submit_franchise_lead_generation_form").closest("form").attr('id');
+			if(`${isEnableOtp}` == 0 && `${isAjaxSubmit}` == 0){
+				form.submit();
+			}
+
+			if(`${isEnableOtp}` == 1 && `${isAjaxSubmit}` == 0){
+				if(jQuery("#" + formId + " .formFieldOtpResponse").val() == ""){
+					sendMobileOtp(formId);
+					return false;
+				}
+
+				if(jQuery("#" + formId + " .verify_otp").val() != '' && jQuery("#" + formId + " .formFieldOtpResponse").val() == jQuery("#" + formId + " .verify_otp").val()){
+					form.submit();
+				} else {
+					jQuery("#" + formId + " .response_status").html("OTP is Invalid");
+					jQuery(".checkout_loader").hide();
+					return false;
+				}
+			}
+
+			if(`${isEnableOtp}` == 1 && `${isAjaxSubmit}` == 1){				
+				if(jQuery("#" + formId + " .formFieldOtpResponse").val() == ""){
+					sendMobileOtp(formId);
+					return false;
+				}
+				if(jQuery("#" + formId + " .verify_otp").val() != '' && jQuery("#" + formId + " .formFieldOtpResponse").val() == jQuery("#" + formId + " .verify_otp").val()){					
+					franchiseCaptureLead(form,formId);
 				} else {
 					jQuery("#" + formId + " .response_status").html("OTP is Invalid");
 					return false;
@@ -1213,7 +1356,7 @@ jQuery.validator.addMethod('email_rule', function (value, element) {
 			}
 		});
 		$.ajax({
-			url: `${globalUrl}administrator/get-city-by-state-id`,
+			url: `${globalUrl}get-city-by-state-id`,
 			type: "post",
 			data: {
 				state_id: state_id,
@@ -1221,7 +1364,7 @@ jQuery.validator.addMethod('email_rule', function (value, element) {
 			success: function(result) {
 				let htmlContent = '<option value="">Select City</option>';
 				$.each(result, function (key, data) {
-					htmlContent += '<option value="'+data.id+'"> '+data.name+' </option>';
+					htmlContent += '<option value="'+data.name+'"> '+data.name+' </option>';
 				});
 				$(".city_id").html(htmlContent);  
 			}
@@ -1244,13 +1387,15 @@ jQuery.validator.addMethod('email_rule', function (value, element) {
 			success: function(result) {
 				if (result) {
 					console.log(result);
-					jQuery("#" + formId + " #formFieldOtpResponse").val(result.otp_value);
+					jQuery("#" + formId + " .formFieldOtpResponse").val(result.otp_value);
 					jQuery("#" + formId + " .lastDigit").text(result.lastdigit);
 					jQuery("#" + formId + " .lead_steps").removeClass("active");
 					jQuery("#" + formId + " .lead_steps.step2").addClass("active");
+					jQuery(".checkout_loader").hide();
 					return true;
 				} else {
 					jQuery("#" + formId + " .response_status").html("OTP Sent Failed! Please Try Again Later");
+					jQuery(".checkout_loader").hide();
 					return true;
 				}
 			}
@@ -1276,24 +1421,24 @@ jQuery.validator.addMethod('email_rule', function (value, element) {
 		});
 	}
 
-	// jQuery("#pincode").on("keyup",function(){
-	// 	jQuery(".form_step_1").prop('disabled', true);
-	// 	$.ajaxSetup({
-	// 		headers: {
-	// 		'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-	// 		}
-	// 	});
-	// 	$.ajax({
-	// 		url: `${globalUrl}get-center-by-pincode`,
-	// 		type: "post",
-	// 		data: {
-	// 			"pincode":jQuery(this).val()
-	// 		},
-	// 		success: function(result) {
-	// 			jQuery(".form_step_1").prop('disabled', false);
-	// 		}
-	// 	});
-	// })
+	function franchiseCaptureLead(form,formId){
+		$.ajaxSetup({
+			headers: {
+			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			}
+		});
+		$.ajax({
+			url: `${globalUrl}franchise-capture-lead`,
+			type: "post",
+			data: jQuery(form).serialize(),
+			success: function(result) {
+				jQuery("#" + formId + " .form_process").hide();
+				jQuery("#" + formId + " .form_success").show();
+				jQuery("#" + formId)[0].reset()
+				return true;
+			}
+		});
+	}
 
 	jQuery(".course-header-menu").on("mouseenter",function(){
 		jQuery(".submenu-courses").show();
@@ -1307,7 +1452,6 @@ jQuery.validator.addMethod('email_rule', function (value, element) {
 	jQuery(".course-header-menu").on('mouseleave',function(){
 		jQuery(".submenu-courses").hide();
 	});
-
 })();
 
 function lead_capture_form_btn(course_id,center_id) {
@@ -1339,13 +1483,4 @@ function getCenter(course_id,center_id) {
 			$("#lead_capture_form .course_id").val(course_id);
 		}
 	});
-}
-
-function showPosition(position) {
-	jQuery.cookie("lat", position.coords.latitude);
-	jQuery.cookie("lng", position.coords.longitude);
-	if(!jQuery.cookie("reloadFlag")){
-		location.reload();
-		jQuery.cookie("reloadFlag",true);
-	}
 }

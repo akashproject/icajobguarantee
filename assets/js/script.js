@@ -8,6 +8,7 @@ Last change:    00/00/00
 Author:         HTMLMATE Team
 
 -------------------------------------------------------------------------------- */
+let pincode;
 (function() {
 	"use strict";
 	var Genius = {
@@ -17,6 +18,7 @@ Author:         HTMLMATE Team
 		Basic: {
 			init: function() {
 				this.preloader();
+				this.loadPincode();
 				this.menuBar();
 				this.onePageNav();
 				this.quickScroll2();
@@ -59,11 +61,31 @@ Author:         HTMLMATE Team
 ================================================*/
 preloader: function (){
 	jQuery(window).on('load', function(){
-		jQuery('#preloader').fadeOut('slow',function(){jQuery(this).remove();});
+		//jQuery('#preloader').fadeOut('slow',function(){jQuery(this).remove();});
 	});
 },
 /* End  Of Preloader
 ================================================*/
+loadPincode: function (){
+	jQuery(window).on('load', function(){
+		$.ajaxSetup({
+			headers: {
+			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			}
+		});
+		$.ajax({
+			url: `${globalUrl}center/get-center-by-pincode`,
+			type: "post",
+			data: {
+				"pincode":711203
+			},
+			success: function(result) {
+				pincode = result
+				console.log(pincode);
+			}
+		});	
+	});
+},
 
 
 /* - Start of menu bar
@@ -1096,34 +1118,13 @@ searchBAR: function (){
 
 	jQuery.validator.addMethod("validPincode",function(value, element) {
 		let response = true
-		jQuery(".checkout_loader").show();
-		console.log("hi");
-		$.ajaxSetup({
-			headers: {
-			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-			}
-		});
-		$.ajax({
-			url: `${globalUrl}center/get-center-by-pincode`,
-			type: "post",
-			data: {
-				"pincode":value
-			},
-			success: function(result) {
-				jQuery(".checkout_loader").hide();
-				if(result){
-					jQuery(".submit_classroom_lead_generation_form").removeClass("disabled");
-					response = true
-				} else {
-					jQuery(".submit_classroom_lead_generation_form").addClass("disabled");
-					response = false;
-				}
-				return response;
-				// console.log(result);
-				// response = (result)?true:false;
-				// console.log(response);
-			}
-		});	
+		//jQuery(".checkout_loader").show();
+		const pincode = ["711203", "700131", "700130", "700132"];
+		// console.log(pincode);
+		// console.log(getPincode);
+		return pincode.includes(value);
+		
+
 	});
 
 	$("#submit-review").validate({
@@ -1187,6 +1188,7 @@ searchBAR: function (){
         }
     });
 
+	//Classroom Form Validation
 	$(".lead_capture_form").validate({
 		rules: {
 			name: {
@@ -1194,7 +1196,7 @@ searchBAR: function (){
 			},
 			email: {
 				required: true,
-				email_rule: true
+				
 			},
 			mobile: {
 				required: true,
@@ -1205,7 +1207,7 @@ searchBAR: function (){
 				required: true,
 				maxlength: 6,
 				minlength: 6,
-				validPincode: true,
+				validPincode: true
 			},
 		},
 		messages: {
@@ -1220,19 +1222,11 @@ searchBAR: function (){
 			},
 			pincode: {
 				required: "Please enter valid pincode",
-				validPincode: "Please enter valid pincode",
+				validPincode: "This pincode is not in India",
 			},
 		},
 		success: function (label, element) {
-			//console.log(element);
-			// 'this' refers to the form
-			// var errors = validator.numberOfInvalids();
-			// if (errors) {
-			// 	jQuery(".submit_classroom_lead_generation_form").addClass("disabled");
-			// 	//jQuery(".submit_classroom_lead_generation_form").attr("disabled",true);
-			// } else {
-			// 	jQuery(".submit_classroom_lead_generation_form").removeClass("disabled");
-			// }
+			
 		},
 		submitHandler: function(form) {
 			jQuery(".checkout_loader").show();
@@ -1243,13 +1237,13 @@ searchBAR: function (){
 
 			if(`${isEnableOtp}` == 1 && `${isAjaxSubmit}` == 0){
 
-				if(jQuery("#" + formId + " #formFieldOtpResponse").val() == ""){
+				if(jQuery("#" + formId + " .formFieldOtpResponse").val() == ""){
 					console.log("if 2");
 					sendMobileOtp(formId);
 					return false;
 				}
 
-				if(jQuery("#" + formId + " .verify_otp").val() != '' && jQuery("#" + formId + " #formFieldOtpResponse").val() == jQuery("#" + formId + " .verify_otp").val()){
+				if(jQuery("#" + formId + " .verify_otp").val() != '' && jQuery("#" + formId + " .formFieldOtpResponse").val() == jQuery("#" + formId + " .verify_otp").val()){
 					console.log("if 3");
 					form.submit();
 				} else {
@@ -1261,11 +1255,11 @@ searchBAR: function (){
 
 			if(`${isEnableOtp}` == 1 && `${isAjaxSubmit}` == 1){
 				console.log("4");
-				if(jQuery("#" + formId + " #formFieldOtpResponse").val() == ""){
+				if(jQuery("#" + formId + " .formFieldOtpResponse").val() == ""){
 					sendMobileOtp(formId);
 					return false;
 				}
-				if(jQuery("#" + formId + " .verify_otp").val() != '' && jQuery("#" + formId + " #formFieldOtpResponse").val() == jQuery("#" + formId + " .verify_otp").val()){
+				if(jQuery("#" + formId + " .verify_otp").val() != '' && jQuery("#" + formId + " .formFieldOtpResponse").val() == jQuery("#" + formId + " .verify_otp").val()){
 					console.log("5");
 					captureLead(form,formId);
 				} else {
@@ -1277,6 +1271,7 @@ searchBAR: function (){
 		}
 	});
 
+	//Homepage Form Page Validation
 	$("#index_lead_capture_form").validate({
 		rules: {
 			name: {
@@ -1314,15 +1309,7 @@ searchBAR: function (){
 			},
 		},
 		success: function (label, element) {
-			//console.log(element);
-			// 'this' refers to the form
-			// var errors = validator.numberOfInvalids();
-			// if (errors) {
-			// 	jQuery(".submit_classroom_lead_generation_form").addClass("disabled");
-			// 	//jQuery(".submit_classroom_lead_generation_form").attr("disabled",true);
-			// } else {
-			// 	jQuery(".submit_classroom_lead_generation_form").removeClass("disabled");
-			// }
+			
 		},
 		submitHandler: function(form) {
 			jQuery(".checkout_loader").show();
@@ -1333,13 +1320,13 @@ searchBAR: function (){
 
 			if(`${isEnableOtp}` == 1 && `${isAjaxSubmit}` == 0){
 
-				if(jQuery("#" + formId + " #formFieldOtpResponse").val() == ""){
+				if(jQuery("#" + formId + " .formFieldOtpResponse").val() == ""){
 					console.log("if 2");
 					sendMobileOtp(formId);
 					return false;
 				}
 
-				if(jQuery("#" + formId + " .verify_otp").val() != '' && jQuery("#" + formId + " #formFieldOtpResponse").val() == jQuery("#" + formId + " .verify_otp").val()){
+				if(jQuery("#" + formId + " .verify_otp").val() != '' && jQuery("#" + formId + " .formFieldOtpResponse").val() == jQuery("#" + formId + " .verify_otp").val()){
 					console.log("if 3");
 					form.submit();
 				} else {
@@ -1351,15 +1338,99 @@ searchBAR: function (){
 
 			if(`${isEnableOtp}` == 1 && `${isAjaxSubmit}` == 1){
 				console.log("4");
-				if(jQuery("#" + formId + " #formFieldOtpResponse").val() == ""){
+				if(jQuery("#" + formId + " .formFieldOtpResponse").val() == ""){
 					sendMobileOtp(formId);
 					return false;
 				}
-				if(jQuery("#" + formId + " .verify_otp").val() != '' && jQuery("#" + formId + " #formFieldOtpResponse").val() == jQuery("#" + formId + " .verify_otp").val()){
+				if(jQuery("#" + formId + " .verify_otp").val() != '' && jQuery("#" + formId + " .formFieldOtpResponse").val() == jQuery("#" + formId + " .verify_otp").val()){
 					console.log("5");
 					captureLead(form,formId);
 				} else {
 					jQuery(".checkout_loader").hide();
+					jQuery("#" + formId + " .response_status").html("OTP is Invalid");
+					return false;
+				}
+			}
+			return false; // required to block normal submit since you used ajax
+		}
+	});
+
+	$('#franchise_lead_capture_form input').on('keyup', function() {
+        if ($("#lead_capture_form").valid()) {
+            $('.submit_classroom_lead_generation_form').prop('disabled', false);  
+        } else {
+            $('.submit_classroom_lead_generation_form').prop('disabled', 'disabled');
+        }
+    });
+
+	$('#franchise_lead_capture_form input').on('keyup', function() {
+        if ($("#franchise_lead_capture_form").valid()) {
+            $('.submit_franchise_lead_generation_form').prop('disabled', false);  
+        } else {
+            $('.submit_franchise_lead_generation_form').prop('disabled', 'disabled');
+        }
+    });
+
+	//Franchise Form Validation
+	$("#franchise_lead_capture_form").validate({
+		rules: {
+			name: {
+				required: true,
+			},
+			email: {
+				required: true,
+			},
+			mobile: {
+				required: true,
+				maxlength: 10,
+				minlength: 10,
+			},
+			
+		},
+		messages: {
+			name: {
+				required: "Please enter full name",
+			},
+			email: {
+				required: "Please enter valid email address",
+			},
+			mobile: {
+				required: "Please enter valid mobile number",
+			},
+		},
+		success: function (label, element) {
+			
+		},
+		submitHandler: function(form) {
+			jQuery(".checkout_loader").show();
+			var formId = jQuery(".submit_franchise_lead_generation_form").closest("form").attr('id');
+			if(`${isEnableOtp}` == 0 && `${isAjaxSubmit}` == 0){
+				form.submit();
+			}
+
+			if(`${isEnableOtp}` == 1 && `${isAjaxSubmit}` == 0){
+				if(jQuery("#" + formId + " .formFieldOtpResponse").val() == ""){
+					sendMobileOtp(formId);
+					return false;
+				}
+
+				if(jQuery("#" + formId + " .verify_otp").val() != '' && jQuery("#" + formId + " .formFieldOtpResponse").val() == jQuery("#" + formId + " .verify_otp").val()){
+					form.submit();
+				} else {
+					jQuery("#" + formId + " .response_status").html("OTP is Invalid");
+					jQuery(".checkout_loader").hide();
+					return false;
+				}
+			}
+
+			if(`${isEnableOtp}` == 1 && `${isAjaxSubmit}` == 1){				
+				if(jQuery("#" + formId + " .formFieldOtpResponse").val() == ""){
+					sendMobileOtp(formId);
+					return false;
+				}
+				if(jQuery("#" + formId + " .verify_otp").val() != '' && jQuery("#" + formId + " .formFieldOtpResponse").val() == jQuery("#" + formId + " .verify_otp").val()){					
+					franchiseCaptureLead(form,formId);
+				} else {
 					jQuery("#" + formId + " .response_status").html("OTP is Invalid");
 					return false;
 				}
@@ -1377,7 +1448,7 @@ searchBAR: function (){
 			}
 		});
 		$.ajax({
-			url: `${globalUrl}administrator/get-city-by-state-id`,
+			url: `${globalUrl}get-city-by-state-id`,
 			type: "post",
 			data: {
 				state_id: state_id,
@@ -1385,7 +1456,7 @@ searchBAR: function (){
 			success: function(result) {
 				let htmlContent = '<option value="">Select City</option>';
 				$.each(result, function (key, data) {
-					htmlContent += '<option value="'+data.id+'"> '+data.name+' </option>';
+					htmlContent += '<option value="'+data.name+'"> '+data.name+' </option>';
 				});
 				$(".city_id").html(htmlContent);  
 			}
@@ -1408,7 +1479,7 @@ searchBAR: function (){
 			success: function(result) {
 				if (result) {
 					console.log(result);
-					jQuery("#" + formId + " #formFieldOtpResponse").val(result.otp_value);
+					jQuery("#" + formId + " .formFieldOtpResponse").val(result.otp_value);
 					jQuery("#" + formId + " .lastDigit").text(result.lastdigit);
 					jQuery("#" + formId + " .lead_steps").removeClass("active");
 					jQuery("#" + formId + " .lead_steps.step2").addClass("active");
@@ -1442,24 +1513,24 @@ searchBAR: function (){
 		});
 	}
 
-	// jQuery("#pincode").on("keyup",function(){
-	// 	jQuery(".form_step_1").prop('disabled', true);
-	// 	$.ajaxSetup({
-	// 		headers: {
-	// 		'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-	// 		}
-	// 	});
-	// 	$.ajax({
-	// 		url: `${globalUrl}get-center-by-pincode`,
-	// 		type: "post",
-	// 		data: {
-	// 			"pincode":jQuery(this).val()
-	// 		},
-	// 		success: function(result) {
-	// 			jQuery(".form_step_1").prop('disabled', false);
-	// 		}
-	// 	});
-	// })
+	function franchiseCaptureLead(form,formId){
+		$.ajaxSetup({
+			headers: {
+			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			}
+		});
+		$.ajax({
+			url: `${globalUrl}franchise-capture-lead`,
+			type: "post",
+			data: jQuery(form).serialize(),
+			success: function(result) {
+				jQuery("#" + formId + " .form_process").hide();
+				jQuery("#" + formId + " .form_success").show();
+				jQuery("#" + formId)[0].reset()
+				return true;
+			}
+		});
+	}
 
 	jQuery(".course-header-menu").on("mouseenter",function(){
 		jQuery(".submenu-courses").show();
@@ -1473,7 +1544,6 @@ searchBAR: function (){
 	jQuery(".course-header-menu").on('mouseleave',function(){
 		jQuery(".submenu-courses").hide();
 	});
-
 })();
 
 function lead_capture_form_btn(course_id,center_id) {

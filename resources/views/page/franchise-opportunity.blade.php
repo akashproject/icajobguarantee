@@ -98,9 +98,10 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-9">
+						
 						<div class="course-details-item">
 							<div class="course-single-pic mb30">
-								<img src="assets/img/course/cs-1.jpg" alt="">
+								<img src="{{ url('assets/img/pan-india.png')}}" alt="">
 							</div>
 							<div class="course-single-text">
 								<div class="course-title mt10 headline relative-position">
@@ -109,37 +110,23 @@
 								<div class="course-details-content">
 									<p>ICA Edu Skills began its journey in 1999 with a vision to train the job-focused youth in India and make them employable at an affordable fee. As the industry demands ‘skilled manpower’, we too, expanded our horizon by providing practical training to our students and support them with placement at top companies and MNCs.</p>
 								</div>
-
-								
 							</div>
 						</div>
-						
 					</div>
 
 					<div class="col-md-3">
 						<div class="side-bar">
 							<div class="side-bar-widget first-widget">
-								<h2 class="widget-title text-capitalize"><span>Find A Place </span>& Sign up Today.</h2>
+								<h3 class="widget-title text-capitalize" style="font-size:25px" ><span>Franchise Opportunity</span></h3>
 								<div class="latest-video-poster relative-position mb20">
-									<img src="{{ url('assets/img/course/bc-1.jpg') }}" alt="">
+									<img src="{{ url('assets/img/franchise-videothumb.png') }}" alt="">
 									<div class="video-play-btn text-center gradient-bg">
-										<a class="popup-with-zoom-anim" href="https://www.youtube.com/watch?v=9qR2wrZGv3c"><i class="fas fa-play"></i></a>
+										<a class="popup-with-zoom-anim" href="https://www.youtube.com/watch?v=hjbKYGXJ7i4"><i class="fas fa-play"></i></a>
 									</div>
 								</div>
 								<div class="course-desc">
-									<p>Lorem ipsum dolor sit  consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.</p>
+									<p>ICA Edu Skills Franchise Opportunity | Be a Part of ICA Family | Let's Upskill India.</p>
 								</div>								
-							</div>
-							<div class="side-bar-widget">
-								<h2 class="widget-title text-capitalize mt10"><span>All India</span> Presense.</h2>
-								<div class="featured-course">
-									<div class="best-course-pic-text relative-position">
-										<div class="best-course-pic relative-position">
-											<img src="assets/img/blog/fb-1.jpg" alt="">											
-										</div>
-									</div>
-								</div>
-								
 							</div>
 							<div class="genius-btn mb20 gradient-bg text-center text-uppercase ul-li-block bold-font">
 								<a data-toggle="modal" data-target="#franchise-lead-generation-form" href="javascript:void(0)" > <i class="fas fa-download" style="color: #fff;"></i> Get Online Brochure</a>
@@ -226,7 +213,7 @@
 				</div>
 				<div class="row">
 					<div class="col-md-5">
-						<img src="https://dummyimage.com/460x600" >
+						<img src="{{ url('assets/img/franchise-left.png')}}" >
 					</div>
 					<div class="col-md-7">
 						<div class="row">
@@ -236,7 +223,7 @@
 										<img src="{{ url('assets/img/300-Centers.svg') }}" >
 									</div>
 									<div class="category-title">
-										<h4>300+ centers in pan India.</h4>
+										<h4>100+ centers in pan India.</h4>
 										<p> We have been expertly teaching students, college graduates and professionals by preparing them academically for facing the job market for over two decades </p>
 									</div>
 								</div>
@@ -269,7 +256,7 @@
 										<img src="{{ url('assets/img/300-Centers.svg') }}" >
 									</div>
 									<div class="category-title">
-										<h4>300+ centers in pan India.</h4>
+										<h4>100+ centers in pan India.</h4>
 										<p>We have been expertly teaching students, college graduates and professionals by preparing them academically for facing the job market for over two decades </p>
 									</div>
 								</div>
@@ -305,7 +292,7 @@
 							<li class="cat-item"> Partnership Advantage with India’s top-ranked training institute </li>
 							<li class="cat-item"> Best Training facilities in Accounts, Finance and Taxation </li>
 							<li class="cat-item"> All time student rush due to high demand for CIA courses </li>
-							<li class="cat-item"> 300+ centers in Pan India </li>
+							<li class="cat-item"> 100+ centers in Pan India </li>
 							<li class="cat-item"> Investment of just 15-20 lakh </li>
 						</ul>
 					</div>

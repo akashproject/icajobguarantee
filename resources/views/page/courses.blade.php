@@ -44,11 +44,13 @@
 					<div class="short-filter-tab">
 						<div class="shorting-filter  float-left">
 							<span><b>View</b> By </span>
-							<select>
-								<option value="9" selected="">9 Course</option>
-								<option value="10">7 Course</option>
-								<option value="11">2 Course</option>
-								<option value="12">0 Course </option>
+							<select class="gotoCourseCategory">
+								<option value="" selected=""> Categories </option>
+							@if(getCourseTypes())
+								@foreach (getCourseTypes() as $value)
+								<option value="{{ URL::to('/category') }}/{{ $value->slug }}" {{ (isset($category->slug) && ($value->slug == $category->slug)) ?"selected":"" }}> {{ $value->name }} </option>
+								@endforeach	
+							@endif		
 							</select>
 						</div>
 						
@@ -184,7 +186,7 @@
 				<div class="col-md-3">
 					<div class="side-bar">
 						<div class="side-bar-widget  first-widget">
-							<h2 class="widget-title text-capitalize"><span>Find {{check_device('desktop')}}</span>Your Course.</h2>
+							<h2 class="widget-title text-capitalize"><span>Find </span>Your Course.</h2>
 							<div class="listing-filter-form pb30">
 								
 								<div class="filter-select mb20">

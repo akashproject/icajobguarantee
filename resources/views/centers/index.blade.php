@@ -2,7 +2,7 @@
     @section('content')
 	<!-- Start of breadcrumb section
 		============================================= -->
-	<section id="breadcrumb" class="inner-banner relative-position backgroud-style"  style="background-image: url({{ (isset($contentMain->banner_image))?getSizedImage('',$contentMain->banner_image):url('assets/img/banner/brt-1.jpg') }});">
+	<section id="breadcrumb" class="inner-banner relative-position backgroud-style"  style="background-image: url({{ (isset($contentMain->banner_image))?getSizedImage('',$contentMain->banner_image):url('public/upload/2023-05-15/inner-banners.jpg') }});">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-9">

@@ -38,7 +38,7 @@ class AppServiceProvider extends ServiceProvider
             // Header Menu
             $primaryMenu = array(
                 '/centers' => "Centers",                
-                '/franchise-opportunity' => "For Franchise",               
+                '/franchise-opportunity' => "Franchise",               
                 '/university' => "University",
                 '/placements' => "Placements",
                 '/career' => "Career",

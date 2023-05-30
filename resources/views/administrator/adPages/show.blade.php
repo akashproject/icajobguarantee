@@ -44,6 +44,7 @@
 						
 					</div>
 					<div class="col-md-5">
+						@if($adPage->course_type_id !== null)
 						<div class="form-group row">
 							<label for="course_type_id" class="col-sm-3 text-right control-label col-form-label">Courses</label>
 							<div class="col-sm-9">
@@ -55,6 +56,7 @@
 								<select>
 							</div>
 						</div>
+						@endif
 						<!-- <div class="form-group row">
 							<label for="center_id" class="col-sm-3 text-left control-label col-form-label">Centers</label>
 							<div class="col-sm-9">

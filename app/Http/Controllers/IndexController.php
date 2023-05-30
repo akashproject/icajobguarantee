@@ -55,20 +55,20 @@ class IndexController extends Controller
     public function getCenterByPincode(Request $request) {
         $data = $request->all();
         $response = array();
-        $pincode = DB::table('pincodes')->where("name",$data['pincode'])->first();
-        if (!$pincode) {
-            return response()->json(false, $this->_statusOK);
-        }
+        $pincode = DB::table('pincodes')->select('group_concat(pincodes.name)')->get()->toArray();
+        // if (!$pincode) {
+        //     return response()->json(false, $this->_statusOK);
+        // }
 
-        $response['pincode'] = $data['pincode'];
+        // $response['pincode'] = $data['pincode'];
 
-        if ($pincode->center_id !== null) {
-            $center = DB::table('centers')->select('name')->where('id',$pincode->center_id)->first();
-            if($center){
-                $response['center'] = $center->name;
-            } 
-        }
-        return response()->json($response, $this->_statusOK);
+        // if ($pincode->center_id !== null) {
+        //     $center = DB::table('centers')->select('name')->where('id',$pincode->center_id)->first();
+        //     if($center){
+        //         $response['center'] = $center->name;
+        //     } 
+        // }
+        return response()->json($pincode, $this->_statusOK);
     }
 
     public function submitMobileOtp(Request $request){
@@ -162,6 +162,68 @@ class IndexController extends Controller
             'LeadSource' => $postData['utm_source'],
             'LeadName' => $postData['utm_campaign'],
             'SourceTo' => "offline"
+        );
+        
+        $data = json_encode($data);
+        $curl = curl_init($url);
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_POST, true);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+        $headers = array(
+            "Content-Type: application/json",
+        );
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+
+        $resp = curl_exec($curl);
+        curl_close($curl);
+        return json_decode($resp);
+    }
+
+    public function franchiseCaptureLead(Request $request){
+        try {
+            
+            $data = $request->all();
+            $postData = $data;
+            $nameArray = explode(" ",$data['name']);
+            $postData['firstname'] = current(explode(" ",$data['name']));
+            unset($nameArray['0']);
+            $postData['lastname'] = implode(" ",$nameArray);
+
+            
+            $response = $this->franchiseLeadCaptureLeadToExtraage($postData);
+
+            if(get_theme_setting('ajax_submit') == 1) {
+                return response()->json($response, $this->_statusOK);
+            } else {
+                return redirect('/thank-you');
+            }
+            
+        } catch(\Illuminate\Database\QueryException $e){
+            //throw $th;
+            return response()->json($response, $this->_statusErr);
+        }
+    }
+
+    public function franchiseLeadCaptureLeadToExtraage($postData){
+        $url = "https://thirdpartyapi.extraaedge.com/api/SaveRequest"; 		
+        $curl = curl_init();
+        $data = array(
+            "AuthToken" => 'ICA-IDCMEXPANSION-22-09-2021',
+			"Source" => 'ica-idcmexpansion',
+			"Course" => 'CIA',
+			'FirstName' => $postData['firstname'],
+            'LastName' => $postData['lastname'],
+			'Email' => $postData['email'],
+			'MobileNumber' => $postData['mobile'],
+			'State' => $postData['state'],
+			'City' => $postData['city'],	
+			'Field15' => $postData['occupation'],
+			'Field6' => $postData['invest'],
+			'LeadType' => 'DM',
         );
         
         $data = json_encode($data);

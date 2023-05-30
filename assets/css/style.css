@@ -122,6 +122,10 @@ select:visited {
   display: none;
 }
 
+.primary-color{
+  color: #393185 !important;
+}
+
 .headline h1,
 .headline h2,
 .headline h3,
@@ -166,7 +170,9 @@ h1, h2, h3, h4, h5, h6 {
 .mb65 {
   margin-bottom: 35px;
 }
-
+.p30{
+  padding: 30px;
+}
 .mt60 {
   margin-top: 60px; }
 
@@ -1833,14 +1839,15 @@ button.alt-menu-btn.float-left {
   position: absolute; }
   .owl-nav .owl-prev, .owl-nav .owl-next {
     float: left;
-    width: 60px;
-    height: 60px;
-    line-height: 60px;
+    width: 34px;
+    height: 49px;
+    line-height: 51px;
     text-align: center;
     margin: 0 5px;
     border-radius: 4px;
     background-color: #3d3791;
-    color: #fff; }
+    color: #fff;
+}
 
 .popular-two {
   background-color: #f7f7f7;
@@ -5394,15 +5401,17 @@ span.success-icon {
   overflow: hidden;
   padding: 0;
   display: inline-block;
-  background:-webkit-linear-gradient(left, #616dfd 0%, #393185 100%);
-  color: #fff;
+  background: #fff;
+  color: #333;
+  width: 288px;
 }
 
 .placed-grid-box .image-box {
   height: 130px;
-  width: 92px;
-  margin: auto;
-  display: inline-block;
+  width: 98px;
+  margin-right: 9px;
+  float: left;
+  border-right: 1px solid #ccc;
 }
 
 .placed-grid-box .image-box img {
@@ -5411,18 +5420,12 @@ span.success-icon {
 }
 
 .placed-grid-box .box-content {
-  margin: 0.2rem 0;
-  float: right;
-  margin-left: 5px;
+  overflow: hidden;
+}
+.box-title {
+  margin-bottom: 10px;
 }
 
-.placed-grid-box .box-content .box-title {
-  margin-left: 5px;
-  font-size: 17px;
-}
-.placed-grid-box p {
-  color:#fff;
-}
 .box-title h4 {
   font-size: 16px;
   margin-bottom: 0;
@@ -5430,8 +5433,9 @@ span.success-icon {
 
 .box-content p {
   font-size: 12px;
-  margin: 5px;
+  margin: 0;
 }
+
 .testimonial-slide-area .owl-item {
   padding-top: 90px;
 }
@@ -5461,4 +5465,8 @@ span.success-icon {
 
 .modal-body .nws-button button:disabled {
   background: #a7a7a7;
+}
+
+.border-timeline {
+  border-right: 1px solid #393185;
 }

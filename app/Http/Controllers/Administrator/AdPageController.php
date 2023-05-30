@@ -50,8 +50,11 @@ class AdPageController extends Controller
                 'title' => 'required',
                 'slug' => 'required',
             ]);
+
+            if (isset($data['course_type_id']) && $data['course_type_id']!='') {
+                $data['course_type_id'] = json_encode($data['course_type_id']);
+            }
            
-            $data['course_type_id'] = json_encode($data['course_type_id']);
             if($data['adPage_id'] <= 0){
                 Adspage::create($data);
             } else {

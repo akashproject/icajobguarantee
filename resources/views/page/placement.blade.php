@@ -84,7 +84,7 @@
 
 						<div class="col-md-3">
 							<div class="enroll-btn genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
-								<a data-toggle="modal" data-target="#job-application-form" href="javascript:void(0)" > Apply For Placement </i></a>
+								<a href="{{ url('/courses' ) }}" > Explore Courses </i></a>
 							</div>
 						</div>
 					</div>
@@ -100,7 +100,7 @@
 			<div class="container">
 				<div class="section-title mb35 headline text-center">
 					<span class="subtitle text-uppercase">Five Steps</span>
-					<h3>ICA<span> 100% job guarantee.</span></h3>
+					<h3>Connecting Talent with <span>Job Opportunities</span></h3>
 				</div>
 				<div class="best-course-area mb35">
 					<div class="row">
@@ -210,7 +210,7 @@
 								<div class="box-title mt10">
 									<h4>{{ $value->name }}</h4>
 								</div>
-								<p> Studied From : <strong ><a target="_blank" href="/centers/{{getCenterById($value->center_id)->slug }}"> {{ getCenterById($value->center_id)->name }}</a> </strong> </p>
+								<p> Studied From : <strong ><a class="primary-color" target="_blank" href="/centers/{{getCenterById($value->center_id)->slug }}"> {{ getCenterById($value->center_id)->name }}</a> </strong> </p>
 								<p> Placed At: <strong >{{ $value->placed_at }} </strong> </p>
 								<p> Joining Salary: <strong >{{ number_format($value->joining_salary) }} </strong ></p>
 							</div>
@@ -223,62 +223,71 @@
 	<!-- End secound testimonial section
 		============================================= -->
 
-	<!-- Start secound testimonial section
-		============================================= -->
-		<section id="sponsor" class="sponsor-section student_benefits">
+		<section id="sponsor" class="best-course-section">
 			<div class="container">
 				<div class="section-title mb35 headline text-center">
-					<span class="subtitle text-uppercase">Student benefits</span>
-					<h3>Right from your professional <span>Growth and Development.</span></h3>
+					<span class="subtitle text-uppercase">Student Placement</span>
+					<h3>What Makes ICA the Leader in the <span>Job Market?</span></h3>
+					<p> With Any Time Job (ATJ) Card, students who enrolled in Job Guaranteed Courses get additional placement support even after they leave the institution. </p>
 				</div>
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="items mt60">
-							<ul>
-								<li>
-									<img src="https://jetking.com/assets/img/practical-learning.svg">
-									<div class="name"> Learn practically </div>
-								</li>
-								<li class="line_seperator"></li>
-								<li>
-									<img src="https://jetking.com/assets/img/english.svg">
-									<div class="name"> Learn practically </div>
-								</li>
-								<li class="line_seperator"></li>
-								<li>
-									<img src="https://jetking.com/assets/img/interview.svg">
-									<div class="name"> Learn practically </div>
-								</li>
-								<li class="line_seperator"></li>
-								<li>
-									<img src="https://jetking.com/assets/img/get-jobs.svg">
-									<div class="name"> Learn practically </div>
-								</li>
-							</ul>
-						</div>
+				<div class="row" >
+					<div class="col-md-6" >
+						<img src="{{ url('assets/img/atj-front.jpg') }}">
+					</div>
+					<div class="col-md-6" >
+					<img src="{{ url('assets/img/atj-back.jpg') }}">
 					</div>
 				</div>
 			</div>
 		</section>
-	<!-- End secound testimonial section
-		============================================= -->
-	<!-- Start of sponsor section
-	============================================= -->
-	<section id="sponsor" class="sponsor-section">
-		<div class="container">
-			<div class="section-title-2 mb65 headline text-left "  >
-				<h2>Five steps towards <span>100% job guarantee.</span></h2>
-				<p>Explore placement opportunities and find the right one for you with our complete support. </p>
-			</div>
-			
-			<div class="text-center">
-				<img src="{{url('assets/img/career-growth.svg')}}" >
-			</div>
-		</div>
-	</section>
 
-	
-	
+
+		<section id="sponsor" class="best-course-section">
+			<div class="container">
+				<div class="section-title mb35 headline text-center">
+					<span class="subtitle text-uppercase">Student Placement</span>
+					<h3>How are <span> ICA Students</span> always ahead of the competitions?</h3>
+					<p> We know what employers want. With our unique and innovative Personality Development Programs like mock sessions, gamifications we make you industry-ready. </p>
+				</div>
+				<div class="row">
+					<div class="col-md-6 text-right border-timeline p30">
+						<h3 class="primary-color">Monthly Mock Interviews</h3>
+						<p> We provide practice and preparation for our students who are seeking employment or aiming to improve their interview skills. </p>
+					</div>
+					<div class="col-md-6 p30">
+						<img src="{{ url('assets/img/mi.png') }}">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 text-right border-timeline p30">
+						<img src="{{ url('assets/img/mi.png') }}">
+					</div>
+					<div class="col-md-6 p30">
+						<h3 class="primary-color">GDPI / SOBO </h3>
+						<p> We organize GDPI (Group Discussion &amp; Personal Interview) , also known as SOBO (Speak Out Bowled Out) to help students develop critical thinking skills, effective communication, confidence building, teamwork and collaboration and much more. </p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 text-right border-timeline p30">
+						<h3 class="primary-color">Excel Ka Don</h3>
+						<p> Using Ms Excel, we make our students capable in data analysis and management, reporting and visualization, financial analysis and modeling, project management as per industry demand. </p>
+					</div>
+					<div class="col-md-6 p30">
+						<img src="{{ url('assets/img/mi.png')}}">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 text-right border-timeline p30">
+						<img src="{{ url('assets/img/mi.png')}}">
+					</div>
+					<div class="col-md-6 p30">
+						<h3 class="primary-color">Tally Ka Boss </h3>
+						<p> We help you make fit for the corporates by excelling on TallyPrime for accounting and bookkeeping, GST compliance features, financial reporting and analysis, inventory management, payroll management and much more. </p>
+					</div>
+				</div>
+			</div>
+		</section>
+		
     @endsection
 @section('script')
 <!-- ============================================================== -->

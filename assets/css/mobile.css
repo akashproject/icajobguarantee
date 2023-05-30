@@ -5245,14 +5245,33 @@ form#index_lead_capture_form h4, form#index_lead_capture_form p {
 .nws-button {
   padding: 0 65px;
 }
+
 .placed-grid-box {
   border: 1px solid #ccc;
-  margin: 0.2rem;
   border-radius: 7px;
   overflow: hidden;
   padding: 0;
-  width: 32%;
   display: inline-block;
+  background: #fff;
+  color: #333;
+  width: 100%;
+}
+
+.placed-grid-box .image-box {
+  height: 130px;
+  width: 98px;
+  margin-right: 9px;
+  float: left;
+  border-right: 1px solid #ccc;
+}
+
+.placed-grid-box .image-box img {
+  width: 100%;
+  height: 100%;
+}
+
+.placed-grid-box .box-content {
+  overflow: hidden;
 }
 .box-content {
   margin: 0.2rem 0;

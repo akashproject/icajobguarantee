@@ -15,7 +15,7 @@
 @endif
 <input type="hidden" name="center" value="{{ (isset($center) )?$center:'' }}">
 <input type="hidden" name="course_id" value="">
-<input type="hidden" id="formFieldOtpResponse" value="">
+<input type="hidden" class="formFieldOtpResponse" value="">
 <input type="hidden" name="utm_campaign" value="{{ isset($contentMain->utm_campaign)?$contentMain->utm_campaign:'' }}">
 <input type="hidden" name="utm_source" value="{{ isset($contentMain->utm_source)?$contentMain->utm_source:'' }}">
 <input type="hidden" name ="utm_term" value="<?php echo (isset($_GET['utm_term']))?$_GET['utm_term']:""; ?>" >  

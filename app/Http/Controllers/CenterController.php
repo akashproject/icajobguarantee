@@ -71,4 +71,14 @@ class CenterController extends Controller
         }
        
     }
+
+    public function getCitiesByStateId(Request $request){
+        try {
+            $data = $request->all();
+            $cities = City::where('state_id', $data['state_id'])->orderBy('name', 'asc')->get();
+            return response()->json($cities,$this->_statusOK);
+        } catch(\Illuminate\Database\QueryException $e){
+        
+        }
+    }
 }
