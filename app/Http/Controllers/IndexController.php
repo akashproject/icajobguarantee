@@ -11,6 +11,7 @@ use App\Models\Center;
 use App\Models\City;
 use App\Models\State;
 use App\Models\Pincode;
+use Mail;
 
 class IndexController extends Controller
 {
@@ -282,11 +283,33 @@ class IndexController extends Controller
 
     public function testCode(){
         try {
-            echo $center = DB::table('centers')
-            ->join('cities', 'cities.id', '=', 'centers.city_id')
-            ->select('cities.*')->toSql();
+           
+            $starttime = microtime(true); // Top of page           
+            $user = array(
+                'name' => "Akash Dutta",
+                'email' => "akash.dutta@icagroup.in",
+            );
+            
+            $data = array(
+                'name' => "Akash Dutta",
+            );
+            
+
+           $mail = Mail::send('email.leadCaptureTemplate', $data, function ($m) use ($user) {
+                $m->from('connect@icajobguarantee.com', 'ICA Edu Skils');
+                $m->to($user['email'], $user['name'])->subject('Request Submitted!');
+            });
+
+
+            //print_r($mail);  
+            
+            // Code
+            $endtime = microtime(true); // Bottom of page
+
+            printf("Page loaded in %f seconds", $endtime - $starttime );
+            exit;
         } catch(\Illuminate\Database\QueryException $e){
-            //throw $th;
-        }
+            print_r($e);
+        }   
     }
 }
