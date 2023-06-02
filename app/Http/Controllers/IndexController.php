@@ -11,8 +11,9 @@ use App\Models\Center;
 use App\Models\City;
 use App\Models\State;
 use App\Models\Pincode;
+use App\Jobs\SendEmailJob; 
+use App\Jobs\ExtraaedgeApiRequest;
 use Mail;
-
 class IndexController extends Controller
 {
     //
@@ -24,8 +25,10 @@ class IndexController extends Controller
         $this->layout = (check_device('mobile'))?"mobile.":'';
     }
 
-    public function index() {
+    public function index(Request $request) {
         try {
+           
+            $request->session()->get('userData');
             $courses = DB::table('courses')
             ->join('course_type', 'course_type.id', '=', 'courses.type_id')
             ->select('courses.*', 'courses.name as course_name','course_type.id as category_id','course_type.name as category','course_type.slug as categorySlug')
@@ -33,6 +36,7 @@ class IndexController extends Controller
             ->orderBy('courses.id', 'asc')
             ->get();
             $courseTypes = CourseType::where('status', 1)->get();
+
             return view($this->layout.'index',compact('courses','courseTypes'));
         } catch(\Illuminate\Database\QueryException $e){
             //throw $th;
@@ -152,9 +156,8 @@ class IndexController extends Controller
     }
 
     public function classroomLeadCaptureLeadToExtraage($postData){
-        $url = "https://prodapi.extraaedge.com/api/WebHook/addLead"; 		
-        $curl = curl_init();
-        $data = array(
+
+        $apiData = array(
             'AuthToken' => 'ICA-06-12-2017',
             'Source' => 'ica',
             'FirstName' => $postData['firstname'],
@@ -169,24 +172,10 @@ class IndexController extends Controller
             'LeadName' => $postData['utm_campaign'],
             'SourceTo' => "offline"
         );
-        
-        $data = json_encode($data);
-        $curl = curl_init($url);
-        curl_setopt($curl, CURLOPT_URL, $url);
-        curl_setopt($curl, CURLOPT_POST, true);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
-        $headers = array(
-            "Content-Type: application/json",
-        );
-        curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-        curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+        ExtraaedgeApiRequest::dispatchSync($apiData);
 
-        $resp = curl_exec($curl);
-        curl_close($curl);
-        return json_decode($resp);
+        return response()->json(true, $this->_statusOK);
     }
 
     public function franchiseCaptureLead(Request $request){
@@ -285,28 +274,26 @@ class IndexController extends Controller
         try {
            
             $starttime = microtime(true); // Top of page           
-            $user = array(
+            
+            $data = array(
                 'name' => "Akash Dutta",
                 'email' => "akash.dutta@icagroup.in",
             );
             
-            $data = array(
-                'name' => "Akash Dutta",
-            );
-            
-
-           $mail = Mail::send('email.leadCaptureTemplate', $data, function ($m) use ($user) {
-                $m->from('connect@icajobguarantee.com', 'ICA Edu Skils');
-                $m->to($user['email'], $user['name'])->subject('Request Submitted!');
-            });
-
-
+            SendEmailJob::dispatchSync($data);
+            //dispatch(new \App\Jobs\SendEmailJob($data));
             //print_r($mail);  
-            
+
+            //echo $mail = mail("akash.dutta@icagroup.in","My subject","i am here index");
+            // $mail = Mail::send('email.leadCaptureTemplate', $data, function ($m) use ($data) {
+            //     $m->from('connect@icajobguarantee.com', 'ICA Edu Skils');
+            //     $m->to($data['email'], $data['name'])->subject('Request Submitted Index!');
+            // });
+
             // Code
             $endtime = microtime(true); // Bottom of page
 
-            printf("Page loaded in %f seconds", $endtime - $starttime );
+            printf("Page loaded in %f seconds", $endtime - $starttime);
             exit;
         } catch(\Illuminate\Database\QueryException $e){
             print_r($e);

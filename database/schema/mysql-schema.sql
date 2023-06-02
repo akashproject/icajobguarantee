@@ -470,6 +470,19 @@ CREATE TABLE `personal_access_tokens` (
   KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `pincodes`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `pincodes` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `city_id` int(11) DEFAULT NULL,
+  `center_id` int(11) DEFAULT NULL,
+  `name` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `placements`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -682,3 +695,4 @@ INSERT INTO `migrations` VALUES (56,'2023_04_13_074643_create_categories_table',
 INSERT INTO `migrations` VALUES (57,'2023_04_22_064246_create_adpages_table',28);
 INSERT INTO `migrations` VALUES (58,'2023_05_12_094932_create_certificates_table',29);
 INSERT INTO `migrations` VALUES (59,'2023_05_16_122721_create_placements_table',29);
+INSERT INTO `migrations` VALUES (60,'2023_05_24_121347_create_pincodes_table',30);

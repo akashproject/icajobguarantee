@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Administrator;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Job;
+use App\Models\Vacancy;
 use App\Models\JobType;
 
 class JobController extends Controller
@@ -12,7 +12,7 @@ class JobController extends Controller
     public function index()
     {
         try {
-            $jobs = Job::all();
+            $jobs = Vacancy::all();
             return view('administrator.jobs.index',compact('jobs'));
 
         } catch(\Illuminate\Database\QueryException $e){
@@ -29,7 +29,7 @@ class JobController extends Controller
     public function show($id)
     {
         try {
-            $job = Job::find($id);
+            $job = Vacancy::find($id);
             $jobType = JobType::all();
             return view('administrator.jobs.show',compact('job','jobType'));
         } catch(\Illuminate\Database\QueryException $e){
@@ -44,12 +44,12 @@ class JobController extends Controller
                 'name' => 'required',
             ]);
             if($data['job_id'] <= 0){
-                $job = Job::create($data);
+                $job = Vacancy::create($data);
             } else {
-                $job = Job::findOrFail($data['job_id']);
+                $job = Vacancy::findOrFail($data['job_id']);
                 $job->update($data);
             }
-            return redirect()->back()->with('message', 'Job updated successfully!');
+            return redirect()->back()->with('message', 'Vacancy updated successfully!');
         } catch(\Illuminate\Database\QueryException $e){
             var_dump($e->getMessage()); 
         }
@@ -57,7 +57,7 @@ class JobController extends Controller
 
     
     public function delete($id) {
-        $course = Job::findOrFail($id);
+        $course = Vacancy::findOrFail($id);
         $course->delete();
         return redirect('/administrator/courses');
     }
@@ -99,7 +99,7 @@ class JobController extends Controller
                 $jobType = JobType::findOrFail($data['job_type_id']);
                 $jobType->update($data);
             }
-            return redirect()->back()->with('message', 'Job type updated successfully!');
+            return redirect()->back()->with('message', 'Vacancy type updated successfully!');
         } catch(\Illuminate\Database\QueryException $e){
             var_dump($e->getMessage()); 
         }

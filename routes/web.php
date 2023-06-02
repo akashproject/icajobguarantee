@@ -13,7 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/clear-cache', function() {
-    $exitCode = Artisan::call('cache:clear');
+    echo $exitCode = Artisan::call('cache:clear');
+    // return what you want
+});
+Route::get('/queue-work', function() {
+    echo $exitCode = Artisan::call('queue:work');
     // return what you want
 });
 
