@@ -113,12 +113,6 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="pincode" class="col-sm-3 text-right control-label col-form-label">Pincode</label>
-							<div class="col-sm-9">
-								<textarea class="form-control" name="pincode" id="pincode" placeholder="Enter Pincode Here" >{{ $center->pincode }}</textarea>
-							</div>
-						</div>
-						<div class="form-group row">
 							<label for="no_of_module" class="col-sm-3 text-left control-label col-form-label">Gallery</label>
 							<div class="col-sm-9">
 								<a href="{{ url('administrator/gallery') }}/{{ $center->id }}" class="btn btn-primary">
@@ -150,6 +144,14 @@
 								<select>
 							</div>
 						</div>	
+						<div class="form-group row">
+							<label for="no_of_module" class="col-sm-3 text-left control-label col-form-label">Pincode</label>
+							<div class="col-sm-9">
+								<a href="{{ url('administrator/pincode') }}/{{ $center->id }}" class="btn btn-primary">
+									Import Pincode
+								</a>								
+							</div>
+						</div>
 						<div class="form-group row">
 							<label for="tags" class="col-sm-3 text-right control-label col-form-label">Tags</label>
 							<div class="col-sm-9">

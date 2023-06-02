@@ -24,8 +24,8 @@
     <input type="text" class="occupation" name="occupation" placeholder="Enter Your Occupation" autocomplete="off" required>
 </div>
 <div class="register-form-area">
-    <select class="invest" name="invest">
-        <option value="" disabled="" hidden="" selected="">Are you ready to Invest  15-20 lakh ?</option>
+    <select class="invest" name="invest" required>
+        <option value="">Are you ready to Invest  15-20 lakh ?</option>
         <option value="Yes">Yes</option>
         <option value="No">No</option>
     </select>

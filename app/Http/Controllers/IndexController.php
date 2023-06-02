@@ -40,16 +40,14 @@ class IndexController extends Controller
     }
 
     public function getCenter(Request $request) {
-        $data = $request->all();
-        $centers = getCenterById($data['course_id'], $data['center_id']);
-        $option = "";
-        if(count($centers) > 1){
-            $option .= "<option> Select Center </option>";
+        try {
+            $data = $request->all();
+            $center = Center::where('id', $data['center_id'])->first()->name;
+            return response()->json($center, $this->_statusOK);
+        } catch(\Illuminate\Database\QueryException $e){
+            //throw $th;
+            return response()->json($response, $this->_statusErr);
         }
-        foreach ($centers as $key => $value) {
-            $option .= '<option value="'.$value->name.'" > '.$value->name.' </option>';
-        }
-        return response()->json($option, $this->_statusOK);
     }
 
     public function getCenterByPincode(Request $request) {
@@ -126,11 +124,18 @@ class IndexController extends Controller
                 $city  = Center::select("city_id")->where("name",$data['center'])->first();
                 $postData['city'] = City::where("id",$city->city_id)->first()->name;
             } else {
-                $postData['city'] = "";
-                $postData['center'] = "";
+                //center by pincode
+                $pincode = DB::table('pincodes')
+                ->leftjoin('centers', 'pincodes.center_id', '=', 'centers.id')
+                ->leftjoin('cities', 'pincodes.city_id', '=', 'cities.id')
+                ->select('centers.name as center','cities.name as city')
+                ->where('pincodes.name', $data['pincode'])
+                ->where('centers.status', 1)
+                ->inRandomOrder()
+                ->first();
+                $postData['city'] = ($pincode)?$pincode->city:"";
+                $postData['center'] = ($pincode)?$pincode->center:"";
             }
-           
-            
             $response = $this->classroomLeadCaptureLeadToExtraage($postData);
 
             if(get_theme_setting('ajax_submit') == 1) {
@@ -140,8 +145,8 @@ class IndexController extends Controller
             }
             
         } catch(\Illuminate\Database\QueryException $e){
-            //throw $th;
-            return response()->json($response, $this->_statusErr);
+            throw $e;
+            
         }
     }
 

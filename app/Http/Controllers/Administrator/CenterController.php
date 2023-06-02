@@ -16,8 +16,7 @@ class CenterController extends Controller
     public $_statusOK = 200;
     public $_statusErr = 500;
 
-    public function index()
-    {
+    public function index() {
         try {
             $centers = Center::all();
             return view('administrator.centers.index',compact('centers'));
@@ -38,8 +37,7 @@ class CenterController extends Controller
         
     }
 
-    public function show($id)
-    {
+    public function show($id) {
         try {
             $courseCategories = CourseType::all();
             $center = Center::findorFail($id);
@@ -65,7 +63,6 @@ class CenterController extends Controller
                 'lng' => 'required',
             ]);
             $data['courses'] = json_encode($data['courses']);
-            $data['pincode'] = json_encode(explode(",",$data['pincode']));
             if($data['center_id'] <= 0){
                 Center::create($data);
             } else {
@@ -194,4 +191,57 @@ class CenterController extends Controller
         
     }
 
+    public function pincode($id){
+        try {
+
+            $center = Center::findOrFail($id);
+            return view('administrator.centers.pincode',compact('center'));       
+        } catch(\Illuminate\Database\QueryException $e){
+        }     
+    }
+
+    public function savePincode(Request $request) {
+        try {
+
+
+            $data = $request->all();
+            $request->validate([
+                'pincode' => 'required|mimes:csv,txt',
+            ]); 
+            
+            // Check is file exist        
+            if (!$request->hasFile('pincode')) {
+                return false;
+            }
+
+            $csv = $request->file('pincode');
+            $file = fopen($csv, "r");
+            while (($pincodeArray = fgetcsv($file, 10000, ",")) !==FALSE ) {
+                //Checking Duplicate                
+                if (!DB::table('pincodes')->select('id')->where('center_id',$data['center_id'])->where('name',$pincodeArray[0])->exists()) {
+                    $pincodeArray['city_id'] = $data['city_id'];
+                    $pincodeArray['center_id'] = $data['center_id'];               
+                    $pincodeArray['name'] = $pincodeArray[0];
+                    unset($pincodeArray[0]);
+                    DB::table('pincodes')->insert($pincodeArray);
+                }
+
+                
+
+
+
+            }
+
+            fclose($file);  
+            return redirect('/administrator/view-center/'.$data['center_id'])->with('message', 'Pincode uploaded successfully!');
+        } catch(\Illuminate\Database\QueryException $e){
+            var_dump($e->getMessage()); 
+        }
+    }
+
+    public function delete($id) {
+        $center = Center::findOrFail($id);
+        $center->delete();
+        return redirect('/administrator/centers');
+    }
 }

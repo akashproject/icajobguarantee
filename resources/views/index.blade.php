@@ -250,7 +250,7 @@
 												</div>
 											</div>
 											<div class="nws-button text-center white text-capitalize">
-												<button class="submit_classroom_lead_generation_form form_step_1 disabled" type="submit">Apply Now <i class="fas fa-arrow-right" > </i> </button> 
+												<button class="index_submit_classroom_lead_generation_form form_step_1 disabled" type="submit">Apply Now <i class="fas fa-arrow-right" > </i> </button> 
 												<img src="https://www.icacourse.in/wp-content/themes/scriptcrown/images/loader.gif" style="width: 42px; display:none;" class="checkout_loader">
 											</div>
 										</div>

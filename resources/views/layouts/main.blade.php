@@ -2,7 +2,8 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <title>{{ isset($contentMain->title)?$contentMain->title:'Accounts | Finance | Taxation | Courses | Training Institute' }}</title>
-    <meta name="description" content="{{ isset($contentMain->meta_description)?$contentMain->meta_description:'' }}" />
+    <meta name="facebook-domain-verification" content="he9zy5upymc72288m3qpcwda5dygul" />
+    <meta name="description" content="{{ isset($contentMain->meta_description)?$contentMain->meta_description:'Accounts | GST | Tally | SAP | Learn accounts, finance, taxation, and banking job guarantee courses. Enroll with India&#039;s No.1 Educational Training Institute.' }}" />
     <link rel="canonical" href="{{url()->current()}}"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
@@ -14,17 +15,17 @@
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="ICA Edu Skills" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="{{ isset($contentMain->title)?$contentMain->title:'' }}" />
-    <meta property="og:description" content="{{ isset($contentMain->meta_description)?$contentMain->meta_description:'' }}" />
-    <meta property="og:url" content="https://www.icajobguarantee.com/" />
+    <meta property="og:title" content="{{ isset($contentMain->title)?$contentMain->title:'Accounts | Finance | Taxation | Courses | Training Institute | Computerized Accounts Training Institute' }}" />
+    <meta property="og:description" content="{{ isset($contentMain->meta_description)?$contentMain->meta_description:'Accounts | GST | Tally | SAP | Learn accounts, finance, taxation, and banking job guarantee courses. Enroll with India&#039;s No.1 Educational Training Institute.' }}" />
+    <meta property="og:url" content="{{url()->current()}}" />
     <meta property="og:image" content="https://www.facebook.com/ICAJobguarantee" />
     <meta property="og:image:secure_url" content="https://www.facebook.com/ICAJobguarantee" />
     <meta property="og:video" content="https://www.youtube.com/channel/UC6WWqdZzUMAsZqTQHRyEj_A" />
     <meta property="og:video:secure_url" content="https://www.youtube.com/channel/UC6WWqdZzUMAsZqTQHRyEj_A" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@IcaSkills" />
-    <meta name="twitter:title" content="{{ isset($contentMain->title)?$contentMain->title:'' }}" />
-    <meta name="twitter:description" content="{{ isset($contentMain->meta_description)?$contentMain->meta_description:'' }}" />
+    <meta name="twitter:title" content="{{ isset($contentMain->title)?$contentMain->title:'Accounts | Finance | Taxation | Courses | Training Institute | Computerized Accounts Training Institute' }}" />
+    <meta name="twitter:description" content="{{ isset($contentMain->meta_description)?$contentMain->meta_description:'Accounts | GST | Tally | SAP | Learn accounts, finance, taxation, and banking job guarantee courses. Enroll with India&#039;s No.1 Educational Training Institute.' }}" />
     <meta name="twitter:creator" content="@IcaSkills" />
     <meta name="twitter:image" content="" />
     <meta name="twitter:label1" content="Written by" />

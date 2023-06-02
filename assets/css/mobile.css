@@ -838,8 +838,7 @@ nav.navbar-menu.inside-navbar .nav-menu {
 
 .modal-header {
   padding: 0;
-  position: relative;
-  background-image: url(../img/banner/pb.jpg); }
+  position: relative;}
   .modal-header .gradient-bg, .modal-header .modal-body .nws-button button, .modal-body .nws-button .modal-header button, .modal-header .teacher-pic-content .teacher-img-content:after, .teacher-pic-content .modal-header .teacher-img-content:after, .modal-header .course-details-category li:hover, .course-details-category .modal-header li:hover {
     position: absolute;
     top: 0;
@@ -5293,4 +5292,11 @@ form#index_lead_capture_form h4, form#index_lead_capture_form p {
 
 .modal-body .nws-button button.disabled {
   background: #a7a7a7;
+}
+
+.shadow-background {
+  padding: 7px;
+  background: #dbdbdb;
+  box-shadow: 1px 0px 6px 0px #4c4848;
+  border-radius: 8px;
 }

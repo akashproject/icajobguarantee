@@ -1125,7 +1125,7 @@ searchBAR: function (){
 		return pincode.includes(value);
 		
 
-	});
+	},'This pincode is not in India');
 
 	$("#submit-review").validate({
 		rules: {
@@ -1189,14 +1189,14 @@ searchBAR: function (){
     });
 
 	//Classroom Form Validation
-	$(".lead_capture_form").validate({
+	$("#lead_capture_form").validate({
 		rules: {
 			name: {
 				required: true,
 			},
 			email: {
 				required: true,
-				
+				email_rule:true
 			},
 			mobile: {
 				required: true,
@@ -1207,7 +1207,7 @@ searchBAR: function (){
 				required: true,
 				maxlength: 6,
 				minlength: 6,
-				validPincode: true
+				//validPincode: true
 			},
 		},
 		messages: {
@@ -1216,17 +1216,14 @@ searchBAR: function (){
 			},
 			email: {
 				required: "Please enter valid email address",
+				email_rule: "Please enter valid email address",
 			},
 			mobile: {
 				required: "Please enter valid mobile number",
 			},
 			pincode: {
 				required: "Please enter valid pincode",
-				validPincode: "This pincode is not in India",
 			},
-		},
-		success: function (label, element) {
-			
 		},
 		submitHandler: function(form) {
 			jQuery(".checkout_loader").show();
@@ -1299,13 +1296,13 @@ searchBAR: function (){
 			},
 			email: {
 				required: "Please enter valid email address",
+				email_rule: "Please enter valid email address",
 			},
 			mobile: {
 				required: "Please enter valid mobile number",
 			},
 			pincode: {
 				required: "Please enter valid pincode",
-				validPincode: "Please enter valid pincode",
 			},
 		},
 		success: function (label, element) {
@@ -1313,7 +1310,7 @@ searchBAR: function (){
 		},
 		submitHandler: function(form) {
 			jQuery(".checkout_loader").show();
-			var formId = jQuery(".submit_classroom_lead_generation_form").closest("form").attr('id');
+			var formId = jQuery(".index_submit_classroom_lead_generation_form").closest("form").attr('id');
 			if(`${isEnableOtp}` == 0 && `${isAjaxSubmit}` == 0){
 				form.submit();
 			}
@@ -1547,17 +1544,12 @@ searchBAR: function (){
 })();
 
 function lead_capture_form_btn(course_id,center_id) {
-	jQuery(".lead_steps").removeClass("active");
-	jQuery(".lead_steps.step1").addClass("active");
 	jQuery('#lead-generation-form').modal('show');
-	console.log(course_id);
-	console.log(center_id);
-	if (center_id) {
-		getCenter(course_id,center_id);
-	}
 }
 
+// Get Exact Center Detail
 function getCenter(course_id,center_id) {
+	jQuery(".formFieldPincode").remove();
 	$.ajaxSetup({
 		headers: {
 		'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

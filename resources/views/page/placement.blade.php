@@ -173,18 +173,36 @@
 		============================================= -->
 		<section id="sponsor" class="sponsor-section">
 			<div class="container">
-				<div class="section-title mb35 headline text-center">
-					<span class="subtitle text-uppercase">Student Placement</span>
-					<h3>Our Alumni <span>Worked At.</span></h3>
-				</div>
-				<div class="row" >
-					@foreach(getRecruiters() as $value)
-						<div class="col-md-2 col-lg-2 col-6 mt10 mb20" >
-							<div class="placement-grid" >
-								<img src="{{ (isset($value->featured_image))?getSizedImage('',$value->featured_image):'https://dummyimage.com/140x140' }}" alt="">		
+				<div class="row">
+					<div class="col-md-6">
+						<div class="section-title mb35 headline text-center">
+							<span class="subtitle text-uppercase">Student Placement</span>
+							<h3>Why ICA Leading the <span>Job Market?</span></h3>
+							<!-- <p> With Any Time Job (ATJ) Card, students who enrolled in Job Guaranteed Courses get additional placement support even after they leave the institution. </p> -->
+						</div>
+						<div class="row" >
+							<div class="col-md-12" >
+								<div class="">
+									<img src="{{ url('assets/img/atj-front.png') }}">
+								</div>
 							</div>
 						</div>
-					@endforeach
+					</div>
+					<div class="col-md-6">
+						<div class="section-title mb35 headline text-center">
+							<span class="subtitle text-uppercase">Student Placement</span>
+							<h3>Our Alumni <span>Worked At.</span></h3>
+						</div>
+						<div class="row" >
+							@foreach(getRecruiters() as $value)
+								<div class="col-md-3 col-lg-3 col-6 mt10 mb20" >
+									<div class="placement-grid" >
+										<img src="{{ (isset($value->featured_image))?getSizedImage('',$value->featured_image):'https://dummyimage.com/140x140' }}" alt="">		
+									</div>
+								</div>
+							@endforeach
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -225,19 +243,7 @@
 
 		<section id="sponsor" class="best-course-section">
 			<div class="container">
-				<div class="section-title mb35 headline text-center">
-					<span class="subtitle text-uppercase">Student Placement</span>
-					<h3>What Makes ICA the Leader in the <span>Job Market?</span></h3>
-					<p> With Any Time Job (ATJ) Card, students who enrolled in Job Guaranteed Courses get additional placement support even after they leave the institution. </p>
-				</div>
-				<div class="row" >
-					<div class="col-md-6" >
-						<img src="{{ url('assets/img/atj-front.jpg') }}">
-					</div>
-					<div class="col-md-6" >
-					<img src="{{ url('assets/img/atj-back.jpg') }}">
-					</div>
-				</div>
+				
 			</div>
 		</section>
 

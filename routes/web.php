@@ -73,6 +73,9 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::get('/gallery/{center_id}', [App\Http\Controllers\Administrator\CenterController::class, 'gallery'])->name('admin-gallery');
         Route::post('/save-gallery', [App\Http\Controllers\Administrator\CenterController::class, 'saveGallery'])->name('admin-save-gallery');
 
+        Route::get('/pincode/{center_id}', [App\Http\Controllers\Administrator\CenterController::class, 'pincode'])->name('admin-gallery');
+        Route::post('/upload-pincode', [App\Http\Controllers\Administrator\CenterController::class, 'savePincode'])->name('admin-upload-pincode');
+
         // Media 
         Route::get('/media', [App\Http\Controllers\Administrator\MediaController::class, 'index'])->name('admin-media');
         Route::get('/view-file/{id}', [App\Http\Controllers\Administrator\MediaController::class, 'view'])->name('admin-view-file');
@@ -202,7 +205,7 @@ Route::post('/save-contact', [App\Http\Controllers\PageController::class, 'saveC
 Route::post('/submit-mobile-otp', [App\Http\Controllers\IndexController::class, 'submitMobileOtp'])->name('submit-mobile-otp');
 Route::post('/capture-lead', [App\Http\Controllers\IndexController::class, 'captureLead'])->name('capture-lead');
 Route::post('/franchise-capture-lead', [App\Http\Controllers\IndexController::class, 'franchiseCaptureLead'])->name('capture-lead');
-Route::post('/get-center', [App\Http\Controllers\IndexController::class, 'getCenter'])->name('get-centers');
+Route::post('/get-centers', [App\Http\Controllers\IndexController::class, 'getCenter'])->name('get-centers');
 Route::post('/get-city-by-state-id', [App\Http\Controllers\Administrator\CenterController::class, 'getCitiesByStateId'])->name('get-city-by-state-id');
 Route::post('/center/get-center-by-pincode', [App\Http\Controllers\IndexController::class, 'getCenterByPincode'])->name('get-center-by-pincode');
 
