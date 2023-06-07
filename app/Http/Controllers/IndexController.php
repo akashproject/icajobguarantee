@@ -11,7 +11,9 @@ use App\Models\Center;
 use App\Models\City;
 use App\Models\State;
 use App\Models\Pincode;
+use App\Models\Lead;
 use App\Jobs\SendEmailJob; 
+use App\Mail\NotifyMail;
 use App\Jobs\ExtraaedgeApiRequest;
 use Mail;
 class IndexController extends Controller
@@ -141,8 +143,11 @@ class IndexController extends Controller
                 $postData['city'] = ($pincode)?$pincode->city:"";
                 $postData['center'] = ($pincode)?$pincode->center:"";
             }
-            $response = $this->classroomLeadCaptureLeadToExtraage($postData);
+            if($data['store_area'] == 1) {
+                $this->classroomLeadCaptureLeadToExtraage($postData);
+            }
 
+            $response = $this->captureLeadToDB($postData);
             if(get_theme_setting('ajax_submit') == 1) {
                 return response()->json($response, $this->_statusOK);
             } else {
@@ -170,12 +175,40 @@ class IndexController extends Controller
             'LeadType' => 'DM',
             'LeadSource' => $postData['utm_source'],
             'LeadName' => $postData['utm_campaign'],
-            'SourceTo' => "offline"
+            'SourceTo' => "offline",
+            'Entity4' => (isset($postData['course']))?$postData['course']:'',
+            'EducationalQualification' => url()->current(),
+            'Textb1' => $postData['utm_term'],
+            'Field3' => $postData['utm_device'],
+            'Textb2' => $postData['utm_adgroup'],
+            'Textb3' => $postData['utm_content'],
+            'BatchApplied' => (isset($postData['qualification']))?$postData['qualification']:'',
+            'Textb4' => (isset($postData['institute']))?$postData['institute']:'',
         );
 
-        ExtraaedgeApiRequest::dispatchSync($apiData);
+        //ExtraaedgeApiRequest::dispatch($apiData);
 
-        return response()->json(true, $this->_statusOK);
+        $url = "https://prodapi.extraaedge.com/api/WebHook/addLead"; 		
+        $curl = curl_init();
+        
+        $data = json_encode($apiData);
+        $curl = curl_init($url);
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_POST, true);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+        $headers = array(
+            "Content-Type: application/json",
+        );
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+
+        $resp = curl_exec($curl);
+        curl_close($curl);
+
+        return response()->json($resp, $this->_statusOK);
     }
 
     public function franchiseCaptureLead(Request $request){
@@ -248,10 +281,9 @@ class IndexController extends Controller
                 'email' => $postData['email'],
                 'mobile' => $postData['mobile'],
                 'center' => $postData['center'],
-                'status' => $postData['status'],
                 'pincode' => $postData['pincode'],
-                'latitude' => $postData['latitude'],
-                'longitude' => $postData['longitude'],
+                'latitude' => (isset($postData['latitude']))?$postData['latitude']:'',
+                'longitude' => (isset($postData['longitude']))?$postData['longitude']:'',
                 'utm_source' => $postData['utm_source'],
                 'utm_campaign' => $postData['utm_campaign'],
             );
@@ -279,9 +311,20 @@ class IndexController extends Controller
                 'name' => "Akash Dutta",
                 'email' => "akash.dutta@icagroup.in",
             );
+
+            $email = new NotifyMail();
+            Mail::to($data['email'])->send($email);
+
             
-            SendEmailJob::dispatchSync($data);
-            //dispatch(new \App\Jobs\SendEmailJob($data));
+            //SendEmailJob::dispatchSync($data);
+            // dispatch(function () {
+            //     new \App\Jobs\SendEmailJob($data);
+            // })->afterResponse();
+            
+            //SendEmailJob::dispatchSync($data)->afterResponse();
+
+
+            //dispatch_now(new \App\Jobs\SendEmailJob($data));
             //print_r($mail);  
 
             //echo $mail = mail("akash.dutta@icagroup.in","My subject","i am here index");

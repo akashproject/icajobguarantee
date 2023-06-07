@@ -7,7 +7,7 @@ use App\Models\Course;
 use App\Models\CourseType;
 use App\Models\State;
 use App\Models\City;
-use App\Models\Job;
+use App\Models\Vacancy;
 use App\Models\JobType;
 use App\Models\Media;
 use App\Models\Setting;
@@ -255,7 +255,7 @@ if (! function_exists('getGallery')) {
 }
 
 if (! function_exists('getCourses')) {
-    function getCourses(){
+    function getCourses($course_type_id = null){
         try {
             $search = (request()->has('search'))?request()->get('search'):"";
             $courses = DB::table('courses')
@@ -267,6 +267,10 @@ if (! function_exists('getCourses')) {
                 $courses->orWhere('course_type.name', 'like', '%' . $search . '%');
                 $courses->orWhere('course_type.slug', 'like', '%' . $search . '%');
             }
+            if($course_type_id){
+                $courses->whereIn('course_type.id', $course_type_id);
+            }
+            
             $courses = $courses->distinct()
             ->orderBy('courses.id', 'asc')
             ->get();
@@ -312,7 +316,7 @@ if (! function_exists('getCourseCarriculams')) {
 if (! function_exists('getJobs')) {
     function getJobs(){
         try {
-            return $jobs = Job::where('status', 1)->get();
+            return $vacancies = Vacancy::where('status', 1)->get();
         } catch(\Illuminate\Database\QueryException $e){
             throw $e;
         }

@@ -31,7 +31,6 @@ class ExtraaedgeApiRequest implements ShouldQueue
     public function handle()
     {
         //
-        $mail = mail("akash.dutta@icagroup.in","My subject","I am api");
         $url = "https://prodapi.extraaedge.com/api/WebHook/addLead"; 		
         $curl = curl_init();
         

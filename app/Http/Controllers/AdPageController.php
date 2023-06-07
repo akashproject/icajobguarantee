@@ -22,6 +22,7 @@ class AdPageController extends Controller
                 $courses = DB::table('courses')
                 ->join('course_type', 'course_type.id', '=', 'courses.type_id')
                 ->select('courses.*', 'courses.name as course_name','course_type.id as category_id','course_type.name as category','course_type.slug as categorySlug')
+                ->whereIn('course_type.id', json_decode($contentMain->course_type_id))
                 ->distinct()
                 ->orderBy('courses.id', 'asc')
                 ->get();

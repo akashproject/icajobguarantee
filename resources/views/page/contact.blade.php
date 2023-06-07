@@ -67,7 +67,7 @@
 							<div class="text">
 								<h4>For ICA Students</h4>
 								<p>Let's connect &amp; escalate all the doubts regarding the specialized course curriculum!</p>
-								<a href="tel:+{{ get_theme_setting('mobile') }}" class="genius-btn gradient-bg text-center text-uppercase">Call Us<i class="fas fa-chevron-right ml-2"></i></a>
+								<a href="mailto:{{ get_theme_setting('email') }}" class="genius-btn gradient-bg text-center text-uppercase">Mail Us<i class="fas fa-chevron-right ml-2"></i></a>
 							</div>
 						</div>
 					</div>
@@ -79,7 +79,7 @@
 							<div class="text">
 								<h4>For ICA Partner?</h4>
 								<p>Let's connect &amp; escalate all the doubts regarding the specialized course curriculum!</p>
-								<a href="tel:+{{ get_theme_setting('mobile') }}" class="genius-btn gradient-bg text-center text-uppercase">Call Us<i class="fas fa-chevron-right ml-2"></i></a>
+								<a href="tel:+{{ get_theme_setting('franchise_mobile') }}" class="genius-btn gradient-bg text-center text-uppercase">Call Us<i class="fas fa-chevron-right ml-2"></i></a>
 							</div>
 						</div>
 					</div>

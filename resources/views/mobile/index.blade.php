@@ -95,7 +95,7 @@
 										<i class="text-gradiant flaticon-graduation-hat"></i>
 									</div>
 									<div class="counter-number">
-										<span class="counter-count bold-font">500</span><span>T+</span>
+										<span class="counter-count bold-font">500</span><span>K+</span>
 										<p>Satisfied Students</p>
 									</div>
 								</div>
@@ -108,7 +108,7 @@
 										<i class="text-gradiant flaticon-book"></i>
 									</div>
 									<div class="counter-number">
-										<span class="counter-count bold-font">30</span><span>+</span>
+										<span class="counter-count bold-font">30</span><span>K+</span>
 										<p>Placement Offices</p>
 									</div>
 								</div>
@@ -121,7 +121,7 @@
 										<i class="text-gradiant flaticon-favorites-button"></i>
 									</div>
 									<div class="counter-number">
-										<span class="counter-count bold-font">70</span><span>T+</span>
+										<span class="counter-count bold-font">70</span><span>K+</span>
 										<p>Registered Employers</p>
 									</div>
 								</div>
@@ -134,8 +134,8 @@
 										<i class="text-gradiant flaticon-group"></i>
 									</div>
 									<div class="counter-number">
-										<span class="counter-count bold-font">150</span><span>M+</span>
-										<p>Periodic Campus Interviews</p>
+										<span class="counter-count bold-font">10</span><span>K+</span>
+										<p>Campus Interviews</p>
 									</div>
 								</div>
 							</div>
@@ -754,7 +754,7 @@
 							<div class="latest-video-poster relative-position mb20">
 								<img src="{{url('assets/img/letest-video.webp')}}" alt="">
 								<div class="video-play-btn text-center gradient-bg">
-									<a class="popup-with-zoom-anim" href="https://youtu.be/vV1urFhrijY"><i class="fas fa-play"></i></a>
+									<a class="popup-with-zoom-anim" href="https://www.youtube.com/watch?v=vV1urFhrijY"><i class="fas fa-play"></i></a>
 								</div>
 							</div>
 							<div class="vidoe-text">

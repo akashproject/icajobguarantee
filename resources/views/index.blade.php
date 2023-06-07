@@ -45,24 +45,29 @@
  								<span class="subtitle ml42 text-uppercase">EDUCATION & TRAINING ORGANIZATION</span>
  							</div>
  							<div class="layer-1-3">
-								 <h2><span>Learn</span> In <br> Demand <span> Skills</span></h2>
+								 <h3><span>Browse the Top Bachelor</span> Programs from reputed <br> <span> universities</span></h3>
  							</div>
  						</div>
  						<div class="layer-1-4">
- 							<div class="genius-btn  text-center text-uppercase ul-li-block bold-font">
-								 <a href="{{url('/courses')}}">Our Courses <i class="fas fa-caret-right"></i></a>
- 							</div>
- 						</div>
+							<div class="about-btn text-left">
+								<div class="genius-btn text-center text-uppercase ul-li-block bold-font">
+									<a href="https://www.icacourse.in/"> Online Courses <i class="fas fa-caret-right"></i></a>
+								</div>
+								<div class="genius-btn text-center text-uppercase ul-li-block bold-font">
+									<a href="https://university.icajobguarantee.com/"> Eduversity <i class="fas fa-caret-right"></i></a>
+								</div>
+							</div>
+						</div>
  					</div>
  				</div>		
 				<div  class="slider-area slider-bg-5 relative-position" style="background-image: url({{url('assets/img/banner/banner-3.jpg')}});">
  					<div class="slider-text">
  						<div class="section-title mb20 headline text-left ">
  							<div class="layer-1-1">
- 								<span class="subtitle ml42 text-uppercase">EDUCATION & TRAINING ORGANIZATION</span>
+ 								<span class="subtitle ml42 text-uppercase">Discover Limitless Growth Opportunities with Us</span>
  							</div>
  							<div class="layer-1-3">
-							 	<h2 class="third-slide"> With India’s #1 <br> <span>Vocational Education.</span></h2>
+							 	<h2 class="third-slide"> Discover Limitless Growth <br> <span>Opportunities with Us.</span></h2>
  							</div>
  						</div>
  						<div class="layer-1-4">
@@ -95,7 +100,7 @@
 										<i class="text-gradiant flaticon-graduation-hat"></i>
 									</div>
 									<div class="counter-number">
-										<span class="counter-count bold-font">500</span><span>T+</span>
+										<span class="counter-count bold-font">500</span><span>K+</span>
 										<p>Satisfied Students</p>
 									</div>
 								</div>
@@ -108,7 +113,7 @@
 										<i class="text-gradiant flaticon-book"></i>
 									</div>
 									<div class="counter-number">
-										<span class="counter-count bold-font">30</span><span>+</span>
+										<span class="counter-count bold-font">30</span><span>K+</span>
 										<p>Placement Offices</p>
 									</div>
 								</div>
@@ -121,7 +126,7 @@
 										<i class="text-gradiant flaticon-favorites-button"></i>
 									</div>
 									<div class="counter-number">
-										<span class="counter-count bold-font">70</span><span>T+</span>
+										<span class="counter-count bold-font">70</span><span>K+</span>
 										<p>Registered Employers</p>
 									</div>
 								</div>
@@ -134,8 +139,8 @@
 										<i class="text-gradiant flaticon-group"></i>
 									</div>
 									<div class="counter-number">
-										<span class="counter-count bold-font">150</span><span>M+</span>
-										<p>Periodic Campus Interviews</p>
+										<span class="counter-count bold-font">10</span><span>K+</span>
+										<p>Campus Interviews</p>
 									</div>
 								</div>
 							</div>
@@ -743,7 +748,7 @@
 							<div class="latest-video-poster relative-position mb20">
 								<img src="{{url('assets/img/letest-video.webp')}}" alt="">
 								<div class="video-play-btn text-center gradient-bg">
-									<a class="popup-with-zoom-anim" href="https://youtu.be/vV1urFhrijY"><i class="fas fa-play"></i></a>
+									<a class="popup-with-zoom-anim" href="https://www.youtube.com/watch?v=vV1urFhrijY"><i class="fas fa-play"></i></a>
 								</div>
 							</div>
 							<div class="vidoe-text">

@@ -51,7 +51,7 @@ let pincode;
 				this.countDown();
 				this.switchOpen();
 				this.quickScroll();
-				this.getGeoLocation();
+				//this.getGeoLocation();
 			},
 
 
@@ -1362,6 +1362,7 @@ searchBAR: function (){
 
 	$('#franchise_lead_capture_form input').on('keyup', function() {
         if ($("#franchise_lead_capture_form").valid()) {
+			console.log("HI");
             $('.submit_franchise_lead_generation_form').prop('disabled', false);  
         } else {
             $('.submit_franchise_lead_generation_form').prop('disabled', 'disabled');
@@ -1503,6 +1504,7 @@ searchBAR: function (){
 			data: jQuery(form).serialize(),
 			success: function(result) {
 				jQuery("#" + formId + " .form_process").hide();
+				jQuery("#" + formId + " .form_success").addClass("googleTrackerActive");
 				jQuery("#" + formId + " .form_success").show();
 				jQuery("#" + formId)[0].reset()
 				return true;

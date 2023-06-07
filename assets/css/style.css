@@ -15,7 +15,9 @@ body {
   color: #777777;
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased; }
-
+  p {
+    color: #333;
+}
 .ul-li ul {
   margin: 0;
   padding: 0; }
@@ -466,6 +468,9 @@ ul.product-tab.index-category-tab li.active,ul.course-tab.index-category-tab li.
   .inner-banner-description h2 {
     font-size: 27px;
     margin-bottom: 1.2rem;
+  }
+  .inner-banner-description p {
+    color: #fff;
   }
 
   .inner-banner-description li {

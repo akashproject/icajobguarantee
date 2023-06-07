@@ -113,6 +113,12 @@
 											</div>
 										</div>
 										<div class="form-group row">
+											<label for="franchise_mobile" class="col-sm-3 text-right control-label col-form-label">Franchise Number</label>
+											<div class="col-sm-9">
+												<input type="text" class="form-control" name="franchise_mobile" id="franchise_mobile" value="{{ (isset($settings['franchise_mobile']))?$settings['franchise_mobile']:'' }}" >    
+											</div>
+										</div>
+										<div class="form-group row">
 											<label for="address" class="col-sm-3 text-right control-label col-form-label">HO Address</label>
 											<div class="col-sm-9">
 											<textarea class="form-control" name="address" id="address" placeholder="Enter HO Address Here" >{{ (isset($settings['address']))?$settings['address']:'' }}</textarea>

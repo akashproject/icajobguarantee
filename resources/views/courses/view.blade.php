@@ -132,7 +132,6 @@
 										<span>Course <b>Section:</b></span>
 										<ul class="product-tab ">
 											<li class="active" rel="tab1"> Summary </li>
-											<li rel="tab2"> Features </li>
 											<li rel="tab3"> Highlights </li>
 											<li rel="tab4">  Curriculum  </li>
 										</ul>
@@ -153,19 +152,12 @@
 										</div>
 										<!-- #tab1 -->
 
-										<div id="tab2" class="tab-content-1 pt35">
-											<div class="course-details-content criteria">
-												{!! $contentMain->criteria !!}
-											</div>
-										</div>
+										
 										<!-- #tab2 -->
 
 										<div id="tab3" class="tab-content-1 pt35">
 											<div class="course-details-content highlights">
 												<div class="affiliate-market-guide mb65">
-													<div class="section-title-2 mb20 headline text-left">
-														<h2><span>Affiliate Marketing</span> A Begginer's Guide</h2>
-													</div>
 													{!! $contentMain->highlights !!}
 												</div>
 											</div>
@@ -175,10 +167,7 @@
 										<div id="tab4" class="tab-content-1 pt35">
 											<div class="course-details-content">
 												<div class="affiliate-market-guide mb65">
-													<div class="section-title-2 mb20 headline text-left">
-														<h2><span>Affiliate Marketing</span> A Begginer's Guide</h2>
-													</div>
-
+													
 													<div class="affiliate-market-accordion">
 														<div id="accordion" class="panel-group">
 															@foreach($carriculams as $key => $carriculam)
@@ -192,7 +181,7 @@
 																		
 																		<div class="leanth-course">
 																			<span>{{ $carriculam->duration }} Hours</span>
-																			<!-- <span>Adobe photoshop</span> -->
+																			<span> {{ count(json_decode($carriculam->lecture)) }} Lecture</span>
 																		</div>
 																	</div>
 																</div>

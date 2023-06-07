@@ -223,8 +223,8 @@
 										<img src="{{ url('assets/img/300-Centers.svg') }}" >
 									</div>
 									<div class="category-title">
-										<h4>100+ centers in pan India.</h4>
-										<p> We have been expertly teaching students, college graduates and professionals by preparing them academically for facing the job market for over two decades </p>
+										<h4>500K+ Satisfied Students.</h4>
+										<p> We have been expertly teaching and training students, college graduates, and professionals to prepare them academically and practically for facing the dynamic job market for over two decades. </p>
 									</div>
 								</div>
 							</div>
@@ -234,8 +234,8 @@
 										<img src="{{ url('assets/img/Candidates-Placed.svg') }}" >
 									</div>
 									<div class="category-title">
-										<h4>70,000+ Registered Employers</h4>
-										<p>We have been expertly teaching students, college graduates and professionals by preparing them academically for facing the job market for over two decades </p>
+										<h4>100+ centers in pan India</h4>
+										<p>We have 100+ regional centers spread out over PAN India in 23+ states. Students who want to be future professionals can find the nearest training center from their homes and undergo a systematic training program.</p>
 									</div>
 								</div>
 							</div>
@@ -245,8 +245,8 @@
 										<img src="{{ url('assets/img/State-Presence.svg') }}" >
 									</div>
 									<div class="category-title">
-										<h4>23+ State presence in India</h4>
-										<p>We have been expertly teaching students, college graduates, and professionals by preparing them academically for facing the job market for over two decades </p>
+										<h4>30+ Placement Offices</h4>
+										<p> We have a channel of 30+ placement offices across Pan India that connect and facilitate the process of matching qualified candidates from different regions with suitable employers and job opportunities</p>
 									</div>
 								</div>
 							</div>
@@ -256,8 +256,8 @@
 										<img src="{{ url('assets/img/300-Centers.svg') }}" >
 									</div>
 									<div class="category-title">
-										<h4>100+ centers in pan India.</h4>
-										<p>We have been expertly teaching students, college graduates and professionals by preparing them academically for facing the job market for over two decades </p>
+										<h4>70k+ Registered Employers.</h4>
+										<p>We have access to a wide network of employers across Pan India who value professional skills and expertise. These Companies operate in diversified businesses and can offer you incredible job opportunities.</p>
 									</div>
 								</div>
 							</div>

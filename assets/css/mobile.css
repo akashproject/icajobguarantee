@@ -14,7 +14,9 @@ a.navbar-brand {
 }
 #course-btn .genius-btn {
   margin: 0 auto; }
-
+  p {
+    color: #333;
+}
 /*---------------------------------------------------- */
 /*global area*/
 /*----------------------------------------------------*/
@@ -501,11 +503,12 @@ ul.product-tab.index-category-tab li.active {
 
 .inner-banner-description {
   margin: 1.2rem 0;
-  font-size: 20px;
   overflow: hidden;
   font-size: 15px;
 }
-
+.inner-banner-description p {
+  color: #fff;
+}
 .inner-banner-description h2 {
   font-size: 27px;
   margin-bottom: 1.2rem;

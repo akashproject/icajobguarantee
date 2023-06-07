@@ -13,6 +13,14 @@
         <input id="formFieldPincode" id="pincode" name="pincode" type="number" placeholder="Enter Your Address Pincode" autocomplete="off" required>
     </div>
 @endif
+<div class="form-group disclaimer text-left">
+    <p style="margin:0">
+        <input style="margin-left: 0;width: auto;vertical-align: middle;height: auto;" type="checkbox" class="" checked="">  I agree to receive updates on <i class="fa fa-whatsapp" style="color: green;"></i> whatsapp. 
+    </p>
+    <p>
+        <input style="margin-left: 0;width: auto;vertical-align: middle;height: auto;" type="checkbox" class="" checked=""> I agree to <a href="/privacy-policy" target="_blank">Privacy Policy</a> &amp; overriding DNC/NDNC request for Call/SMS. 
+    </p>
+</div>
 <input type="hidden" name="center" value="{{ (isset($center) )?$center:'' }}">
 <input type="hidden" name="course_id" value="">
 <input type="hidden" class="formFieldOtpResponse" value="">
@@ -22,3 +30,4 @@
 <input type="hidden" name ="utm_device" value="<?php echo (isset($_GET['utm_device']))?$_GET['utm_device']:""; ?>" >  
 <input type="hidden" name ="utm_adgroup" value="<?php echo (isset($_GET['utm_adgroup']))?$_GET['utm_adgroup']:""; ?>" >  
 <input type="hidden" name ="utm_content" value="<?php echo (isset($_GET['utm_content']))?$_GET['utm_content']:""; ?>" >   
+<input type="hidden" name ="store_area" value="{{ isset($contentMain->store_area)?$contentMain->store_area:'1' }}" >   

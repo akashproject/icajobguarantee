@@ -98,9 +98,18 @@
 
 					<div class="col-md-3">
 						<div class="side-bar-widget first-widget">
-							<h2 class="widget-title text-capitalize"><span>Find A Course </span>&amp; Sign up Today.</h2>
-							<div class="course-img">
-								<img src="assets/img/teacher/ct-1.jpg" alt="">
+							<div class="latest-area-content " >
+								<div class="latest-video-poster relative-position mb20">
+									<img src="{{ url('assets/img/about-us-video-thumbnail.jpg') }}" alt="">
+									<div class="video-play-btn text-center gradient-bg">
+										<a class="popup-with-zoom-anim" href="https://www.youtube.com/watch?v=WkDyzRz9xn8"><i class="fas fa-play"></i></a>
+									</div>
+								</div>
+								<div class="vidoe-text text-center">
+									<h3 class="latest-title bold-font"><a href="#">ICA Edu Skills - India's No.1 Computer Accounting and Finance Training Institute</a></h3>
+									<p>ICA was founded in 1999, and began its journey with the sole mission to provide high quality services at affordable prices to the masses
+									</p>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -111,17 +120,13 @@
 		============================================= -->
 		<section id="about-page" class="best-course-section">
 			<div class="container">
-				<div class="section-title mb20 headline text-center">
-					<span class="subtitle text-uppercase">Awards</span>
-					<h3>ICA<span> Awards & Recognition.</span></h3>
-				</div>
 				<div class="row">
 					<div class="col-md-5">
 						<img src="{{ url('/assets/img/awards-recognition.png')}}">
 					</div>
 					<div class="col-md-7 ">
-						<div class="text-center mt10">
-							<h3 class="awards-recognition " > Awards & Recognition </h3>
+						<div class="mt10">
+							<h2 class="awards-recognition " > Awards & Recognition </h2>
 						</div>
 						<p> When we say ICA is the ‘No.1 Training Institute in Accounts and Finance’, it’s just not us; it’s an array of brands and organisations who have recognised our hard work and accomplishments over the years. </p>
 						<p> Every year ICA is conferred with awards and titles which we wear as a badge of honour. </p>
