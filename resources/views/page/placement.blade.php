@@ -256,7 +256,15 @@
 				<div class="row">
 					<div class="col-md-6 text-right border-timeline p30">
 						<h3 class="primary-color">Monthly Mock Interviews</h3>
-						<p> We provide practice and preparation for our students who are seeking employment or aiming to improve their interview skills. </p>
+						<p> We provide practice and preparation for our students who are seeking employment or aiming to improve their interview skills and increase their chances of securing job offers. Here are some advantages of engaging in monthly mock interviews:. </p>
+						<ul>
+							<li>Practicing and Preparation</li>
+							<li>Identifying Strengths and Weaknesses</li>
+							<li>Developing Interview Strategies</li>
+							<li>Building Confidence</li>
+							<li>Enhancing Communication Skills</li>
+							<li>Increasing Interview Success Rate</li>
+						</ul>
 					</div>
 					<div class="col-md-6 p30">
 						<img src="{{ url('assets/img/mi.png') }}">
@@ -302,7 +310,15 @@
 					</div>
 					<div class="col-md-6 p30">
 						<h3 class="primary-color">Tally Ka Boss </h3>
-						<p> We help you make fit for the corporates by excelling on TallyPrime for accounting and bookkeeping, GST compliance features, financial reporting and analysis, inventory management, payroll management and much more. </p>
+						<p> We make our students fit for the corporate world by excelling in TallyPrime for streamlining financial management, enhancing productivity, and facilitating accurate reporting. Here are some key advantages of using TallyPrime: </p>
+						<ul>
+							<li>Efficient Accounting and Financial Management</li>
+							<li>Seamless GST Compliance</li>
+							<li>Real-time Financial Reporting</li>
+							<li>Inventory Management</li>
+							<li>Payroll Management</li>
+							<li>Bank Integration and Reconciliation</li>
+						</ul>
 					</div>
 				</div>
 			</div>

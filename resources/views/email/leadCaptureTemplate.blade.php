@@ -211,7 +211,7 @@
                                       <div style="text-decoration:none;display:inline-block;color:#fff;background-color:#00d09c;border-radius:4px;width:auto;border-top:0 solid #8a3b8f;font-weight:undefined;border-right:0 solid #8a3b8f;border-bottom:0 solid #8a3b8f;border-left:0 solid #8a3b8f;padding-top:10px;padding-bottom:10px;font-family:Montserrat,Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;font-size:16px;text-align:center;mso-border-alt:none;word-break:keep-all">
                                         <span style="padding-left:50px;padding-right:45px;font-size:16px;display:inline-block;letter-spacing:normal;">
                                           <span dir="ltr" style="word-break: break-word; line-height: 32px;">
-                                            <a href="{{$brochure_path}}" download> <strong>DOWNLOAD BROCHURE</strong> </a>
+                                            <a href="" download> <strong>DOWNLOAD BROCHURE</strong> </a>
                                           </span>
                                         </span>
                                       </div>

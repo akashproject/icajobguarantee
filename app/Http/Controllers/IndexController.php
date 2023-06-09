@@ -343,15 +343,18 @@ class IndexController extends Controller
     public function testCode(){
         try {
            
-            $starttime = microtime(true); // Top of page           
+            $starttime = microtime(true); // Top of page        
             
-            $data = array(
-                'name' => "Akash Dutta",
-                'email' => "akash.dutta@icagroup.in",
-            );
+            //echo mail("akash.dutta@icagroup.in","My subject","test mail");
+            
+            // $data = array(
+            //     'name' => "Akash Dutta",
+            //     'email' => "akash.dutta@icagroup.in",
+            //     'brochure_path'=>''
+            // );
 
-            $email = new NotifyMail();
-            Mail::to($data['email'])->send($email);
+            // $email = new NotifyMail();
+            // Mail::to($data['email'])->send($email);
 
             
             //SendEmailJob::dispatchSync($data);

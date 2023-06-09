@@ -1103,9 +1103,11 @@ searchBAR: function (){
 		window.location.href = $(this).val();
 	});
 
-	jQuery(".gotoStep1").on("click",function(){
-		jQuery(".lead_steps").removeClass("active");
-		jQuery(".lead_steps.step2").addClass("active");
+	jQuery(".changeGivenNumber").on("click",function(){
+		let formId = jQuery(this).closest("form").attr("id");
+		jQuery("#" + formId + " .formFieldOtpResponse").val("");
+		jQuery("#" + formId + " .form_process .lead_steps").removeClass("active");
+		jQuery("#" + formId + " .form_process .lead_steps.step1").addClass("active");
 	});
 
 	jQuery.validator.addMethod("validPincode",function(value, element) {
@@ -1174,25 +1176,33 @@ searchBAR: function (){
 
 	$('#classroom_popup_lead_capture_form input').on('keyup', function() {
         if ($("#classroom_popup_lead_capture_form").valid()) {
-            $('.submit_classroom_lead_generation_form').prop('disabled', false);  
+            $('#classroom_popup_lead_capture_form .submit_classroom_lead_generation_form').prop('disabled', false);  
         } else {
-            $('.submit_classroom_lead_generation_form').prop('disabled', 'disabled');
+            $('#classroom_popup_lead_capture_form .submit_classroom_lead_generation_form').prop('disabled', 'disabled');
+        }
+    });
+
+	$('#index_lead_capture_form input').on('keyup', function() {
+        if ($("#index_lead_capture_form").valid()) {
+            $('#index_lead_capture_form .submit_classroom_lead_generation_form').prop('disabled', false);  
+        } else {
+            $('#index_lead_capture_form .submit_classroom_lead_generation_form').prop('disabled', 'disabled');
         }
     });
 
 	$('#franchise_lead_capture_form input').on('keyup', function() {
         if ($("#franchise_lead_capture_form").valid()) {
-            $('.submit_classroom_lead_generation_form').prop('disabled', false);  
+            $('#franchise_lead_capture_form .submit_classroom_lead_generation_form').prop('disabled', false);  
         } else {
-            $('.submit_classroom_lead_generation_form').prop('disabled', 'disabled');
+            $('#franchise_lead_capture_form .submit_classroom_lead_generation_form').prop('disabled', 'disabled');
         }
     });
 
 	$('#franchise_lead_capture_form select').on('change', function() {
         if ($("#franchise_lead_capture_form").valid()) {
-            $('.submit_franchise_lead_generation_form').prop('disabled', false);  
+            $('#franchise_lead_capture_form .submit_franchise_lead_generation_form').prop('disabled', false);  
         } else {
-            $('.submit_franchise_lead_generation_form').prop('disabled', 'disabled');
+            $('#franchise_lead_capture_form .submit_franchise_lead_generation_form').prop('disabled', 'disabled');
         }
     });
 
@@ -1251,6 +1261,7 @@ searchBAR: function (){
 
 	//Franchise Form Validation
 	$("#franchise_lead_capture_form").validate({
+		
 		messages: {
 			name: {
 				required: "Please enter full name",
@@ -1277,35 +1288,37 @@ searchBAR: function (){
 			},
 		},
 		submitHandler: function(form) {
-			
-			var formId = jQuery(".submit_franchise_lead_generation_form").closest("form").attr('id');
+			let formId = $(form).attr('id');
 			jQuery("#" + formId + " .checkout_loader").show();
-
+					
 			if(`${isEnableOtp}` == 0 && `${isAjaxSubmit}` == 0){
+				jQuery("#" + formId + " .submit_classroom_lead_generation_form").prop('disabled', 'disabled');
 				form.submit();
 			}
-
+		
 			if(`${isEnableOtp}` == 1 && `${isAjaxSubmit}` == 0){
 				if(jQuery("#" + formId + " .formFieldOtpResponse").val() == ""){
+					jQuery("#" + formId + " .submit_classroom_lead_generation_form").prop('disabled', 'disabled');
 					sendMobileOtp(formId);
 					return false;
 				}
-
+		
 				if(jQuery("#" + formId + " .verify_otp").val() != '' && jQuery("#" + formId + " .formFieldOtpResponse").val() == jQuery("#" + formId + " .verify_otp").val()){
 					form.submit();
 				} else {
 					jQuery("#" + formId + " .response_status").html("OTP is Invalid");
-					jQuery(".checkout_loader").hide();
+					jQuery("#" + formId + " .checkout_loader").hide();
 					return false;
 				}
 			}
-
-			if(`${isEnableOtp}` == 1 && `${isAjaxSubmit}` == 1){				
+		
+			if(`${isEnableOtp}` == 1 && `${isAjaxSubmit}` == 1){
 				if(jQuery("#" + formId + " .formFieldOtpResponse").val() == ""){
 					sendMobileOtp(formId);
 					return false;
 				}
-				if(jQuery("#" + formId + " .verify_otp").val() != '' && jQuery("#" + formId + " .formFieldOtpResponse").val() == jQuery("#" + formId + " .verify_otp").val()){					
+				if(jQuery("#" + formId + " .verify_otp").val() != '' && jQuery("#" + formId + " .formFieldOtpResponse").val() == jQuery("#" + formId + " .verify_otp").val()){
+					jQuery("#" + formId + " .submit_classroom_lead_generation_form").prop('disabled', 'disabled');
 					franchiseCaptureLead(form,formId);
 				} else {
 					jQuery("#" + formId + " .response_status").html("OTP is Invalid");

@@ -52,7 +52,12 @@
     
     <link href="{{ url('assets/css/colors/color-7.css') }}" rel="alternate stylesheet" type="text/css" title="color-7">
     @yield('style')
-    
+
+    @if(isset($contentMain->schema))
+    {!! $contentMain->schema !!}
+    @else
+    {!! get_theme_setting('schema') !!}
+    @endif
 </head>
 
 <body>
@@ -61,7 +66,6 @@
     @yield('content')
     @include('layouts.footer')
     
-    {{get_theme_setting('ajax_submit')}}
     @if(get_theme_setting('ajax_submit') == 1)
         @include('common.formSubmitByAjax')
     @else 

@@ -92,7 +92,7 @@
 					<div class="highlighted-content-wrapper text-center">
 						<div class="ad_banner_form_wrapeer" >
 							<div class="register-fomr-title text-center">
-								<h3 class="bold-font"><span>Get a</span> Free Registration.</h3>
+								<h3 class="bold-font"><span>Know your</span> Career Opportunity.</h3>
 							</div>
 							<div class="register-form-area text-left" >
 							<form id="banner_lead_capture_form" class="lead_form" action="{{ url('capture-lead') }}" method="POST" enctype="multipart/form-data">

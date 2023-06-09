@@ -322,6 +322,12 @@
 	.faq-secound-home-version {
 		padding: 110px 0px 0px 0px;
 	}
+	.ad_banner_form_wrapeer {
+		width: 100%;
+	}
+	.popup_banner_form_wrapeer {
+		padding: 0;
+	}
 }
 @media screen and (max-width: 480px) { 
 	.section-title.mb20.headline.text-left {
@@ -617,9 +623,9 @@
 		margin: auto;
 	}
 
-	/* .photo-list li {
+	.photo-list li {
 		width: 49%;
-	} */
+	}
 
 	.placed-grid-box {
 		width: 32%;

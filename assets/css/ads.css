@@ -5164,6 +5164,12 @@ span.success-icon {
   margin-top: 0;
   border-radius: 50%;
 }
+
+.changeGivenNumber{
+  color: #128C7E;
+  cursor: pointer;
+}
+
 .form-process,.form-success {
   padding: 0 65px;
 }

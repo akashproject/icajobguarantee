@@ -43,12 +43,14 @@
 				<div class="col-md-9">
 					<div class="short-filter-tab">
 						<div class="shorting-filter  float-left">
-							<span><b>Sort</b> By</span>
-							<select>
-								<option value="9" selected="">Popularity</option>
-								<option value="10">Most Read</option>
-								<option value="11">Most View</option>
-								<option value="12">Most Shared</option>
+							<span><b>View</b> By </span>
+							<select class="gotoCourseCategory">
+								<option value="" selected=""> Categories </option>
+							@if(getCourseTypes())
+								@foreach (getCourseTypes() as $value)
+								<option value="{{ URL::to('/category') }}/{{ $value->slug }}" {{ (isset($category->slug) && ($value->slug == $category->slug)) ?"selected":"" }}> {{ $value->name }} </option>
+								@endforeach	
+							@endif		
 							</select>
 						</div>
 						

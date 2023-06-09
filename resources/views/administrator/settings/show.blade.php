@@ -30,6 +30,7 @@
 						<li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#contact" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">Contact Settings</span></a> </li>
 						<li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#social" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">Social Settings</span></a> </li>
 						<li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#utm" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">UTM Settings</span></a> </li>
+						<li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#schema" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">Default Schema</span></a> </li>
 					</ul>
 					<!-- Tab panes -->
 					<div class="tab-content tabcontent-border">
@@ -184,6 +185,21 @@
 												<input type="text" class="form-control" name="utm_source" id="utm_source" placeholder="Enter Default UTM Source" value="{{ (isset($settings['utm_source']))?$settings['utm_source']:'' }}" >
 											</div>
 										</div>										
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane p-20" id="schema" role="tabpanel">
+							<div class="p-20">
+								<h4 class="card-title mt-3"> SEO Information </h4>
+								<div class="row">
+									<div class="col-md-7" >
+										<div class="form-group row">
+											<label for="schema" class="col-sm-3 text-right control-label col-form-label">Schema Code</label>
+											<div class="col-sm-9">
+												<textarea class="form-control" name="schema" id="schema" placeholder="Enter Schema Code" >{{ (isset($settings['schema']))?$settings['schema']:'' }}</textarea>
+											</div>
+										</div>								
 									</div>
 								</div>
 							</div>

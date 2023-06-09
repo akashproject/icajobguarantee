@@ -234,8 +234,7 @@
 						<div class="about-resigter-form backgroud-style relative-position">
 							<div class="register-content">
 								<div class="register-fomr-title text-center">
-									<h3 class="bold-font"><span>Get a</span> Free Registration.</h3>
-									<p>More Than 122K Online Available Courses</p>
+									<h3 class="bold-font"><span>Know Your</span> Career Opportunities.</h3>
 								</div>
 								<div class="register-form-area">
 									<form id="index_lead_capture_form" class="contact_form lead_capture_form" action="{{ url('capture-lead') }}" method="POST">
@@ -243,21 +242,17 @@
 										<div class="form_process" >
 											<div class="lead_steps step1 active" > 
 												@include('common.leadCaptureFormField')
-											</div>
-											<div class="lead_steps step2">
-												<div class="otp-content">
-													<h4 class="otp-heading"> OTP Verification </h4>                                   
-													<p class="message"> <span class="message"> Enter the OTP you recive at </span> +91 XXXXXX<span class="lastDigit"></span> <a href="javacript:void(0)" class="gotoStep1"> (Change) </a> </p>
-													<p class="response_status" style="color: #000;"></p>
-												</div> 
-												<div class="contact-info">
-													<input class="verify_otp" name="verify_otp" type="text" placeholder="Enter One Time Password" autocomplete="off">
+												<div class="form-group disclaimer text-left">
+													<p style="margin:0">
+														<input style="margin-left: 0;width: auto;vertical-align: middle;height: auto;" type="checkbox" class="" checked="">  I agree to receive updates on <i class="fa fa-whatsapp" style="color: green;"></i> whatsapp. 
+													</p>
+													<p>
+														<input style="margin-left: 0;width: auto;vertical-align: middle;height: auto;" type="checkbox" class="" checked=""> I agree to <a href="/privacy-policy" target="_blank">Privacy Policy</a> &amp; overriding DNC/NDNC request for Call/SMS. 
+													</p>
 												</div>
 											</div>
-											<div class="nws-button text-center white text-capitalize">
-												<button class="index_submit_classroom_lead_generation_form form_step_1 disabled" type="submit">Apply Now <i class="fas fa-arrow-right" > </i> </button> 
-												<img src="https://www.icacourse.in/wp-content/themes/scriptcrown/images/loader.gif" style="width: 42px; display:none;" class="checkout_loader">
-											</div>
+											@include('common.leadCaptureFormOtpField')
+											
 										</div>
 										<div class="form_success" style="display:none">
 											<div class="form-success-content">
@@ -290,7 +285,7 @@
 										<li>Hands on Experience with 7 Simulation Softwares</li>
 										<li>100% Job Guarantee</li>
 										<li>AnyTime Job Card- Anytime, Anywhere</li>
-										<li>120 + Centres Pan-India and 30 Placement Offices</li>
+										<li>100+ Centres Pan-India and 30 Placement Offices</li>
 										<li>70, 000 Registered Employers</li>
 										<li>Cutting-Edge Curriculum</li>
 									</ul>
@@ -324,7 +319,7 @@
 					<div id="service-slide-item" class="service-slide">
 						<div class="service-text-icon "  >
 							<div class="service-icon float-left">
-								<i class="text-gradiant flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i>
+								<i class="text-white flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i>
 							</div>
 							<div class="service-text">
 								<h3 class="bold-font">The Power Of Education.</h3>
@@ -333,7 +328,7 @@
 						</div>
 						<div class="service-text-icon "  >
 							<div class="service-icon float-left">
-								<i class="text-gradiant flaticon-clipboard-with-pencil"></i>
+								<i class="text-white flaticon-clipboard-with-pencil"></i>
 							</div>
 							<div class="service-text">
 								<h3 class="bold-font">Best Online Education.</h3>
@@ -342,7 +337,7 @@
 						</div>
 						<div class="service-text-icon "  >
 							<div class="service-icon float-left">
-								<i class="text-gradiant flaticon-list"></i>
+								<i class="text-white flaticon-list"></i>
 							</div>
 							<div class="service-text">
 								<h3 class="bold-font">Education For All Student.</h3>
@@ -351,11 +346,11 @@
 						</div>
 						<div class="service-text-icon "  >
 							<div class="service-icon float-left">
-								<i class="text-gradiant flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i>
+								<i class="text-white flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i>
 							</div>
 							<div class="service-text">
 								<h3 class="bold-font">The Power Of Education.</h3>
-								<p>With more than 120+ centers across the country, we take pride in contributing to India’s skill development initiatives and making youth job-ready with our industry-recognized certifications.</p>
+								<p>With more than 100+ centers across the country, we take pride in contributing to India’s skill development initiatives and making youth job-ready with our industry-recognized certifications.</p>
 							</div>
 						</div>
 					</div>
@@ -394,7 +389,7 @@
 		<div class="container">
 			<div class="section-title mb45 headline text-center">
 				<span class="subtitle text-uppercase">SEARCH OUR COURSES</span>
-				<h2>Browse Our<span> Best Course.</span></h2>
+				<h3>Browse Our<span> Best Course.</span></h3>
 			</div>
 			<div class="faq-tab mb65">
 				<div class="faq-tab-ques  ul-li">
@@ -505,7 +500,7 @@
 									<i class="text-gradiant fa fa-map-marker-alt"></i>
 								</div>
 								<div class="category-title">
-									<h4><span>120+</span> Centers across Pan India</h4>
+									<h4><span>100+</span> Centers across Pan India</h4>
 								</div>
 							</div>
 						</div>

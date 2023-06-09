@@ -229,8 +229,7 @@
 						<div class="about-resigter-form backgroud-style relative-position">
 							<div class="register-content">
 								<div class="register-fomr-title text-center">
-									<h3 class="bold-font"><span>Get a</span> Free Registration.</h3>
-									<p>More Than 122K Online Available Courses</p>
+									<h3 class="bold-font"><span>Know your</span> Career Opportunity.</h3>
 								</div>
 								<div class="register-form-area">
 									<form id="index_lead_capture_form" class="contact_form lead_capture_form" action="{{ url('capture-lead') }}" method="POST">
@@ -238,21 +237,16 @@
 										<div class="form_process" >
 											<div class="lead_steps step1 active" > 
 												@include('common.leadCaptureFormField')
-											</div>
-											<div class="lead_steps step2">
-												<div class="otp-content">
-													<h4 class="otp-heading"> OTP Verification </h4>                                   
-													<p class="message"> <span class="message"> Enter the OTP you recive at </span> +91 XXXXXX<span class="lastDigit"></span> <a href="javacript:void(0)" class="gotoStep1"> (Change) </a> </p>
-													<p class="response_status" style="color: #000;"></p>
-												</div> 
-												<div class="contact-info">
-													<input class="verify_otp" name="verify_otp" type="text" placeholder="Enter One Time Password" autocomplete="off">
+												<div class="form-group disclaimer text-left">
+													<p style="margin:0">
+														<input style="margin-left: 0;width: auto;vertical-align: middle;height: auto;" type="checkbox" class="" checked="">  I agree to receive updates on <i class="fa fa-whatsapp" style="color: green;"></i> whatsapp. 
+													</p>
+													<p>
+														<input style="margin-left: 0;width: auto;vertical-align: middle;height: auto;" type="checkbox" class="" checked=""> I agree to <a href="/privacy-policy" target="_blank">Privacy Policy</a> &amp; overriding DNC/NDNC request for Call/SMS. 
+													</p>
 												</div>
 											</div>
-											<div class="nws-button text-center white text-capitalize">
-												<button class="index_submit_classroom_lead_generation_form form_step_1 disabled" type="submit">Apply Now <i class="fas fa-arrow-right" > </i> </button> 
-												<img src="https://www.icacourse.in/wp-content/themes/scriptcrown/images/loader.gif" style="width: 42px; display:none;" class="checkout_loader">
-											</div>
+											@include('common.leadCaptureFormOtpField')
 										</div>
 										<div class="form_success" style="display:none">
 											<div class="form-success-content">

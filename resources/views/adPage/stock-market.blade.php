@@ -90,20 +90,34 @@
 				</div>
 				<div class="col-md-5">
 					<div class="highlighted-content-wrapper text-center">
-						<div class="latest-area-content mt60" >
-							
-							<div class="latest-video-poster relative-position mb20">
-								<img src="{{url('assets/img/letest-video.webp')}}" alt="">
-								<div class="video-play-btn text-center gradient-bg">
-									<a class="popup-with-zoom-anim" href="https://youtu.be/vV1urFhrijY"><i class="fas fa-play"></i></a>
-								</div>
+						<div class="ad_banner_form_wrapeer" >
+							<div class="register-fomr-title text-center">
+								<h3 class="bold-font"><span>Know your</span> Career Opportunity.</h3>
 							</div>
-							<div class="vidoe-text">
-								<h3 class="latest-title bold-font"><a href="#">Learning With ICA Edu Skills.</a></h3>
-								<p class="mb25">Certified Industrial Accountant | Accounts Training Institute | Placement Support | ICA Edu Skills.</p>
-							</div>
-							<div class="view-all-btn bold-font">
-								<a href="https://www.youtube.com/@ICAEduSkills">View All Videos <i class="fas fa-chevron-circle-right"></i></a>
+							<div class="register-form-area text-left" >
+								<form id="banner_lead_capture_form" class="lead_form" action="{{ url('capture-lead') }}" method="POST" enctype="multipart/form-data">
+									<div class="form_process" >
+										<div class="lead_steps step1 active" > 
+											@include('common.leadCaptureFormField')
+											<div class="form-group disclaimer text-left">
+												<p style="margin:0">
+													<input style="margin-left: 0;width: auto;vertical-align: middle;height: auto;" type="checkbox" class="" checked="">  I agree to receive updates on <i class="fa fa-whatsapp" style="color: green;"></i> whatsapp. 
+												</p>
+												<p>
+													<input style="margin-left: 0;width: auto;vertical-align: middle;height: auto;" type="checkbox" class="" checked=""> I agree to <a href="/privacy-policy" target="_blank">Privacy Policy</a> &amp; overriding DNC/NDNC request for Call/SMS. 
+												</p>
+											</div>
+										</div>
+										@include('common.leadCaptureFormOtpField')
+									</div>
+									<div class="form_success" style="display:none">
+										<div class="form-success-content">
+											<span class="success-icon"> <i class="fas fa-check"></i> </span>
+											<h4> Thank You! Your Application Submitted Successfully </h4>
+											<p> <strong> Brochure </strong> has been sent your email address </p>
+										</div>
+									</div>
+								</form> 
 							</div>
 						</div>
 					</div>
@@ -125,7 +139,7 @@
 								</div>
 								<div class="counter-number">
 									<span class="counter-count bold-font">53260</span><span>+</span>
-									<p>Number Of Jobs In Naukri</p>
+									<p>Jobs In Naukri</p>
 								</div>
 							</div>
 						</div>
@@ -138,7 +152,7 @@
 								</div>
 								<div class="counter-number">
 									<span class="counter-count bold-font">37642</span><span>+</span>
-									<p>Number Of Jobs In Linkedin</p>
+									<p>Jobs In Linkedin</p>
 								</div>
 							</div>
 						</div>
@@ -151,7 +165,7 @@
 								</div>
 								<div class="counter-number">
 									<span class="counter-count bold-font">13194</span><span>+</span>
-									<p>Number Of Jobs In Timejobs</p>
+									<p>Jobs In Timejobs</p>
 								</div>
 							</div>
 						</div>

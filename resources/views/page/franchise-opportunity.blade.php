@@ -154,7 +154,7 @@
 								</div>
 								<div class="category-title">
 									<h4>Minimum Carpet Area of <br> 1000-2500 Sqft</h4>
-									<p>We have been successfully imparting knowledge to the Indian Youth in 16 states and 61+ cities in India for over 22 glorious years</p>
+									<p>We have been successfully imparting knowledge to the Indian Youth in 16 states and 61+ cities in India for over 24 glorious years</p>
 								</div>
 								<div class="category-description">
 									
@@ -190,7 +190,7 @@
 								</div>
 								<div class="category-title">
 									<h4>Minimum Carpet Area of 1000-2500 Sqft</h4>
-									<p>We have been successfully imparting knowledge to the Indian Youth in 16 states and 61+ cities in India for over 22 glorious years</p>
+									<p>We have been successfully imparting knowledge to the Indian Youth in 16 states and 61+ cities in India for over 24 glorious years</p>
 								</div>
 								<div class="category-description">
 									

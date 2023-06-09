@@ -1,3 +1,4 @@
+@csrf
 <div class="contact-info">
     <input class="name" name="name" type="text" placeholder="Enter Your Name" autocomplete="off" required>
 </div>
@@ -29,6 +30,14 @@
         <option value="Yes">Yes</option>
         <option value="No">No</option>
     </select>
+</div>
+<div class="form-group disclaimer text-left">
+    <p style="margin:0">
+        <input style="margin-left: 0;width: auto;vertical-align: middle;height: auto;" type="checkbox" class="" checked="">  I agree to receive updates on <i class="fa fa-whatsapp" style="color: green;"></i> whatsapp. 
+    </p>
+    <p>
+        <input style="margin-left: 0;width: auto;vertical-align: middle;height: auto;" type="checkbox" class="" checked=""> I agree to <a href="/privacy-policy" target="_blank">Privacy Policy</a> &amp; overriding DNC/NDNC request for Call/SMS. 
+    </p>
 </div>
 <input type="hidden" class="formFieldOtpResponse" value="">
 <input type="hidden" name="utm_campaign" value="{{ isset($contentMain->utm_campaign)?$contentMain->utm_campaign:'' }}">

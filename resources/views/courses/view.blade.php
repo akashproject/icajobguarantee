@@ -27,39 +27,39 @@
 		</div>
 		<!-- Start of breadcrumb section
 		============================================= -->
-	<section id="breadcrumb" class="inner-banner relative-position backgroud-style"  style="background-image: url({{ (isset($contentMain->banner_image))?getSizedImage('',$contentMain->banner_image):url('assets/img/banner/brt-1.jpg') }});">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-9">
+		<section id="breadcrumb" class="inner-banner relative-position backgroud-style"  style="background-image: url({{ (isset($contentMain->banner_image))?getSizedImage('',$contentMain->banner_image):url('assets/img/banner/brt-1.jpg') }});">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-9">
 
-					<div class="inner-banner-breadcrumb" >
-						<span class="breadcrumbElement"> 
-							<a href="{{url('/')}}" > Home </a> 
-						</span>
-						<span class="breadcrumbElement"> 
-							 <i class="fas fa-chevron-right"> </i>
-						</span> 
-						<span class="breadcrumbElement"> 
-							{{(isset($contentMain))?$contentMain->name:"Default Page" }}
-						 </span>
-					</div>
-					<div class="inner-banner-content">
-						<div class="inner-banner-title">
-							<h1>{{(isset($contentMain))?$contentMain->name:"Default Page" }}</h1>
+						<div class="inner-banner-breadcrumb" >
+							<span class="breadcrumbElement"> 
+								<a href="{{url('/')}}" > Home </a> 
+							</span>
+							<span class="breadcrumbElement"> 
+								<i class="fas fa-chevron-right"> </i>
+							</span> 
+							<span class="breadcrumbElement"> 
+								{{(isset($contentMain))?$contentMain->name:"Default Page" }}
+							</span>
 						</div>
-						<div class="inner-banner-description">
-							{!! (isset($contentMain))?$contentMain->excerpt:"Default Description" !!}
-							{!! $contentMain->criteria !!}
+						<div class="inner-banner-content">
+							<div class="inner-banner-title">
+								<h1>{{(isset($contentMain))?$contentMain->name:"Default Page" }}</h1>
+							</div>
+							<div class="inner-banner-description">
+								{!! (isset($contentMain))?$contentMain->excerpt:"Default Description" !!}
+								{!! $contentMain->criteria !!}
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-md-3">
-					
+					<div class="col-md-3">
+						
+					</div>
 				</div>
 			</div>
-		</div>
-	</section>
-	<!-- End of breadcrumb section
+		</section>
+		<!-- End of breadcrumb section
 		============================================= -->
    
 		<section id="search-course" class="search-course-section search-course-secound">
@@ -72,8 +72,8 @@
 									<i class="text-gradiant flaticon-graduation-hat"></i>
 								</div>
 								<div class="counter-number">
-									<span class="counter-count bold-font">5</span><span>000+</span>
-									<p>Students Trained</p>
+									<span class="counter-count bold-font">500</span><span>K+</span>
+									<p>Satisfied Students</p>
 								</div>
 							</div>
 						</div>
@@ -85,8 +85,8 @@
 									<i class="text-gradiant flaticon-book"></i>
 								</div>
 								<div class="counter-number">
-									<span class="counter-count bold-font">70</span><span>,000+</span>
-									<p>Registered Employers</p>
+									<span class="counter-count bold-font">24</span><span>+</span>
+									<p>Years of Excellence</p>
 								</div>
 							</div>
 						</div>
@@ -98,8 +98,8 @@
 									<i class="text-gradiant flaticon-favorites-button"></i>
 								</div>
 								<div class="counter-number">
-									<span class="counter-count bold-font">24</span><span>+</span>
-									<p>Years of Excellence</p>
+									<span class="counter-count bold-font">90</span><span>%</span>
+									<p>Practical Training</p>
 								</div>
 							</div>
 						</div>
