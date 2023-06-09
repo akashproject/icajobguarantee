@@ -1940,7 +1940,7 @@ button.alt-menu-btn.float-left {
   color: #fff;
   border: none;
   text-transform: uppercase;
-  background-color: #ff5b10; }
+  background: linear-gradient(to right, #616dfd 0%, #393185 51%, #616dfd 100%); }
 
 .bg-mockup {
   position: absolute;
@@ -5178,7 +5178,7 @@ a.comment-reply-link {
   margin-bottom: 10px;
 }
 
-.lead_capture_form label.error {
+label.error {
   color: #d81a1a;
   font-size: 13px;
   font-weight: 600;
@@ -5199,14 +5199,15 @@ a.comment-reply-link {
   display: block;
 }
 
-.modal-body .lead_steps{
-  padding: 0 65px;
-}
-
 form#index_lead_capture_form h4, form#index_lead_capture_form p {
   color: #fff;
 }
-
+.disclaimer p {
+  font-size: 12px;
+}
+.popup_banner_form_wrapeer{
+  padding: 0 65px;
+}
 span.success-icon {
   font-size: 45px;
   color: green;
@@ -5467,7 +5468,7 @@ span.success-icon {
   color: #333;
 }
 
-.modal-body .nws-button button:disabled {
+.modal-body .nws-button button:disabled,.register-form-area button .nws-button button:disabled{
   background: #a7a7a7;
 }
 

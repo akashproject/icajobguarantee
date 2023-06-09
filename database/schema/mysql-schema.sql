@@ -353,17 +353,14 @@ DROP TABLE IF EXISTS `jobs`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `jobs` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `type_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `location` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `type` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `experince` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `salary` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT 1,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `queue` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `attempts` tinyint(3) unsigned NOT NULL,
+  `reserved_at` int(10) unsigned DEFAULT NULL,
+  `available_at` int(10) unsigned NOT NULL,
+  `created_at` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `jobs_queue_index` (`queue`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `leads`;
@@ -657,6 +654,24 @@ CREATE TABLE `users` (
   UNIQUE KEY `users_email_unique` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `vacancy`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `vacancy` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `type_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `location` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `experince` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `salary` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -684,7 +699,6 @@ INSERT INTO `migrations` VALUES (41,'2023_02_20_083653_create_recruiters_table',
 INSERT INTO `migrations` VALUES (42,'2023_02_20_123712_create_gallery_table',19);
 INSERT INTO `migrations` VALUES (44,'2023_02_22_113616_create_brochures_table',20);
 INSERT INTO `migrations` VALUES (45,'2022_11_25_055617_create_pages_table',21);
-INSERT INTO `migrations` VALUES (46,'2023_03_13_082934_create_jobs_table',22);
 INSERT INTO `migrations` VALUES (47,'2023_03_13_091940_create_job_types_table',22);
 INSERT INTO `migrations` VALUES (48,'2023_03_14_110002_create_contacts_table',23);
 INSERT INTO `migrations` VALUES (50,'2023_03_24_123250_create_leads_table',24);
@@ -696,3 +710,5 @@ INSERT INTO `migrations` VALUES (57,'2023_04_22_064246_create_adpages_table',28)
 INSERT INTO `migrations` VALUES (58,'2023_05_12_094932_create_certificates_table',29);
 INSERT INTO `migrations` VALUES (59,'2023_05_16_122721_create_placements_table',29);
 INSERT INTO `migrations` VALUES (60,'2023_05_24_121347_create_pincodes_table',30);
+INSERT INTO `migrations` VALUES (61,'2023_03_13_082934_create_vacancy_table',31);
+INSERT INTO `migrations` VALUES (62,'2023_06_02_073518_create_jobs_table',31);

@@ -25,7 +25,8 @@ return new class extends Migration
             $table->string("utm_source",100);
             $table->string("utm_campaign",100);
             $table->string("role",50)->nullable();
-            $table->enum('status', ['0', '1'])->default('1');
+            $table->enum('crmStatus', ['0', '1'])->default('1');
+            $table->enum('mailStatus', ['0', '1'])->default('1');
             $table->timestamps();
         });
     }

@@ -1108,14 +1108,6 @@ searchBAR: function (){
 		jQuery(".lead_steps.step2").addClass("active");
 	});
 
-	jQuery.validator.addMethod('email_rule', function (value, element) {
-		if (/^([a-zA-Z0-9_\-\.]+)\+?([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/.test(value)) {
-		return true;
-		} else {
-		return false;
-		};
-	});
-
 	jQuery.validator.addMethod("validPincode",function(value, element) {
 		let response = true
 		//jQuery(".checkout_loader").show();
@@ -1180,180 +1172,8 @@ searchBAR: function (){
 		}
 	})
 
-	$('.lead_capture_form input').on('keyup', function() {
-        if ($("#lead_capture_form").valid()) {
-            $('.submit_classroom_lead_generation_form').prop('disabled', false);  
-        } else {
-            $('.submit_classroom_lead_generation_form').prop('disabled', 'disabled');
-        }
-    });
-
-	//Classroom Form Validation
-	$("#lead_capture_form").validate({
-		rules: {
-			name: {
-				required: true,
-			},
-			email: {
-				required: true,
-				email_rule:true
-			},
-			mobile: {
-				required: true,
-				maxlength: 10,
-				minlength: 10,
-			},
-			pincode: {
-				required: true,
-				maxlength: 6,
-				minlength: 6,
-				//validPincode: true
-			},
-		},
-		messages: {
-			name: {
-				required: "Please enter full name",
-			},
-			email: {
-				required: "Please enter valid email address",
-				email_rule: "Please enter valid email address",
-			},
-			mobile: {
-				required: "Please enter valid mobile number",
-			},
-			pincode: {
-				required: "Please enter valid pincode",
-			},
-		},
-		submitHandler: function(form) {
-			jQuery(".checkout_loader").show();
-			var formId = jQuery(".submit_classroom_lead_generation_form").closest("form").attr('id');
-			if(`${isEnableOtp}` == 0 && `${isAjaxSubmit}` == 0){
-				form.submit();
-			}
-
-			if(`${isEnableOtp}` == 1 && `${isAjaxSubmit}` == 0){
-
-				if(jQuery("#" + formId + " .formFieldOtpResponse").val() == ""){
-					console.log("if 2");
-					sendMobileOtp(formId);
-					return false;
-				}
-
-				if(jQuery("#" + formId + " .verify_otp").val() != '' && jQuery("#" + formId + " .formFieldOtpResponse").val() == jQuery("#" + formId + " .verify_otp").val()){
-					console.log("if 3");
-					form.submit();
-				} else {
-					jQuery("#" + formId + " .response_status").html("OTP is Invalid");
-					jQuery(".checkout_loader").hide();
-					return false;
-				}
-			}
-
-			if(`${isEnableOtp}` == 1 && `${isAjaxSubmit}` == 1){
-				console.log("4");
-				if(jQuery("#" + formId + " .formFieldOtpResponse").val() == ""){
-					sendMobileOtp(formId);
-					return false;
-				}
-				if(jQuery("#" + formId + " .verify_otp").val() != '' && jQuery("#" + formId + " .formFieldOtpResponse").val() == jQuery("#" + formId + " .verify_otp").val()){
-					console.log("5");
-					captureLead(form,formId);
-				} else {
-					jQuery("#" + formId + " .response_status").html("OTP is Invalid");
-					return false;
-				}
-			}
-			return false; // required to block normal submit since you used ajax
-		}
-	});
-
-	//Homepage Form Page Validation
-	$("#index_lead_capture_form").validate({
-		rules: {
-			name: {
-				required: true,
-			},
-			email: {
-				required: true,
-				email_rule: true
-			},
-			mobile: {
-				required: true,
-				maxlength: 10,
-				minlength: 10,
-			},
-			pincode: {
-				required: true,
-				maxlength: 6,
-				minlength: 6,
-				// validPincode: true,
-			},
-		},
-		messages: {
-			name: {
-				required: "Please enter full name",
-			},
-			email: {
-				required: "Please enter valid email address",
-				email_rule: "Please enter valid email address",
-			},
-			mobile: {
-				required: "Please enter valid mobile number",
-			},
-			pincode: {
-				required: "Please enter valid pincode",
-			},
-		},
-		success: function (label, element) {
-			
-		},
-		submitHandler: function(form) {
-			jQuery(".checkout_loader").show();
-			var formId = jQuery(".index_submit_classroom_lead_generation_form").closest("form").attr('id');
-			if(`${isEnableOtp}` == 0 && `${isAjaxSubmit}` == 0){
-				form.submit();
-			}
-
-			if(`${isEnableOtp}` == 1 && `${isAjaxSubmit}` == 0){
-
-				if(jQuery("#" + formId + " .formFieldOtpResponse").val() == ""){
-					console.log("if 2");
-					sendMobileOtp(formId);
-					return false;
-				}
-
-				if(jQuery("#" + formId + " .verify_otp").val() != '' && jQuery("#" + formId + " .formFieldOtpResponse").val() == jQuery("#" + formId + " .verify_otp").val()){
-					console.log("if 3");
-					form.submit();
-				} else {
-					jQuery("#" + formId + " .response_status").html("OTP is Invalid");
-					jQuery(".checkout_loader").hide();
-					return false;
-				}
-			}
-
-			if(`${isEnableOtp}` == 1 && `${isAjaxSubmit}` == 1){
-				console.log("4");
-				if(jQuery("#" + formId + " .formFieldOtpResponse").val() == ""){
-					sendMobileOtp(formId);
-					return false;
-				}
-				if(jQuery("#" + formId + " .verify_otp").val() != '' && jQuery("#" + formId + " .formFieldOtpResponse").val() == jQuery("#" + formId + " .verify_otp").val()){
-					console.log("5");
-					captureLead(form,formId);
-				} else {
-					jQuery(".checkout_loader").hide();
-					jQuery("#" + formId + " .response_status").html("OTP is Invalid");
-					return false;
-				}
-			}
-			return false; // required to block normal submit since you used ajax
-		}
-	});
-
-	$('#franchise_lead_capture_form input').on('keyup', function() {
-        if ($("#lead_capture_form").valid()) {
+	$('#classroom_popup_lead_capture_form input').on('keyup', function() {
+        if ($("#classroom_popup_lead_capture_form").valid()) {
             $('.submit_classroom_lead_generation_form').prop('disabled', false);  
         } else {
             $('.submit_classroom_lead_generation_form').prop('disabled', 'disabled');
@@ -1362,29 +1182,49 @@ searchBAR: function (){
 
 	$('#franchise_lead_capture_form input').on('keyup', function() {
         if ($("#franchise_lead_capture_form").valid()) {
-			console.log("HI");
+            $('.submit_classroom_lead_generation_form').prop('disabled', false);  
+        } else {
+            $('.submit_classroom_lead_generation_form').prop('disabled', 'disabled');
+        }
+    });
+
+	$('#franchise_lead_capture_form select').on('change', function() {
+        if ($("#franchise_lead_capture_form").valid()) {
             $('.submit_franchise_lead_generation_form').prop('disabled', false);  
         } else {
             $('.submit_franchise_lead_generation_form').prop('disabled', 'disabled');
         }
     });
 
-	//Franchise Form Validation
-	$("#franchise_lead_capture_form").validate({
-		rules: {
+	//Classroom Form Validation
+	$("#classroom_popup_lead_capture_form").validate({
+		messages: {
 			name: {
-				required: true,
+				required: "Please enter full name",
 			},
 			email: {
-				required: true,
+				required: "Please enter valid email address",
+				email_rule: "Please enter valid email address",
 			},
 			mobile: {
-				required: true,
-				maxlength: 10,
-				minlength: 10,
+				required: "Please enter valid mobile number",
+				min: "Please enter valid mobile number",
+				max: "Please enter valid mobile number",
 			},
-			
+			pincode: {
+				required: "Please enter valid pincode",
+				min: "Please enter valid pincode",
+				max: "Please enter valid pincode",
+			},
 		},
+		submitHandler: function(form) {
+			classroomOnFormSubmitProcess(form);
+			return false; // required to block normal submit since you used ajax
+		}
+	});
+
+	//Homepage Form Page Validation
+	$("#index_lead_capture_form").validate({
 		messages: {
 			name: {
 				required: "Please enter full name",
@@ -1394,14 +1234,53 @@ searchBAR: function (){
 			},
 			mobile: {
 				required: "Please enter valid mobile number",
+				min: "Please enter valid mobile number",
+				max: "Please enter valid mobile number",
+			},
+			pincode: {
+				required: "Please enter valid pincode",
+				min: "Please enter valid pincode",
+				max: "Please enter valid pincode",
 			},
 		},
-		success: function (label, element) {
-			
+		submitHandler: function(form) {
+			classroomOnFormSubmitProcess(form);
+			return false; // required to block normal submit since you used ajax
+		}
+	});
+
+	//Franchise Form Validation
+	$("#franchise_lead_capture_form").validate({
+		messages: {
+			name: {
+				required: "Please enter full name",
+			},
+			email: {
+				required: "Please enter valid email address",
+			},
+			mobile: {
+				required: "Please enter valid mobile number",
+				min: "Please enter valid mobile number",
+				max: "Please enter valid mobile number",
+			},
+			state: {
+				required: "Please select State ",
+			},
+			city: {
+				required: "Please select City ",
+			},
+			occupation: {
+				required: "Please select Occupation ",
+			},
+			invest: {
+				required: "Please select Invest ",
+			},
 		},
 		submitHandler: function(form) {
-			jQuery(".checkout_loader").show();
+			
 			var formId = jQuery(".submit_franchise_lead_generation_form").closest("form").attr('id');
+			jQuery("#" + formId + " .checkout_loader").show();
+
 			if(`${isEnableOtp}` == 0 && `${isAjaxSubmit}` == 0){
 				form.submit();
 			}
@@ -1461,6 +1340,59 @@ searchBAR: function (){
 		});
 	});
 
+	jQuery(".course-header-menu").on("mouseenter",function(){
+		jQuery(".submenu-courses").show();
+	});
+
+	jQuery(".desktop-menu li").on('mouseenter',function(){
+		jQuery(".category-courses-submenu").removeClass("active");
+		jQuery("#"+jQuery(this).attr("data-id")).addClass("active");
+	});
+
+	jQuery(".course-header-menu").on('mouseleave',function(){
+		jQuery(".submenu-courses").hide();
+	});
+
+	function classroomOnFormSubmitProcess(form){
+		let formId = $(form).attr('id');
+		jQuery("#" + formId + " .checkout_loader").show();
+				
+		if(`${isEnableOtp}` == 0 && `${isAjaxSubmit}` == 0){
+			jQuery("#" + formId + " .submit_classroom_lead_generation_form").prop('disabled', 'disabled');
+			form.submit();
+		}
+	
+		if(`${isEnableOtp}` == 1 && `${isAjaxSubmit}` == 0){
+			if(jQuery("#" + formId + " .formFieldOtpResponse").val() == ""){
+				jQuery("#" + formId + " .submit_classroom_lead_generation_form").prop('disabled', 'disabled');
+				sendMobileOtp(formId);
+				return false;
+			}
+	
+			if(jQuery("#" + formId + " .verify_otp").val() != '' && jQuery("#" + formId + " .formFieldOtpResponse").val() == jQuery("#" + formId + " .verify_otp").val()){
+				form.submit();
+			} else {
+				jQuery("#" + formId + " .response_status").html("OTP is Invalid");
+				jQuery("#" + formId + " .checkout_loader").hide();
+				return false;
+			}
+		}
+	
+		if(`${isEnableOtp}` == 1 && `${isAjaxSubmit}` == 1){
+			if(jQuery("#" + formId + " .formFieldOtpResponse").val() == ""){
+				sendMobileOtp(formId);
+				return false;
+			}
+			if(jQuery("#" + formId + " .verify_otp").val() != '' && jQuery("#" + formId + " .formFieldOtpResponse").val() == jQuery("#" + formId + " .verify_otp").val()){
+				jQuery("#" + formId + " .submit_classroom_lead_generation_form").prop('disabled', 'disabled');
+				captureLead(form,formId);
+			} else {
+				jQuery("#" + formId + " .response_status").html("OTP is Invalid");
+				return false;
+			}
+		}
+	}
+
 	function sendMobileOtp(formId) {
 		var mobileNo = jQuery("#" + formId + " input[name='mobile']").val();
 		$.ajaxSetup({
@@ -1476,7 +1408,7 @@ searchBAR: function (){
 			},
 			success: function(result) {
 				if (result) {
-					console.log(result);
+					jQuery("#" + formId + " .submit_classroom_lead_generation_form").prop('disabled', false);  
 					jQuery("#" + formId + " .formFieldOtpResponse").val(result.otp_value);
 					jQuery("#" + formId + " .lastDigit").text(result.lastdigit);
 					jQuery("#" + formId + " .lead_steps").removeClass("active");
@@ -1523,6 +1455,7 @@ searchBAR: function (){
 			type: "post",
 			data: jQuery(form).serialize(),
 			success: function(result) {
+				jQuery("#" + formId + " .form_success").addClass("googleTrackerActive");
 				jQuery("#" + formId + " .form_process").hide();
 				jQuery("#" + formId + " .form_success").show();
 				jQuery("#" + formId)[0].reset()
@@ -1530,23 +1463,14 @@ searchBAR: function (){
 			}
 		});
 	}
-
-	jQuery(".course-header-menu").on("mouseenter",function(){
-		jQuery(".submenu-courses").show();
-	});
-
-	jQuery(".desktop-menu li").on('mouseenter',function(){
-		jQuery(".category-courses-submenu").removeClass("active");
-		jQuery("#"+jQuery(this).attr("data-id")).addClass("active");
-	});
-
-	jQuery(".course-header-menu").on('mouseleave',function(){
-		jQuery(".submenu-courses").hide();
-	});
 })();
 
 function lead_capture_form_btn(course_id,center_id) {
 	jQuery('#lead-generation-form').modal('show');
+	if(course_id){
+		console.log(course_id);
+		jQuery('#lead-generation-form input[name="course_id"]').val(course_id);
+	}
 }
 
 // Get Exact Center Detail

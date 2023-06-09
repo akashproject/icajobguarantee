@@ -80,8 +80,7 @@
 									<a href="#imageBox" class="image-profile open-popup-link">
 										<img src="{{ (isset($courseType->brochure_id))?url('assets/img/pdf.png'):'https://dummyimage.com/150x150?text=Upload%20File' }}" alt="">
 										<input type="hidden" name="brochure_id" id="attachment" value="{{ $courseType->brochure_id }}" >	
-									</a>	
-													
+									</a>				
 								</div>
 							</div>	
 							<div class="form-group row">

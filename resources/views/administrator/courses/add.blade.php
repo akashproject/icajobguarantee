@@ -172,6 +172,27 @@
 								@endif					
 							</div>
 						</div>
+						<div class="form-group row">
+							<label for="tags" class="col-md-6 text-left control-label col-form-label">Featured Image</label>
+							<div class="col-sm-6 text-center">
+								<a href="#imageBox" class="image-profile open-popup-link">
+									<img src="https://dummyimage.com/150x150?text=Add%20Image" alt="">
+									<input type="hidden" name="featured_image" id="featured_image" value="" >	
+								</a>	
+								@if(isset($course->featured_image))
+									<a href="javascript:void(0)" class="removeImage" style="color: #c90f0f;font-weight: 600;"> Remove Image </a>	
+								@endif
+							</div>
+						</div>
+						<div class="form-group row text-center">
+							<label for="tags" class="col-md-4 text-left control-label col-form-label">Brochure</label>
+							<div class="col-sm-6 text-center">
+								<a href="#imageBox" class="image-profile open-popup-link">
+									<img src="{{ (isset($course->brochure_id))?url('assets/img/pdf.png'):'https://dummyimage.com/150x150?text=Upload%20File' }}" alt="">
+									<input type="hidden" name="brochure_id" id="attachment" value="" >	
+								</a>				
+							</div>
+						</div>	
 					</div>
 
 				</div>

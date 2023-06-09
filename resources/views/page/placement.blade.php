@@ -107,7 +107,7 @@
 						<div class="four-grid-slide text-center">
 							<div class="four-grid-box text-center">
 								<div class="circle-icon">
-									<img src="https://dummyimage.com/99x99" >
+									<img src="{{ url('assets/img/icons/education.png') }}" >
 								</div>
 								<div class="category-title">
 									<h4>Complete the training</h4>
@@ -119,7 +119,7 @@
 
 							<div class="four-grid-box text-center">
 								<div class="circle-icon">
-									<img src="https://dummyimage.com/99x99" >
+									<img src="{{ url('assets/img/icons/cv.png') }}" >
 								</div>
 								<div class="category-title">
 									<h4>Biodata preparation</h4>									
@@ -131,19 +131,19 @@
 
 							<div class="four-grid-box text-center">
 								<div class="circle-icon">
-									<img src="https://dummyimage.com/99x99" >
+									<img src="{{ url('assets/img/icons/job-interview.png') }}" >
 								</div>
 								<div class="category-title">
-									<h4>Biodata preparation</h4>
+									<h4>Mock Interviews</h4>
 								</div>
 							</div>
 
 							<div class="four-grid-box text-center">
 								<div class="circle-icon">
-									<img src="https://dummyimage.com/99x99" >
+									<img src="{{ url('assets/img/icons/interview.png') }}" >
 								</div>
 								<div class="category-title">
-									<h4>Biodata preparation</h4>
+									<h4>Student Interviews</h4>
 								</div>
 								<div class="category-description">
 									
@@ -152,10 +152,10 @@
 
 							<div class="four-grid-box text-center">
 								<div class="circle-icon">
-									<img src="https://dummyimage.com/99x99" >
+									<img src="{{ url('assets/img/icons/appointment.png') }}" >
 								</div>
 								<div class="category-title">
-									<h4>Biodata preparation</h4>
+									<h4>Appointment letter</h4>
 								</div>
 								<div class="category-description">
 									
@@ -166,8 +166,6 @@
 				</div>
 			</div>
 		</section>
-
-	
 
 	<!-- Start secound testimonial section
 		============================================= -->
@@ -270,13 +268,29 @@
 					</div>
 					<div class="col-md-6 p30">
 						<h3 class="primary-color">GDPI / SOBO </h3>
-						<p> We organize GDPI (Group Discussion &amp; Personal Interview) , also known as SOBO (Speak Out Bowled Out) to help students develop critical thinking skills, effective communication, confidence building, teamwork and collaboration and much more. </p>
+						<p>We organize GDPI (Group Discussion & Personal Interview) , also known as SOBO (Speak Out Bowled Out) , which are commonly used as selection tools in various job interviews. They offer several benefits to both candidates and recruiters </p>
+						<ul>
+							<li>Develop critical thinking and Analytical Skills</li>
+							<li>Do effective communication</li>
+							<li>Teamwork and collaboration</li>
+							<li>Personal Assessment</li>
+							<li>Skill Evaluation</li>
+							<li>Relationship Building</li>
+						</ul>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-6 text-right border-timeline p30">
 						<h3 class="primary-color">Excel Ka Don</h3>
-						<p> Using Ms Excel, we make our students capable in data analysis and management, reporting and visualization, financial analysis and modeling, project management as per industry demand. </p>
+						<p> We make our students capable of effectively using the most widely used software tool in the corporate world, Ms Excel  to contribute to increasing efficiency, data management, analysis, and decision-making. Here are some key advantages: </p>
+						<ul>
+							<li>Data Organization and Management</li>
+							<li>Data Analysis and Reporting</li>
+							<li>Project Management</li>
+							<li>Automation and Efficiency</li>
+							<li>Data Visualization</li>
+							<li>Collaboration and Data Sharing</li>
+						</ul>
 					</div>
 					<div class="col-md-6 p30">
 						<img src="{{ url('assets/img/mi.png')}}">

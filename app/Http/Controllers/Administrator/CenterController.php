@@ -41,7 +41,6 @@ class CenterController extends Controller
         try {
             $courseCategories = CourseType::all();
             $center = Center::findorFail($id);
-            $center->pincode = implode(',',json_decode($center->pincode));
             $states = State::all();
             $cities = City::where('state_id', $center->state_id)->orderBy('name', 'asc')->get();
             return view('administrator.centers.show',compact('center','states','cities','courseCategories'));
@@ -225,11 +224,6 @@ class CenterController extends Controller
                     unset($pincodeArray[0]);
                     DB::table('pincodes')->insert($pincodeArray);
                 }
-
-                
-
-
-
             }
 
             fclose($file);  

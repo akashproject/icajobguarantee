@@ -227,7 +227,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .key-highlights {
-  padding-top: 12px;
+  padding: 12px;
   box-shadow: 0px 0px 7px 3px #cccccc87;
   margin: 0.5rem 0;
   height: 160px;
@@ -246,7 +246,7 @@ ul.product-tab.index-category-tab li.active,ul.course-tab.index-category-tab li.
   background: transparent;
 }
 
-.gradient-bg, .modal-body .nws-button button, .teacher-pic-content .teacher-img-content:after, .course-details-category li:hover,ul.product-tab li.active,ul.course-tab li.active{
+.gradient-bg, .nws-button button, .teacher-pic-content .teacher-img-content:after, .course-details-category li:hover,ul.product-tab li.active,ul.course-tab li.active{
   background: #393185;
   background: -moz-linear-gradient(left, #616dfd 0%, #393185 51%, #616dfd 100%);
   background: -webkit-gradient(left top, right top, color-stop(0%, #4eb3bf), color-stop(51%, #393185), color-stop(100%, #4eb3bf));
@@ -512,13 +512,38 @@ color: #128C7E;
   overflow: auto;
   padding-top: 104px;
   background-repeat: no-repeat;
+  height: auto;
 }
-
-.highlighted-content-wrapper {
+.popup_banner_form_wrapeer{
+  padding: 0 65px;
+}
+.ad_banner_form_wrapeer {
   padding: 1.2rem;
   color: #1b1b1b;
   font-weight: 500;
+  width: 80%;
+  margin: auto;
+  border: 3px solid #d9d9d9;
+  border-radius: 5px;
+  background: #f6f6f65e;
+  margin-bottom: 5rem;
+  margin-top: 1rem;
 }
+label.error {
+  color: #d81a1a;
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0;
+  display: inline-grid;
+}
+.ad_banner_form_wrapeer p {
+  color: #282020;
+  font-size: 12px;
+}
+.ad_banner_form_wrapeer .register-fomr-title h3{
+  color: #282020;
+}
+
   .page-breadcrumb-title {
     margin-top: 0.5rem;
   }
@@ -1007,7 +1032,7 @@ nav.navbar-menu.inside-navbar .nav-menu {
       border-radius: 4px;
       width: 100%;
       border: none; }
-  .modal-body .nws-button button {
+ .nws-button button {
     height: 50px;
     width: 100%;
     border: none;
@@ -1872,15 +1897,6 @@ button.alt-menu-btn.float-left {
 .register-form-area textarea {
   height: 100px;
   padding-top: 15px; }
-
-.register-form-area button {
-  height: 60px;
-  width: 100%;
-  font-weight: 700;
-  color: #fff;
-  border: none;
-  text-transform: uppercase;
-  background-color: #ff5b10; }
 
 .bg-mockup {
   position: absolute;
@@ -5131,7 +5147,6 @@ a.comment-reply-link {
 
 .lead_steps {
   display: none; 
-  padding: 0 65px;
 }
 
 .lead_steps.active {
@@ -5347,6 +5362,9 @@ span.success-icon {
   padding: 0 65px;
 }
 
-.modal-body .nws-button button.disabled {
+.nws-button button:disabled {
   background: #a7a7a7;
+}
+.disclaimer p {
+  font-size: 12px;
 }

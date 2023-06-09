@@ -5,7 +5,7 @@
     <input class="email" name="email" type="email" placeholder="Enter Your Email" autocomplete="off" required>
 </div>
 <div class="contact-info">
-    <input class="mobile" name="mobile" type="number" placeholder="Enter Your Mobile" autocomplete="off" required>
+    <input class="mobile" name="mobile" type="number" placeholder="Enter Your Mobile" autocomplete="off" min="6000000000" max="9999999999" required>
 </div>
 <div class="register-form-area">
     <select class="state" name="state" required>
@@ -37,3 +37,6 @@
 <input type="hidden" name ="utm_device" value="<?php echo (isset($_GET['utm_device']))?$_GET['utm_device']:""; ?>" >  
 <input type="hidden" name ="utm_adgroup" value="<?php echo (isset($_GET['utm_adgroup']))?$_GET['utm_adgroup']:""; ?>" >  
 <input type="hidden" name ="utm_content" value="<?php echo (isset($_GET['utm_content']))?$_GET['utm_content']:""; ?>" >   
+<input type="hidden" name ="store_area" value="{{ isset($contentMain->store_area)?$contentMain->store_area:'1' }}" >
+<input type="hidden" name ="source_url" value="{{ url()->current() }}" >
+<input type="hidden" name ="LeadType" value="DM" > 

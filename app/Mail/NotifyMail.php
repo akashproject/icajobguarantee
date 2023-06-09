@@ -25,7 +25,7 @@ class NotifyMail extends Mailable
 
     public function build()
     {
-        return $this->view('email.leadCaptureTemplate');
+        return $this->subject("Here's your Brochure for Success :book:")->view('email.leadCaptureTemplate');
     }
 
     /**

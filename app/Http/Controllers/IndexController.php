@@ -119,16 +119,21 @@ class IndexController extends Controller
     public function captureLead(Request $request){
         try {
             
-            $data = $request->all();
-            $postData = $data;
-            $nameArray = explode(" ",$data['name']);
-            $postData['firstname'] = current(explode(" ",$data['name']));
+            $postData = $request->all();
+
+            $validatedData = $request->validate([
+                'name' => 'required',
+                'mobile' => 'required',
+            ]);
+
+            $nameArray = explode(" ",$postData['name']);
+            $postData['firstname'] = current(explode(" ",$postData['name']));
             unset($nameArray['0']);
             $postData['lastname'] = implode(" ",$nameArray);
 
 
             if (isset($postData['center']) && $postData['center'] != ''){
-                $city  = Center::select("city_id")->where("name",$data['center'])->first();
+                $city  = Center::select("city_id")->where("name",$postData['center'])->first();
                 $postData['city'] = City::where("id",$city->city_id)->first()->name;
             } else {
                 //center by pincode
@@ -136,18 +141,22 @@ class IndexController extends Controller
                 ->leftjoin('centers', 'pincodes.center_id', '=', 'centers.id')
                 ->leftjoin('cities', 'pincodes.city_id', '=', 'cities.id')
                 ->select('centers.name as center','cities.name as city')
-                ->where('pincodes.name', $data['pincode'])
+                ->where('pincodes.name', $postData['pincode'])
                 ->where('centers.status', 1)
                 ->inRandomOrder()
                 ->first();
                 $postData['city'] = ($pincode)?$pincode->city:"";
                 $postData['center'] = ($pincode)?$pincode->center:"";
             }
-            if($data['store_area'] == 1) {
+            $postData['role'] = "b2c";
+            $response = $this->captureLeadToDB($postData);
+
+            if($postData['store_area'] == 1) {
                 $this->classroomLeadCaptureLeadToExtraage($postData);
             }
 
-            $response = $this->captureLeadToDB($postData);
+            //$this->sendEmailBrochure($postData);
+
             if(get_theme_setting('ajax_submit') == 1) {
                 return response()->json($response, $this->_statusOK);
             } else {
@@ -155,8 +164,7 @@ class IndexController extends Controller
             }
             
         } catch(\Illuminate\Database\QueryException $e){
-            throw $e;
-            
+            return response()->json($e, $this->_statusOK);
         }
     }
 
@@ -172,12 +180,12 @@ class IndexController extends Controller
             'Center' => $postData['city'],
             'Location' => $postData['center'],
             'Pincode' => (isset($postData['pincode']))?$postData['pincode']:"",
-            'LeadType' => 'DM',
+            'LeadType' => $postData['LeadType'],
             'LeadSource' => $postData['utm_source'],
             'LeadName' => $postData['utm_campaign'],
             'SourceTo' => "offline",
             'Entity4' => (isset($postData['course']))?$postData['course']:'',
-            'EducationalQualification' => url()->current(),
+            'EducationalQualification' => $postData['source_url'],
             'Textb1' => $postData['utm_term'],
             'Field3' => $postData['utm_device'],
             'Textb2' => $postData['utm_adgroup'],
@@ -220,9 +228,11 @@ class IndexController extends Controller
             $postData['firstname'] = current(explode(" ",$data['name']));
             unset($nameArray['0']);
             $postData['lastname'] = implode(" ",$nameArray);
+            $postData['role'] = "b2b";
 
-            
+            $response = $this->captureLeadToDB($postData);
             $response = $this->franchiseLeadCaptureLeadToExtraage($postData);
+            
 
             if(get_theme_setting('ajax_submit') == 1) {
                 return response()->json($response, $this->_statusOK);
@@ -276,21 +286,24 @@ class IndexController extends Controller
     public function captureLeadToDB($postData){
         try {
             $data = array(
-                'role' => 'lead',
+                'role' => $postData['role'],
                 'name' => $postData['name'],
                 'email' => $postData['email'],
                 'mobile' => $postData['mobile'],
-                'center' => $postData['center'],
-                'pincode' => $postData['pincode'],
-                'latitude' => (isset($postData['latitude']))?$postData['latitude']:'',
-                'longitude' => (isset($postData['longitude']))?$postData['longitude']:'',
+                'center' => (isset($postData['center']))?$postData['center']:'',
+                'pincode' => (isset($postData['pincode']))?$postData['pincode']:'',
+                'latitude' => (isset($_COOKIE['lat']))?$_COOKIE['lat']:'',
+                'longitude' => (isset($_COOKIE['lng']))?$_COOKIE['lat']:'',
                 'utm_source' => $postData['utm_source'],
                 'utm_campaign' => $postData['utm_campaign'],
+                'crmStatus' => "0",
+                'mailStatus' => "0",
             );
             $lead = Lead::create($data);
             return response()->json($lead, $this->_statusOK);
         } catch(\Illuminate\Database\QueryException $e){
             //throw $th;
+            return response()->json($e, $this->_statusOK);
         }
     }
 
@@ -299,6 +312,31 @@ class IndexController extends Controller
             return view('thank-you');
         } catch(\Illuminate\Database\QueryException $e){
             //throw $th;
+        }
+    }
+
+    public function sendEmailBrochure($postData){
+        try {
+            
+            if($postData['course_id']){
+                $course  = Course::select("brochure_id")->where("id",$postData['course_id'])->first();
+                $brochure_path = getAttachmentUrl($course->brochure_id);
+            } else {
+                $brochure_path = getAttachmentUrl(23);
+            }
+
+            $data = array(
+                'brochure_path' => $brochure_path
+            );
+            
+            $mail = Mail::send('email.leadCaptureTemplate', $data, function ($m) use ($postData) {
+                $m->from('connect@icajobguarantee.com', 'ICA Edu Skils');
+                $m->to($postData['email'], $postData['name'])->subject("Here's your Brochure for Success");
+            });
+
+        } catch(\Illuminate\Database\QueryException $e){
+            //throw $th;
+            var_dump($e);
         }
     }
 

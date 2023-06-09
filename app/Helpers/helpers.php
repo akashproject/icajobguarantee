@@ -53,6 +53,17 @@ if (! function_exists('getSizedImage')) {
     }
 }
 
+if (! function_exists('getAttachmentUrl')) {
+    function getAttachmentUrl($id) {
+        $media = DB::table('media')->where('id',$id)->first();
+        if($media){
+            return $filename = env('APP_URL').$media->path.'/'.$media->filename;
+        } else {
+            return false;
+        }
+    }
+}
+
 if (! function_exists('thousandsCurrencyFormat')) {
     function thousandsCurrencyFormat($num) {
         if($num>1000) {

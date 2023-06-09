@@ -129,7 +129,7 @@
 								</div>								
 							</div>
 							<div class="genius-btn mb20 gradient-bg text-center text-uppercase ul-li-block bold-font">
-								<a data-toggle="modal" data-target="#franchise-lead-generation-form" href="javascript:void(0)" > <i class="fas fa-download" style="color: #fff;"></i> Get Online Brochure</a>
+								<a data-toggle="modal" data-target="#franchise-lead-generation-form" href="javascript:void(0)" > <i class="fas fa-download" style="color: #fff;"></i> Download Brochure</a>
 							</div>
 						</div>
 					</div>
