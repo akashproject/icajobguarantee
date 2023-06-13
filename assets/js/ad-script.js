@@ -1294,6 +1294,11 @@ countDown:  function (){
 					return false;
 				}
 			}
+			
+			if(`${isEnableOtp}` == 0 && `${isAjaxSubmit}` == 1){
+				jQuery("#" + formId + " .submit_classroom_lead_generation_form").prop('disabled', 'disabled');
+				captureLead(form,formId)
+			}
 			return false; // required to block normal submit since you used ajax
 		}
 	});
@@ -1440,6 +1445,12 @@ countDown:  function (){
 				jQuery("#" + formId + " .response_status").html("OTP is Invalid");
 				return false;
 			}
+		}
+
+		if(`${isEnableOtp}` == 0 && `${isAjaxSubmit}` == 1){
+			console.log("here");
+			jQuery("#" + formId + " .submit_classroom_lead_generation_form").prop('disabled', 'disabled');
+			captureLead(form,formId)
 		}
 	}
 

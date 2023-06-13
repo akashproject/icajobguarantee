@@ -18,7 +18,7 @@ class MediaController extends Controller
     public function index()
     {
         try {
-            $media = Media::all();
+            $media = Media::paginate(50);
             return view('administrator.media.index',compact('media'));
 
         } catch(\Illuminate\Database\QueryException $e){

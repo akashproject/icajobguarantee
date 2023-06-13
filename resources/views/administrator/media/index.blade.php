@@ -16,7 +16,7 @@
                 <div class="col-md-6" >
                     <div class="form-group row">
                         <div class="col-sm-6">
-                            <select name="extension" id="extension" class="select2 form-control custom-select" style="width: 100%; height:36px;">	
+                            <select name="extension" id="extension" class="select2 form-control custom-select">	
                                 <option value="1"> Images </option>
                                 <option value="3"> Videos </option>
                                 <option value="4" > Audios </option>
@@ -40,7 +40,14 @@
                 @foreach ($media as $value)   
                 <div class="file-content text-center">      
                     <a href="#imageBox" class="image-thumbnail open-popup-link">
-                        <img src="{{ getSizedImage('thumb',$value->id) }}" alt="{{$value->alternative}}" style="width:100%">
+                    @switch($value->type)
+                        @case("application/pdf")
+                        <img src="{{ url('assets/img/pdf.png') }}" alt="{{$value->alternative}}" style="width:100%">
+                        @break
+                        @default
+                        <img src="{{ getSizedImage('thumb',$value->id) }}" alt="{{$value->alternative}}" style="width:100%">                       
+                    @endswitch
+                        <span > {{$value->filename}} </span>
                     </a>
                     <a target="_blank" href="{{ url('administrator/view-file') }}/{{ $value->id }}" style="display:block">Edit</a>
                 </div>

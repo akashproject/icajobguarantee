@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Administrator;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\CourseType;
+use App\Models\Brochure;
 
 class CourseTypeController extends Controller
 {
@@ -14,7 +15,8 @@ class CourseTypeController extends Controller
         try {
 
             $courseType = CourseType::all();
-            return view('administrator.coursetype.index',compact('courseType'));
+            $brochures = Brochure::all();
+            return view('administrator.coursetype.index',compact('courseType','brochures'));
 
         } catch(\Illuminate\Database\QueryException $e){
             throw $e;
@@ -22,16 +24,14 @@ class CourseTypeController extends Controller
         
     }
 
-    public function add() {
-        return view('administrator.coursetype.add');
-    }
-
     public function show($id)
     {
         try {
             $courseType = CourseType::find($id);
             $listCourseType = CourseType::all();
-            return view('administrator.coursetype.show',compact('courseType','listCourseType'));
+            $brochures = Brochure::all();
+
+            return view('administrator.coursetype.show',compact('courseType','listCourseType','brochures'));
         } catch(\Illuminate\Database\QueryException $e){
         }        
     }

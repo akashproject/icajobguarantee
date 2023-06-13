@@ -74,15 +74,17 @@
 									@endif					
 								</div>
 							</div>
-							<div class="form-group row text-center">
-								<label for="tags" class="col-md-4 text-left control-label col-form-label">Brochure</label>
-								<div class="col-sm-8 text-center">
-									<a href="#imageBox" class="image-profile open-popup-link">
-										<img src="{{ (isset($courseType->brochure_id))?url('assets/img/pdf.png'):'https://dummyimage.com/150x150?text=Upload%20File' }}" alt="">
-										<input type="hidden" name="brochure_id" id="attachment" value="{{ $courseType->brochure_id }}" >	
-									</a>				
+							<div class="form-group row">
+								<label for="state" class="col-sm-3 text-right control-label col-form-label">Brochure</label>
+								<div class="col-sm-9">
+									<select name="brochure_id[]" id="brochure_id" class="select2 form-control custom-select" style="width: 100%; height:136px;" multiple>	
+										<option value="">Select Brochure</option>
+										@foreach ($brochures as $brochure)
+										<option value="{{  $brochure->id }}" {{ (in_array($brochure->id,  json_decode($courseType->brochure_id)))?'selected' : '' }} > {{  $brochure->name }} </option>
+										@endforeach
+									<select>
 								</div>
-							</div>	
+							</div>
 							<div class="form-group row">
 								<label for="state" class="col-sm-3 text-right control-label col-form-label">Status</label>
 								<div class="col-sm-9">

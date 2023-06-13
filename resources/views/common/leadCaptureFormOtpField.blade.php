@@ -14,8 +14,8 @@
 </div>
 <!-- Mendetory Fields -->
 <input type="hidden" class="formFieldOtpResponse" value="">
-<input type="hidden" name="utm_campaign" value="{{ isset($contentMain->utm_campaign)?$contentMain->utm_campaign:'' }}">
-<input type="hidden" name="utm_source" value="{{ isset($contentMain->utm_source)?$contentMain->utm_source:'' }}">
+<input type="hidden" name="utm_campaign" value="{{ isset($_GET['utm_campaign'])?$_GET['utm_campaign']:'' }}">
+<input type="hidden" name="utm_source" value="{{ isset($_GET['utm_source'])?$_GET['utm_source']:'' }}">
 <input type="hidden" name ="utm_term" value="<?php echo (isset($_GET['utm_term']))?$_GET['utm_term']:""; ?>" >  
 <input type="hidden" name ="utm_device" value="<?php echo (isset($_GET['utm_device']))?$_GET['utm_device']:""; ?>" >  
 <input type="hidden" name ="utm_adgroup" value="<?php echo (isset($_GET['utm_adgroup']))?$_GET['utm_adgroup']:""; ?>" >  

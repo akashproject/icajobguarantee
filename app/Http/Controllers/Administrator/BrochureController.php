@@ -29,8 +29,8 @@ class BrochureController extends Controller
     public function show($id)
     {
         try {
-            $faq = Brochure::findOrFail($id);
-            return view('administrator.brochures.show',compact('faq'));
+            $brochure = Brochure::findOrFail($id);
+            return view('administrator.brochures.show',compact('brochure'));
         } catch(\Illuminate\Database\QueryException $e){
         }        
     }

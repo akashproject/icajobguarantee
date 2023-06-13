@@ -143,14 +143,16 @@ if (! function_exists('getTestimonials')) {
 }
 
 if (! function_exists('getFaqs')) {
-    function getFaqs($model="",$model_id="",$limit=10){
+    function getFaqs($model=null,$model_id=null,$limit=10){
         $faq = DB::table('faqs');
+        
         if($model){
             $faq->where('model', 'like', '%"' . $model . '"%');
         } 
         if($model_id){
             $faq->where('model_id',$model_id);
-        }    
+        }   
+
         $faq = $faq->where('status',"1")->paginate($limit);
         return $faq;
     }

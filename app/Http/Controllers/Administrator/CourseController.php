@@ -8,6 +8,7 @@ use App\Models\Course;
 use App\Models\CourseType;
 use App\Models\Curriculum;
 use App\Models\Tag;
+use App\Models\Brochure;
 
 class CourseController extends Controller
 {
@@ -27,7 +28,8 @@ class CourseController extends Controller
 
     public function add() {
         $courseType = CourseType::all();
-        return view('administrator.courses.add',compact('courseType'));
+        $brochures = Brochure::all();
+        return view('administrator.courses.add',compact('courseType','brochures'));
     }
 
     public function show($id)
@@ -37,9 +39,10 @@ class CourseController extends Controller
             if ($course->tags != '') {
                 $course->tags = Tag::select('id','name')->whereIn("id",json_decode($course->tags))->get();
             }
+            $brochures = Brochure::all();
             
             $courseType = CourseType::all();
-            return view('administrator.courses.show',compact('course','courseType'));
+            return view('administrator.courses.show',compact('course','courseType','brochures'));
         } catch(\Illuminate\Database\QueryException $e){
         }        
     }

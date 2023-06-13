@@ -28,9 +28,15 @@
 					</div>
 					<div class="row image-thumbnail-container">
 						@foreach ($media as $value)        
-							
 							<a href="#imageBox" class="image-thumbnail open-popup-link" data-id="{{$value->id}}">
-								<img src="{{ getSizedImage('thumb',$value->id) }}" alt="{{$value->alternative}}" style="width:100%">
+								@switch($value->type)
+									@case("application/pdf")
+									<img src="{{ url('assets/img/pdf.png') }}" alt="{{$value->alternative}}" style="width:100%">
+									@break
+									@default
+									<img src="{{ getSizedImage('thumb',$value->id) }}" alt="{{$value->alternative}}" style="width:100%">                       
+								@endswitch
+								<span > {{$value->filename}} </span>
 							</a>
 						@endforeach
 					</div>

@@ -18,6 +18,9 @@ body {
   p {
     color: #333;
 }
+.text-main-color{
+  color:#362d86;
+}
 .ul-li ul {
   margin: 0;
   padding: 0; }
@@ -189,11 +192,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .ad-banner-content {
   color: #323232;
-  margin-top: 2.5rem;
+  margin-top: 4.5rem;
 }
 
 .ad-banner-title h1 {
-  color: #393185;
   line-height: 2.5rem;
   font-size: 38px;
   font-weight: 600;
@@ -542,8 +544,11 @@ label.error {
 }
 .ad_banner_form_wrapeer .register-fomr-title h3{
   color: #282020;
-}
 
+}
+.ad_banner_form_wrapeer h4 {
+  color: #282020;
+}
   .page-breadcrumb-title {
     margin-top: 0.5rem;
   }
@@ -1876,8 +1881,9 @@ button.alt-menu-btn.float-left {
   position: relative; }
 
 .register-fomr-title h3 {
-  font-size: 35px;
-  color: #fff; }
+  font-size: 28px;
+  color: #fff; 
+  margin-bottom: 20px; }
   .register-fomr-title h3 span {
     font-weight: 300; }
 

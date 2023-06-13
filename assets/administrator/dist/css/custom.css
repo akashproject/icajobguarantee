@@ -14835,11 +14835,23 @@ File: scss
 }
 
 .image-thumbnail {
-  width: 113px;
+  width: 132px;
   margin: 0.5rem;
   border: 1px solid #cfcfcf;
   padding: 1px;
   display: inline-flex;
+  position: relative;
+}
+
+.image-thumbnail span {
+  position: absolute;
+  bottom: 0;
+  background: #f2f2f2d9;
+  color: #333;
+  font-weight: 600;
+  width: 100%;
+  padding: 2px;
+  width: 100%;
 }
 
 .image-profile {
@@ -14901,4 +14913,7 @@ File: scss
 }
 .tag-values a {
   margin-right: 5px;
+}
+table#zero_config tr td:last-child {
+  width: 280px;
 }

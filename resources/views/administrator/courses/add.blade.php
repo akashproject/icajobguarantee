@@ -97,7 +97,18 @@
 							<div class="col-sm-9">
 								<textarea class="form-control editor" name="criteria" id="criteria" placeholder="Enter Course Criteria" ></textarea>
 							</div>
-						</div>						
+						</div>		
+						<div class="form-group row">
+							<label for="state" class="col-sm-3 text-right control-label col-form-label">Brochure</label>
+							<div class="col-sm-9">
+								<select name="brochure_id[]" id="brochure_id" class="select2 form-control custom-select" style="width: 100%; height:136px;" multiple>	
+									<option value="">Select Brochure</option>
+									@foreach ($brochures as $brochure)
+									<option value="{{  $brochure->id }}" > {{  $brochure->name }} </option>
+									@endforeach
+								<select>
+							</div>
+						</div>				
 					</div>
 					<div class="col-md-4">
 						<div class="form-group row">
@@ -172,27 +183,6 @@
 								@endif					
 							</div>
 						</div>
-						<div class="form-group row">
-							<label for="tags" class="col-md-6 text-left control-label col-form-label">Featured Image</label>
-							<div class="col-sm-6 text-center">
-								<a href="#imageBox" class="image-profile open-popup-link">
-									<img src="https://dummyimage.com/150x150?text=Add%20Image" alt="">
-									<input type="hidden" name="featured_image" id="featured_image" value="" >	
-								</a>	
-								@if(isset($course->featured_image))
-									<a href="javascript:void(0)" class="removeImage" style="color: #c90f0f;font-weight: 600;"> Remove Image </a>	
-								@endif
-							</div>
-						</div>
-						<div class="form-group row text-center">
-							<label for="tags" class="col-md-4 text-left control-label col-form-label">Brochure</label>
-							<div class="col-sm-6 text-center">
-								<a href="#imageBox" class="image-profile open-popup-link">
-									<img src="{{ (isset($course->brochure_id))?url('assets/img/pdf.png'):'https://dummyimage.com/150x150?text=Upload%20File' }}" alt="">
-									<input type="hidden" name="brochure_id" id="attachment" value="" >	
-								</a>				
-							</div>
-						</div>	
 					</div>
 
 				</div>

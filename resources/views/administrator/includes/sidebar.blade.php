@@ -169,6 +169,17 @@
 
                         </li>
 
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-briefcase-check"></i><span class="hide-menu">Brochures</span></a>
+
+                            <ul aria-expanded="false" class="collapse  first-level">
+
+								<li class="sidebar-item"><a href="{{ url('administrator/brochures') }}" class="sidebar-link"><i class="mdi mdi-briefcase-check"></i><span class="hide-menu"> All Brochures </span></a></li>
+
+                                <li class="sidebar-item"><a href="{{ url('administrator/add-brochure') }}" class="sidebar-link"><i class="mdi mdi-briefcase-check"></i><span class="hide-menu"> Add Brochure </span></a></li>
+                            </ul>
+
+                        </li>
+
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark" href="{{ url('administrator/tags') }}" aria-expanded="false"><i class="mdi mdi-tag"></i><span class="hide-menu">Tags</span></a></li>
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark" href="{{ url('administrator/reviews') }}" aria-expanded="false"><i class="mdi mdi-star"></i><span class="hide-menu">Reviews</span></a></li>

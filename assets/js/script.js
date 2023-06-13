@@ -1325,6 +1325,11 @@ searchBAR: function (){
 					return false;
 				}
 			}
+			
+			if(`${isEnableOtp}` == 0 && `${isAjaxSubmit}` == 1){
+				jQuery("#" + formId + " .submit_classroom_lead_generation_form").prop('disabled', 'disabled');
+				captureLead(form,formId)
+			}
 			return false; // required to block normal submit since you used ajax
 		}
 	});
@@ -1368,6 +1373,7 @@ searchBAR: function (){
 
 	function classroomOnFormSubmitProcess(form){
 		let formId = $(form).attr('id');
+		console.log(`${isEnableOtp}`,`${isAjaxSubmit}`);
 		jQuery("#" + formId + " .checkout_loader").show();
 				
 		if(`${isEnableOtp}` == 0 && `${isAjaxSubmit}` == 0){
@@ -1403,6 +1409,11 @@ searchBAR: function (){
 				jQuery("#" + formId + " .response_status").html("OTP is Invalid");
 				return false;
 			}
+		}
+		
+		if(`${isEnableOtp}` == 0 && `${isAjaxSubmit}` == 1){
+			jQuery("#" + formId + " .submit_classroom_lead_generation_form").prop('disabled', 'disabled');
+			captureLead(form,formId)
 		}
 	}
 
@@ -1451,7 +1462,8 @@ searchBAR: function (){
 				jQuery("#" + formId + " .form_process").hide();
 				jQuery("#" + formId + " .form_success").addClass("googleTrackerActive");
 				jQuery("#" + formId + " .form_success").show();
-				jQuery("#" + formId)[0].reset()
+				jQuery("#" + formId)[0].reset();
+				downloadBrochure(result);
 				return true;
 			}
 		});
@@ -1475,6 +1487,16 @@ searchBAR: function (){
 				return true;
 			}
 		});
+	}
+
+	function downloadBrochure(fileName){
+		var file_path = fileName;
+		var a = document.createElement('A');
+		a.href = file_path;
+		a.download = file_path.substr(file_path.lastIndexOf('/') + 1);
+		document.body.appendChild(a);
+		a.click();
+		document.body.removeChild(a);
 	}
 })();
 

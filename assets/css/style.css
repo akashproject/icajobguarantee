@@ -18,6 +18,10 @@ body {
   p {
     color: #333;
 }
+.text-main-color{
+ color:#362d86;
+}
+
 .ul-li ul {
   margin: 0;
   padding: 0; }
@@ -1356,8 +1360,7 @@ button.alt-menu-btn.float-left {
   font-size: 70px; }
 
 #slider-item .search-course {
-  max-width: 600px;
-  margin-left: 6rem; }
+  max-width: 600px;}
 
 #slider-item .owl-item .layer-1-2 {
   -webkit-transform: translateY(100%);
@@ -5484,5 +5487,9 @@ span.success-icon {
 }
 
 .border-timeline {
-  border-right: 1px solid #393185;
+  border-right: 3px solid #393185;
+}
+
+.bg-gray {
+  background-color: #e2e0e0;
 }

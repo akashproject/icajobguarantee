@@ -20,6 +20,10 @@ Route::get('/queue-work', function() {
     echo $exitCode = Artisan::call('queue:work');
     // return what you want
 });
+Route::get('/schedule-run', function() {
+    echo $exitCode = Artisan::call('schedule:run');
+    // return what you want
+});
 
 Route::get('/linkstorage', function () {
    echo Artisan::call('storage:link');

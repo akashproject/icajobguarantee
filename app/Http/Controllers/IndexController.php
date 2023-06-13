@@ -149,16 +149,27 @@ class IndexController extends Controller
                 $postData['center'] = ($pincode)?$pincode->center:"";
             }
             $postData['role'] = "b2c";
-            $response = $this->captureLeadToDB($postData);
+            $this->captureLeadToDB($postData);
 
             if($postData['store_area'] == 1) {
                 $this->classroomLeadCaptureLeadToExtraage($postData);
             }
 
+            // Send Brochure
+            if($postData['course_id']){
+                $course  = Course::select("brochure_id")->where("id",$postData['course_id'])->first();
+                $brochure_path = getAttachmentUrl($course->brochure_id);
+            } else {
+                $brochure_path = getAttachmentUrl(23);
+            }
+
+
+
+
             //$this->sendEmailBrochure($postData);
 
             if(get_theme_setting('ajax_submit') == 1) {
-                return response()->json($response, $this->_statusOK);
+                return response()->json($brochure_path, $this->_statusOK);
             } else {
                 return redirect('/thank-you');
             }
@@ -347,17 +358,17 @@ class IndexController extends Controller
             
             //echo mail("akash.dutta@icagroup.in","My subject","test mail");
             
-            // $data = array(
-            //     'name' => "Akash Dutta",
-            //     'email' => "akash.dutta@icagroup.in",
-            //     'brochure_path'=>''
-            // );
+            $data = array(
+                'name' => "Akash Dutta",
+                'email' => "akash.dutta@icagroup.in",
+                'brochure_path'=>''
+            );
 
             // $email = new NotifyMail();
             // Mail::to($data['email'])->send($email);
 
             
-            //SendEmailJob::dispatchSync($data);
+            SendEmailJob::dispatch($data);
             // dispatch(function () {
             //     new \App\Jobs\SendEmailJob($data);
             // })->afterResponse();

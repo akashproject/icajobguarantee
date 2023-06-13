@@ -67,7 +67,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-7">
-					<div class="ad-banner-content">
+					<div class="ad-banner-content text-white">
 						<div class="ad-banner-title">
 							<h1>Looking To Be An Accounts Manager? Secure Your Career In 6 Months</h1>
 						</div>
@@ -76,15 +76,6 @@
 						</div>
 						<div class="ad-banner-description">
 							{!!(isset($contentMain))?$contentMain->description:"Course description" !!}
-						</div>
-						<div class="ad-banner-option">
-							<span class="enroll-btn genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
-								<a onclick="lead_capture_form_btn('',3)" href="javascript:void(0)"> Download Brochure </a>
-							</span>
-
-							<span class="apply-now">
-								<a onclick="lead_capture_form_btn('',3)" href="javascript:void(0)"> Apply Now </a>
-							</span>
 						</div>
 					</div>
 				</div>

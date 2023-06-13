@@ -308,12 +308,11 @@ function getCitiesByStateId(event){
 
 function dropZone(){
     Dropzone.options.dropzone = {
-        //maxFilesize: 1000000000,
-        //acceptedFiles: ".jpeg,.jpg,.png,.gif,.doc,.pdf",
         addRemoveLinks: false,
         timeout: 60000,
         success: function (file, response) {
             console.log(response);
+            location.reload();
         },
         error: function (file, response) {
             return false;

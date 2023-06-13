@@ -3,10 +3,10 @@
 @section('content')
 <div class="col-12">
 	<div class="card">
-		<form class="form-horizontal" method="post" action="{{ url('administrator/save-faq') }}" enctype="multipart/form-data">
+		<form class="form-horizontal" method="post" action="{{ url('administrator/save-brochure') }}" enctype="multipart/form-data">
 			@csrf
 			<div class="card-body">
-				<h4 class="card-title"> Add FAQ </h4>
+				<h4 class="card-title"> Save Brochure </h4>
 				@if ($errors->any())
 					<div class="alert alert-danger">
 						<ul>
@@ -26,34 +26,23 @@
 				<div class="row">
 					<div class="col-md-8" >
 						<div class="form-group row">
-							<label for="question" class="col-sm-3 text-right control-label col-form-label">Question</label>
+							<label for="name" class="col-sm-3 text-right control-label col-form-label">Name</label>
 							<div class="col-sm-9">
-								<input type="text" class="form-control" name="question" id="question" placeholder="Enter Question Here" value="{{ $faq->question }}">
+								<input type="text" class="form-control" name="name" id="name" placeholder="Enter Brochure name here"  value="{{ $brochure->name }}" >
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="answer" class="col-sm-3 text-right control-label col-form-label">Answer</label>
+							<label for="tags" class="col-md-3 text-right control-label col-form-label">Brochure</label>
 							<div class="col-sm-9">
-								<textarea class="form-control editor" name="answer"  id="mceEditor" placeholder="Enter answer Here" >{{ $faq->answer }}</textarea>
+								<a href="#imageBox" class="image-profile open-popup-link">
+									<img src="{{ (isset($brochure->attachment))?url('assets/img/pdf.png'):'https://dummyimage.com/150x150?text=Upload%20File' }}" alt="">
+									<input type="hidden" name="attachment" id="attachment" value="{{ $brochure->attachment }}" >	
+								</a>
+								@if(isset($brochure->attachment))
+									<a href="javascript:void(0)" class="removeImage" style="color: #c90f0f;font-weight: 600;"> Remove </a>	
+								@endif				
 							</div>
-						</div>
-						<div class="form-group row">
-							<label for="state" class="col-sm-3 text-right control-label col-form-label">Model</label>
-							<div class="col-sm-9">
-								<select name="model[]" id="model" class="select2 form-control custom-select" style="width: 100%; height:136px;" multiple>	
-									<option value="">Select Model</option>
-									@foreach($models as $model)
-									<option value="{{ $model }}" {{ (in_array($model,  json_decode($faq->model)))?'selected' : '' }}> {{$model}}</option>
-									@endforeach
-								<select>
-							</div>
-						</div>
-						<div class="form-group row">
-							<label for="model_id" class="col-sm-3 text-right control-label col-form-label">Model id</label>
-							<div class="col-sm-9">
-								<input type="text" class="form-control" name="model_id" id="model_id" placeholder="Enter Model Id Here" >
-							</div>
-						</div>
+						</div>	
 					</div>
 					<div class="col-md-4">					
 						<div class="form-group row">
@@ -61,8 +50,8 @@
 							<div class="col-sm-9">
 								<select name="status" id="status" class="select2 form-control custom-select" style="width: 100%; height:36px;">	
 									<option value="">Update Status</option>
-									<option value="1" {{ ( $faq->status ==  '1' )? 'selected' : '' }} > Publish</option>
-									<option value="0" {{ ( $faq->status ==  '0' )? 'selected' : '' }}> Private </option>
+									<option value="1" {{ ( $brochure->status ==  '1' )? 'selected' : '' }} > Publish</option>
+									<option value="0" {{ ( $brochure->status ==  '0' )? 'selected' : '' }}> Private </option>
 								<select>
 							</div>
 						</div>						
@@ -74,7 +63,7 @@
 			<div class="border-top">
 				<div class="card-body">
 					<button type="submit" class="btn btn-primary">Submit</button>
-					<input type="hidden" name="faq_id" id="faq_id" value="{{ $faq->id }}" >
+					<input type="hidden" name="brochure_id" id="brochure_id" value="{{ $brochure->id }}" >
 				</div>
 			</div>
 		</form>
