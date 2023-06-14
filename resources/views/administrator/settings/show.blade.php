@@ -184,6 +184,12 @@
 											<div class="col-sm-9">
 												<input type="text" class="form-control" name="utm_source" id="utm_source" placeholder="Enter Default UTM Source" value="{{ (isset($settings['utm_source']))?$settings['utm_source']:'' }}" >
 											</div>
+										</div>	
+										<div class="form-group row">
+											<label for="lead_type" class="col-sm-3 text-right control-label col-form-label">Communication Medium.</label>
+											<div class="col-sm-9">
+												<input type="text" class="form-control" name="lead_type" id="lead_type" placeholder="Enter Default UTM Source" value="{{ (isset($settings['lead_type']))?$settings['lead_type']:'' }}" >
+											</div>
 										</div>										
 									</div>
 								</div>

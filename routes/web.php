@@ -127,7 +127,7 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::get('/add-brochure', [App\Http\Controllers\Administrator\BrochureController::class, 'add'])->name('add-brochure');
         Route::get('/view-brochure/{id}', [App\Http\Controllers\Administrator\BrochureController::class, 'show'])->name('admin-view-brochure');
         Route::post('/save-brochure', [App\Http\Controllers\Administrator\BrochureController::class, 'save'])->name('admin-save-brochure');
-
+        Route::get('/delete-brochure/{id}', [App\Http\Controllers\Administrator\BrochureController::class, 'delete'])->name('admin-delete-center');
         //Jobs
         Route::get('/jobs', [App\Http\Controllers\Administrator\JobController::class, 'index'])->name('admin-jobs');
         Route::get('/add-job', [App\Http\Controllers\Administrator\JobController::class, 'add'])->name('admin-add-job');

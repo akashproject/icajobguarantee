@@ -1500,11 +1500,10 @@ searchBAR: function (){
 	}
 })();
 
-function lead_capture_form_btn(course_id,center_id) {
+function lead_capture_form_btn(brochure_id,center_id) {
 	jQuery('#lead-generation-form').modal('show');
-	if(course_id){
-		console.log(course_id);
-		jQuery('#lead-generation-form input[name="course_id"]').val(course_id);
+	if(brochure_id){
+		jQuery('#lead-generation-form input[name="brochure_id"]').val(brochure_id);
 	}
 }
 

@@ -40,7 +40,7 @@ class BrochureController extends Controller
             $data = $request->all();
             $validatedData = $request->validate([
                 'name' => 'required',
-                'status' => 'required',
+                'attachment' => 'required',
             ]);
             if($data['brochure_id'] <= 0){
                 Brochure::create($data);
@@ -52,5 +52,11 @@ class BrochureController extends Controller
         } catch(\Illuminate\Database\QueryException $e){
             var_dump($e->getMessage()); 
         }
+    }
+
+    public function delete($id) {
+        $course = Brochure::findOrFail($id);
+        $course->delete();
+        return redirect('/administrator/brochures');
     }
 }

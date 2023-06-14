@@ -113,6 +113,12 @@
 								<input type="text" class="form-control" name="utm_campaign" id="utm_campaign" placeholder="Enter Utm Campaign Here" value="{{ $page->utm_campaign }}">
 							</div>
 						</div>
+						<div class="form-group row">
+							<label for="lead_type" class="col-sm-3 text-right control-label col-form-label">Communication Medium</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" name="lead_type" id="lead_type" placeholder="Enter Utm Campaign Here" value="{{ $page->lead_type }}">
+							</div>
+						</div>
 
 						<div class="form-group row">
 							<label for="utm_source" class="col-sm-3 text-right control-label col-form-label">Source</label>

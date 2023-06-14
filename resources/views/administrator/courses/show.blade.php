@@ -102,13 +102,14 @@
 								<textarea class="form-control editor" name="criteria" id="criteria" placeholder="Enter Course Criteria" >{{ $course->criteria }}</textarea>
 							</div>
 						</div>	
+						
 						<div class="form-group row">
 							<label for="state" class="col-sm-3 text-right control-label col-form-label">Brochure</label>
 							<div class="col-sm-9">
-								<select name="brochure_id[]" id="brochure_id" class="select2 form-control custom-select" style="width: 100%; height:136px;" multiple>	
+								<select name="brochure_id" id="brochure_id" class="{{$course->brochure_id}} select2 form-control custom-select" style="width: 100%">	
 									<option value="">Select Brochure</option>
 									@foreach ($brochures as $brochure)
-									<option value="{{$brochure->id}}" {{ (in_array($brochure->id,  json_decode($course->brochure_id)))?'selected' : '' }} > {{  $brochure->name }} </option>
+									<option value="{{$brochure->id}}" {{ ($brochure->id == $course->brochure_id)?'selected' : '' }} > {{  $brochure->name }} </option>
 									@endforeach
 								<select>
 							</div>

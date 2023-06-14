@@ -3,7 +3,7 @@
 <div class="card add-media" >
     <div class="card-body" >
         <h4 class="card-title"> Upload Media </h4>
-        <form method="post" action="{{url('administrator/upload')}}" enctype="multipart/form-data" class="dropzone" id="dropzone">
+        <form method="post" action="{{url('administrator/upload')}}" enctype="multipart/form-data" class="dropzone dz-clickable dz-started" id="dropzonewidget">
             @csrf
         </form>
     </div>
@@ -39,7 +39,7 @@
             <div class="row image-thumbnail-container">
                 @foreach ($media as $value)   
                 <div class="file-content text-center">      
-                    <a href="#imageBox" class="image-thumbnail open-popup-link">
+                    <a href="#imageDetailBox" class="image-thumbnail open-popup-link">
                     @switch($value->type)
                         @case("application/pdf")
                         <img src="{{ url('assets/img/pdf.png') }}" alt="{{$value->alternative}}" style="width:100%">

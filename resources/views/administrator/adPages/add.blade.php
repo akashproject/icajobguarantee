@@ -141,6 +141,12 @@
 							</div>
 						</div>
 						<div class="form-group row">
+							<label for="lead_type" class="col-sm-3 text-right control-label col-form-label">Communication Medium</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" name="lead_type" id="lead_type" placeholder="Enter Utm Campaign Here" >
+							</div>
+						</div>
+						<div class="form-group row">
 							<label for="robots" class="col-sm-3 text-right control-label col-form-label">Robots Content</label>
 							<div class="col-sm-9">
 							<input type="text" class="form-control" name="robots" id="robots" placeholder="Enter Ad Page Pincode Here" >

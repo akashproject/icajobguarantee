@@ -100,8 +100,14 @@
         toolbar: "undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist checklist | forecolor backcolor casechange permanentpen formatpainter removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media pageembed template link anchor codesample | a11ycheck"
     });
 </script>
-<script type="text/javascript">
-    
+<script>
+    Dropzone.options.dropzonewidget = { 
+        maxFilesize: 150, // 2 MB
+        success: function(file, response){ // Dropzone upload response
+            var html = '<a href="#imageBox" class="image-thumbnail open-popup-link" data-id="'+response.id+'"><img src="'+`${globalUrl}`+response.path+'/thumb_'+response.filename+'" alt="" style="width:100%"><span> '+response.name+' </span></a>';
+            $(".image-thumbnail-container").prepend(html);
+        }
+    };
 </script>
 @yield('script')
 </body>

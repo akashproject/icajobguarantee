@@ -119,20 +119,7 @@
 											</p>
 										</div>
 									</div>
-									<div class="lead_steps step2">
-										<div class="otp-content">
-											<h4 class="otp-heading"> OTP Verification </h4>                                   
-											<p class="message"> <span class="message"> Enter the OTP you recive at </span> +91 XXXXXX<span class="lastDigit"></span> <a href="javacript:void(0)" class="gotoStep1"> (Change) </a> </p>
-											<p class="response_status" style="color: #000;"></p>
-										</div> 
-										<div class="contact-info">
-											<input class="verify_otp" name="verify_otp" type="text" placeholder="Enter One Time Password" autocomplete="off">
-										</div>
-									</div>
-									<div class="nws-button text-center white text-capitalize">
-										<button class="submit_classroom_lead_generation_form form_step_1" type="submit" disabled>Apply Now <i class="fas fa-arrow-right" > </i> </button> 
-										<img src="https://www.icacourse.in/wp-content/themes/scriptcrown/images/loader.gif" style="width: 42px; display:none;" class="checkout_loader">
-									</div>
+									@include('common.leadCaptureFormOtpField')
 								</div>
 								<div class="form_success" style="display:none">
 									<div class="form-success-content">

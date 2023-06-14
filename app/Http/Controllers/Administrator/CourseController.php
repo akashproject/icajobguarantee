@@ -85,8 +85,6 @@ class CourseController extends Controller
                     foreach ($carriculam as $key => $value) {
                         Curriculum::create($value);
                     }
-                } else {
-                    echo "kom";
                 }
                 $course->update($data);
             }
@@ -107,7 +105,6 @@ class CourseController extends Controller
         try {
             $data = $request->all();
             foreach ($data['curriculum'] as $key => $value) {
-                //echo "<pre>"; print_r($value); exit;
                 $value['lecture'] = (isset($value['lecture']))?json_encode($value['lecture']):'';
                 $carriculam = Curriculum::findOrFail($key);
                 $carriculam->update($value);

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Media;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 use Image;
 
 class MediaController extends Controller
@@ -39,13 +40,15 @@ class MediaController extends Controller
     public function save(Request $request) {
         try {
             $data = $request->all();
+            // Check is file exist        
+            if (!$request->hasFile('file')) {
+                return false;                
+            }
+
             $request->validate([
                 'file' => 'required|mimes:jpeg,jfif,webp,png,jpg,gif,svg,doc,docx,pdf,mp4,m3u8,flv,wmv,avi,mov,3gp',
             ]); 
-            // Check is file exist        
-            if (!$request->hasFile('file')) {
-                return false;
-            }
+            
             $fileData = $request->file('file');
             $today = date("Y-m-d");
             $fileDataArray = array(
@@ -62,7 +65,11 @@ class MediaController extends Controller
             
             $fileName = $this->rename(str_replace(" ","-",strtolower($request->file->getClientOriginalName())));
             
-            
+            $folder = public_path('upload/'.$today);
+            if(!File::exists($folder)) {
+                File::makeDirectory($folder, 0777, true); //creates directory
+            }
+
             $imageType = array("jpeg","png","jpg","jfif","webp");
             if(in_array($fileDataArray['extension'], $imageType)){
                 $image = Image::make($fileData->getRealPath());
@@ -133,9 +140,9 @@ class MediaController extends Controller
                     ->get();
             $a = '';
             foreach($media as $value){
-                $a .= '<a href="javascript:void(0)" class="image-thumbnail">';
+                $a .= '<div class="image-thumbnail" data-id="'+$value->id+'">';
                 $a .= '<img src="'.getSizedImage('thumb',$value->id).'" alt="'.$value->alternative.'" style="width:100%">';
-                $a .= '</a>';
+                $a .= '</div>';
             } 
             return $a;
         } catch(\Illuminate\Database\QueryException $e){

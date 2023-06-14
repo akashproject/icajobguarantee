@@ -166,7 +166,7 @@
 				</div>
 			</div>
 		</section>
-
+	
 	<!-- Start secound testimonial section
 		============================================= -->
 		<section id="sponsor" class="sponsor-section">
@@ -205,7 +205,7 @@
 			</div>
 		</section>
 	<!-- End secound testimonial section
-		============================================= -->
+	============================================= -->
 
 	<!-- Start secound testimonial section
 		============================================= -->
@@ -244,7 +244,6 @@
 				
 			</div>
 		</section>
-
 
 		<section id="sponsor" class="best-course-section">
 			<div class="container">

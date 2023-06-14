@@ -6,7 +6,6 @@ let lectureField;
 $(function() {
     "use strict";
     $(".preloader").fadeOut();
-    dropZone();
     $(".left-sidebar").hover(
         function() {
             $(".navbar-header").addClass("expand-logo");
@@ -234,7 +233,7 @@ $(function() {
     });
     
     
-    $(".image-thumbnail").on("click", function(){
+    $(".image-thumbnail-container").on("click",'.image-thumbnail',function(){
         imageId = $(this).attr("data-id");
         imagePath = $(this).children("img").attr("src");
         if (!BulkSelect) {
@@ -304,20 +303,6 @@ function getCitiesByStateId(event){
             $("#city_id").html(htmlContent);  
         }
     });
-}
-
-function dropZone(){
-    Dropzone.options.dropzone = {
-        addRemoveLinks: false,
-        timeout: 60000,
-        success: function (file, response) {
-            console.log(response);
-            location.reload();
-        },
-        error: function (file, response) {
-            return false;
-        }
-    };
 }
 
 

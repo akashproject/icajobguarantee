@@ -74,7 +74,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with('termsMenu', $termsMenu);
 
             // Category Menu
-            $media = Media::all();
+            $media = Media::orderBy('created_at', 'desc')->get();
             $view->with('media', $media);
 
             $courseMenu = array(

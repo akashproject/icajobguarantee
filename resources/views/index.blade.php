@@ -208,7 +208,7 @@
 						</div>
 						<div class="more-btn text-center" >
 							<div class="course-type-list">	
-								<a class="btn-filled" href="javascript:void(0)" onclick="lead_capture_form_btn({{ $course->category_id }},'')"><i class="fas fa-download"></i> Brochure</a>
+								<a class="btn-filled" href="javascript:void(0)" onclick="lead_capture_form_btn({{ $course->brochure_id }},'')"><i class="fas fa-download"></i> Brochure</a>
 							</div>
 							<div class="course-type-list">														
 								<a class="btn-outline" href="{{ URL::to('/courses') }}/{{ $course->slug }}" >View More <i class="fas fa-caret-right"></i></a>
@@ -448,7 +448,7 @@
 											</div>
 											<div class="more-btn text-center" >
 												<div class="course-type-list">	
-													<a class="btn-filled" href="javascript:void(0)" onclick="lead_capture_form_btn({{ $course->category_id }},'')"><i class="fas fa-download"></i> Brochure</a>
+													<a class="btn-filled" href="javascript:void(0)" onclick="lead_capture_form_btn({{ $course->brochure_id }},'')"><i class="fas fa-download"></i> Brochure</a>
 												</div>
 												<div class="course-type-list">														
 													<a class="btn-outline" href="{{ URL::to('/courses') }}/{{ $course->slug }}" >View More <i class="fas fa-caret-right"></i></a>
