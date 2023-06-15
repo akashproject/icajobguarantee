@@ -1373,6 +1373,7 @@ countDown:  function (){
 				jQuery("#" + formId + " .form_process").hide();
 				jQuery("#" + formId + " .form_success").show();
 				jQuery("#" + formId)[0].reset()
+				downloadBrochure(result);
 				return true;
 			}
 		});
@@ -1392,6 +1393,7 @@ countDown:  function (){
 				jQuery("#" + formId + " .form_process").hide();
 				jQuery("#" + formId + " .form_success").show();
 				jQuery("#" + formId)[0].reset()
+				downloadBrochure(result);
 				return true;
 			}
 		});
@@ -1452,6 +1454,16 @@ countDown:  function (){
 			jQuery("#" + formId + " .submit_classroom_lead_generation_form").prop('disabled', 'disabled');
 			captureLead(form,formId)
 		}
+	}
+
+	function downloadBrochure(fileName){
+		var file_path = fileName;
+		var a = document.createElement('A');
+		a.href = file_path;
+		a.download = file_path.substr(file_path.lastIndexOf('/') + 1);
+		document.body.appendChild(a);
+		a.click();
+		document.body.removeChild(a);
 	}
 
 })();

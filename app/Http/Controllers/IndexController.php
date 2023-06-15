@@ -12,6 +12,7 @@ use App\Models\City;
 use App\Models\State;
 use App\Models\Pincode;
 use App\Models\Lead;
+use App\Models\Brochure;
 use App\Jobs\SendEmailJob; 
 use App\Mail\NotifyMail;
 use App\Jobs\ExtraaedgeApiRequest;
@@ -156,15 +157,9 @@ class IndexController extends Controller
             }
 
             // Send Brochure
-            if($postData['course_id']){
-                $course  = Course::select("brochure_id")->where("id",$postData['course_id'])->first();
-                $brochure_path = getAttachmentUrl($course->brochure_id);
-            } else {
-                $brochure_path = getAttachmentUrl(23);
-            }
-
-
-
+            $brochure_id = ($postData['brochure_id'])?$postData['brochure_id']:get_theme_setting('brochure_id');
+            $mediaId  = Brochure::select("attachment")->where("id",$brochure_id)->first()->attachment;
+            $brochure_path = getAttachmentUrl($mediaId);
 
             //$this->sendEmailBrochure($postData);
 
@@ -244,9 +239,13 @@ class IndexController extends Controller
             $response = $this->captureLeadToDB($postData);
             $response = $this->franchiseLeadCaptureLeadToExtraage($postData);
             
+            // Send Brochure
+            $brochure_id = ($postData['brochure_id'])?$postData['brochure_id']:get_theme_setting('brochure_id');
+            $mediaId  = Brochure::select("attachment")->where("id",$brochure_id)->first()->attachment;
+            $brochure_path = getAttachmentUrl($mediaId);
 
             if(get_theme_setting('ajax_submit') == 1) {
-                return response()->json($response, $this->_statusOK);
+                return response()->json($brochure_path, $this->_statusOK);
             } else {
                 return redirect('/thank-you');
             }

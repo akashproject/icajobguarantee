@@ -125,7 +125,6 @@
 									<div class="form-success-content">
 										<span class="success-icon"> <i class="fas fa-check"></i> </span>
 										<h4> Thank You! Your Application Submitted Successfully </h4>
-										<p> <strong> Brochure </strong> has been sent your email address </p>
 									</div>
 								</div>
 							</form> 

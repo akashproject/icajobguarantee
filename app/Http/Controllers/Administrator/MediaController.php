@@ -140,7 +140,7 @@ class MediaController extends Controller
                     ->get();
             $a = '';
             foreach($media as $value){
-                $a .= '<div class="image-thumbnail" data-id="'+$value->id+'">';
+                $a .= '<div class="image-thumbnail" data-id="'.$value->id.'">';
                 $a .= '<img src="'.getSizedImage('thumb',$value->id).'" alt="'.$value->alternative.'" style="width:100%">';
                 $a .= '</div>';
             } 

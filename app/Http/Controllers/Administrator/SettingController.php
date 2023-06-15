@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Administrator;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Setting;
+use App\Models\Brochure;
 
 class SettingController extends Controller
 {
@@ -13,10 +14,11 @@ class SettingController extends Controller
     {
         $fieldData = Setting::all();
         $settings = array();
+        $brochures = Brochure::all();
         foreach ($fieldData as $key => $value) {
             $settings[$value->key] = $value->value;
         }
-        return view('administrator.settings.show',compact('settings'));
+        return view('administrator.settings.show',compact('settings','brochures'));
     }
 
     public function save(Request $request)

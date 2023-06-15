@@ -54,6 +54,18 @@
 										</div>
 
 										<div class="form-group row">
+											<label for="brochure_id" class="col-sm-3 text-right control-label col-form-label">Brochure</label>
+											<div class="col-sm-9">
+												<select name="brochure_id" id="brochure_id" class="select2 form-control custom-select" style="width: 100%">	
+													<option value="">Select Brochure</option>
+													@foreach ($brochures as $brochure)
+													<option value="{{$brochure->id}}" {{ (isset($settings['brochure_id']) && $brochure->id == $settings['brochure_id'])?'selected' : '' }} > {{  $brochure->name }} </option>
+													@endforeach
+												<select>
+											</div>
+										</div>	
+
+										<div class="form-group row">
 											<label for="enable_otp" class="col-md-3 text-right control-label col-form-label">Enable OTP</label>
 											<div class="col-sm-9">
 												<select name="enable_otp" id="enable_otp" class="select2 form-control custom-select" style="width: 100%; height:36px;">	

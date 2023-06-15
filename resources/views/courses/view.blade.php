@@ -19,7 +19,7 @@
 					</div>
 					<div class="col-md-3 text-center" >
 						<div class="enroll-btn header-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
-							<a onclick="lead_capture_form_btn({{ $contentMain->id }},'')" href="javascript:void(0)" > Apply Now </a>
+							<a onclick="lead_capture_form_btn({{ $contentMain->brochure_id }},'')" href="javascript:void(0)" > Apply Now </a>
 						</div>
 					</div>
 				</div>
@@ -107,7 +107,7 @@
 
 						<div class="col-md-3">
 							<div class="enroll-btn genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
-								<a onclick="lead_capture_form_btn({{ $contentMain->id }},'')" href="javascript:void(0)"> Enroll This Course </i></a>
+								<a onclick="lead_capture_form_btn({{ $contentMain->brochure_id }},'')" href="javascript:void(0)"> Enroll This Course </i></a>
 							</div>
 						</div>
 						<!-- /counter -->
@@ -259,7 +259,7 @@
 							</div>
 							<div class="course-side-bar-widget">
 								<div class="genius-btn gradient-bg text-center text-uppercase float-left bold-font">
-									<a onclick="lead_capture_form_btn({{ $contentMain->id }},'')" href="javascript:void(0)"> <i class="fas fa-download"></i> Download Syllabus</a>
+									<a onclick="lead_capture_form_btn({{ $contentMain->brochure_id }},'')" href="javascript:void(0)"> <i class="fas fa-download"></i> Download Syllabus</a>
 								</div>
 								<div class="like-course">
 									<a href="#"><i class="fas fa-heart"></i></a>
@@ -380,7 +380,7 @@
 								</div>
 								<div class="more-btn text-center" >
 									<div class="course-type-list">	
-										<a class="btn-filled" href="javascript:void(0)" onclick="lead_capture_form_btn({{ $course->category_id }},'')"><i class="fas fa-download"></i> Brochure</a>
+										<a class="btn-filled" href="javascript:void(0)" onclick="lead_capture_form_btn({{ $course->brochure_id }},'')"><i class="fas fa-download"></i> Brochure</a>
 									</div>
 									<div class="course-type-list">														
 										<a class="btn-outline" href="{{ URL::to('/courses') }}/{{ $course->slug }}" >View More <i class="fas fa-caret-right"></i></a>

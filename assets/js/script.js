@@ -1484,6 +1484,7 @@ searchBAR: function (){
 				jQuery("#" + formId + " .form_process").hide();
 				jQuery("#" + formId + " .form_success").show();
 				jQuery("#" + formId)[0].reset()
+				downloadBrochure(result);
 				return true;
 			}
 		});
