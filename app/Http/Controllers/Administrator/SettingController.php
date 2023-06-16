@@ -43,4 +43,32 @@ class SettingController extends Controller
 
     }
 
+    public function qrcode()
+    {
+        // $data = QrCode::size(512)
+        //     ->generate(
+        //         'https://twitter.com/HarryKir',
+        //     );
+
+        return view('administrator.qrcode.qrcode');
+    }
+
+    public function generateQrcode(Request $request)
+    {
+        //
+        try {
+            $data = $request->all();
+            $validatedData = $request->validate([
+                'qr_content' => 'required',
+            ]);
+            $qr_content = $data['qr_content'];
+            return view('administrator.qrcode.generate-qrcode',compact('qr_content'));
+        } catch(\Illuminate\Database\QueryException $e){
+            var_dump($e->getMessage()); 
+        }
+
+    }
+
+
+
 }

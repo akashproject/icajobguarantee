@@ -180,7 +180,8 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::get('/settings', [App\Http\Controllers\Administrator\SettingController::class, 'show'])->name('admin-settings');
         Route::post('/save-settings', [App\Http\Controllers\Administrator\SettingController::class, 'save'])->name('admin-save-settings');
  
-
+        Route::get('/qrcode', [App\Http\Controllers\Administrator\SettingController::class, 'qrcode'])->name('qrcode');
+        Route::get('/generate-qrcode', [App\Http\Controllers\Administrator\SettingController::class, 'generateQrcode'])->name('generate-qrcode');
     });
     // Will be inside middleware
 });

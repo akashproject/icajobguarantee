@@ -189,6 +189,8 @@
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark" href="{{ url('administrator/settings') }}" aria-expanded="false"><i class="mdi mdi-settings"></i><span class="hide-menu">Settings </span></a>
                         </li>
 
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark" href="{{ url('administrator/qrcode') }}" aria-expanded="false"><i class="mdi mdi-qrcode"></i><span class="hide-menu">QR Code</span></a>
+                        </li>
                         
                     </ul>
 
