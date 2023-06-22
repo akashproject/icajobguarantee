@@ -95,6 +95,9 @@
 									<div class="form_process" >
 										<div class="lead_steps step1 active" > 
 											@include('common.leadCaptureFormField')
+											<div class="contact-info formFieldInstitute">
+												<input id="code" name="code" type="hidden" value="{{(isset($_GET['code']) && $_GET['code'] != '')?$_GET['code']:''; }}" autocomplete="off">
+											</div>
 											<div class="form-group disclaimer text-left">
 												<p style="margin:0">
 													<input style="margin-left: 0;width: auto;vertical-align: middle;height: auto;" type="checkbox" class="" checked="">  I agree to receive updates on <i class="fa fa-whatsapp" style="color: green;"></i> whatsapp. 

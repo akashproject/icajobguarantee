@@ -5493,3 +5493,22 @@ span.success-icon {
 .bg-gray {
   background-color: #e2e0e0;
 }
+
+/* Dashboard Css */
+.dashboard-plate {
+  background: #fff;
+  margin: 2rem;
+  padding: 4rem 3rem;
+  border-radius: 20px;
+  color: #333;
+  box-shadow: 0px 2px 8px 0px #e3e3e3fa;
+}
+
+.dashboard-plate .service-slide_4 .service-text-icon {
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 4px;
+  width: 32%;
+  float: left;
+  margin-left: 10px;
+}

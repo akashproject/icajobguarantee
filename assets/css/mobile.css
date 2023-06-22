@@ -5309,3 +5309,21 @@ form#index_lead_capture_form h4, form#index_lead_capture_form p {
   box-shadow: 1px 0px 6px 0px #4c4848;
   border-radius: 8px;
 }
+
+/* Dashboard Css */
+.dashboard-plate {
+  background: #fff;
+  margin: 2rem;
+  padding: 4rem 3rem;
+  border-radius: 20px;
+  color: #333;
+}
+
+.dashboard-plate .service-slide_4 .service-text-icon {
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 4px;
+  width: 32%;
+  float: left;
+  margin-left: 10px;
+}

@@ -192,7 +192,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .ad-banner-content {
   color: #323232;
-  margin-top: 4.5rem;
+  margin: 4.5rem 0;
 }
 
 .ad-banner-title h1 {
@@ -515,7 +515,9 @@ color: #128C7E;
   padding-top: 104px;
   background-repeat: no-repeat;
   height: auto;
+  min-height: 400px;
 }
+
 .popup_banner_form_wrapeer{
   padding: 0 65px;
 }

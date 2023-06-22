@@ -68,44 +68,19 @@
 				<div class="col-md-7">
 					<div class="ad-banner-content">
 						<div class="ad-banner-title">
-							<h1>Looking To Be An Accounts Manager? Secure Your Career In 6 Months</h1>
+							<h1>10X Your Monthly Income: Experience Exponential Growth</h1>
 						</div>
 						<div class="ad-banner-sub-title">
-							<h2> Are you struggling to choose your career? Book Your Free One-To-One Counselling Session Now! </h2>
+							<h2>Be an Active Partner in India's Skilling Mission with ICA Edu Skills, India's Largest Education Network</h2>
 						</div>
 						<div class="ad-banner-description">
-							{!!(isset($contentMain))?$contentMain->description:"Course description" !!}
+							{!!(isset($contentMain))?$contentMain->description:"" !!}
 						</div>
-						<div class="ad-banner-option">
-							<span class="enroll-btn genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
-                                <a data-toggle="modal" data-target="#franchise-lead-generation-form" href="javascript:void(0)" > Download Brochure </i></a>
-							</span>
-
-							<span class="apply-now">
-                                <a data-toggle="modal" data-target="#franchise-lead-generation-form" href="javascript:void(0)" > Get A Quote </i></a>
-							</span>
-						</div>
+						
 					</div>
 				</div>
 				<div class="col-md-5">
-					<div class="highlighted-content-wrapper text-center">
-						<div class="latest-area-content mt60" >
-							
-							<div class="latest-video-poster relative-position mb20">
-								<img src="{{url('assets/img/letest-video.webp')}}" alt="">
-								<div class="video-play-btn text-center gradient-bg">
-									<a class="popup-with-zoom-anim" href="https://youtu.be/vV1urFhrijY"><i class="fas fa-play"></i></a>
-								</div>
-							</div>
-							<div class="vidoe-text">
-								<h3 class="latest-title bold-font"><a href="#">Learning With ICA Edu Skills.</a></h3>
-								<p class="mb25">Certified Industrial Accountant | Accounts Training Institute | Placement Support | ICA Edu Skills.</p>
-							</div>
-							<div class="view-all-btn bold-font">
-								<a href="https://www.youtube.com/@ICAEduSkills">View All Videos <i class="fas fa-chevron-circle-right"></i></a>
-							</div>
-						</div>
-					</div>
+					
 				</div>
 			</div>
 		</div>
@@ -124,7 +99,7 @@
                                 <i class="text-gradiant flaticon-graduation-hat"></i>
                             </div>
                             <div class="counter-number">
-                                <span class="counter-count bold-font">10 </span><span>K+</span>
+                                <span class="counter-count bold-font">100</span><span>+</span>
                                 <p>Daily Admission</p>
                             </div>
                         </div>
@@ -206,7 +181,7 @@
                             </div>								
                         </div>
                         <div class="genius-btn mb20 gradient-bg text-center text-uppercase ul-li-block bold-font">
-                            <a data-toggle="modal" data-target="#franchise-lead-generation-form" href="javascript:void(0)" > <i class="fas fa-download" style="color: #fff;"></i> Get Online Brochure</a>
+                            <a data-toggle="modal" data-target="#franchise-lead-generation-form" href="javascript:void(0)" > <i class="fas fa-download" style="color: #fff;"></i> Get Brochure</a>
                         </div>
                     </div>
                 </div>
@@ -291,6 +266,7 @@
             <div class="row">
                 <div class="col-md-5">
                     <img src="{{ url('assets/img/franchise-left.png')}}" >
+                    
                 </div>
                 <div class="col-md-7">
                     <div class="row">
@@ -339,6 +315,9 @@
                             </div>
                         </div>
                     </div>
+                    <div class="genius-btn mb20 gradient-bg text-center text-uppercase ul-li-block bold-font">
+                        <a data-toggle="modal" data-target="#franchise-lead-generation-form" href="javascript:void(0)" > <i class="fas fa-download" style="color: #fff;"></i> Request a Call Back </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -372,6 +351,16 @@
                         <li class="cat-item"> 100+ centers in Pan India </li>
                         <li class="cat-item"> Investment of just 15-20 lakh </li>
                     </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    
+                </div>
+                <div class="col-md-6">
+                    <div class="genius-btn mb20 gradient-bg text-center text-uppercase ul-li-block bold-font">
+                        <a data-toggle="modal" data-target="#franchise-lead-generation-form" href="javascript:void(0)" > <i class="fas fa-download" style="color: #fff;"></i> Know More </a>
+                    </div>
                 </div>
             </div>
         </div>

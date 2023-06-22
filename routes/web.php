@@ -39,6 +39,12 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::get('/dashboard', [App\Http\Controllers\Administrator\IndexController::class, 'index'])->name('dashboard');
         Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('administrator-logout');
         
+        Route::get('/affiliate-users', [App\Http\Controllers\Administrator\AffiliateController::class, 'users'])->name('admin-affiliate-users');
+        Route::get('/add-affiliate-user', [App\Http\Controllers\Administrator\AffiliateController::class, 'addUser'])->name('admin-add-affiliate-user');
+        Route::get('/view-affiliate-user/{id}', [App\Http\Controllers\Administrator\AffiliateController::class, 'showUser'])->name('admin-view-affiliate-user');
+        Route::post('/save-affiliate-user', [App\Http\Controllers\Administrator\AffiliateController::class, 'saveUser'])->name('admin-save-affiliate-user');
+        Route::get('/delete-affiliate-user/{id}', [App\Http\Controllers\Administrator\AffiliateController::class, 'deleteUser'])->name('admin-delete-affiliate-user');
+        
         //Page
         Route::get('/pages', [App\Http\Controllers\Administrator\PageController::class, 'index'])->name('admin-pages');
         Route::get('/add-page', [App\Http\Controllers\Administrator\PageController::class, 'Add'])->name('admin-add-page');
@@ -189,24 +195,23 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
 Route::get('/{slug}', [App\Http\Controllers\PageController::class, 'index'])->where('slug', '([A-Za-z0-9\-]+)');
 Route::get('/ads/{slug}', [App\Http\Controllers\AdPageController::class, 'index'])->where('slug', '([A-Za-z0-9\-]+)');
 
+//Affiliate Dashboard
+Route::get('/affiliate-dashboard/{code}', [App\Http\Controllers\AffiliateController::class, 'dashboard'])->name('affiliate-dashboard');
+
 // Individual Pages
 Route::get('/', [App\Http\Controllers\IndexController::class, 'index'])->name('index');
 
 // Courses
-//Route::get('/courses', [App\Http\Controllers\CourseController::class, 'index'])->name('courses');
 Route::get('/category/{slug}', [App\Http\Controllers\CourseController::class, 'courseListByCategory'])->name('course-category');
 Route::get('/courses/{slug}', [App\Http\Controllers\CourseController::class, 'viewCourse'])->name('view-courses');
 Route::get('/search/{slug}', [App\Http\Controllers\CourseController::class, 'search'])->name('search-courses');
 
 // Centers
-//Route::get('/centers', [App\Http\Controllers\CenterController::class, 'index'])->name('centers');
 Route::get('/centers/{slug}', [App\Http\Controllers\CenterController::class, 'viewCenters'])->name('view-centers');
 Route::get('/state/{slug}', [App\Http\Controllers\CenterController::class, 'state'])->name('states');
 Route::get('/city/{slug}', [App\Http\Controllers\CenterController::class, 'city'])->name('city');
 
 Route::post('/submit-review', [App\Http\Controllers\ReviewController::class, 'create'])->name('submit-review');
-// Route::get('/article/{slug}', [App\Http\Controllers\BlogController::class, 'view'])->name('view-article');
-// Route::get('/category/{slug}', [App\Http\Controllers\BlogController::class, 'getByCategory'])->name('view-category');
 
 Route::get('/tags/{slug}', [App\Http\Controllers\TagController::class, 'index'])->name('tags');
 //Capture Leads

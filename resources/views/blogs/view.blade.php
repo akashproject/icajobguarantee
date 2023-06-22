@@ -8,39 +8,122 @@
 
 	<!-- Start of Blog single content
 		============================================= -->
-		<section id="blog-detail" class="blog-details-section">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-9">
-						<div class="blog-details-content">
-							<div class="post-content-details">
-								<div class="blog-detail-thumbnile mb35">
-									<img src="{{ getSizedImage('mobile',$contentMain->featured_image) }}" alt="">
-								</div>
-								<h2>{{ $contentMain->name }}</h2>
+	<section id="blog-detail" class="blog-details-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9">
+					<div class="blog-details-content">
+						<div class="post-content-details">
+							<div class="blog-detail-thumbnile mb35">
+								<img src="{{ getSizedImage('mobile',$contentMain->featured_image) }}" alt="">
+							</div>
+							<h2>{{ $contentMain->name }}</h2>
 
-								<div class="date-meta text-uppercase">
-									<a href="" ><i class="fas fa-calendar-alt"></i> {{ date('d M Y', strtotime($contentMain->created_at)); }}</a>
-									<a href="{{url('author')}}/{{ getAuthorById($contentMain->author_id)->slug }}" ><i class="fas fa-user"></i> {{ getAuthorById($contentMain->author_id)->name }} </a>
-									<a href="" ><i class="fas fa-comment-dots"></i> {{ $reviewRatings['reviewCount'] }} COMMENTS</a>
-								</div>
-								<div class="blog-description" >
-									{!! $contentMain->description !!}
-								</div>
+							<div class="date-meta text-uppercase">
+								<a href="" ><i class="fas fa-calendar-alt"></i> {{ date('d M Y', strtotime($contentMain->created_at)); }}</a>
+								<a href="{{url('author')}}/{{ getAuthorById($contentMain->author_id)->slug }}" ><i class="fas fa-user"></i> {{ getAuthorById($contentMain->author_id)->name }} </a>
+								<a href="" ><i class="fas fa-comment-dots"></i> {{ $reviewRatings['reviewCount'] }} COMMENTS</a>
 							</div>
-							<div class="blog-share-tag">
-								<div class="share-text float-left">
-									Share this news
-								</div>
-								<div class="share-social ul-li float-right">
+							<div class="blog-description" >
+								{!! $contentMain->description !!}
+							</div>
+						</div>
+						<div class="blog-share-tag">
+							<div class="share-text float-left">
+								Share this news
+							</div>
+							<div class="share-social ul-li float-right">
+								<ul>
+									<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+									<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+									<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="blog-category ul-li">
+							<ul>
+								@if(isset($contentMain->tags))
+								@foreach($contentMain->tags as $value)
+									<li><a href="{{url('tags')}}/{{$value->slug}}">{{$value->name}}</a></li>
+								@endforeach
+								@endif
+							</ul>
+						</div>
+						<div class="author-comment">
+							<div class="author-img">
+								<img src="{{(isset(getAuthorById($contentMain->author_id)->featured_image))?getSizedImage('thumb',getAuthorById($contentMain->author_id)->featured_image):''}}" alt="{{ getAuthorById($contentMain->author_id)->name }}">
+							</div>
+							<div class="author-designation-comment">
+								BY: <span>{{ getAuthorById($contentMain->author_id)->name }}</span> 
+								{!! getAuthorById($contentMain->author_id)->bio !!}
+							</div>
+						</div>
+						<div class="next-prev-post">
+							@if(isset($previous->slug))
+							<div class="next-post-item float-left">
+								<a href="{{url('article')}}/{{$previous->slug}}"><i class="fas fa-arrow-circle-left"></i>Previous Post</a>
+							</div>
+							@endif
+							@if(isset($next->slug))
+							<div class="next-post-item float-right">
+								<a href="{{url('article')}}/{{$next->slug}}">Next Post<i class="fas fa-arrow-circle-right"></i></a>
+							</div>
+							@endif
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-3">
+					<div class="side-bar">
+						<div class="side-bar-search">
+							<form action="#" method="get">
+								<input type="text" class="" placeholder="Search">
+								<button type="submit"><i class="fas fa-search"></i></button>
+							</form>
+						</div>
+
+						<div class="side-bar-widget">
+							<h2 class="widget-title text-capitalize">blog <span>Categories.</span></h2>
+							<div class="post-categori ul-li-block">
+									@if(isset($contentMain->categories))
 									<ul>
-										<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-										<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-										<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+									@foreach($contentMain->categories as $value)
+										<li class="cat-item"><a href="{{url('category')}}/{{$value->slug}}">{{$value->name}}</a></li>
+									@endforeach
 									</ul>
+									@endif
+							</div>
+						</div>
+
+						<div class="side-bar-widget">
+							<h2 class="widget-title text-capitalize"><span>Related </span>News.</h2>
+								@foreach($tranding as $value)
+								<div class="latest-news-posts">
+									<div class="latest-news-area">
+										<div class="latest-news-thumbnile relative-position">
+											<img src="{{ getSizedImage('thumb',$contentMain->featured_image) }}" alt="">
+											<div class="hover-search">
+												<i class="fas fa-search"></i>
+											</div>
+											<div class="blakish-overlay"></div>
+										</div>
+										<div class="date-meta">
+											<i class="fas fa-calendar-alt"></i> 26 April 2018
+										</div>
+										<h3 class="latest-title bold-font"><a href="{{ url('article') }}/{{ $value->slug }}"> {{ $value->name }}</a></h3>
+									</div>
+									<!-- /post -->
+								</div>
+								@endforeach
+								<div class="view-all-btn bold-font">
+									<a href="{{ url('blogs') }}">View All News <i class="fas fa-chevron-circle-right"></i></a>
 								</div>
 							</div>
-							<div class="blog-category ul-li">
+						</div>
+
+						<div class="side-bar-widget">
+							<h2 class="widget-title text-capitalize">Popular <span>Tag's.</span></h2>
+							<div class="tag-clouds ul-li">
 								<ul>
 									@if(isset($contentMain->tags))
 									@foreach($contentMain->tags as $value)
@@ -49,96 +132,13 @@
 									@endif
 								</ul>
 							</div>
-							<div class="author-comment">
-								<div class="author-img">
-									<img src="{{(isset(getAuthorById($contentMain->author_id)->featured_image))?getSizedImage('thumb',getAuthorById($contentMain->author_id)->featured_image):''}}" alt="{{ getAuthorById($contentMain->author_id)->name }}">
-								</div>
-								<div class="author-designation-comment">
-									BY: <span>{{ getAuthorById($contentMain->author_id)->name }}</span> 
-									{!! getAuthorById($contentMain->author_id)->bio !!}
-								</div>
-							</div>
-							<div class="next-prev-post">
-								@if(isset($previous->slug))
-								<div class="next-post-item float-left">
-									<a href="{{url('article')}}/{{$previous->slug}}"><i class="fas fa-arrow-circle-left"></i>Previous Post</a>
-								</div>
-								@endif
-								@if(isset($next->slug))
-								<div class="next-post-item float-right">
-									<a href="{{url('article')}}/{{$next->slug}}">Next Post<i class="fas fa-arrow-circle-right"></i></a>
-								</div>
-								@endif
-							</div>
 						</div>
-					</div>
 
-					<div class="col-md-3">
-						<div class="side-bar">
-							<div class="side-bar-search">
-								<form action="#" method="get">
-									<input type="text" class="" placeholder="Search">
-									<button type="submit"><i class="fas fa-search"></i></button>
-								</form>
-							</div>
-
-							<div class="side-bar-widget">
-								<h2 class="widget-title text-capitalize">blog <span>Categories.</span></h2>
-								<div class="post-categori ul-li-block">
-										@if(isset($contentMain->categories))
-										<ul>
-										@foreach($contentMain->categories as $value)
-											<li class="cat-item"><a href="{{url('category')}}/{{$value->slug}}">{{$value->name}}</a></li>
-										@endforeach
-										</ul>
-										@endif
-								</div>
-							</div>
-
-							<div class="side-bar-widget">
-								<h2 class="widget-title text-capitalize"><span>Related </span>News.</h2>
-									@foreach($tranding as $value)
-									<div class="latest-news-posts">
-										<div class="latest-news-area">
-											<div class="latest-news-thumbnile relative-position">
-												<img src="{{ getSizedImage('thumb',$contentMain->featured_image) }}" alt="">
-												<div class="hover-search">
-													<i class="fas fa-search"></i>
-												</div>
-												<div class="blakish-overlay"></div>
-											</div>
-											<div class="date-meta">
-												<i class="fas fa-calendar-alt"></i> 26 April 2018
-											</div>
-											<h3 class="latest-title bold-font"><a href="{{ url('article') }}/{{ $value->slug }}"> {{ $value->name }}</a></h3>
-										</div>
-										<!-- /post -->
-									</div>
-									@endforeach
-									<div class="view-all-btn bold-font">
-										<a href="{{ url('blogs') }}">View All News <i class="fas fa-chevron-circle-right"></i></a>
-									</div>
-								</div>
-							</div>
-
-							<div class="side-bar-widget">
-								<h2 class="widget-title text-capitalize">Popular <span>Tag's.</span></h2>
-								<div class="tag-clouds ul-li">
-									<ul>
-										@if(isset($contentMain->tags))
-										@foreach($contentMain->tags as $value)
-											<li><a href="{{url('tags')}}/{{$value->slug}}">{{$value->name}}</a></li>
-										@endforeach
-										@endif
-									</ul>
-								</div>
-							</div>
-
-						</div>
 					</div>
 				</div>
 			</div>
-		</section>
+		</div>
+	</section>
 	<!-- End of Blog single content
 		============================================= -->
 		
