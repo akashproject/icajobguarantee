@@ -1,4 +1,4 @@
-<!-- The Modal -->
+<!-- Classroom Form -->
 <div class="modal fade" id="lead-generation-form" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -15,30 +15,29 @@
             </div>
             <!-- Modal body -->
             <div class="modal-body">    
-                <form id="lead_capture_form" class="contact_form lead_capture_form" action="{{ url('capture-lead') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    <div class="lead_steps step1 active" > 
-                        @include('common.leadCaptureFormField')
-                    </div>
-                    <div class="lead_steps step2">
-                        <div class="otp-content">
-                            <h4 class="otp-heading"> OTP Verification </h4>                                   
-                            <p class="message"> <span class="message"> Enter the OTP you recive at </span> +91 XXXXXX<span class="lastDigit"></span> <a href="javacript:void(0)" class="gotoStep1"> (Change) </a> </p>
-                            <p class="response_status" style="color: #000;"></p>
-                        </div> 
-                        <div class="contact-info">
-                            <input class="verify_otp" name="verify_otp" type="text" placeholder="Enter One Time Password" autocomplete="off" >
+                <div class="popup_banner_form_wrapeer" > 
+                    <form id="classroom_popup_lead_capture_form" class="contact_form lead_form" action="{{ url('capture-lead') }}" method="POST" enctype="multipart/form-data">
+                        <div class="form_process" >
+                            <div class="lead_steps step1 active" > 
+                                @include('common.leadCaptureFormField')
+                                <div class="form-group disclaimer text-left">
+                                    <p style="margin:0">
+                                        <input style="margin-left: 0;width: auto;vertical-align: middle;height: auto;" type="checkbox" class="" checked="">  I agree to receive updates on <i class="fa fa-whatsapp" style="color: green;"></i> whatsapp. 
+                                    </p>
+                                    <p>
+                                        <input style="margin-left: 0;width: auto;vertical-align: middle;height: auto;" type="checkbox" class="" checked=""> I agree to <a href="/privacy-policy" target="_blank">Privacy Policy</a> &amp; overriding DNC/NDNC request for Call/SMS. 
+                                    </p>
+                                </div>
+                            </div>
+                            @include('common.leadCaptureFormOtpField')                           
                         </div>
-                    </div>
-                    <div class="nws-button text-center white text-capitalize">
-                        <button class="submit_classroom_lead_generation_form form_step_1" type="submit" disabled> Submit </button> 
-                    </div>
-                </form>  
+                    </form>  
+                </div>
             </div>
         </div>
     </div>
 </div>
-<!-- The Modal -->
+<!-- Franchise Form -->
 <div class="modal fade" id="franchise-lead-generation-form" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -54,70 +53,17 @@
                 </div>
             </div>
             <!-- Modal body -->
-            <div class="modal-body">    
-                <form id="lead_capture_form" class="contact_form lead_capture_form" action="{{ url('capture-lead') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    <div class="lead_steps step1 active" > 
-                        <div class="contact-info">
-                            <input class="name" name="name" type="text" placeholder="Enter Your Name" autocomplete="off" required>
+            <div class="modal-body">   
+                <div class="popup_banner_form_wrapeer" > 
+                    <form id="franchise_lead_capture_form" class="lead_capture_form contact_form" action="{{ url('franchise-capture-lead') }}" method="POST" enctype="multipart/form-data">
+                        <div class="form_process" >
+                            <div class="lead_steps step1 active" > 
+                                @include('common.franchiseLeadCaptureFormField')
+                            </div>
+                            @include('common.leadCaptureFormOtpField')
                         </div>
-                        <div class="contact-info">
-                            <input class="email" name="email" type="email" placeholder="Enter Your Email" autocomplete="off" required>
-                        </div>
-                        <div class="contact-info">
-                            <input class="mobile" name="mobile" type="number" placeholder="Enter Your Mobile" autocomplete="off" required>
-                        </div>
-                        <div class="register-form-area">
-                            <select class="state" name="state" required>
-                                @foreach(getStates() as $value)
-                                    <option value="{{$value->name}}" data-id="{{$value->id}}"> {{$value->name}} </option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="register-form-area">
-                            <select class="city_id" name="city" required>
-                                <option value="">Select City</option>
-                            </select>
-                        </div>
-                        <div class="contact-info">
-                            <input type="text" class="occupation" name="occupation" placeholder="Enter Your Occupation" autocomplete="off" required>
-                        </div>
-                        <div class="register-form-area">
-                            <select class="invest" name="invest" required>
-                                <option value="" disabled="" hidden="" selected="">Are you ready to Invest  15-20 lakh ?</option>
-                                <option value="Yes">Yes</option>
-                                <option value="No">No</option>
-                            </select>
-                        </div>
-                        <div class="nws-button text-center white text-capitalize">
-                            <button class="form_step_1" type="submit">Next</button> 
-                        </div>
-                    </div>
-                    <div class="lead_steps step2">
-                        <div class="otp-content">
-                            <h4 class="otp-heading"> OTP Verification </h4>                                   
-                            <p class="message"> <span class="message"> Enter the OTP you recive at </span> +91 XXXXXX<span class="lastDigit"></span> <a href="javacript:void(0)" class="gotoStep1"> (Change) </a> </p>
-                            <p class="response_status" style="color: #000;"></p>
-                        </div> 
-                        <div class="contact-info">
-                            <input class="verify_otp" name="verify_otp" type="text" placeholder="Enter One Time Password" autocomplete="off" required>
-                        </div>
-                        <div class="nws-button text-center white text-capitalize">
-                            <button class="apply_now" type="button">Apply Now</button> 
-                        </div>
-                    </div>
-                    <div class="lead_steps step3">
-                        <div class="form-success-content">
-                            <span class="success-icon"> <i class="fas fa-check"></i> </span>
-                            <h4> Thank You! Your Application Submitted Successfully </h4>
-                        </div>
-                    </div>
-                    <input type="hidden" name="course_id" value="">
-                    <input type="hidden" name="responsed_otp" class="responsed_otp" value="">
-                    <input type="hidden" name="" class="is_enable_otp" value="1">
-                    <input type="hidden" name="utm_campaign" class="" value="{{ isset($contentMain->utm_campaign)?$contentMain->utm_campaign:'' }}">
-                    <input type="hidden" name="utm_source" class="utm_source" value="{{ isset($contentMain->utm_source)?$contentMain->utm_source:'' }}">
-                </form>  
+                    </form>  
+                </div>
             </div>
         </div>
     </div>
@@ -139,39 +85,7 @@
             </div>
             <!-- Modal body -->
             <div class="modal-body">    
-                <form id="lead_capture_form" class="contact_form lead_capture_form" action="{{ url('capture-lead') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    <div class="lead_steps step1 active" > 
-                        @include('common.applyJobFormField')
-                        <div class="nws-button text-center white text-capitalize">
-                            <button class="form_step_1" type="submit">Next</button> 
-                        </div>
-                    </div>
-                    <div class="lead_steps step2">
-                        <div class="otp-content">
-                            <h4 class="otp-heading"> OTP Verification </h4>                                   
-                            <p class="message"> <span class="message"> Enter the OTP you recive at </span> +91 XXXXXX<span class="lastDigit"></span> <a href="javacript:void(0)" class="gotoStep1"> (Change) </a> </p>
-                            <p class="response_status" style="color: #000;"></p>
-                        </div> 
-                        <div class="contact-info">
-                            <input class="verify_otp" name="verify_otp" type="text" placeholder="Enter One Time Password" autocomplete="off" required>
-                        </div>
-                        <div class="nws-button text-center white text-capitalize">
-                            <button class="apply_now" type="button">Apply Now</button> 
-                        </div>
-                    </div>
-                    <div class="lead_steps step3">
-                        <div class="form-success-content">
-                            <span class="success-icon"> <i class="fas fa-check"></i> </span>
-                            <h4> Thank You! Your Application Submitted Successfully </h4>                           
-                        </div>
-                    </div>
-                    <input type="hidden" name="course_id" value="">
-                    <input type="hidden" name="responsed_otp" class="responsed_otp" value="">
-                    <input type="hidden" name="" class="is_enable_otp" value="1">
-                    <input type="hidden" name="utm_campaign" class="" value="{{ isset($contentMain->utm_campaign)?$contentMain->utm_campaign:'' }}">
-                    <input type="hidden" name="utm_source" class="utm_source" value="{{ isset($contentMain->utm_source)?$contentMain->utm_source:'' }}">
-                </form>  
+                
             </div>
         </div>
     </div>

@@ -23,6 +23,7 @@ class CenterController extends Controller
                 $centers->orderBy(DB::raw('POW((lng-'."22.707401".'),2) + POW((lat-'."88.387015".'),2)'));
             }
             $centers = $centers->get();
+            //select * from `centers` where `state_id` = 35 and `status` = '1'
             $states = State::where('status', 1)->get();
             $cities = City::where('state_id', $contentMain->id)->where('status', 1)->orderBy("name","asc")->get();
             return view('centers.index',compact('centers','states','contentMain','cities'));

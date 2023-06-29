@@ -38,74 +38,6 @@
                             </div>
                         </div>
                         <div class="col-md-3">
-                            <div class="footer-widget">
-                                <h2 class="widget-title">Photo Gallery</h2>
-                                <div class="photo-list ul-li">
-                                    <ul>
-                                        <li>
-                                            <img src="{{ url('assets/img/gallery/g-1.jpg') }}" alt="">
-                                            <div class="blakish-overlay"></div>
-                                            <div class="pop-up-icon">
-                                                <a href="{{ url('assets/img/gallery/g-1.jpg') }}" data-lightbox="roadtrip">
-                                                    <i class="fas fa-search"></i>
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <img src="{{ url('assets/img/gallery/g-1.jpg') }}" alt="">
-                                            <div class="blakish-overlay"></div>
-                                            <div class="pop-up-icon">
-                                                <a href="{{ url('assets/img/gallery/g-1.jpg') }}" data-lightbox="roadtrip">
-                                                    <i class="fas fa-search"></i>
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <img src="{{ url('assets/img/gallery/g-1.jpg') }}" alt="">
-                                            <div class="blakish-overlay"></div>
-                                            <div class="pop-up-icon">
-                                                <a href="{{ url('assets/img/gallery/g-1.jpg') }}" data-lightbox="roadtrip">
-                                                    <i class="fas fa-search"></i>
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <img src="{{ url('assets/img/gallery/g-1.jpg') }}" alt="">
-                                            <div class="blakish-overlay"></div>
-                                            <div class="pop-up-icon">
-                                                <a href="{{ url('assets/img/gallery/g-1.jpg') }}" data-lightbox="roadtrip">
-                                                    <i class="fas fa-search"></i>
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <img src="{{ url('assets/img/gallery/g-1.jpg') }}" alt="">
-                                            <div class="blakish-overlay"></div>
-                                            <div class="pop-up-icon">
-                                                <a href="{{ url('assets/img/gallery/g-1.jpg') }}" data-lightbox="roadtrip">
-                                                    <i class="fas fa-search"></i>
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <img src="{{ url('assets/img/gallery/g-1.jpg') }}" alt="">
-                                            <div class="blakish-overlay"></div>
-                                            <div class="pop-up-icon">
-                                                <a href="{{ url('assets/img/gallery/g-1.jpg') }}" data-lightbox="roadtrip">
-                                                    <i class="fas fa-search"></i>
-                                                </a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> 
-                <!-- /footer-widget-content -->
-                <div class="footer-social-subscribe mb65">
-                    <div class="row">
-                        <div class="col-md-3">
                             <div class="footer-social ul-li">
                                 <h2 class="widget-title">Social Network</h2>
                                 <ul>
@@ -116,6 +48,11 @@
                                 </ul>
                             </div>
                         </div>
+                    </div>
+                </div> 
+                <!-- /footer-widget-content -->
+                <div class="footer-social-subscribe mb65">
+                    <div class="row">                        
                         <div class="col-md-9">
                             <div class="subscribe-form">
                                 <h2 class="widget-title">Subscribe Newsletter</h2>

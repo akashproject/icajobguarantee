@@ -224,4 +224,8 @@ Route::post('/get-city-by-state-id', [App\Http\Controllers\Administrator\CenterC
 Route::post('/center/get-center-by-pincode', [App\Http\Controllers\IndexController::class, 'getCenterByPincode'])->name('get-center-by-pincode');
 
 Route::any('/index/test-code', [App\Http\Controllers\IndexController::class, 'testCode'])->name('test-code');
+
+Route::any('/global-other-form-submit', [App\Http\Controllers\IndexController::class, 'globalFormSubmit'])->name('global-other-form-submit');
+Route::post('/index/payment-success', [App\Http\Controllers\IndexController::class, 'paymentSuccess'])->name('payment-success');
+Route::post('/index/payment-failed', [App\Http\Controllers\IndexController::class, 'paymentFailed'])->name('payment-failed');
 Auth::routes();

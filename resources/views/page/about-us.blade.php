@@ -35,30 +35,6 @@
 	</section>
 	<!-- End of breadcrumb section
 		============================================= -->
-
-	<!-- Start secound testimonial section
-		============================================= -->
-		<section id="testimonial-secound" class="secound-teacher-section">
-			<div class="container">
-				<div class="testimonial-slide">
-					<div class="section-title mb35 headline text-center">
-						<span class="subtitle text-uppercase">Success Stories</span>
-						<h3>Success <span> Stories.</span></h3>
-					</div>
-
-					<div class="testimonial-secound-slide-area">
-						@for($i=1; $i<= 8; $i++)
-						<div class="text-center">
-							<img src="{{ url('/assets/img/award/award-'.$i.'.png')}}" >
-						</div>
-						@endfor
-					</div>
-				</div>
-			</div>
-		</section>
-	<!-- End secound testimonial section
-		============================================= -->
-
 	<!-- Start of about us content
 		============================================= -->
 		<section id="about-page" class="about-page-section">
@@ -117,6 +93,28 @@
 			</div>
 		</section>
 	<!-- End of about us content
+		============================================= -->
+	<!-- Start secound testimonial section
+		============================================= -->
+		<section id="testimonial-secound" class="secound-teacher-section">
+			<div class="container">
+				<div class="testimonial-slide">
+					<div class="section-title mb35 headline text-center">
+						<span class="subtitle text-uppercase">Success Stories</span>
+						<h3>Success <span> Stories.</span></h3>
+					</div>
+
+					<div class="testimonial-secound-slide-area">
+						@for($i=1; $i<= 8; $i++)
+						<div class="text-center">
+							<img src="{{ url('/assets/img/award/award-'.$i.'.png')}}" >
+						</div>
+						@endfor
+					</div>
+				</div>
+			</div>
+		</section>
+	<!-- End secound testimonial section
 		============================================= -->
 		<section id="about-page" class="best-course-section">
 			<div class="container">

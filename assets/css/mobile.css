@@ -3726,7 +3726,7 @@ ul.product-tab li.active:after {
   height: 100%;
   -webkit-box-shadow: -15px -10px 40px 5px rgba(0, 0, 0, 0.1);
   box-shadow: -15px -10px 40px 5px rgba(0, 0, 0, 0.1);
-  position: absolute; }
+  }
 
 .contact_secound_section {
   background-image: url(../img/banner/cf-1.png);

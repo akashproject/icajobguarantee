@@ -1,14 +1,5 @@
-/* -----------------------------------------------------------------------------
-
-
-
-File:           JS Core
-Version:        1.0
-Last change:    00/00/00 
-Author:         HTMLMATE Team
-
--------------------------------------------------------------------------------- */
 let pincode;
+
 (function() {
 	"use strict";
 	var Genius = {
@@ -68,22 +59,33 @@ preloader: function (){
 ================================================*/
 loadPincode: function (){
 	jQuery(window).on('load', function(){
-		$.ajaxSetup({
-			headers: {
-			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-			}
-		});
-		$.ajax({
-			url: `${globalUrl}center/get-center-by-pincode`,
-			type: "post",
-			data: {
-				"pincode":711203
-			},
-			success: function(result) {
-				pincode = result
-				console.log(pincode);
-			}
-		});	
+		var google_conversion_id = 957116240;
+		var google_conversion_language = "en";
+		var google_conversion_format = "3";
+		var google_conversion_color = "ffffff";
+		var google_conversion_label = "xTLNCK-wtakYENDescgD";
+		var google_remarketing_only = false;
+
+		$.getScript('//www.googleadservices.com/pagead/conversion.js');
+
+		var image = new Image(1, 1); 
+		image.src = "//www.googleadservices.com/pagead/conversion/957116240/?label=xTLNCK-wtakYENDescgD&guid=ON&script=0";  
+		// $.ajaxSetup({
+		// 	headers: {
+		// 	'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+		// 	}
+		// });
+		// $.ajax({
+		// 	url: `${globalUrl}center/get-center-by-pincode`,
+		// 	type: "post",
+		// 	data: {
+		// 		"pincode":711203
+		// 	},
+		// 	success: function(result) {
+		// 		pincode = result
+		// 		console.log(pincode);
+		// 	}
+		// });	
 	});
 },
 
@@ -706,8 +708,6 @@ rateReview: function (){
 /* - End of faq accordion
 ================================================*/
 
-
-
 /* Start Of best product
 ================================================*/
 categorySlide: function (){
@@ -844,8 +844,6 @@ teacher3SLIDE: function (){
 /* End Of teacher thired Slide
 ================================================*/
 
-
-
 /* Start Of best product
 ================================================*/
 buttonSlide: function (){
@@ -879,7 +877,6 @@ buttonSlide: function (){
 },
 /* End Of best product
 ================================================*/
-
 
 /* Start Of service slide
 ================================================*/
@@ -951,7 +948,6 @@ categorySlide_3: function (){
 /* End Of  category slide
 ================================================*/
 
-
 /* Start Of teacher thired Slide
 ================================================*/
 advance3SLIDE: function (){
@@ -987,7 +983,6 @@ advance3SLIDE: function (){
 /* End Of teacher thired Slide
 ================================================*/
 
-
 /* Start Of category slide
 ================================================*/
 productRange: function (){
@@ -1005,8 +1000,6 @@ productRange: function (){
 },
 /* End Of  category slide
 ================================================*/
-
-
 
 /* - Start of search bar
 ================================================*/
@@ -1449,6 +1442,7 @@ searchBAR: function (){
 	}
 
 	function captureLead(form,formId){
+		googConversionTrack();
 		$.ajaxSetup({
 			headers: {
 			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -1499,6 +1493,7 @@ searchBAR: function (){
 		a.click();
 		document.body.removeChild(a);
 	}
+
 })();
 
 function lead_capture_form_btn(brochure_id,center_id) {
@@ -1543,4 +1538,12 @@ function findNearest() {
 	if (navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(showPosition);
 	}
+}
+
+function googConversionTrack() {
+	console.log("hi");
+	window.google_trackConversion({
+		google_conversion_id: 11014887991,
+		google_remarketing_only: true,
+	});
 }

@@ -1152,6 +1152,47 @@ countDown:  function (){
 		}
 	});
 
+	$('#global_other_details_form input').on('keyup', function() {
+		if ($("#global_other_details_form").valid()) {
+			$('#global_other_details_form .submit_classroom_lead_generation_form').prop('disabled', false);  
+		} else {
+			$('#global_other_details_form .submit_classroom_lead_generation_form').prop('disabled', 'disabled');
+		}
+	});
+
+	$('#global_other_details_form select').on('change', function() {
+		console.log($(this).val());
+		if ($("#global_other_details_form").valid()) {
+			$('#global_other_details_form .submit_classroom_lead_generation_form').prop('disabled', false);  
+		} else {
+			$('#global_other_details_form .submit_classroom_lead_generation_form').prop('disabled', 'disabled');
+		}
+	});
+
+	$('#banner_lead_capture_form input').on('keyup', function() {
+		if ($("#banner_lead_capture_form").valid()) {
+			$('.submit_classroom_lead_generation_form').prop('disabled', false);  
+		} else {
+			$('.submit_classroom_lead_generation_form').prop('disabled', 'disabled');
+		}
+	});
+
+	$('#franchise_lead_capture_form input').on('keyup', function() {
+        if ($("#franchise_lead_capture_form").valid()) {
+            $('#franchise_lead_capture_form :submit').prop('disabled', false);  
+        } else {
+            $('#franchise_lead_capture_form :submit').prop('disabled', 'disabled');
+        }
+    });
+
+	$('#franchise_lead_capture_form select').on('change', function() {
+        if ($("#franchise_lead_capture_form").valid()) {
+            $('#franchise_lead_capture_form :submit').prop('disabled', false);  
+        } else {
+            $('#franchise_lead_capture_form :submit').prop('disabled', 'disabled');
+        }
+    });
+
 	//Popup Form Validation
 	$("#classroom_popup_lead_capture_form").validate({
 		messages: {
@@ -1178,11 +1219,30 @@ countDown:  function (){
 		}
 	});
 
-	$('#banner_lead_capture_form input').on('keyup', function() {
-		if ($("#banner_lead_capture_form").valid()) {
-			$('.submit_classroom_lead_generation_form').prop('disabled', false);  
-		} else {
-			$('.submit_classroom_lead_generation_form').prop('disabled', 'disabled');
+	$("#global_other_details_form").validate({
+		messages: {
+			name: {
+				required: "Please enter full name",
+			},
+			email: {
+				required: "Please enter valid email address",
+			},
+			mobile: {
+				required: "Please enter valid mobile number",
+				min: "Please enter valid mobile number",
+				max: "Please enter valid mobile number",
+			},
+			center: {
+				required: "Please enter center name",
+			},
+			location: {
+				required: "Please select prefferd city",
+			},
+		},
+		submitHandler: function(form) {
+			console.log(form);
+			globalFormSubmitProcess(form);
+			return false; // required to block normal submit since you used ajax
 		}
 	});
 
@@ -1211,22 +1271,6 @@ countDown:  function (){
 			return false; // required to block normal submit since you used ajax
 		}
 	});
-
-	$('#franchise_lead_capture_form input').on('keyup', function() {
-        if ($("#franchise_lead_capture_form").valid()) {
-            $('#franchise_lead_capture_form :submit').prop('disabled', false);  
-        } else {
-            $('#franchise_lead_capture_form :submit').prop('disabled', 'disabled');
-        }
-    });
-
-	$('#franchise_lead_capture_form select').on('change', function() {
-        if ($("#franchise_lead_capture_form").valid()) {
-            $('#franchise_lead_capture_form :submit').prop('disabled', false);  
-        } else {
-            $('#franchise_lead_capture_form :submit').prop('disabled', 'disabled');
-        }
-    });
 
 	//Franchise Form Validation
 	$("#franchise_lead_capture_form").validate({
@@ -1464,6 +1508,50 @@ countDown:  function (){
 		document.body.appendChild(a);
 		a.click();
 		document.body.removeChild(a);
+	}
+
+	function globalFormSubmitProcess(form){
+		let formId = $(form).attr('id');
+		jQuery("#" + formId + " .checkout_loader").show();
+				
+		if(`${isEnableOtp}` == 0 && `${isAjaxSubmit}` == 0){
+			form.submit();
+		}
+	
+		if(`${isEnableOtp}` == 1 && `${isAjaxSubmit}` == 0){
+			if(jQuery("#" + formId + " .formFieldOtpResponse").val() == ""){
+				sendMobileOtp(formId);
+				return false;
+			}
+	
+			if(jQuery("#" + formId + " .verify_otp").val() != '' && jQuery("#" + formId + " .formFieldOtpResponse").val() == jQuery("#" + formId + " .verify_otp").val()){
+				form.submit();
+			} else {
+				jQuery("#" + formId + " .response_status").html("OTP is Invalid");
+				jQuery("#" + formId + " .checkout_loader").hide();
+				return false;
+			}
+		}
+	
+		if(`${isEnableOtp}` == 1 && `${isAjaxSubmit}` == 1){
+			if(jQuery("#" + formId + " .formFieldOtpResponse").val() == ""){
+				sendMobileOtp(formId);
+				return false;
+			}
+			if(jQuery("#" + formId + " .verify_otp").val() != '' && jQuery("#" + formId + " .formFieldOtpResponse").val() == jQuery("#" + formId + " .verify_otp").val()){
+				$("#" + formId + " .submit_classroom_lead_generation_form").prop('disabled', 'disabled');
+				captureLead(form,formId);
+			} else {
+				jQuery("#" + formId + " .response_status").html("OTP is Invalid");
+				return false;
+			}
+		}
+
+		if(`${isEnableOtp}` == 0 && `${isAjaxSubmit}` == 1){
+			console.log("here");
+			jQuery("#" + formId + " .submit_classroom_lead_generation_form").prop('disabled', 'disabled');
+			captureLead(form,formId)
+		}
 	}
 
 })();

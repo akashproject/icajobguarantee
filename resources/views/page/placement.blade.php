@@ -62,8 +62,8 @@
 									<i class="text-gradiant flaticon-book"></i>
 								</div>
 								<div class="counter-number">
-									<span class="counter-count bold-font">100</span><span>+</span>
-									<p>All India Vacency</p>
+									<span class="counter-count bold-font">30</span><span>+</span>
+									<p>Placement Offices</p>
 								</div>
 							</div>
 						</div>

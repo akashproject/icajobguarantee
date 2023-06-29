@@ -1029,10 +1029,19 @@ nav.navbar-menu.inside-navbar .nav-menu {
   float: left;
   padding: 0 20px;
   border-right: 1px solid #a29c9c; }
-
+  .header-devider {
+    padding-top: 40px;
+}
+section.header-margin {
+  margin-top: 80px;
+}
+.form-container {
+  margin: 3rem 0;
+  padding-bottom: 2rem;
+}
 .modal-body {
   padding: 30px 0; }
-    .modal-body .contact_form input, .modal-body .contact_form .register-form-area select, .register-form-area .modal-body .contact_form select, .modal-body .contact_form .register-form-area textarea, .register-form-area .modal-body .contact_form textarea {
+    .contact_form input, .contact_form .register-form-area select, .register-form-area .contact_form select, .contact_form .register-form-area textarea, .register-form-area .contact_form textarea {
       height: 50px;
       background-color: #eeeeee;
       padding: 15px;

@@ -393,4 +393,124 @@ class IndexController extends Controller
             print_r($e);
         }   
     }
+
+    public function globalFormSubmit(Request $request){
+        try {
+            $postData = $request->all();
+            $data = array(
+                'name'=>$postData['name'],
+                'mobile'=>$postData['mobile'],
+                'email'=>$postData['email'],
+                'amount'=>'15000',
+                'center'=>$postData['center'],
+                'partners'=>$postData['partners'],
+                'counselors'=>$postData['counselors'],
+                'order_id'=>"ragistration_".$this->random_strings(8),
+                'payment_status'=>"pending",
+            );
+
+            $ragistration = DB::table('training_ragistration')->insert($data);
+
+            $merchant_data='';
+            $working_key='BE3CFB0CFCFA73C7989C65A12957B6CA';//Shared by CCAVENUES
+            $access_code='AVEV11IG91BE22VEEB';//Shared by CCAVENUES
+
+            $ccAvenueBillingData = array(
+                'merchant_id' => "415669",
+                'order_id' => $data['order_id'],
+                'language' => "EN",
+                'amount' => 15000, //(isset($_POST['extanded_stay']) && $_POST['extanded_stay'] !='')?$_POST['extanded_stay']+5000:5000
+                'currency' => "INR",
+                'redirect_url' => "https://www.icajobguarantee.com/index/payment-success",
+                'cancel_url' => "https://www.icajobguarantee.com/index/payment-failed",
+                'billing_name' => $data['name'],
+                'billing_address' => "Unit No. ECSL1401, EcoCentre Business Park, EM Block, Sector V, Salt Lake",
+                'billing_state' => "West Bengal",
+                'billing_city' => "Kolkata",			
+                'billing_zip' => "700091",
+                'billing_country' => "India",
+                'billing_tel' => $data['mobile'],
+                'billing_email' => $data['email'],
+            );
+            //echo "<pre>"; print_r($ccAvenueBillingData); exit;
+            foreach ($ccAvenueBillingData as $key => $value){
+                $merchant_data.=$key.'='.urlencode($value).'&';
+            }
+            $encrypted_data=encryption($merchant_data,$working_key);
+            ?>
+            <form method="post" name="redirect" action="https://secure.ccavenue.com/transaction/transaction.do?command=initiateTransaction"> 
+            <?php
+            echo "<input type=hidden name=encRequest value=$encrypted_data>";
+            echo "<input type=hidden name=access_code value='AVEV11IG91BE22VEEB'>";
+            ?>
+            </form>
+            </center>
+            <script language='javascript'>document.redirect.submit();</script>
+            <?php 
+           
+
+            
+        } catch(\Illuminate\Database\QueryException $e){
+            var_dump($e);
+            //throw $th;
+           // return response()->json($response, $this->_statusErr);
+        }
+    }
+
+    public function paymentSuccess(Request $request){
+        try {
+            $workingKey='BE3CFB0CFCFA73C7989C65A12957B6CA';		//Working Key should be provided here.
+            $encResponse=$_POST["encResp"];			//This is the response sent by the CCAvenue Server
+           
+            $rcvdString=decryption($encResponse,$workingKey);	           
+            //Crypto Decryption used as per the specified working key.
+            $order_status="";
+            $decryptValues=explode('&', $rcvdString);
+            $dataSize=sizeof($decryptValues);
+            $responseData = array();
+            for($i = 0; $i < $dataSize; $i++) 
+            {
+                $payment=explode('=',$decryptValues[$i]);
+                $responseData[$payment[0]] = $payment[1];
+                if($i==3)	$order_status=$payment[1];
+            }
+            if($order_status==="Success") {
+                $ragistration = DB::table('training_ragistration')
+                    ->where('order_id',$responseData['order_id'])
+                    ->update(['payment_id' => $responseData['tracking_id'],'payment_status'=>'success']);
+            } else {
+                $ragistration = DB::table('training_ragistration')
+                    ->where('order_id',$responseData['order_id'])
+                    ->update(['payment_status' => 'failed']);
+            } 
+            return view('payments.payment-success');
+        } catch(\Illuminate\Database\QueryException $e){
+            var_dump($e);
+            //throw $th;
+           // return response()->json($response, $this->_statusErr);
+        }
+    }
+
+    public function paymentFailed(Request $request){
+        try {
+            return view('payments.payment-failed');
+        } catch(\Illuminate\Database\QueryException $e){
+            var_dump($e);
+            //throw $th;
+           // return response()->json($response, $this->_statusErr);
+        }
+    }
+
+    function random_strings($length_of_string)
+    {
+    
+        // String of all alphanumeric character
+        $str_result = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    
+        // Shuffle the $str_result and returns substring
+        // of specified length
+        return substr(str_shuffle($str_result), 
+                        0, $length_of_string);
+    }
 }
+

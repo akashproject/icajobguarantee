@@ -2,7 +2,9 @@
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
     </IfModule>
-
+    RewriteEngine On
+    RewriteCond %{SERVER_PORT} 80
+    RewriteRule ^(.*)$ https://www.icajobguarantee.com/$1 [R,L]
     RewriteEngine On
     Redirect 301 /university https://university.icajobguarantee.com/
     # Handle Authorization Header

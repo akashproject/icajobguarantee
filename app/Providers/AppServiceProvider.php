@@ -48,7 +48,7 @@ class AppServiceProvider extends ServiceProvider
 
             //info Menu
             $footerMenu = array(
-                '#' => 'Events',
+                '/placements' => 'Events',
                 '/blog' => 'Blogs',
                 '/about-us' => 'About Us',
                 '/contact-us' => "Contact Us",
@@ -61,6 +61,8 @@ class AppServiceProvider extends ServiceProvider
                 "/centers" => "Centers",
                 "/university" => "University",
                 "https://www.icacourse.in" => "Online Courses",
+                "https://student.icajobguarantee.com/verify/certificateverification.aspx" => "Certificate Verification",
+                
             );
             $view->with('studentMenu', $studentMenu);
 

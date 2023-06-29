@@ -1,7 +1,7 @@
 @extends('layouts.ad-main')
     @section('content')
     {{$contentMain->sendBrochure = null}}
-	<!-- Start of Header section
+<!-- Start of Header section
 	============================================= -->
 	<header>
 		<div id="main-menu"  class="main-menu-container header-style-2">
