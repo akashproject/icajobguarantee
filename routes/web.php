@@ -115,7 +115,8 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::get('/add-faq', [App\Http\Controllers\Administrator\FaqController::class, 'add'])->name('admin-add-faq');
         Route::get('/view-faq/{id}', [App\Http\Controllers\Administrator\FaqController::class, 'show'])->name('admin-view-faq');
         Route::post('/save-faq', [App\Http\Controllers\Administrator\FaqController::class, 'save'])->name('admin-save-faq');
-
+        Route::get('/delete-faq/{id}', [App\Http\Controllers\Administrator\FaqController::class, 'delete'])->name('admin-save-delete');
+        
         //Recruiters
         Route::get('/recruiters', [App\Http\Controllers\Administrator\RecruiterController::class, 'index'])->name('admin-recruiters');
         Route::get('/add-recruiter', [App\Http\Controllers\Administrator\RecruiterController::class, 'add'])->name('admin-add-recruiter');
@@ -127,6 +128,12 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::get('/add-university', [App\Http\Controllers\Administrator\UniversityController::class, 'add'])->name('admin-add-university');
         Route::get('/view-university/{id}', [App\Http\Controllers\Administrator\UniversityController::class, 'show'])->name('admin-view-university');
         Route::post('/save-university', [App\Http\Controllers\Administrator\UniversityController::class, 'save'])->name('admin-save-university');
+
+        // University Course
+        Route::get('/university-courses', [App\Http\Controllers\Administrator\UniversityCourseController::class, 'index'])->name('admin-universities');
+        Route::get('/add-university-course', [App\Http\Controllers\Administrator\UniversityCourseController::class, 'add'])->name('admin-add-university');
+        Route::get('/view-university-course/{id}', [App\Http\Controllers\Administrator\UniversityCourseController::class, 'show'])->name('admin-view-university');
+        Route::post('/save-university-course', [App\Http\Controllers\Administrator\UniversityCourseController::class, 'save'])->name('admin-save-university');
 
         //Brochure
         Route::get('/brochures', [App\Http\Controllers\Administrator\BrochureController::class, 'index'])->name('admin-brochures');

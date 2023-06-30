@@ -133,7 +133,7 @@ class IndexController extends Controller
             $postData['lastname'] = implode(" ",$nameArray);
 
 
-            if (isset($postData['center']) && $postData['center'] != ''){
+            if(isset($postData['center']) && $postData['center'] != ''){
                 $city  = Center::select("city_id")->where("name",$postData['center'])->first();
                 $postData['city'] = City::where("id",$city->city_id)->first()->name;
             } else {
@@ -202,7 +202,7 @@ class IndexController extends Controller
 
         //ExtraaedgeApiRequest::dispatch($apiData);
 
-        $url = "https://prodapi.extraaedge.com/api/WebHook/addLead"; 		
+        $url = "https://prodivrapi.extraaedge.com/api/WebHook/addLead"; 		
         $curl = curl_init();
         
         $data = json_encode($apiData);

@@ -32,7 +32,10 @@
 									<li data-id="category-{{ $value->slug }}" >
 										<a target="_blank" href="{{url('/category')}}/{{$value->slug}}">{{$value->name}}</a>
 									</li>
-									@endforeach												
+									@endforeach	
+									<li data-id="category-universities-course" >
+										<a target="_blank" href="{{url('/universities-courses')}}">College Courses</a>
+									</li>											
 								</ul>
 								<div class="submenu-courses">
 									@foreach($courseTypes as $key => $value)

@@ -31,6 +31,30 @@ CREATE TABLE `adpages` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `affiliate_users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `affiliate_users` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `mobile` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `code` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pan_photo` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `pan_number` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `aadhar_photo` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `aadhar_number` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `account_holder_name` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `account_no` int(11) DEFAULT NULL,
+  `branch` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ifsc` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `cheque` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `authors`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -1472,3 +1496,4 @@ INSERT INTO `migrations` VALUES (46,'2023_03_13_082934_create_jobs_table',22);
 INSERT INTO `migrations` VALUES (47,'2023_03_13_091940_create_job_types_table',22);
 INSERT INTO `migrations` VALUES (48,'2023_03_14_110002_create_contacts_table',23);
 INSERT INTO `migrations` VALUES (50,'2023_03_24_123250_create_leads_table',24);
+INSERT INTO `migrations` VALUES (52,'2023_06_16_060843_create_affiliate_users_table',25);

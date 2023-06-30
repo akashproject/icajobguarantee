@@ -174,49 +174,49 @@
 				</div>
 				<div id="course-slide-item" class="course-slide">
 					@foreach($courses as $course)
-					@if($course->category_id == "1")
-					<div class="course-item-pic-text">
-						<div class="course-pic relative-position mb25">
-							<img src="{{ (isset($course->featured_image))?getSizedImage('',$course->featured_image):'assets/img/course/c-1.jpg' }}" alt="">
-							<div class="trend-badge-3 text-center text-uppercase">
-								<img src="{{url('assets/img/jg-logo.webp')}}" >
-							</div>
-							<div class="course-details-btn">
-								<a href="courses/{{ $course->slug }}">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
-							</div>
-						</div>
-						<div class="course-item-text mb-20">
-							<div class="course-meta">
-								<span class="course-category bold-font"><i class="fas fa-user"></i> {{thousandsCurrencyFormat($course->number_of_enrolled)}} Students</span>
-								<div class="course-rate ul-li">
-									<ul>
-										<li><i class="fas fa-star"></i></li>
-										<li><i class="fas fa-star"></i></li>
-										<li><i class="fas fa-star"></i></li>
-										<li><i class="fas fa-star"></i></li>
-										<li><i class="fas fa-star"></i></li>
-									</ul>
+						@if($course->category_id == "1")
+						<div class="course-item-pic-text">
+							<div class="course-pic relative-position mb25">
+								<img src="{{ (isset($course->featured_image))?getSizedImage('',$course->featured_image):'assets/img/course/c-1.jpg' }}" alt="">
+								<div class="trend-badge-3 text-center text-uppercase">
+									<img src="{{url('assets/img/jg-logo.webp')}}" >
+								</div>
+								<div class="course-details-btn">
+									<a href="courses/{{ $course->slug }}">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
 								</div>
 							</div>
-							<div class="course-title mt10 headline relative-position height-60">
-								<h3><a href="courses/{{ $course->slug }}">{{ $course->name }}</a> </h3>
+							<div class="course-item-text mb-20">
+								<div class="course-meta">
+									<span class="course-category bold-font"><i class="fas fa-user"></i> {{thousandsCurrencyFormat($course->number_of_enrolled)}} Students</span>
+									<div class="course-rate ul-li">
+										<ul>
+											<li><i class="fas fa-star"></i></li>
+											<li><i class="fas fa-star"></i></li>
+											<li><i class="fas fa-star"></i></li>
+											<li><i class="fas fa-star"></i></li>
+											<li><i class="fas fa-star"></i></li>
+										</ul>
+									</div>
+								</div>
+								<div class="course-title mt10 headline relative-position height-60">
+									<h3><a href="courses/{{ $course->slug }}">{{ $course->name }}</a> </h3>
+								</div>
+								<div class="course-meta mt10 ">
+									<span class="course-category"><a href="#"><i class="fas fa-clock"></i> {{ $course->duration }}</a></span>
+									<span class="course-author"><a href="#"><i class="fas fa-book"></i> {{ $course->no_of_module }} Modules</a></span>
+								</div>
 							</div>
-							<div class="course-meta mt10 ">
-								<span class="course-category"><a href="#"><i class="fas fa-clock"></i> {{ $course->duration }}</a></span>
-								<span class="course-author"><a href="#"><i class="fas fa-book"></i> {{ $course->no_of_module }} Modules</a></span>
+							<div class="more-btn text-center" >
+								<div class="course-type-list">	
+									<a class="btn-filled" href="javascript:void(0)" onclick="lead_capture_form_btn({{ $course->brochure_id }},'')"><i class="fas fa-download"></i> Brochure</a>
+								</div>
+								<div class="course-type-list">														
+									<a class="btn-outline" href="{{ URL::to('/courses') }}/{{ $course->slug }}" >View More <i class="fas fa-caret-right"></i></a>
+								</div>														
 							</div>
 						</div>
-						<div class="more-btn text-center" >
-							<div class="course-type-list">	
-								<a class="btn-filled" href="javascript:void(0)" onclick="lead_capture_form_btn({{ $course->brochure_id }},'')"><i class="fas fa-download"></i> Brochure</a>
-							</div>
-							<div class="course-type-list">														
-								<a class="btn-outline" href="{{ URL::to('/courses') }}/{{ $course->slug }}" >View More <i class="fas fa-caret-right"></i></a>
-							</div>														
-						</div>
-					</div>
-					<!-- /item -->
-					@endif
+						<!-- /item -->
+						@endif
 					@endforeach
 				</div>
 			</div>
@@ -469,6 +469,7 @@
 		</div>
 	</section>
 	<!-- /course-categori -->
+	
 	<!-- End of best course
 	============================================= -->
 

@@ -88,6 +88,18 @@
                             </ul>
 
                         </li>	
+
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-book-multiple-variant"></i><span class="hide-menu"> University Course </span></a>
+
+                            <ul aria-expanded="false" class="collapse  first-level">
+
+                                <li class="sidebar-item"><a href="{{ url('administrator/university-courses') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> All University Course </span></a></li>
+
+                                <li class="sidebar-item"><a href="{{ url('administrator/add-university-course') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Add University Course</span></a></li>
+
+                            </ul>
+
+                        </li>	
                         
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-comment-question-outline"></i><span class="hide-menu">Faqs</span></a>
 

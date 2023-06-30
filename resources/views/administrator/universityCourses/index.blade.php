@@ -1,12 +1,23 @@
 @extends('administrator.layouts.admin')
+
+
+
 @section('content')
+
 <div class="col-12">
-	@if($universities)
+
+	@if($universityCourses)
+
 		<div class="card">
+
 			<div class="card-body">
+
 				<h5 class="card-title"> Datatable</h5>
+
 				<div class="table-responsive">
+
 					<table id="zero_config" class="table table-striped table-bordered">
+
 						<thead>
 							<tr>
 								<th>Name</th>
@@ -16,15 +27,15 @@
 						</thead>
 
 						<tbody>
-							@foreach ($universities as $value)
+
+							@foreach ($universityCourses as $value)
 							<tr>
 								<td>{{ $value->name }}</td>													
 								<td>{{ $value->slug }}</td>													
 								<td>
-									<a href="{{ url('universities') }}/{{ $value->slug }}" class="btn btn-success btn-sm">View</a>
-									<a href="{{ url('administrator/university-courses') }}/{{ $value->id }}" class="btn btn-success btn-sm">Courses</a>
-									<a href="{{ url('administrator/view-university') }}/{{ $value->id }}" class="btn btn-primary btn-sm">Edit</a>
-									<a href="{{ url('administrator/delete-university') }}/{{ $value->id }}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')"; >Delete </a>
+									<a href="{{ url('/university-courses') }}/{{ $value->slug }}" class="btn btn-success btn-lg">View</a>
+									<a href="{{ url('administrator/view-university-course') }}/{{ $value->id }}" class="btn btn-primary btn-lg">Edit</a>
+									<a href="{{ url('administrator/delete-university-course') }}/{{ $value->id }}" class="btn btn-danger btn-lg" onclick="return confirm('Are you sure?')"; >Delete </a>
 								</td>
 							</tr>
 							@endforeach							
@@ -32,12 +43,20 @@
 					</table>
 				</div>
 			</div>
+
 		</div>
+
 	@endif
+
 </div>                   
+
 @endsection
+
 @section('script')
+
 <!-- ============================================================== -->
+
 <!-- CHARTS -->
+
 @endsection
 

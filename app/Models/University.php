@@ -12,6 +12,6 @@ class University extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'id','name','title','slug','banner_image','featured_image','description','state_id','city_id','enable_otp','meta_description','schema','robots','canonical','utm_campaign','utm_source','status','created_at',
+        'id','name','title','slug','banner_image','featured_image','excerpt','description','state_id','city_id','enable_otp','meta_description','schema','robots','canonical','utm_campaign','utm_source','status','created_at',
     ];
 }

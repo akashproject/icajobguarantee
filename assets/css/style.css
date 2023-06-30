@@ -3349,7 +3349,7 @@ button.alt-menu-btn.float-left {
 
 ul.product-tab li,ul.course-tab li {
   cursor: pointer;
-  margin: 0px 40px 0px 0px;
+  margin: 0px 40px 20px 0px;
   font-size: 18px;
   position: relative;
   color: #777777;

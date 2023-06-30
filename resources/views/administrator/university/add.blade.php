@@ -36,6 +36,12 @@
 							</div>
 						</div>
 						<div class="form-group row">
+							<label for="excerpt" class="col-sm-3 text-right control-label col-form-label">Description</label>
+							<div class="col-sm-9">
+								<textarea class="form-control" name="excerpt" id="excerpt" placeholder="Enter excerpt Here" ></textarea>
+							</div>
+						</div>
+						<div class="form-group row">
 							<label for="description" class="col-sm-3 text-right control-label col-form-label">Description</label>
 							<div class="col-sm-9">
 								<textarea class="form-control editor" name="description"  id="mceEditor" placeholder="Enter description Here" ></textarea>

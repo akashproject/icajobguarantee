@@ -53,4 +53,11 @@ class FaqController extends Controller
             var_dump($e->getMessage()); 
         }
     }
+
+    public function delete($id) {
+        $faq = Faq::findOrFail($id);
+        $faq->delete();
+        return redirect('/administrator/faqs');
+    }
 }
+
