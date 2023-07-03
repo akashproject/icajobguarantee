@@ -84,6 +84,46 @@ if (! function_exists('get_theme_setting')) {
     }
 }
 
+if (! function_exists('get_reviews_ratings')) {
+    function get_reviews_ratings($model="",$model_id=""){
+        $reviews = DB::table('reviews');
+        if($model){
+            $reviews->where('model',$model);
+        } 
+        if($model_id){
+            $reviews->where('model_id',$model_id);
+        } 
+        $reviews->where('status',"1");     
+        $reviews = $reviews->paginate(10);;   
+                           
+        $total = $reviews->sum('rating');
+
+        if(count($reviews) <= 0){
+            return false;
+        }
+        
+        $avg = number_format((float)$total/count($reviews), 1, '.', '');
+
+        $ratingvalue = array();
+        foreach ($reviews as $key => $review) {
+            $ratingvalue[] = $review->rating;
+        }
+        $ratingvalue = array_count_values($ratingvalue);
+
+        $ratings = array();
+        for ($i=5; $i >= 1; $i--) { 
+            $ratings[$i] = (array_key_exists($i, $ratingvalue))?$ratingvalue[$i]:"0";
+        }
+        $reviewRatings = array(
+            'reviews' => $reviews,
+            'avarageRating' =>$avg,
+            'reviewCount' => count($reviews),
+            'ratings' => $ratings
+        );
+        return $reviewRatings;
+    }
+}
+
 if (! function_exists('getTestimonials')) {
     function getTestimonials($model="",$model_id=""){
         $testimonials = DB::table('testimonials');

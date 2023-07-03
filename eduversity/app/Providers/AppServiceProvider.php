@@ -30,11 +30,11 @@ class AppServiceProvider extends ServiceProvider
 
             // Header Menu
             $primaryMenu = array(
-                '/centers' => "Centers",                
-                '/franchise-opportunity' => "Franchise",               
-                '/university' => "University",
-                '/placements' => "Placements",
-                '/career' => "Career",
+                '/' => "Home",                
+                '/universities' => "Universities",                
+                '/college-courses' => "Courses",                
+                '/refer-and-earn' => "Refer & Earn",                
+                
             );
             $view->with('primaryMenu', $primaryMenu);
 

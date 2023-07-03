@@ -87,7 +87,7 @@
 						<div class="form-group row">
 							<label for="no_of_module" class="col-sm-3 text-left control-label col-form-label">Curriculum</label>
 							<div class="col-sm-9">
-								<a href="{{ url('administrator/curriculum') }}/{{ $universityCourse->id }}" class="btn btn-primary">Curriculum Detail</a>
+								<a href="{{ url('administrator/university-curriculum') }}/{{ $universityCourse->id }}" class="btn btn-primary">Curriculum Detail</a>
 							</div>
 						</div>
 						<div class="form-group row">

@@ -134,7 +134,9 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::get('/add-university-course', [App\Http\Controllers\Administrator\UniversityCourseController::class, 'add'])->name('admin-add-university');
         Route::get('/view-university-course/{id}', [App\Http\Controllers\Administrator\UniversityCourseController::class, 'show'])->name('admin-view-university');
         Route::post('/save-university-course', [App\Http\Controllers\Administrator\UniversityCourseController::class, 'save'])->name('admin-save-university');
-
+        Route::get('/university-curriculum/{id}', [App\Http\Controllers\Administrator\UniversityCourseController::class, 'curriculum'])->name('admin-university-curriculum');
+        Route::post('/save-university-curriculum', [App\Http\Controllers\Administrator\UniversityCourseController::class, 'saveCurriculum'])->name('admin-save-university-curriculum');
+       
         //Brochure
         Route::get('/brochures', [App\Http\Controllers\Administrator\BrochureController::class, 'index'])->name('admin-brochures');
         Route::get('/add-brochure', [App\Http\Controllers\Administrator\BrochureController::class, 'add'])->name('add-brochure');

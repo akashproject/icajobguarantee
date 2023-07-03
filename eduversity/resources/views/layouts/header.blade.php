@@ -6,14 +6,14 @@
 			<div class="header-top">
 				<div class="container-fluid">
 					<div class="row">
-						<div class="col-md-7">
+						<div class="col-md-6">
 							
 						</div>
-						<div class="col-md-5 top-right-bar">
+						<div class="col-md-6 top-right-bar">
 							<div class="header-top-bar ul-li">
 								<ul>
-									<li><a href="mailto:{{get_theme_setting('email')}}" ><i class="fas fa-envelope"></i>Mail Us: {{get_theme_setting('email')}}</a></li>
-									<li><a href="tel:{{get_theme_setting('mobile')}}" ><i class="fas fa-phone-square"></i>Call Us: {{get_theme_setting('mobile')}}</a></li>
+									<li><a href="mailto:{{get_theme_setting('university_email')}}" ><i class="fas fa-envelope"></i>Mail Us: {{get_theme_setting('university_email')}}</a></li>
+									<li><a href="tel:{{get_theme_setting('university_mobile')}}" ><i class="fas fa-phone-square"></i>Call Us: {{get_theme_setting('university_mobile')}}</a></li>
 								</ul>
 							</div>
 						</div>
@@ -24,7 +24,7 @@
 				<div class="container">
 					<div class="navbar-default">
 						<div class="navbar-header float-left">
-							<a class="navbar-brand text-uppercase" href="{{ url('/') }}"><img src="{{ url('assets/images/logo.png') }}" alt="ICA Edu Skills"></a>
+							<a class="navbar-brand text-uppercase" href="{{ url('/') }}"><img src="https://www.icajobguarantee.com/assets/images/logo.png" alt="ICA Edu Skills"></a>
 						</div><!-- /.navbar-header -->						
 						
 						<!-- Collect the nav links, forms, and other content for toggling -->

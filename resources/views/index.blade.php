@@ -469,7 +469,24 @@
 		</div>
 	</section>
 	<!-- /course-categori -->
-	
+	<!-- Start of sponsor section
+		============================================= -->
+	<section id="sponsor" class="sponsor-section">
+		<div class="container">
+			<div class="section-title-2 mb65 headline text-left "  >
+				<h2>Our Alumni <span>Worked At.</span></h2>
+			</div>
+			<div class="sponsor-item sponsor-1 " >
+				@foreach(getRecruiters() as $value)
+				<div class="sponsor-pic text-center">
+					<img src="{{ getSizedImage('',$value->featured_image) }}" alt="">
+				</div>
+				@endforeach						
+			</div>
+		</div>
+	</section>
+	<!-- End of sponsor section
+		============================================= -->	
 	<!-- End of best course
 	============================================= -->
 
@@ -619,24 +636,8 @@
 	<!-- End of alumni section
 		============================================= -->	
 		
-	<!-- Start of sponsor section
-		============================================= -->
-		<section id="sponsor" class="sponsor-section">
-			<div class="container">
-				<div class="section-title-2 mb65 headline text-left "  >
-					<h2>Our Alumni <span>Worked At.</span></h2>
-				</div>
-				<div class="sponsor-item sponsor-1 " >
-					@foreach(getRecruiters() as $value)
-					<div class="sponsor-pic text-center">
-						<img src="{{ getSizedImage('',$value->featured_image) }}" alt="">
-					</div>
-					@endforeach						
-				</div>
-			</div>
-		</section>
-	<!-- End of sponsor section
-		============================================= -->	
+	
+
 	<!-- Start latest section
 		============================================= -->
 		<section id="latest-area" class="latest-area-section">

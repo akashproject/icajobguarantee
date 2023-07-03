@@ -79,7 +79,7 @@
 						@foreach (getUniversities() as $value)
 							<div class="course-item-pic-text">
 								<div class="course-pic relative-position mb25">
-									<a href="/university/techno-india" >
+									<a href="{{ url('universities/'.$value->slug)}}" >
 										<img src="{{ (isset($value->featured_image))?getSizedImage('',$value->featured_image):'assets/img/course/c-1.jpg' }}" alt="">	
 									</a>
 									<div class="course-details-btn">
@@ -100,7 +100,7 @@
 										</div>
 									</div>
 									<div class="course-title mt10 headline pb10 relative-position">
-										<h3><a href="">{{ $value->name }}</a> </h3>
+										<h3><a href="{{ url('universities/'.$value->slug)}}">{{ $value->name }}</a> </h3>
 										<p>
 											{{ $value->excerpt }}
 										</p>
@@ -418,7 +418,7 @@
 										<div class="col-md-4">
 											<div class="course-item-pic-text">
 												<div class="course-pic relative-position mb25">
-													<a href="/university/techno-india" >
+													<a href="/universities/techno-india" >
 														<img src="{{ (isset($value->featured_image))?getSizedImage('',$value->featured_image):'assets/img/course/c-1.jpg' }}" alt="">	
 													</a>
 													<div class="course-details-btn">

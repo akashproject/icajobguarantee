@@ -132,6 +132,18 @@
 											</div>
 										</div>
 										<div class="form-group row">
+											<label for="university_email" class="col-sm-3 text-right control-label col-form-label">University Email Address</label>
+											<div class="col-sm-9">
+												<input type="email" class="form-control" name="university_email" id="university_email" value="{{ (isset($settings['university_email']))?$settings['university_email']:'' }}" >
+											</div>
+										</div>
+										<div class="form-group row">
+											<label for="university_mobile" class="col-sm-3 text-right control-label col-form-label">University Mobile</label>
+											<div class="col-sm-9">
+												<input type="text" class="form-control" name="university_mobile" id="university_mobile" value="{{ (isset($settings['university_mobile']))?$settings['university_mobile']:'' }}" >    
+											</div>
+										</div>
+										<div class="form-group row">
 											<label for="address" class="col-sm-3 text-right control-label col-form-label">HO Address</label>
 											<div class="col-sm-9">
 											<textarea class="form-control" name="address" id="address" placeholder="Enter HO Address Here" >{{ (isset($settings['address']))?$settings['address']:'' }}</textarea>

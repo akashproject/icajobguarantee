@@ -2,7 +2,7 @@
 @section('content')
 	<div class="col-12">
 		<div class="card">
-			<form class="form-horizontal" method="post" action="{{ url('administrator/save-curriculum') }}" enctype="multipart/form-data">
+			<form class="form-horizontal" method="post" action="{{ url('administrator/save-university-curriculum') }}" enctype="multipart/form-data">
 				@csrf
 				<div class="card-body">
 					<h4 class="card-title"> Curriculum </h4>

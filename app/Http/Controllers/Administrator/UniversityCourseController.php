@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\University;
 use App\Models\UniversityCourse;
 use App\Models\Brochure;
-use App\Models\Curriculum;
+use App\Models\UniversityCourseCurriculum;
 
 class UniversityCourseController extends Controller
 {
@@ -46,7 +46,7 @@ class UniversityCourseController extends Controller
 
     public function curriculum($id){
         try {
-            $carriculam = Curriculum::where('course_id',$id)->get();
+            $carriculam = UniversityCourseCurriculum::where('course_id',$id)->get();
             return view('administrator.universityCourses.curriculum',compact('carriculam','id'));       
         } catch(\Illuminate\Database\QueryException $e){
         }     
@@ -70,16 +70,16 @@ class UniversityCourseController extends Controller
                 if($universityCourse->id){
                     $carriculam = array_fill(0,$data['no_of_module'],array('course_id'=>$universityCourse->id));
                     foreach ($carriculam as $key => $value) {
-                        Curriculum::create($value);
+                        UniversityCourseCurriculum::create($value);
                     }
                 }
             } else {
                 $universityCourse = UniversityCourse::findOrFail($data['course_id']);
-                $carriculam = Curriculum::where('course_id',$data['course_id'])->get();
+                $carriculam = UniversityCourseCurriculum::where('course_id',$data['course_id'])->get();
                 if($carriculam->count() < $data['no_of_module']){
                     $carriculam = array_fill(0,$data['no_of_module'] - $carriculam->count(),array('course_id'=>$universityCourse->id));
                     foreach ($carriculam as $key => $value) {
-                        Curriculum::create($value);
+                        UniversityCourseCurriculum::create($value);
                     }
                 }
                 $universityCourse->update($data);
@@ -102,7 +102,7 @@ class UniversityCourseController extends Controller
             $data = $request->all();
             foreach ($data['curriculum'] as $key => $value) {
                 $value['lecture'] = (isset($value['lecture']))?json_encode($value['lecture']):'';
-                $carriculam = Curriculum::findOrFail($key);
+                $carriculam = UniversityCourseCurriculum::findOrFail($key);
                 $carriculam->update($value);
             }
             return redirect()->back()->with('message', 'Page updated successfully!');

@@ -3374,7 +3374,9 @@ ul.product-tab li:after,ul.course-tab li:after {
 .course-details-category.ul-li.tab-button.text-left.mb25.tab-button.text-left.mb25 li {
   margin: 0;
 }
-
+.text-black {
+  color: #333 !important;
+}
 ul.product-tab li.active {
   color: #ffffff; }
 
