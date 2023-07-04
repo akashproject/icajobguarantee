@@ -156,6 +156,8 @@ class IndexController extends Controller
                 $this->classroomLeadCaptureLeadToExtraage($postData);
             }
 
+            $this->cognoai_api_calling($postData);
+
             // Send Brochure
             $brochure_id = ($postData['brochure_id'])?$postData['brochure_id']:get_theme_setting('brochure_id');
             $mediaId  = Brochure::select("attachment")->where("id",$brochure_id)->first()->attachment;
@@ -512,5 +514,43 @@ class IndexController extends Controller
         return substr(str_shuffle($str_result), 
                         0, $length_of_string);
     }
+
+    function cognoai_api_calling($postData){
+        $whatsappArray = (object) array(
+            "authorization" => "5a1a48f7-f10f-47bd-becc-6b092dfcc2bb", 
+            "campaign_id" => "147222", 
+            "whatsapp_bsp" => "1", 
+            "client_data" => array(
+                "phone_number" => "+91".$postData['mobile'], 
+                "name" => $postData['name'], 
+                "dynamic_data" => array(
+                    "1"=> $postData['name'] 
+                )
+            ) 
+        );
+        
+        $curl = curl_init();
+    
+        curl_setopt_array($curl, array(
+        CURLOPT_URL => 'https://app.cognocart.com/campaign/external/send-event-based-triggered-whatsapp-campaign/',
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => '',
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => 'POST',
+        CURLOPT_POSTFIELDS => json_encode($whatsappArray),
+        CURLOPT_HTTPHEADER => array(
+            'Content-Type: application/json'
+        ),
+        ));
+    
+        $response = curl_exec($curl);
+    
+        curl_close($curl);
+        return true;
+    }
+
 }
 

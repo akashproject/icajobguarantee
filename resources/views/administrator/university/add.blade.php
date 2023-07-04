@@ -36,7 +36,7 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="excerpt" class="col-sm-3 text-right control-label col-form-label">Description</label>
+							<label for="excerpt" class="col-sm-3 text-right control-label col-form-label">Excerpt</label>
 							<div class="col-sm-9">
 								<textarea class="form-control" name="excerpt" id="excerpt" placeholder="Enter excerpt Here" ></textarea>
 							</div>
@@ -46,7 +46,17 @@
 							<div class="col-sm-9">
 								<textarea class="form-control editor" name="description"  id="mceEditor" placeholder="Enter description Here" ></textarea>
 							</div>
-						</div>						
+						</div>			
+						<div class="form-group row">
+							<label for="description" class="col-sm-3 text-right control-label col-form-label">Courses</label>
+							<div class="col-sm-9">
+								<div class="course-content" >
+									@foreach($courses as $course)
+										<p> <input type="checkbox" name="courses[]" value="{{$course->id}}" > {{$course->name}} </p>
+									@endforeach
+								</div>
+							</div>
+						</div>			
 					</div>
 					<div class="col-md-5">
 						<div class="form-group row">

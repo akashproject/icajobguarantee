@@ -12,6 +12,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE, PATCH');
+header('Access-Control-Allow-Headers: Content-Type, X-Auth-Token, Origin, Authorization');
+
 Route::get('/clear-cache', function() {
     echo $exitCode = Artisan::call('cache:clear');
     // return what you want
@@ -28,6 +32,8 @@ Route::get('/schedule-run', function() {
 Route::get('/linkstorage', function () {
    echo Artisan::call('storage:link');
 });
+
+
 
 Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () {
     //Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 'create'])->name('admin-register');
@@ -128,6 +134,7 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::get('/add-university', [App\Http\Controllers\Administrator\UniversityController::class, 'add'])->name('admin-add-university');
         Route::get('/view-university/{id}', [App\Http\Controllers\Administrator\UniversityController::class, 'show'])->name('admin-view-university');
         Route::post('/save-university', [App\Http\Controllers\Administrator\UniversityController::class, 'save'])->name('admin-save-university');
+        Route::get('/delete-university', [App\Http\Controllers\Administrator\UniversityController::class, 'delete'])->name('admin-delete-university');
 
         // University Course
         Route::get('/university-courses', [App\Http\Controllers\Administrator\UniversityCourseController::class, 'index'])->name('admin-universities');

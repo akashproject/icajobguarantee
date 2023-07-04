@@ -73,7 +73,7 @@
 								</div>
 								<div class="counter-number">
 									<span class="counter-count bold-font">24</span><span>+</span>
-									<p>Partner with ICA</p>
+									<p>Years of Excellence</p>
 								</div>
 							</div>
 						</div>

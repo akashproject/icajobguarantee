@@ -193,9 +193,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .pb10 {
   padding-bottom: 10px; }
-
+.mr42 {
+  margin-left: 42px; }
 .height-60 {
   height: 60px;
+}
+.left-0 {
+  left: 0 !important;
 }
 .justify-content-center{
   justify-content: center;
@@ -3366,7 +3370,12 @@ ul.product-tab li:after,ul.course-tab li:after {
   opacity: 0;
   background-color: #393185; 
 }
-
+.header-devider {
+  padding-top: 40px;
+}
+section.header-margin {
+margin-top: 64px;
+}
 .course-details-category ul.product-tab li:after {
   position: relative;
 }

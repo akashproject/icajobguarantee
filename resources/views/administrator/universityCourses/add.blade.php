@@ -112,16 +112,6 @@
 					</div>
 					<div class="col-md-4">
 						<div class="form-group row">
-							<label for="university_id" class="col-sm-12 text-left control-label col-form-label">University</label>
-							<div class="col-sm-12">
-								<select name="university_id" id="university_id" class="select2 form-control custom-select" style="width: 100%; height:36px;">	
-									@foreach ($university as $value)
-									<option value="{{  $value->id }}" > {{  $value->name }} </option>
-									@endforeach
-								<select>
-							</div>
-						</div>
-						<div class="form-group row">
 							<label for="tags" class="col-sm-12 text-left control-label col-form-label">Tags</label>
 							<div class="col-sm-12">
 								<textarea class="form-control" name="tags" id="tags" placeholder="Enter Tags Here" ></textarea>

@@ -190,6 +190,17 @@ if (! function_exists('getStateById')) {
     }
 }
 
+if (! function_exists('getCityById')) {
+    function getCityById($id){
+        try {
+            $city = DB::table('cities')->where('id',$id)->first();
+            return $city;
+        } catch(\Illuminate\Database\QueryException $e){
+            throw $e;
+        }
+    }
+}
+
 if (! function_exists('getUniversities')) {
     function getUniversities($course_id=null, $university_id=null){
         $universities = DB::table('universities');
@@ -238,19 +249,7 @@ if (! function_exists('getCourses')) {
     function getCourses($university_id = null){
         try {
             $search = (request()->has('search'))?request()->get('search'):"";
-            $university_courses = DB::table('university_courses')
-            ->join('universities', 'universities.id', '=', 'university_courses.university_id')
-            ->select('university_courses.*', 'university_courses.name as course_name','universities.name as university','universities.id as university_id', 'universities.slug as university_slug');
-            if($search){
-                $university_courses->where('university_courses.name', 'like', '%' . $search . '%');
-                $university_courses->orwhere('university_courses.description', 'like', '%' . $search . '%');
-                $university_courses->orWhere('universities.name', 'like', '%' . $search . '%');
-                $university_courses->orWhere('universities.slug', 'like', '%' . $search . '%');
-            }
-            if($university_id){
-                $university_courses->whereIn('university.id', $university_id);
-            }
-            
+            $university_courses = DB::table('university_courses');
             $university_courses = $university_courses->distinct()
             ->orderBy('university_courses.id', 'asc')
             ->get();

@@ -1,5 +1,7 @@
 @extends('layouts.main')
     @section('content')
+	<section class="header-devider"></section>
+	<section class="header-margin"></section>
     <!-- Start of breadcrumb section
 		============================================= -->
 		<section id="" class="university-inner-page-banner">
@@ -323,7 +325,6 @@
 							<div id="tab{{$key}}" class="tab-content-1 pt35" style="display: block;">
 								<div class="row">
 								@foreach(getCourses() as $course)
-									@if($course->university_slug == $value->slug)
 									<div class="col-md-3">
 										<div class="best-course-pic-text relative-position">
 											<div class="best-course-pic relative-position">
@@ -371,7 +372,6 @@
 										</div>
 									</div>
 									<!-- /course -->
-									@endif
 								@endforeach
 								</div>
 							</div>   
@@ -414,48 +414,46 @@
 							<div id="tab{{$key}}" class="tab-content-1 pt35" style="display: block;">
 								<div class="row">
 								@foreach(getUniversities() as $university)
-									@if($university->slug == $value->university_slug)
-										<div class="col-md-4">
-											<div class="course-item-pic-text">
-												<div class="course-pic relative-position mb25">
-													<a href="/universities/techno-india" >
-														<img src="{{ (isset($value->featured_image))?getSizedImage('',$value->featured_image):'assets/img/course/c-1.jpg' }}" alt="">	
-													</a>
-													<div class="course-details-btn">
-														<a href="#">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
-													</div>
+									<div class="col-md-4">
+										<div class="course-item-pic-text">
+											<div class="course-pic relative-position mb25">
+												<a href="/universities/techno-india" >
+													<img src="{{ (isset($value->featured_image))?getSizedImage('',$value->featured_image):'assets/img/course/c-1.jpg' }}" alt="">	
+												</a>
+												<div class="course-details-btn">
+													<a href="#">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
 												</div>
-												<div class="university-item-text">
-													<div class="course-meta university-meta">
-														<span class="course-author university-author bold-font gradient-bg"><a href="#">UGC recognised</a></span>
-														<div class="course-rate ul-li">
-															<ul>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-															</ul>
-														</div>
-													</div>
-													<div class="course-title mt10 headline pb10 relative-position">
-														<h3><a href="">{{ $value->name }}</a> </h3>
-														<p>
-															{{ $value->excerpt }}
-														</p>
-													</div>
-													<div class="course-viewer ul-li">
+											</div>
+											<div class="university-item-text">
+												<div class="course-meta university-meta">
+													<span class="course-author university-author bold-font gradient-bg"><a href="#">UGC recognised</a></span>
+													<div class="course-rate ul-li">
 														<ul>
-															<li><a href=""><i class="fas fa-user"></i> 1.220</a></li>
-															<li><a href=""><i class="fas fa-comment-dots"></i> 1.015</a></li>
-															<li><a href="">125k Unrolled</a></li>
+															<li><i class="fas fa-star"></i></li>
+															<li><i class="fas fa-star"></i></li>
+															<li><i class="fas fa-star"></i></li>
+															<li><i class="fas fa-star"></i></li>
+															<li><i class="fas fa-star"></i></li>
 														</ul>
 													</div>
 												</div>
+												<div class="course-title mt10 headline pb10 relative-position">
+													<h3><a href="">{{ $value->name }}</a> </h3>
+													<p>
+														{{ $value->excerpt }}
+													</p>
+												</div>
+												<div class="course-viewer ul-li">
+													<ul>
+														<li><a href=""><i class="fas fa-user"></i> 1.220</a></li>
+														<li><a href=""><i class="fas fa-comment-dots"></i> 1.015</a></li>
+														<li><a href="">125k Unrolled</a></li>
+													</ul>
+												</div>
 											</div>
 										</div>
+									</div>
 									<!-- /course -->
-									@endif
 								@endforeach
 								</div>
 							</div>   

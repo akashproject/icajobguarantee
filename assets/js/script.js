@@ -1366,7 +1366,6 @@ searchBAR: function (){
 
 	function classroomOnFormSubmitProcess(form){
 		let formId = $(form).attr('id');
-		console.log(`${isEnableOtp}`,`${isAjaxSubmit}`);
 		jQuery("#" + formId + " .checkout_loader").show();
 				
 		if(`${isEnableOtp}` == 0 && `${isAjaxSubmit}` == 0){
@@ -1414,7 +1413,7 @@ searchBAR: function (){
 		var mobileNo = jQuery("#" + formId + " input[name='mobile']").val();
 		$.ajaxSetup({
 			headers: {
-			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 			}
 		});
 		$.ajax({
@@ -1538,12 +1537,4 @@ function findNearest() {
 	if (navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(showPosition);
 	}
-}
-
-function googConversionTrack() {
-	console.log("hi");
-	window.google_trackConversion({
-		google_conversion_id: 11014887991,
-		google_remarketing_only: true,
-	});
 }

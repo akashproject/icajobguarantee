@@ -76,7 +76,7 @@
 						</nav>
 
 						<div class="mobile-menu">
-							<div class="logo"><a href="index-1.html"><img src="{{ url('assets/img/logo/logo.png') }}" alt="Logo"></a></div>
+							<div class="logo"><a href="{{ url('/') }}"><img src="{{ url('assets/img/logo/logo.png') }}" alt="Logo"></a></div>
 							<nav>
 								<ul>
 									@foreach ($primaryMenu as $key => $menuItem)

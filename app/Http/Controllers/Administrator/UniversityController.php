@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\University;
 use App\Models\State;
 use App\Models\City;
+use App\Models\UniversityCourse;
 
 class UniversityController extends Controller
 {
@@ -27,7 +28,8 @@ class UniversityController extends Controller
     public function add() {
         try {
             $states = State::all();
-            return view('administrator.university.add',compact('states'));
+            $courses = UniversityCourse::all();
+            return view('administrator.university.add',compact('states','courses'));
         } catch(\Illuminate\Database\QueryException $e){
             //throw $th;
         }
@@ -40,7 +42,8 @@ class UniversityController extends Controller
             $university = University::find($id);
             $states = State::all();
             $cities = City::where('state_id', $university->state_id)->orderBy('name', 'asc')->get();
-            return view('administrator.university.show',compact('university','states','cities'));
+            $courses = UniversityCourse::all();
+            return view('administrator.university.show',compact('university','states','cities','courses'));
         } catch(\Illuminate\Database\QueryException $e){
         }        
     }
@@ -54,7 +57,7 @@ class UniversityController extends Controller
                 'description' => 'required',
                 'state_id' => 'required',
             ]);
-
+            $data['courses'] = json_encode($data['courses']);
             if($data['university_id'] <= 0){
                 University::create($data);
             } else {
@@ -65,5 +68,12 @@ class UniversityController extends Controller
         } catch(\Illuminate\Database\QueryException $e){
             var_dump($e->getMessage()); 
         }
+    }
+
+    public function delete($id) {
+        echo $id; exit;
+        $center = University::findOrFail($id);
+        $center->delete();
+        return redirect('/administrator/universities');
     }
 }

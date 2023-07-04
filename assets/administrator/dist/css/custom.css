@@ -14917,3 +14917,10 @@ File: scss
 table#zero_config tr td:last-child {
   width: 280px;
 }
+.course-content p {
+  margin: 7px 12px;
+}
+.course-content {
+  border: 1px solid #ccc;
+  padding: 5px;
+}

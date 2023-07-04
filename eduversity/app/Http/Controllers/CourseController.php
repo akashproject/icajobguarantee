@@ -55,11 +55,7 @@ class CourseController extends Controller
             $carriculams = Curriculum::where('course_id',$contentMain->id)->get();
 
             //Related UniversityCourses
-            $courses = DB::table('university_courses')
-            ->join('universities', 'universities.id', '=', 'university_courses.university_id')
-            ->select('university_courses.*', 'university_courses.name as course_name','universities.name as category','universities.id as category_id')
-            ->where('university_courses.id', '!=', $contentMain->id)
-            ->where('university_id', $contentMain->university_id)->get();
+            $courses = DB::table('university_courses')->get();
 
             $model = "UniversityCourse";
             $utm_campaign = $contentMain->utm_campaign;
