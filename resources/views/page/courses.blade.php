@@ -146,7 +146,7 @@
 													</div>
 													
 													<div class="course-details-btn">
-														<a href="courses/{{ $course->slug }}">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
+														<a href="/courses/{{ $course->slug }}">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
 													</div>
 													<div class="blakish-overlay"></div>
 												</div>
