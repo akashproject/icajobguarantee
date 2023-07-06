@@ -5,13 +5,17 @@ namespace App\Http\Controllers\Administrator;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\AffiliateUser;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Center;
+
 class AffiliateController extends Controller
 {
    //
     public function users()
     {
         try {
-            $affiliateUsers = AffiliateUser::all();
+            $userData = Auth::user();
+            $affiliateUsers = AffiliateUser::where('center_id',$userData->id)->get();
             return view('administrator.affiliates.affiliate-users',compact('affiliateUsers'));
 
         } catch(\Illuminate\Database\QueryException $e){
@@ -33,7 +37,8 @@ class AffiliateController extends Controller
     {
         try {
             $affiliateUser = AffiliateUser::findorFail($id);
-            return view('administrator.affiliates.show',compact('affiliateUser'));
+            $name = Auth::user()->name;
+            return view('administrator.affiliates.show',compact('affiliateUser','name'));
         } catch(\Illuminate\Database\QueryException $e){
         }        
     }
@@ -57,8 +62,11 @@ class AffiliateController extends Controller
             // }
             
             if($data['affiliate_user_id'] <= 0){
+                $userData = Auth::user();
+                $data['center_id'] = $userData->id;
                 $data['code'] = "Vendor-ICA_".$this->random_strings(6);
-                AffiliateUser::create($data);
+                $affiliateUser = AffiliateUser::create($data);
+                return redirect('view-affiliate-user/'.$affiliateUser->id);
             } else {
                 $affiliateUser = AffiliateUser::findOrFail($data['affiliate_user_id']);
                 $affiliateUser->update($data);

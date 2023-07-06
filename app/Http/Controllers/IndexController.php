@@ -17,6 +17,7 @@ use App\Jobs\SendEmailJob;
 use App\Mail\NotifyMail;
 use App\Jobs\ExtraaedgeApiRequest;
 use Mail;
+
 class IndexController extends Controller
 {
     //
@@ -550,6 +551,27 @@ class IndexController extends Controller
     
         curl_close($curl);
         return true;
+    }
+
+    function createCenterLogin(){
+        $center = Center::select('name','email','mobile')->get();
+
+        foreach ($center as $key => $value) {
+            
+
+            $centerData = [
+                'name'=>$value->name,
+                'email'=>$value->email,
+                'mobile'=>$value->mobile,
+                'password'=> Hash::make('Admin@1234'),
+                'is_admin'=>'0',
+                'status'=>'1',
+            ];
+
+            $user = User::create($centerData);
+            echo $user->id."<br>";
+        }
+        
     }
 
 }

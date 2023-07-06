@@ -12,6 +12,6 @@ class AffiliateUser extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'id','name','email','mobile','code','pan_photo','pan_number','aadhar_photo','aadhar_number','account_holder_name','account_no','branch','ifsc','cheque','status','created_at'
+        'id','center_id','name','email','mobile','code','pan_photo','pan_number','aadhar_photo','aadhar_number','account_holder_name','account_no','branch','ifsc','cheque','status','created_at'
     ];
 }

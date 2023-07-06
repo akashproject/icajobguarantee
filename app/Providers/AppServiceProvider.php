@@ -7,6 +7,7 @@ use Illuminate\Pagination\Paginator;
 use App\Models\Media;
 use App\Models\CourseType;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 use View;
 
@@ -127,6 +128,9 @@ class AppServiceProvider extends ServiceProvider
                 '#faq' => "FAQs",
             );
             $view->with('adHeaderMenu', $adHeaderMenu);
+
+            $user = Auth::user();
+            $view->with('user', $user);
         });
     }
 }

@@ -66,7 +66,7 @@ class SettingController extends Controller
             $qr_content = $data['qr_content'];
 
             if(isset($data['code'])){
-                $qr_content = $qr_content.'?utm_campaign='.$data['code'];
+                $qr_content = $qr_content.'?utm_campaign='.$data['code'].'&center='.$data['center'];
             }
 
             QrCode::merge('/assets/images/fab.png')
@@ -79,6 +79,5 @@ class SettingController extends Controller
         } catch(\Illuminate\Database\QueryException $e){
             var_dump($e->getMessage()); 
         }
-
     }
 }

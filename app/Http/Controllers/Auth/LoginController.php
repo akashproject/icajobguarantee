@@ -44,7 +44,7 @@ class LoginController extends Controller
     public function authenticate(Request $request)
     {
         $credentials = $request->only('email', 'password');
-
+        print_r($credentials);
         if (Auth::attempt($credentials)) {
             return redirect()->intended('administrator/assessments');
         }

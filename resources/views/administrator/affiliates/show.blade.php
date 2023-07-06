@@ -107,7 +107,7 @@
 						<div class="form-group row">
 							<label for="no_of_module" class="col-sm-12 text-left control-label col-form-label">QR Code</label>
 							<div class="col-sm-12">
-								<a href="/administrator/generate-qrcode?code={{$affiliateUser->code}}&qr_content={{url('ads/affiliate-qrcode-page')}}" class="btn btn-primary"> Generate </a>								
+								<a href="/administrator/generate-qrcode?center={{$name}}&code={{$affiliateUser->code}}&qr_content={{url('ads/affiliate-qrcode-page')}}" class="btn btn-primary"> Generate </a>								
 							</div>
 						</div>
 					</div>
