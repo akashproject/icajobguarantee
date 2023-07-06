@@ -9,7 +9,6 @@ use App\Models\University;
 
 class UniversityController extends Controller
 {
-    //.
 
     public function view($slug,Request $request)
     {
@@ -17,7 +16,8 @@ class UniversityController extends Controller
             $center = ($request->has("center"))?$request->input('center'):null;
             $contentMain = University::where('slug', $slug)->where('status', 1);
             $contentMain = $contentMain->firstOrFail();
-            return view("university.view",compact('contentMain','center'));
+            $university = $contentMain->name;
+            return view("university.view",compact('contentMain','university'));
 
         } catch(\Illuminate\Database\QueryException $e){
             //throw $th;

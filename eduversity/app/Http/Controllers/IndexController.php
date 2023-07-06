@@ -26,7 +26,6 @@ class IndexController extends Controller
             ->orderBy('university_courses.name', 'asc')
             ->get();
             $universities = University::where('status', 1)->get();
-
             return view($this->layout.'index',compact('courses','universities'));
         } catch(\Illuminate\Database\QueryException $th){
             throw $th;
@@ -88,29 +87,16 @@ class IndexController extends Controller
             unset($nameArray['0']);
             $postData['lastname'] = implode(" ",$nameArray);
 
-
-            if(isset($postData['center']) && $postData['center'] != ''){
-                $city  = Center::select("city_id")->where("name",$postData['center'])->first();
+            if(isset($postData['university']) && $postData['university'] != ''){
+                $city  = University::select("city_id")->where("name",$postData['university'])->first();
                 $postData['city'] = City::where("id",$city->city_id)->first()->name;
-            } else {
-                //center by pincode
-                $pincode = DB::table('pincodes')
-                ->leftjoin('centers', 'pincodes.center_id', '=', 'centers.id')
-                ->leftjoin('cities', 'pincodes.city_id', '=', 'cities.id')
-                ->select('centers.name as center','cities.name as city')
-                ->where('pincodes.name', $postData['pincode'])
-                ->where('centers.status', 1)
-                ->inRandomOrder()
-                ->first();
-                $postData['city'] = ($pincode)?$pincode->city:"";
-                $postData['center'] = ($pincode)?$pincode->center:"";
             }
+            
             $postData['role'] = "b2c";
+
             $this->captureLeadToDB($postData);
 
-            if($postData['store_area'] == 1) {
-                $this->leadCaptureLeadToExtraage($postData);
-            }
+            $this->leadCaptureLeadToExtraage($postData);
 
             $this->cognoai_api_calling($postData);
 
@@ -134,22 +120,7 @@ class IndexController extends Controller
 
     public function captureLeadToDB($postData){
         try {
-            $data = array(
-                'role' => $postData['role'],
-                'name' => $postData['name'],
-                'email' => $postData['email'],
-                'mobile' => $postData['mobile'],
-                'center' => (isset($postData['center']))?$postData['center']:'',
-                'pincode' => (isset($postData['pincode']))?$postData['pincode']:'',
-                'latitude' => (isset($_COOKIE['lat']))?$_COOKIE['lat']:'',
-                'longitude' => (isset($_COOKIE['lng']))?$_COOKIE['lat']:'',
-                'utm_source' => $postData['utm_source'],
-                'utm_campaign' => $postData['utm_campaign'],
-                'crmStatus' => "0",
-                'mailStatus' => "0",
-            );
-            $lead = Lead::create($data);
-            return response()->json($lead, $this->_statusOK);
+            return response()->json(true, $this->_statusOK);
         } catch(\Illuminate\Database\QueryException $e){
             //throw $th;
             return response()->json($e, $this->_statusOK);
@@ -157,33 +128,26 @@ class IndexController extends Controller
     }
 
     public function leadCaptureLeadToExtraage($postData){
-
-        $apiData = array(
-            'AuthToken' => 'ICA-06-12-2017',
-            'Source' => 'ica',
+        $apiData =  array(
+            'AuthToken' => 'ICAUNIPRO-17-10-2018',
+            'Source' => "icaunipro",
             'FirstName' => $postData['firstname'],
             'LastName' => $postData['lastname'],
             'Email' => $postData['email'],
             'MobileNumber' => $postData['mobile'],
             'Center' => $postData['city'],
-            'Location' => $postData['center'],
-            'Pincode' => (isset($postData['pincode']))?$postData['pincode']:"",
+            'Location' => isset($postData['university'])?$postData['university']:'',
             'LeadType' => $postData['LeadType'],
             'LeadSource' => $postData['utm_source'],
             'LeadName' => $postData['utm_campaign'],
-            'SourceTo' => "offline",
-            'Entity4' => (isset($postData['course']))?$postData['course']:'',
-            'EducationalQualification' => $postData['source_url'],
-            'Textb1' => $postData['utm_term'],
-            'Field3' => $postData['utm_device'],
-            'Textb2' => $postData['utm_adgroup'],
-            'Textb3' => $postData['utm_content'],
-            'BatchApplied' => (isset($postData['qualification']))?$postData['qualification']:'',
-            'Textb4' => (isset($postData['institute']))?$postData['institute']:'',
+            'textb1' => $postData['utm_url'],
+            'textb2' => $postData['utm_term'],
+            'textb3' => $postData['utm_content'],
+            'textb4' => $postData['utm_adgroup'],
+            'field5' => $postData['utm_device']
         );
 
-        //ExtraaedgeApiRequest::dispatch($apiData);
-
+        echo $apiData; exit;
         $url = "https://prodivrapi.extraaedge.com/api/WebHook/addLead"; 		
         $curl = curl_init();
         
@@ -209,8 +173,8 @@ class IndexController extends Controller
 
     function cognoai_api_calling($postData){
         $whatsappArray = (object) array(
-            "authorization" => "5a1a48f7-f10f-47bd-becc-6b092dfcc2bb", 
-            "campaign_id" => "147222", 
+            "authorization" => "1d27951f-1532-48a2-b892-b84453945a06", 
+            "campaign_id" => "144458", 
             "whatsapp_bsp" => "1", 
             "client_data" => array(
                 "phone_number" => "+91".$postData['mobile'], 

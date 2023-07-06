@@ -107,13 +107,6 @@
 											{{ $value->excerpt }}
 										</p>
 									</div>
-									<div class="course-viewer ul-li">
-										<ul>
-											<li><a href=""><i class="fas fa-user"></i> 1.220</a></li>
-											<li><a href=""><i class="fas fa-comment-dots"></i> 1.015</a></li>
-											<li><a href="">125k Unrolled</a></li>
-										</ul>
-									</div>
 								</div>
 							</div>
 							<!-- /item -->
@@ -383,89 +376,6 @@
 		</div>
 	</section>
 	<!-- /course-categori -->
-
-
-	<!-- Start FAQ section
-	============================================= -->
-		<section id="faq" class="faq-section faq-secound-home-version backgroud-style">
-			<div class="container">
-				<div class="section-title mb45 headline text-center">
-					<span class="subtitle text-uppercase">Univercities</span>
-					<h2>We are present in<span> UG and PG </span> colleges near you</h2>
-				</div>
-
-				<div class="faq-tab mb45">
-					<div class="faq-tab-ques  ul-li">
-						<div class="tab-button text-center mb45">
-							<ul class="product-tab">
-
-								<li class="active" rel="tab1">All Courses </li>
-								@foreach(getCourses() as $key => $course)
-									<li rel="tab{{$key}}"> {{ $course->name }} </li>
-								@endforeach
-							</ul>
-						</div>
-						<!-- /tab-head -->
-
-						<!-- tab content -->
-						<div class="tab-container">
-						@foreach(getCourses() as $key => $value)
-							<!-- 1st tab -->
-							<div id="tab{{$key}}" class="tab-content-1 pt35" style="display: block;">
-								<div class="row">
-								@foreach(getUniversities() as $university)
-									<div class="col-md-4">
-										<div class="course-item-pic-text">
-											<div class="course-pic relative-position mb25">
-												<a href="/universities/techno-india" >
-													<img src="{{ (isset($value->featured_image))?getSizedImage('',$value->featured_image):'assets/img/course/c-1.jpg' }}" alt="">	
-												</a>
-												<div class="course-details-btn">
-													<a href="#">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
-												</div>
-											</div>
-											<div class="university-item-text">
-												<div class="course-meta university-meta">
-													<span class="course-author university-author bold-font gradient-bg"><a href="#">UGC recognised</a></span>
-													<div class="course-rate ul-li">
-														<ul>
-															<li><i class="fas fa-star"></i></li>
-															<li><i class="fas fa-star"></i></li>
-															<li><i class="fas fa-star"></i></li>
-															<li><i class="fas fa-star"></i></li>
-															<li><i class="fas fa-star"></i></li>
-														</ul>
-													</div>
-												</div>
-												<div class="course-title mt10 headline pb10 relative-position">
-													<h3><a href="">{{ $value->name }}</a> </h3>
-													<p>
-														{{ $value->excerpt }}
-													</p>
-												</div>
-												<div class="course-viewer ul-li">
-													<ul>
-														<li><a href=""><i class="fas fa-user"></i> 1.220</a></li>
-														<li><a href=""><i class="fas fa-comment-dots"></i> 1.015</a></li>
-														<li><a href="">125k Unrolled</a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- /course -->
-								@endforeach
-								</div>
-							</div>   
-							<!-- #tab1 -->
-						@endforeach						
-					</div>
-					</div>
-				</div>
-			</div>
-		</section>
-	<!-- End FAQ section
-		============================================= -->
 
 	<!-- Start of testimonial secound section
 		============================================= -->

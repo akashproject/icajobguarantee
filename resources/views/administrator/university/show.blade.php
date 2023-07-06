@@ -54,7 +54,7 @@
 							<div class="col-sm-9">
 								<div class="course-content" >
 									@foreach($courses as $course)
-										<p> <input type="checkbox" name="courses[]" value="{{$course->id}}" > {{$course->name}} </p>
+										<p> <input type="checkbox" name="courses[]" value="{{$course->id}}"  {{ (in_array($university->courses,  $course->id))?'checked' : '' }} > {{$course->name}} </p>
 									@endforeach
 								</div>
 							</div>

@@ -11,5 +11,6 @@
 <div class="contact-info formFieldCity">
     <input id="formFieldCity" name="city" type="text" placeholder="Enter Your City" autocomplete="off" required>
 </div>
+<input type="hidden" name="university" value="{{ (isset($university))?$university->name:'' }}">
 <input type="hidden" name="course_id" value="">
 <input type="hidden" name="brochure_id" value="">

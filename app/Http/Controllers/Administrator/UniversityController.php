@@ -40,6 +40,7 @@ class UniversityController extends Controller
     {
         try {
             $university = University::find($id);
+            $university->courses = json_decode($university->courses);
             $states = State::all();
             $cities = City::where('state_id', $university->state_id)->orderBy('name', 'asc')->get();
             $courses = UniversityCourse::all();

@@ -80,7 +80,7 @@
         @include('common.formSubmitByPageLoad')
     @endif
     <script>
-        let globalUrl = "{{ env("APP_URL") }}"
+        let globalUrl = "{{ env("Eduversity_Url") }}"
         let isEnableOtp = "{{ isset($contentMain->enable_otp)?$contentMain->enable_otp:get_theme_setting('enable_otp') }}"
         let isAjaxSubmit = "{{ get_theme_setting('ajax_submit') }}"
     </script>
