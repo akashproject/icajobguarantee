@@ -1179,17 +1179,17 @@ countDown:  function (){
 
 	$('#franchise_lead_capture_form input').on('keyup', function() {
         if ($("#franchise_lead_capture_form").valid()) {
-            $('#franchise_lead_capture_form :submit').prop('disabled', false);  
+            $('#franchise_lead_capture_form .submit_classroom_lead_generation_form').prop('disabled', false);  
         } else {
-            $('#franchise_lead_capture_form :submit').prop('disabled', 'disabled');
+            $('#franchise_lead_capture_form .submit_classroom_lead_generation_form').prop('disabled', 'disabled');
         }
     });
 
 	$('#franchise_lead_capture_form select').on('change', function() {
         if ($("#franchise_lead_capture_form").valid()) {
-            $('#franchise_lead_capture_form :submit').prop('disabled', false);  
+            $('#franchise_lead_capture_form .submit_classroom_lead_generation_form').prop('disabled', false);  
         } else {
-            $('#franchise_lead_capture_form :submit').prop('disabled', 'disabled');
+            $('#franchise_lead_capture_form .submit_classroom_lead_generation_form').prop('disabled', 'disabled');
         }
     });
 
@@ -1274,20 +1274,7 @@ countDown:  function (){
 
 	//Franchise Form Validation
 	$("#franchise_lead_capture_form").validate({
-		rules: {
-			name: {
-				required: true,
-			},
-			email: {
-				required: true,
-			},
-			mobile: {
-				required: true,
-				maxlength: 10,
-				minlength: 10,
-			},
-			
-		},
+		
 		messages: {
 			name: {
 				required: "Please enter full name",
@@ -1297,21 +1284,34 @@ countDown:  function (){
 			},
 			mobile: {
 				required: "Please enter valid mobile number",
+				min: "Please enter valid mobile number",
+				max: "Please enter valid mobile number",
 			},
-		},
-		success: function (label, element) {
-			
+			state: {
+				required: "Please select State ",
+			},
+			city: {
+				required: "Please select City ",
+			},
+			occupation: {
+				required: "Please select Occupation ",
+			},
+			invest: {
+				required: "Please select Invest ",
+			},
 		},
 		submitHandler: function(form) {
 			let formId = $(form).attr('id');
 			jQuery("#" + formId + " .checkout_loader").show();
 					
 			if(`${isEnableOtp}` == 0 && `${isAjaxSubmit}` == 0){
+				jQuery("#" + formId + " .submit_classroom_lead_generation_form").prop('disabled', 'disabled');
 				form.submit();
 			}
 		
 			if(`${isEnableOtp}` == 1 && `${isAjaxSubmit}` == 0){
 				if(jQuery("#" + formId + " .formFieldOtpResponse").val() == ""){
+					jQuery("#" + formId + " .submit_classroom_lead_generation_form").prop('disabled', 'disabled');
 					sendMobileOtp(formId);
 					return false;
 				}
@@ -1331,7 +1331,7 @@ countDown:  function (){
 					return false;
 				}
 				if(jQuery("#" + formId + " .verify_otp").val() != '' && jQuery("#" + formId + " .formFieldOtpResponse").val() == jQuery("#" + formId + " .verify_otp").val()){
-					$("#" + formId + " .submit_classroom_lead_generation_form").prop('disabled', 'disabled');
+					jQuery("#" + formId + " .submit_classroom_lead_generation_form").prop('disabled', 'disabled');
 					franchiseCaptureLead(form,formId);
 				} else {
 					jQuery("#" + formId + " .response_status").html("OTP is Invalid");

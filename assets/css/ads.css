@@ -3354,12 +3354,12 @@ ul.product-tab li.active:after,ul.course-tab li.active:after {
 .tab-content-1 {
   display: none; }
   .tab-content-1 p {
-    color: #777777; }
+    color: #333; }
 
 .course-tab-content-1 {
   display: none; }
   .course-tab-content-1 p {
-    color: #777777; }
+    color: #333; }
 .ques-ans h3 {
   font-size: 22px;
   font-weight: 500;

@@ -81,9 +81,11 @@
     @else 
         @include('common.formSubmitByPageLoad')
     @endif
+    
     <script>
         let globalUrl = "{{ env("APP_URL") }}"
-        let isEnableOtp = "{{ isset($contentMain->enable_otp)?$contentMain->enable_otp:get_theme_setting('enable_otp') }}"
+       
+        let isEnableOtp = {{ (get_theme_setting('enable_otp') == "1")?$contentMain->enable_otp:get_theme_setting('enable_otp') }}
         let isAjaxSubmit = "{{ get_theme_setting('ajax_submit') }}"
     </script>
     <script src="{{ url('assets/js/jquery-2.1.4.min.js') }}"></script>

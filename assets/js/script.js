@@ -1193,9 +1193,9 @@ searchBAR: function (){
 
 	$('#franchise_lead_capture_form select').on('change', function() {
         if ($("#franchise_lead_capture_form").valid()) {
-            $('#franchise_lead_capture_form .submit_franchise_lead_generation_form').prop('disabled', false);  
+            $('#franchise_lead_capture_form .submit_classroom_lead_generation_form').prop('disabled', false);  
         } else {
-            $('#franchise_lead_capture_form .submit_franchise_lead_generation_form').prop('disabled', 'disabled');
+            $('#franchise_lead_capture_form .submit_classroom_lead_generation_form').prop('disabled', 'disabled');
         }
     });
 
