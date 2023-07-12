@@ -46,8 +46,8 @@
 									<i class="text-gradiant flaticon-graduation-hat"></i>
 								</div>
 								<div class="counter-number">
-									<span class="counter-count bold-font">5</span><span>000+</span>
-									<p>Students Trained</p>
+									<span class="counter-count bold-font">500</span><span>K+</span>
+									<p>Satisfied Students</p>
 								</div>
 							</div>
 						</div>
@@ -59,7 +59,7 @@
 									<i class="text-gradiant flaticon-book"></i>
 								</div>
 								<div class="counter-number">
-									<span class="counter-count bold-font">70</span><span>,000+</span>
+									<span class="counter-count bold-font">70</span><span>K+</span>
 									<p>Registered Employers</p>
 								</div>
 							</div>
