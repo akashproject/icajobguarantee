@@ -152,7 +152,7 @@
 												</div>
 												<div class="best-course-text">
 													<div class="course-title mb20 headline relative-position height-60">
-														<h3><a href="courses/{{ $course->slug }}"> {{ $course->name }} </a> 
+														<h3><a href="/courses/{{ $course->slug }}"> {{ $course->name }} </a> 
 														<span class="trend-bestseller text-uppercase bold-font">
 															<i class="fas fa-bolt"></i> Bestseller</span> 
 														</h3>
