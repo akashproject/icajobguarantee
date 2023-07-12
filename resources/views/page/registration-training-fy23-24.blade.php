@@ -76,7 +76,7 @@
                                                 <option value="">Select venue - Partner</option>
                                                 <option value="Kolkata - July 25, July 26">Kolkata - July 25 and 26th</option>
                                                 <option value="Delhi - August 2nd and 3rd">Delhi - August 2nd and 3rd</option>
-                                                <option value="Mumbai/Navi Mumbai - Aug 1st, Aug 2nd">Mumbai/Navi Mumbai - August 5th and 6th</option>
+                                                <option value="Mumbai/Navi Mumbai - August 5th and 6th">Mumbai/Navi Mumbai - August 5th and 6th</option>
 
                                             </select>
                                         </div>

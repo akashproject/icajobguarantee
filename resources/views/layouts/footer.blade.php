@@ -97,10 +97,10 @@
         <div class="container">
             <div class="row text-center">
                 <div class="col-6">
-                    <a class="sticky-btn" href=""><i class="fas fa-phone"></i> Call Now</a>
+                    <a class="sticky-btn" href="tel:{{get_theme_setting('mobile')}}"><i class="fas fa-phone"></i> Call Now</a>
                 </div>
                 <div class="col-6">
-                    <a class="sticky-btn" href=""><i class="fab fa-whatsapp"></i> Live Chat</a>
+                    <a class="sticky-btn" href="https://api.whatsapp.com/send?phone={{get_theme_setting('whatsapp')}}"><i class="fab fa-whatsapp"></i> Live Chat</a>
                 </div>
             </div>  
             

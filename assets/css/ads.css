@@ -5391,3 +5391,22 @@ span.success-icon {
 .disclaimer p {
   font-size: 12px;
 }
+.sticky-footer {
+  margin-bottom: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 9;
+}
+a.sticky-btn {
+  background: #fff;
+  color: #393185;
+  border: 2px solid;
+  display: block;
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 600;
+}

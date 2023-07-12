@@ -311,13 +311,13 @@
 												</div>
 												
 												<div class="course-details-btn">
-													<a href="{{ URL::to('/courses') }}/{{ $course->slug }}">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
+													<a href="#detail-course">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
 												</div>
 												<div class="blakish-overlay"></div>
 											</div>
 											<div class="best-course-text">
 												<div class="course-title mb20 headline relative-position height-60">
-													<h3><a target="_blank" href="{{ URL::to('/courses') }}/{{ $course->slug }}"> {{ $course->name }} </a> 
+													<h3><a href="#detail-course"> {{ $course->name }} </a> 
 													<span class="trend-bestseller text-uppercase bold-font">
 														<i class="fas fa-bolt"></i> Bestseller</span> 
 													</h3>
