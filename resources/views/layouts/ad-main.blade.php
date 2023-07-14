@@ -80,6 +80,7 @@
     <script src="{{ url('assets/js/bootstrap.min.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="https://app.cognocart.com/files/deploy/embed_chatbot_47.js"></script>
     <script src="{{ url('assets/js/popper.min.js') }}"></script>
     <script src="{{ url('assets/js/owl.carousel.min.js') }}"></script>
     <script src="{{ url('assets/js/jarallax.js') }}"></script>

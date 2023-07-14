@@ -252,26 +252,32 @@
 					<h3>How are <span> ICA Students</span> always ahead of the competitions?</h3>
 					<p> We know what employers want. With our unique and innovative Personality Development Programs like mock sessions, gamifications we make you industry-ready. </p>
 				</div>
-				<div class="row bg-gray">
-					<div class="col-md-6 text-right border-timeline p30">
-						<h3 class="primary-color">Monthly Mock Interviews</h3>
-						<p> We provide practice and preparation for our students who are seeking employment or aiming to improve their interview skills and increase their chances of securing job offers. Here are some advantages of engaging in monthly mock interviews:. </p>
-						<ul>
-							<li>Practicing and Preparation</li>
-							<li>Identifying Strengths and Weaknesses</li>
-							<li>Developing Interview Strategies</li>
-							<li>Building Confidence</li>
-							<li>Enhancing Communication Skills</li>
-							<li>Increasing Interview Success Rate</li>
-						</ul>
+				<div class="row ">
+					<div class="col-md-7 text-right p30">
+						<div class="custom-bg-light">
+							<h3 class="primary-color">Monthly Mock Interviews</h3>
+							<p> We provide practice and preparation for our students who are seeking employment or aiming to improve their interview skills and increase their chances of securing job offers. Here are some advantages of engaging in monthly mock interviews:. </p>
+							<ul>
+								<li>Practicing and Preparation</li>
+								<li>Identifying Strengths and Weaknesses</li>
+								<li>Developing Interview Strategies</li>
+								<li>Building Confidence</li>
+								<li>Enhancing Communication Skills</li>
+								<li>Increasing Interview Success Rate</li>
+							</ul>
+						</div>
 					</div>
-					<div class="col-md-6 p30">
-						<img src="{{ url('assets/img/mmi.jpg') }}">
+					<div class="col-md-5 p30">
+						<div class="custom-bg-light-img">
+							<img src="{{ url('assets/img/mmi.jpg') }}">
+						</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-6 text-right border-timeline p30">
-						<img src="{{ url('assets/img/sobo.jpg') }}">
+					<div class="col-md-6 text-right p30">
+						<div>
+							<img src="{{ url('assets/img/sobo.jpg') }}">
+						</div>
 					</div>
 					<div class="col-md-6 p30">
 						<h3 class="primary-color">GDPI / SOBO </h3>
@@ -286,8 +292,8 @@
 						</ul>
 					</div>
 				</div>
-				<div class="row bg-gray">
-					<div class="col-md-6 text-right border-timeline p30">
+				<div class="row ">
+					<div class="col-md-6 text-right p30">
 						<h3 class="primary-color">Excel Ka Don</h3>
 						<p> We make our students capable of effectively using the most widely used software tool in the corporate world, Ms Excel  to contribute to increasing efficiency, data management, analysis, and decision-making. Here are some key advantages: </p>
 						<ul>
@@ -304,7 +310,7 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-6 text-right border-timeline p30">
+					<div class="col-md-6 text-right p30">
 						<img src="{{ url('assets/img/tkb.png')}}">
 					</div>
 					<div class="col-md-6 p30">

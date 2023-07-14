@@ -12,8 +12,8 @@
 						<div class="col-md-5 top-right-bar">
 							<div class="header-top-bar ul-li">
 								<ul>
-									<li><a href="mailto:{{get_theme_setting('email')}}" ><i class="fas fa-envelope"></i>Mail Us: {{get_theme_setting('email')}}</a></li>
-									<li><a href="tel:{{get_theme_setting('mobile')}}" ><i class="fas fa-phone-square"></i>Call Us: {{get_theme_setting('mobile')}}</a></li>
+									<li><a href="mailto:{{get_theme_setting('email')}}" ><i class="fas fa-envelope"></i>{{get_theme_setting('email')}}</a></li>
+									<li><a href="tel:{{get_theme_setting('mobile')}}" ><i class="fas fa-phone-square"></i>{{get_theme_setting('mobile')}}</a></li>
 								</ul>
 							</div>
 						</div>
@@ -32,10 +32,7 @@
 									<li data-id="category-{{ $value->slug }}" >
 										<a target="_blank" href="{{url('/category')}}/{{$value->slug}}">{{$value->name}}</a>
 									</li>
-									@endforeach	
-									<li data-id="category-universities-course" >
-										<a target="_blank" href="{{url('/universities-courses')}}">College Courses</a>
-									</li>											
+									@endforeach									
 								</ul>
 								<div class="submenu-courses">
 									@foreach($courseTypes as $key => $value)

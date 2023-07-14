@@ -16,6 +16,9 @@
     RewriteCond %{REQUEST_URI} (.+)/$
     RewriteRule ^ %1 [L,R=301]
 
+    RewriteCond %{HTTP_HOST} ^icajobguarantee.com [NC]
+    RewriteRule ^(.*)$ http://www.icajobguarantee.com/$1 [L,R=301]
+
     # Send Requests To Front Controller...
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
@@ -564,7 +567,146 @@ AddCharset utf-8 .atom .css .js .json .rss .vtt .xml
 # Redirect Engine switched on
 RewriteEngine On
 
-# all old blog urls => /blog/
+#A all redirected pages
+
+#Wildcard Landing Page Redirection
+RedirectMatch 301 ^/enroll/.*$  /ads/accounts-course
+RedirectMatch 301 ^/enrol/.*$  /ads/accounts-course
+#Wildcard Landing Page Redirection
+
+#A1 at website header & footer of old site
+Redirect 301 /awards-recognition /about-us
+Redirect 301 /ica-edu-skills-team /about-us
+Redirect 301 /gst-tally-accounts-sap-fico-finance-course-training-institute /centers
+Redirect 301 /accounts-gst-sap-tally-career-opportunities /placements
+Redirect 301 /bcom-bsc-college-courses https://university.icajobguarantee.com/
+Redirect 301 /blogs /blog/
+Redirect 301 /terms-of-use /terms-conditions
+RedirectMatch 301 ^/teams/.*$   /about-us
+#A1 at website header & footer of old site
+
+#A2 all old course pages
+Redirect 301 /courses/accounts-course	/courses/accounting-course-cia
+Redirect 301 /courses/accounting-taxation-course	/courses/accounting-course-sap-fico
+Redirect 301 /courses/best-accounts-finance-banking-courses	/courses/accounting-course-cia-express
+Redirect 301 /courses/tally-gst-sap-fico-accounts-course	/courses/accounting-course-sap-fico
+Redirect 301 /courses/mis-microsoft-excel-office-courses	/courses/accounting-course-cia-foundation
+Redirect 301 /courses/tally-course-training-institute	/courses/tallyprime-gst-course
+Redirect 301 /courses/gst-course-training-institute	/courses/gst-certification-course
+Redirect 301 /courses/sap-course-training-institute	/courses/sap-fico-course
+Redirect 301 /courses/best-stock-market-certification-course	/courses/stock-market-certification-course-nccmp
+Redirect 301 /courses/cia-courses-accounts-finance-taxation	/courses/accounting-course-cia
+Redirect 301 /courses/cia-foundation	/courses/accounting-course-cia-foundation
+Redirect 301 /courses/cia-plus-accounting-course	/courses/accounting-course-sap-fico
+Redirect 301 /courses/sap-business-user	/courses/sap-fico-course
+Redirect 301 /courses/goods-and-service-tax	/courses/gst-certification-course
+#A2 all old course pages
+
+#A3 at website all center pages
+Redirect 301 /centers/rajendra-nagar-bilaspur /centers/rajendra-nagar-road-bilaspur
+Redirect 301 /centers/accounts-gst-tally-sap-course-bangalore-rajaji-nagar	/centers/1st-main-road-rajaji-nagar
+Redirect 301 /centers/accounts-gst-tally-sap-course-north-campus	/centers/22-mall-road-north-campus
+Redirect 301 /centers/accounts-gst-tally-sap-course-gandhipuram-coimbatore	/centers/7th-cross-street-gandhipuram
+Redirect 301 /centers/accounts-gst-tally-sap-course-sakchi	/centers/aambagan-sakchi-jamshedpur
+Redirect 301 /centers/accounts-gst-tally-sap-course-alambagh-lucknow	/centers/alambagh-lucknow
+Redirect 301 /centers/accounts-gst-tally-sap-course-ambernath	/centers/ambernath-thane
+Redirect 301 /centers/accounts-gst-tally-sap-course-andheri	/centers/andheri-mumbai
+Redirect 301 /centers/accounts-gst-tally-sap-course-cuttack	/centers/arundoya-market-cuttack
+Redirect 301 /centers/accounts-gst-tally-sap-course-ahmedabad	/centers/ashram-road-ahmedabad
+Redirect 301 /centers/accounts-gst-tally-sap-course-maligaon	/centers/assam-trunk-rd-maligaon
+Redirect 301 /centers/accounts-gst-tally-sap-course-serampore	/centers/b.p-dey-street-serampore
+Redirect 301 /centers/accounts-gst-tally-sap-course-jorhat	/centers/babupatty-jorhat
+Redirect 301 /centers/accounts-gst-tally-sap-course-kashipur	/centers/bajpur-rd-kashipur
+Redirect 301 /centers/accounts-gst-tally-sap-course-ballygunge	/centers/ballygunge-kolkata
+Redirect 301 /centers/accounts-gst-tally-sap-course-bandra	/centers/bandra-west-mumbai
+Redirect 301 /centers/accounts-gst-tally-sap-course-alwar	/centers/baraf-khana-road-alwar
+Redirect 301 /centers/accounts-gst-tally-sap-course-barasat	/centers/barasat-kolkata
+Redirect 301 /centers/accounts-gst-tally-sap-course-barrackpore	/centers/barrackpore-kolkata
+Redirect 301 /centers/accounts-gst-tally-sap-course-coochbehar	/centers/bazar-coochbehar
+Redirect 301 /centers/accounts-gst-tally-sap-course-behala	/centers/behala-kolkata
+Redirect 301 /centers/accounts-gst-tally-sap-course-noida	/centers/bhoja-market-noida
+Redirect 301 /centers/accounts-gst-tally-sap-course-preet-vihar	/centers/block-f-preet-vihar
+Redirect 301 /centers/accounts-gst-tally-sap-course-borivali	/centers/borivali-west-mumbai
+Redirect 301 /centers/accounts-gst-tally-sap-course-vashi	/centers/business-park-corporate-wing-vashi
+Redirect 301 /centers/accounts-gst-tally-sap-course-gorakhpur-bakshipur	/centers/buxipur-road-gorakhpur
+Redirect 301 /centers/accounts-gst-tally-sap-course-camp	/centers/camp-pune
+Redirect 301 /centers/accounts-gst-tally-sap-course-chandannagar	/centers/chandannagar-hooghly
+Redirect 301 /centers/accounts-gst-tally-sap-course-chinchwad	/centers/chinchwad-east-pune
+Redirect 301 /centers/accounts-gst-tally-sap-course-exide-more-chowringhee	/centers/chowringhee-road-exide-more-kolkata
+Redirect 301 /centers/accounts-gst-tally-sap-course-durgapur	/centers/city-center-durgapur
+Redirect 301 /centers/accounts-gst-tally-sap-course-dhanbad-city-centre	/centers/city-centre-dhanbad
+Redirect 301 /centers/accounts-gst-tally-sap-course-jalandhar	/centers/civil-line-jalandhar
+Redirect 301 /centers/accounts-gst-tally-sap-course-bhubaneswar	/centers/cs-pur-road-bhubaneswar
+Redirect 301 /centers/accounts-gst-tally-sap-course-hajipur	/centers/dackbanglow-road-hajipur
+Redirect 301 /centers/accounts-gst-tally-sap-course-dadar	/centers/dadar-west-mumbai
+Redirect 301 /centers/accounts-gst-tally-sap-course-pathankot	/centers/dalhousie-bypass-pathankot
+Redirect 301 /centers/accounts-gst-tally-sap-course-dalhousie	/centers/dalhousie-kolkata
+Redirect 301 /centers/accounts-gst-tally-sap-course-panbazar	/centers/danish-road-panbazar
+Redirect 301 /centers/accounts-gst-tally-sap-course-dhankawadi	/centers/dhankawadi-pune
+Redirect 301 /centers/accounts-gst-tally-sap-course-palakkad	/centers/district-hospital-road-palakkad
+Redirect 301 /centers/accounts-gst-tally-sap-course-howrah	/centers/dobson-road-howrah
+Redirect 301 /centers/accounts-gst-tally-sap-course-dombivili	/centers/dombivli-east-thane
+Redirect 301 /centers/accounts-gst-tally-sap-course-malappuram	/centers/down-hill-malappuram
+Redirect 301 /centers/accounts-gst-tally-sap-course-dunlop	/centers/dunlop-kolkata
+Redirect 301 /centers/accounts-gst-tally-sap-course-dwarka-mor	/centers/dwarka-mor-metro-station-delhi
+Redirect 301 /centers/accounts-gst-tally-sap-course-dehradun-ec-road	/centers/ec-road-dehradun
+Redirect 301 /centers/accounts-gst-tally-sap-course-ballia	/centers/gadwar-road-ballia
+Redirect 301 /centers/accounts-gst-tally-sap-course-rishikesh	/centers/ganga-nagar-rishikesh
+Redirect 301 /centers/accounts-gst-tally-sap-course-thane	/centers/gokhale-road-thane
+Redirect 301 /centers/accounts-gst-tally-sap-course-sovabazar	/centers/grey-st-sovabazar
+Redirect 301 /centers/accounts-gst-tally-sap-course-kukatpally	/centers/hyder-nagar-kukatpally
+Redirect 301 /centers/accounts-gst-tally-sap-course-patna-kidwaipuri	/centers/income-tax-chauraha-kidwaipuri
+Redirect 301 /centers/accounts-gst-tally-sap-course-lucknow-indira-nagar	/centers/indira-nagar-lucknow
+Redirect 301 /centers/accounts-gst-tally-sap-course-guwahati-6-mile	/centers/jayanagar-road-six-mile-guwahati
+Redirect 301 /centers/accounts-gst-tally-sap-course-joka	/centers/joka-kolkata
+Redirect 301 /centers/accounts-gst-tally-sap-course-hazaribag	/centers/julu-park-road-hazaribagh
+Redirect 301 /centers/accounts-gst-tally-sap-course-kalkaji	/centers/kalkaji-delhi
+Redirect 301 /centers/accounts-gst-tally-sap-course-kalyani	/centers/kalyani-nadia
+Redirect 301 /centers/accounts-gst-tally-sap-course-kankarbagh	/centers/kankarbagh-patna
+Redirect 301 /centers/accounts-gst-tally-sap-course-pitampura-rohini	/centers/kapil-vihar-pitampura
+Redirect 301 /centers/accounts-gst-tally-sap-course-kothrud	/centers/karve-rd-kothrud
+Redirect 301 /centers/accounts-gst-tally-sap-course-midnapore	/centers/keranitola-midnapore
+Redirect 301 /centers/accounts-gst-tally-sap-course-khanpur	/centers/khanpur-delhi
+Redirect 301 /centers/accounts-gst-tally-sap-course-burdwan	/centers/khosbagan-bardhaman
+Redirect 301 /centers/accounts-gst-tally-sap-course-asansol-kumarpur/	/centers/kumarpur-asansol
+Redirect 301 /centers/accounts-gst-tally-sap-course-bistupur	/centers/l-road-bistupur
+Redirect 301 /centers/accounts-gst-tally-sap-course-faridabad	/centers/main-market-faridabad
+Redirect 301 /centers/accounts-gst-tally-sap-course-ranchi-main-road	/centers/main-road-ranchi
+Redirect 301 /centers/accounts-gst-tally-sap-course-peeragarhi	/centers/main-rohtak-road-peeragarhi
+Redirect 301 /centers/accounts-gst-tally-sap-course-nelamangala	/centers/maruthi-nagar-main-road-nelamangala
+Redirect 301 /centers/accounts-gst-tally-sap-course-gandhinagar	/centers/meghmalhar-complex-gandhinagar
+Redirect 301 /centers/accounts-gst-tally-sap-course-ameerpet-hyderabad	/centers/nilgeri-block-ameerpet
+Redirect 301 /centers/accounts-gst-tally-sap-course-tollygunge	/centers/n-s-c-bose-road-tollygunge
+Redirect 301 /centers/accounts-gst-tally-sap-course-bathinda	/centers/old-bus-stand-bhatinda
+Redirect 301 /centers/accounts-gst-tally-sap-course-gurgaon	/centers/old-dlf-colony-gurgaon
+Redirect 301 /centers/accounts-gst-tally-sap-course-janakpuri	/centers/pankha-rd-janakpuri
+Redirect 301 /centers/accounts-gst-tally-sap-course-udaipur	/centers/patel-market-udaipur-city
+Redirect 301 /centers/accounts-gst-tally-sap-course-cochin	/centers/pukkattupady-road-cochin
+Redirect 301 /centers/accounts-gst-tally-sap-course-siliguri	/centers/punjabi-para-siliguri
+Redirect 301 /centers/accounts-gst-tally-sap-course-vasai	/centers/purvee-chamber-vasai
+Redirect 301 /centers/accounts-gst-tally-sap-course-pusa-road	/centers/pusa-road-delhi
+Redirect 301 /centers/accounts-gst-tally-sap-course-kolhapur	/centers/rajarampuri-kolhapur
+Redirect 301 /centers/accounts-gst-tally-sap-course-jadavpur	/centers/raja-subodh-chandra-mallick-road-jadavpur
+Redirect 301 /centers/accounts-gst-tally-sap-course-rajouri-garden	/centers/ring-road-rajouri-garden
+Redirect 301 /centers/accounts-gst-tally-sap-course-mau	/centers/sahadatpura-mau
+Redirect 301 /centers/accounts-gst-tally-sap-course-ahmednagar	/centers/savedi-road-ahemednagar
+Redirect 301 /centers/accounts-gst-tally-sap-course-chandigarh	/centers/sector-34a-chandigarh
+Redirect 301 /centers/accounts-gst-tally-sap-course-saltlake	/centers/sec-v-saltlake-bidhannagar
+Redirect 301 /centers/accounts-gst-tally-sap-course-allahabad-shantipuram	/centers/shantipuram-allahabad
+Redirect 301 /centers/accounts-gst-tally-sap-course-jammu	/centers/shastri-nagar-jammu
+Redirect 301 /centers/accounts-gst-tally-sap-course-sodepur	/centers/sodepur-kolkata
+Redirect 301 /centers/accounts-gst-tally-sap-course-hadapsar	/centers/solapur-road-hadapsar
+Redirect 301 /centers/accounts-gst-tally-sap-course-yehalanka	/centers/someshwara-nagar-main-road-yelahanka
+Redirect 301 /centers/accounts-gst-tally-sap-course-panvel	/centers/st-depot-panvel
+Redirect 301 /centers/accounts-gst-tally-sap-course-allahabad-civil-lines	/centers/tashkand-marg-allahabad
+Redirect 301 /centers/accounts-gst-tally-sap-course-tilak-road	/centers/tilak-road-pune
+Redirect 301 /centers/accounts-gst-tally-sap-course-ultadanga	/centers/vip-road-ultadanga-more-bidhannagar
+Redirect 301 /centers/accounts-gst-tally-sap-course-yamuna-vihar	/centers/yamuna-vihar-road-delhi
+Redirect 301 /centers/accounts-gst-tally-sap-course-purulia    /centers/ranchi-purulia-road
+Redirect 301 /centers/purulia-road    /centers/ranchi-purulia-road
+#A3 at website all center pages
+
+#A4 all old blog urls => /blog/
 Redirect 301 /10-books-to-read-during-lockdown /blog/10-books-to-read-during-lockdown
 Redirect 301 /10-common-resume-mistakes /blog/10-common-resume-mistakes
 Redirect 301 /10-famous-indians-who-are-actually-accountants /blog/10-famous-indians-who-are-actually-accountants
@@ -673,6 +815,10 @@ Redirect 301 /top-gst-courses-for-students-and-professionals /blog/top-gst-cours
 Redirect 301 /top-tips-to-get-the-best-sap-training /blog/top-tips-to-get-the-best-sap-training
 Redirect 301 /weird-accounting-facts-we-bet-you-didnt-know /blog/weird-accounting-facts-we-bet-you-didnt-know
 Redirect 301 /winning-the-war-against-covid-19 /blog/winning-the-war-against-covid-19
+Redirect 301 /top-10-ultimate-sap-training-courses-2022 /blog/top-10-ultimate-sap-training-courses-2022
+Redirect 301 /tally-training-important-tally-reports /blog/tally-training-important-tally-reports 
+
+
 Redirect 301 /category/accounts /blog/accounts
 Redirect 301 /category/dfm /blog/dfm
 Redirect 301 /category/excel /blog/excel
@@ -682,153 +828,67 @@ Redirect 301 /category/misc /blog/misc
 Redirect 301 /category/ms-office /blog/ms-office
 Redirect 301 /category/sap-fico /blog/sap-fico
 Redirect 301 /category/tally /blog/tally
+#A4 all old blog urls => /blog/
 
-# all past redirected pages
+#A5 at website which google found as 404 pages
+Redirect 301 /professional-training-accounts-sap-tally  /courses/accounting-course-sap-fico
+Redirect 301 /classroom-courses /courses
+Redirect 301 /all-courses	/courses
+Redirect 301 /all-course/   /courses
+RedirectMatch 301 ^/college_courses/.*$   https://university.icajobguarantee.com/
+RedirectMatch 301 ^/lpu/.*$	/courses
+RedirectMatch 301 ^/KnWdZ/.*$	/courses
 Redirect 301 /contact-page	/contact-us
 Redirect 301 /Placement/Other	/placements
 Redirect 301 /batch-schedule	/
 Redirect 301 /videos.php	/
 Redirect 301 /upcoming-webinar	/
-Redirect 301 /teams	/about-us
 Redirect 301 /career.php	/career
+Redirect 301 /ciaglobal /courses
 Redirect 301 /professional-course	/category/career-courses
-Redirect 301 /student-certification-verification	/
 Redirect 301 /GST_TALLY_ACCOUNTS_SAP/webinars	/
 Redirect 301 /course_type/career-course	/category/career-courses
 Redirect 301 /KnWdZ	/
 Redirect 301 /course/download-brochure.php?BId=MjIwMg==	/
-Redirect 301 /enroll/micro-moments-landing-page	/
 Redirect 301 /course_type/job-assistance-course	/
 Redirect 301 /emailer/all-field-lp	/
-Redirect 301 /Admissions_Sharda_University/index.html	/
+Redirect 301 /Admissions_Sharda_University/index.html	https://university.icajobguarantee.com/
 Redirect 301 /?p=384	/
 Redirect 301 /career_jobs/senior-executive-digital-marketing	/career
 Redirect 301 /MQOgZ/centre	/centers
 Redirect 301 /ica-centers	/centers
-Redirect 301 /centers/rajendra-nagar-bilaspur /centers/rajendra-nagar-road-bilaspur
-Redirect 301 /centers/accounts-gst-tally-sap-course-bangalore-rajaji-nagar	/centers/1st-main-road-rajaji-nagar
-Redirect 301 /centers/accounts-gst-tally-sap-course-north-campus	/centers/22-mall-road-north-campus
-Redirect 301 /centers/accounts-gst-tally-sap-course-gandhipuram-coimbatore	/centers/7th-cross-street-gandhipuram
-Redirect 301 /centers/accounts-gst-tally-sap-course-sakchi	/centers/aambagan-sakchi-jamshedpur
-Redirect 301 /centers/accounts-gst-tally-sap-course-alambagh-lucknow	/centers/alambagh-lucknow
-Redirect 301 /centers/accounts-gst-tally-sap-course-ambernath	/centers/ambernath-thane
-Redirect 301 /centers/accounts-gst-tally-sap-course-andheri	/centers/andheri-mumbai
-Redirect 301 /centers/accounts-gst-tally-sap-course-cuttack	/centers/arundoya-market-cuttack
-Redirect 301 /centers/accounts-gst-tally-sap-course-ahmedabad	/centers/ashram-road-ahmedabad
-Redirect 301 /centers/accounts-gst-tally-sap-course-maligaon	/centers/assam-trunk-rd-maligaon
-Redirect 301 /centers/accounts-gst-tally-sap-course-serampore	/centers/b.p-dey-street-serampore
-Redirect 301 /centers/accounts-gst-tally-sap-course-jorhat	/centers/babupatty-jorhat
-Redirect 301 /centers/accounts-gst-tally-sap-course-kashipur	/centers/bajpur-rd-kashipur
-Redirect 301 /centers/accounts-gst-tally-sap-course-ballygunge	/centers/ballygunge-kolkata
-Redirect 301 /centers/accounts-gst-tally-sap-course-bandra	/centers/bandra-west-mumbai
-Redirect 301 /centers/accounts-gst-tally-sap-course-alwar	/centers/baraf-khana-road-alwar
-Redirect 301 /centers/accounts-gst-tally-sap-course-barasat	/centers/barasat-kolkata
-Redirect 301 /centers/accounts-gst-tally-sap-course-barrackpore	/centers/barrackpore-kolkata
-Redirect 301 /centers/accounts-gst-tally-sap-course-coochbehar	/centers/bazar-coochbehar
-Redirect 301 /centers/accounts-gst-tally-sap-course-behala	/centers/behala-kolkata
-Redirect 301 /centers/accounts-gst-tally-sap-course-noida	/centers/bhoja-market-noida
-Redirect 301 /centers/accounts-gst-tally-sap-course-preet-vihar	/centers/block-f-preet-vihar
-Redirect 301 /centers/accounts-gst-tally-sap-course-borivali	/centers/borivali-west-mumbai
-Redirect 301 /centers/accounts-gst-tally-sap-course-vashi	/centers/business-park-corporate-wing-vashi
-Redirect 301 /centers/accounts-gst-tally-sap-course-gorakhpur-bakshipur	/centers/buxipur-road-gorakhpur
-Redirect 301 /centers/accounts-gst-tally-sap-course-camp	/centers/camp-pune
-Redirect 301 /centers/accounts-gst-tally-sap-course-chandannagar	/centers/chandannagar-hooghly
-Redirect 301 /centers/accounts-gst-tally-sap-course-chinchwad	/centers/chinchwad-east-pune
-Redirect 301 /centers/accounts-gst-tally-sap-course-exide-more-chowringhee	/centers/chowringhee-road-exide-more-kolkata
-Redirect 301 /centers/accounts-gst-tally-sap-course-durgapur	/centers/city-center-durgapur
-Redirect 301 /centers/accounts-gst-tally-sap-course-dhanbad-city-centre	/centers/city-centre-dhanbad
-Redirect 301 /centers/accounts-gst-tally-sap-course-jalandhar	/centers/civil-line-jalandhar
-Redirect 301 /centers/accounts-gst-tally-sap-course-bhubaneswar	/centers/cs-pur-road-bhubaneswar
-Redirect 301 /centers/accounts-gst-tally-sap-course-hajipur	/centers/dackbanglow-road-hajipur
-Redirect 301 /centers/accounts-gst-tally-sap-course-dadar	/centers/dadar-west-mumbai
-Redirect 301 /centers/accounts-gst-tally-sap-course-pathankot	/centers/dalhousie-bypass-pathankot
-Redirect 301 /centers/accounts-gst-tally-sap-course-dalhousie	/centers/dalhousie-kolkata
-Redirect 301 /centers/accounts-gst-tally-sap-course-panbazar	/centers/danish-road-panbazar
-Redirect 301 /centers/accounts-gst-tally-sap-course-dhankawadi	/centers/dhankawadi-pune
-Redirect 301 /centers/accounts-gst-tally-sap-course-palakkad	/centers/district-hospital-road-palakkad
-Redirect 301 /centers/accounts-gst-tally-sap-course-howrah	/centers/dobson-road-howrah
-Redirect 301 /centers/accounts-gst-tally-sap-course-dombivili	/centers/dombivli-east-thane
-Redirect 301 /centers/accounts-gst-tally-sap-course-malappuram	/centers/down-hill-malappuram
-Redirect 301 /centers/accounts-gst-tally-sap-course-dunlop	/centers/dunlop-kolkata
-Redirect 301 /centers/accounts-gst-tally-sap-course-dwarka-mor	/centers/dwarka-mor-metro-station-delhi
-Redirect 301 /centers/accounts-gst-tally-sap-course-dehradun-ec-road	/centers/ec-road-dehradun
-Redirect 301 /centers/accounts-gst-tally-sap-course-ballia	/centers/gadwar-road-ballia
-Redirect 301 /centers/accounts-gst-tally-sap-course-rishikesh	/centers/ganga-nagar-rishikesh
-Redirect 301 /centers/accounts-gst-tally-sap-course-thane	/centers/gokhale-road-thane
-Redirect 301 /centers/accounts-gst-tally-sap-course-sovabazar	/centers/grey-st-sovabazar
-Redirect 301 /centers/accounts-gst-tally-sap-course-kukatpally	/centers/hyder-nagar-kukatpally
-Redirect 301 /centers/accounts-gst-tally-sap-course-patna-kidwaipuri	/centers/income-tax-chauraha-kidwaipuri
-Redirect 301 /centers/accounts-gst-tally-sap-course-lucknow-indira-nagar	/centers/indira-nagar-lucknow
-Redirect 301 /centers/accounts-gst-tally-sap-course-guwahati-6-mile	/centers/jayanagar-road-six-mile-guwahati
-Redirect 301 /centers/accounts-gst-tally-sap-course-joka	/centers/joka-kolkata
-Redirect 301 /centers/accounts-gst-tally-sap-course-hazaribag	/centers/julu-park-road-hazaribagh
-Redirect 301 /centers/accounts-gst-tally-sap-course-kalkaji	/centers/kalkaji-delhi
-Redirect 301 /centers/accounts-gst-tally-sap-course-kalyani	/centers/kalyani-nadia
-Redirect 301 /centers/accounts-gst-tally-sap-course-kankarbagh	/centers/kankarbagh-patna
-Redirect 301 /centers/accounts-gst-tally-sap-course-pitampura-rohini	/centers/kapil-vihar-pitampura
-Redirect 301 /centers/accounts-gst-tally-sap-course-kothrud	/centers/karve-rd-kothrud
-Redirect 301 /centers/accounts-gst-tally-sap-course-midnapore	/centers/keranitola-midnapore
-Redirect 301 /centers/accounts-gst-tally-sap-course-khanpur	/centers/khanpur-delhi
-Redirect 301 /centers/accounts-gst-tally-sap-course-burdwan	/centers/khosbagan-bardhaman
-Redirect 301 /centers/accounts-gst-tally-sap-course-asansol-kumarpur/	/centers/kumarpur-asansol
-Redirect 301 /centers/accounts-gst-tally-sap-course-bistupur	/centers/l-road-bistupur
-Redirect 301 /centers/accounts-gst-tally-sap-course-faridabad	/centers/main-market-faridabad
-Redirect 301 /centers/accounts-gst-tally-sap-course-ranchi-main-road	/centers/main-road-ranchi
-Redirect 301 /centers/accounts-gst-tally-sap-course-peeragarhi	/centers/main-rohtak-road-peeragarhi
-Redirect 301 /centers/accounts-gst-tally-sap-course-nelamangala	/centers/maruthi-nagar-main-road-nelamangala
-Redirect 301 /centers/accounts-gst-tally-sap-course-gandhinagar	/centers/meghmalhar-complex-gandhinagar
-Redirect 301 /centers/accounts-gst-tally-sap-course-ameerpet-hyderabad	/centers/nilgeri-block-ameerpet
-Redirect 301 /centers/accounts-gst-tally-sap-course-tollygunge	/centers/n-s-c-bose-road-tollygunge
-Redirect 301 /centers/accounts-gst-tally-sap-course-bathinda	/centers/old-bus-stand-bhatinda
-Redirect 301 /centers/accounts-gst-tally-sap-course-gurgaon	/centers/old-dlf-colony-gurgaon
-Redirect 301 /centers/accounts-gst-tally-sap-course-janakpuri	/centers/pankha-rd-janakpuri
-Redirect 301 /centers/accounts-gst-tally-sap-course-udaipur	/centers/patel-market-udaipur-city
-Redirect 301 /centers/accounts-gst-tally-sap-course-cochin	/centers/pukkattupady-road-cochin
-Redirect 301 /centers/accounts-gst-tally-sap-course-siliguri	/centers/punjabi-para-siliguri
-Redirect 301 /centers/accounts-gst-tally-sap-course-vasai	/centers/purvee-chamber-vasai
-Redirect 301 /centers/accounts-gst-tally-sap-course-pusa-road	/centers/pusa-road-delhi
-Redirect 301 /centers/accounts-gst-tally-sap-course-kolhapur	/centers/rajarampuri-kolhapur
-Redirect 301 /centers/accounts-gst-tally-sap-course-jadavpur	/centers/raja-subodh-chandra-mallick-road-jadavpur
-Redirect 301 /centers/accounts-gst-tally-sap-course-rajouri-garden	/centers/ring-road-rajouri-garden
-Redirect 301 /centers/accounts-gst-tally-sap-course-mau	/centers/sahadatpura-mau
-Redirect 301 /centers/accounts-gst-tally-sap-course-ahmednagar	/centers/savedi-road-ahemednagar
-Redirect 301 /centers/accounts-gst-tally-sap-course-chandigarh	/centers/sector-34a-chandigarh
-Redirect 301 /centers/accounts-gst-tally-sap-course-saltlake	/centers/sec-v-saltlake-bidhannagar
-Redirect 301 /centers/accounts-gst-tally-sap-course-allahabad-shantipuram	/centers/shantipuram-allahabad
-Redirect 301 /centers/accounts-gst-tally-sap-course-jammu	/centers/shastri-nagar-jammu
-Redirect 301 /centers/accounts-gst-tally-sap-course-sodepur	/centers/sodepur-kolkata
-Redirect 301 /centers/accounts-gst-tally-sap-course-hadapsar	/centers/solapur-road-hadapsar
-Redirect 301 /centers/accounts-gst-tally-sap-course-yehalanka	/centers/someshwara-nagar-main-road-yelahanka
-Redirect 301 /centers/accounts-gst-tally-sap-course-panvel	/centers/st-depot-panvel
-Redirect 301 /centers/accounts-gst-tally-sap-course-allahabad-civil-lines	/centers/tashkand-marg-allahabad
-Redirect 301 /centers/accounts-gst-tally-sap-course-tilak-road	/centers/tilak-road-pune
-Redirect 301 /centers/accounts-gst-tally-sap-course-ultadanga	/centers/vip-road-ultadanga-more-bidhannagar
-Redirect 301 /centers/accounts-gst-tally-sap-course-yamuna-vihar	/centers/yamuna-vihar-road-delhi
-Redirect 301 /ciaglobal /courses
 Redirect 301 /accounts_training_course/	/courses/accounting-course-cia
-Redirect 301 /courses/cia-courses-accounts-finance-taxation	/courses/accounting-course-cia
-Redirect 301 /courses/best-accounts-finance-banking-courses	/courses/accounting-course-cia-express
-Redirect 301 /lpu/course/Certified-Industrial-Accountant-Express	/courses/accounting-course-cia-express
-Redirect 301 /courses/tally-gst-sap-fico-accounts-course	/courses/accounting-course-cia-foundation
 Redirect 301 /short_term_accounting_course	/courses/accounting-course-cia-foundation
 Redirect 301 /accounting-tally-gst-course	/courses/accounting-course-cia-foundation
 Redirect 301 /accounts_gst_tally-erp_sap	/courses/accounting-course-cia-foundation
-Redirect 301 /courses/cia-foundation	/courses/accounting-course-cia-foundation
-Redirect 301 /courses/cia-plus-accounting-course	/courses/accounting-course-sap-fico
 Redirect 301 /diploma_finance_course	/courses/best-financial-market-course
 Redirect 301 /finance_certification_courses	/courses/best-financial-market-course
 Redirect 301 /courses/gst-course-training-institute	/courses/gst-certification-course
 Redirect 301 /best_gst_course	/courses/gst-certification-course
-Redirect 301 /courses/goods-and-service-tax	/courses/gst-certification-course
-Redirect 301 /courses/sap-course-training-institute	/courses/sap-fico-course
 Redirect 301 /best_sap_fico_course	/courses/sap-fico-course
-Redirect 301 /courses/sap-business-user	/courses/sap-fico-course
-Redirect 301 /courses/tally-course-training-institute	/courses/tallyprime-gst-course
 Redirect 301 /best_tally_prime_course	/courses/tallyprime-gst-course
 Redirect 301 /business-opportunity	/franchise-opportunity
 Redirect 301 /Students/Placements	/placements
 Redirect 301 /ica-placement	/placements
-Redirect 301 /online-admission-form/	https://www.icacourse.in/
+Redirect 301 /interview-process	/placements
+Redirect 301 /placement-live /placements
+Redirect 301 /franchise-opportunities /franchise-opportunity
+Redirect 301 /job-search /career
+Redirect 301 /certified-gst-professional-training-courses /blog/certified-gst-professional-training-courses
+#A5 at website which google earlier found as 404 pages
+
+
+#A6 at website which are redirected to online website
+Redirect 301 /online-admission-form	https://www.icacourse.in/
+Redirect 301 /Online-Admission-form https://www.icacourse.in/
+Redirect 301 /professional-online-accounts-taxation-course/  /courses/accounting-course-online-cia/
+Redirect 301 /ciacourse/advanced-accounts   https://www.icacourse.in/courses/accounting-course-online-cia/
+Redirect 301 /ciacourse/advanced-ms-excel/  https://www.icacourse.in/courses/advance-excel-course-online/
+Redirect 301 /ciacourse/business-communication https://www.icacourse.in/courses/business-accounting-course-online/
+Redirect 301 /ciacourse/certified-industrial-accountant-express-cia https://www.icacourse.in/courses/accounting-course-online-cia/
+Redirect 301 /ciacourse/tallyprime-business-accounting-gst-tds/  https://www.icacourse.in/courses/business-accounting-and-taxation-course-online/
+Redirect 301 /ciacourse/tallyprime-gst-tds/\ https://www.icacourse.in/courses/tallyprime-gst-tds-course-online/
+Redirect 301 /ciacourse	https://www.icacourse.in/online-accounting-courses/
 Redirect 301 /ciacourse/certified-industrial-accountant-express-cia-express/	https://www.icacourse.in/courses/accounting-course-online-cia-express/
 Redirect 301 /ciacourse/accounts_gst_tallyprime_sap_fico_training_institute/	https://www.icacourse.in/courses/accounting-course-online-sap-fico
 Redirect 301 /ciacourse/certified-industrial-accountant-sap/	https://www.icacourse.in/courses/accounting-course-online-sap-fico/
@@ -843,8 +903,4 @@ Redirect 301 /ciacourse/tallyprime-ms-office/	https://www.icacourse.in/courses/t
 Redirect 301 /ciacourse/tallyprime-gst-tds/	https://www.icacourse.in/courses/tallyprime-gst-tds-course-online/
 Redirect 301 /ciacourse/tallyprime-business-accounting/	https://www.icacourse.in/courses/tallyprime-with-business-accounting-online/
 Redirect 301 /ciacourse/tallyprime-payroll/	https://www.icacourse.in/courses/tallyprime-with-payroll-online/
-Redirect 301 /all-courses	/courses
-Redirect 301 /ciacourse	https://www.icacourse.in/online-accounting-courses/
-
-
-
+#A6 at website which are redirected to online website

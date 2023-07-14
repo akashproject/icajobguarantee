@@ -66,7 +66,7 @@ class AffiliateController extends Controller
                 $data['center_id'] = $userData->id;
                 $data['code'] = "Vendor-ICA_".$this->random_strings(6);
                 $affiliateUser = AffiliateUser::create($data);
-                return redirect('view-affiliate-user/'.$affiliateUser->id);
+                return redirect('/administrator/view-affiliate-user/'.$affiliateUser->id);
             } else {
                 $affiliateUser = AffiliateUser::findOrFail($data['affiliate_user_id']);
                 $affiliateUser->update($data);
@@ -75,6 +75,12 @@ class AffiliateController extends Controller
         } catch(\Illuminate\Database\QueryException $e){
             var_dump($e->getMessage()); 
         }
+    }
+
+    public function deleteUser($id) {
+        $course = AffiliateUser::findOrFail($id);
+        $course->delete();
+        return redirect()->back()->with('message', 'Affiliate user deleted successfully!');
     }
 
     public function random_strings($length_of_string)

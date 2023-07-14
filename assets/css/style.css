@@ -5026,7 +5026,9 @@ a.comment-reply-link {
 .footer-about-text p {
   font-size: 17px;
   margin-bottom: 25px;
-  color: #333333; }
+  color: #333333;
+  text-align: justify;
+ }
 
 .footer-menu {
   float: left;
