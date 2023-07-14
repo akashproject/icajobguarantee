@@ -110,7 +110,7 @@
 									<img src="{{ url('assets/img/icons/education.png') }}" >
 								</div>
 								<div class="category-title">
-									<h4>Complete the training</h4>
+									<h4>Training Completion</h4>
 								</div>
 								<div class="category-description">
 									
@@ -122,7 +122,7 @@
 									<img src="{{ url('assets/img/icons/cv.png') }}" >
 								</div>
 								<div class="category-title">
-									<h4>Biodata preparation</h4>									
+									<h4>CV Preparation</h4>									
 								</div>
 								<div class="category-description">
 									
@@ -155,7 +155,7 @@
 									<img src="{{ url('assets/img/icons/appointment.png') }}" >
 								</div>
 								<div class="category-title">
-									<h4>Appointment letter</h4>
+									<h4>Appointment Letter</h4>
 								</div>
 								<div class="category-description">
 									
