@@ -108,7 +108,7 @@
 									<h3><b> ABOUT ICA EDU SKILLS </b></h3>
 								</div>
 								<div class="course-details-content">
-									<p>ICA Edu Skills began its journey in 1999 with a vision to train the job-focused youth in India and make them employable at an affordable fee. As the industry demands ‘skilled manpower’, we too, expanded our horizon by providing practical training to our students and support them with placement at top companies and MNCs.</p>
+									<p>ICA Edu Skills began its journey in 1999 with a vision to train the job-focused youth in India and make them employable at an affordable fee. As the industry demands ‘Skilled Manpower’, we too, expanded our horizon by providing practical training to our students and support them with placement at top companies and MNCs.</p>
 								</div>
 							</div>
 						</div>

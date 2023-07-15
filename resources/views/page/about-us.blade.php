@@ -43,7 +43,7 @@
 					<div class="col-md-9">
 						<div class="about-us-content-item">
 							<div class="about-text-item">
-								<p> ICA Edu Skills, one of the best training institutes in India began its journey in 1999 with a vision to train the job-focused youth in India and make them employable at affordable fees. As the industry demands ‘skilled manpower’, we too, expanded our horizon to not just provide practical training to our students but also support them with <a href="{{ url('/placements') }}"> placement at top companies and MNCs</a>. </p>
+								<p> ICA Edu Skills, one of the best training institutes in India began its journey in 1999 with a vision to train the job-focused youth in India and make them employable at affordable fees. As the industry demands ‘Skilled Manpower’, we too, expanded our horizon to not just provide practical training to our students but also support them with <a href="{{ url('/placements') }}"> placement at top companies and MNCs</a>. </p>
 								<p>
 									Today ICA is recognized as the best training institute in India to have shaped millions of careers and changed peoples’ perception about Accounts, Finance, and Tax Education.
 								</p>
