@@ -92,6 +92,9 @@
     </footer>
 <!-- End of footer section
     ============================================= -->
+    <div id="feedback">
+        <a href="javascript:void(0)" onclick="lead_capture_form_btn(1,'')" >Enquire Now</a>
+    </div>
     @if(!check_device('desktop'))
     <div class="sticky-footer">
         <div class="container">

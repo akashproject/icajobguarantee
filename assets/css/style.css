@@ -5525,3 +5525,32 @@ span.success-icon {
   float: left;
   margin-left: 10px;
 }
+#feedback {
+  height: 0px;
+  width: 85px;
+  position: fixed;
+  right: 0;
+  top: 54%;
+  z-index: 1000;
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+#feedback a {
+  display: block;
+  background: #3e4095;
+  height: 52px;
+  padding-top: 7px;
+  width: 155px;
+  text-align: center;
+  color: #fff;
+  font-size: 17px;
+  font-weight: bold;
+  text-decoration: none;
+  -moz-animation: glowing 1500ms infinite;
+  -o-animation: glowing 1500ms infinite;
+  animation: glowing 1500ms infinite;
+}

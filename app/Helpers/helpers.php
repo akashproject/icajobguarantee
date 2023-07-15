@@ -232,6 +232,7 @@ if (! function_exists('getCenters')) {
         if($center_id){
             $centers->where('id',$center_id);
         } 
+        
         $centers = $centers->where('status',"1");
 
         //$radies = getRadius($_COOKIE['lat'],$_COOKIE['lng']);
@@ -264,6 +265,20 @@ if (! function_exists('getUniversities')) {
         }
         $universities = $universities->get();       
         return $universities;
+    }
+}
+
+if (!function_exists('getCenterByCityId')) {
+    function getCenterByCityId($city = null){
+        $center = DB::table('centers')
+                ->join('cities', 'cities.id', '=', 'centers.city_id')
+                ->select('centers.id','centers.name');
+        if($city){
+            $center->where('cities.name',$city);
+        }
+        $center->where('centers.status','1');
+        $center = $center->get();       
+        return $center;
     }
 }
 
