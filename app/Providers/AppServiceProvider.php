@@ -93,7 +93,7 @@ class AppServiceProvider extends ServiceProvider
 
             $courseTypes = CourseType::All();
             foreach ($courseTypes as $key => $value) {
-                $courses = DB::table('courses')->where("type_id",$value->id)->get();
+                $courses = DB::table('courses')->where("type_id",$value->id)->where("status",1)->get();
                 $courseTypes[$key]->courses = $courses;
             }
 

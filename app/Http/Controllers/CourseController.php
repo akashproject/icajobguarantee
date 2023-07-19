@@ -25,6 +25,7 @@ class CourseController extends Controller
             ->join('course_type', 'course_type.id', '=', 'courses.type_id')
             ->select('courses.*', 'courses.name as course_name','course_type.name as category','course_type.id as category_id')
             ->where('course_type.slug', $slug)
+            ->where('courses.status', 1)
             ->distinct()
             ->orderBy('courses.id', 'asc')
             ->get();

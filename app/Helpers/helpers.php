@@ -320,7 +320,7 @@ if (! function_exists('getCourses')) {
             if($course_type_id){
                 $courses->whereIn('course_type.id', $course_type_id);
             }
-            
+            $courses->where('courses.status', '1');
             $courses = $courses->distinct()
             ->orderBy('courses.id', 'asc')
             ->get();
