@@ -7,6 +7,9 @@
     RewriteRule ^(.*)$ https://www.icajobguarantee.com/$1 [R,L]
     RewriteEngine On
     Redirect 301 /university https://university.icajobguarantee.com/
+
+    RewriteEngine On
+    Redirect 301 /Verify/OnlineCertificateView.aspx https://student.icajobguarantee.com/verify/certificateverification.aspx
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
@@ -706,129 +709,6 @@ Redirect 301 /centers/accounts-gst-tally-sap-course-purulia    /centers/ranchi-p
 Redirect 301 /centers/purulia-road    /centers/ranchi-purulia-road
 #A3 at website all center pages
 
-#A4 all old blog urls => /blog/
-Redirect 301 /10-books-to-read-during-lockdown /blog/10-books-to-read-during-lockdown
-Redirect 301 /10-common-resume-mistakes /blog/10-common-resume-mistakes
-Redirect 301 /10-famous-indians-who-are-actually-accountants /blog/10-famous-indians-who-are-actually-accountants
-Redirect 301 /200-placements-during-lockdown-ica-edu-skills-ceo-shares-his-experience /blog/200-placements-during-lockdown-ica-edu-skills-ceo-shares-his-experience
-Redirect 301 /2020-gst-guidelines-latest-updates /blog/2020-gst-guidelines-latest-updates
-Redirect 301 /5-best-accounts-and-finance-training-institute-courses /blog/5-best-accounts-and-finance-training-institute-courses
-Redirect 301 /5-most-demanding-job-opportunities-post-covid /blog/5-most-demanding-job-opportunities-post-covid
-Redirect 301 /5-reasons-why-accountancy-is-not-boring /blog/5-reasons-why-accountancy-is-not-boring
-Redirect 301 /8-myths-about-accounting-careers /blog/8-myths-about-accounting-careers
-Redirect 301 /9-common-interview-mistakes-you-should-avoid /blog/9-common-interview-mistakes-you-should-avoid
-Redirect 301 /a-guide-to-stock-market-training-programs /blog/a-guide-to-stock-market-training-programs
-Redirect 301 /accountancy-course /blog/accountancy-course
-Redirect 301 /accounting-certification-courses-be-an-accounts-manager /blog/accounting-certification-courses-be-an-accounts-manager
-Redirect 301 /accounting-class-near-me /blog/accounting-class-near-me
-Redirect 301 /accounting-classes-best-financial-accounting-course-2022 /blog/accounting-classes-best-financial-accounting-course-2022
-Redirect 301 /accounting-course-basic-terminologies /blog/accounting-course-basic-terminologies
-Redirect 301 /accounting-course-know-all-about-indian-accounting-standards /blog/accounting-course-know-all-about-indian-accounting-standards
-Redirect 301 /accounting-course-top-4-reasons-2022 /blog/accounting-course-top-4-reasons-2022
-Redirect 301 /accounting-institute-top-10-accounting-software-in-india /blog/accounting-institute-top-10-accounting-software-in-india
-Redirect 301 /accounting-training-role-of-ai-in-accounting /blog/accounting-training-role-of-ai-in-accounting
-Redirect 301 /accounts-course-accounting-vs-auditing /blog/accounts-course-accounting-vs-auditing
-Redirect 301 /accounts-course-for-students-and-professionals /blog/accounts-course-for-students-and-professionals
-Redirect 301 /accounts-course-to-build-your-niche-in-finance /blog/accounts-course-to-build-your-niche-in-finance
-Redirect 301 /accounts-manager /blog/accounts-manager
-Redirect 301 /accounts-professional-career-opportunities-in-india /blog/accounts-professional-career-opportunities-in-india
-Redirect 301 /accounts-training-courses-top-3-surefire-steps /blog/accounts-training-courses-top-3-surefire-steps
-Redirect 301 /accounts-training-how-can-accountants-help-during-covid19-crisis /blog/accounts-training-how-can-accountants-help-during-covid19-crisis
-Redirect 301 /accounts-training-institute-opportunities /blog/accounts-training-institute-opportunities
-Redirect 301 /accounts-training-institute-role-of-accounting-in-corporate-governance /blog/accounts-training-institute-role-of-accounting-in-corporate-governance
-Redirect 301 /accounts-training-top-careers-for-accountants /blog/accounts-training-top-careers-for-accountants
-Redirect 301 /adavnced-accounting-simulation-softwares /blog/adavnced-accounting-simulation-softwares
-Redirect 301 /advanced-accounting-course-training-guide-2022 /blog/advanced-accounting-course-training-guide-2022
-Redirect 301 /advanced-excel-courses-2022 /blog/advanced-excel-courses-2022
-Redirect 301 /advanced-excel-courses-online-2022 /blog/advanced-excel-courses-online-2022
-Redirect 301 /avail-best-finance-course-class-in-2021 /blog/avail-best-finance-course-class-in-2021
-Redirect 301 /becoming-the-worlds-skill-capital-the-best-training-institute-in-india /blog/becoming-the-worlds-skill-capital-the-best-training-institute-in-india
-Redirect 301 /benefits-of-microsoft-office-specialist-certification-courses /blog/benefits-of-microsoft-office-specialist-certification-courses
-Redirect 301 /best-accountant-training-program /blog/best-accountant-training-program
-Redirect 301 /best-accounting-courses-for-commerce-students /blog/best-accounting-courses-for-commerce-students
-Redirect 301 /best-accounting-training-institute /blog/best-accounting-training-institute
-Redirect 301 /best-accounting-training-institutes-india /blog/best-accounting-training-institutes-india
-Redirect 301 /best-accounts-training-course /blog/best-accounts-training-course
-Redirect 301 /best-gst-course-digitized-tax-structure-in-india /blog/best-gst-course-digitized-tax-structure-in-india
-Redirect 301 /best-sap-accounting-courses-2022 /blog/best-sap-accounting-courses-2022
-Redirect 301 /best-sap-courses-to-enhance-career-in-finance-management /blog/best-sap-courses-to-enhance-career-in-finance-management
-Redirect 301 /best-sap-training-institute-2022 /blog/best-sap-training-institute-2022
-Redirect 301 /best-tally-course-latest-updates /blog/best-tally-course-latest-updates
-Redirect 301 /best-tally-institute-the-accountants-edition /blog/best-tally-institute-the-accountants-edition
-Redirect 301 /best-tally-training-institute /blog/best-tally-training-institute
-Redirect 301 /best-training-of-sap-fico-courses-in-india /blog/best-training-of-sap-fico-courses-in-india
-Redirect 301 /business-accounting-taxation-courses /blog/business-accounting-taxation-courses
-Redirect 301 /business-accounting-taxation-courses-for-everyone /blog/business-accounting-taxation-courses-for-everyone
-Redirect 301 /career-options-accounts-and-finance /blog/career-options-accounts-and-finance
-Redirect 301 /certified-gst-professional-training-courses /blog/certified-gst-professional-training-courses
-Redirect 301 /certified-gst-training-partner-for-your-accounting-career /blog/certified-gst-training-partner-for-your-accounting-career
-Redirect 301 /digital-union-budget-2021-india /blog/digital-union-budget-2021-india
-Redirect 301 /financial-accounting-course-in-2022 /blog/financial-accounting-course-in-2022
-Redirect 301 /financial-certification-courses-2022 /blog/financial-certification-courses-2022
-Redirect 301 /fundamentals-of-accounting /blog/fundamentals-of-accounting
-Redirect 301 /future-of-accounting-professionals-post-covid-19 /blog/future-of-accounting-professionals-post-covid-19
-Redirect 301 /gst-basic-concepts-ultimate-guide-for-students /blog/gst-basic-concepts-ultimate-guide-for-students
-Redirect 301 /gst-certification-course-in-2022 /blog/gst-certification-course-in-2022
-Redirect 301 /gst-course-anti-profiteering-measures /blog/gst-course-anti-profiteering-measures
-Redirect 301 /gst-course-reverse-charge-mechanism /blog/gst-course-reverse-charge-mechanism
-Redirect 301 /gst-course-training-india-top-10-facts /blog/gst-course-training-india-top-10-facts
-Redirect 301 /gst-course-upcoming-gst-council-meet /blog/gst-course-upcoming-gst-council-meet
-Redirect 301 /gst-professional-training /blog/gst-professional-training
-Redirect 301 /gst-training-tax-structure-in-india-simplified /blog/gst-training-tax-structure-in-india-simplified
-Redirect 301 /how-to-be-a-successful-professional-with-sap-fico-training-post-covid /blog/how-to-be-a-successful-professional-with-sap-fico-training-post-covid
-Redirect 301 /how-to-choose-best-tally-course-online /blog/how-to-choose-best-tally-course-online
-Redirect 301 /hypertension-101-what-why-and-prevention /blog/hypertension-101-what-why-and-prevention
-Redirect 301 /importance-of-financial-markets-course-in-2020-indian-economy /blog/importance-of-financial-markets-course-in-2020-indian-economy
-Redirect 301 /importance-of-gst-coaching-in-india /blog/importance-of-gst-coaching-in-india
-Redirect 301 /learn-gst-online /blog/learn-gst-online
-Redirect 301 /microsoft-advanced-excel-certifications-top-10-techniques /blog/microsoft-advanced-excel-certifications-top-10-techniques
-Redirect 301 /online-accounts-course /blog/online-accounts-course
-Redirect 301 /online-training-institute /blog/online-training-institute
-Redirect 301 /payroll-in-tally-most-definite-features-2022 /blog/payroll-in-tally-most-definite-features-2022
-Redirect 301 /professional-training-institutes-india /blog/professional-training-institutes-india
-Redirect 301 /sap-certification-a-rewarding-career-path-for-job-aspirants-in-india-beyond /blog/sap-certification-a-rewarding-career-path-for-job-aspirants-in-india-beyond
-Redirect 301 /sap-course-for-accounting-professionals /blog/sap-course-for-accounting-professionals
-Redirect 301 /sap-course-for-non-it-students /blog/sap-course-for-non-it-students
-Redirect 301 /sap-course-top-questions-on-sap-fico /blog/sap-course-top-questions-on-sap-fico
-Redirect 301 /sap-fico-course /blog/sap-fico-course
-Redirect 301 /sap-fico-training-institute /blog/sap-fico-training-institute
-Redirect 301 /sap-training-institute /blog/sap-training-institute
-Redirect 301 /sap-training-institute-product-costing-in-sap-fico /blog/sap-training-institute-product-costing-in-sap-fico
-Redirect 301 /sap-training-myths /blog/sap-training-myths
-Redirect 301 /sap-training-top-sap-fi-reports /blog/sap-training-top-sap-fi-reports
-Redirect 301 /short-term-courses-for-accounts-professionals /blog/short-term-courses-for-accounts-professionals
-Redirect 301 /tally-accounting-software /blog/tally-accounting-software
-Redirect 301 /tally-class-near-me /blog/tally-class-near-me
-Redirect 301 /tally-course-preparing-balance-sheet-in-tally /blog/tally-course-preparing-balance-sheet-in-tally
-Redirect 301 /tally-erp-9-courses-for-modern-accountants /blog/tally-erp-9-courses-for-modern-accountants
-Redirect 301 /tally-erp-9-training-allows-gst-compliance /blog/tally-erp-9-training-allows-gst-compliance
-Redirect 301 /tally-institute-near-me-2022 /blog/tally-institute-near-me-2022
-Redirect 301 /tally-training-important-tally-reports /blog/tally-training-important-tally-reports
-Redirect 301 /tally-training-institute /blog/tally-training-institute
-Redirect 301 /tally-training-institute-data-security-in-tally /blog/tally-training-institute-data-security-in-tally
-Redirect 301 /tally-training-keyboard-shortcuts /blog/tally-training-keyboard-shortcuts
-Redirect 301 /tax-consultant /blog/tax-consultant
-Redirect 301 /top-5-reasons-students-love-banking-and-finance-courses /blog/top-5-reasons-students-love-banking-and-finance-courses
-Redirect 301 /top-6-skills-of-account-manager /blog/top-6-skills-of-account-manager
-Redirect 301 /top-graduation-courses-for-non-engineering-aspirants /blog/top-graduation-courses-for-non-engineering-aspirants
-Redirect 301 /top-gst-courses-for-students-and-professionals /blog/top-gst-courses-for-students-and-professionals
-Redirect 301 /top-tips-to-get-the-best-sap-training /blog/top-tips-to-get-the-best-sap-training
-Redirect 301 /weird-accounting-facts-we-bet-you-didnt-know /blog/weird-accounting-facts-we-bet-you-didnt-know
-Redirect 301 /winning-the-war-against-covid-19 /blog/winning-the-war-against-covid-19
-Redirect 301 /top-10-ultimate-sap-training-courses-2022 /blog/top-10-ultimate-sap-training-courses-2022
-Redirect 301 /tally-training-important-tally-reports /blog/tally-training-important-tally-reports 
-
-
-Redirect 301 /category/accounts /blog/accounts
-Redirect 301 /category/dfm /blog/dfm
-Redirect 301 /category/excel /blog/excel
-Redirect 301 /category/finance /blog/finance
-Redirect 301 /category/gst /blog/gst
-Redirect 301 /category/misc /blog/misc
-Redirect 301 /category/ms-office /blog/ms-office
-Redirect 301 /category/sap-fico /blog/sap-fico
-Redirect 301 /category/tally /blog/tally
-#A4 all old blog urls => /blog/
 
 #A5 at website which google found as 404 pages
 Redirect 301 /professional-training-accounts-sap-tally  /courses/accounting-course-sap-fico

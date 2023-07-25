@@ -1090,6 +1090,7 @@ searchBAR: function (){
 }
 	jQuery(document).ready(function (){
 		Genius.init();
+		lead_capture_form_btn();
 	});
 
 	jQuery(".gotoCourseCategory").on("change",function (){
