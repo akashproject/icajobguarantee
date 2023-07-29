@@ -89,9 +89,13 @@ class UniversityCourseController extends Controller
 
     
     public function delete($id) {
-        $universityCourse = UniversityCourse::findOrFail($id);
-        $universityCourse->delete();
-        return redirect('/administrator/universityCourses');
+        try {
+            $universityCourse = UniversityCourse::findOrFail($id);
+            $universityCourse->delete();
+            return redirect('/administrator/university-courses');
+        } catch(\Illuminate\Database\QueryException $e){
+            var_dump($e->getMessage()); 
+        }
     }
 
     public function saveCurriculum(Request $request){

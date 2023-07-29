@@ -250,9 +250,13 @@ if (! function_exists('getCourses')) {
         try {
             $search = (request()->has('search'))?request()->get('search'):"";
             $university_courses = DB::table('university_courses');
+            if($university_id){
+                $university_courses->whereIn('id',json_decode($university_id));
+            }
             $university_courses = $university_courses->distinct()
             ->orderBy('university_courses.id', 'asc')
             ->get();
+            
             return $university_courses;
             //return view('courses.index',compact('model','courses','courseTypes'));
         } catch(\Illuminate\Database\QueryException $e){
@@ -340,5 +344,22 @@ if (! function_exists('getCommunicationMedium')) {
             return request()->get('lead_type');
         }
         return ($params)?$params:get_theme_setting('lead_type');
+    }
+}
+
+if (! function_exists('getRecruterById')) {
+    function getRecruterById($id=""){
+        $recruiter = DB::table('recruiters')->where('id',$id)->first();
+        return $recruiter;
+    }
+}
+
+if (! function_exists('getCourseCarriculams')) {
+    function getCourseCarriculams($id){
+        try {
+            return $carriculams = Curriculum::where('course_id',$id)->get();
+        } catch(\Illuminate\Database\QueryException $e){
+            throw $e;
+        }
     }
 }

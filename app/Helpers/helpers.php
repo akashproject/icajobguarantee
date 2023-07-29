@@ -269,13 +269,18 @@ if (! function_exists('getUniversities')) {
 }
 
 if (!function_exists('getCenterByCityId')) {
-    function getCenterByCityId($city = null){
+    function getCenterByCityId($city = null,$centername = null){
         $center = DB::table('centers')
                 ->join('cities', 'cities.id', '=', 'centers.city_id')
                 ->select('centers.id','centers.name');
         if($city){
             $center->where('cities.name',$city);
         }
+
+        if($centername){
+            $center->where('centers.name',$centername);
+        }
+
         $center->where('centers.status','1');
         $center = $center->get();       
         return $center;

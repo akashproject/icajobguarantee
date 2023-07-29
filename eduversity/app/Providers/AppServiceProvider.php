@@ -105,8 +105,6 @@ class AppServiceProvider extends ServiceProvider
                 '#about' => "About Us",
                 '#recruiters' => "Recruiters",
                 '#course' => "Courses",
-                '#certificate' => 'Certificates',
-                '#galleries' => "Gallery",
                 '#alumni' => "Testimonial",
                 '#faq' => "FAQs",
             );

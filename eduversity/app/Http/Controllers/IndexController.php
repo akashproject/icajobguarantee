@@ -7,6 +7,9 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\UniversityCourse;
 use App\Models\University;
+use App\Models\City;
+use App\Models\Brochure;
+use App\Models\Lead;
 
 use Mail;
 class IndexController extends Controller
@@ -26,7 +29,7 @@ class IndexController extends Controller
             ->orderBy('university_courses.name', 'asc')
             ->get();
             $universities = University::where('status', 1)->get();
-            return view($this->layout.'index',compact('courses','universities'));
+            return view('index',compact('courses','universities'));
         } catch(\Illuminate\Database\QueryException $th){
             throw $th;
         }
@@ -120,7 +123,24 @@ class IndexController extends Controller
 
     public function captureLeadToDB($postData){
         try {
-            return response()->json(true, $this->_statusOK);
+            $data = array(
+                'role' => 'b2c',
+                'name' => $postData['name'],
+                'email' => $postData['email'],
+                'mobile' => $postData['mobile'],
+                'center' => (isset($postData['university']))?$postData['university']:'',
+                'pincode' => (isset($postData['pincode']))?$postData['pincode']:'',
+                'latitude' => (isset($_COOKIE['lat']))?$_COOKIE['lat']:'',
+                'longitude' => (isset($_COOKIE['lng']))?$_COOKIE['lat']:'',
+                'utm_source' => $postData['utm_source'],
+                'utm_campaign' => $postData['utm_campaign'],
+                'crmStatus' => "0",
+                'mailStatus' => "0",
+            );
+            $lead = Lead::create($data);
+            DB::table('leadmeta')->insert(['lead_id' => $lead->id,'meta_key' => 'source','meta_value' => 'university']);
+
+            return response()->json($lead, $this->_statusOK);
         } catch(\Illuminate\Database\QueryException $e){
             //throw $th;
             return response()->json($e, $this->_statusOK);
@@ -147,7 +167,7 @@ class IndexController extends Controller
             'field5' => $postData['utm_device']
         );
 
-        echo $apiData; exit;
+        
         $url = "https://prodivrapi.extraaedge.com/api/WebHook/addLead"; 		
         $curl = curl_init();
         
@@ -174,7 +194,7 @@ class IndexController extends Controller
     function cognoai_api_calling($postData){
         $whatsappArray = (object) array(
             "authorization" => "1d27951f-1532-48a2-b892-b84453945a06", 
-            "campaign_id" => "144458", 
+            "campaign_id" => "147227", 
             "whatsapp_bsp" => "1", 
             "client_data" => array(
                 "phone_number" => "+91".$postData['mobile'], 

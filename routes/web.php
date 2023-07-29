@@ -51,6 +51,9 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::post('/save-affiliate-user', [App\Http\Controllers\Administrator\AffiliateController::class, 'saveUser'])->name('admin-save-affiliate-user');
         Route::get('/delete-affiliate-user/{id}', [App\Http\Controllers\Administrator\AffiliateController::class, 'deleteUser'])->name('admin-delete-affiliate-user');
         
+        Route::get('/enquires', [App\Http\Controllers\Administrator\EnquiryController::class, 'index'])->name('admin-enquires');
+        Route::get('/generate-enquiry-form', [App\Http\Controllers\Administrator\EnquiryController::class, 'createForm'])->name('admin-generate-enquiry-form');
+
         //Page
         Route::get('/pages', [App\Http\Controllers\Administrator\PageController::class, 'index'])->name('admin-pages');
         Route::get('/add-page', [App\Http\Controllers\Administrator\PageController::class, 'Add'])->name('admin-add-page');
@@ -137,19 +140,29 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::get('/delete-university', [App\Http\Controllers\Administrator\UniversityController::class, 'delete'])->name('admin-delete-university');
 
         // University Course
-        Route::get('/university-courses', [App\Http\Controllers\Administrator\UniversityCourseController::class, 'index'])->name('admin-universities');
-        Route::get('/add-university-course', [App\Http\Controllers\Administrator\UniversityCourseController::class, 'add'])->name('admin-add-university');
-        Route::get('/view-university-course/{id}', [App\Http\Controllers\Administrator\UniversityCourseController::class, 'show'])->name('admin-view-university');
-        Route::post('/save-university-course', [App\Http\Controllers\Administrator\UniversityCourseController::class, 'save'])->name('admin-save-university');
-        Route::get('/university-curriculum/{id}', [App\Http\Controllers\Administrator\UniversityCourseController::class, 'curriculum'])->name('admin-university-curriculum');
-        Route::post('/save-university-curriculum', [App\Http\Controllers\Administrator\UniversityCourseController::class, 'saveCurriculum'])->name('admin-save-university-curriculum');
+        Route::get('/university-courses', [App\Http\Controllers\Administrator\UniversityCourseController::class, 'index'])->name('admin-universitie-courses');
+        Route::get('/add-university-course', [App\Http\Controllers\Administrator\UniversityCourseController::class, 'add'])->name('admin-add-university-course');
+        Route::get('/view-university-course/{id}', [App\Http\Controllers\Administrator\UniversityCourseController::class, 'show'])->name('admin-view-course-university');
+        Route::post('/save-university-course', [App\Http\Controllers\Administrator\UniversityCourseController::class, 'save'])->name('admin-save-course-university');
+        Route::get('/delete-university-course/{id}', [App\Http\Controllers\Administrator\UniversityCourseController::class, 'delete'])->name('admin-delete-university-course');
+        Route::get('/university-curriculum/{id}', [App\Http\Controllers\Administrator\UniversityCourseController::class, 'curriculum'])->name('admin-university-course-curriculum');
+        Route::post('/save-university-curriculum', [App\Http\Controllers\Administrator\UniversityCourseController::class, 'saveCurriculum'])->name('admin-save-university-course-curriculum');
        
+        // University Ads
+        //Page
+        Route::get('/university-ad-pages', [App\Http\Controllers\Administrator\UniversityAdPageController::class, 'index'])->name('admin-ad-pages');
+        Route::get('/add-university-ad-page', [App\Http\Controllers\Administrator\UniversityAdPageController::class, 'Add'])->name('admin-add-ad-page');
+        Route::get('/view-university-ad-page/{id}', [App\Http\Controllers\Administrator\UniversityAdPageController::class, 'show'])->name('admin-ad-view-page');
+        Route::post('/save-university-ad-page', [App\Http\Controllers\Administrator\UniversityAdPageController::class, 'save'])->name('admin-sad-ave-page');
+        Route::get('/delete-university-ad-page/{id}', [App\Http\Controllers\Administrator\UniversityAdPageController::class, 'delete'])->name('admin-ad-delete-page');
+        
         //Brochure
         Route::get('/brochures', [App\Http\Controllers\Administrator\BrochureController::class, 'index'])->name('admin-brochures');
         Route::get('/add-brochure', [App\Http\Controllers\Administrator\BrochureController::class, 'add'])->name('add-brochure');
         Route::get('/view-brochure/{id}', [App\Http\Controllers\Administrator\BrochureController::class, 'show'])->name('admin-view-brochure');
         Route::post('/save-brochure', [App\Http\Controllers\Administrator\BrochureController::class, 'save'])->name('admin-save-brochure');
         Route::get('/delete-brochure/{id}', [App\Http\Controllers\Administrator\BrochureController::class, 'delete'])->name('admin-delete-center');
+        
         //Jobs
         Route::get('/jobs', [App\Http\Controllers\Administrator\JobController::class, 'index'])->name('admin-jobs');
         Route::get('/add-job', [App\Http\Controllers\Administrator\JobController::class, 'add'])->name('admin-add-job');
@@ -211,6 +224,7 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
 Route::get('/{slug}', [App\Http\Controllers\PageController::class, 'index'])->where('slug', '([A-Za-z0-9\-]+)');
 Route::get('/ads/{slug}', [App\Http\Controllers\AdPageController::class, 'index'])->where('slug', '([A-Za-z0-9\-]+)');
 
+
 //Affiliate Dashboard
 Route::get('/affiliate-dashboard/{code}', [App\Http\Controllers\AffiliateController::class, 'dashboard'])->name('affiliate-dashboard');
 
@@ -230,6 +244,7 @@ Route::get('/city/{slug}', [App\Http\Controllers\CenterController::class, 'city'
 Route::post('/submit-review', [App\Http\Controllers\ReviewController::class, 'create'])->name('submit-review');
 
 Route::get('/tags/{slug}', [App\Http\Controllers\TagController::class, 'index'])->name('tags');
+
 //Capture Leads
 Route::post('/save-contact', [App\Http\Controllers\PageController::class, 'saveContact'])->name('save-contact');
 Route::post('/submit-mobile-otp', [App\Http\Controllers\IndexController::class, 'submitMobileOtp'])->name('submit-mobile-otp');

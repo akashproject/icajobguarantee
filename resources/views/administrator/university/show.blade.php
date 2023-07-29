@@ -26,7 +26,7 @@
 						<div class="form-group row">
 							<label for="title" class="col-sm-3 text-right control-label col-form-label">Title</label>
 							<div class="col-sm-9">
-								<input type="text" class="form-control" name="title" id="title" placeholder="Title Here"  value="{{ $university->title }}" >
+								<input type="text" class="form-control" name="name" id="name" placeholder="Title Here"  value="{{ $university->name }}" >
 							</div>
 						</div>
 
@@ -54,7 +54,8 @@
 							<div class="col-sm-9">
 								<div class="course-content" >
 									@foreach($courses as $course)
-										<p> <input type="checkbox" name="courses[]" value="{{$course->id}}"  {{ (in_array($university->courses,  $course->id))?'checked' : '' }} > {{$course->name}} </p>
+
+										<p> <input type="checkbox" name="courses[]" value="{{$course->id}}" {{ (in_array($course->id,$university->courses))?'checked' : '' }} > {{$course->name}} </p>
 									@endforeach
 								</div>
 							</div>

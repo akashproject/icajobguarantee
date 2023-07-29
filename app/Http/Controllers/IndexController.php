@@ -318,6 +318,7 @@ class IndexController extends Controller
                 'mailStatus' => "0",
             );
             $lead = Lead::create($data);
+            DB::table('leadmeta')->insert(['lead_id' => $lead->id,'meta_key' => 'source','meta_value' => 'cia']);
             return response()->json($lead, $this->_statusOK);
         } catch(\Illuminate\Database\QueryException $e){
             //throw $th;

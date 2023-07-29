@@ -99,6 +99,7 @@
     <script src="https://www.icajobguarantee.com/assets/js/waypoints.min.js"></script>
     <script src="https://www.icajobguarantee.com/assets/js/jquery-ui.js"></script>
     <script src="https://www.icajobguarantee.com/assets/js/script.js"></script>
+    <script src="{{ url('assets/js/script.js') }}"></script>
 </body>
 
 </html>

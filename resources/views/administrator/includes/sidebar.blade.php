@@ -101,7 +101,19 @@
 
                                 </ul>
 
-                            </li>	
+                            </li>
+                            
+                            <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-book-multiple-variant"></i><span class="hide-menu">University Ad Pages </span></a>
+
+                                <ul aria-expanded="false" class="collapse  first-level">
+
+                                    <li class="sidebar-item"><a href="{{ url('administrator/university-ad-pages') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> All Ad Pages </span></a></li>
+
+                                    <li class="sidebar-item"><a href="{{ url('administrator/add-university-ad-page') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Add University Ad Page </span></a></li>
+
+                                </ul>
+
+                            </li>
                             
                             <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-comment-question-outline"></i><span class="hide-menu">Faqs</span></a>
 
@@ -212,6 +224,12 @@
                             <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-face"></i><span class="hide-menu">Affiliate Users</span></a>
                                 <ul aria-expanded="false" class="collapse  first-level">
                                     <li class="sidebar-item"><a href="{{ url('administrator/affiliate-users') }}" class="sidebar-link"><i class="mdi mdi-emoticon"></i><span class="hide-menu"> All Affiliate Users </span></a></li>
+                                </ul>
+                            </li> 
+
+                            <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-face"></i><span class="hide-menu">Enquiries</span></a>
+                                <ul aria-expanded="false" class="collapse  first-level">
+                                    <li class="sidebar-item"><a href="{{ url('administrator/enquires') }}" class="sidebar-link"><i class="mdi mdi-emoticon"></i><span class="hide-menu"> All Enquiries </span></a></li>
                                 </ul>
                             </li> 
                         @endif

@@ -59,33 +59,7 @@ preloader: function (){
 ================================================*/
 loadPincode: function (){
 	jQuery(window).on('load', function(){
-		var google_conversion_id = 957116240;
-		var google_conversion_language = "en";
-		var google_conversion_format = "3";
-		var google_conversion_color = "ffffff";
-		var google_conversion_label = "xTLNCK-wtakYENDescgD";
-		var google_remarketing_only = false;
-
-		$.getScript('//www.googleadservices.com/pagead/conversion.js');
-
-		var image = new Image(1, 1); 
-		image.src = "//www.googleadservices.com/pagead/conversion/957116240/?label=xTLNCK-wtakYENDescgD&guid=ON&script=0";  
-		// $.ajaxSetup({
-		// 	headers: {
-		// 	'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-		// 	}
-		// });
-		// $.ajax({
-		// 	url: `${globalUrl}center/get-center-by-pincode`,
-		// 	type: "post",
-		// 	data: {
-		// 		"pincode":711203
-		// 	},
-		// 	success: function(result) {
-		// 		pincode = result
-		// 		console.log(pincode);
-		// 	}
-		// });	
+		
 	});
 },
 
@@ -1090,7 +1064,10 @@ searchBAR: function (){
 }
 	jQuery(document).ready(function (){
 		Genius.init();
-		lead_capture_form_btn();
+		if (!jQuery.cookie("showPopup")) {
+			lead_capture_form_btn();
+			jQuery.cookie("showPopup",true);
+		}
 	});
 
 	jQuery(".gotoCourseCategory").on("change",function (){

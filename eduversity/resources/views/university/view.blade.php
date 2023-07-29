@@ -50,6 +50,7 @@
 									<ul class="product-tab ">
 										<li rel="tab1" class="active">Summary</li>
 										<li rel="tab2" class=""> Highlights </li>
+										<li rel="tab3" class=""> Courses </li>
 										<li rel="tab4" class=""> Placements </li>
 										<li rel="tab5" class=""> Gallery  </li>
 										<li rel="tab6" class="tab_last"> Map </li>
@@ -79,6 +80,15 @@
 												</div>
 												{!! $contentMain->highlights !!}
 											</div>
+										</div>
+									</div>
+									<!-- #tab3 -->
+									<div id="tab3" class="tab-content-1 pt35">
+										<div class="placed-grid-box">
+											
+										</div>
+										<div class="placed-grid-box">
+											
 										</div>
 									</div>
 									<!-- #tab3 -->
@@ -153,15 +163,15 @@
 												<i class="text-gradiant fas fa-map-marker-alt"></i>
 											</div>
 											<div class="info-content">
-												<span class="info-id">ICA Edu Skills | Dalhousie</span>
-												<span class="info-text">
+												<span class="info-id">{{$university->name}}</span>
+												<!-- <span class="info-text">
 													<a href="javascript:void(0)"> ICA Edu Skills Dalhousie
 														2nd Floor, 4, Brabourne Rd,
 														Radha Bazar, Lal Bazar,
 														Dalhousie, Kolkata, West Bengal – 700001 </a>
 													<br>
 													<a href="#" class="info-id"> Get Direction </a>
-												</span>
+												</span> -->
 											</div>
 										</div>
 									</li>
@@ -183,9 +193,9 @@
 				<h3>Choose our<span> Best Courses.</span></h3>
 			</div>
 			<div class="best-course-area mb10">
-				<div class="row">
+				<div class="row justify-content-center">
 				@if(getCourses())
-					@foreach (getCourses() as $value)
+					@foreach (getCourses($university->courses) as $value)
 					<div class="col-md-3">
 						<div class="best-course-pic-text relative-position">
 							<div class="best-course-pic relative-position">
@@ -223,8 +233,8 @@
 						</div>
 					</div>
 					<!-- /course -->
-				@endforeach	
-					@endif	
+					@endforeach	
+				@endif	
 					
 				</div>
 			</div>

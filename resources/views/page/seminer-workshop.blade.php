@@ -90,7 +90,37 @@
 								@csrf
 								<div class="form_process" >
 									<div class="lead_steps step1 active" > 
-										@include('common.leadCaptureFormField')
+									@csrf
+									<div class="contact-info formFieldName">
+										<input id="formFieldName" name="name" type="text" placeholder="Enter Your Name" autocomplete="off" required>
+									</div>
+									<div class="contact-info formFieldEmail">
+										<input id="formFieldEmail" name="email" type="email" placeholder="Enter Your Email" autocomplete="off" required>
+									</div>
+									<div class="contact-info formFieldMobile">
+										<input id="formFieldMobile" name="mobile" type="number" placeholder="Enter Your Mobile" autocomplete="off" min="6000000000" max="9999999999" required>
+									</div>
+									<div class="contact-info formFieldPincode">
+										<input id="formFieldPincode" name="pincode" type="number" placeholder="Enter Your Address Pincode" min="100000" max="999999" autocomplete="off" required>
+									</div>
+									@if(isset($_GET['city']))
+										<select class="center" name="center" required>
+											@if(!isset($_GET['center']))
+												<option value="">Select Center</option>
+											@endif
+											@php
+												$center = (isset($_GET['center']))?$_GET['center']:''
+											@endphp
+										
+											@foreach(getCenterByCityId($_GET['city'],$center) as $value)
+												<option value="{{$value->name}}" data-id="{{$value->id}}"> {{$value->name}} </option>
+											@endforeach
+										</select>
+									@else
+									<input type="hidden" name="center" value="{{ (isset($center) )?$center:'' }}">
+									@endif
+									<input type="hidden" name="course_id" value="">
+									<input type="hidden" name="brochure_id" value="">
 										<div class="contact-info formFieldInstitute">
 											<input id="formFieldInstitute" name="institute" type="text" placeholder="Enter your school/college name" autocomplete="off">
 										</div>
@@ -308,11 +338,6 @@
 						</div>
 						<div class="col-md-4" >
 							<img src="{{getSizedImage('',63)}}" >
-							<div class="course-side-bar-widget">
-								<div class="genius-btn gradient-bg text-center text-uppercase float-left bold-font">
-									<a onclick="lead_capture_form_btn(1,'')" href="javascript:void(0)">  Apply Certificate <i class="fas fa-angle-double-right"></i></a>
-								</div>
-							</div>
 						</div>
 					</div>
 					<div class="certificate-list row">
