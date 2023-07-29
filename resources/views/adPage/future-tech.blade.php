@@ -33,11 +33,27 @@
 						<nav class="navbar-menu float-right">
 							<div class="nav-menu ul-li">
 								<ul>
-									@foreach ($adHeaderMenu as $key => $menuItem)
-										<li class="">
-											<a href="{{ url($key) }}">{{ $menuItem }}</a>
-										</li>
-									@endforeach
+									<li class="">
+                                       <a href="#features">Features</a>
+                                    </li>
+                                    <li class="">
+                                       <a href="#tools">Tools</a>
+                                    </li>
+                                    <li class="">
+                                       <a href="#courses">Courses</a>
+                                    </li>
+                                    <li class="">
+                                       <a href="#classroom">Classroom</a>
+                                    </li>
+                                    <li class="">
+                                       <a href="#projects">Projects</a>
+                                    </li>
+                                    <li class="">
+                                       <a href="#certification">Certification</a>
+                                    </li>
+                                    <li class="">
+                                       <a href="#faqs">FAQs</a>
+                                    </li>
 								</ul>
 							</div>
 						</nav>
@@ -46,11 +62,27 @@
 							<div class="logo"><a href="javascript:void(0)"><img src="{{ url('assets/img/logo/logo.png') }}" alt="Logo"></a></div>
 							<nav>
 								<ul>
-									@foreach ($adHeaderMenu as $key => $menuItem)
-										<li class="">
-											<a href="{{ url($key) }}">{{ $menuItem }}</a>
-										</li>
-									@endforeach
+									<li class="">
+                                       <a href="#features">Features</a>
+                                    </li>
+                                    <li class="">
+                                       <a href="#tools">Tools</a>
+                                    </li>
+                                    <li class="">
+                                       <a href="#courses">Courses</a>
+                                    </li>
+                                    <li class="">
+                                       <a href="#classroom">Classroom</a>
+                                    </li>
+                                    <li class="">
+                                       <a href="#projects">Projects</a>
+                                    </li>
+                                    <li class="">
+                                       <a href="#certification">Certification</a>
+                                    </li>
+                                    <li class="">
+                                       <a href="#faqs">FAQs</a>
+                                    </li>
 								</ul>
 							</nav>
 
@@ -59,27 +91,31 @@
 				</div>
 			</div>
 		</div>
-	</header>	
-<!-- Start of Header section
-	============================================= -->
+	</header>
+
+	
+	<!-- Start of Header section -->
     <section id="breadcrumb" class="ad-page-banner relative-position backgroud-style" style="background-image: url({{ (isset($contentMain->banner_image))?getSizedImage('',$contentMain->banner_image):url('assets/img/banner/brt-1.jpg') }});" >
 		<div class="container">
 			<div class="row">
 				<div class="col-md-7">
 					<div class="ad-banner-content text-white">
 						<div class="ad-banner-title">
-							<h1>Go Straight To Success, Your Stairway To A Job Begins Here</h1>
+							<h1 class="text-center"> Certificate & PG Diploma Program in Data Science & Data Engineering </h1>
 						</div>
 						<div class="ad-banner-sub-title">
-							<h2> Ensure Your Career With India’s 1st & Only 100 % Job Guarantee Courses in Accounts, Finance, Banking & Taxation! </h2>
+							<h2 class="text-center"> Your Path to Cutting-Edge Technology using Artificial Intelligence & Machine Learning</h2>
+						</div>
+						<div class="ad-banner-sub-title">
+						<p class="text-center text-white"> Be a part of future of technology with 100% Job-Ready Courses <sup>*</sup></p>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-5">
+				<div id="apply" class="col-md-5">
 					<div class="highlighted-content-wrapper text-center">
 						<div class="ad_banner_form_wrapeer" >
 							<div class="register-fomr-title text-center">
-								<h3 class="bold-font text-white"><span>Know your</span> Career Opportunity.</h3>
+								<h3 class="bold-font text-white">Become a<br />Data Science Expert</h3><p>Our experts will guide you through the right training process for a lucrative career ahead of you.</p>
 							</div>
 							<div class="register-form-area text-left" >
 								<form id="banner_lead_capture_form" class="lead_form" action="{{ url('capture-lead') }}" method="POST" enctype="multipart/form-data">
@@ -111,9 +147,9 @@
 			</div>
 		</div>
 	</section>
-
-	<!-- Start of Search Courses
-		============================================= -->
+	<!-- End of Header section -->
+	
+	<!-- Start of USP Band section -->
 		<section id="usp" class="search-course-section search-course-secound">
 			<div class="container">
 				<div class="search-counter-up">
@@ -124,8 +160,8 @@
 									<i class="text-gradiant flaticon-graduation-hat"></i>
 								</div>
 								<div class="counter-number">
-									<span class="counter-count bold-font">53260</span><span>+</span>
-									<p>Jobs In Naukri</p>
+									<span class="counter-count bold-font">NSDC</span><span></span>
+									<p>Certification</p>
 								</div>
 							</div>
 						</div>
@@ -137,8 +173,8 @@
 									<i class="text-gradiant flaticon-book"></i>
 								</div>
 								<div class="counter-number">
-									<span class="counter-count bold-font">37642</span><span>+</span>
-									<p>Jobs In Linkedin</p>
+									<span class="counter-count bold-font">6</span><span>+</span>
+									<p>Industry Projects</p>
 								</div>
 							</div>
 						</div>
@@ -150,8 +186,8 @@
 									<i class="text-gradiant flaticon-favorites-button"></i>
 								</div>
 								<div class="counter-number">
-									<span class="counter-count bold-font">13194</span><span>+</span>
-									<p>Jobs In Timejobs</p>
+									<span class="counter-count bold-font">100%</span>
+									<p>Job Assurance</p>
 								</div>
 							</div>
 						</div>
@@ -163,8 +199,8 @@
 									<i class="text-gradiant flaticon-group"></i>
 								</div>
 								<div class="counter-number">
-									<span class="counter-count bold-font">20000</span><span>/mo</span>
-									<p>Average Salary</p>
+									<span class="counter-count bold-font">No Cost</span>
+									<p>EMI Option</p>
 								</div>
 							</div>
 						</div>
@@ -173,95 +209,125 @@
 				</div>
 			</div>
 		</section>
-	<!-- End of Search Courses
-		============================================= -->
+	<!-- End of USP Band section -->
 
-	<!-- Hightlists section
-		============================================= -->
-		<section id="about" class="highlights-section">
+    <style type="text/css">
+        .key-highlights { height: auto!important; }
+    </style>
+
+	<!-- Star of Key Features section -->
+		<section id="features" class="highlights-section">
 			<div class="container">
+			    <div class="section-title mb20 headline text-center">
+					<span class="subtitle text-uppercase"> COURSE INFO </span>
+					<h3> Key <span> Features </span></h3>
+				</div>
 				<div class="row">
-					<div class="col-md-5 mb20 text-center">
+					<div class="col-md-4 mt10 text-center">
 						<img src="https://www.myidcm.com/wp-content/uploads/2022/10/IDCM-Landing-Page_Image-500×580-1-1.png">
 					</div>
-					<div class="col-md-7 mt10">
-						<div class="section-title mb20 headline text-center">
-							<span class="subtitle text-uppercase">Key Highlights </span>
-							<h3>Best Prefferd<span> Modules.</span></h3>
-						</div>
+					
+					<div class="col-md-8 mt10">
 						<div class="row text-center">
-							<div class="col-md-4 col-6"> 
+							<div class="col-md-6 col-6"> 
 								<div class="key-highlights" >
 									<img src="{{ url('assets/img/icons/tick.png')}}" >
-									<h6> 100% Job Guarantee </h6>
+									<h6> Hands-on Experience </h6>
+									<p>99% Practical Training to focus on real life projects on healthcare, financial services, retail, social media and many more to cover tools such as Python, Keras, Tensorflow.</p>
 								</div>
 							</div>
-							<div class="col-md-4 col-6"> 
+							<div class="col-md-6 col-6"> 
 								<div class="key-highlights" >
 									<img src="{{ url('assets/img/icons/tick.png')}}" >
-									<h6> Triple Certification </h6>
+									<h6> Course Certification </h6>
+									<p>The courses at ICA Edu Skills are cetified by National Skill Development Corporation (NSDC) under Ministry of Skill Development And Entrepreneurship, Govt. of India</p>
 								</div>
 							</div>
-							<div class="col-md-4 col-6"> 
+							<div class="col-md-6 col-6"> 
 								<div class="key-highlights" >
 									<img src="{{ url('assets/img/icons/tick.png')}}" >
-									<h6> Interactive E-Classes </h6>
+									<h6> Industry Expert Faculty </h6>
+									<p>At ICA, all faculty members are data science experts, working with corporates like JP Morgan, Nomura, Genpact, Accenture, Citibank and Barclays etc.</p>
 								</div>
 							</div>
-							<div class="col-md-4 col-6"> 
+                            <div class="col-md-6 col-6"> 
 								<div class="key-highlights" >
 									<img src="{{ url('assets/img/icons/tick.png')}}" >
-									<h6> Any Time Job Card Facility </h6>
+									<h6> Comprehensive Learning </h6>
+									<p>Program covering artificial intelligence and machine learning concept such as Python, R, SQL, Tableau and PowerBI in depth.</p>
 								</div>
 							</div>
-							<div class="col-md-4 col-6"> 
-								<div class="key-highlights" >
-									<img src="{{ url('assets/img/icons/tick.png')}}" >
-									<h6> Mock Interviews </h6>
-								</div>
-							</div>
-							<div class="col-md-4 col-6"> 
-								<div class="key-highlights" >
-									<img src="{{ url('assets/img/icons/tick.png')}}" >
-									<h6> 90% Practical + 10% Theory </h6>
-								</div>
-							</div>
+                            
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
-
-	<!-- End Hightlists section
-	============================================= -->
-	<!-- Start secound testimonial section
-		============================================= -->
-	<section id="recruiters" class="sponsor-section">
+	<!-- Star of Key Features section -->
+	
+	<!-- Start of tools section -->
+	<section id="tools" class="sponsor-section">
 		<div class="container">
 			<div class="section-title mb35 headline text-center">
-				<span class="subtitle text-uppercase">Student Placement</span>
-				<h3>Our Alumni <span>Worked At.</span></h3>
+				<span class="subtitle text-uppercase"> COURSE INFO </span>
+				<h3> Tools <span> you will learn </span></h3>
 			</div>
-			<div class="row" >
-				@foreach(getRecruiters() as $value)
+			<div class="row">
 					<div class="col-md-2 col-lg-2 col-6 mt10 mb20" >
 						<div class="placement-grid" >
-							<img src="{{ (isset($value->featured_image))?getSizedImage('',$value->featured_image):'https://dummyimage.com/140x140' }}" alt="">		
+							<img src="https://wpv1.icajobguarantee.com/wp-content/uploads/2023/01/excel.png" width="100%" alt="">		
 						</div>
 					</div>
-				@endforeach
+					<div class="col-md-2 col-lg-2 col-6 mt10 mb20" >
+						<div class="placement-grid" >
+							<img src="https://wpv1.icajobguarantee.com/wp-content/uploads/2023/01/r.png" width="100%" alt="">		
+						</div>
+					</div>
+					<div class="col-md-2 col-lg-2 col-6 mt10 mb20" >
+						<div class="placement-grid" >
+							<img src="https://wpv1.icajobguarantee.com/wp-content/uploads/2023/01/python.png" width="100%" alt="">		
+						</div>
+					</div>
+					<div class="col-md-2 col-lg-2 col-6 mt10 mb20" >
+						<div class="placement-grid" >
+							<img src="https://wpv1.icajobguarantee.com/wp-content/uploads/2023/01/powerbi.png" width="100%" alt="">		
+						</div>
+					</div>
+					<div class="col-md-2 col-lg-2 col-6 mt10 mb20" >
+						<div class="placement-grid" >
+							<img src="https://wpv1.icajobguarantee.com/wp-content/uploads/2023/01/tableau.jpg" width="100%" alt="">		
+						</div>
+					</div>
+					<div class="col-md-2 col-lg-2 col-6 mt10 mb20" >
+						<div class="placement-grid" >
+							<img src="https://wpv1.icajobguarantee.com/wp-content/uploads/2023/01/sql.png" width="100%" alt="">		
+						</div>
+					</div>	
+				<div class="row">
+				    <div class="col-md-12 text-center">
+						<div class="genius-btn gradient-bg text-center text-uppercase bold-font">
+							<a href="#apply"> <i class="fas fa-download"></i> Apply Now </a>
+						</div>
+					</div>    
+				</div>	
+					
 			</div>
 		</div>
 	</section>
-	<!-- End secound testimonial section
-		============================================= -->
-		<!-- Start of best course
-	============================================= -->
-	<section id="course" class="best-course-section">
+	<section>
+	<!-- End of tools section -->
+	
+    <style type="text/css">
+		th, td { border: 1px solid #393185!important; }
+		th { background: #393185!important; color: #fff!important; }
+    </style>    
+ 
+	<!-- Start of explore courses section -->
+	<section id="courses" class="best-course-section">
 		<div class="container">
 			<div class="section-title mb45 headline text-center">
-				<span class="subtitle text-uppercase">BROWSE COURSES</span>
-				<h3>Browse Our<span> Best Course.</span></h3>
+				<span class="subtitle text-uppercase"> EXPLORE COURSES </span>
+				<h3> Browse Our <span> Best Courses </span></h3>
 			</div>
 			<div class="faq-tab mb65">
 				<div class="faq-tab-ques ul-li">
@@ -308,7 +374,7 @@
 											</div>
 											<div class="best-course-text">
 												<div class="course-title mb20 headline relative-position height-60">
-													<h3><a target="_blank" href="{{ URL::to('/courses') }}/{{ $course->slug }}"> {{ $course->name }} </a> 
+													<h3> {{ $course->name }}  
 													<span class="trend-bestseller text-uppercase bold-font">
 														<i class="fas fa-bolt"></i> Bestseller</span> 
 													</h3>
@@ -504,113 +570,72 @@
 		</div>
 	</section>
 
-	<!-- Start of testimonial secound section
+	<!-- Start of classroom views section
 	============================================= -->
-	<!-- <section id="certificate" class="certification-section">
-		<div class="container">
-			<div class="certificate-slide">
-				<div class="section-title mb20 headline text-center">
-					<span class="subtitle text-uppercase">Certification</span>
-					<h3>Issued<span> Certificates.</span></h3>
-				</div>
-				<div id="certificate-slide-item" class="certificate-slide-area">
-					<div class="certificate-list row">
-						<div class="col-md-8" >
-							<div class="section-title-2 mb65 headline text-left">
-								<h2>CIA<span> Certificate.</span></h2>
-							</div>
-							<p>  I had zero confidence level. Thanks to rigorous mock interview sessions I was able to crack all the interview rounds and today my dream to work in an MNC came true..." </p>
-							<ul>
-								<li>I had zero confidence level. Thanks to rigorous mock interview sessions</li>
-								<li>I had zero confidence level. Thanks to rigorous mock interview sessions</li>
-							</ul>
-							<p>  I had zero confidence level. Thanks to rigorous mock interview sessions I was able to crack all the interview rounds and today my dream to work in an MNC came true..." </p>
-							<p>  I had zero confidence level. Thanks to rigorous mock interview sessions I was able to crack all the interview rounds and today my dream to work in an MNC came true..." </p>
-						</div>
-						<div class="col-md-4" >
-							<img src="{{getSizedImage('',63)}}" >
-							<div class="course-side-bar-widget">
-								<div class="genius-btn gradient-bg text-center text-uppercase float-left bold-font">
-									<a onclick="lead_capture_form_btn(1,'')" href="javascript:void(0)">  Apply Certificate <i class="fas fa-angle-double-right"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="certificate-list row">
-						<div class="col-md-8" >
-							<div class="section-title-2 mb65 headline text-left">
-								<h2>MicroSoft<span> Certificate.</span></h2>
-							</div>
-							<p>  I had zero confidence level. Thanks to rigorous mock interview sessions I was able to crack all the interview rounds and today my dream to work in an MNC came true..." </p>
-							<ul>
-								<li>I had zero confidence level. Thanks to rigorous mock interview sessions</li>
-								<li>I had zero confidence level. Thanks to rigorous mock interview sessions</li>
-							</ul>
-							<p>  I had zero confidence level. Thanks to rigorous mock interview sessions I was able to crack all the interview rounds and today my dream to work in an MNC came true..." </p>
-							<p>  I had zero confidence level. Thanks to rigorous mock interview sessions I was able to crack all the interview rounds and today my dream to work in an MNC came true..." </p>
-						</div>
-						<div class="col-md-4" >
-							<img src="{{getSizedImage('',62)}}" >
-							<div class="course-side-bar-widget">
-								<div class="genius-btn gradient-bg text-center text-uppercase float-left bold-font">
-									<a onclick="lead_capture_form_btn(1,'')" href="javascript:void(0)"> Apply Certificate <i class="fas fa-angle-double-right"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="certificate-list row">
-						<div class="col-md-8" >
-							<div class="section-title-2 mb65 headline text-left">
-								<h2>SAP<span> Certificate.</span></h2>
-							</div>
-							<p>  I had zero confidence level. Thanks to rigorous mock interview sessions I was able to crack all the interview rounds and today my dream to work in an MNC came true..." </p>
-							<ul>
-								<li>I had zero confidence level. Thanks to rigorous mock interview sessions</li>
-								<li>I had zero confidence level. Thanks to rigorous mock interview sessions</li>
-							</ul>
-							<p>  I had zero confidence level. Thanks to rigorous mock interview sessions I was able to crack all the interview rounds and today my dream to work in an MNC came true..." </p>
-							<p>  I had zero confidence level. Thanks to rigorous mock interview sessions I was able to crack all the interview rounds and today my dream to work in an MNC came true..." </p>
-						</div>
-						<div class="col-md-4" >
-							<img src="{{ getSizedImage('',61) }}" >
-							<div class="course-side-bar-widget">
-								<div class="genius-btn gradient-bg text-center text-uppercase float-left bold-font">
-									<a onclick="lead_capture_form_btn(1,'')" href="javascript:void(0)">  Apply Certificate <i class="fas fa-angle-double-right"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section> -->
-	<!-- End  of testimonial secound section
-	============================================= -->
-
-	<!-- Start of testimonial secound section
-	============================================= -->
-	<section id="galleries" class="galleries-section">
+	<section id="classroom" class="galleries-section">
 		<div class="container">
 			<div class="testimonial-slide">
 				<div class="section-title mb20 headline text-center">
-					<span class="subtitle text-uppercase">galleries</span>
-					<h3>Classroom<span> Views.</span></h3>
+					<span class="subtitle text-uppercase"> GALLERY </span>
+					<h3> Classroom <span> Views </span></h3>
 				</div>
 				<div class="row">
 					<div class="col-md-12">
 						<div class="photo-list ul-li">
 							<ul>
-							@foreach(getGallery() as $key => $gallery)
 								<li>
-									<img src="{{ getSizedImage('',$gallery->image_id) }}" alt="">
+									<img src="https://wpv1.icajobguarantee.com/wp-content/uploads/2023/07/data-science-students.webp" alt="">
 									<div class="blakish-overlay"></div>
 									<div class="pop-up-icon">
-										<a href="{{ getSizedImage('',$gallery->image_id) }}" data-lightbox="roadtrip">
+										<a href="https://wpv1.icajobguarantee.com/wp-content/uploads/2023/07/data-science-students.webp" data-lightbox="roadtrip">
+											<i class="fas fa-search"></i>
+										</a>
+									</div>
+						     	</li>
+								 <li>
+									<img src="https://wpv1.icajobguarantee.com/wp-content/uploads/2019/11/85872fa8-ff43-4a00-9882-3f9d1848238f.jpg" alt="">
+									<div class="blakish-overlay"></div>
+									<div class="pop-up-icon">
+										<a href="https://wpv1.icajobguarantee.com/wp-content/uploads/2019/11/85872fa8-ff43-4a00-9882-3f9d1848238f.jpg" data-lightbox="roadtrip">
 											<i class="fas fa-search"></i>
 										</a>
 									</div>
 								</li>
-							@endforeach
+								 <li>
+									<img src="https://wpv1.icajobguarantee.com/wp-content/uploads/2022/12/4.jpg" alt="">
+									<div class="blakish-overlay"></div>
+									<div class="pop-up-icon">
+										<a href="https://wpv1.icajobguarantee.com/wp-content/uploads/2022/12/4.jpg" data-lightbox="roadtrip">
+											<i class="fas fa-search"></i>
+										</a>
+									</div>
+								</li>
+								 <li>
+									<img src="https://wpv1.icajobguarantee.com/wp-content/uploads/2020/08/Classroom3.jpeg" alt="">
+									<div class="blakish-overlay"></div>
+									<div class="pop-up-icon">
+										<a href="https://wpv1.icajobguarantee.com/wp-content/uploads/2020/08/Classroom3.jpeg" data-lightbox="roadtrip">
+											<i class="fas fa-search"></i>
+										</a>
+									</div>
+								</li> <li>
+									<img src="https://wpv1.icajobguarantee.com/wp-content/uploads/2023/07/image-data-science-class-room.webp" alt="">
+									<div class="blakish-overlay"></div>
+									<div class="pop-up-icon">
+										<a href="https://wpv1.icajobguarantee.com/wp-content/uploads/2023/07/image-data-science-class-room.webp" data-lightbox="roadtrip">
+											<i class="fas fa-search"></i>
+										</a>
+									</div>
+								</li>
+								<li>
+									<img src="https://wpv1.icajobguarantee.com/wp-content/uploads/2023/07/pic-Student_of_dataseience.webp" alt="">
+									<div class="blakish-overlay"></div>
+									<div class="pop-up-icon">
+										<a href="https://wpv1.icajobguarantee.com/wp-content/uploads/2023/07/pic-Student_of_dataseience.webp" data-lightbox="roadtrip">
+											<i class="fas fa-search"></i>
+										</a>
+									</div>
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -618,80 +643,207 @@
 			</div>
 		</div>
 	</section>
-	<!-- End  of testimonial secound section
+	<!-- End  of classroom views section
 	============================================= -->
 
-	<!-- Start of testimonial secound section
+
+	<!-- Start of Projects section
 	============================================= -->
-	<section id="alumni" class="testimonial_2_section">
+	<section id="projects" class="galleries-section">
 		<div class="container">
 			<div class="testimonial-slide">
 				<div class="section-title mb20 headline text-center">
-					<span class="subtitle text-uppercase">About This Course </span>
-					<h3>Student<span> Speaks.</span></h3>
+					<span class="subtitle text-uppercase"> Live Training </span>
+					<h3> Industry <span> Projects </span></h3>
 				</div>
-				<div  id="testimonial-slide-item" class="testimonial-slide-area">
-					@foreach(getTestimonials() as $testimonial)						
-					<div class="student-qoute">
-						<div class="course-pic relative-position text-center">
-							<div class="circle-img">
-								<img src="{{ (isset($testimonial->featured_image))?getSizedImage('',$testimonial->featured_image):'https://dummyimage.com/140x140' }}" alt="">	
-							</div>					
+				<div class="row">
+					<div class="col-md-12 mt10">
+						<div class="row text-center">
+							<div class="col-md-3 col-6"> 
+								<div class="key-highlights" >
+									<img src="{{ url('assets/img/icons/tick.png')}}" >
+									<h6> Recommendation Engine </h6>
+									<p>You will work on Recommendation Engine using machine learning techniques for personalized suggestions based on user preferences and item characteristics. The project explored collaborative and content-based filtering, offering practical insights into real-world applications.</p>
+								</div>
+							</div>
+							<div class="col-md-3 col-6"> 
+								<div class="key-highlights" >
+									<img src="{{ url('assets/img/icons/tick.png')}}" >
+									<h6> Chat Bot </h6>
+									<p>You can create a Chat Bot project using Natural Language Processing and Machine Learning. It understood user queries, delivered relevant responses, and provided practical insights into virtual assistants for diverse applications.</p>
+								</div>
+							</div>
+							<div class="col-md-3 col-6"> 
+								<div class="key-highlights" >
+									<img src="{{ url('assets/img/icons/tick.png')}}" >
+									<h6> Marketing Analytics </h6>
+									<p>Students can work on creating a Marketing Analytics project, using data mining and machine learning to enhance marketing strategies. It involved customer segmentation, behavior analysis, and predictive modeling for data-driven business growth.</p>
+								</div>
+							</div>
+                            <div class="col-md-3 col-6"> 
+								<div class="key-highlights" >
+									<img src="{{ url('assets/img/icons/tick.png')}}" >
+									<h6> Retail Analytics </h6>
+									<p>You will work on a Retail Analytics project, analyzing data to optimize inventory, forecast sales, and understand customer behavior. Machine learning helped make data-driven decisions for improved efficiency and customer satisfaction in the retail industry.</p>
+								</div>
+							</div>
 						</div>
-						{!! $testimonial->comment !!}
-						<div class="student-name-designation">
-							<span class="st-name bold-font">{{ $testimonial->name }}</span>
-							<span class="st-designation">{{ $testimonial->dasignation }}</span>
+						<div class="row text-center">
+							<div class="col-md-3 col-6"> 
+								<div class="key-highlights" >
+									<img src="{{ url('assets/img/icons/tick.png')}}" >
+									<h6> Finance Analytics </h6>
+									<p>You can explore Finance Analytics, analyzing market trends, risk, and portfolio optimization using statistical and machine learning techniques. You can develop skills for data-driven decision-making in the financial industry, aiding businesses and investors for success.</p>
+								</div>
+							</div>
+							<div class="col-md-3 col-6"> 
+								<div class="key-highlights" >
+									<img src="{{ url('assets/img/icons/tick.png')}}" >
+									<h6> HR Analytics </h6>
+									<p>Students can explore HR Analytics, analyze employee performance, attrition, and demographics using statistical methods and machine learning. You will gain valuable skills for data-driven decision-making in talent acquisition, retention, and workforce planning.</p>
+								</div>
+							</div>
+							<div class="col-md-3 col-6"> 
+								<div class="key-highlights" >
+									<img src="{{ url('assets/img/icons/tick.png')}}" >
+									<h6> Health Care Analytics </h6>
+									<p>You will work on a Health Care Analytics project, analyzing medical data with statistics and machine learning. You aim to improve patient outcomes and healthcare efficiency through data-driven insights and clinical decision-making.</p>
+								</div>
+							</div>
+                            <div class="col-md-3 col-6"> 
+								<div class="key-highlights" >
+									<img src="{{ url('assets/img/icons/tick.png')}}" >
+									<h6> Sports Analytics </h6>
+									<p>You can work on a Sports Analytics project, analyzing player performance and team dynamics using statistics and machine learning. You gain insights to aid coaches and optimize training for a competitive advantage in sports.</p>
+								</div>
+							</div>
 						</div>
-						<div class="alumni-placed-at text-center">
-							<img src="{{ (getRecruterById($testimonial->placed_at)->featured_image)?getSizedImage('',getRecruterById($testimonial->placed_at)->featured_image):'https://dummyimage.com/32' }}" >
-						</div>
-					</div>
-					@endforeach
+				    </div>
+			    </div>
+		    </div>
+		</div>    
+	</section>
+	<!-- End  of Projects section -->
+
+	<!-- Start  of certificate section -->
+	<section id="certification" class="sponsor-section">
+		<div class="container">
+			<div class="section-title mb35 headline text-center">
+				<span class="subtitle text-uppercase"> COURSE INFO </span>
+				<h3> Training <span> Certification </span></h3>
+			</div>
+	       <div class="row">
+				<div class="col-md-6 mt10 text-center">
+					 <h3>About ICA Edu Skills</h3>
+					    
+					 <p style="text-align: left;">We are ICA Edu Skills, India’s No. 1 Training & Skill development institute specialising in job-oriented courses to make you industry-ready. We insure the careers of the Indian Youth by combining learning with the best-in-class training and placement services at the most affordable fees possible. The courses are jointly certified with National Skill Development Corporation (NSDC).</p>
+						
+			    </div>
+					
+				<div class="col-md-6 mt10 text-center">
+                    <img src="https://wpv1.icajobguarantee.com/wp-content/uploads/2023/01/ICA-NSDC-Certificate.png">
 				</div>
 			</div>
 		</div>
-	</section>
-	<!-- End  of testimonial secound section
-	============================================= -->
+	</section>	
+	<!-- End  of certificate section -->	
 
-	<section id="faq" class="teacher-details-area">
+	<!-- Start of FAQs Section -->
+	<section id="faqs" class="teacher-details-area">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-9">
                     	<div class="about-teacher about-faq faq-secound-home-version">
 							<div class="section-title-2  headline text-left">
-								<h2>Frequently  <span>Ask &amp; Questions.</span></h2>
+								<h2> Frequently <span>Asked Questions </span></h2>
 							</div>							
 							<div class="faq-tab mb35">
 								<div class="faq-tab-ques  ul-li">
                                     <div id="accordion3" class="panel-group">
-										@foreach(getFaqs("Course") as $key => $value)
                                         <div class="panel">
-                                            <div class="panel-title" id="heading_{{$key}}">
-                                                <h3 class="mb-{{$key}}">
-                                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapse_{{$key}}" aria-expanded="true" aria-controls="collapse_{{$key}}">
-                                                       {{ $value->question }}
+                                            <div class="panel-title" id="heading_1">
+                                                <h3 class="mb-1">
+                                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapse_1" aria-expanded="true" aria-controls="collapse_1">
+                                                       What is the Data Science Eligibility Criteria?
 													</button>
                                                 </h3>
                                             </div>
-                                            <div id="collapse_{{$key}}" class="collapse" aria-labelledby="heading_{{$key}}" data-parent="#accordion3">
+                                            <div id="collapse_1" class="collapse" aria-labelledby="heading_1" data-parent="#accordion3">
                                                 <div class="panel-body">
-                                                   {!! $value->answer !!}
+                                                   To enroll in the Data Science course, you must have completed your 10+ 2 or pursued graduation from a renowned university.
                                                 </div>
                                             </div>
                                         </div>
-										@endforeach                                       
+                                        <div class="panel">
+                                            <div class="panel-title" id="heading_2">
+                                                <h3 class="mb-2">
+                                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapse_2" aria-expanded="true" aria-controls="collapse_2">
+                                                       How Will I Get My Certificate?
+													</button>
+                                                </h3>
+                                            </div>
+                                            <div id="collapse_2" class="collapse" aria-labelledby="heading_2" data-parent="#accordion3">
+                                                <div class="panel-body">
+                                                   Upon completion of your course, clearing your assessments and projects, you will receive the certificate by ICA Edu Skills.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel">
+                                            <div class="panel-title" id="heading_3">
+                                                <h3 class="mb-3">
+                                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapse_3" aria-expanded="true" aria-controls="collapse_3">
+                                                       Who Provides the Certification and How Long is it Valid For?
+													</button>
+                                                </h3>
+                                            </div>
+                                            <div id="collapse_3" class="collapse" aria-labelledby="heading_3" data-parent="#accordion3">
+                                                <div class="panel-body">
+                                                   The certification is provided by ICA Edu Skills and is valid for a lifetime. You will get to work on 5 different projects.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel">
+                                            <div class="panel-title" id="heading_4">
+                                                <h3 class="mb-4">
+                                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapse_4" aria-expanded="true" aria-controls="collapse_4">
+                                                       What is the Salary of a Data Scientist in India?
+													</button>
+                                                </h3>
+                                            </div>
+                                            <div id="collapse_4" class="collapse" aria-labelledby="heading_4" data-parent="#accordion3">
+                                                <div class="panel-body">
+                                                   A data scientist can learn up to Rs. 4 Lakhs and with experience, this salary will keep increasing.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel">
+                                            <div class="panel-title" id="heading_5">
+                                                <h3 class="mb-5">
+                                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapse_5" aria-expanded="true" aria-controls="collapse_5">
+                                                       How does the Job Assurance Program Work?
+													</button>
+                                                </h3>
+                                            </div>
+                                            <div id="collapse_5" class="collapse" aria-labelledby="heading_5" data-parent="#accordion3">
+                                                <div class="panel-body">
+                                                   The individual must:
+                                                         <ul>
+														  <li>Have completed their graduation from any domain.</li>
+                                                          <li>ICA has placements in more than 30 cities spanning across India. We will try to place the candidates nearest to their hometown. However, if there are no vacancies during that certain period, we shall provide placement opportunities in other cities.</li>
+                                                          <li>Students must be able to clear all the assessments post completion of every such module with an examination at the end.</li>
+                                                        </ul>   
+                                                </div>
+                                            </div>
+                                        </div>										                                    
 									</div>
-                                    <!-- end of #accordion -->
-								</div>
+                                </div>
 							</div>
 						</div>
                     </div>
                 </div>
             </div>
         </section>
-   
+		<!-- End of FAQs Section -->
 		@endsection
 
 		@section('script')
