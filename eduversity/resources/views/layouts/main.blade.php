@@ -66,12 +66,16 @@
 </head>
 
 <body>
+
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MS3B79K"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     @include('layouts.header')
     @yield('content')
+
+
+
     @include('layouts.footer')
     
     @if(get_theme_setting('ajax_submit') == 1)

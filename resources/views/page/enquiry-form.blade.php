@@ -3,17 +3,6 @@
     {{$contentMain->sendBrochure = null}}
     <!-- Start of Header section
 	============================================= -->
-    <style>
-        .formFieldParentOccupation span {
-            padding: 0 16px;
-            display: inline-flex;
-        }
-        .contact_form input[type="radio"],.contact_form input[type="checkbox"] {
-            display: inline-flex;
-            margin-right: 8px;
-            height: 22px;
-        }
-    </style>
 	<header>
 		<div id="main-menu"  class="main-menu-container header-style-2">
 			<div class="header-top">
@@ -62,7 +51,7 @@
                             <h3 style="text-transform: uppercase;font-size: 25px;"> ENQUIRY FORM</h3> 
                         </div>
                         <div class="popup_banner_form_wrapeer" > 
-                            <form id="global_other_details_form" class="contact_form lead_form" action="{{ url('global-other-form-submit') }}" method="POST" enctype="multipart/form-data">
+                            <form id="global_other_details_form" class="contact_form lead_form" action="{{ url('enquiry-form-submit') }}" method="POST" enctype="multipart/form-data">
                                 <div class="form_process" >
                                     <h3> Personal Details </h3>
                                     <div class="row" > 
@@ -108,7 +97,7 @@
                                         </div>
                                         <div class="col-md-3" >
                                             <div class="register-form-area">
-                                                <select id="formFieldState" class="state" name="state" required>
+                                                <select id="formFieldState" class="state_id" name="state_id" required>
                                                     <option value="">Select state</option>
                                                     @foreach(getStates() as $state)
                                                     <option value="{{ $state->id }}"> {{ $state->name }} </option>
@@ -155,184 +144,229 @@
                                         </div>
                                     </div>
                                     <h3>  Academic Qualification </h3>
-                                    <div class="row" > 
-                                        <div class="col-md-2" >
-                                            <div class="contact-info formFieldPassingYear">
-                                                <input id="formFieldPassing Year" name="qualification[][year]" type="number" placeholder="Passing Year" autocomplete="off">
+                                    <div class="academic_qualification" >
+                                        <div class="row" > 
+                                            <div class="col-md-2" >
+                                                <div class="contact-info formFieldPassingYear">
+                                                    <input id="formFieldPassingYear" name="qualification[][year]" type="number" placeholder="Passing Year" autocomplete="off">
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-3" >
-                                            <div class="contact-info formFieldPassingDegree">
-                                                <input id="formFieldDegree" name="qualification[][degree]" type="text" placeholder="Degree" autocomplete="off">
+                                            <div class="col-md-3" >
+                                                <div class="contact-info formFieldPassingDegree">
+                                                    <input id="formFieldDegree" name="qualification[][degree]" type="text" placeholder="Degree" autocomplete="off">
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-3" >
-                                            <div class="contact-info formFieldPassingUniversity">
-                                                <input id="formFieldUniversity" name="qualification[][board]" type="text" placeholder="University" autocomplete="off">
+                                            <div class="col-md-3" >
+                                                <div class="contact-info formFieldPassingUniversity">
+                                                    <input id="formFieldUniversity" name="qualification[][board]" type="text" placeholder="College/University" autocomplete="off">
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-2" >
-                                            <div class="contact-info formFieldPassingStream">
-                                                <input id="formFieldStream" name="qualification[][stream]" type="text" placeholder="Stream" autocomplete="off">
+                                            <div class="col-md-2" >
+                                                <div class="contact-info formFieldPassingStream">
+                                                    <input id="formFieldStream" name="qualification[][stream]" type="text" placeholder="Stream" autocomplete="off">
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-2" >
-                                            <div class="contact-info formFieldPassingMarks">
-                                                <input id="formFieldMarks" name="qualification[][marks]" type="number" placeholder="Marks (%)" autocomplete="off">
+                                            <div class="col-md-2" >
+                                                <div class="contact-info formFieldPassingMarks">
+                                                    <input id="formFieldMarks" name="qualification[][marks]" type="number" placeholder="Marks (%)" autocomplete="off">
+                                                </div>
                                             </div>
-                                        </div>
+                                        </div>  
                                     </div>  
-                                    <a href="javascript:void(0)" class="btn btn-primary"  > Add More </a>
+                                    <a href="javascript:void(0)" class="btn btn-primary addMoreBtn" data-id="academic_qualification"> Add More </a>
                                     
                                     <div class="bg-gray">    
                                         <h3> Professional Qualification (If Any)</h3>
-                                        <div class="row" > 
-                                            <div class="col-md-3" >
-                                                <label for="formFieldPassingYear"> Passing Year </label>
-                                                <div class="contact-info formFieldPassingYear">
-                                                    <input id="formFieldPassingYear" name="experience[][year]" type="number" placeholder="Passing Year" autocomplete="off">
+                                        <div class="professional_qualification" >
+                                            <div class="row" > 
+                                                <div class="col-md-2" >
+                                                    <div class="contact-info formFieldProfessionalPassingYear">
+                                                        <input id="formFieldProfessionalPassingYear" name="professional_qualification[][year]" type="number" placeholder="Passing Year" autocomplete="off">
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-md-3" >
-                                                <label for="formFieldInstituteName"> Institute Name </label>
-                                                <div class="contact-info formFieldInstitureName">
-                                                    <input id="formFieldInstituteName" name="professional_qualification[][institute]" type="text" placeholder="Institute Name" autocomplete="off">
+                                                <div class="col-md-3" >
+                                                    <div class="contact-info formFieldInstituteName">
+                                                        <input id="formFieldInstituteName" name="professional_qualification[][institute]" type="text" placeholder="Enter Institute Name" autocomplete="off">
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-md-6" >
-                                                <label for="formFieldCourseDetails"> Course Details </label>
-                                                <div class="contact-info formFieldCourseDetails">
-                                                    <input id="formFieldCourseDetails" name="professional_qualification[][course]" type="text" placeholder="Institute Name" autocomplete="off">
+                                                <div class="col-md-7" >
+                                                    <div class="contact-info formFieldCourseDetails">
+                                                        <input id="formFieldCourseDetails" name="professional_qualification[][course]" type="text" placeholder="Enter Course Details" autocomplete="off">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <a href="javascript:void(0)" class="btn btn-primary"  > Add More </a>
+                                        <a href="javascript:void(0)" class="btn btn-primary addMoreBtn" data-id="professional_qualification"> Add More </a>
                                     </div>
 
                                     <div class="bg-gray">    
                                         <h3> Work Experience (If Any)</h3>
+                                        <div class="work_experience" >
+                                            <div class="row" > 
+                                                <div class="col-md-2" >
+                                                    <div class="contact-info formFieldPassingYear">
+                                                        <input id="formFieldPassingYear" name="experience[][year]" type="number" placeholder="Joining Year" autocomplete="off">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3" >
+                                                    <div class="contact-info formFieldInstitureName">
+                                                        <input id="formFieldCompanyName" name="experience[][company]" type="text" placeholder="Company Name" autocomplete="off">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3" >
+                                                    <div class="contact-info formFieldResponsibility">
+                                                        <input id="formFieldResponsibility" name="experience[][responsibility]" type="text" placeholder="Work Responsibility" autocomplete="off">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2" >
+                                                    <div class="contact-info formFieldDuration">
+                                                        <input id="formFieldDuration" name="experience[][duration]" type="text" placeholder="Work Duration" autocomplete="off">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2" >
+                                                    <div class="contact-info formFieldSalary">
+                                                        <input id="formFieldSalary" name="experience[][salary]" type="text" placeholder="Work Salary" autocomplete="off">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="javascript:void(0)" class="btn btn-primary addMoreBtn" data-id="work_experience"  > Add More </a>
+                                    </div>
+                                    <div class="bg-gray">    
+                                        <h3> Where do you come to know about ICA</h3>
                                         <div class="row" > 
-                                            <div class="col-md-2" >
-                                                <div class="contact-info formFieldPassingYear">
-                                                    <input id="formFieldPassingYear" name="experience[][year]" type="number" placeholder="Passing Year" autocomplete="off">
+                                            <div class="col-md-12" >
+                                                <div class=" formFieldParentOccupation">
+                                                    <span>
+                                                        <input name="know_from[]" type="checkbox" autocomplete="off" value="Website" > Website
+                                                    </span>
+                                                    <span>
+                                                        <input name="know_from[]" type="checkbox" autocomplete="off" value="Google" > Google
+                                                    </span>
+                                                    <span>
+                                                        <input name="know_from[]" type="checkbox" autocomplete="off" value="Facebook" > Facebook
+                                                    </span>
+                                                    <span>
+                                                        <input name="know_from[]" type="checkbox" autocomplete="off" value="Instagram" > Instagram
+                                                    </span>
+                                                    <span>
+                                                        <input name="know_from[]" type="checkbox" autocomplete="off" value="YouTube" > YouTube
+                                                    </span>
+                                                    <span>
+                                                        <input name="know_from[]" type="checkbox" autocomplete="off" value="Twitter" > Twitter
+                                                    </span>
+                                                    <span>
+                                                        <input name="know_from[]" type="checkbox" autocomplete="off" value="Linkedin" > Linkedin
+                                                    </span>
+                                                    <span>
+                                                        <input name="know_from[]" type="checkbox" autocomplete="off" value="Banners" > Banners
+                                                    </span>
+                                                    <span>
+                                                        <input name="know_from[]" type="checkbox" autocomplete="off" value="Hordings" > Hordings
+                                                    </span>
+                                                    <span>
+                                                        <input name="know_from[]" type="checkbox" autocomplete="off" value="Seminars" > Seminars
+                                                    </span>
+                                                    <span>
+                                                        <input name="know_from[]" type="checkbox" autocomplete="off" value="Hanbill/Leaflet" > Hanbill/Leaflet
+                                                    </span>
+                                                    <span>
+                                                        <input name="know_from[]" type="checkbox" autocomplete="off" value="Contact" > Contact
+                                                    </span>
+                                                    <span>
+                                                        <input name="know_from[]" type="checkbox" autocomplete="off" value="Other" > Other
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" > 
+                                            <div class="col-md-3" >
+                                                <label for="formFieldParentOccupation"> Interest for JOB </label>
+                                                <div class=" formFieldParentOccupation">
+                                                    <span>
+                                                        <input name="job_interest" type="radio" autocomplete="off" value="Yes" > Yes
+                                                    </span>
+                                                    <span>
+                                                        <input name="job_interest" type="radio" autocomplete="off" value="No" > No
+                                                    </span>
                                                 </div>
                                             </div>
                                             <div class="col-md-3" >
-                                                <div class="contact-info formFieldInstitureName">
-                                                    <input id="formFieldCompanyName" name="experience[][company]" type="text" placeholder="Company Name" autocomplete="off">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3" >
-                                                <div class="contact-info formFieldResponsibility">
-                                                    <input id="formFieldResponsibility" name="experience[][responsibility]" type="text" placeholder="Work Responsibility" autocomplete="off">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-2" >
-                                                <div class="contact-info formFieldDuration">
-                                                    <input id="formFieldDuration" name="experience[][duration]" type="text" placeholder="Work Duration" autocomplete="off">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-2" >
-                                                <div class="contact-info formFieldSalary">
-                                                    <input id="formFieldSalary" name="experience[][salary]" type="text" placeholder="Work Salary" autocomplete="off">
+                                                <label for="formFieldParentOccupation"> Date of admission </label>
+                                                <div class=" formFieldParentOccupation">
+                                                    <span>
+                                                        <input name="admission_date" type="radio" autocomplete="off" value="Yes" > Immidiate
+                                                    </span>
+                                                    <span>
+                                                        <input name="admission_date" type="radio" autocomplete="off" value="No" > Later
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
-                                        <a href="javascript:void(0)" class="btn btn-primary"  > Add More </a>
-                                    </div>
-                                    <div class="bg-gray">    
-                                        <h3> Where do you come to know about ICA</h3>
-                                        <div class="col-md-12" >
-                                            <div class=" formFieldParentOccupation">
-                                                <span>
-                                                    <input name="know_from[]" type="checkbox" autocomplete="off" value="Website" > Website
-                                                </span>
-                                                <span>
-                                                    <input name="know_from[]" type="checkbox" autocomplete="off" value="Google" > Google
-                                                </span>
-                                                <span>
-                                                    <input name="know_from[]" type="checkbox" autocomplete="off" value="Facebook" > Facebook
-                                                </span>
-                                                <span>
-                                                    <input name="know_from[]" type="checkbox" autocomplete="off" value="Instagram" > Instagram
-                                                </span>
-                                                <span>
-                                                    <input name="know_from[]" type="checkbox" autocomplete="off" value="YouTube" > YouTube
-                                                </span>
-                                                <span>
-                                                    <input name="know_from[]" type="checkbox" autocomplete="off" value="Twitter" > Twitter
-                                                </span>
-                                                <span>
-                                                    <input name="know_from[]" type="checkbox" autocomplete="off" value="Linkedin" > Linkedin
-                                                </span>
-                                                <span>
-                                                    <input name="know_from[]" type="checkbox" autocomplete="off" value="Banners" > Banners
-                                                </span>
-                                                <span>
-                                                    <input name="know_from[]" type="checkbox" autocomplete="off" value="Hordings" > Hordings
-                                                </span>
-                                                <span>
-                                                    <input name="know_from[]" type="checkbox" autocomplete="off" value="Seminars" > Seminars
-                                                </span>
-                                                <span>
-                                                    <input name="know_from[]" type="checkbox" autocomplete="off" value="Hanbill/Leaflet" > Hanbill/Leaflet
-                                                </span>
-                                                <span>
-                                                    <input name="know_from[]" type="checkbox" autocomplete="off" value="Contact" > Contact
-                                                </span>
-                                                <span>
-                                                    <input name="know_from[]" type="checkbox" autocomplete="off" value="Other" > Other
-                                                </span>
+                                        <h3> Preffarence Class Time Slot</h3>
+                                        <div class="row" > 
+                                            <div class="col-md-12 py-2" >
+                                                <label for="formFieldParentOccupation"> Preffered Days </label>
+                                                <div class=" formFieldParentOccupation">
+                                                    <span>
+                                                        <input name="slot_day[]" type="checkbox" autocomplete="off" value="Monday" > Monday
+                                                    </span>
+                                                    <span>
+                                                        <input name="slot_day[]" type="checkbox" autocomplete="off" value="Tuesday" > Tuesday
+                                                    </span>
+                                                    <span>
+                                                        <input name="slot_day[]" type="checkbox" autocomplete="off" value="Wednesday" > Wednesday
+                                                    </span>
+                                                    <span>
+                                                        <input name="slot_day[]" type="checkbox" autocomplete="off" value="Thursday" > Thursday
+                                                    </span>
+                                                    <span>
+                                                        <input name="slot_day[]" type="checkbox" autocomplete="off" value="Friday" > Friday
+                                                    </span>
+                                                    <span>
+                                                        <input name="slot_day[]" type="checkbox" autocomplete="off" value="Saturday" > Saturday
+                                                    </span>
+                                                    <span>
+                                                        <input name="slot_day[]" type="checkbox" autocomplete="off" value="Sunday" > Sunday
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12" >
+                                                <label for="formFieldParentOccupation"> Preffered Time Slot </label>
+                                                <div class="formFieldParentOccupation">
+                                                    <span>
+                                                        <input name="slot_time[]" type="checkbox" autocomplete="off" value="8:00 Am - 9:30 Am" > 8:00 Am - 9:30 Am
+                                                    </span>
+                                                    <span>
+                                                        <input name="slot_time[]" type="checkbox" autocomplete="off" value="9:30 Am - 11:00 Am" > 9:30 Am - 11:00 Am
+                                                    </span>
+                                                    <span>
+                                                        <input name="slot_time[]" type="checkbox" autocomplete="off" value="11:00 Am - 12:30 Pm" > 11:00 Am - 12:30 Pm
+                                                    </span>
+                                                    <span>
+                                                        <input name="slot_time[]" type="checkbox" autocomplete="off" value="12:30 Pm - 2:00 Pm" > 12:30 Pm - 2:00 Pm
+                                                    </span>
+                                                    <span>
+                                                        <input name="slot_time[]" type="checkbox" autocomplete="off" value="02:00 Pm - 3:30 Pm" > 02:00 Pm - 3:30 Pm
+                                                    </span>
+                                                    <span>
+                                                        <input name="slot_time[]" type="checkbox" autocomplete="off" value="3:30 Pm - 5:00 Pm" > 3:30 Pm - 5:00 Pm
+                                                    </span>
+                                                    <span>
+                                                        <input name="slot_time[]" type="checkbox" autocomplete="off" value="5:00 Pm - 6:30 Pm" > 5:00 Pm - 6:30 Pm
+                                                    </span>
+                                                    <span>
+                                                        <input name="slot_time[]" type="checkbox" autocomplete="off" value="6:30 Pm - 8:00 Pm" > 6:30 Pm - 8:00 Pm
+                                                    </span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="bg-gray">    
-                                        <h3> Where do you come to know about ICA</h3>
-                                        <div class="col-md-12" >
-                                            <div class=" formFieldParentOccupation">
-                                                <span>
-                                                    <input name="know_from[]" type="checkbox" autocomplete="off" value="Website" > Website
-                                                </span>
-                                                <span>
-                                                    <input name="know_from[]" type="checkbox" autocomplete="off" value="Google" > Google
-                                                </span>
-                                                <span>
-                                                    <input name="know_from[]" type="checkbox" autocomplete="off" value="Facebook" > Facebook
-                                                </span>
-                                                <span>
-                                                    <input name="know_from[]" type="checkbox" autocomplete="off" value="Instagram" > Instagram
-                                                </span>
-                                                <span>
-                                                    <input name="know_from[]" type="checkbox" autocomplete="off" value="YouTube" > YouTube
-                                                </span>
-                                                <span>
-                                                    <input name="know_from[]" type="checkbox" autocomplete="off" value="Twitter" > Twitter
-                                                </span>
-                                                <span>
-                                                    <input name="know_from[]" type="checkbox" autocomplete="off" value="Linkedin" > Linkedin
-                                                </span>
-                                                <span>
-                                                    <input name="know_from[]" type="checkbox" autocomplete="off" value="Banners" > Banners
-                                                </span>
-                                                <span>
-                                                    <input name="know_from[]" type="checkbox" autocomplete="off" value="Hordings" > Hordings
-                                                </span>
-                                                <span>
-                                                    <input name="know_from[]" type="checkbox" autocomplete="off" value="Seminars" > Seminars
-                                                </span>
-                                                <span>
-                                                    <input name="know_from[]" type="checkbox" autocomplete="off" value="Hanbill/Leaflet" > Hanbill/Leaflet
-                                                </span>
-                                                <span>
-                                                    <input name="know_from[]" type="checkbox" autocomplete="off" value="Contact" > Contact
-                                                </span>
-                                                <span>
-                                                    <input name="know_from[]" type="checkbox" autocomplete="off" value="Other" > Other
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    @include('common.leadCaptureFormOtpField')                           
+                                    <input name="center_id" type="hidden" value="1" >
+                                    <div class="nws-button text-center white text-capitalize py-5">
+                                        <button class="submit_classroom_lead_generation_form form_step_1" type="submit">Apply Now <i class="fas fa-arrow-right"> </i> </button> 
+                                        <img src="https://www.icacourse.in/wp-content/themes/scriptcrown/images/loader.gif" style="width: 42px; display:none;" class="checkout_loader">
+                                    </div>                    
                                 </div>
                             </form>  
                         </div>

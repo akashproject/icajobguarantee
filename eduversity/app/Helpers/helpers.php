@@ -218,8 +218,7 @@ if (! function_exists('getUniversities')) {
         if(isset($_COOKIE['lng']) && isset($_COOKIE['lat'])){
             $universities->orderBy(DB::raw('POW((lng-'.$_COOKIE['lng'].'),2) + POW((lat-'.$_COOKIE['lat'].'),2)'));
         }
-        $universities = $universities->get();       
-        return $universities;
+        return $universities->get();       
     }
 }
 

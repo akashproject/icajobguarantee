@@ -5416,3 +5416,50 @@ a.sticky-btn {
 .best-course-pic-text .best-course-pic img {
   width: 100%;
 }
+
+#global_other_details_form .form_process h3 {
+  padding: 10px 29px;
+  color: #616cfc;
+  margin: 26px 0;
+  font-size: 22px;
+  font-weight: 700;
+  border-bottom: 2px solid;
+  border-left: 2px solid;
+  background: #d5dcff;
+  text-transform: uppercase;
+}
+#global_other_details_form .form_process label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0;
+}
+.display-none{
+  display: none;
+}
+.formFieldParentOccupation span {
+  padding: 0;
+  display: inline-flex;
+  width: 250px;
+  float: left;
+  font-size: 14px;
+}
+
+.contact_form input[type="radio"], .contact_form input[type="checkbox"] {
+  display: inline-flex;
+  margin-right: 1px;
+  height: 15px;
+  width: 24px;
+}
+
+.placement-content {
+  padding: 10px 16px;
+  background: #eee;
+  height: 234px;
+  margin-bottom: 14px;
+}
+
+.placement-content p {
+  margin: 0;
+  font-size: 14px;
+}

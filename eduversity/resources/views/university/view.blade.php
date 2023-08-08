@@ -163,7 +163,7 @@
 												<i class="text-gradiant fas fa-map-marker-alt"></i>
 											</div>
 											<div class="info-content">
-												<span class="info-id">{{$university->name}}</span>
+												<span class="info-id">{{$contentMain->name}}</span>
 												<!-- <span class="info-text">
 													<a href="javascript:void(0)"> ICA Edu Skills Dalhousie
 														2nd Floor, 4, Brabourne Rd,
@@ -195,7 +195,7 @@
 			<div class="best-course-area mb10">
 				<div class="row justify-content-center">
 				@if(getCourses())
-					@foreach (getCourses($university->courses) as $value)
+					@foreach (getCourses($contentMain->courses) as $value)
 					<div class="col-md-3">
 						<div class="best-course-pic-text relative-position">
 							<div class="best-course-pic relative-position">

@@ -104,12 +104,14 @@
 								<input type="file" class="form-control" name="cheque" id="cheque" placeholder="Enter Account Holder Name" value="">
 							</div>
 						</div>
+						@if($user->role == 'center')
 						<div class="form-group row">
 							<label for="no_of_module" class="col-sm-12 text-left control-label col-form-label">QR Code</label>
 							<div class="col-sm-12">
-								<a href="/administrator/generate-qrcode?center={{$name}}&code={{$affiliateUser->code}}&qr_content={{url('ads/affiliate-qrcode-page')}}" class="btn btn-primary"> Generate </a>								
+								<a href="/administrator/generate-qrcode?{{$user->role}}={{$user->name}}&code={{$affiliateUser->code}}&qr_content={{url('ads/affiliate-qrcode-page')}}" class="btn btn-primary"> Generate </a>								
 							</div>
 						</div>
+						@endif
 					</div>
 				</div>
 			</div>

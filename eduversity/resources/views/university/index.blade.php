@@ -2,7 +2,7 @@
     @section('content')
     <!-- Start of breadcrumb section
 		============================================= -->
-	<section id="breadcrumb" class="inner-banner relative-position backgroud-style"  style="background-image: url({{ (isset($contentMain->banner_image))?getSizedImage('',$contentMain->banner_image):url('assets/img/banner/brt-1.jpg') }});">
+	<section id="breadcrumb" class="inner-banner relative-position backgroud-style"  style="background-image: url({{ (isset($contentMain->banner_image))?getSizedImage('',$contentMain->banner_image):'https://www.icajobguarantee.com/public/upload/2023-05-15/inner-banners.jpg' }});">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-9">
@@ -49,18 +49,23 @@
 											<label>Find By States</label>
 											<select class="gotoCourseCategory">
 												<option value="" selected="">All States </option>
-												@if(getStates())
-													@foreach (getStates() as $value)
-													<option value="{{ URL::to('/state') }}/{{ $value->slug }}" {{ (isset($state->slug) && ($value->slug == $state->slug)) ?"selected":"" }}> {{ $value->name }} </option>
-													@endforeach	
-												@endif		
+											@if($states)
+												@foreach ($states as $value)
+												<option value="{{ URL::to('/state') }}/{{ $value->slug }}" {{ (isset($state->slug) && ($value->slug == $state->slug)) ?"selected":"" }}> {{ $value->name }} </option>
+												@endforeach	
+											@endif		
 											</select>
 										</div>
 
 										<div class="filter-select mb20">
 											<label>Find By City</label>
 											<select class="gotoCourseCategory">
-												<option value="9" selected="">All Cities</option>						
+												<option value="9" selected="">All Cities</option>
+												@if(isset($cities))
+													@foreach ($cities as $value)
+													<option value="{{ URL::to('/city') }}/{{ $value->slug }}" > {{ $value->name }} </option>
+													@endforeach	
+												@endif	
 											</select>
 										</div>
 										<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
@@ -80,7 +85,7 @@
 										<div class="list-head">
 											<h6>Best Engineering Colleges in India 2023:</h6>
 										</div>
-										@foreach(getUniversities() as $value)
+										@foreach($universities as $university)
 										<div class="university_wrapper mt10 mb20" style="">
 											<div class="university_content_section">
 												<div class="course-list-img-text">
@@ -88,10 +93,10 @@
 														<img src="https://dummyimage.com/60x60" alt="">
 													</div>
 													<div class="course-list-text">
-														<h3><a href="/universities/{{ $value->slug }}">{{ $value->name }}</a></h3>
+														<h3><a href="/universities/{{ $university->slug }}">{{ $university->name }}</a></h3>
 														<div class="course-meta">
 															<span class="course-category bold-font">	
-																<a href="" > <i class="fa fa-map-marker" > </i> {{ getCityById($value->city_id)->name }}, {{ getStateById(getCityById($value->city_id)->state_id)->name }} </a>
+																<a href="" > <i class="fa fa-map-marker" > </i> {{ getCityById($university->city_id)->name }}, {{ getStateById(getCityById($university->city_id)->state_id)->name }} </a>
 															</span>
 														</div>
 													</div>
@@ -125,7 +130,7 @@
 													<a class="btn-filled" href="javascript:void(0)" onclick="lead_capture_form_btn(1,'')"><i class="fas fa-download"></i> Brochure</a>
 												</div>
 												<div class="course-type-list" style="width:auto">
-													<a class="btn-outline" href="/universities/{{ $value->slug }}">View More <i class="fas fa-caret-right"></i></a>
+													<a class="btn-outline" href="/universities/{{ $university->slug }}">View More <i class="fas fa-caret-right"></i></a>
 												</div>
 											</div>
 										</div>

@@ -9,7 +9,7 @@
     Redirect 301 /university https://university.icajobguarantee.com/
 
     RewriteEngine On
-    Redirect 301 /Verify/OnlineCertificateView.aspx https://student.icajobguarantee.com/verify/certificateverification.aspx
+    Redirect 301 /Verify/OnlineCertificateView.aspx   
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]

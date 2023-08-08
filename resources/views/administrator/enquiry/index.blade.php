@@ -5,12 +5,17 @@
 <div class="col-12">
 
 	@if($enquiry)
-
+	
 		<div class="card">
 
 			<div class="card-body">
 
-				<h5 class="card-title"> Datatable</h5>
+				<div class="form-group row">
+					<label for="no_of_module" class="col-sm-2 text-left control-label col-form-label">Generate QR Code</label>
+					<div class="col-sm-7">
+						<a href="/administrator/generate-qrcode?center={{$name}}&code={{$center->mobile}}&qr_content={{url('/enquiry-form')}}" class="btn btn-primary">Generate</a>							
+					</div>
+				</div>
 
 				<div class="table-responsive">
 
@@ -31,7 +36,7 @@
 								<td>{{ $value->name }}</td>													
 								<td>{{ $value->mobile }}</td>													
 								<td>
-									<a href="javascript:void();" class="btn btn-success btn-lg">Reffer</a>
+									<a href="{{ url('administrator/enquiry/'.$value->id) }}" class="btn btn-success btn-small">View</a>
 								</td>
 							</tr>
 							@endforeach							

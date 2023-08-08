@@ -4235,7 +4235,7 @@ ul.product-tab li.active:after {
     height: 70px;
     width: 70px;
     float: left;
-    margin-right: 20px; }
+    margin-right: 15px; }
   .course-page-section .course-list-text {
     max-width: 225px;
     display: inline-block; }
@@ -5326,4 +5326,53 @@ form#index_lead_capture_form h4, form#index_lead_capture_form p {
   width: 32%;
   float: left;
   margin-left: 10px;
+}
+
+
+.formFieldParentOccupation span {
+  padding: 0 16px;
+  display: inline-flex;
+  width: 227px;
+}
+.contact_form input[type="radio"], .contact_form input[type="checkbox"] {
+  display: inline-flex;
+  margin-right: 8px;
+  height: 18px;
+  width: 30px;
+}
+.university_content_wrap {
+  font-size: 12px;
+  width: 100%;
+  overflow: hidden;
+}
+.university_content_wrap span {
+  display: block;
+  color: #333;
+}
+
+.university_wrapper {
+  display: block;
+  background: #f3f3f3;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 25px;
+}
+
+.university_content_section{
+  display: inline;
+  float: left;
+}
+
+.university_btn_section {
+  width: 100%;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.course-page-section th {
+  font-size: 12px;
+  font-weight: 700;
+  color: #333333;
+  border-bottom: 3px solid #616dfd;
 }

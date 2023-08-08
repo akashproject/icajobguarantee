@@ -1232,7 +1232,6 @@ searchBAR: function (){
 
 	//Franchise Form Validation
 	$("#franchise_lead_capture_form").validate({
-		
 		messages: {
 			name: {
 				required: "Please enter full name",
@@ -1271,6 +1270,7 @@ searchBAR: function (){
 				if(jQuery("#" + formId + " .formFieldOtpResponse").val() == ""){
 					jQuery("#" + formId + " .submit_classroom_lead_generation_form").prop('disabled', 'disabled');
 					sendMobileOtp(formId);
+					countDown()
 					return false;
 				}
 		
@@ -1286,6 +1286,7 @@ searchBAR: function (){
 			if(`${isEnableOtp}` == 1 && `${isAjaxSubmit}` == 1){
 				if(jQuery("#" + formId + " .formFieldOtpResponse").val() == ""){
 					sendMobileOtp(formId);
+					countDown()
 					return false;
 				}
 				if(jQuery("#" + formId + " .verify_otp").val() != '' && jQuery("#" + formId + " .formFieldOtpResponse").val() == jQuery("#" + formId + " .verify_otp").val()){
@@ -1302,6 +1303,37 @@ searchBAR: function (){
 				captureLead(form,formId)
 			}
 			return false; // required to block normal submit since you used ajax
+		}
+	});
+
+	$("#apply_job_application_form").validate({
+		messages: {
+			name: {
+				required: "Enter your full name",
+			},
+			email: {
+				required: "Enter your valid email address",
+			},
+			mobile: {
+				required: "Please enter valid mobile number",
+				min: "Please enter valid mobile number",
+				max: "Please enter valid mobile number",
+			},
+			address:{
+				required: "Enter your present location",
+			},
+			experience: {
+				required: "Enter your total work experience ",
+			},
+			resume: {
+				required: "Upload your resume ",
+			},
+		},
+		submitHandler: function(form) {
+			let formId = $(form).attr('id');
+			jQuery("#" + formId + " .checkout_loader").show();
+			captureJobApplication(form,formId)
+			return false;
 		}
 	});
 
@@ -1342,6 +1374,17 @@ searchBAR: function (){
 		jQuery(".submenu-courses").hide();
 	});
 
+	jQuery(".resendOtp").on('click',function(){
+		jQuery(this).addClass('display-none');
+		jQuery('.countdown_label').removeClass('display-none');
+		let form = jQuery(this).closest("form");
+		let formId = $(form).attr('id');
+		jQuery("#" + formId + " .submit_classroom_lead_generation_form").prop('disabled', 'disabled');
+		jQuery("#" + formId + " .checkout_loader").show();
+		countDown();
+		sendMobileOtp(formId);
+	});
+
 	function classroomOnFormSubmitProcess(form){
 		let formId = $(form).attr('id');
 		jQuery("#" + formId + " .checkout_loader").show();
@@ -1355,6 +1398,7 @@ searchBAR: function (){
 			if(jQuery("#" + formId + " .formFieldOtpResponse").val() == ""){
 				jQuery("#" + formId + " .submit_classroom_lead_generation_form").prop('disabled', 'disabled');
 				sendMobileOtp(formId);
+				countDown()
 				return false;
 			}
 	
@@ -1370,6 +1414,7 @@ searchBAR: function (){
 		if(`${isEnableOtp}` == 1 && `${isAjaxSubmit}` == 1){
 			if(jQuery("#" + formId + " .formFieldOtpResponse").val() == ""){
 				sendMobileOtp(formId);
+				countDown()
 				return false;
 			}
 			if(jQuery("#" + formId + " .verify_otp").val() != '' && jQuery("#" + formId + " .formFieldOtpResponse").val() == jQuery("#" + formId + " .verify_otp").val()){
@@ -1419,7 +1464,6 @@ searchBAR: function (){
 	}
 
 	function captureLead(form,formId){
-		googConversionTrack();
 		$.ajaxSetup({
 			headers: {
 			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -1471,6 +1515,46 @@ searchBAR: function (){
 		document.body.removeChild(a);
 	}
 
+	function countDown(){
+		var timer2 = "0:59";
+		var interval = setInterval(function() {
+			var timer = timer2.split(':');
+			//by parsing integer, I avoid all extra string processing
+			var minutes = parseInt(timer[0], 10);
+			var seconds = parseInt(timer[1], 10);
+			--seconds;
+			minutes = (seconds < 0) ? --minutes : minutes;
+			if (minutes < 0) {
+				clearInterval(interval)
+				jQuery('.countdown_label').addClass("display-none");
+				jQuery('.resendOtp').removeClass("display-none");
+			};
+			seconds = (seconds < 0) ? 59 : seconds;
+			seconds = (seconds < 10) ? '0' + seconds : seconds;
+			//minutes = (minutes < 10) ?  minutes : minutes;
+			jQuery('.countdown').html(minutes + ':' + seconds);
+			timer2 = minutes + ':' + seconds;
+		}, 1000);
+	}
+
+	function captureJobApplication(form,formId){
+		$.ajaxSetup({
+			headers: {
+			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			}
+		});
+		$.ajax({
+			url: `${globalUrl}capture-job-application`,
+			type: "post",
+			data: jQuery(form).serialize(),
+			success: function(result) {
+				jQuery("#" + formId + " .form_process").hide();
+				jQuery("#" + formId + " .form_success").show();
+				jQuery("#" + formId)[0].reset();
+				return true;
+			}
+		});
+	}
 })();
 
 function lead_capture_form_btn(brochure_id,center_id) {
@@ -1516,3 +1600,4 @@ function findNearest() {
 		navigator.geolocation.getCurrentPosition(showPosition);
 	}
 }
+

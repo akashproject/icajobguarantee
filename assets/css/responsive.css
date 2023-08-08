@@ -737,6 +737,31 @@
 	.nws-button {
 		padding: 0;
 	}
+	#global_other_details_form .form_process h3 {
+		padding: 6px 8px;
+		color: #616cfc;
+		margin: 15px 0;
+		font-size: 14px;
+		font-weight: 700;
+		border-bottom: 2px solid;
+		border-left: 2px solid;
+		background: #d5dcff;
+		text-transform: uppercase;
+	}
+	.formFieldParentOccupation span {
+		padding: 0;
+		display: inline-flex;
+		width: 49%;
+		float: left;
+		font-size: 13px;
+	}
+	
+	.contact_form input[type="radio"], .contact_form input[type="checkbox"] {
+		display: inline-flex;
+		margin-right: 1px;
+		height: 15px;
+		width: 24px;
+	}
 }
 @media screen and (max-width: 360px) { 
 	.cart-search li {

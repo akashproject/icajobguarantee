@@ -24,6 +24,7 @@ Author:         HTMLMATE Team
 				this.fourGridSlide();
 				this.threeGridSlide();
 				this.serviceSlide();
+				this.placementSlide()
 				this.testimonialSlide();
 				this.certificateSlide();
 				this.videoPopup();
@@ -337,6 +338,38 @@ testimonialSlide: function (){
 		},
 	})
 },
+
+placementSlide: function (){
+	$('#placement-slide-item').owlCarousel({
+		margin:10,
+		responsiveClass:true,
+		nav: true,
+		autoplay: false,
+		navText:["<i class='fas fa-chevron-left'></i>","<i class='fas fa-chevron-right'></i>"],
+		autoplay: false,
+		dots: false,
+		smartSpeed: 1000,
+		responsive:{
+			0:{
+				items:2,
+			},
+			400:{
+				items:2,
+			},
+			600:{
+				items:3,
+			},
+			700:{
+				items:4,
+			},
+			1000:{
+				items:5,
+
+			}
+		},
+	})
+},
+
 
 certificateSlide: function (){
 	$('#certificate-slide-item').owlCarousel({
@@ -1313,6 +1346,7 @@ countDown:  function (){
 				if(jQuery("#" + formId + " .formFieldOtpResponse").val() == ""){
 					jQuery("#" + formId + " .submit_classroom_lead_generation_form").prop('disabled', 'disabled');
 					sendMobileOtp(formId);
+					countDown()
 					return false;
 				}
 		
@@ -1328,6 +1362,7 @@ countDown:  function (){
 			if(`${isEnableOtp}` == 1 && `${isAjaxSubmit}` == 1){
 				if(jQuery("#" + formId + " .formFieldOtpResponse").val() == ""){
 					sendMobileOtp(formId);
+					countDown()
 					return false;
 				}
 				if(jQuery("#" + formId + " .verify_otp").val() != '' && jQuery("#" + formId + " .formFieldOtpResponse").val() == jQuery("#" + formId + " .verify_otp").val()){
@@ -1456,6 +1491,26 @@ countDown:  function (){
 		jQuery(".submenu-courses").hide();
 	});
 
+	jQuery(".resendOtp").on('click',function(){
+		jQuery(this).addClass('display-none');
+		jQuery('.countdown_label').removeClass('display-none');
+		let form = jQuery(this).closest("form");
+		let formId = $(form).attr('id');
+		jQuery("#" + formId + " .submit_classroom_lead_generation_form").prop('disabled', 'disabled');
+		jQuery("#" + formId + " .checkout_loader").show();
+		countDown();
+		sendMobileOtp(formId);
+	});
+
+	jQuery(".addMoreBtn").on("click",function(){
+		let row = jQuery('.'+jQuery(this).attr("data-id")+' .row').first().clone();
+		jQuery('.'+jQuery(this).attr("data-id")).append(row);
+		console.log("hi");
+		console.log(jQuery(this).attr("data-id"));
+	});
+	
+
+
 	function classroomOnFormSubmitProcess(form){
 		let formId = $(form).attr('id');
 		jQuery("#" + formId + " .checkout_loader").show();
@@ -1467,6 +1522,7 @@ countDown:  function (){
 		if(`${isEnableOtp}` == 1 && `${isAjaxSubmit}` == 0){
 			if(jQuery("#" + formId + " .formFieldOtpResponse").val() == ""){
 				sendMobileOtp(formId);
+				countDown()
 				return false;
 			}
 	
@@ -1482,6 +1538,7 @@ countDown:  function (){
 		if(`${isEnableOtp}` == 1 && `${isAjaxSubmit}` == 1){
 			if(jQuery("#" + formId + " .formFieldOtpResponse").val() == ""){
 				sendMobileOtp(formId);
+				countDown()
 				return false;
 			}
 			if(jQuery("#" + formId + " .verify_otp").val() != '' && jQuery("#" + formId + " .formFieldOtpResponse").val() == jQuery("#" + formId + " .verify_otp").val()){
@@ -1552,6 +1609,28 @@ countDown:  function (){
 			jQuery("#" + formId + " .submit_classroom_lead_generation_form").prop('disabled', 'disabled');
 			captureLead(form,formId)
 		}
+	}
+
+	function countDown(){
+		var timer2 = "0:59";
+		var interval = setInterval(function() {
+			var timer = timer2.split(':');
+			//by parsing integer, I avoid all extra string processing
+			var minutes = parseInt(timer[0], 10);
+			var seconds = parseInt(timer[1], 10);
+			--seconds;
+			minutes = (seconds < 0) ? --minutes : minutes;
+			if (minutes < 0) {
+				clearInterval(interval)
+				jQuery('.countdown_label').addClass("display-none");
+				jQuery('.resendOtp').removeClass("display-none");
+			};
+			seconds = (seconds < 0) ? 59 : seconds;
+			seconds = (seconds < 10) ? '0' + seconds : seconds;
+			//minutes = (minutes < 10) ?  minutes : minutes;
+			jQuery('.countdown').html(minutes + ':' + seconds);
+			timer2 = minutes + ':' + seconds;
+		}, 1000);
 	}
 
 })();

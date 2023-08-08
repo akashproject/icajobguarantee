@@ -254,7 +254,7 @@
 				</div>
 				<div class="row ">
 					<div class="col-md-7 text-right p30">
-						<div class="custom-bg-light">
+						<div class="custom-bg-light timeline-content">
 							<h3 class="primary-color">Monthly Mock Interviews</h3>
 							<p> We provide practice and preparation for our students who are seeking employment or aiming to improve their interview skills and increase their chances of securing job offers. Here are some advantages of engaging in monthly mock interviews:. </p>
 							<ul>
@@ -280,30 +280,34 @@
 						</div>
 					</div>
 					<div class="col-md-6 p30">
-						<h3 class="primary-color">GDPI / SOBO </h3>
-						<p>We organize GDPI (Group Discussion & Personal Interview) , also known as SOBO (Speak Out Bowled Out) , which are commonly used as selection tools in various job interviews. They offer several benefits to both candidates and recruiters </p>
-						<ul>
-							<li>Develop critical thinking and Analytical Skills</li>
-							<li>Do effective communication</li>
-							<li>Teamwork and collaboration</li>
-							<li>Personal Assessment</li>
-							<li>Skill Evaluation</li>
-							<li>Relationship Building</li>
-						</ul>
+						<div class="custom-bg-light timeline-content">
+							<h3 class="primary-color">GDPI / SOBO </h3>
+							<p>We organize GDPI (Group Discussion & Personal Interview) , also known as SOBO (Speak Out Bowled Out) , which are commonly used as selection tools in various job interviews. They offer several benefits to both candidates and recruiters </p>
+							<ul>
+								<li>Develop critical thinking and Analytical Skills</li>
+								<li>Do effective communication</li>
+								<li>Teamwork and collaboration</li>
+								<li>Personal Assessment</li>
+								<li>Skill Evaluation</li>
+								<li>Relationship Building</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 				<div class="row ">
 					<div class="col-md-6 text-right p30">
-						<h3 class="primary-color">Excel Ka Don</h3>
-						<p> We make our students capable of effectively using the most widely used software tool in the corporate world, Ms Excel  to contribute to increasing efficiency, data management, analysis, and decision-making. Here are some key advantages: </p>
-						<ul>
-							<li>Data Organization and Management</li>
-							<li>Data Analysis and Reporting</li>
-							<li>Project Management</li>
-							<li>Automation and Efficiency</li>
-							<li>Data Visualization</li>
-							<li>Collaboration and Data Sharing</li>
-						</ul>
+						<div class="custom-bg-light timeline-content">
+							<h3 class="primary-color">Excel Ka Don</h3>
+							<p> We make our students capable of effectively using the most widely used software tool in the corporate world, Ms Excel  to contribute to increasing efficiency, data management, analysis, and decision-making. Here are some key advantages: </p>
+							<ul>
+								<li>Data Organization and Management</li>
+								<li>Data Analysis and Reporting</li>
+								<li>Project Management</li>
+								<li>Automation and Efficiency</li>
+								<li>Data Visualization</li>
+								<li>Collaboration and Data Sharing</li>
+							</ul>
+						</div>
 					</div>
 					<div class="col-md-6 p30">
 						<img src="{{ url('assets/img/ekd.jpg')}}">
@@ -314,16 +318,18 @@
 						<img src="{{ url('assets/img/tkb.png')}}">
 					</div>
 					<div class="col-md-6 p30">
-						<h3 class="primary-color">Tally Ka Boss </h3>
-						<p> We make our students fit for the corporate world by excelling in TallyPrime for streamlining financial management, enhancing productivity, and facilitating accurate reporting. Here are some key advantages of using TallyPrime: </p>
-						<ul>
-							<li>Efficient Accounting and Financial Management</li>
-							<li>Seamless GST Compliance</li>
-							<li>Real-time Financial Reporting</li>
-							<li>Inventory Management</li>
-							<li>Payroll Management</li>
-							<li>Bank Integration and Reconciliation</li>
-						</ul>
+						<div class="custom-bg-light timeline-content">
+							<h3 class="primary-color">Tally Ka Boss </h3>
+							<p> We make our students fit for the corporate world by excelling in TallyPrime for streamlining financial management, enhancing productivity, and facilitating accurate reporting. Here are some key advantages of using TallyPrime: </p>
+							<ul>
+								<li>Efficient Accounting and Financial Management</li>
+								<li>Seamless GST Compliance</li>
+								<li>Real-time Financial Reporting</li>
+								<li>Inventory Management</li>
+								<li>Payroll Management</li>
+								<li>Bank Integration and Reconciliation</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>

@@ -250,6 +250,8 @@ Route::post('/save-contact', [App\Http\Controllers\PageController::class, 'saveC
 Route::post('/submit-mobile-otp', [App\Http\Controllers\IndexController::class, 'submitMobileOtp'])->name('submit-mobile-otp');
 Route::post('/capture-lead', [App\Http\Controllers\IndexController::class, 'captureLead'])->name('capture-lead');
 Route::post('/franchise-capture-lead', [App\Http\Controllers\IndexController::class, 'franchiseCaptureLead'])->name('capture-lead');
+Route::post('/capture-job-application', [App\Http\Controllers\IndexController::class, 'captureJobApplication'])->name('capture-job-application');
+
 Route::post('/get-centers', [App\Http\Controllers\IndexController::class, 'getCenter'])->name('get-centers');
 Route::post('/get-city-by-state-id', [App\Http\Controllers\Administrator\CenterController::class, 'getCitiesByStateId'])->name('get-city-by-state-id');
 Route::post('/center/get-center-by-pincode', [App\Http\Controllers\IndexController::class, 'getCenterByPincode'])->name('get-center-by-pincode');
@@ -257,10 +259,12 @@ Route::post('/center/get-center-by-pincode', [App\Http\Controllers\IndexControll
 Route::any('/index/test-code', [App\Http\Controllers\IndexController::class, 'testCode'])->name('test-code');
 
 Route::any('/global-other-form-submit', [App\Http\Controllers\IndexController::class, 'globalFormSubmit'])->name('global-other-form-submit');
+Route::any('/enquiry-form-submit', [App\Http\Controllers\IndexController::class, 'enquiryFormSubmit'])->name('enquiry-form-submit');
 Route::post('/index/payment-success', [App\Http\Controllers\IndexController::class, 'paymentSuccess'])->name('payment-success');
 Route::post('/index/payment-failed', [App\Http\Controllers\IndexController::class, 'paymentFailed'])->name('payment-failed');
 
 //Route::get('/index/create-center-login', [App\Http\Controllers\IndexController::class, 'createCenterLogin'])->name('create-center-login');
+//Route::get('/index/create-university-login', [App\Http\Controllers\IndexController::class, 'createUniversityLogin'])->name('create-university-login');
 
 
 Auth::routes();

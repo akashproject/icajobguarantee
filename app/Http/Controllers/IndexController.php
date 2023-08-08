@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 use App\Models\Course;
 use App\Models\CourseType;
 use App\Models\Center;
@@ -12,6 +14,7 @@ use App\Models\City;
 use App\Models\State;
 use App\Models\Pincode;
 use App\Models\Lead;
+use App\Models\Enquiry;
 use App\Models\Brochure;
 use App\Jobs\SendEmailJob; 
 use App\Mail\NotifyMail;
@@ -175,6 +178,28 @@ class IndexController extends Controller
         } catch(\Illuminate\Database\QueryException $e){
             return response()->json($e, $this->_statusOK);
         }
+    }
+
+    public function captureJobApplication(Request $request){
+        try {
+            $postData = $request->all();
+
+            $validatedData = $request->validate([
+                'name' => 'required',
+                'mobile' => 'required',
+            ]);
+
+            $mail = Mail::send('email.jobApplicationTemplate', $postData, function ($m) use ($postData) {
+                $m->from('connect@icajobguarantee.com', 'ICA Edu Skils');
+                $m->to('akash.dutta@icagroup.in', 'HR Manager')->subject("New Job has been submitted");
+            });
+
+            return response()->json($postData, $this->_statusOK);
+
+        } catch(\Illuminate\Database\QueryException $e){
+            return response()->json($e, $this->_statusOK);
+        }
+        
     }
 
     public function classroomLeadCaptureLeadToExtraage($postData){
@@ -584,18 +609,6 @@ class IndexController extends Controller
         }
     }
 
-    function random_strings($length_of_string)
-    {
-    
-        // String of all alphanumeric character
-        $str_result = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-    
-        // Shuffle the $str_result and returns substring
-        // of specified length
-        return substr(str_shuffle($str_result), 
-                        0, $length_of_string);
-    }
-
     function createCenterLogin(){
         $center = Center::select('name','email','mobile')->get();
 
@@ -615,6 +628,68 @@ class IndexController extends Controller
             echo $user->id."<br>";
         }
         
+    }
+
+    function createUniversityLogin(){
+
+        return User::create([
+            'name' => 'Eduversity HO',
+            'email' => 'eduversity@icajobguarantee.com',
+            'password' => Hash::make('eduversity@1234'),
+        ]);
+        
+    }
+    
+
+    public function enquiryFormSubmit(Request $request){
+        try {
+            $postData = $request->all();
+
+            if($postData['qualification']){
+                $postData['qualification'] = json_encode($postData['qualification']);
+            }
+
+            if($postData['professional_qualification']){
+                $postData['professional_qualification'] = json_encode($postData['professional_qualification']);
+            }
+            
+            if($postData['experience']){
+                $postData['experience'] = json_encode($postData['experience']);
+            }
+
+            if($postData['know_from']){
+                $postData['know_from'] = json_encode($postData['know_from']);
+            }
+
+            if($postData['slot_day']){
+                $postData['slot_day'] = json_encode($postData['slot_day']);
+            }
+
+            if($postData['slot_time']){
+                $postData['slot_time'] = json_encode($postData['slot_time']);
+            }
+            $postData['center_id'] = 1;
+            
+            $enq = Enquiry::create($postData);
+            return redirect('/thank-you');
+
+        } catch(\Illuminate\Database\QueryException $e){
+            var_dump($e);
+            //throw $th;
+           // return response()->json($response, $this->_statusErr);
+        }
+    }
+
+    function random_strings($length_of_string)
+    {
+    
+        // String of all alphanumeric character
+        $str_result = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    
+        // Shuffle the $str_result and returns substring
+        // of specified length
+        return substr(str_shuffle($str_result), 
+                        0, $length_of_string);
     }
 
 }

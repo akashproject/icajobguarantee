@@ -7,6 +7,12 @@
     <div class="contact-info">
         <input class="verify_otp" name="verify_otp" type="text" placeholder="Enter One Time Password" autocomplete="off">
     </div>
+    <div class="otp-content">
+        <p class="message"> Did not recive OTP?
+            <span class="countdown_label"> Resend in <span class="countdown" >59</span> Sec </span>
+            <a class="resendOtp display-none" href="javascript:void(0)"> Resend OTP </a>
+        </p>
+    </div>
 </div>
 <div class="nws-button text-center white text-capitalize">
     <button class="submit_classroom_lead_generation_form form_step_1" type="submit" disabled>Apply Now <i class="fas fa-arrow-right" > </i> </button> 

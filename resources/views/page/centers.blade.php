@@ -50,11 +50,11 @@
 										<label>Find By States</label>
 										<select class="gotoCourseCategory">
 											<option value="" selected="">All States </option>
-										@if(getStates())
-											@foreach (getStates() as $value)
-											<option value="{{ URL::to('/state') }}/{{ $value->slug }}" {{ (isset($state->slug) && ($value->slug == $state->slug)) ?"selected":"" }}> {{ $value->name }} </option>
-											@endforeach	
-										@endif		
+											@if(getStates())
+												@foreach (getStates() as $value)
+												<option value="{{ URL::to('/state') }}/{{ $value->slug }}" {{ (isset($state->slug) && ($value->slug == $state->slug)) ?"selected":"" }}> {{ $value->name }} </option>
+												@endforeach	
+											@endif		
 										</select>
 									</div>
 

@@ -37,8 +37,8 @@ class AffiliateController extends Controller
     {
         try {
             $affiliateUser = AffiliateUser::findorFail($id);
-            $name = Auth::user()->name;
-            return view('administrator.affiliates.show',compact('affiliateUser','name'));
+            $user = Auth::user();
+            return view('administrator.affiliates.show',compact('affiliateUser','user'));
         } catch(\Illuminate\Database\QueryException $e){
         }        
     }

@@ -173,11 +173,17 @@ if (! function_exists('getRecruiters')) {
 }
 
 if (! function_exists('getJoinees')) {
-    function getJoinees($center_id=null){
+    function getJoinees($center_id=null,$course_id=null){
         $placements = DB::table('placements');
         if($center_id){
             $placements->where('center_id',$center_id);
         } 
+
+        if($course_id){
+            $placements->where('course_id',$course_id);
+        } 
+
+
         $placements = $placements->where('status',"1")->inRandomOrder()->paginate(12);
         return $placements;
     }

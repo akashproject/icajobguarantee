@@ -84,8 +84,26 @@
                 </div>
             </div>
             <!-- Modal body -->
-            <div class="modal-body">    
-                
+            <div class="modal-body">   
+                <div class="popup_banner_form_wrapeer" > 
+                    <form id="apply_job_application_form" class="lead_capture_form contact_form" action="{{ url('job-application-form') }}" method="POST" enctype="multipart/form-data">
+                        <div class="form_process" >
+                            <div class="lead_steps step1 active" > 
+                                @include('common.applyJobFormField')
+                            </div>
+                            <div class="nws-button text-center white text-capitalize">
+                                <button class="" type="submit">Apply Now <i class="fas fa-arrow-right" > </i> </button> 
+                                <img src="https://www.icacourse.in/wp-content/themes/scriptcrown/images/loader.gif" style="width: 42px; display:none;" class="checkout_loader">
+                            </div>
+                        </div>
+                        <div class="form_success" style="display:none">
+                            <div class="form-success-content">
+                                <span class="success-icon"> <i class="fas fa-check"></i> </span>
+                                <h4> Thank You! Your Application Submitted Successfully </h4>
+                            </div>
+                        </div>
+                    </form>  
+                </div> 
             </div>
         </div>
     </div>

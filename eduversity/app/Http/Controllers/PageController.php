@@ -11,10 +11,10 @@ class PageController extends Controller
     public function index($slug,Request $request)
     {
         try {
-            $center = ($request->has("center"))?$request->input('center'):null;
+            $university = ($request->has("university"))?$request->input('university'):null;
             $contentMain = Page::where('slug', $slug)->where('status', 1);
             $contentMain = $contentMain->firstOrFail();
-            return view("page.".$contentMain->template,compact('contentMain','center'));
+            return view("page.".$contentMain->template,compact('contentMain','university'));
 
         } catch(\Illuminate\Database\QueryException $e){
             //throw $th;

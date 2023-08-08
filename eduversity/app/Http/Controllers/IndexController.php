@@ -29,7 +29,8 @@ class IndexController extends Controller
             ->orderBy('university_courses.name', 'asc')
             ->get();
             $universities = University::where('status', 1)->get();
-            return view('index',compact('courses','universities'));
+            $university = null;
+            return view('index',compact('courses','universities','university'));
         } catch(\Illuminate\Database\QueryException $th){
             throw $th;
         }

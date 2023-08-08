@@ -8,6 +8,11 @@
 <div class="contact-info formFieldMobile">
     <input id="formFieldMobile" name="mobile" type="number" placeholder="Enter Your Mobile" autocomplete="off" min="6000000000" max="9999999999" required>
 </div>
-<input type="hidden" name="university" value="{{ (isset($university))?$university->name:'' }}">
+@if(!isset($university))
+<div class="contact-info formFieldCity">
+    <input id="formFieldCity" name="city" type="text" placeholder="Enter Your City" autocomplete="off" required>
+</div>
+@endif
+<input type="hidden" name="university" value="{{ (isset($university))?$university:'' }}">
 <input type="hidden" name="course_id" value="">
 <input type="hidden" name="brochure_id" value="">

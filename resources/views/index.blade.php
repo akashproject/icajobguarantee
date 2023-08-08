@@ -6,7 +6,7 @@
 		============================================= -->
 		<section id="slide" class="slider-section">
 			<div id="slider-item" class="slider-item-details">
-				<div  class="slider-area slider-bg-5 relative-position" style="background-image: url({{url('assets/img/banner/banner-classroom.jpg')}});">
+				<div  class="slider-area slider-bg-5 relative-position" style="background-image: url({{url('assets/img/independence/1.png')}});">
  					<div class="slider-text">
  						<div class="section-title mb20 headline text-left ">
  							<div class="layer-1-1">
@@ -27,7 +27,6 @@
 							</div>
 							<div class="layer-1-4">
 								<div class="slider-course-category ul-li text-center">
-									<span class="float-left">BY CATEGORY:</span>
 									<ul>
 									@foreach(getCourseTypes() as $key => $value)
 										<li> <a target="_blank" href="{{url('/category')}}/{{$value->slug}}" > {{$value->name}} </a> </li>
@@ -38,7 +37,7 @@
  						</div>
  					</div>
  				</div>
-				<div class="slider-area slider-bg-5 relative-position" style="background-image: url({{url('assets/img/banner/banner-university.jpg')}});">
+				<div class="slider-area slider-bg-5 relative-position" style="background-image: url({{url('assets/img/independence/2.jpg')}});">
  					<div class="slider-text">
  						<div class="section-title mb20 headline text-left ">
  							<div class="layer-1-1">
@@ -60,7 +59,7 @@
 						</div>
  					</div>
  				</div>		
-				<div  class="slider-area slider-bg-5 relative-position" style="background-image: url({{url('assets/img/banner/banner-franchise.jpg')}});">
+				<div  class="slider-area slider-bg-5 relative-position" style="background-image: url({{url('assets/img/independence/3.jpg')}});">
  					<div class="slider-text">
  						<div class="section-title mb20 headline text-left ">
  							<div class="layer-1-1">

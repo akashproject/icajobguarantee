@@ -36,14 +36,17 @@ class CourseController extends Controller
             $course_id = $contentMain->id;
             $universities = University::where('status', 1)->get();
             $model = "University";
-            return view('courses.index',compact('model','courses','course_id','universities','contentMain'));
+
+            $university = ($request->has("university"))?$request->input('university'):null;
+
+            return view('courses.index',compact('model','courses','course_id','universities','contentMain','university'));
 
         } catch(\Illuminate\Database\QueryException $e){
             //throw $th;
         }
     }
 
-    public function viewCourse($slug)
+    public function viewCourse($slug, Request $request)
     {
         try {
 
@@ -60,7 +63,7 @@ class CourseController extends Controller
             $model = "UniversityCourse";
             $utm_campaign = $contentMain->utm_campaign;
             $utm_source = $contentMain->utm_source;
-
+            $university = ($request->has("university"))?$request->input('university'):null;
             return view($this->layout.'courses.view',compact('model','contentMain','course_id','carriculams','courses'));
         } catch(\Illuminate\Database\QueryException $th){
             throw $th;
