@@ -309,6 +309,38 @@ CREATE TABLE `curriculums` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `enquiries`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `enquiries` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `center_id` int(11) NOT NULL,
+  `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `state_id` int(11) DEFAULT NULL,
+  `city` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `pincode` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `dob` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `occupation` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `mobile` varchar(15) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `parent_name` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `parent_mobile` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `parent_email` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `parent_occupation` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `qualification` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `professional_qualification` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `experience` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `know_from` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `job_interest` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `admission_date` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slot_day` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slot_time` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `failed_jobs`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -1578,3 +1610,4 @@ INSERT INTO `migrations` VALUES (53,'2023_06_29_095816_create_university_courses
 INSERT INTO `migrations` VALUES (54,'2023_06_30_095400_create_university_course_curriculums_table',27);
 INSERT INTO `migrations` VALUES (55,'2023_07_04_101922_add_fields_to_users_table',28);
 INSERT INTO `migrations` VALUES (56,'2023_07_25_101618_create_university_adpages_table',28);
+INSERT INTO `migrations` VALUES (57,'2023_07_28_124940_create_enquiries_table',29);

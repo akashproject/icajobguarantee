@@ -114,11 +114,11 @@
 				<div class="row">
 					<div class="col-md-7" >
 						<div class="form-group row">
-							<label for="title" class="col-sm-3 text-right control-label col-form-label">Select Questions</label>
-							<div class="col-sm-9">
-								<select class="form-control" multiple style="height:300px" >
-									@foreach(getFaqs() as $key => $value)
-									<option value="{{ $value->id }}" > {{ $value->question }} </option>
+							<label for="title" class="col-sm-6 text-left control-label col-form-label">Select Questions</label>
+							<div class="col-sm-12">
+								<select name="faq[]" class="form-control" multiple style="height:300px" >
+									@foreach(getAllFaqs() as $key => $value)
+									<option value="{{ $value->id }}" >{{$key+1}}. {{ $value->question }} </option>
 									@endforeach
 								</select>
 							</div>
