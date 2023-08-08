@@ -1771,7 +1771,7 @@
 
                                     <div id="accordion3" class="panel-group">
 
-										@foreach(getFaqs("Course") as $key => $value)
+										@foreach(getFaqs("Adpage",$contentMain->id) as $key => $value)
 
                                         <div class="panel">
 
