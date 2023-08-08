@@ -211,7 +211,7 @@
 									<i class="text-gradiant flaticon-favorites-button"></i>
 								</div>
 								<div class="counter-number">
-									<span class="counter-count bold-font">90%</span><span>+</span>
+									<span class="counter-count bold-font">90</span><span>%</span>
 									<p>Practical Training</p>
 								</div>
 							</div>
@@ -296,64 +296,82 @@
 	<!-- End of Course Highlights
 	============================================= -->
 
-
-	<!-- Start of Course at a Glance
+	<!-- Start of Course Syllabus
 	============================================= -->
 	<section id="course-details" class="galleries-section">
 		<div class="container">
 			<div class="testimonial-slide">
 				<div class="section-title mb20 headline text-center">
-					<span class="subtitle text-uppercase">Course Details</span>
-					<h3> Our <span> GST Training </span> at a glance </h3>
+					<span class="subtitle text-uppercase">Course Info</span>
+					<h3> GST <span> Training </span> Syllabus </h3>
 				</div>
 				<div class="row">
 					<div class="col-md-12">
 						<div class="row text-center">
-							<div class="col-md-6 col-6"> 
+							<div class="col-md-3 col-6"> 
 								<div class="key-highlights" >
 									<img src="{{ url('assets/img/icons/tick.png')}}" >
-									<h6> Course Syllabus </h6>
-									<div style="display: block!important; text-align: center!important; margin: auto!important;">
-    									<ul style="text-align: left!important;"> 
-    									    <li>Lecture 1 : Basic concepts of GST</li>
-                                            <li>Lecture 2 : Levy & Collection of Tax</li>
-                                            <li>Lecture 3 : Valuation</li>
-                                            <li>Lecture 4 : Payment of Tax</li>
-                                            <li>Lecture 5 : Returns</li>
-                                            <li>Lecture 6 : GST using Tally</li>
-                                            <li>Lecture 7 : Practice on GSTN</li>
-                                            <li>Lecture 8 : Project on GST</li>
-    									</ul>
-									</div>
+									<h6> Lecture 1 <br /> Basic concepts of GST </h6>
+									<p> Understand fundamental GST principles </p>
 								</div>
 							</div>
-							<div class="col-md-6 col-6"> 
+							<div class="col-md-3 col-6"> 
 								<div class="key-highlights" >
 									<img src="{{ url('assets/img/icons/tick.png')}}" >
-									<h6> Learning Outcomes </h6>
-									<div style="display: block!important; text-align: center!important; margin: auto!important;">
-    									<ul style="text-align: left!important;"> 
-    									    <li>Understand fundamental GST principles</li>
-                                            <li>Learn tax levying and collection process in GST</li>
-                                            <li>Determine the value of goods and services for GST</li>
-                                            <li>Grasp GST payment process and modes</li>
-                                            <li>Understand GST return filing and types</li>
-                                            <li>Acquire practical skills in using Tally for GST compliance</li>
-                                            <li>Gain hands-on experience with the GSTN platform</li>
-                                            <li>Apply GST knowledge to real-world projects</li>
-    									</ul>
-									</div>
+									<h6> Lecture 2 <br /> Levy & Collection of Tax </h6>
+									<p> Learn tax levying and collection process in GST </p>
 								</div>
 							</div>
+							<div class="col-md-3 col-6"> 
+								<div class="key-highlights" >
+									<img src="{{ url('assets/img/icons/tick.png')}}" >
+									<h6> Lecture 3 <br /> Valuation </h6>
+									<p> Determine the value of goods and services for GST </p>
+								</div>
+							</div>
+							<div class="col-md-3 col-6"> 
+								<div class="key-highlights" >
+									<img src="{{ url('assets/img/icons/tick.png')}}" >
+									<h6> Lecture 4 <br /> Payment of Tax </h6>
+									<p> Grasp GST payment process and modes </p>
+								</div>
+							</div>
+							<div class="col-md-3 col-6"> 
+								<div class="key-highlights" >
+									<img src="{{ url('assets/img/icons/tick.png')}}" >
+									<h6> Lecture 5 <br /> Returns </h6>
+									<p> Understand GST return filing and types </p>
+								</div>
+							</div>
+							<div class="col-md-3 col-6"> 
+								<div class="key-highlights" >
+									<img src="{{ url('assets/img/icons/tick.png')}}" >
+									<h6> Lecture 6 <br /> GST using Tally </h6>
+									<p> Acquire practical skills in using Tally for GST compliance </p>
+								</div>
+							</div>
+							<div class="col-md-3 col-6"> 
+								<div class="key-highlights" >
+									<img src="{{ url('assets/img/icons/tick.png')}}" >
+									<h6> Lecture 7 <br /> Practice on GSTN </h6>
+									<p> Gain hands-on experience with the GSTN platform </p>
+								</div>
+							</div>
+							<div class="col-md-3 col-6"> 
+								<div class="key-highlights" >
+									<img src="{{ url('assets/img/icons/tick.png')}}" >
+									<h6> Lecture 8 <br /> Project on GST </h6>
+									<p> Apply GST knowledge to real-world projects </p>
+								</div>
+							</div>							
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
-
-	<!-- End of  Course at a Glance
+	<!-- End of Course Syllabus
 	============================================= -->
-
+	
 	<!-- Start of Courses Listings
 	============================================= -->
 	<section id="courses" class="best-course-section">
@@ -812,7 +830,7 @@
 					<div class="col-md-9">
                     	<div class="about-teacher about-faq faq-secound-home-version">
 							<div class="section-title-2  headline text-left">
-								<h2>Frequently  <span>Ask &amp; Questions.</span></h2>
+								<h2> Frequently  <span> Asked </span>  Questions </h2>
 							</div>							
 							<div class="faq-tab mb35">
 								<div class="faq-tab-ques  ul-li">
