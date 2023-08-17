@@ -278,7 +278,7 @@
 						<div class="tab-button text-center ">
 							<ul class="course-tab index-category-tab">
 								@foreach($courseType as $key => $value)
-								<li rel="course{{$key}}"> {{ $value->name }} </li>
+								<li rel="course{{$key}}"> {{ $value->category }} </li>
 								@endforeach
 							</ul>
 						</div>
@@ -548,81 +548,37 @@
 		</div>
 	</section>
 	
-	<section id="faq" class="teacher-details-area">
+	<!-- Start of Faqs
+	============================================= -->
+	<section id="faqs" class="teacher-details-area">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-9">
-				<div class="about-teacher about-faq faq-secound-home-version">
+					<div class="about-teacher about-faq faq-secound-home-version">
 						<div class="section-title-2  headline text-left">
 							<h2>Frequently  <span>Ask &amp; Questions.</span></h2>
 						</div>							
 						<div class="faq-tab mb35">
 							<div class="faq-tab-ques  ul-li">
 								<div id="accordion3" class="panel-group">
+									@foreach(getFaqs("Center",$contentMain->id) as $key => $value)
 									<div class="panel">
-										<div class="panel-title" id="heading_0">
-											<h3 class="mb-0">
-												<button class="btn btn-link" data-toggle="collapse" data-target="#collapse_0" aria-expanded="true" aria-controls="collapse_0">
-													What Is the Eligibility Criteria for The Admission Process?
+										<div class="panel-title" id="heading_{{$key}}">
+											<h3 class="mb-{{$key}}">
+												<button class="btn btn-link" data-toggle="collapse" data-target="#collapse_{{$key}}" aria-expanded="true" aria-controls="collapse_{{$key}}">
+													{{ $value->question }}
 												</button>
 											</h3>
 										</div>
-										<div id="collapse_0" class="collapse" aria-labelledby="heading_0" data-parent="#accordion3">
+										<div id="collapse_{{$key}}" class="collapse" aria-labelledby="heading_{{$key}}" data-parent="#accordion3">
 											<div class="panel-body">
-												<p>10+2 Passed or Graduate in Science Or Commerce</p>
+												{!! $value->answer !!}
 											</div>
 										</div>
 									</div>
-									<div class="panel">
-										<div class="panel-title" id="heading_1">
-											<h3 class="mb-0">
-												<button class="btn btn-link" data-toggle="collapse" data-target="#collapse_1" aria-expanded="true" aria-controls="collapse_1">
-													What Kind of Academic Support Does the Program Provide?                                                    </button>
-											</h3>
-										</div>
-										<div id="collapse_1" class="collapse" aria-labelledby="heading_1" data-parent="#accordion3">
-											<div class="panel-body">
-												<p>It is a practical oriented program, where students gets hands-on training by the industry expert faculty through case studies &amp; tech applications. Also students will get grooming sessions that makes them job ready.</p>
-											</div>
-										</div>
-									</div>
-									<div class="panel">
-										<div class="panel-title" id="heading_2">
-											<h3 class="mb-0">
-												<button class="btn btn-link" data-toggle="collapse" data-target="#collapse_2" aria-expanded="true" aria-controls="collapse_2">
-													Do You Provide Placement Support?                                                    </button>
-											</h3>
-										</div>
-										<div id="collapse_2" class="collapse" aria-labelledby="heading_2" data-parent="#accordion3">
-											<div class="panel-body">
-												<p>Obviously! Our 3 years program consists of 2 years classroom training &amp; 1 year paid internship. After completion of the course the student will get guaranteed placement in a renowned company.</p>
-											</div>
-										</div>
-									</div>
-									<div class="panel">
-										<div class="panel-title" id="heading_3">
-											<h3 class="mb-0">
-												<button class="btn btn-link" data-toggle="collapse" data-target="#collapse_3" aria-expanded="true" aria-controls="collapse_3">
-													What Companies Are Invited for Campus Recruitment?                                                    </button>
-											</h3>
-										</div>
-										<div id="collapse_3" class="collapse" aria-labelledby="heading_3" data-parent="#accordion3">
-											<div class="panel-body">
-												<p>We have tie-ups with 70000+ employers, which contains some of the India’s top companies. After successful completion of the program, students will be placed in those organisations.</p>
-											</div>
-										</div>
-									</div>
+									@endforeach                                       
 								</div>
 								<!-- end of #accordion -->
-							</div>
-						</div>
-
-						<div class="about-btn">
-							<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
-								<a href="#">Make Question <i class="fas fa-caret-right"></i></a>
-							</div>
-							<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
-								<a href="#">contact us <i class="fas fa-caret-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -630,6 +586,8 @@
 			</div>
 		</div>
 	</section>
+	<!-- End of Faqs
+	============================================= -->
     @endsection
 @section('script')
 <!-- ============================================================== -->

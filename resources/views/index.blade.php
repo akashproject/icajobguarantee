@@ -37,7 +37,7 @@
  						</div>
  					</div>
  				</div>
-				<div class="slider-area slider-bg-5 relative-position" style="background-image: url({{url('assets/img/independence/2.jpg')}});">
+				<div class="slider-area slider-bg-5 relative-position" style="background-image: url({{url('assets/img/independence/2.png')}});">
  					<div class="slider-text">
  						<div class="section-title mb20 headline text-left ">
  							<div class="layer-1-1">
@@ -59,7 +59,7 @@
 						</div>
  					</div>
  				</div>		
-				<div  class="slider-area slider-bg-5 relative-position" style="background-image: url({{url('assets/img/independence/3.jpg')}});">
+				<div  class="slider-area slider-bg-5 relative-position" style="background-image: url({{url('assets/img/independence/3.png')}});">
  					<div class="slider-text">
  						<div class="section-title mb20 headline text-left ">
  							<div class="layer-1-1">

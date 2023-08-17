@@ -55,8 +55,8 @@ class UniversityController extends Controller
         try {
             $contentMain = University::where('slug', $slug)->where('status', 1);
             $contentMain = $contentMain->firstOrFail();
-            $university = $contentMain->name;
-            return view("university.view",compact('contentMain','university'));
+            $universityName = $contentMain->name;
+            return view("university.view",compact('contentMain','universityName'));
 
         } catch(\Illuminate\Database\QueryException $e){
             //throw $th;

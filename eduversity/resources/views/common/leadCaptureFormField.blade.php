@@ -13,6 +13,6 @@
     <input id="formFieldCity" name="city" type="text" placeholder="Enter Your City" autocomplete="off" required>
 </div>
 @endif
-<input type="hidden" name="university" value="{{ (isset($university))?$university:'' }}">
+<input type="hidden" name="university" value="{{ (isset($universityName))?$universityName:'' }}">
 <input type="hidden" name="course_id" value="">
 <input type="hidden" name="brochure_id" value="">

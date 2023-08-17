@@ -144,8 +144,14 @@ if (! function_exists('getTestimonials')) {
 
 if (! function_exists('getFaqs')) {
     function getFaqs($model=null,$model_id=null,$limit=10){
+
         $faq_ids = DB::table('faq_meta')->select('faqs')->where('model',$model)->where('model_id',$model_id)->first();
-        $faq = DB::table('faqs')->whereIn('id',json_decode($faq_ids->faqs))->where('status',"1")->paginate($limit);
+        $faq = DB::table('faqs');
+        if($faq_ids !== null){
+            $faq->whereIn('id',json_decode($faq_ids->faqs));
+        }
+        $faq = $faq->where('status',"1")->paginate($limit);
+
         return $faq;
     }
 }
@@ -247,6 +253,7 @@ if (! function_exists('getCenters')) {
         if(isset($_COOKIE['lng']) && isset($_COOKIE['lat'])){
             $centers->orderBy(DB::raw('POW((lng-'.$_COOKIE['lng'].'),2) + POW((lat-'.$_COOKIE['lat'].'),2)'));
         }
+        $centers->where('status',1);
         $centers = $centers->get();       
         return $centers;
     }

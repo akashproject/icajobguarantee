@@ -1300,7 +1300,7 @@ searchBAR: function (){
 			
 			if(`${isEnableOtp}` == 0 && `${isAjaxSubmit}` == 1){
 				jQuery("#" + formId + " .submit_classroom_lead_generation_form").prop('disabled', 'disabled');
-				captureLead(form,formId)
+				franchiseCaptureLead(form,formId)
 			}
 			return false; // required to block normal submit since you used ajax
 		}

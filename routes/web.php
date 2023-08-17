@@ -241,6 +241,9 @@ Route::get('/centers/{slug}', [App\Http\Controllers\CenterController::class, 'vi
 Route::get('/state/{slug}', [App\Http\Controllers\CenterController::class, 'state'])->name('states');
 Route::get('/city/{slug}', [App\Http\Controllers\CenterController::class, 'city'])->name('city');
 
+//Center Course
+Route::get('/center/{center-slug}', [App\Http\Controllers\CenterCourseController::class, 'viewCenterCourse'])->name('view-center-course');
+
 Route::post('/submit-review', [App\Http\Controllers\ReviewController::class, 'create'])->name('submit-review');
 
 Route::get('/tags/{slug}', [App\Http\Controllers\TagController::class, 'index'])->name('tags');

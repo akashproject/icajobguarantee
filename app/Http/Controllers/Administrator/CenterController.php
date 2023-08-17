@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Center;
 use App\Models\State;
 use App\Models\City;
-use App\Models\CourseType;
+use App\Models\Course;
 use Illuminate\Support\Facades\DB;
 
 class CenterController extends Controller
@@ -39,11 +39,11 @@ class CenterController extends Controller
 
     public function show($id) {
         try {
-            $courseCategories = CourseType::all();
+            $courses = Course::all();
             $center = Center::findorFail($id);
             $states = State::all();
             $cities = City::where('state_id', $center->state_id)->orderBy('name', 'asc')->get();
-            return view('administrator.centers.show',compact('center','states','cities','courseCategories'));
+            return view('administrator.centers.show',compact('center','states','cities','courses'));
         } catch(\Illuminate\Database\QueryException $e){
         }        
     }
@@ -65,9 +65,23 @@ class CenterController extends Controller
             if($data['center_id'] <= 0){
                 Center::create($data);
             } else {
-                $institute = Center::findOrFail($data['center_id']);
-                $institute->update($data);
+                $center = Center::findOrFail($data['center_id']);
+                $center->update($data);
             }
+
+            // Update Faq Meta
+            if (isset($data['faq']) && $data['faq']!='' ) {
+
+                $data['faq'] = json_encode($data['faq']);
+                $faq = DB::table('faq_meta')->select('id')->where('model','Center')->where('model_id',$center->id)->first();
+                if($faq === null){
+                    DB::table('faq_meta')->insert(['model'=>'Center','model_id'=>$center->id,'faqs'=>$data['faq']]);
+                } else {
+                    DB::table('faq_meta')->where('id', $faq->id)->update(['faqs'=>$data['faq']]);
+                }
+                
+            }
+
             return redirect()->back()->with('message', 'Page updated successfully!');
         } catch(\Illuminate\Database\QueryException $e){
             var_dump($e->getMessage()); 

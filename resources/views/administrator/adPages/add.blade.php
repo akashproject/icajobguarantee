@@ -113,7 +113,7 @@
 							<label for="title" class="col-sm-3 text-right control-label col-form-label">Select Questions</label>
 							<div class="col-sm-9">
 								<select class="form-control" multiple style="height:300px" name="faq[]">
-									@foreach(getFaqs() as $key => $value)
+									@foreach(getAllFaqs() as $key => $value)
 									<option value="{{ $value->id }}" > {{ $value->question }} </option>
 									@endforeach
 								</select>

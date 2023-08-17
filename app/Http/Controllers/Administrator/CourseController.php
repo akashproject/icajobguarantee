@@ -9,6 +9,7 @@ use App\Models\CourseType;
 use App\Models\Curriculum;
 use App\Models\Tag;
 use App\Models\Brochure;
+use Illuminate\Support\Facades\DB;
 
 class CourseController extends Controller
 {
@@ -88,6 +89,20 @@ class CourseController extends Controller
                 }
                 $course->update($data);
             }
+
+            // Update Faq Meta
+            if (isset($data['faq']) && $data['faq']!='' ) {
+
+                $data['faq'] = json_encode($data['faq']);
+                $faq = DB::table('faq_meta')->select('id')->where('model','Course')->where('model_id',$course->id)->first();
+                if($faq === null){
+                    DB::table('faq_meta')->insert(['model'=>'Course','model_id'=>$course->id,'faqs'=>$data['faq']]);
+                } else {
+                    DB::table('faq_meta')->where('id', $faq->id)->update(['faqs'=>$data['faq']]);
+                }
+                
+            }
+
             return redirect()->back()->with('message', 'Course updated successfully!');
         } catch(\Illuminate\Database\QueryException $e){
             var_dump($e->getMessage()); 

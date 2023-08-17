@@ -58,8 +58,8 @@
 							<div class="col-sm-9">
 								<select name="courses[]" id="courses" class="select2 form-control custom-select" style="width: 100%; height:136px;" multiple>	
 									<option value="">Select Courses</option>
-									@foreach($courseCategories as $category)
-									<option value="{{ $category->id }}" {{ (in_array($category->id,  json_decode($center->courses)))?'selected' : '' }} >{{ $category->name }}</option>
+									@foreach($courses as $course)
+									<option value="{{ $course->id }}" {{ (in_array($course->id,  json_decode($center->courses)))?'selected' : '' }} >{{ $course->name }}</option>
 									@endforeach
 								<select>
 							</div>
@@ -204,6 +204,21 @@
 						</div>
 					</div>
 
+				</div>
+				<h4 class="card-title"> FAQ Options </h4>
+				<div class="row">
+					<div class="col-md-7" >
+						<div class="form-group row">
+							<label for="title" class="col-sm-6 text-left control-label col-form-label">Select Questions</label>
+							<div class="col-sm-12">
+								<select name="faq[]" class="form-control" multiple style="height:300px" >
+									@foreach(getAllFaqs() as $key => $value)
+									<option value="{{ $value->id }}" >{{$key+1}}. {{ $value->question }} </option>
+									@endforeach
+								</select>
+							</div>
+						</div>
+					</div>
 				</div>
 				<h4 class="card-title"> Search Engine Options </h4>
 				<div class="row">
