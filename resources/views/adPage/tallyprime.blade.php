@@ -106,10 +106,10 @@
 				<div class="col-md-7">
 					<div class="ad-banner-content">
 						<div class="ad-banner-title">
-							<h1 class="text-center">GST Certification Course</h1>
+							<h1 class="text-center">Tally Certification Course</h1>
 						</div>
 						<div class="ad-banner-sub-title">
-							<h3 class="text-center" style="font-size: 1.2rem!important;"> Become a Certified GST Professional in top MNCs. Learn GST return filing, GST using Tally, & practice GSTN with a real-life projects. </h3>
+							<h3 class="text-center" style="font-size: 1.2rem!important;"> Elevate your career with essential Tally skills - boost job opportunities and efficiency. </h3>
 						</div>
 						<div class="ad-banner-option">
                             <div class="row">
@@ -124,8 +124,8 @@
                                 <div class="col-md-6">
                                     <ul>
                                         <li><strong>Difficulty Level:</strong> Beginner</li>
-                                        <li><strong>No. of Lectures:</strong> 8 Lectures</li>
-                                        <li><strong>Duration:</strong> 27 Hours</li>
+                                        <li><strong>No. of Lectures:</strong> 16 Lectures</li>
+                                        <li><strong>Duration:</strong> 51 Hours</li>
                                         <li><strong>Doubt Clearing Session:</strong> Yes</li>
                                     </ul>
                                 </div>    
@@ -140,7 +140,7 @@
                                             <i class="fas fa-star active"></i>
                                             <i class="fas fa-star active"></i>
                                         </div>
-                                        <a href="javascript:void(0)" class="text-white" style="cursor: auto;margin: 0 6px;"> (4823 Reviews )</a> <span class="text-white total-enroll" > 9689 students </span>
+                                        <a href="javascript:void(0)" class="text-white" style="cursor: auto;margin: 0 6px;"> (1928 Reviews )</a> <span class="text-white total-enroll" > 2367 students </span>
                                     </div>
                                 </div>
                             </div>
@@ -151,8 +151,8 @@
 					<div class="highlighted-content-wrapper text-center">
 						<div class="ad_banner_form_wrapeer" >
 							<div class="register-fomr-title text-center">
-								<h3 class="bold-font" style="font-size: 23px!important;"><span> Become a </span><br /> Certified GST Professional </h3>
-								<p style="color: #222!important;" class="bold-font">Our experts will guide you through the right GST Training process for a lucrative career ahead of you.</p>
+								<h3 class="bold-font" style="font-size: 23px!important;"><span> Become a </span><br /> Certified Tally Professional </h3>
+								<p style="color: #222!important;" class="bold-font">Our experts will guide you through the right Tally Training process for a lucrative career ahead of you.</p>
 							</div>
 							<div class="register-form-area text-left" >
 								<form id="banner_lead_capture_form" class="lead_form" action="{{ url('capture-lead') }}" method="POST" enctype="multipart/form-data">
@@ -236,7 +236,7 @@
 									<i class="text-gradiant flaticon-group"></i>
 								</div>
 								<div class="counter-number">
-									<span class="counter-count bold-font">Real Life</span>
+									<span class="counter-count bold-font">Live</span>
 									<p>Projects</p>
 								</div>
 							</div>
@@ -248,7 +248,7 @@
 		</section>
 	<!-- End of Upper Band
 		============================================= -->
-		
+
 	<style type="text/css">
 	    .testimonial_2_section { padding-top: 50px!important; }
 	    .placement-content { height: auto!important; }
@@ -302,7 +302,7 @@
 					<div class="col-md-7 mt10">
 						<div class="section-title mb20 headline text-center">
 							<span class="subtitle text-uppercase"> Info </span>
-							<h3> GST Course <span>  Highlights </span></h3>
+							<h3> Tally Course <span>  Highlights </span></h3>
 						</div>
 						<div class="row text-center">
 							<div class="col-md-4 col-6"> 
@@ -338,7 +338,7 @@
 							<div class="col-md-4 col-6"> 
 								<div class="key-highlights" >
 									<img src="{{ url('assets/img/icons/tick.png')}}" >
-									<h6> GST using TallyPrime </h6>
+									<h6> TallyPrime with GST </h6>
 								</div>
 							</div>
 						</div>
@@ -357,7 +357,7 @@
 			<div class="testimonial-slide">
 				<div class="section-title mb20 headline text-center">
 					<span class="subtitle text-uppercase">Course Info</span>
-					<h3> GST <span> Training </span> Syllabus </h3>
+					<h3> TallyPrime <span> Training </span> Syllabus </h3>
 				</div>
 				<div class="row">
 					<div class="col-md-12">
@@ -365,59 +365,123 @@
 							<div class="col-md-3 col-6"> 
 								<div class="key-highlights" >
 									<img src="{{ url('assets/img/icons/tick.png')}}" >
-									<h6> Lecture 1 <br /> Basic concepts of GST </h6>
-									<p> Understand fundamental GST principles </p>
+									<h6> Lecture 1 <br /> Company Creation </h6>
+									<p> Understand the process and significance of establishing a new company </p>
 								</div>
 							</div>
 							<div class="col-md-3 col-6"> 
 								<div class="key-highlights" >
 									<img src="{{ url('assets/img/icons/tick.png')}}" >
-									<h6> Lecture 2 <br /> Levy & Collection of Tax </h6>
-									<p> Learn tax levying and collection process in GST </p>
+									<h6> Lecture 2 <br /> Cost Centre & Cost Category </h6>
+									<p> Grasp expense categorization techniques for effective financial analysis </p>
 								</div>
 							</div>
 							<div class="col-md-3 col-6"> 
 								<div class="key-highlights" >
 									<img src="{{ url('assets/img/icons/tick.png')}}" >
-									<h6> Lecture 3 <br /> Valuation </h6>
-									<p> Determine the value of goods and services for GST </p>
+									<h6> Lecture 3 <br /> Accounting </h6>
+									<p> Gain foundational knowledge of double-entry bookkeeping and financial statements </p>
 								</div>
 							</div>
 							<div class="col-md-3 col-6"> 
 								<div class="key-highlights" >
 									<img src="{{ url('assets/img/icons/tick.png')}}" >
-									<h6> Lecture 4 <br /> Payment of Tax </h6>
-									<p> Grasp GST payment process and modes </p>
+									<h6> Lecture 4 <br /> Inventory </h6>
+									<p> Learn inventory management methods and accurate record-keeping </p>
 								</div>
 							</div>
 							<div class="col-md-3 col-6"> 
 								<div class="key-highlights" >
 									<img src="{{ url('assets/img/icons/tick.png')}}" >
-									<h6> Lecture 5 <br /> Returns </h6>
-									<p> Understand GST return filing and types </p>
+									<h6> Lecture 5 <br /> Bill of Materials (BOM) </h6>
+									<p> Understand product assembly structures and component relationships </p>
 								</div>
 							</div>
 							<div class="col-md-3 col-6"> 
 								<div class="key-highlights" >
 									<img src="{{ url('assets/img/icons/tick.png')}}" >
-									<h6> Lecture 6 <br /> GST using Tally </h6>
-									<p> Acquire practical skills in using Tally for GST compliance </p>
+									<h6> Lecture 6 <br /> Purchase & Sales Cycle </h6>
+									<p> Explore end-to-end trade processes and associated documentation </p>
 								</div>
 							</div>
 							<div class="col-md-3 col-6"> 
 								<div class="key-highlights" >
 									<img src="{{ url('assets/img/icons/tick.png')}}" >
-									<h6> Lecture 7 <br /> Practice on GSTN </h6>
-									<p> Gain hands-on experience with the GSTN platform </p>
+									<h6> Lecture 7 <br /> Basic Concepts of GST </h6>
+									<p> Acquire fundamental understanding of Goods and Services Tax </p>
 								</div>
 							</div>
 							<div class="col-md-3 col-6"> 
 								<div class="key-highlights" >
 									<img src="{{ url('assets/img/icons/tick.png')}}" >
-									<h6> Lecture 8 <br /> Project on GST </h6>
-									<p> Apply GST knowledge to real-world projects </p>
+									<h6> Lecture 8 <br /> GST using TallyPrime </h6>
+									<p> Manage GST tasks through TallyPrime software </p>
+								</div>
+							</div>
+							
+							<div class="col-md-3 col-6"> 
+								<div class="key-highlights" >
+									<img src="{{ url('assets/img/icons/tick.png')}}" >
+									<h6> Lecture 9 <br /> Generation of Returns </h6>
+									<p> Learn to generate and file various tax returns </p>
 								</div>
 							</div>							
+							
+							<div class="col-md-3 col-6"> 
+								<div class="key-highlights" >
+									<img src="{{ url('assets/img/icons/tick.png')}}" >
+									<h6> Lecture 10 <br /> TDS </h6>
+									<p> Familiarize with Tax Deducted at Source, its calculation, and roles </p>
+								</div>
+							</div>							
+
+							<div class="col-md-3 col-6"> 
+								<div class="key-highlights" >
+									<img src="{{ url('assets/img/icons/tick.png')}}" >
+									<h6> Lecture 11 <br /> PF </h6>
+									<p> Manage GST tasks through TallyPrime software </p>
+								</div>
+							</div>							
+
+							<div class="col-md-3 col-6"> 
+								<div class="key-highlights" >
+									<img src="{{ url('assets/img/icons/tick.png')}}" >
+									<h6> Lecture 12 <br /> Backup and Restore </h6>
+									<p> Grasp data backup's importance and restoration procedures </p>
+								</div>
+							</div>							
+
+							<div class="col-md-3 col-6"> 
+								<div class="key-highlights" >
+									<img src="{{ url('assets/img/icons/tick.png')}}" >
+									<h6> Lecture 13 <br /> ESI </h6>
+									<p> Learn about Employee State Insurance, contributions, and employee welfare </p>
+								</div>
+							</div>							
+
+							<div class="col-md-3 col-6"> 
+								<div class="key-highlights" >
+									<img src="{{ url('assets/img/icons/tick.png')}}" >
+									<h6> Lecture 14 <br /> Payroll </h6>
+									<p> Comprehend salary calculations, deductions, and payroll management </p>
+								</div>
+							</div>							
+
+							<div class="col-md-3 col-6"> 
+								<div class="key-highlights" >
+									<img src="{{ url('assets/img/icons/tick.png')}}" >
+									<h6> Lecture 15 <br /> Security </h6>
+									<p> Explore data protection, access control, and security best practices </p>
+								</div>
+							</div>							
+
+							<div class="col-md-3 col-6"> 
+								<div class="key-highlights" >
+									<img src="{{ url('assets/img/icons/tick.png')}}" >
+									<h6> Lecture 16 <br /> Reports </h6>
+									<p> Understand the generation and utilization of financial and management reports </p>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -432,7 +496,7 @@
 		<div class="container">
 			<div class="section-title mb45 headline text-center">
 				<span class="subtitle text-uppercase"> COURSES </span>
-				<h3> Browse Our <span> Best GST Certification Courses </span></h3>
+				<h3> Browse Our <span> Best Tally Accounting </span> Courses </h3>
 			</div>
 			<div class="faq-tab mb65">
 				<div class="faq-tab-ques ul-li">
@@ -770,7 +834,6 @@
 	<!-- End  of our trainer section
 	   ============================================= -->
 
-
 	<!-- Start of View Classroom
 	============================================= -->
 	<section id="classroom" class="galleries-section">
@@ -778,7 +841,7 @@
 			<div class="testimonial-slide">
 				<div class="section-title mb20 headline text-center">
 					<span class="subtitle text-uppercase">gallery</span>
-					<h3> GST <span> Classroom </span> Views </h3>
+					<h3> Tally <span> Classroom </span> Views </h3>
 				</div>
 				<div class="row">
 					<div class="col-md-12">
@@ -859,7 +922,7 @@
 			<div class="testimonial-slide">
 				<div class="section-title mb20 headline text-center">
 					<span class="subtitle text-uppercase">Training Process</span>
-					<h3> How <span> GST Training Classes </span> Works? </h3>
+					<h3> How <span> Tally Training Classes </span> Works? </h3>
 				</div>
 				<div class="row">
 					<div class="col-md-12">
@@ -867,8 +930,8 @@
 							<div class="col-md-4 col-6"> 
 								<div class="key-highlights" >
 									<img src="{{ url('assets/img/icons/tick.png')}}" >
-									<h6> Up-to-Date GST Syllabus </h6>
-									<p> Ammended gst course modules to keep you on track with the industry </p>
+									<h6> Up-to-Date Tally Syllabus </h6>
+									<p> Ammended Tally course modules to keep you on track with the industry </p>
 								</div>
 							</div>
 							<div class="col-md-4 col-6"> 
@@ -903,7 +966,7 @@
 								<div class="key-highlights" >
 									<img src="{{ url('assets/img/icons/tick.png')}}" >
 									<h6> Get Industry Recognized Certification </h6>
-									<p> You will be certified in Certified GST Professional by ICA Edu Skills and NSDC.  </p>
+									<p> You will be certified in Certified Tally Professional by ICA Edu Skills and NSDC.  </p>
 								</div>
 							</div>
 						</div>
@@ -919,7 +982,7 @@
 		<div class="container">
 			<div class="section-title mb35 headline text-center">
 				<span class="subtitle text-uppercase"> COURSE INFO </span>
-				<h3> Training <span> Certification </span></h3>
+				<h3> Tally <span> Training </span> Certification </h3>
 			</div>
 	       <div class="row">
 				<div class="col-md-6 mt10 text-center">
@@ -928,7 +991,7 @@
 			    </div>
 					
 				<div class="col-md-6 mt10 text-center">
-                    <img src="https://wpv1.icajobguarantee.com/wp-content/uploads/2023/08/GST-Certificate.webp">
+                    <img src="https://wpv1.icajobguarantee.com/wp-content/uploads/2023/08/TallyPrime-Certificate.webp">
 				</div>
 			</div>
 		</div>
@@ -942,8 +1005,8 @@
 		<div class="container">
 			<div class="testimonial-slide">
 				<div class="section-title mb20 headline text-center">
-					<span class="subtitle text-uppercase">About This Course </span>
-					<h3>Student<span> Speaks.</span></h3>
+					<span class="subtitle text-uppercase">About This Course</span>
+					<h3> Student <span> Speaks </span></h3>
 				</div>
 				<div  id="testimonial-slide-item" class="testimonial-slide-area">
 					@foreach(getTestimonials() as $testimonial)						
@@ -1043,7 +1106,6 @@
                     <div class="section-title mb35 headline text-center">
                        <span class="subtitle text-uppercase">Student Placement</span>							
                        <h3>Why ICA Leading the <span>Job Market?</span></h3>
-                       <!-- <p> With Any Time Job (ATJ) Card, students who enrolled in Job Guaranteed Courses get additional placement support even after they leave the institution. </p> -->						
                     </div>
                     <div class="row">
                        <div class="col-md-12">
