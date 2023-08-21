@@ -571,19 +571,17 @@ if (! function_exists('hextobin')) {
         {       
             $subString =substr($hexString,$count,2);           
             $packedString = pack("H*",$subString); 
-            if ($count==0)
-            {
+            if ($count==0) {
                 $binString=$packedString;
             } 
             
-            else 
-            {
+            else {
                 $binString.=$packedString;
             } 
             
             $count+=2; 
         } 
-            return $binString; 
+        return $binString; 
     } 
 }
 

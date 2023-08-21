@@ -35,6 +35,61 @@
 	</section>
 	<!-- End of breadcrumb section
 		============================================= -->
+	<!-- End of breadcrumb section
+	============================================= -->
+	<section id="search-course" class="search-course-section search-course-secound">
+		<div class="container">
+			<div class="search-counter-up">
+				<div class="row">
+					<div class="col-md-3">
+						<div class="counter-icon-number ">
+							<div class="counter-icon">
+								<i class="text-gradiant flaticon-graduation-hat"></i>
+							</div>
+							<div class="counter-number">
+								<span class="counter-count bold-font">500</span><span>K+</span>
+								<p>Satisfied Students</p>
+							</div>
+						</div>
+					</div>
+					<!-- /counter -->
+
+					<div class="col-md-3">
+						<div class="counter-icon-number ">
+							<div class="counter-icon">
+								<i class="text-gradiant flaticon-book"></i>
+							</div>
+							<div class="counter-number">
+								<span class="counter-count bold-font">70</span><span>K+</span>
+								<p>Registered Employers</p>
+							</div>
+						</div>
+					</div>
+					<!-- /counter -->
+
+					<div class="col-md-3">
+						<div class="counter-icon-number ">
+							<div class="counter-icon">
+								<i class="text-gradiant flaticon-favorites-button"></i>
+							</div>
+							<div class="counter-number">
+								<span class="counter-count bold-font">24</span><span>+</span>
+								<p>Years of Excellence</p>
+							</div>
+						</div>
+					</div>
+					<!-- /counter -->
+
+					<div class="col-md-3">
+						<div class="enroll-btn genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
+							<a onclick="lead_capture_form_btn('',{{ $contentMain->id }})" href="javascript:void(0)"> Connect To University </i></a>
+						</div>
+					</div>
+					<!-- /counter -->
+				</div>
+			</div>
+		</div>
+	</section>
 
 	<section id="course-details" class="course-details-section">
 		<div class="container">
@@ -84,11 +139,51 @@
 									</div>
 									<!-- #tab3 -->
 									<div id="tab3" class="tab-content-1 pt35">
-										<div class="placed-grid-box">
-											
-										</div>
-										<div class="placed-grid-box">
-											
+										<div class="best-course-area mb10">
+											<div class="row">
+												@if(getCourses())
+													@foreach (getCourses($contentMain->courses) as $value)
+													<div class="col-md-4">
+														<div class="best-course-pic-text relative-position">
+															<div class="best-course-pic relative-position">
+																<img src="{{ (isset($value->featured_image))?getSizedImage('',$value->featured_image):url('/assets/img/course/bc-1.jpg') }}" alt="">
+																<div class="course-rate ul-li">
+																	<ul>
+																		<li><i class="fas fa-star"></i></li>
+																		<li><i class="fas fa-star"></i></li>
+																		<li><i class="fas fa-star"></i></li>
+																		<li><i class="fas fa-star"></i></li>
+																		<li><i class="fas fa-star"></i></li>
+																	</ul>
+																</div>
+																<div class="course-details-btn">
+																	<a href="{{ URL::to('/category') }}/{{ $value->slug }}">Know More <i class="fas fa-arrow-right"></i></a>
+																</div>
+																<div class="blakish-overlay"></div>
+															</div>
+															<div class="best-course-text">
+																<div class="course-title mb10 headline relative-position">
+																	<h3><a href="{{ URL::to('/category') }}/{{ $value->slug }}">{{ $value->name }}</a></h3>
+																</div>
+																<div class="course-short-description mb10" >
+																	{!! substr($value->excerpt,0,100); !!}...
+																</div>
+															</div>
+															<div class="more-btn text-center" >
+																<div class="course-type-list">	
+																	<a class="btn-filled" href="javascript:void(0)" onclick="lead_capture_form_btn({{ $value->id }},'')"><i class="fas fa-download"></i> Brochure</a>
+																</div>
+																<div class="course-type-list">														
+																	<a class="btn-outline" href="{{ URL::to('/category') }}/{{ $value->slug }}" >View More <i class="fas fa-caret-right"></i></a>
+																</div>														
+															</div>
+														</div>
+													</div>
+													<!-- /course -->
+													@endforeach	
+												@endif	
+												
+											</div>
 										</div>
 									</div>
 									<!-- #tab3 -->
@@ -183,65 +278,6 @@
 			</div>
 		</div>
 	</section>
-
-	<!-- Start of recent view product
-		============================================= -->
-	<section id="courses" class="best-course-section">
-		<div class="container">
-			<div class="section-title mb10 headline text-center">
-				<span class="subtitle text-uppercase">SEARCH OUR COURSES</span>
-				<h3>Choose our<span> Best Courses.</span></h3>
-			</div>
-			<div class="best-course-area mb10">
-				<div class="row justify-content-center">
-				@if(getCourses())
-					@foreach (getCourses($contentMain->courses) as $value)
-					<div class="col-md-3">
-						<div class="best-course-pic-text relative-position">
-							<div class="best-course-pic relative-position">
-								<img src="{{ (isset($value->featured_image))?getSizedImage('',$value->featured_image):url('/assets/img/course/bc-1.jpg') }}" alt="">
-								<div class="course-rate ul-li">
-									<ul>
-										<li><i class="fas fa-star"></i></li>
-										<li><i class="fas fa-star"></i></li>
-										<li><i class="fas fa-star"></i></li>
-										<li><i class="fas fa-star"></i></li>
-										<li><i class="fas fa-star"></i></li>
-									</ul>
-								</div>
-								<div class="course-details-btn">
-									<a href="{{ URL::to('/category') }}/{{ $value->slug }}">Know More <i class="fas fa-arrow-right"></i></a>
-								</div>
-								<div class="blakish-overlay"></div>
-							</div>
-							<div class="best-course-text">
-								<div class="course-title mb10 headline relative-position">
-									<h3><a href="{{ URL::to('/category') }}/{{ $value->slug }}">{{ $value->name }}</a></h3>
-								</div>
-								<div class="course-short-description mb10" >
-									{!! substr($value->excerpt,0,100); !!}...
-								</div>
-							</div>
-							<div class="more-btn text-center" >
-								<div class="course-type-list">	
-									<a class="btn-filled" href="javascript:void(0)" onclick="lead_capture_form_btn({{ $value->id }},'')"><i class="fas fa-download"></i> Brochure</a>
-								</div>
-								<div class="course-type-list">														
-									<a class="btn-outline" href="{{ URL::to('/category') }}/{{ $value->slug }}" >View More <i class="fas fa-caret-right"></i></a>
-								</div>														
-							</div>
-						</div>
-					</div>
-					<!-- /course -->
-					@endforeach	
-				@endif	
-					
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- End of recent view product
-		============================================= -->
 
 	<section class="sponsor-section">
 		<div class="container">

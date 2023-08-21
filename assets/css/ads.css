@@ -1043,7 +1043,7 @@ section.header-margin {
 }
 .modal-body {
   padding: 30px 0; }
-    .contact_form input, .contact_form .register-form-area select, .register-form-area .contact_form select, .contact_form .register-form-area textarea, .register-form-area .contact_form textarea {
+    .contact_form input, .contact_form select, .contact_form .register-form-area select, .register-form-area .contact_form select, .contact_form .register-form-area textarea, .register-form-area .contact_form textarea {
       height: 50px;
       background-color: #eeeeee;
       padding: 15px;

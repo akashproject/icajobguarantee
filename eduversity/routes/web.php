@@ -26,3 +26,4 @@ Route::post('/eduversity-capture-lead', [App\Http\Controllers\IndexController::c
 Route::post('/submit-mobile-otp', [App\Http\Controllers\IndexController::class, 'submitMobileOtp'])->name('submit-mobile-otp');
 
 Route::get('/ads/{slug}', [App\Http\Controllers\UniversityAdPageController::class, 'index'])->name('ads');
+Route::post('/affliate-registration', [App\Http\Controllers\AffiliateController::class, 'registration'])->name('affliate-registration');

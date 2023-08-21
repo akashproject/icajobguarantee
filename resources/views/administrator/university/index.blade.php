@@ -24,7 +24,9 @@
 									<a href="{{ url('universities') }}/{{ $value->slug }}" class="btn btn-success btn-sm">View</a>
 									<a href="{{ url('administrator/university-courses') }}/{{ $value->id }}" class="btn btn-success btn-sm">Courses</a>
 									<a href="{{ url('administrator/view-university') }}/{{ $value->id }}" class="btn btn-primary btn-sm">Edit</a>
+									@if($user->role == 'master')
 									<a href="{{ url('administrator/delete-university') }}/{{ $value->id }}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')"; >Delete </a>
+									@endif
 								</td>
 							</tr>
 							@endforeach							

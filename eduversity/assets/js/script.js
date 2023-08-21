@@ -66,6 +66,76 @@ $("#eduvarsity_lead_capture_form").validate({
 	}
 });
 
+$('#affliate-registration input').on('keyup', function() {
+	if ($("#affliate-registration").valid()) {
+		$('#affliate-registration .submit_affliate_registration_form').prop('disabled', false);  
+	} else {
+		$('#affliate-registration .submit_affliate_registration_form').prop('disabled', 'disabled');
+	}
+});
+
+$("#affliate-registration").validate({
+	messages: {
+		name: {
+			required: "Please enter full name",
+		},
+		email: {
+			required: "Please enter valid email address",
+			email_rule: "Please enter valid email address",
+		},
+		mobile: {
+			required: "Please enter valid mobile number",
+			min: "Please enter valid mobile number",
+			max: "Please enter valid mobile number",
+		},
+	},
+	submitHandler: function(form) {
+		let formId = $(form).attr('id');
+		if(jQuery("#" + formId + " .formFieldOtpResponse").val() == ""){
+			jQuery("#" + formId + " .submit_affliate_registration_form").prop('disabled', 'disabled');
+			eduversitySendMobileOtp(formId);
+			return false;
+		}
+
+		if(jQuery("#" + formId + " .verify_otp").val() != '' && jQuery("#" + formId + " .formFieldOtpResponse").val() == jQuery("#" + formId + " .verify_otp").val()){
+			form.submit();
+		} else {
+			jQuery("#" + formId + " .response_status").html("OTP is Invalid");
+			jQuery("#" + formId + " .checkout_loader").hide();
+			return false;
+		}
+		return false; // required to block normal submit since you used ajax
+	}
+	
+});
+
+$("#affiliate-login").validate({
+	messages: {
+		mobile: {
+			required: "Please enter valid mobile number",
+			min: "Please enter valid mobile number",
+			max: "Please enter valid mobile number",
+		},
+	},
+	submitHandler: function(form) {
+		let formId = $(form).attr('id');
+		if(jQuery("#" + formId + " .formFieldOtpResponse").val() == ""){
+			jQuery("#" + formId + " .submit_affiliate_login_form").prop('disabled', 'disabled');
+			eduversitySendMobileOtp(formId);
+			return false;
+		}
+
+		if(jQuery("#" + formId + " .verify_otp").val() != '' && jQuery("#" + formId + " .formFieldOtpResponse").val() == jQuery("#" + formId + " .verify_otp").val()){
+			form.submit();
+		} else {
+			jQuery("#" + formId + " .response_status").html("OTP is Invalid");
+			jQuery("#" + formId + " .checkout_loader").hide();
+			return false;
+		}
+		return false; // required to block normal submit since you used ajax
+	}
+	
+});
 
 function eduversityOnFormSubmitProcess(form){
 	let formId = $(form).attr('id');

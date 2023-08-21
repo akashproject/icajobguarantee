@@ -35,7 +35,9 @@
 								<td>
 									<a href="{{ url('/courses') }}/{{ $value->slug }}" class="btn btn-success btn-lg">View</a>
 									<a href="{{ url('administrator/view-course') }}/{{ $value->id }}" class="btn btn-primary btn-lg">Edit</a>
+									@if($user->role == 'master')
 									<a href="{{ url('administrator/delete-course') }}/{{ $value->id }}" class="btn btn-danger btn-lg" onclick="return confirm('Are you sure?')"; >Delete </a>
+									@endif
 								</td>
 							</tr>
 							@endforeach							

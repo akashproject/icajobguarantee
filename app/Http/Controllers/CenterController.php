@@ -56,6 +56,10 @@ class CenterController extends Controller
         try {
             $contentMain = Center::where('slug', $slug)->first();
 
+            if ($contentMain === null) {
+                return redirect('/centers');
+            }
+
             $courseType = DB::table('course_type')
             ->join('courses', 'course_type.id', '=', 'courses.type_id')
             ->select('course_type.id as category_id','course_type.name as category','course_type.slug as slug')

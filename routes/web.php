@@ -269,5 +269,11 @@ Route::post('/index/payment-failed', [App\Http\Controllers\IndexController::clas
 //Route::get('/index/create-center-login', [App\Http\Controllers\IndexController::class, 'createCenterLogin'])->name('create-center-login');
 //Route::get('/index/create-university-login', [App\Http\Controllers\IndexController::class, 'createUniversityLogin'])->name('create-university-login');
 
+Route::get('/index/get-error', function () {
+  
+    $find = App\Models\User::find(100000)->id;
+  
+    return view('welcome');
+});
 
 Auth::routes();

@@ -111,7 +111,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <h3>  Gurdian Details </h3>
+                                    <h3>  Guardian Details </h3>
                                     <div class="row" > 
                                         <div class="col-md-3" >
                                             <label for="formFieldParentName"> Father/Mother/Gurdian's Name </label>
@@ -143,7 +143,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <h3>  Academic Qualification </h3>
+                                    <h3>  Academic Qualification <span style="font-size: 14px;color: #323232;"> (Fill up this section in reverse chronological order)<span> </h3>
                                     <div class="academic_qualification" >
                                         <div class="row" > 
                                             <div class="col-md-2" >
@@ -153,7 +153,30 @@
                                             </div>
                                             <div class="col-md-3" >
                                                 <div class="contact-info formFieldPassingDegree">
-                                                    <input id="formFieldDegree" name="qualification[][degree]" type="text" placeholder="Degree" autocomplete="off">
+                                                    <select id="formFieldDegree" name="qualification[][degree]" type="text" placeholder="Degree" autocomplete="off">
+                                                        <option value="10+2 - Arts"> 10+2 - Arts </option>
+                                                        <option value="10+2 - Commerce"> 10+2 - Commerce </option>
+                                                        <option value="10+2 - Science"> 10+2 - Science </option>
+                                                        <option value="B.A. - Arts"> B.A. - Arts </option>
+                                                        <option value="B.Com - Commerce"> B.Com - Commerce </option>
+                                                        <option value="B.Com(H) - Commerce"> B.Com(H) - Commerce </option>
+                                                        <option value="B.Ed - Arts"> B.Ed - Arts </option>
+                                                        <option value="B.Sc - Science"> B.Sc - Science </option>
+                                                        <option value="B.Tech - Science"> B.Tech - Science </option>
+                                                        <option value="BBA - Management"> BBA - Management </option>
+                                                        <option value="BCA - Science"> BCA - Science </option>
+                                                        <option value="CA(Final) - Commerce"> CA(Final) - Commerce </option>
+                                                        <option value="CA(Inter) - Commerce"> CA(Inter) - Commerce </option>
+                                                        <option value="CS - Commerce"> CS - Commerce </option>
+                                                        <option value="Graduation"> Graduation </option>
+                                                        <option value="ICWA -Commerce"> ICWA -Commerce </option>
+                                                        <option value="M.A. - Arts"> M.A. - Arts </option>
+                                                        <option value="M.Com - Commerce"> M.Com - Commerce </option>
+                                                        <option value="M.Sc - Science"> M.Sc - Science </option>
+                                                        <option value="MBA - Management"> MBA - Management </option>
+                                                        <option value="MCA - Science"> MCA - Science </option>
+                                                        <option value="Others"> Others </option>
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="col-md-3" >
@@ -262,16 +285,16 @@
                                                         <input name="know_from[]" type="checkbox" autocomplete="off" value="Banners" > Banners
                                                     </span>
                                                     <span>
-                                                        <input name="know_from[]" type="checkbox" autocomplete="off" value="Hordings" > Hordings
+                                                        <input name="know_from[]" type="checkbox" autocomplete="off" value="Hoardings" > Hoardings
                                                     </span>
                                                     <span>
                                                         <input name="know_from[]" type="checkbox" autocomplete="off" value="Seminars" > Seminars
                                                     </span>
                                                     <span>
-                                                        <input name="know_from[]" type="checkbox" autocomplete="off" value="Hanbill/Leaflet" > Hanbill/Leaflet
+                                                        <input name="know_from[]" type="checkbox" autocomplete="off" value="Hanbill/Leaflet" > Handbill/Leaflet
                                                     </span>
                                                     <span>
-                                                        <input name="know_from[]" type="checkbox" autocomplete="off" value="Contact" > Contact
+                                                        <input name="know_from[]" type="checkbox" autocomplete="off" value="Friends/Relatives" > Friends/Relatives
                                                     </span>
                                                     <span>
                                                         <input name="know_from[]" type="checkbox" autocomplete="off" value="Other" > Other
@@ -303,7 +326,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <h3> Preffarence Class Time Slot</h3>
+                                        <h3> Preffered class timing</h3>
                                         <div class="row" > 
                                             <div class="col-md-12 py-2" >
                                                 <label for="formFieldParentOccupation"> Preffered Days </label>
