@@ -1194,7 +1194,6 @@ countDown:  function (){
 	});
 
 	$('#global_other_details_form select').on('change', function() {
-		console.log($(this).val());
 		if ($("#global_other_details_form").valid()) {
 			$('#global_other_details_form .submit_classroom_lead_generation_form').prop('disabled', false);  
 		} else {
@@ -1203,6 +1202,14 @@ countDown:  function (){
 	});
 
 	$('#banner_lead_capture_form input').on('keyup', function() {
+		if ($("#banner_lead_capture_form").valid()) {
+			$('.submit_classroom_lead_generation_form').prop('disabled', false);  
+		} else {
+			$('.submit_classroom_lead_generation_form').prop('disabled', 'disabled');
+		}
+	});
+
+	$('#banner_lead_capture_form select').on('change', function() {
 		if ($("#banner_lead_capture_form").valid()) {
 			$('.submit_classroom_lead_generation_form').prop('disabled', false);  
 		} else {
