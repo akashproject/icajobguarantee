@@ -61,8 +61,8 @@
 							<div class="col-sm-9">
 								<select name="courses[]" id="courses" class="select2 form-control custom-select" style="width: 100%; height:136px;" multiple>	
 									<option value="">Select Courses</option>
-									@foreach($courseCategories as $category)
-									<option value="{{ $category->id }}" >{{ $category->name }}</option>
+									@foreach($courses as $course)
+									<option value="{{ $course->id }}"  >{{ $course->name }}</option>
 									@endforeach
 								<select>
 							</div>

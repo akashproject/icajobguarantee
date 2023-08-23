@@ -1,4 +1,3 @@
-@csrf
 <div class="contact-info formFieldName">
     <input id="formFieldName" name="name" type="text" placeholder="Enter Your Name" autocomplete="off" required>
 </div>

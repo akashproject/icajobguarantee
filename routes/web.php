@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Spatie\Honeypot\ProtectAgainstSpam;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -181,7 +181,14 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::post('/save-blog', [App\Http\Controllers\Administrator\BlogController::class, 'save'])->name('admin-save-blog');
         Route::get('/delete-blog/{id}', [App\Http\Controllers\Administrator\BlogController::class, 'delete'])->name('admin-delete-blog');
 
-         //Categories
+        //Events
+        Route::get('/events', [App\Http\Controllers\Administrator\EventController::class, 'index'])->name('admin-events');
+        Route::get('/add-event', [App\Http\Controllers\Administrator\EventController::class, 'Add'])->name('admin-add-event');
+        Route::get('/view-event/{id}', [App\Http\Controllers\Administrator\EventController::class, 'show'])->name('admin-view-event');
+        Route::post('/save-event', [App\Http\Controllers\Administrator\EventController::class, 'save'])->name('admin-save-event');
+        Route::get('/delete-event/{id}', [App\Http\Controllers\Administrator\EventController::class, 'delete'])->name('admin-delete-event');
+
+        //Categories
         Route::get('/categories', [App\Http\Controllers\Administrator\CategoryController::class, 'index'])->name('admin-categories');
         Route::get('/add-category', [App\Http\Controllers\Administrator\CategoryController::class, 'add'])->name('admin-add-category');
         Route::get('/view-category/{id}', [App\Http\Controllers\Administrator\CategoryController::class, 'show'])->name('admin-view-category');
@@ -276,4 +283,6 @@ Route::get('/index/get-error', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Route::middleware(ProtectAgainstSpam::class)->group(function() {
+    Auth::routes();
+});

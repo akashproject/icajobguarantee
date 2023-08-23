@@ -30,3 +30,5 @@
 <input type="hidden" name ="store_area" value="{{ isset($contentMain->store_area)?$contentMain->store_area:'1' }}" >
 <input type="hidden" name ="ref_code" value="{{ (isset($_GET['ref']))?$_GET['ref']:'' }}" >  
 <input type="hidden" name ="source_url" value="{{ url()->current() }}" >
+@honeypot
+{{ csrf_field() }}

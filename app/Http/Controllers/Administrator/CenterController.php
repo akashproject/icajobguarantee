@@ -8,6 +8,8 @@ use App\Models\Center;
 use App\Models\State;
 use App\Models\City;
 use App\Models\Course;
+use App\Models\CourseType;
+
 use Illuminate\Support\Facades\DB;
 
 class CenterController extends Controller
@@ -29,8 +31,8 @@ class CenterController extends Controller
     public function add() {
         try {
             $states = State::all();
-            $courseCategories = CourseType::all();
-            return view('administrator.centers.add',compact('states','courseCategories'));
+            $courses = Course::all();
+            return view('administrator.centers.add',compact('states','courses'));
         } catch(\Illuminate\Database\QueryException $e){
             //throw $th;
         }

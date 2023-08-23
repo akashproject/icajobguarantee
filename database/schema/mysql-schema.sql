@@ -356,6 +356,19 @@ CREATE TABLE `failed_jobs` (
   UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `faq_meta`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `faq_meta` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `model` int(11) DEFAULT NULL,
+  `model_id` int(11) DEFAULT NULL,
+  `faqs` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `faqs`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -1611,3 +1624,4 @@ INSERT INTO `migrations` VALUES (54,'2023_06_30_095400_create_university_course_
 INSERT INTO `migrations` VALUES (55,'2023_07_04_101922_add_fields_to_users_table',28);
 INSERT INTO `migrations` VALUES (56,'2023_07_25_101618_create_university_adpages_table',28);
 INSERT INTO `migrations` VALUES (57,'2023_07_28_124940_create_enquiries_table',29);
+INSERT INTO `migrations` VALUES (58,'2023_08_08_071609_create_faq_meta_table',30);

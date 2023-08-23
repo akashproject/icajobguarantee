@@ -409,6 +409,23 @@ if (! function_exists('getCourseCarriculams')) {
     }
 }
 
+if (! function_exists('getEvents')) {
+    function getEvents(){
+        try {
+            $events = DB::table('events')
+            ->join('centers', 'centers.id', '=', 'events.center_id')
+            ->select('events.*', 'events.name as event','centers.name as center','centers.id as center_id','centers.slug as center_slug')
+            ->where('events.status', '1')
+            ->distinct()
+            ->orderBy('events.id', 'asc')
+            ->get();
+            return $events;
+        } catch(\Illuminate\Database\QueryException $e){
+            throw $e;
+        }
+    }
+}
+
 if (! function_exists('getJobs')) {
     function getJobs(){
         try {

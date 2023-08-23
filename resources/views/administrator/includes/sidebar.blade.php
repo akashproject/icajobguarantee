@@ -233,6 +233,14 @@
                                 </ul>
                             </li> 
                         @endif
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-book-multiple-variant"></i><span class="hide-menu">Events </span></a>
+
+                                <ul aria-expanded="false" class="collapse  first-level">
+                                    <li class="sidebar-item"><a href="{{ url('administrator/events') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> All Events </span></a></li>
+                                    <li class="sidebar-item"><a href="{{ url('administrator/add-event') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Add Event </span></a></li>
+                                </ul>
+
+                        </li>
                     </ul>
 
                 </nav>

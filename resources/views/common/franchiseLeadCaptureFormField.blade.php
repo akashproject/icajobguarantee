@@ -1,4 +1,4 @@
-@csrf
+@honeypot
 <div class="contact-info">
     <input class="name" name="name" type="text" placeholder="Enter Your Name" autocomplete="off" required>
 </div>
@@ -40,3 +40,4 @@
     </p>
 </div>
 <input type="hidden" name="brochure_id" value="5">
+{{ csrf_field() }}
