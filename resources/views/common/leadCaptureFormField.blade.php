@@ -19,7 +19,16 @@
             <option value="{{$value->name}}" data-id="{{$value->id}}"> {{$value->name}} </option>
         @endforeach
     </select>
-@else
+@elseif(isset($_GET['state']))
+    <select class="center" name="center" required>
+        @if(!isset($_GET['center']))
+            <option value="">Select Center</option>
+        @endif
+        @foreach(getCenterByStateId($_GET['state']) as $value)
+            <option value="{{$value->name}}" data-id="{{$value->id}}"> {{$value->name}} </option>
+        @endforeach
+    </select>
+@else 
 <input type="hidden" name="center" value="{{ (isset($center) )?$center:'' }}">
 @endif
 <input type="hidden" name="course_id" value="">

@@ -1064,10 +1064,13 @@ searchBAR: function (){
 }
 	jQuery(document).ready(function (){
 		Genius.init();
-		if (!jQuery.cookie("showPopup")) {
-			lead_capture_form_btn();
-			jQuery.cookie("showPopup",true);
+		if (popUp != 0) {
+			if (!jQuery.cookie("showPopup")) {
+				lead_capture_form_btn();
+				jQuery.cookie("showPopup",true);
+			}
 		}
+		
 	});
 
 	jQuery(".gotoCourseCategory").on("change",function (){

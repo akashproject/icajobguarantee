@@ -82,10 +82,10 @@
                                                                 {{date('M Y',strtotime($value->start_date))}}
                                                             </div>
                                                             <div class="event-text">
-                                                                <h3 class="latest-title bold-font"><a href="#">{{$value->name}}</a></h3>
+                                                                <h3 class="latest-title bold-font"><a href="{{url('event/'.$value->slug)}}">{{$value->name}}</a></h3>
                                                                 <div class="course-meta">
                                                                     <span class="course-author" style="color: #4e4e4e;">
-                                                                        <a href="{{url('centers/'.$value->center_slug)}}">ICA <strong>{{$value->center}}</strong> Center</a>
+                                                                        <a href="{{url('centers/'.$value->center_slug)}}">ICA |<strong>{{$value->center}}</strong></a>
                                                                     </span>
                                                                 </div>
                                                             </div>
@@ -96,7 +96,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="view-all-btn bold-font">
-                                                    <a href="#">Read More <i class="fas fa-chevron-circle-right"></i></a>
+                                                    <a href="{{url('events/'.$value->slug)}}">Read More <i class="fas fa-chevron-circle-right"></i></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -132,7 +132,7 @@
 							</div>
 						</div>
 						<div class="bg-mockup">
-							<img src="assets/img/about/phone.png" alt="">
+							<img src="{{ url('assets/img/about/phone.png')}}" alt="">
 						</div>
 					</div>
                 </div>

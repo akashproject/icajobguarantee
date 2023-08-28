@@ -5463,3 +5463,6 @@ a.sticky-btn {
   margin: 0;
   font-size: 14px;
 }
+.border-10px-radius {
+  border-radius: 10px;
+}

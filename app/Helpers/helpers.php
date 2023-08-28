@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\DB;
 use Jenssegers\Agent\Facades\Agent;
+use Razorpay\Api\Api;
 use App\Models\Center;
 use App\Models\Course;
 use App\Models\CourseType;
@@ -311,6 +312,24 @@ if (!function_exists('getCenterById')) {
     }
 }
 
+if (!function_exists('getCenterByStateId')) {
+    function getCenterByStateId($state = null,$centername = null){
+        $center = DB::table('centers')
+                ->join('states', 'states.id', '=', 'centers.state_id')
+                ->select('centers.id','centers.name');
+        if($state){
+            $center->where('states.name',$state);
+        }
+
+        if($centername){
+            $center->where('centers.name',$centername);
+        }
+
+        $center->where('centers.status','1');
+        $center = $center->orderBy('name', 'asc')->get();       
+        return $center;
+    }
+}
 if (! function_exists('getGallery')) {
     function getGallery($course_id=null, $center_id=null){
         $gallery = DB::table('gallery');

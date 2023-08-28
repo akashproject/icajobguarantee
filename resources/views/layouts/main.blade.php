@@ -65,6 +65,9 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-MS3B79K');</script>
     <!-- End Google Tag Manager -->
+    <script>
+        let popUp = 1
+	</script>
 </head>
 
 <body>

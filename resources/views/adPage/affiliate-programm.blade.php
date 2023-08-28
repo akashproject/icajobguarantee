@@ -195,7 +195,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-5 mb20 text-center">
-						<img src="https://www.myidcm.com/wp-content/uploads/2022/10/IDCM-Landing-Page_Image-500×580-1-1.png">
+						<img src="{{url('assets/img/left-image.png')}}" class="border-10px-radius">
 					</div>
 					<div class="col-md-7 mt10">
 						<div class="section-title mb20 headline text-center">

@@ -266,6 +266,8 @@ Route::post('/get-centers', [App\Http\Controllers\IndexController::class, 'getCe
 Route::post('/get-city-by-state-id', [App\Http\Controllers\Administrator\CenterController::class, 'getCitiesByStateId'])->name('get-city-by-state-id');
 Route::post('/center/get-center-by-pincode', [App\Http\Controllers\IndexController::class, 'getCenterByPincode'])->name('get-center-by-pincode');
 
+Route::get('/events/{slug}', [App\Http\Controllers\EventController::class, 'index'])->name('view-event');
+
 Route::any('/index/test-code', [App\Http\Controllers\IndexController::class, 'testCode'])->name('test-code');
 
 Route::any('/global-other-form-submit', [App\Http\Controllers\IndexController::class, 'globalFormSubmit'])->name('global-other-form-submit');

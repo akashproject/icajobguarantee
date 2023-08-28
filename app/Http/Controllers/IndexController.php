@@ -202,6 +202,79 @@ class IndexController extends Controller
         
     }
 
+    public function franchiseCaptureLead(Request $request){
+        try {
+            
+            $data = $request->all();
+            $postData = $data;
+            $nameArray = explode(" ",$data['name']);
+            $postData['firstname'] = current(explode(" ",$data['name']));
+            unset($nameArray['0']);
+            $postData['lastname'] = implode(" ",$nameArray);
+            $postData['role'] = "b2b";
+
+            $response = $this->captureLeadToDB($postData);
+            $response = $this->franchiseLeadCaptureToExtraage($postData);
+
+            $this->franchiseCognoai_api_calling($postData);
+            
+            // Send Brochure
+            $brochure_id = ($postData['brochure_id'])?$postData['brochure_id']:get_theme_setting('brochure_id');
+            $mediaId  = Brochure::select("attachment")->where("id",$brochure_id)->first()->attachment;
+            $brochure_path = getAttachmentUrl($mediaId);
+
+
+            if(get_theme_setting('ajax_submit') == 1) {
+                return response()->json($brochure_path, $this->_statusOK);
+            } else {
+                return redirect('/thank-you');
+            }
+            
+        } catch(\Illuminate\Database\QueryException $e){
+            //throw $th;
+            return response()->json($response, $this->_statusErr);
+        }
+    }
+
+    public function enquiryFormSubmit(Request $request){
+        try {
+            $postData = $request->all();
+
+            if($postData['qualification']){
+                $postData['qualification'] = json_encode($postData['qualification']);
+            }
+
+            if($postData['professional_qualification']){
+                $postData['professional_qualification'] = json_encode($postData['professional_qualification']);
+            }
+            
+            if($postData['experience']){
+                $postData['experience'] = json_encode($postData['experience']);
+            }
+
+            if($postData['know_from']){
+                $postData['know_from'] = json_encode($postData['know_from']);
+            }
+
+            if($postData['slot_day']){
+                $postData['slot_day'] = json_encode($postData['slot_day']);
+            }
+
+            if($postData['slot_time']){
+                $postData['slot_time'] = json_encode($postData['slot_time']);
+            }
+            $postData['center_id'] = 1;
+            
+            $enq = Enquiry::create($postData);
+            $this->walkingLeadCaptureToExtraage($postData);
+            
+            return redirect('/thank-you');
+
+        } catch(\Illuminate\Database\QueryException $e){
+            var_dump($e);
+        }
+    }
+
     public function classroomLeadCaptureLeadToExtraage($postData){
 
         $apiData = array(
@@ -253,40 +326,6 @@ class IndexController extends Controller
         return response()->json($resp, $this->_statusOK);
     }
 
-    public function franchiseCaptureLead(Request $request){
-        try {
-            
-            $data = $request->all();
-            $postData = $data;
-            $nameArray = explode(" ",$data['name']);
-            $postData['firstname'] = current(explode(" ",$data['name']));
-            unset($nameArray['0']);
-            $postData['lastname'] = implode(" ",$nameArray);
-            $postData['role'] = "b2b";
-
-            $response = $this->captureLeadToDB($postData);
-            $response = $this->franchiseLeadCaptureToExtraage($postData);
-
-            $this->franchiseCognoai_api_calling($postData);
-            
-            // Send Brochure
-            $brochure_id = ($postData['brochure_id'])?$postData['brochure_id']:get_theme_setting('brochure_id');
-            $mediaId  = Brochure::select("attachment")->where("id",$brochure_id)->first()->attachment;
-            $brochure_path = getAttachmentUrl($mediaId);
-
-
-            if(get_theme_setting('ajax_submit') == 1) {
-                return response()->json($brochure_path, $this->_statusOK);
-            } else {
-                return redirect('/thank-you');
-            }
-            
-        } catch(\Illuminate\Database\QueryException $e){
-            //throw $th;
-            return response()->json($response, $this->_statusErr);
-        }
-    }
-
     public function franchiseLeadCaptureToExtraage($postData){
         $url = "https://thirdpartyapi.extraaedge.com/api/SaveRequest"; 		
         $curl = curl_init();
@@ -327,29 +366,47 @@ class IndexController extends Controller
         return json_decode($resp);
     }
 
-    public function captureLeadToDB($postData){
-        try {
-            $data = array(
-                'role' => $postData['role'],
-                'name' => $postData['name'],
-                'email' => $postData['email'],
-                'mobile' => $postData['mobile'],
-                'center' => (isset($postData['center']))?$postData['center']:'',
-                'pincode' => (isset($postData['pincode']))?$postData['pincode']:'',
-                'latitude' => (isset($_COOKIE['lat']))?$_COOKIE['lat']:'',
-                'longitude' => (isset($_COOKIE['lng']))?$_COOKIE['lat']:'',
-                'utm_source' => $postData['utm_source'],
-                'utm_campaign' => $postData['utm_campaign'],
-                'crmStatus' => "0",
-                'mailStatus' => "0",
-            );
-            $lead = Lead::create($data);
-            DB::table('leadmeta')->insert(['lead_id' => $lead->id,'meta_key' => 'source','meta_value' => 'cia']);
-            return response()->json($lead, $this->_statusOK);
-        } catch(\Illuminate\Database\QueryException $e){
-            //throw $th;
-            return response()->json($e, $this->_statusOK);
-        }
+    public function walkingLeadCaptureToExtraage($postData) {
+        $apiData = [
+            "AuthToken" => "ICA-06-12-2017",
+            "Source" => "ica",
+            "FirstName" => "Ram Sharma",
+            "Email" => "ram@gmail.com",
+            "MobileNumber" => "1020301030",
+            "DateOfBirth" => "2023-12-05",
+            "Address" => "Pune, Maharashtra",
+            "PinCode" => "411045",
+            "State" => "Maharashtra",
+            "City" => "Pune",
+            "FathersName" => "Ramesh Sharma",
+            "FathersPhoneNumber" => "1020301020",
+            "BatchApplied" => "Pune",
+            "Textb4" => "College of Engineering Pune",
+            "Experience" => "3 years",
+            "Field14" => "Website",
+        ];
+
+        $url = "https://thirdpartyapi.extraaedge.com/api/SaveRequest"; 		
+        $curl = curl_init();
+        $data = json_encode($apiData);
+        $curl = curl_init($url);
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_POST, true);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+        $headers = array(
+            "Content-Type: application/json",
+        );
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+
+        $resp = curl_exec($curl);
+        curl_close($curl);
+
+        return response()->json($resp, $this->_statusOK);
+
     }
 
     function classroomCognoai_api_calling($postData){
@@ -424,6 +481,31 @@ class IndexController extends Controller
     
         curl_close($curl);
         return true;
+    }
+
+    public function captureLeadToDB($postData){
+        try {
+            $data = array(
+                'role' => $postData['role'],
+                'name' => $postData['name'],
+                'email' => $postData['email'],
+                'mobile' => $postData['mobile'],
+                'center' => (isset($postData['center']))?$postData['center']:'',
+                'pincode' => (isset($postData['pincode']))?$postData['pincode']:'',
+                'latitude' => (isset($_COOKIE['lat']))?$_COOKIE['lat']:'',
+                'longitude' => (isset($_COOKIE['lng']))?$_COOKIE['lat']:'',
+                'utm_source' => $postData['utm_source'],
+                'utm_campaign' => $postData['utm_campaign'],
+                'crmStatus' => "0",
+                'mailStatus' => "0",
+            );
+            $lead = Lead::create($data);
+            DB::table('leadmeta')->insert(['lead_id' => $lead->id,'meta_key' => 'source','meta_value' => 'cia']);
+            return response()->json($lead, $this->_statusOK);
+        } catch(\Illuminate\Database\QueryException $e){
+            //throw $th;
+            return response()->json($e, $this->_statusOK);
+        }
     }
     
     public function thankyou(){
@@ -639,46 +721,6 @@ class IndexController extends Controller
             'password' => Hash::make('eduversity@1234'),
         ]);
         
-    }
-    
-
-    public function enquiryFormSubmit(Request $request){
-        try {
-            $postData = $request->all();
-
-            if($postData['qualification']){
-                $postData['qualification'] = json_encode($postData['qualification']);
-            }
-
-            if($postData['professional_qualification']){
-                $postData['professional_qualification'] = json_encode($postData['professional_qualification']);
-            }
-            
-            if($postData['experience']){
-                $postData['experience'] = json_encode($postData['experience']);
-            }
-
-            if($postData['know_from']){
-                $postData['know_from'] = json_encode($postData['know_from']);
-            }
-
-            if($postData['slot_day']){
-                $postData['slot_day'] = json_encode($postData['slot_day']);
-            }
-
-            if($postData['slot_time']){
-                $postData['slot_time'] = json_encode($postData['slot_time']);
-            }
-            $postData['center_id'] = 1;
-            
-            $enq = Enquiry::create($postData);
-            return redirect('/thank-you');
-
-        } catch(\Illuminate\Database\QueryException $e){
-            var_dump($e);
-            //throw $th;
-           // return response()->json($response, $this->_statusErr);
-        }
     }
 
     function random_strings($length_of_string)

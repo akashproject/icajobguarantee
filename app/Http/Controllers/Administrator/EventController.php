@@ -33,14 +33,10 @@ class EventController extends Controller
     public function show($id)
     {
     try {
-            $authors = Author::all();
-            $category = Category::all();
+            $center = Center::all();
             $event = Event::findorFail($id);
-            $event->category_id = json_decode($event->category_id);
-            if ($event->tags != '') {
-                $event->tags = Tag::select('id','name')->whereIn("id",json_decode($event->tags))->get();
-            }
-            return view('administrator.events.show',compact('event','authors','category'));
+
+            return view('administrator.events.show',compact('event','center'));
     } catch(\Illuminate\Database\QueryException $e){
     }        
     }

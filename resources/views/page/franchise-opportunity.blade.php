@@ -1,5 +1,8 @@
 @extends('layouts.main')
     @section('content')
+	<script>
+         popUp = 0
+	</script>
 	<!-- Start of breadcrumb section
 		============================================= -->
 	<section id="breadcrumb" class="inner-banner relative-position backgroud-style"  style="background-image: url({{ (isset($contentMain->banner_image))?getSizedImage('',$contentMain->banner_image):url('assets/img/banner/brt-1.jpg') }});">
