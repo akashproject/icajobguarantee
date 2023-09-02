@@ -97,9 +97,9 @@
 							</div>
 
 							<div class="inner-banner-description">
-
-								{!! (isset($contentMain))?$contentMain->excerpt:"Default Description" !!}
-
+								<div class="mb10">
+									{!! (isset($contentMain))?$contentMain->excerpt:"Default Description" !!}
+								</div>
 								{!! $contentMain->criteria !!}
 
 							</div>
@@ -268,7 +268,7 @@
 
 											<li rel="tab3"> Highlights </li>
 
-											<li rel="tab4">  Curriculum  </li>
+											<li rel="tab4">  Syllabus  </li>
 
 										</ul>
 
@@ -450,13 +450,13 @@
 
 								<div class="latest-video-poster relative-position mb20">
 
-									<img src="{{ getSizedImage('mobile',$contentMain->course_video_image) }}" alt="">
+									<img src="{{ getSizedImage('',$contentMain->featured_image) }}" alt="">
 
-									<div class="video-play-btn text-center gradient-bg">
+									<!-- <div class="video-play-btn text-center gradient-bg">
 
 										<a class="popup-with-zoom-anim" href="{{$contentMain->course_video_link}}"><i class="fas fa-play"></i></a>
 
-									</div>
+									</div> -->
 
 								</div>
 
@@ -605,7 +605,75 @@
 		<!-- End of sponsor section
 
 		============================================= -->
+		<!-- Start of placement section
 
+	============================================= -->
+
+	@if(count(getJoinees('',$contentMain->id)) > 0)
+
+	<section id="placements" class="testimonial_2_section">
+
+		<div class="container">
+
+			<!--div class="testimonial-slide"-->
+
+				<div class="section-title mb20 headline text-center">
+
+					<span class="subtitle text-uppercase"> Student Placement </span>
+
+					<h3>Connecting Talent with <span>Job Opportunities</span></h3>
+
+				</div>
+
+				<div  id="placement-slide-item" class="placement-slide-area">
+
+					@foreach(getJoinees('',$contentMain->id) as $value)						
+
+					<div class="placement-content">
+						
+						<div class="text-center">
+
+							<div class="" style="width: 98px; height: 115px; margin: auto; padding: 2px; border: 1px solid #e3e2e2; border-radius: 6px;">
+
+								<img src="{{ (isset($value->featured_image))?getSizedImage('',$value->featured_image):'https://dummyimage.com/140x140' }}" alt="" style="height: 100%;">	
+
+							</div>					
+
+						</div>
+
+						<div class="text-center my-2">
+
+							<a href="javascript:void()" style="font-weight: 600;color: #362a7e;">{{ $value->name }}</a>
+
+						</div>
+
+						<div class="">
+
+							<!--p class="st-name"><strong>Salary:</strong> {{ $value->joining_salary }}</p-->
+
+							<p class="st-designation"><strong>Designation:</strong> {{ $value->dasignation }}</p>
+
+							<p class="st-designation"><strong>Company:</strong> {{ $value->placed_at }}</p>
+
+						</div>
+
+					</div>
+
+					@endforeach
+
+				</div>
+
+			<!--/div-->
+
+		</div>
+
+	</section>
+
+	@endif
+
+<!-- End of placement section
+
+============================================= -->
 		<!-- Start of testimonial secound section
 
 		============================================= -->

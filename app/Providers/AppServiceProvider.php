@@ -49,7 +49,7 @@ class AppServiceProvider extends ServiceProvider
 
             //info Menu
             $footerMenu = array(
-                '/placements' => 'Events',
+                '/events' => 'Events',
                 '/blog' => 'Blogs',
                 '/about-us' => 'About Us',
                 '/contact-us' => "Contact Us",
@@ -82,7 +82,7 @@ class AppServiceProvider extends ServiceProvider
 
             $courseMenu = array(
                 '#tab3' => array('rel'=>"tab3",'value'=>"Highlights"),
-                '#tab4' => array('rel'=>"tab4",'value'=>"Curriculam"),
+                '#tab4' => array('rel'=>"tab4",'value'=>"Syllabus"),
                 '#career' => array('rel'=>"",'value'=>"Careers"),
                 '#alumni' => array('rel'=>"",'value'=>"Alumni"),
                 '#courses' => array('rel'=>"",'value'=>"Related Courses"),

@@ -252,15 +252,15 @@ class IndexController extends Controller
                 $postData['experience'] = json_encode($postData['experience']);
             }
 
-            if($postData['know_from']){
+            if(isset($postData['know_from'])){
                 $postData['know_from'] = json_encode($postData['know_from']);
             }
 
-            if($postData['slot_day']){
+            if(isset($postData['slot_day'])){
                 $postData['slot_day'] = json_encode($postData['slot_day']);
             }
 
-            if($postData['slot_time']){
+            if(isset($postData['slot_time'])){
                 $postData['slot_time'] = json_encode($postData['slot_time']);
             }
             $postData['center_id'] = 1;
@@ -367,26 +367,43 @@ class IndexController extends Controller
     }
 
     public function walkingLeadCaptureToExtraage($postData) {
+        
+        //qualification 
+        $qualification = json_decode($postData['qualification']);
+       
+        
+        $batchApplied = current($qualification->degree);
+        
+
+        $university = current($qualification->board);
+        //experience 
+        $experience = json_decode($postData['experience']);
+        $experience = current($experience->duration);
+
+        $know_from = implode(",",json_decode($postData['know_from']));
+
+        
+
         $apiData = [
             "AuthToken" => "ICA-06-12-2017",
             "Source" => "ica",
-            "FirstName" => "Ram Sharma",
-            "Email" => "ram@gmail.com",
-            "MobileNumber" => "1020301030",
-            "DateOfBirth" => "2023-12-05",
-            "Address" => "Pune, Maharashtra",
-            "PinCode" => "411045",
-            "State" => "Maharashtra",
-            "City" => "Pune",
-            "FathersName" => "Ramesh Sharma",
-            "FathersPhoneNumber" => "1020301020",
-            "BatchApplied" => "Pune",
-            "Textb4" => "College of Engineering Pune",
-            "Experience" => "3 years",
-            "Field14" => "Website",
+            "FirstName" => $postData['name'],
+            "Email" => $postData['email'],
+            "MobileNumber" => $postData['mobile'],
+            "DateOfBirth" => $postData['dob'],
+            "Address" => $postData['address'],
+            "PinCode" => $postData['pincode'],
+            "State" => $postData['state'],
+            "City" => $postData['city'],
+            "FathersName" => $postData['parent_name'],
+            "FathersPhoneNumber" => $postData['parent_mobile'],
+            "BatchApplied" => $batchApplied, //Degree
+            "Textb4" => $university, //College/University
+            "Experience" => $experience, //Work Duration
+            "Field14" => $know_from, //WHERE DO YOU COME TO KNOW ABOUT ICA
         ];
 
-        $url = "https://thirdpartyapi.extraaedge.com/api/SaveRequest"; 		
+        $url = "https://prodivrapi.extraaedge.com/api/WebHook/addLead"; 		
         $curl = curl_init();
         $data = json_encode($apiData);
         $curl = curl_init($url);

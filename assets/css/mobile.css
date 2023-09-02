@@ -5376,3 +5376,53 @@ form#index_lead_capture_form h4, form#index_lead_capture_form p {
   color: #333333;
   border-bottom: 3px solid #616dfd;
 }
+.xs-text-center {
+  text-align: center;
+}
+.event-details-header {
+  background: #fff;
+  padding: 14px 0;
+  color: #333;
+  box-shadow: 1px 0px 7px 0px #d7d4d4;
+  z-index: 9;
+}
+.event-details-header span {
+  display: block;
+  margin: 0.5rem 0;
+}
+.event-details-section {
+  background: #f7f7f7;
+  padding-top: 20px;
+}
+
+.event.side-bar-widget {
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0px 0px 2px 0px #ccc;
+}
+
+.event-share-posts .share-social ul li {
+  font-size: 25px;
+  margin-left: 30px;
+}
+
+.event-details-content {
+  margin-top: 30px;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0px 0px 2px 0px #ccc;
+}
+
+.event-details-content h3,.event-details-content h6 {
+  color: #333;
+}
+
+img.width-100 {
+  width: 100%;
+}
+.stickey-header {
+  position: fixed;
+  width: 100%;
+  z-index: 9;
+  top: 0;
+}

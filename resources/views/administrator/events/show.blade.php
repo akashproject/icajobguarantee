@@ -3,7 +3,7 @@
 @section('content')
 <div class="col-12">
 	<div class="card">
-		<form class="form-horizontal" method="post" action="{{ url('administrator/save-blog') }}" enctype="multipart/form-data">
+		<form class="form-horizontal" method="post" action="{{ url('administrator/save-event') }}" enctype="multipart/form-data">
 			@csrf
 			<div class="card-body">
 				<h4 class="card-title"> General Options </h4>
@@ -36,9 +36,57 @@
 							</div>
 						</div>
 						<div class="form-group row">
+							<label for="excerpt" class="col-sm-3 text-right control-label col-form-label">Excerpt</label>
+							<div class="col-sm-9">
+								<textarea class="form-control" name="excerpt"  id="mceEditor" placeholder="Enter excerpt Here" >{{ $event->excerpt }}</textarea>
+							</div>
+						</div>
+						<div class="form-group row">
 							<label for="description" class="col-sm-3 text-right control-label col-form-label">Description</label>
 							<div class="col-sm-9">
 								<textarea class="form-control editor" name="description" id="description" placeholder="Enter description Here" >{{ $event->description }}</textarea>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="speaker" class="col-sm-3 text-right control-label col-form-label">Speaker Name</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" name="speaker" id="speaker" placeholder="Speaker Name Here" value="{{ $event->speaker }}">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="start_date" class="col-sm-3 text-right control-label col-form-label">Start Date</label>
+							<div class="col-sm-9">
+								<input type="datetime-local" class="form-control" name="start_date" id="start_date" placeholder="Start Date" value="{{ $event->start_date }}" >
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="end_date" class="col-sm-3 text-right control-label col-form-label">End Date</label>
+							<div class="col-sm-9">
+								<input type="datetime-local" class="form-control" name="end_date" id="end_date" placeholder="Start Date" value="{{ $event->end_date }}" >
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="online_link" class="col-sm-3 text-right control-label col-form-label">Online Link</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" name="online_link" id="online_link" placeholder="Online Link" value="{{ $event->online_link }}" >
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="venue" class="col-sm-3 text-right control-label col-form-label">Venue</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" name="venue" id="venue" placeholder="Venue" value="{{ $event->venue }}" >
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="gmap" class="col-sm-3 text-right control-label col-form-label">Google Map</label>
+							<div class="col-sm-9">
+								<textarea class="form-control" name="gmap"  id="mceEditor" placeholder="Enter gmap Here" >{{ $event->gmap }}</textarea>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="interested" class="col-sm-3 text-right control-label col-form-label">Interested</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" name="interested" id="interested" placeholder="Interested" value="{{ $event->interested }}" >
 							</div>
 						</div>
 						<div class="form-group row">
@@ -87,7 +135,30 @@
 								@endif					
 							</div>
 						</div>
-						
+						<div class="form-group row">
+							<label for="banner_image" class="col-md-6 text-left control-label col-form-label">Banner Image</label>
+							<div class="col-sm-6 text-center">
+								<a href="#imageBox" class="image-profile open-popup-link">
+									<img src="{{ (isset($event->banner_image))?getSizedImage('thumb',$event->banner_image):'https://dummyimage.com/150x150?text=Add%20Image' }}" alt="">
+									<input type="hidden" name="banner_image" id="banner_image" value="{{ $event->banner_image }}" >	
+								</a>	
+								@if(isset($event->banner_image))
+									<a href="javascript:void(0)" class="removeImage" style="color: #c90f0f;font-weight: 600;"> Remove Image </a>	
+								@endif					
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="speaker_avatar" class="col-md-6 text-left control-label col-form-label">Speaker Image</label>
+							<div class="col-sm-6 text-center">
+								<a href="#imageBox" class="image-profile open-popup-link">
+									<img src="{{ (isset($event->speaker_avatar))?getSizedImage('thumb',$event->speaker_avatar):'https://dummyimage.com/150x150?text=Add%20Image' }}" alt="">
+									<input type="hidden" name="speaker_avatar" id="speaker_avatar" value="{{ $event->speaker_avatar }}" >	
+								</a>	
+								@if(isset($event->speaker_avatar))
+									<a href="javascript:void(0)" class="removeImage" style="color: #c90f0f;font-weight: 600;"> Remove Image </a>	
+								@endif					
+							</div>
+						</div>
 					</div>
 				</div>
 				<h4 class="card-title"> Search Engine Options </h4>
@@ -145,7 +216,7 @@
 			<div class="border-top">
 				<div class="card-body">
 					<button type="submit" class="btn btn-primary">Submit</button>
-					<input type="hidden" name="blog_id" id="blog_id" value="{{ $event->id }}" >
+					<input type="hidden" name="event_id" id="event_id" value="{{ $event->id }}" >
 				</div>
 			</div>
 		</form>

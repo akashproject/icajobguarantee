@@ -97,10 +97,10 @@
                                         </div>
                                         <div class="col-md-3" >
                                             <div class="register-form-area">
-                                                <select id="formFieldState" class="state_id" name="state_id" required>
+                                                <select id="formFieldState" class="state" name="state" required>
                                                     <option value="">Select state</option>
                                                     @foreach(getStates() as $state)
-                                                    <option value="{{ $state->id }}"> {{ $state->name }} </option>
+                                                    <option value="{{ $state->name }}"> {{ $state->name }} </option>
                                                     @endforeach
                                                 </select>
                                             </div>
@@ -122,13 +122,13 @@
                                         <div class="col-md-3" >
                                             <label for="formFieldParentMobile"> Gurdian's Mobile Number </label>
                                             <div class="contact-info formFieldParentMobile">
-                                                <input id="formFieldParentMobile" name="parent_mobile" type="text" placeholder="Enter Parent Mobile" autocomplete="off">
+                                                <input id="formFieldParentMobile" name="parent_mobile" type="number" placeholder="Enter Parent Mobile" autocomplete="off" min="6000000000" max="9999999999">
                                             </div>
                                         </div>
                                         <div class="col-md-3" >
                                             <label for="formFieldParentEmail"> Gurdian's Email Address </label>
                                             <div class="contact-info formFieldParentEmail">
-                                                <input id="formFieldParentEmail" name="parent_email" type="text" placeholder="Enter Parent Email" autocomplete="off">
+                                                <input id="formFieldParentEmail" name="parent_email" type="email" placeholder="Enter Parent Email" autocomplete="off">
                                             </div>
                                         </div>
                                         <div class="col-md-3" >
@@ -148,12 +148,12 @@
                                         <div class="row" > 
                                             <div class="col-md-2" >
                                                 <div class="contact-info formFieldPassingYear">
-                                                    <input id="formFieldPassingYear" name="qualification[][year]" type="number" placeholder="Passing Year" autocomplete="off">
+                                                    <input id="formFieldPassingYear" name="qualification[year][]" type="number" placeholder="Passing Year" autocomplete="off">
                                                 </div>
                                             </div>
                                             <div class="col-md-3" >
                                                 <div class="contact-info formFieldPassingDegree">
-                                                    <select id="formFieldDegree" name="qualification[][degree]" type="text" placeholder="Degree" autocomplete="off">
+                                                    <select id="formFieldDegree" name="qualification[degree][]" type="text" placeholder="Degree" autocomplete="off">
                                                         <option value="10+2 - Arts"> 10+2 - Arts </option>
                                                         <option value="10+2 - Commerce"> 10+2 - Commerce </option>
                                                         <option value="10+2 - Science"> 10+2 - Science </option>
@@ -181,17 +181,17 @@
                                             </div>
                                             <div class="col-md-3" >
                                                 <div class="contact-info formFieldPassingUniversity">
-                                                    <input id="formFieldUniversity" name="qualification[][board]" type="text" placeholder="College/University" autocomplete="off">
+                                                    <input id="formFieldUniversity" name="qualification[board][]" type="text" placeholder="College/University" autocomplete="off">
                                                 </div>
                                             </div>
                                             <div class="col-md-2" >
                                                 <div class="contact-info formFieldPassingStream">
-                                                    <input id="formFieldStream" name="qualification[][stream]" type="text" placeholder="Stream" autocomplete="off">
+                                                    <input id="formFieldStream" name="qualification[stream][]" type="text" placeholder="Stream" autocomplete="off">
                                                 </div>
                                             </div>
                                             <div class="col-md-2" >
                                                 <div class="contact-info formFieldPassingMarks">
-                                                    <input id="formFieldMarks" name="qualification[][marks]" type="number" placeholder="Marks (%)" autocomplete="off">
+                                                    <input id="formFieldMarks" name="qualification[marks][]" type="number" placeholder="Marks (%)" autocomplete="off">
                                                 </div>
                                             </div>
                                         </div>  
@@ -228,27 +228,27 @@
                                             <div class="row" > 
                                                 <div class="col-md-2" >
                                                     <div class="contact-info formFieldPassingYear">
-                                                        <input id="formFieldPassingYear" name="experience[][year]" type="number" placeholder="Joining Year" autocomplete="off">
+                                                        <input id="formFieldPassingYear" name="experience[year][]" type="number" placeholder="Joining Year" autocomplete="off">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3" >
                                                     <div class="contact-info formFieldInstitureName">
-                                                        <input id="formFieldCompanyName" name="experience[][company]" type="text" placeholder="Company Name" autocomplete="off">
+                                                        <input id="formFieldCompanyName" name="experience[company][]" type="text" placeholder="Company Name" autocomplete="off">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3" >
                                                     <div class="contact-info formFieldResponsibility">
-                                                        <input id="formFieldResponsibility" name="experience[][responsibility]" type="text" placeholder="Work Responsibility" autocomplete="off">
+                                                        <input id="formFieldResponsibility" name="experience[responsibility][]" type="text" placeholder="Work Responsibility" autocomplete="off">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-2" >
                                                     <div class="contact-info formFieldDuration">
-                                                        <input id="formFieldDuration" name="experience[][duration]" type="text" placeholder="Work Duration" autocomplete="off">
+                                                        <input id="formFieldDuration" name="experience[duration][]" type="number" placeholder="Total Experience" autocomplete="off">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-2" >
                                                     <div class="contact-info formFieldSalary">
-                                                        <input id="formFieldSalary" name="experience[][salary]" type="text" placeholder="Work Salary" autocomplete="off">
+                                                        <input id="formFieldSalary" name="experience[][salary]" type="number" placeholder="Work Salary" autocomplete="off">
                                                     </div>
                                                 </div>
                                             </div>
@@ -259,7 +259,7 @@
                                         <h3> Where do you come to know about ICA</h3>
                                         <div class="row" > 
                                             <div class="col-md-12" >
-                                                <div class=" formFieldParentOccupation">
+                                                <div class="formFieldKnowAboutIca required">
                                                     <span>
                                                         <input name="know_from[]" type="checkbox" autocomplete="off" value="Website" > Website
                                                     </span>

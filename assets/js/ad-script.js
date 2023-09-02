@@ -1260,6 +1260,11 @@ countDown:  function (){
 	});
 
 	$("#global_other_details_form").validate({
+		rules: {
+            "know_from[]": "required",
+            "qualification[degree][]": "required",
+            "qualification[board][]": "required",
+        },
 		messages: {
 			name: {
 				required: "Please enter full name",

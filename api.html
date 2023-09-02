@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>API POST Request Example</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<script>
+  $(document).ready(function() {
+    // JSON data to be sent in the POST request
+    var jsonData = {
+        "AuthToken":"ICA-06-12-2017",
+        "Source":"ica",
+        "FirstName":"John",
+        "LastName":"Doe",
+        "Email":"johndoe@example.com",
+        "MobileNumber":"9836555023",
+        "Center":"Kolkata",
+        "Location":"Dalhousie",
+        "Pincode":"711203",
+        "LeadType":"Data Calling",
+        "LeadSource":"Seminar",
+        "LeadName":"Seminar_Data_ERP",
+        "SourceTo":"offline",
+        "Entity4":"",
+        "EducationalQualification":"https:/\/www.icajobguarantee.com",
+        "Textb1":null,
+        "Field3":null,
+        "Textb2":null,
+        "Textb3":null,
+        "BatchApplied":"",
+        "Textb4":""
+    };
+
+    // API endpoint URL
+    var apiUrl = "https://prodivrapi.extraaedge.com/api/WebHook/addLead";
+
+    // Make the POST request
+    $.ajax({
+      url: apiUrl,
+      headers: {
+        'Content-Type':'application/json',
+        'Access-Control-Allow-Origin':"*"
+      },
+        type: "json",
+        crossDomain: true,
+        data: JSON.stringify(jsonData),
+        dataType: "json",
+        contentType: "application/json",
+        data: jsonData,
+      success: function(response) {
+        console.log("Request successful:", response);
+        // Handle the response here
+      },
+      error: function(xhr, status, error) {
+        console.log("Error:", error);
+        // Handle errors here
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

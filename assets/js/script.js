@@ -20,6 +20,7 @@ let pincode;
 				this.datePicker();
 				this.bannerParalax();
 				this.serviceSlide();
+				this.placementSlide();
 				this.testimonialSlide();
 				this.videoPopup();
 				this.sponsorSlide();
@@ -54,6 +55,7 @@ preloader: function (){
 	jQuery(window).on('load', function(){
 		//jQuery('#preloader').fadeOut('slow',function(){jQuery(this).remove();});
 	});
+
 },
 /* End  Of Preloader
 ================================================*/
@@ -68,19 +70,21 @@ loadPincode: function (){
 ================================================*/
 menuBar: function (){
 	jQuery(window).on('scroll', function() {
+		console.log(jQuery(window).scrollTop());
 		if (jQuery(window).scrollTop() > 50) {
 			jQuery('.main-menu-container').addClass('menu-bg-overlay')
 		} else {
 			jQuery('.main-menu-container').removeClass('menu-bg-overlay')
 		}
-	})
 
-	jQuery(window).on('scroll', function() {
 		if (jQuery(window).scrollTop() > 450) {
 			jQuery('.page-inside-menu').show()
+			jQuery('.event-details-header').addClass("stickey-header")
 		} else {
 			jQuery('.page-inside-menu').hide()
+			jQuery('.event-details-header').removeClass("stickey-header")
 		}
+
 	})
 
 },
@@ -380,6 +384,36 @@ testimonialSlide: function (){
 /* End Of service slide
 ================================================*/
 
+placementSlide: function (){
+	$('#placement-slide-item').owlCarousel({
+		margin:10,
+		responsiveClass:true,
+		nav: true,
+		autoplay: false,
+		navText:["<i class='fas fa-chevron-left'></i>","<i class='fas fa-chevron-right'></i>"],
+		autoplay: false,
+		dots: false,
+		smartSpeed: 1000,
+		responsive:{
+			0:{
+				items:2,
+			},
+			400:{
+				items:2,
+			},
+			600:{
+				items:3,
+			},
+			700:{
+				items:4,
+			},
+			1000:{
+				items:5,
+
+			}
+		},
+	})
+},
 /* Start of popup
 ================================================*/
 videoPopup: function (){

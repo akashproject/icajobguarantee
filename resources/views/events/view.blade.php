@@ -2,7 +2,7 @@
     @section('content')
 <!-- Start of breadcrumb section
 		============================================= -->
-        <section id="breadcrumb" class="inner-banner relative-position backgroud-style"  style="background-image: url({{ (isset($contentMain->banner_image))?getSizedImage('',$contentMain->banner_image):url('assets/img/banner/brt-1.jpg') }});">
+	<section id="breadcrumb" class="inner-banner relative-position backgroud-style"  style="background-image: url({{ (isset($contentMain->banner_image))?getSizedImage('',$contentMain->banner_image):url('assets/img/banner/brt-1.jpg') }});">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-9">
@@ -15,15 +15,15 @@
 							 <i class="fas fa-chevron-right"> </i>
 						</span> 
 						<span class="breadcrumbElement"> 
-							{{(isset($contentMain))?$contentMain->name:"Default Page" }}
+							
 						 </span>
 					</div>
 					<div class="inner-banner-content">
 						<div class="inner-banner-title">
-							<h1>{{(isset($contentMain))?$contentMain->name:"Default Page" }}</h1>
+						
 						</div>
 						<div class="inner-banner-description">
-							{!! (isset($contentMain))?$contentMain->description:"Default Description" !!}
+							
 						</div>
 					</div>
 				</div>
@@ -35,93 +35,133 @@
 	</section>
 	<!-- End of breadcrumb section
 		============================================= -->
-<!-- Start of Blog single content
-		============================================= -->
-		<section id="blog-detail" class="blog-details-section">
-			<div class="container">
-                <div class="row">
-                    <div class="col-md-8">
-                        <h2>{{$contentMain->event}}</h2>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="enroll-btn genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
-                            <a onclick="lead_capture_form_btn(1,'')" href="javascript:void(0)"> Book Your Seat </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-				<div class="row">
-                    <div class="col-md-3">
-
-                    </div>
-					<div class="col-md-8">
-						<div class="blog-details-content">
-							<div class="post-content-details">
-								<div class="blog-detail-thumbnile mb35">
-									<img src="{{ ($contentMain->banner_image)?getSizedImage('',$contentMain->banner_image):url('assets/img/logo/center-logo.webp') }}" alt="">
-								</div>
-								<h2>{{$contentMain->event}}</h2>
-
-								<div class="date-meta text-uppercase">
-									<span><i class="fas fa-calendar-alt"></i> 26 April 2018</span>
-									<span><i class="fas fa-user"></i> OrPRO.THEO HENRY</span>
-									<span><i class="fas fa-comment-dots"></i> 15 COMMENTS</span>
-								</div>
-                                <div>
-                                    <h3> Speaker </h3>
-                                    <div class="author-comment">
-                                        <div class="author-img">
-                                            <img src="{{ url('assets/img/blog/ath.jpg')}}" alt="">
-                                        </div>
-                                        <div class="author-designation-comment">
-                                            BY: <span>{{$contentMain->speaker}}</span> 
-                                            <p> ICA Faculty Trainer</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="event_description">
-								    {!! $contentMain->description !!}
-                                </div>
-							</div>
-							
-						</div>
-
+	<section id="blog-detail" class="event-details-header">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9">
+					<h2> {{ $contentMain->name }} </h2> 
+					<div class="date-meta">
+						<span class="mr-5"><i class="fas fa-calendar-alt"></i> {{date('d M, Y',strtotime($contentMain->start_date))}} at {{date('h:i',strtotime($contentMain->start_date))}} </span>
+						<span class="mr-5"><i class="fas fa-user"></i> Organized By : ICA | {{ $contentMain->center }} </span>
+						@if($contentMain->venue)
+						<span class="mr-5"><i class="fas fa-map-marker"></i> Venue : {{$contentMain->venue}}</span>
+						@endif
+						@if($contentMain->online_link)
+						<span class="mr-5"><i class="fas fa-map-marker"></i> Join Online : {{$contentMain->online_link}}</span>
+						@endif
 					</div>
-
-					<div class="col-md-4">
-						<div class="about-resigter-form backgroud-style relative-position">
-							<div class="register-content">
-								<div class="register-fomr-title text-center">
-									<h3 class="bold-font"><span>Get a</span> Free Registration.</h3>
-									<p>More Than 122K Online Available Courses</p>
-								</div>
-								<div class="register-form-area">
-									<form class="contact_form" action="#" method="POST" enctype="multipart/form-data">
-										<div class="contact-info">
-											<input class="name" name="name" type="text" placeholder="Your Name.">
-										</div>
-										<div class="contact-info">
-											<input class="nbm" name="nbm" type="number" placeholder="Your Number">
-										</div>
-										<div class="contact-info">
-											<input class="email" name="email" type="email" placeholder="Email Address.">
-										</div>
-										<div class="nws-button text-uppercase text-center white text-capitalize">
-											<button type="submit" value="Submit">SUBMIT REQUEST </button> 
-										</div> 
-									</form>
-								</div>
-							</div>
-						</div>
-						<div class="bg-mockup">
-							<img src="{{ url('assets/img/about/phone.png')}}" alt="">
-						</div>
+				</div>
+				<div class="col-md-3">
+					<div class="enroll-btn genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
+						<a onclick="lead_capture_form_btn(1,'')" href="javascript:void(0)"> BOOK YOUR SEAT </a>
 					</div>
 				</div>
 			</div>
-		</section>
-	<!-- End of Blog single content
-		============================================= -->
+		</div>
+	</section>
+
+	<section id="blog-detail" class="event-details-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="side-bar">
+						@if($contentMain->gmap)
+						<div class="event side-bar-widget">
+							<h2 class="widget-title text-capitalize"><span>Speaker.</span></h2>
+							<div class="post-categori ul-li-block">
+								<div class="course-pic relative-position text-center">
+									<div class="circle-img">
+										<img class="width-100" src="{{ (isset($contentMain->speaker_avatar))?getSizedImage('thumb',$contentMain->speaker_avatar):'' }}" alt="">	
+									</div>					
+								</div>
+							</div>
+							<div class="text-center">
+								<h6 class="mt-2" style="color:#393185">{{$contentMain->speaker}}</h6>
+							</div>
+						</div>
+						@endif
+						<div class="event side-bar-widget">
+							<h2 class="widget-title text-capitalize"><span>Share </span>Events.</h2>
+							<div class="event-share-posts">
+								<div class="share-social ul-li">
+									<ul>
+										<li><a href="#" style="color: #3140fb;"><i class="fab fa-whatsapp"></i></a></li>
+										<li><a href="#" style="color: #3140fb;"><i class="fab fa-facebook-f"></i></a></li>
+										<li><a href="#" style="color: #00acee;"><i class="fab fa-twitter"></i></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="event-details-content">
+						<div class="post-content-details">
+							<h6>Click on Interested to stay updated about this event.</h6>
+							<div class="row">
+								<div class="col-md-8 col-6" style="font-weight: 600;color: #444242;">
+									<span> <a href="#" style="color: #7dcb5e;font-size: 23px;"><i class="fa fa-thumbs-up"></i></a> {{$contentMain->interested}} Likes </span>
+									<span style="width: 100%;display: block;font-size: 12px;color: #837e7e;font-weight: 500;"> People have shown interest recently </span>
+								</div>
+								<div class="col-md-4 col-6 text-right">		
+									<div class="course-type-list" style="width:auto">												
+										<a class="btn-outline" target="_blank" href="https://www.icajobguarantee.com/courses/accounting-course-cia"> Interested? <i class="fas fa-caret-right"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="event-details-content">
+						<div class="post-content-details">
+							<h3>About</h3>
+							{!! $contentMain->description !!}
+						</div>
+					</div>
+					<div class="event-details-content">
+						<div class="post-content-details">
+							<h3>Faqs</h3>
+							<div class="faq-tab mb35">
+								<div class="faq-tab-ques  ul-li" style="padding-left: 20px;">
+									<div id="accordion3" class="panel-group">
+										@foreach(getFaqs("Course",$contentMain->id) as $key => $value)
+										<div class="panel">
+											<div class="panel-title" id="heading_{{$key}}">
+												<h3 class="mb-2">
+													<button class="btn btn-link" data-toggle="collapse" data-target="#collapse_{{$key}}" aria-expanded="true" aria-controls="collapse_{{$key}}">
+														{{ $value->question }}
+													</button>
+												</h3>
+											</div>
+											<div id="collapse_{{$key}}" class="collapse" aria-labelledby="heading_{{$key}}" data-parent="#accordion3">
+												<div class="panel-body">
+													{!! $value->answer !!}
+												</div>
+											</div>
+										</div>
+										@endforeach                                       
+									</div>
+									<!-- end of #accordion -->
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="col-md-3">
+					<div class="side-bar">	
+						@if($contentMain->gmap)
+						<div class="event side-bar-widget">
+							<h2 class="widget-title text-capitalize"><span>Event </span>Venue.</h2>
+							<div class="event-map-location">
+								{!!$contentMain->gmap!!}
+							</div>
+						</div>
+						@endif
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
     @endsection
 @section('script')

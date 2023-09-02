@@ -73,7 +73,7 @@
 						<div class="ad-banner-sub-title">
 							<h2> Ensure Your Career With India’s 1st & Only 100 % Job Guarantee Courses in Accounts, Finance, Banking & Taxation! </h2>
 						</div>
-						<div class="ad-banner-option">
+						<div class="ad-banner-option xs-text-center">
 							<span class="enroll-btn genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
 								<a onclick="lead_capture_form_btn('',3)" href="javascript:void(0)"> Download Brochure </a>
 							</span>

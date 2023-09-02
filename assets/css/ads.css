@@ -5434,6 +5434,15 @@ a.sticky-btn {
     color: #333;
     margin-bottom: 0;
 }
+
+#global_other_details_form .form_process label.error {
+  color: red;
+  position: absolute;
+  top: -20px;
+  left: 14px;
+  font-size: 12px;
+}
+
 .display-none{
   display: none;
 }
@@ -5465,4 +5474,7 @@ a.sticky-btn {
 }
 .border-10px-radius {
   border-radius: 10px;
+}
+.xs-text-center {
+  text-align: center;
 }
