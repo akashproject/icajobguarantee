@@ -1090,6 +1090,12 @@ countDown:  function (){
 		Genius.init();
 	});
 
+	jQuery(".popup-close span").on("click",function(){
+		let id = $(this).parent().parent().parent().parent().attr("id");
+		console.log(id);
+		$("#"+id).modal('hide');
+	});
+
 	jQuery(".gotoCourseCategory").on("change",function (){
 		window.location.href = $(this).val();
 	});

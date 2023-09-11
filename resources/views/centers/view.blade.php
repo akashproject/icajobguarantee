@@ -350,8 +350,7 @@
 			</div>
 		</section>
 	<!-- /course-categori -->
-	<!-- End of best course
-	============================================= -->
+
 	<!-- Start of testimonial secound section
 	============================================= -->
 	<section id="alumni" class="testimonial_2_section">
@@ -382,7 +381,50 @@
 	</section>
 	<!-- End  of testimonial secound section
 	============================================= -->
-
+	<!-- Start of best course
+	============================================= -->
+	<section id="best-course" class="best-course-section">
+		<div class="container">
+			<div class="section-title mb45 headline text-center">
+				<span class="subtitle text-uppercase">Events & Celebration</span>
+				<h3>Perticipates <span> Our Events.</span></h3>
+			</div>
+			<div class="teachers-archive">
+				<div class="row">
+					@foreach(getEvents() as $value)
+					<div class="col-md-3 col-sm-6">
+						<div class="teacher-pic-content">
+							<div class="teacher-img-content relative-position">
+								<img src="{{ ($value->featured_image)?getSizedImage('',$value->featured_image):url('assets/img/logo/center-logo.webp') }}" alt="">
+								<div class="teacher-hover-item">
+									<div class="teacher-social-name ul-li-block">
+										<ul>
+											<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+											<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+											<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+										</ul>
+									</div>
+									<div class="teacher-text">
+										{{$value->excerpt}}
+									</div>
+								</div>
+								<div class="teacher-next text-center">
+									<a href="#"><i class="text-gradiant fas fa-arrow-right"></i></a>
+								</div>
+							</div>
+							<div class="teacher-name-designation">
+								<a class="teacher-name" href="{{url('/events/'.$value->slug)}}" >{{$value->name}}</a>
+								<span class="teacher-designation">{{$value->center}}</span>
+							</div>
+						</div>
+					</div>
+					@endforeach
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End of best course
+	============================================= -->
 	@php
 		$reviewRatings = get_reviews_ratings("Center",$contentMain->id);
 	@endphp

@@ -330,6 +330,7 @@ if (!function_exists('getCenterByStateId')) {
         return $center;
     }
 }
+
 if (! function_exists('getGallery')) {
     function getGallery($course_id=null, $center_id=null){
         $gallery = DB::table('gallery');

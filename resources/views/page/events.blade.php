@@ -82,7 +82,7 @@
                                                                 {{date('M Y',strtotime($value->start_date))}}
                                                             </div>
                                                             <div class="event-text">
-                                                                <h3 class="latest-title bold-font"><a href="{{url('event/'.$value->slug)}}">{{$value->name}}</a></h3>
+                                                                <h3 class="latest-title bold-font"><a href="{{url('events/'.$value->slug)}}">{{$value->name}}</a></h3>
                                                                 <div class="course-meta">
                                                                     <span class="course-author" style="color: #4e4e4e;">
                                                                         <a href="{{url('centers/'.$value->center_slug)}}">ICA |<strong>{{$value->center}}</strong></a>

@@ -5705,3 +5705,19 @@ img.width-100 {
   z-index: 9;
   top: 0;
 }
+.popup-close {
+  position: absolute;
+  text-align: center;
+  left: 2px;
+  background: #3b348c;
+  height: 22px;
+  font-size: 14px;
+  font-weight: 800;
+  width: 23px;
+  top: 2px;
+  border-radius: 50%;
+  color: #fff;
+  padding: 2px;
+  z-index: 9;
+  cursor: pointer;
+}

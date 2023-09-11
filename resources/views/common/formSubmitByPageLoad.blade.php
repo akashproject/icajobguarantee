@@ -8,6 +8,9 @@
                 <div class="popup-logo">
                     <img src="{{ url('assets/img/logo/p-logo.jpg')}}" alt="">
                 </div>
+                <div class="popup-close">
+                    <span> X </span>
+                </div>
                 <div class="popup-text text-center">
                     <h2> <span>Get</span> In Touch. </h2>
                     <p>Enter your details to start the <span>Application</span></p>

@@ -341,6 +341,36 @@ CREATE TABLE `enquiries` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `events`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `events` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `center_id` int(11) NOT NULL,
+  `banner_image` int(11) DEFAULT NULL,
+  `featured_image` int(11) DEFAULT NULL,
+  `speaker_avatar` int(11) DEFAULT NULL,
+  `speaker` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `excerpt` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `start_date` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `end_date` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `enable_otp` tinyint(1) NOT NULL DEFAULT 1,
+  `meta_description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `schema` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `robots` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'index, follow',
+  `canonical` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `utm_campaign` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Google-Organic',
+  `utm_source` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'SEO',
+  `status` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `failed_jobs`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -1625,3 +1655,4 @@ INSERT INTO `migrations` VALUES (55,'2023_07_04_101922_add_fields_to_users_table
 INSERT INTO `migrations` VALUES (56,'2023_07_25_101618_create_university_adpages_table',28);
 INSERT INTO `migrations` VALUES (57,'2023_07_28_124940_create_enquiries_table',29);
 INSERT INTO `migrations` VALUES (58,'2023_08_08_071609_create_faq_meta_table',30);
+INSERT INTO `migrations` VALUES (60,'2023_08_23_094201_create_events_table',31);

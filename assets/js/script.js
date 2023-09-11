@@ -55,7 +55,6 @@ preloader: function (){
 	jQuery(window).on('load', function(){
 		//jQuery('#preloader').fadeOut('slow',function(){jQuery(this).remove();});
 	});
-
 },
 /* End  Of Preloader
 ================================================*/
@@ -70,7 +69,6 @@ loadPincode: function (){
 ================================================*/
 menuBar: function (){
 	jQuery(window).on('scroll', function() {
-		console.log(jQuery(window).scrollTop());
 		if (jQuery(window).scrollTop() > 50) {
 			jQuery('.main-menu-container').addClass('menu-bg-overlay')
 		} else {
@@ -1105,6 +1103,12 @@ searchBAR: function (){
 			}
 		}
 		
+	});
+
+	jQuery(".popup-close span").on("click",function(){
+		let id = $(this).parent().parent().parent().parent().parent().attr("id");
+		console.log(id);
+		$("#"+id).modal('hide');
 	});
 
 	jQuery(".gotoCourseCategory").on("change",function (){

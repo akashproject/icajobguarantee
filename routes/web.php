@@ -92,7 +92,14 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::post('/save-center', [App\Http\Controllers\Administrator\CenterController::class, 'save'])->name('admin-save-center');
         Route::get('/delete-center/{id}', [App\Http\Controllers\Administrator\CenterController::class, 'delete'])->name('admin-delete-center');
         Route::post('/get-city-by-state-id', [App\Http\Controllers\Administrator\CenterController::class, 'getCitiesByStateId'])->name('get-city-by-state-id');
-
+       
+       //Center Courses
+        Route::get('/center-courses', [App\Http\Controllers\Administrator\CenterCourseController::class, 'index'])->name('center-courses');
+        Route::get('/add-center-course', [App\Http\Controllers\Administrator\CenterCourseController::class, 'add'])->name('admin-add-center-course');
+        Route::get('/view-center-course/{id}', [App\Http\Controllers\Administrator\CenterCourseController::class, 'show'])->name('admin-view-center-course');
+        Route::post('/save-center-course', [App\Http\Controllers\Administrator\CenterCourseController::class, 'save'])->name('admin-save-center-course');
+        Route::get('/delete-center-course/{id}', [App\Http\Controllers\Administrator\CenterCourseController::class, 'delete'])->name('admin-delete-center-course');
+        
         Route::get('/gallery/{center_id}', [App\Http\Controllers\Administrator\CenterController::class, 'gallery'])->name('admin-gallery');
         Route::post('/save-gallery', [App\Http\Controllers\Administrator\CenterController::class, 'saveGallery'])->name('admin-save-gallery');
 
@@ -227,15 +234,14 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
     });
     // Will be inside middleware
 });
-
+//Page
 Route::get('/{slug}', [App\Http\Controllers\PageController::class, 'index'])->where('slug', '([A-Za-z0-9\-]+)');
 Route::get('/ads/{slug}', [App\Http\Controllers\AdPageController::class, 'index'])->where('slug', '([A-Za-z0-9\-]+)');
-
 
 //Affiliate Dashboard
 Route::get('/affiliate-dashboard/{code}', [App\Http\Controllers\AffiliateController::class, 'dashboard'])->name('affiliate-dashboard');
 
-// Individual Pages
+// Index Pages
 Route::get('/', [App\Http\Controllers\IndexController::class, 'index'])->name('index');
 
 // Courses
@@ -249,10 +255,9 @@ Route::get('/state/{slug}', [App\Http\Controllers\CenterController::class, 'stat
 Route::get('/city/{slug}', [App\Http\Controllers\CenterController::class, 'city'])->name('city');
 
 //Center Course
-Route::get('/center/{center-slug}', [App\Http\Controllers\CenterCourseController::class, 'viewCenterCourse'])->name('view-center-course');
+Route::get('/centers/{center}/{course}', [App\Http\Controllers\CenterCourseController::class, 'viewCenterCourse'])->name('view-center-course');
 
 Route::post('/submit-review', [App\Http\Controllers\ReviewController::class, 'create'])->name('submit-review');
-
 Route::get('/tags/{slug}', [App\Http\Controllers\TagController::class, 'index'])->name('tags');
 
 //Capture Leads
@@ -277,13 +282,6 @@ Route::post('/index/payment-failed', [App\Http\Controllers\IndexController::clas
 
 //Route::get('/index/create-center-login', [App\Http\Controllers\IndexController::class, 'createCenterLogin'])->name('create-center-login');
 //Route::get('/index/create-university-login', [App\Http\Controllers\IndexController::class, 'createUniversityLogin'])->name('create-university-login');
-
-Route::get('/index/get-error', function () {
-  
-    $find = App\Models\User::find(100000)->id;
-  
-    return view('welcome');
-});
 
 Route::middleware(ProtectAgainstSpam::class)->group(function() {
     Auth::routes();

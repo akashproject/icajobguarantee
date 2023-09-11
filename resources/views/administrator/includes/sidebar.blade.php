@@ -75,6 +75,8 @@
 
                                     <li class="sidebar-item"><a href="{{ url('administrator/add-center') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Add Center </span></a></li>
 
+                                    <li class="sidebar-item"><a href="{{ url('administrator/center-courses') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Courses </span></a></li>
+
                                 </ul>
 
                             </li>	

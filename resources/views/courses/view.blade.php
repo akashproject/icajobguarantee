@@ -863,11 +863,8 @@
 		</section>
 
 		@php
-
 			$reviewRatings = get_reviews_ratings("Course",$contentMain->id);
-
 		@endphp
-
 		<section id="review" class="teacher-details-area" >
 
 			<div class="container"> 
@@ -1192,9 +1189,7 @@
 
 		</section>
 
-		
-
-		<!-- Start of Faqs
+	<!-- Start of Faqs
 	============================================= -->
 	<section id="faqs" class="teacher-details-area">
 		<div class="container">
