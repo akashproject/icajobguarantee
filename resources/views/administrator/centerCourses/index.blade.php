@@ -12,7 +12,7 @@
 
 			<div class="card-body">
 
-				<h5 class="card-title"> <a href="{{ route('admin-add-center-course') }}" class="btn btn-success">Add Course of center</a> </h5>
+				<h5 class="card-title"> <a href="{{ route('admin-add-center-course',$id) }}" class="btn btn-success">Add Course of center</a> </h5>
 
 				<div class="table-responsive">
 					<table id="zero_config" class="table table-striped table-bordered">
@@ -20,7 +20,6 @@
 						<thead>
 							<tr>
 								<th>Name</th>
-								<th>Slug</th>
 								<th>Options</th>
 							</tr>
 						</thead>

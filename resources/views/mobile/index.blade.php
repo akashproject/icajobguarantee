@@ -681,59 +681,26 @@
 							<div class="section-title-2 mb65 headline text-left">
 								<h2>Upcoming <span>Events.</span></h2>
 							</div>
+							@foreach(getEvents() as $value)
 							<div class="latest-events">
 								<div class="latest-event-item">
 									<div class="events-date  relative-position text-center">
 										<div class="gradient-bdr"></div>
-										<span class="event-date bold-font">22</span>
-										April 2018
+										<span class="event-date bold-font">{{date('d',strtotime($value->start_date))}}</span>
+										{{date('M Y',strtotime($value->start_date))}}
 									</div>
 									<div class="event-text">
-										<h3 class="latest-title bold-font"><a href="#">Job Fair Program</a></h3>
+										<h3 class="latest-title bold-font"><a href="{{url('events/'.$value->slug)}}">{{$value->name}}</a></h3>
 										<div class="course-meta">
-											<span class="course-category"><a href="#">Salt Lake</a></span>
-											<span class="course-author"><a href="#">Koke</a></span>
+											<span class="course-category"><a href="{{url('events/'.$value->slug)}}">{{$value->center}}</a></span>
 										</div>
 									</div>
 								</div>
-							</div>
-
-							<div class="latest-events">
-								<div class="latest-event-item">
-									<div class="events-date  relative-position text-center">
-										<div class="gradient-bdr"></div>
-										<span class="event-date bold-font">07</span>
-										August 2018
-									</div>
-									<div class="event-text">
-										<h3 class="latest-title bold-font"><a href="#">University Seminar Program </a></h3>
-										<div class="course-meta">
-											<span class="course-category"><a href="#">Dalhousi</a></span>
-											<span class="course-author"><a href="#">Koke</a></span>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="latest-events">
-								<div class="latest-event-item">
-									<div class="events-date  relative-position text-center">
-										<div class="gradient-bdr"></div>
-										<span class="event-date bold-font">30</span>
-										Sept 2018
-									</div>
-									<div class="event-text">
-										<h3 class="latest-title bold-font"><a href="#">IOS Apps Programming & Development.</a></h3>
-										<div class="course-meta">
-											<span class="course-category"><a href="#">Chowringhee</a></span>
-											<span class="course-author"><a href="#">Koke</a></span>
-										</div>
-									</div>
-								</div>
-							</div>
-
+							</div> 
+							@endforeach
+							
 							<div class="view-all-btn bold-font">
-								<a  href="#">Check Calendar   <i class="fas fa-calendar-alt"></i></a>
+								<a  href="{{ url('events') }}">Check Calendar   <i class="fas fa-calendar-alt"></i></a>
 							</div>
 						</div>
 					</div>

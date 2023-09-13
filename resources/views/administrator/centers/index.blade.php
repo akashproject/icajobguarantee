@@ -25,11 +25,13 @@
 								<td>{{ $value->slug }}</td>													
 								<td>
 
-									<a href="{{ url('centers') }}/{{ $value->slug }}" class="btn btn-success btn-lg">View</a>
-									<a href="{{ url('administrator/view-center') }}/{{ $value->id }}" class="btn btn-primary btn-lg">Edit</a>
+									<a href="{{ url('centers') }}/{{ $value->slug }}" class="btn btn-success">View</a>
+									<a href="{{ url('administrator/view-center') }}/{{ $value->id }}" class="btn btn-primary">Edit</a>
+									<a href="{{ route('center-courses',$value->id) }}" class="btn btn-primary">Courses</a>
 									@if($user->role == 'master')
-									<a href="{{ url('administrator/delete-center') }}/{{ $value->id }}" class="btn btn-danger btn-lg" onclick="return confirm('Are you sure?')"; >Delete </a>
+									<a href="{{ url('administrator/delete-center') }}/{{ $value->id }}" class="btn btn-danger" onclick="return confirm('Are you sure?')"; >Delete </a>
 									@endif
+									
 								</td>
 							</tr>
 							@endforeach							

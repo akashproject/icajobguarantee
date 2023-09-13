@@ -157,13 +157,13 @@
 																	</ul>
 																</div>
 																<div class="course-details-btn">
-																	<a href="{{ URL::to('/category') }}/{{ $value->slug }}">Know More <i class="fas fa-arrow-right"></i></a>
+																	<a href="{{ URL::to('/courses') }}/{{ $value->slug }}">Know More <i class="fas fa-arrow-right"></i></a>
 																</div>
 																<div class="blakish-overlay"></div>
 															</div>
 															<div class="best-course-text">
 																<div class="course-title mb10 headline relative-position">
-																	<h3><a href="{{ URL::to('/category') }}/{{ $value->slug }}">{{ $value->name }}</a></h3>
+																	<h3><a href="{{ URL::to('/courses') }}/{{ $value->slug }}">{{ $value->name }}</a></h3>
 																</div>
 																<div class="course-short-description mb10" >
 																	{!! substr($value->excerpt,0,100); !!}...
@@ -174,7 +174,7 @@
 																	<a class="btn-filled" href="javascript:void(0)" onclick="lead_capture_form_btn({{ $value->id }},'')"><i class="fas fa-download"></i> Brochure</a>
 																</div>
 																<div class="course-type-list">														
-																	<a class="btn-outline" href="{{ URL::to('/category') }}/{{ $value->slug }}" >View More <i class="fas fa-caret-right"></i></a>
+																	<a class="btn-outline" href="{{ URL::to('/courses') }}/{{ $value->slug }}" >View More <i class="fas fa-caret-right"></i></a>
 																</div>														
 															</div>
 														</div>
@@ -433,7 +433,7 @@
 									@foreach(getFaqs("University") as $key => $value)
 									<div class="panel">
 										<div class="panel-title" id="heading_{{$key}}">
-											<h3 class="mb-{{$key}}">
+											<h3>
 												<button class="btn btn-link" data-toggle="collapse" data-target="#collapse_{{$key}}" aria-expanded="true" aria-controls="collapse_{{$key}}">
 												{{ $value->question }}
 												</button>

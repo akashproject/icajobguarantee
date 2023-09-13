@@ -57,16 +57,6 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="center_id" class="col-sm-12 text-left control-label col-form-label">Center Id</label>
-							<div class="col-sm-12">
-								<select name="center_id" id="center_id" class="select2 form-control custom-select" style="width: 100%; height:36px;">	
-									@foreach ($center as $value)
-									<option value="{{  $value->id }}" > {{  $value->name }} </option>
-									@endforeach
-								<select>
-							</div>
-						</div>
-						<div class="form-group row">
 							<label for="state" class="col-sm-12 text-left control-label col-form-label">Enable OTP</label>
 							<div class="col-sm-12">
 								<select name="enable_otp" id="enable_otp" class="select2 form-control custom-select" style="width: 100%; height:36px;">	
@@ -163,7 +153,9 @@
 				<div class="card-body">
 
 					<button type="submit" class="btn btn-primary">Submit</button>
+					<input type="hidden" name="center_id" id="center_id" value="{{$id}}" >
 					<input type="hidden" name="centerCourse_id" id="centerCourse_id" value="" >
+					
 				</div>
 
 			</div>

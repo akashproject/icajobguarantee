@@ -59,7 +59,6 @@ class CourseController extends Controller
     public function save(Request $request) {
         try {
             $data = $request->all();
-            
             $validatedData = $request->validate([
                 'name' => 'required',
                 'slug' => 'required',

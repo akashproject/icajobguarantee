@@ -311,7 +311,7 @@
 										@foreach(getFaqs($model) as $key => $value)
 										<div class="panel">
 											<div class="panel-title" id="heading_{{$key}}">
-												<h3 class="mb-{{$key}}">
+												<h3>
 													<button class="btn btn-link" data-toggle="collapse" data-target="#collapse_{{$key}}" aria-expanded="true" aria-controls="collapse_{{$key}}">
 													{{ $value->question }}
 													</button>

@@ -7,6 +7,7 @@ use App\Models\Center;
 use App\Models\State;
 use App\Models\City;
 use App\Models\Course;
+use App\Models\Curriculum;
 use App\Models\Gallery;
 use App\Models\CourseType;
 use App\Models\CenterCourse;
@@ -25,16 +26,19 @@ class CenterCourseController extends Controller
             if(!$contentMain){
                 abort(404);
             }
-
+            $carriculams = Curriculum::where('course_id',$courseMain->id)->get();
+            
             //Related Courses
             $courses = DB::table('courses')
             ->join('course_type', 'course_type.id', '=', 'courses.type_id')
+            ->join('center_courses', 'center_courses.course_id', '=', 'courses.id')
             ->select('courses.*', 'courses.name as course_name','course_type.name as category','course_type.id as category_id')
             ->where('courses.id', '!=', $courseMain->id)
             ->where('courses.type_id', $courseMain->type_id)
+            ->where('courses.status', 1)
             ->get();
 
-            return view('centers.course',compact('centerMain','courseMain','courses','contentMain'));
+            return view('centers.course',compact('centerMain','courseMain','courses','carriculams','contentMain'));
         } catch(\Illuminate\Database\QueryException $e){
         }
     }

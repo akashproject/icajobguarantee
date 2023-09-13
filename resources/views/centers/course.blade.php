@@ -54,17 +54,17 @@
                         </span> 
 
                         <span class="breadcrumbElement"> 
-                            {{$courseMain->name}}
+                            {{$contentMain->name}}
                         </span>
                     </div>
 
                     <div class="inner-banner-content">
                         <div class="inner-banner-title">
-                            <h1>{{$courseMain->name}} in {{$centerMain->name}}</h1>
+                            <h1>{{$contentMain->name}}</h1>
                         </div>
                         <div class="inner-banner-description">
                             <div class="mb10">
-                                A Certificate in MIS Analytics refers to a specialized certification program focused on the field of Management Information Systems (MIS) and data analytics.
+                                {!! $contentMain->excerpt !!}
                             </div>
                             <ul>
                                 <li style="text-align: left;">Eligibility: 12+/Graduate</li>
@@ -137,7 +137,91 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-9">
-                    
+                    <div class="course-details-item">
+                        <div class="faq-tab mb65">
+                            <div class="faq-tab-ques  ul-li">
+                                <div class="course-details-category ul-li tab-button text-left mb25 tab-button text-left mb25">
+                                    <span>Course <b>Section:</b></span>
+                                    <ul class="product-tab ">
+                                        <li class="active" rel="tab1"> Summary </li>
+                                        <li rel="tab3"> Highlights </li>
+                                        <li rel="tab4">  Syllabus  </li>
+                                    </ul>
+                                </div>
+                                <!-- /tab-head -->
+                                <!-- tab content -->
+                                <div class="tab-container">
+                                    <!-- 1st tab -->
+                                    <div id="tab1" class="tab-content-1 pt35">
+                                        <div class="course-details-content">
+                                            <div class="course-single-text">
+                                                <div class="course-details-content">
+                                                    {!! $contentMain->description !!}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- #tab1 -->
+                                    <!-- #tab2 -->
+                                    <div id="tab3" class="tab-content-1 pt35">
+                                        <div class="course-details-content highlights">
+                                            <div class="affiliate-market-guide mb65">
+                                                {!! $courseMain->highlights !!}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- #tab3 -->
+                                    <div id="tab4" class="tab-content-1 pt35">
+                                        <div class="course-details-content">
+                                            <div class="affiliate-market-guide mb65">
+                                                <div class="affiliate-market-accordion">
+                                                    <div id="accordion" class="panel-group">
+                                                        @foreach($carriculams as $key => $carriculam)
+                                                        @if($carriculam->name)
+                                                        <div class="panel">
+                                                            <div class="panel-title" id="heading{{$key}}">
+                                                                <div class="ac-head">												
+                                                                    <button class="btn btn-link {{ (count($carriculams) > 1)?'collapsed':'' ; }}" data-toggle="collapse" data-target="#collapse{{$key}}" aria-expanded="true" aria-controls="collapse{{$key}}">
+                                                                        <span>{{ ($key < "9" )?"0":""}}{{$key + 1}}</span> {{$carriculam->name}}
+                                                                    </button>
+                                                                    <div class="leanth-course">
+                                                                        <span>{{ $carriculam->duration }} Hours</span>
+                                                                        <span> {{ count(json_decode($carriculam->lecture)) }} Lecture</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div id="collapse{{$key}}" class="collapse {{ (count($carriculams) > 1)?'':'show' ; }}" aria-labelledby="heading{{$key}}" data-parent="#accordion">
+                                                                <div class="panel-body">
+                                                                    @foreach(json_decode($carriculam->lecture) as $key => $lecture)
+                                                                        <div class="" >
+                                                                            <strong> Lecture {{$key + 1}} : </strong> {!! $lecture !!}
+                                                                        </div>
+                                                                    @endforeach
+                                                                    <div>
+                                                                        @if($carriculam->benefits)
+                                                                        <h4 class="benefit-title"> Module Benefit </h4>
+                                                                        <div class="benefit-content" >
+                                                                        {!! $carriculam->benefits !!}
+                                                                        </div>
+                                                                        @endif
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        @endif
+                                                        @endforeach
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- /market guide -->
+                                        </div>
+                                    </div>
+                                    <!-- #tab3 -->
+                                </div>
+                            </div>
+                        </div>		
+                    </div>						
                 </div>
                 <div class="col-md-3">
                     <div class="side-bar">
@@ -184,31 +268,6 @@
                                 <a href="#"><i class="fas fa-heart"></i></a>
                             </div>
                         </div>
-                    </div>
-                    @if(isset($courseMain->tags))
-                    <div class="side-bar-widget">
-                        <h2 class="widget-title text-capitalize">Popular <span>Tag's.</span></h2>
-                        <div class="tag-clouds ul-li">
-                            <ul>
-                                @foreach($courseMain->tags as $value)
-                                    <li><a href="{{url('tags')}}/{{$value->slug}}">{{$value->name}}</a></li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    </div>
-                    @endif
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="course-details" class="course-details-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                </div>
-                <div class="col-md-4">
-                    <div class="side-bar">													
                         <div class="side-bar-widget">
                             <h2 class="widget-title text-capitalize"><span>Contact </span>Us.</h2>
                             <div class="latest-news-posts">
@@ -218,7 +277,7 @@
                                             <div class="info-icon">
                                                 <i class="text-gradiant fas fa-envelope"></i>
                                             </div>
-                                            <div class="info-content">
+                                            <div class="info-content" style="width: 80%;">
                                                 <a href="mailto:{{ $centerMain->email }}" class="info-id">{{ $centerMain->email }}</a>
                                                 <span class="info-text">Connect Via Email</span>
                                             </div>
@@ -229,7 +288,7 @@
                                             <div class="info-icon">
                                                 <i class="text-gradiant fas fa-phone-square"></i>
                                             </div>
-                                            <div class="info-content">
+                                            <div class="info-content" style="width: 80%;">
                                                 <a href="tel:{{ $centerMain->mobile }}" class="info-id">{{ $centerMain->mobile }}</a>
                                                 <span class="info-text">Connect Via Call</span>
                                             </div>
@@ -240,7 +299,7 @@
                                             <div class="info-icon">
                                                 <i class="text-gradiant fas fa-map-marker-alt"></i>
                                             </div>
-                                            <div class="info-content">
+                                            <div class="info-content"  style="width: 80%;">
                                                 <span class="info-id">ICA Edu Skills | {{ $centerMain->name }}</span>
                                                 <span class="info-text">
                                                     <a href="javascript:void(0)" > {{ $centerMain->address }} </a>
@@ -252,8 +311,9 @@
                                     </li>
                                 </ul>
                             </div>
-                        </div>			
+                        </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
@@ -321,7 +381,185 @@
         </div>
     </section>
 
-    	<!-- Start of Faqs
+    @php
+        $reviewRatings = get_reviews_ratings("CenterCourse",$contentMain->id);
+    @endphp
+    <section id="review" class="teacher-details-area" >
+        <div class="container"> 
+            <div class="row" >
+                <div class="col-md-9" >
+                    @if($reviewRatings)
+                    <!-- /course-details -->				
+                    <div class="course-review">
+                        <div class="section-title-2 mb20 headline text-left">
+                            <h2>Course <span>Reviews:</span></h2>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="ratting-preview">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="avrg-rating ul-li">
+                                                <b>Average Rating</b>													
+                                                <span class="avrg-rate">{{ $reviewRatings['avarageRating'] }}</span>
+                                                <ul>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                </ul>
+                                                <b>{{ $reviewRatings['reviewCount'] }} Ratings</b>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-8">												
+                                            <div class="avrg-rating ul-li">
+                                                <span>Details</span>
+                                                @foreach($reviewRatings['ratings'] as $key => $value)
+                                                <div class="rating-overview">
+                                                    <span class="start-item">{{$key}} Starts</span>
+                                                    <span class="start-bar"></span>
+                                                    <span class="start-count">{{$value}}</span>
+                                                </div>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /review overview -->
+                    @else
+                    <h5> There are no reviews yet. Be the first one to write one. </h4>
+                    @endif
+                    <div class="couse-comment">
+                        <div class="blog-comment-area ul-li about-teacher-2">
+                            <ul class="comment-list">
+                                @if($reviewRatings)
+                                @foreach($reviewRatings['reviews'] as $review)
+                                <li>
+                                    <div class="author-name-rate">
+                                        <div class="author-name float-left">
+                                            BY: <span>{{$review->reviewer_name}}</span> 
+                                        </div>
+
+                                        <div class="comment-ratting float-right ul-li">
+                                            <ul>
+                                                @for($i=1; $i<=$review->rating; $i++)
+                                                    <li class="active"><i class="fas fa-star"></i></li>
+                                                @endfor
+                                            </ul>
+                                        </div>
+                                        <div class="time-comment float-right">{{ date("D m, Y", strtotime($review->created_at)) }}</div>
+                                    </div>
+
+                                    <div class="author-designation-comment">
+                                        <h3>{{$review->title}}</h3>
+                                        <p>
+                                            {{$review->review}}
+                                        </p>
+                                    </div>
+                                </li>
+                                @endforeach		
+                                @endif
+                            </ul>
+
+
+
+                            <div class="reply-comment-box">
+                                <div class="p-2 mb-2 review-success text-white " style="display:none">
+                                    Review has been submitted successfully 
+                                </div>
+
+                                <div class="review-option">
+
+                                    <div class="section-title-2  headline text-left float-left">
+                                        <h2>Add <span>Reviews.</span></h2>
+                                    </div>
+
+                                    <div class="review-stars-item float-right mt15">
+                                        <span>Your Rating: </span>
+                                        <form class="rating">
+
+                                            <label>
+                                                <input type="radio" name="stars" value="1" required/>
+                                                <span class="icon"><i class="fas fa-star"></i></span>
+                                            </label>
+
+                                            <label>
+                                                <input type="radio" name="stars" value="2" />
+                                                <span class="icon"><i class="fas fa-star"></i></span>
+                                                <span class="icon"><i class="fas fa-star"></i></span>
+                                            </label>
+
+                                            <label>
+                                                <input type="radio" name="stars" value="3" />
+                                                <span class="icon"><i class="fas fa-star"></i></span>
+                                                <span class="icon"><i class="fas fa-star"></i></span>
+                                                <span class="icon"><i class="fas fa-star"></i></span>   
+                                            </label>
+
+                                            <label>
+                                                <input type="radio" name="stars" value="4" />
+                                                <span class="icon"><i class="fas fa-star"></i></span>
+                                                <span class="icon"><i class="fas fa-star"></i></span>
+                                                <span class="icon"><i class="fas fa-star"></i></span>
+                                                <span class="icon"><i class="fas fa-star"></i></span>
+                                            </label>
+
+                                            <label>
+                                                <input type="radio" name="stars" value="5" />
+                                                <span class="icon"><i class="fas fa-star"></i></span>
+                                                <span class="icon"><i class="fas fa-star"></i></span>
+                                                <span class="icon"><i class="fas fa-star"></i></span>
+                                                <span class="icon"><i class="fas fa-star"></i></span>
+                                                <span class="icon"><i class="fas fa-star"></i></span>
+                                            </label>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <div class="teacher-faq-form">
+                                    <form id="submit-review" method="POST" action="/no-form" data-lead="Residential">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label for="name">Your Name</label>
+                                                <input type="text" name="reviewer_name" id="reviewer_name" required="required">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="phone">Email Address</label>
+                                                <input type="email" name="reviewer_email" id="reviewer_email" required="required">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <label for="name">Summary</label>
+                                                <input type="text" name="title" id="title" required="required">
+                                            </div>
+                                        </div>
+                                        <label for="review">Message</label>
+                                        <textarea name="review" id="review" rows="2" cols="20" required="required"></textarea>
+                                        <div class="nws-button text-center  gradient-bg text-uppercase">
+                                            <button type="submit" class="submitReview">Send Message now</button> 
+                                        </div>
+                                        <input type="hidden" name="model" id="model" value="CenterCourse">
+                                        <input type="hidden" name="model_id" id="model_id" value="{{ $contentMain->id }}">
+                                        <input type="hidden" id="rating" name="rating" value="" />
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3" >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Start of Faqs
 	============================================= -->
 	<section id="faqs" class="teacher-details-area">
 		<div class="container">
@@ -361,184 +599,6 @@
 	</section>
 	<!-- End of Faqs
 	============================================= -->
-
-    @php
-			$reviewRatings = get_reviews_ratings("CenterCourse",$contentMain->id);
-		@endphp
-		<section id="review" class="teacher-details-area" >
-			<div class="container"> 
-				<div class="row" >
-					<div class="col-md-9" >
-						@if($reviewRatings)
-						<!-- /course-details -->				
-						<div class="course-review">
-							<div class="section-title-2 mb20 headline text-left">
-								<h2>Course <span>Reviews:</span></h2>
-							</div>
-							<div class="row">
-								<div class="col-md-6">
-									<div class="ratting-preview">
-										<div class="row">
-											<div class="col-md-4">
-												<div class="avrg-rating ul-li">
-													<b>Average Rating</b>													
-													<span class="avrg-rate">{{ $reviewRatings['avarageRating'] }}</span>
-													<ul>
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-													</ul>
-													<b>{{ $reviewRatings['reviewCount'] }} Ratings</b>
-												</div>
-											</div>
-
-											<div class="col-md-8">												
-												<div class="avrg-rating ul-li">
-													<span>Details</span>
-													@foreach($reviewRatings['ratings'] as $key => $value)
-													<div class="rating-overview">
-														<span class="start-item">{{$key}} Starts</span>
-														<span class="start-bar"></span>
-														<span class="start-count">{{$value}}</span>
-													</div>
-													@endforeach
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- /review overview -->
-						@else
-						<h5> There are no reviews yet. Be the first one to write one. </h4>
-						@endif
-						<div class="couse-comment">
-							<div class="blog-comment-area ul-li about-teacher-2">
-								<ul class="comment-list">
-									@if($reviewRatings)
-									@foreach($reviewRatings['reviews'] as $review)
-									<li>
-										<div class="author-name-rate">
-											<div class="author-name float-left">
-												BY: <span>{{$review->reviewer_name}}</span> 
-											</div>
-
-											<div class="comment-ratting float-right ul-li">
-												<ul>
-													@for($i=1; $i<=$review->rating; $i++)
-														<li class="active"><i class="fas fa-star"></i></li>
-													@endfor
-												</ul>
-											</div>
-											<div class="time-comment float-right">{{ date("D m, Y", strtotime($review->created_at)) }}</div>
-										</div>
-
-										<div class="author-designation-comment">
-											<h3>{{$review->title}}</h3>
-											<p>
-												{{$review->review}}
-											</p>
-										</div>
-									</li>
-									@endforeach		
-									@endif
-								</ul>
-
-
-
-								<div class="reply-comment-box">
-									<div class="p-2 mb-2 review-success text-white " style="display:none">
-									 Review has been submitted successfully 
-									</div>
-
-									<div class="review-option">
-
-										<div class="section-title-2  headline text-left float-left">
-											<h2>Add <span>Reviews.</span></h2>
-										</div>
-
-										<div class="review-stars-item float-right mt15">
-											<span>Your Rating: </span>
-											<form class="rating">
-
-												<label>
-													<input type="radio" name="stars" value="1" required/>
-													<span class="icon"><i class="fas fa-star"></i></span>
-												</label>
-
-												<label>
-													<input type="radio" name="stars" value="2" />
-													<span class="icon"><i class="fas fa-star"></i></span>
-													<span class="icon"><i class="fas fa-star"></i></span>
-												</label>
-
-												<label>
-													<input type="radio" name="stars" value="3" />
-													<span class="icon"><i class="fas fa-star"></i></span>
-													<span class="icon"><i class="fas fa-star"></i></span>
-													<span class="icon"><i class="fas fa-star"></i></span>   
-												</label>
-
-												<label>
-													<input type="radio" name="stars" value="4" />
-													<span class="icon"><i class="fas fa-star"></i></span>
-													<span class="icon"><i class="fas fa-star"></i></span>
-													<span class="icon"><i class="fas fa-star"></i></span>
-													<span class="icon"><i class="fas fa-star"></i></span>
-												</label>
-
-												<label>
-													<input type="radio" name="stars" value="5" />
-													<span class="icon"><i class="fas fa-star"></i></span>
-													<span class="icon"><i class="fas fa-star"></i></span>
-													<span class="icon"><i class="fas fa-star"></i></span>
-													<span class="icon"><i class="fas fa-star"></i></span>
-													<span class="icon"><i class="fas fa-star"></i></span>
-												</label>
-											</form>
-										</div>
-									</div>
-
-									<div class="teacher-faq-form">
-										<form id="submit-review" method="POST" action="/no-form" data-lead="Residential">
-											<div class="row">
-												<div class="col-md-6">
-													<label for="name">Your Name</label>
-													<input type="text" name="reviewer_name" id="reviewer_name" required="required">
-												</div>
-												<div class="col-md-6">
-													<label for="phone">Email Address</label>
-													<input type="email" name="reviewer_email" id="reviewer_email" required="required">
-												</div>
-											</div>
-											<div class="row">
-												<div class="col-md-12">
-													<label for="name">Summary</label>
-													<input type="text" name="title" id="title" required="required">
-												</div>
-											</div>
-											<label for="review">Message</label>
-											<textarea name="review" id="review" rows="2" cols="20" required="required"></textarea>
-											<div class="nws-button text-center  gradient-bg text-uppercase">
-												<button type="submit" class="submitReview">Send Message now</button> 
-											</div>
-											<input type="hidden" name="model" id="model" value="CenterCourse">
-											<input type="hidden" name="model_id" id="model_id" value="{{ $contentMain->id }}">
-											<input type="hidden" id="rating" name="rating" value="" />
-										</form>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3" >
-					</div>
-				</div>
-			</div>
-		</section>
     @endsection
 @section('script')
 @endsection

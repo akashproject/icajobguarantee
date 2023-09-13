@@ -404,7 +404,7 @@ ul.product-tab.index-category-tab li.active,ul.course-tab.index-category-tab li.
 
 .widget-title {
   font-size: 25px;
-  color: #333333;
+  color: #ffffff;
   font-weight: 700;
   position: relative;
   margin-bottom: 50px; }
@@ -2389,17 +2389,13 @@ button.alt-menu-btn.float-left {
   padding: 30px 0px 35px 0px; }
 
 .sponsor-pic {
-  position: relative;
-  width: 180px;
-  margin: 0 auto; }
-  .sponsor-pic:after {
-    position: absolute;
-    top: 20px;
-    content: '';
-    height: 80px;
-    background-color: #cccccc;
-    right: 0;
-    width: 1px; }
+    position: relative;
+    background: #ebe9ff;
+    padding: 6px;
+    margin: 2px;
+    width: 150px;
+}
+
 
 .sponsor-1 .owl-stage-outer {
   padding: 0 10px; }
@@ -3470,7 +3466,7 @@ ul.product-tab li.active:after,ul.course-tab li.active:after {
   margin: 0 auto; }
 
 .panel-group .panel-body {
-  color: #67a0c9;
+  color: #343434;
   position: relative; }
   .panel-group .panel-body:before {
     position: absolute;
@@ -3487,12 +3483,12 @@ ul.product-tab li.active:after,ul.course-tab li.active:after {
 .panel-group .collapse.show .panel-body:before {
   height: 150%; }
 
-.panel-group .panel-title {
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: 26px;
-  color: inherit;
-  position: relative; }
+  .panel-group .panel-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 26px;
+    color: inherit;
+    position: relative; }
   .panel-group .panel-title h3 {
     position: relative; }
     .panel-group .panel-title h3:before {
@@ -3503,16 +3499,15 @@ ul.product-tab li.active:after,ul.course-tab li.active:after {
       content: '';
       background-color: #4a8ec0;
       top: 22px; }
-  .panel-group .panel-title .btn-link {
-    display: block;
-    padding: 15px 0px 15px;
-    position: relative;
-    width: 99%;
-    text-align: left;
-    text-decoration: none;
-    font-size: 22px;
-    font-weight: 500;
-    color: #393185; }
+      .panel-group .panel-title .btn-link {
+        display: block;
+        padding: 14px 0px 0px;
+        position: relative;
+        width: 100%;
+        text-align: left;
+        text-decoration: none;
+        font-weight: 500;
+        color: #393185; }
     .panel-group .panel-title .btn-link:before {
       content: '\f139';
       position: absolute;
@@ -3566,6 +3561,16 @@ ul.product-tab li.active:after,ul.course-tab li.active:after {
     -ms-transform: scale(1);
     transform: scale(1);
     color: #4d8fbe; }
+
+    .panel-body p,.panel-body ul li{
+      font-size: 15px;
+      font-weight: 500;
+      margin-top: 10px;
+    }
+
+    .panel-body ul li {
+      list-style: circle;
+    }
 
 #accordion .btn {
   white-space: inherit; }
@@ -5023,12 +5028,14 @@ a.comment-reply-link {
 /*Contact  section*/
 /*----------------------------------------------------*/
 .footer-area-section {
-  padding: 105px 0px 0px 0px; }
+  padding: 35px 0px 0px 0px;
+  background: linear-gradient(to right, #12163e 0%, #0b0826 51%, #010003 100%);
+}
 
 .footer-about-text p {
   font-size: 17px;
   margin-bottom: 25px;
-  color: #333333;
+  color: #ffffff;
   text-align: justify;
  }
 
@@ -5037,11 +5044,12 @@ a.comment-reply-link {
   margin-left: 70px; }
   .footer-menu li {
     margin-bottom: 10px;
-    color: #333333;
-    font-size: 17px; }
+    color: #ffffff;
+    font-size: 17px;
+  }
     .footer-menu li i {
       margin-right: 10px;
-      color: #393185; }
+      color: #ffffff; }
 
 .footer-widget .photo-list li {
   position: relative;
@@ -5075,7 +5083,7 @@ a.comment-reply-link {
   line-height: 30px;
   margin-right: 8px;
   border: 2px solid #393185;
-  color: #666666;
+  color: #ffffff;
   text-align: center; }
 
 .footer-social .widget-title,
@@ -5092,7 +5100,8 @@ a.comment-reply-link {
   padding: 30px 0px;
   border-top: 1px solid #ddd6d6; }
   .copy-right-menu p {
-    margin: 0; }
+    margin: 0; 
+    color: #fff; }
 
 .footer_2_subs {
   max-width: 735px;
@@ -5669,6 +5678,11 @@ span.success-icon {
   box-shadow: 1px 0px 7px 0px #d7d4d4;
 }
 
+.event-details-header h2 {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 12px;
+}
+
 .event-details-section {
   background: #f7f7f7;
   padding-top: 20px;
@@ -5720,4 +5734,12 @@ img.width-100 {
   padding: 2px;
   z-index: 9;
   cursor: pointer;
+}
+.certificate {
+  background: #f1f1f1;
+  padding: 11px;
+  box-shadow: 0px 0px 4px 1px #cccc;
+}
+.certificate img:hover {
+  transform: scale(1.5);
 }

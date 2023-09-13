@@ -724,10 +724,14 @@
       </div>
       <div class="row">
          <div class="col-md-6 mt10 text-center">
-            <img src="https://wpv1.icajobguarantee.com/wp-content/uploads/2023/01/ICA-NSDC-Certificate.png">
-         </div>
+            <div class="certificate">
+               <img src="https://wpv1.icajobguarantee.com/wp-content/uploads/2023/08/CIA-Plus-Certificate.webp" />
+            </div>
+            </div>
          <div class="col-md-6 mt10 text-center">
-            <img src="https://wpv1.icajobguarantee.com/wp-content/uploads/2023/08/IOA-Certificate.webp" />
+            <div class="certificate">
+                  <img src="https://wpv1.icajobguarantee.com/wp-content/uploads/2023/08/SAP-FICO-Certificate.webp" />
+            </div>
          </div>
       </div>
    </div>

@@ -40,7 +40,7 @@ class AppServiceProvider extends ServiceProvider
             $primaryMenu = array(
                 '/centers' => "Centers",                
                 '/franchise-opportunity' => "Franchise",               
-                '/university' => "University",
+                '/eduversity' => "University",
                 '/placements' => "Placements",
                 '/career' => "Career",
             );
@@ -60,7 +60,7 @@ class AppServiceProvider extends ServiceProvider
             $studentMenu = array(
                 "/category/career-courses" => 'Career Courses',
                 "/centers" => "Centers",
-                "/university" => "University",
+                "/eduversity" => "University",
                 "https://www.icacourse.in" => "Online Courses",
                 "https://student.icajobguarantee.com/verify/certificateverification.aspx" => "Certificate Verification",
                 
@@ -71,7 +71,7 @@ class AppServiceProvider extends ServiceProvider
              $termsMenu = array(
                 '/category/career-courses' => 'Career Courses',
                 '/centers' => 'Centers',
-                '/university' => "University",
+                '/eduversity' => "University",
                 '/online-courses' => "Online Courses",
             );
             $view->with('termsMenu', $termsMenu);

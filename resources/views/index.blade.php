@@ -687,10 +687,9 @@
 										{{date('M Y',strtotime($value->start_date))}}
 									</div>
 									<div class="event-text">
-										<h3 class="latest-title bold-font"><a href="#">{{$value->name}}</a></h3>
+										<h3 class="latest-title bold-font"><a href="{{url('events/'.$value->slug)}}">{{$value->name}}</a></h3>
 										<div class="course-meta">
-											<span class="course-category"><a href="#">{{$value->center}}</a></span>
-											<span class="course-author"><a href="#">Koke</a></span>
+											<span class="course-category"><a href="{{url('events/'.$value->slug)}}">{{$value->center}}</a></span>
 										</div>
 									</div>
 								</div>

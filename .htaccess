@@ -578,8 +578,8 @@ Redirect 301 /awards-recognition /about-us
 Redirect 301 /ica-edu-skills-team /about-us
 Redirect 301 /gst-tally-accounts-sap-fico-finance-course-training-institute /centers
 Redirect 301 /accounts-gst-sap-tally-career-opportunities /placements
-Redirect 301 /bcom-bsc-college-courses https://university.icajobguarantee.com/
-Redirect 301 /university https://university.icajobguarantee.com/
+Redirect 301 /bcom-bsc-college-courses https://eduversity.icajobguarantee.com
+Redirect 301 /eduversity https://eduversity.icajobguarantee.com
 Redirect 301 /blogs /blog/
 Redirect 301 /terms-of-use /terms-conditions
 Redirect 301 /Verify/OnlineCertificateView.aspx https://student.icajobguarantee.com/Verify/OnlineCertificateView.aspx
@@ -740,7 +740,7 @@ Redirect 301 /professional-training-accounts-sap-tally  /courses/accounting-cour
 Redirect 301 /classroom-courses /courses
 Redirect 301 /all-courses	/courses
 Redirect 301 /all-course/   /courses
-RedirectMatch 301 ^/college_courses/.*$   https://university.icajobguarantee.com/
+RedirectMatch 301 ^/college_courses/.*$   https://eduversity.icajobguarantee.com
 RedirectMatch 301 ^/lpu/.*$	/courses
 RedirectMatch 301 ^/KnWdZ/.*$	/courses
 Redirect 301 /contact-page	/contact-us
@@ -757,7 +757,7 @@ Redirect 301 /KnWdZ	/
 Redirect 301 /course/download-brochure.php?BId=MjIwMg==	/
 Redirect 301 /course_type/job-assistance-course	/
 Redirect 301 /emailer/all-field-lp	/
-Redirect 301 /Admissions_Sharda_University/index.html	https://university.icajobguarantee.com/
+Redirect 301 /Admissions_Sharda_University/index.html	https://eduversity.icajobguarantee.com
 Redirect 301 /?p=384	/
 Redirect 301 /career_jobs/senior-executive-digital-marketing	/career
 Redirect 301 /MQOgZ/centre	/centers

@@ -65,7 +65,7 @@
 			<div class="row">
 				<div class="col-md-3">
 					<div class="side-bar">
-						@if($contentMain->gmap)
+						@if($contentMain->speaker)
 						<div class="event side-bar-widget">
 							<h2 class="widget-title text-capitalize"><span>Speaker.</span></h2>
 							<div class="post-categori ul-li-block">
@@ -85,9 +85,15 @@
 							<div class="event-share-posts">
 								<div class="share-social ul-li">
 									<ul>
-										<li><a href="#" style="color: #3140fb;"><i class="fab fa-whatsapp"></i></a></li>
-										<li><a href="#" style="color: #3140fb;"><i class="fab fa-facebook-f"></i></a></li>
-										<li><a href="#" style="color: #00acee;"><i class="fab fa-twitter"></i></a></li>
+										<li>
+											<a target="_blank" href="https://wa.me/?text={{ route('view-event',$contentMain->slug) }}" style="color: #3140fb;"><i class="fab fa-whatsapp"></i></a>
+										</li>
+										<li>
+											<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ route('view-event',$contentMain->slug) }}" style="color: #3140fb;"><i class="fab fa-facebook-f"></i></a>
+										</li>
+										<li>
+											<a href="mailto:?subject=Enroll In Event&body=Hello,<br>Please Click on this link<br>{{ route('view-event',$contentMain->slug) }}" style="color: #00acee;"><i class="fas fa-envelope"></i></a>
+										</li>
 									</ul>
 								</div>
 							</div>
@@ -105,7 +111,7 @@
 								</div>
 								<div class="col-md-4 col-6 text-right">		
 									<div class="course-type-list" style="width:auto">												
-										<a class="btn-outline" target="_blank" href="https://www.icajobguarantee.com/courses/accounting-course-cia"> Interested? <i class="fas fa-caret-right"></i></a>
+										<a class="btn-outline" onclick="lead_capture_form_btn(1,'')" href="javascript:void(0)"> Interested? <i class="fas fa-caret-right"></i></a>
 									</div>
 								</div>
 							</div>

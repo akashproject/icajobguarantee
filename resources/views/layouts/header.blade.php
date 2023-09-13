@@ -44,7 +44,7 @@
 												</div>
 												<div class="course-content">
 													<h6 class="">
-														<a href="{{ url('courses')}}/{{ $course->slug }}"> {{ $course->name }} </a> 
+														<a href="{{ url('courses')}}/{{ $course->slug }}" target="_blank"> {{ $course->name }} </a> 
 													</h6>
 													<div class="course-meta mt10 ">
 														<span class="course-duration"><a href="#"><i class="fas fa-clock"></i>  {{ $course->duration}} </a></span>
@@ -65,7 +65,7 @@
 								<ul>
 									@foreach ($primaryMenu as $key => $menuItem)
 										<li class="">
-											<a href="{{ url($key) }}">{{ $menuItem }}</a>
+											<a href="{{ url($key) }}" target="_blank">{{ $menuItem }}</a>
 										</li>
 									@endforeach
 								</ul>

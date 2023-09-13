@@ -53,16 +53,6 @@
 								<select>
 							</div>
 						</div>
-						<div class="form-group row">
-							<label for="center_id" class="col-md-12 text-left control-label col-form-label">Centers</label>
-							<div class="col-sm-12">
-								<select name="center_id" id="center_id" class="select2 form-control custom-select" style="width: 100%; height:36px;">	
-									@foreach($center as $value)
-									<option value="{{  $value->id }}" {{ ( $value->id ==  $centerCourse->center_id )? 'selected' : '' }} > {{  $value->name }} </option>
-									@endforeach
-								<select>
-							</div>
-						</div>
 						
 						<div class="form-group row">
 							<label for="state" class="col-md-12 text-left control-label col-form-label">Enable OTP</label>
@@ -161,6 +151,7 @@
 				<div class="card-body">
 
 					<button type="submit" class="btn btn-primary">Submit</button>
+					<input type="hidden" name="center_id" id="center_id" value="{{$centerCourse->center_id}}" >
 					<input type="hidden" name="centerCourse_id" id="model_id" value="{{ $centerCourse->id }}" >
 				</div>
 

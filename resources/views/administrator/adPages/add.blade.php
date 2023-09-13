@@ -43,6 +43,18 @@
 								<textarea class="form-control editor" name="description" id="description" placeholder="Enter description Here" ></textarea>
 							</div>
 						</div>
+						<div class="form-group row">
+							<label for="email" class="col-sm-3 text-right control-label col-form-label">Email</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" name="email" id="email" placeholder="Enter Email Here" >
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="mobile" class="col-sm-3 text-right control-label col-form-label">Mobile</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" name="mobile" id="mobile" placeholder="Enter Mobile Here" >
+							</div>
+						</div>
 					</div>
 					<div class="col-md-5">	
 						<div class="form-group row">

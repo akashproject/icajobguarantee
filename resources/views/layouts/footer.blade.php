@@ -51,7 +51,7 @@
                     </div>
                 </div> 
                 <!-- /footer-widget-content -->
-                <div class="footer-social-subscribe mb65">
+                <!-- <div class="footer-social-subscribe mb65">
                     <div class="row">                        
                         <div class="col-md-9">
                             <div class="subscribe-form">
@@ -68,7 +68,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="copy-right-menu">
                     <div class="row">

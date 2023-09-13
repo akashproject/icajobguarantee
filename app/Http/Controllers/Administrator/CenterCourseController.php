@@ -12,22 +12,21 @@ use Illuminate\Support\Facades\DB;
 class CenterCourseController extends Controller
 {
     //
-    public function index()
+    public function index($id)
     {
         try {
-            $centerCourses = CenterCourse::all();
-            return view('administrator.centerCourses.index',compact('centerCourses'));
-
+            $centerCourses = CenterCourse::where('center_id',$id)->get();
+            return view('administrator.centerCourses.index',compact('centerCourses','id'));
         } catch(\Illuminate\Database\QueryException $e){
             //throw $th;
         }
         
     }
 
-    public function add() {
+    public function add($id) {
         $course = Course::all();
         $center = Center::all();
-        return view('administrator.centerCourses.add',compact('course','center'));
+        return view('administrator.centerCourses.add',compact('course','center','id'));
     }
 
     public function show($id)

@@ -60,4 +60,10 @@ class EventController extends Controller
             var_dump($e->getMessage()); 
         }
     }
+
+    public function delete($id) {
+        $course = Event::findOrFail($id);
+        $course->delete();
+        return redirect('/administrator/events');
+    }
 }

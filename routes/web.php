@@ -94,8 +94,8 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::post('/get-city-by-state-id', [App\Http\Controllers\Administrator\CenterController::class, 'getCitiesByStateId'])->name('get-city-by-state-id');
        
        //Center Courses
-        Route::get('/center-courses', [App\Http\Controllers\Administrator\CenterCourseController::class, 'index'])->name('center-courses');
-        Route::get('/add-center-course', [App\Http\Controllers\Administrator\CenterCourseController::class, 'add'])->name('admin-add-center-course');
+        Route::get('/center-courses/{id}', [App\Http\Controllers\Administrator\CenterCourseController::class, 'index'])->name('center-courses');
+        Route::get('/add-center-course/{id}', [App\Http\Controllers\Administrator\CenterCourseController::class, 'add'])->name('admin-add-center-course');
         Route::get('/view-center-course/{id}', [App\Http\Controllers\Administrator\CenterCourseController::class, 'show'])->name('admin-view-center-course');
         Route::post('/save-center-course', [App\Http\Controllers\Administrator\CenterCourseController::class, 'save'])->name('admin-save-center-course');
         Route::get('/delete-center-course/{id}', [App\Http\Controllers\Administrator\CenterCourseController::class, 'delete'])->name('admin-delete-center-course');
