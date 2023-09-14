@@ -95,6 +95,12 @@
 							</div>
 						</div>
 						<div class="form-group row">
+							<label for="review_widget" class="col-sm-3 text-right control-label col-form-label">Review Widget</label>
+							<div class="col-sm-9">
+								<textarea class="form-control editor" name="review_widget" id="review_widget" placeholder="Enter Gmap Location Code" >{{ $center->review_widget }}</textarea>
+							</div>
+						</div>
+						<div class="form-group row">
 							<label for="lat" class="col-sm-3 text-right control-label col-form-label">Lattitude</label>
 							<div class="col-sm-9">
 								<input type="text" class="form-control" name="lat" id="lat" placeholder="Enter Lattitude Here" value="{{ $center->lat }}" >
