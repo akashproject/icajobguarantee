@@ -8,6 +8,8 @@ use App\Models\Placement;
 use App\Models\Course;
 use App\Models\Recruiter;
 use App\Models\Center;
+use Illuminate\Support\Facades\Storage;
+
 class PlacementController extends Controller
 {
     //
@@ -65,4 +67,48 @@ class PlacementController extends Controller
             var_dump($e->getMessage()); 
         }
     }
+
+    public function delete($id) {
+        $centerCourse = Placement::findOrFail($id);
+        $centerCourse->delete();
+        return redirect('/administrator/placements');
+    }
+
+    public function import() {
+        return view('administrator.placements.import');
+    }
+
+    public function upload(Request $request) {
+        try {
+            $data = $request->all();
+            $request->validate([
+                'placement' => 'required|file|mimes:csv,txt',
+            ]);
+            echo "<pre>";
+            $file = $_FILES["placement"]["tmp_name"];
+            if (($handle = fopen($file, "r")) !== false) {
+                // Loop through the file line by line
+                while (($data = fgetcsv($handle, 1000, ",")) !== false) {
+                    $student = [
+                        'name'=> $data['0'],
+                        'course_id'=> $data['1'],
+                        'dasignation'=> $data['2'],
+                        'placed_at'=> $data['3'],
+                        'joining_salary'=> $data['4'],
+                        'center_id'=> $data['5'],
+                        'status'=> $data['6'],
+                    ];
+                    Placement::create($student);
+                    //print_r($student);
+                }
+        
+                fclose($handle);
+            }
+            //exit;
+            return redirect()->back()->with('message', 'Imported updated successfully!');
+        } catch(\Illuminate\Database\QueryException $e){
+            var_dump($e->getMessage()); 
+        }
+    }
+
 }

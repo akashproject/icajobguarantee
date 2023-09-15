@@ -110,6 +110,7 @@
                                 <ul aria-expanded="false" class="collapse  first-level">
                                     <li class="sidebar-item"><a href="{{ url('administrator/placements') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> All Placements </span></a></li>
                                     <li class="sidebar-item"><a href="{{ url('administrator/add-placement') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Add Placement </span></a></li>
+                                    <li class="sidebar-item"><a href="{{ url('administrator/import-placement') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Import </span></a></li>
                                 </ul>
 
                             </li>

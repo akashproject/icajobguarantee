@@ -34,8 +34,7 @@
 								<a href="#imageBox" class="image-profile open-popup-link">
 									<img src="https://dummyimage.com/150x150?text=Upload%20File" alt="">
 									<input type="hidden" name="attachment" id="attachment" value="" >	
-								</a>	
-												
+								</a>				
 							</div>
 						</div>	
 					</div>

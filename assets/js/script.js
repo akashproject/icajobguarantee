@@ -451,10 +451,10 @@ sponsorSlide: function (){
 				items:3,
 			},
 			700:{
-				items:4,
+				items:5,
 			},
 			1000:{
-				items:6,
+				items:7,
 
 			}
 		},

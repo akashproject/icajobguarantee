@@ -97,6 +97,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
     <script type="text/javascript" src="http://www.googleadservices.com/pagead/conversion_async.js" charset="utf-8"></script>
     <script type="text/javascript" src="https://app.cognocart.com/files/deploy/embed_chatbot_47.js"></script>
+    <script src='https://widgets.sociablekit.com/google-reviews/widget.js' async defer></script>
     <script src="{{ url('assets/js/popper.min.js') }}"></script>
     <script src="{{ url('assets/js/owl.carousel.min.js') }}"></script>
     <script src="{{ url('assets/js/jarallax.js') }}"></script>
@@ -108,6 +109,7 @@
     <script src="{{ url('assets/js/waypoints.min.js') }}"></script>
     <script src="{{ url('assets/js/jquery-ui.js') }}"></script>
     <script src="{{ url('assets/js/script.js') }}"></script>
+    
 </body>
 
 </html>

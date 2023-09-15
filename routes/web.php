@@ -125,6 +125,10 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::get('/add-placement', [App\Http\Controllers\Administrator\PlacementController::class, 'add'])->name('admin-add-placement');
         Route::get('/view-placement/{id}', [App\Http\Controllers\Administrator\PlacementController::class, 'show'])->name('admin-view-placement');
         Route::post('/save-placement', [App\Http\Controllers\Administrator\PlacementController::class, 'save'])->name('admin-save-placement');
+        Route::get('/delete-placement/{id}', [App\Http\Controllers\Administrator\PlacementController::class, 'delete'])->name('admin-save-placement');
+        Route::get('/import-placement', [App\Http\Controllers\Administrator\PlacementController::class, 'import'])->name('admin-import-placement');
+        Route::post('/upload-placement', [App\Http\Controllers\Administrator\PlacementController::class, 'upload'])->name('admin-upload-placement');
+
 
         //Faqs
         Route::get('/faqs', [App\Http\Controllers\Administrator\FaqController::class, 'index'])->name('admin-faqs');
