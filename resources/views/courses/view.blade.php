@@ -314,7 +314,7 @@
 
 										<div id="tab3" class="tab-content-1 pt35">
 
-											<div class="course-details-content highlights">
+											<div class="highlights">
 
 												<div class="affiliate-market-guide mb65">
 
@@ -331,117 +331,59 @@
 
 
 										<div id="tab4" class="tab-content-1 pt35">
-
-											<div class="course-details-content">
-
+											<div class="">
 												<div class="affiliate-market-guide mb65">
-
-													
-
 													<div class="affiliate-market-accordion">
-
 														<div id="accordion" class="panel-group">
-
 															@foreach($carriculams as $key => $carriculam)
-
 															@if($carriculam->name)
-
 															<div class="panel">
-
 																<div class="panel-title" id="heading{{$key}}">
-
-																	<div class="ac-head">												
-
+																	<div class="ac-head">
 																		<button class="btn btn-link {{ (count($carriculams) > 1)?'collapsed':'' ; }}" data-toggle="collapse" data-target="#collapse{{$key}}" aria-expanded="true" aria-controls="collapse{{$key}}">
-
 																			<span>{{ ($key < "9" )?"0":""}}{{$key + 1}}</span> {{$carriculam->name}}
-
 																		</button>
 
-																		
-
 																		<div class="leanth-course">
-
 																			<span>{{ $carriculam->duration }} Hours</span>
-
 																			<span> {{ count(json_decode($carriculam->lecture)) }} Lecture</span>
-
 																		</div>
-
 																	</div>
-
 																</div>
 
 																<div id="collapse{{$key}}" class="collapse {{ (count($carriculams) > 1)?'':'show' ; }}" aria-labelledby="heading{{$key}}" data-parent="#accordion">
-
 																	<div class="panel-body">
-
 																		@foreach(json_decode($carriculam->lecture) as $key => $lecture)
-
 																			<div class="" >
-
 																				<strong> Lecture {{$key + 1}} : </strong> {!! $lecture !!}
-
 																			</div>
-
 																		@endforeach
-
 																		<div>
-
 																			@if($carriculam->benefits)
-
 																			<h4 class="benefit-title"> Module Benefit </h4>
-
 																			<div class="benefit-content" >
-
 																			{!! $carriculam->benefits !!}
-
 																			</div>
-
 																			@endif
-
 																		</div>
-
 																	</div>
-
 																</div>
-
 															</div>
-
 															@endif
-
 															@endforeach
-
 														</div>
-
 													</div>
-
 												</div>
-
 												<!-- /market guide -->
-
 											</div>
-
 										</div>
-
 										<!-- #tab3 -->
-
 									</div>
-
 								</div>
-
 							</div>		
-
-							
-
 						</div>						
-
 					</div>
-
-
-
 					<div class="col-md-3">
-
 						<div class="side-bar">
 
 							@if(isset($contentMain->course_video_image) || $contentMain->course_video_image > 0)
@@ -533,9 +475,7 @@
 							</div>
 
 						</div>
-
 						@if(isset($contentMain->tags))
-
 						<div class="side-bar-widget">
 
 							<h2 class="widget-title text-capitalize">Popular <span>Tag's.</span></h2>
@@ -555,15 +495,10 @@
 							</div>
 
 						</div>
-
 						@endif
-
 					</div>
-
 				</div>
-
 			</div>
-
 		</section>
 
 	    <!-- End of course details section

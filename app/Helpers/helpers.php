@@ -497,7 +497,7 @@ if (! function_exists('getBlogs')) {
     function getBlogs(){
         try {
             // Get Post
-            $url = "https://beta.icajobguarantee.com/blog/wp-json/wp/v2/posts?per_page=2";
+            $url = "https://www.icajobguarantee.com/blog/wp-json/wp/v2/posts?per_page=2";
             $curl = curl_init($url);
             curl_setopt($curl, CURLOPT_URL, $url);
             curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -513,7 +513,7 @@ if (! function_exists('getBlogs')) {
 
             foreach ($post as $key => $value) {
                
-                $url = "https://beta.icajobguarantee.com/blog/wp-json/wp/v2/media/".$value->featured_media;
+                $url = "https://www.icajobguarantee.com/blog/wp-json/wp/v2/media/".$value->featured_media;
 
                 $curl = curl_init($url);
                 curl_setopt($curl, CURLOPT_URL, $url);

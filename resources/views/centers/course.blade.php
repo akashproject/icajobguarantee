@@ -164,7 +164,7 @@
                                     <!-- #tab1 -->
                                     <!-- #tab2 -->
                                     <div id="tab3" class="tab-content-1 pt35">
-                                        <div class="course-details-content highlights">
+                                        <div class=" highlights">
                                             <div class="affiliate-market-guide mb65">
                                                 {!! $courseMain->highlights !!}
                                             </div>
@@ -172,7 +172,7 @@
                                     </div>
                                     <!-- #tab3 -->
                                     <div id="tab4" class="tab-content-1 pt35">
-                                        <div class="course-details-content">
+                                        <div class="">
                                             <div class="affiliate-market-guide mb65">
                                                 <div class="affiliate-market-accordion">
                                                     <div id="accordion" class="panel-group">
@@ -319,6 +319,26 @@
         </div>
     </section>
 
+    <!-- Start of sponsor section
+		============================================= -->
+		<section id="career" class="sponsor-section">
+            <div class="container">
+                <div class="section-title-2 mb65 headline text-left">
+                    <h2>Get placed <span> where you belong.</span></h2>
+                </div>
+                <div class="sponsor-item sponsor-1">
+                    @foreach(getRecruiters() as $value)
+                    <div class="sponsor-pic text-center">
+                        <img src="{{ getSizedImage('',$value->featured_image) }}" alt="">
+                    </div>
+                    @endforeach					
+                </div>
+            </div>
+        </section>
+<!-- End of sponsor section
+
+============================================= -->
+
     <section id="courses" class="best-course-section">
         <div class="container">
             <div class="section-title mb10 headline text-center">
@@ -380,6 +400,75 @@
             </div>
         </div>
     </section>
+
+    @if(count(getJoinees('',$courseMain->id)) > 0)
+	<section id="placements" class="testimonial_2_section">
+		<div class="container">
+			<!--div class="testimonial-slide"-->
+				<div class="section-title mb20 headline text-center">
+					<span class="subtitle text-uppercase"> Student Placement </span>
+					<h3>Connecting Talent with <span>Job Opportunities</span></h3>
+				</div>
+				<div  id="placement-slide-item" class="placement-slide-area">
+					@foreach(getJoinees('',$courseMain->id) as $value)						
+					<div class="placement-content">
+						<div class="text-center">
+							<div class="" style="width: 98px; height: 115px; margin: auto; padding: 2px; border: 1px solid #e3e2e2; border-radius: 6px;">
+								<img src="{{ (isset($value->featured_image))?getSizedImage('',$value->featured_image):'https://dummyimage.com/140x140' }}" alt="" style="height: 100%;">	
+							</div>					
+						</div>
+
+						<div class="text-center my-2">
+							<a href="javascript:void()" style="font-weight: 600;color: #362a7e;">{{ $value->name }}</a>
+						</div>
+
+						<div class="">
+							<!--p class="st-name"><strong>Salary:</strong> {{ $value->joining_salary }}</p-->
+							<p class="st-designation"><strong>Designation:</strong> {{ $value->dasignation }}</p>
+							<p class="st-designation"><strong>Company:</strong> {{ $value->placed_at }}</p>
+						</div>
+					</div>
+					@endforeach
+				</div>
+			<!--/div-->
+		</div>
+	</section>
+	@endif
+
+<!-- Start of testimonial secound section
+
+		============================================= -->
+
+		<section id="alumni" class="testimonial_2_section">
+			<div class="container">
+				<div class="testimonial-slide">
+					<div class="section-title mb20 headline text-center">
+						<span class="subtitle text-uppercase">About This Course </span>
+						<h3>Student<span> Speaks.</span></h3>
+					</div>
+
+					<div  id="testimonial-slide-item" class="testimonial-slide-area">
+						@foreach(getTestimonials() as $value)						
+						<div class="student-qoute">
+							<div class="course-pic relative-position text-center">
+								<div class="circle-img">
+									<img src="{{ (isset($value->featured_image))?getSizedImage('',$value->featured_image):'https://dummyimage.com/140x140' }}" alt="">	
+								</div>					
+							</div>
+							{!! $value->comment !!}
+							<div class="student-name-designation">
+								<span class="st-name bold-font">{{ $value->name }}</span>
+								<span class="st-designation">{{ $value->dasignation }}</span>
+							</div>
+						</div>
+						@endforeach
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End  of testimonial secound section
+		============================================= -->
+
 
     @php
         $reviewRatings = get_reviews_ratings("CenterCourse",$contentMain->id);

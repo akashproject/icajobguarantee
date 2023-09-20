@@ -111,8 +111,7 @@
 								<a href="#imageBox" class="image-profile open-popup-link">
 									<img src="https://dummyimage.com/150x150?text=Add%20Image" alt="" style="width:100%">
 									<input type="hidden" name="banner_image" id="banner_image" value="" >	
-								</a>	
-											
+								</a>			
 							</div>
 						</div>
 					</div>

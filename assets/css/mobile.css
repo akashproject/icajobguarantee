@@ -4291,7 +4291,7 @@ ul.product-tab li.active:after {
       width: 49%;
       font-size: 16px; }
 .course-single-text p {
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 300;
   margin-bottom: 30px;
   color: #333333; }
@@ -5441,4 +5441,19 @@ img.width-100 {
   padding: 2px;
   z-index: 9;
   cursor: pointer;
+}
+.course-details-content h3 {
+  color: #333;
+  font-size: 21px;
+  margin-top: 15px;
+}
+.course-details-content ul {
+  padding: auto;
+  margin: auto;
+}
+
+.course-details-content ul li {
+  display: block;
+  list-style: disc;
+  color: #333;
 }

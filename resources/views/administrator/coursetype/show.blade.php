@@ -74,17 +74,7 @@
 									@endif					
 								</div>
 							</div>
-							<div class="form-group row">
-								<label for="state" class="col-sm-3 text-right control-label col-form-label">Brochure</label>
-								<div class="col-sm-9">
-									<select name="brochure_id[]" id="brochure_id" class="select2 form-control custom-select" style="width: 100%; height:136px;" multiple>	
-										<option value="">Select Brochure</option>
-										@foreach ($brochures as $brochure)
-										<option value="{{  $brochure->id }}" {{ (in_array($brochure->id,  json_decode($courseType->brochure_id)))?'selected' : '' }} > {{  $brochure->name }} </option>
-										@endforeach
-									<select>
-								</div>
-							</div>
+							
 							<div class="form-group row">
 								<label for="state" class="col-sm-3 text-right control-label col-form-label">Status</label>
 								<div class="col-sm-9">
@@ -143,8 +133,6 @@
 										<tr>
 											<th>Name</th>
 											<th>Slug</th>
-											<th>Options</th>
-
 										</tr>
 
 									</thead>
@@ -154,16 +142,14 @@
 										@foreach ($listCourseType as $value)
 										<tr>
 											<td>
-												{{ $value->title }}
+												{{ $value->name }}
 												<div >
 													<a href="{{ url('administrator/view-course-type') }}/{{ $value->id }}" class="">Edit</a> | 
 													<a href="{{ url('administrator/delete-course-type') }}/{{ $value->id }}" class="" onclick="return confirm('Are you sure?')"; >Delete </a>
 												</div>
 											</td>													
 											<td>{{ $value->slug }}</td>													
-											<td>
-												
-											</td>
+											
 										</tr>
 										@endforeach							
 
