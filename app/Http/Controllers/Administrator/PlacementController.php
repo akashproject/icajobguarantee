@@ -96,7 +96,7 @@ class PlacementController extends Controller
                         'placed_at'=> $data['3'],
                         'joining_salary'=> $data['4'],
                         'center_id'=> $data['5'],
-                        'status'=> $data['6'],
+                        'status'=> '1',
                     ];
                     Placement::create($student);
                     //print_r($student);

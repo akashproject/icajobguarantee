@@ -220,7 +220,7 @@
 						@foreach(getJoinees() as $value)
 						<div class="placed-grid-box">
 							<div class="image-box">
-								<img src="{{ (isset($value->featured_image))?getSizedImage('',$value->featured_image):'https://dummyimage.com/140x140' }}">
+								<img src="{{ url('assets/img/placements/'.strtolower(str_replace(' ','-',$value->name)).'.png') }}" alt="Student {{ $value->name }} placement in {{getCourseById($value->course_id)->name}} in {{ getCenterById($value->center_id)->name }}" style="height: 100%;">
 							</div>
 							<div class="box-content">
 								<div class="box-title mt10">

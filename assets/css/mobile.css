@@ -5457,3 +5457,12 @@ img.width-100 {
   list-style: disc;
   color: #333;
 }
+.photo-list {
+  padding: 3px;
+  background: #ccc;
+  margin: 1px;
+}
+.photo-list img {
+  width: 100%;
+  height: 100%;
+}

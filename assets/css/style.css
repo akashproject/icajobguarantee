@@ -5070,6 +5070,16 @@ a.comment-reply-link {
      }
     .pop-up-icon i {
       color: #fff; }
+
+    .photo-list {
+      padding: 3px;
+      background: #ccc;
+      margin: 1px;
+    }
+    .photo-list img {
+      width: 100%;
+      height: 100%;
+    }
    .photo-list li:hover .blakish-overlay {
     opacity: 1;
     visibility: visible; }

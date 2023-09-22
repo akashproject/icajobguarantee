@@ -401,7 +401,7 @@
         </div>
     </section>
 
-    @if(count(getJoinees('',$courseMain->id)) > 0)
+    @if(count(getJoinees('',$centerMain->id)) > 0)
 	<section id="placements" class="testimonial_2_section">
 		<div class="container">
 			<!--div class="testimonial-slide"-->
@@ -414,7 +414,7 @@
 					<div class="placement-content">
 						<div class="text-center">
 							<div class="" style="width: 98px; height: 115px; margin: auto; padding: 2px; border: 1px solid #e3e2e2; border-radius: 6px;">
-								<img src="{{ (isset($value->featured_image))?getSizedImage('',$value->featured_image):'https://dummyimage.com/140x140' }}" alt="" style="height: 100%;">	
+                                <img src="{{ url('assets/img/placements/'.strtolower(str_replace(' ','-',$value->name)).'.png') }}" alt="Student {{ $value->name }} placement in {{getCourseById($value->course_id)->name}} in {{ getCenterById($value->center_id)->name }}" style="height: 100%;">
 							</div>					
 						</div>
 

@@ -9,7 +9,9 @@ use App\Models\City;
 use App\Models\Course;
 use App\Models\Gallery;
 use App\Models\CourseType;
+use App\Models\CenterCourse;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 
 class CenterController extends Controller
 {
@@ -60,6 +62,8 @@ class CenterController extends Controller
                 return redirect('/centers');
             }
 
+            $centerCourses = CenterCourse::where('center_id',$contentMain->id)->get();
+
             $courseType = DB::table('course_type')
             ->join('courses', 'course_type.id', '=', 'courses.type_id')
             ->select('course_type.id as category_id','course_type.name as category','course_type.slug as slug')
@@ -75,13 +79,27 @@ class CenterController extends Controller
             ->where('courses.status',1)
             ->get();
 
-            
-           
+            $directoryPath = public_path('gallery/'.$contentMain->slug);
+            $fileNames = [];
+            if (File::isDirectory($directoryPath)) {
+                $fileNames = File::files($directoryPath);
+            }
+            $galleryImg=[];
+
+            foreach ($fileNames as $file) {
+                $galleryImg[] = $contentMain->slug.'/'.pathinfo($file, PATHINFO_FILENAME).'.'.pathinfo($file, PATHINFO_EXTENSION);
+            }
+
             //$courses = Course::where('status', 1)->get();
             $states = State::where('status', 1)->get();
             $center = $contentMain->name;
+
+            $directoryPath = 'u';
+
             $gallery = DB::table('gallery')->where("center_id",$contentMain->id)->get();
-            return view('centers.view',compact('contentMain','center','courses','courseType','gallery','states'));
+
+
+            return view('centers.view',compact('contentMain','center','courses','courseType','gallery','states','centerCourses','galleryImg'));
         } catch(\Illuminate\Database\QueryException $e){
             var_dump($e);
         }
