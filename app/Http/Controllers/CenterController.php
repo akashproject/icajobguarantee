@@ -62,7 +62,7 @@ class CenterController extends Controller
                 return redirect('/centers');
             }
 
-            $centerCourses = CenterCourse::where('center_id',$contentMain->id)->get();
+            $centerCourses = CenterCourse::where('center_id',$contentMain->id)->where('status',1)->get();
 
             $courseType = DB::table('course_type')
             ->join('courses', 'course_type.id', '=', 'courses.type_id')

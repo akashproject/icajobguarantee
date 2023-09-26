@@ -44,20 +44,30 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-9">
-                    <div class="inner-banner-breadcrumb">
-                        <span class="breadcrumbElement"> 
-                            <a href="https://www.icajobguarantee.com"> Home </a> 
-                        </span>
-
-                        <span class="breadcrumbElement"> 
-                            <i class="fas fa-chevron-right"> </i>
-                        </span> 
-
-                        <span class="breadcrumbElement"> 
-                            {{$contentMain->name}}
-                        </span>
-                    </div>
-
+                    <ol class="inner-banner-breadcrumb">
+                        <li class="breadcrumbElement">
+                            <a href="{{ route('index') }}">Home</a>
+                            <span> 
+                                <i class="fas fa-chevron-right"> </i>
+                            </span> 
+                        </li>
+                        <li class="breadcrumbElement">
+                            <a href="{{ url('/centers') }}">Centers</a>
+                            <span class="breadcrumbElement"> 
+                                <i class="fas fa-chevron-right"> </i>
+                            </span> 
+                        </li>
+                        <li class="breadcrumbElement">
+                            <a href="{{ url('/centers/'.$centerMain->slug) }}"> {{ $centerMain->name }}</a>
+                            <span> 
+                                <i class="fas fa-chevron-right"> </i>
+                            </span> 
+                        </li>
+                        <li class="breadcrumbElement">
+                            <a href="{{ url('/centers/'.$contentMain->slug) }}"> {{ $contentMain->name }}</a>
+                        </li>
+                    </ol>
+                    
                     <div class="inner-banner-content">
                         <div class="inner-banner-title">
                             <h1>{{$contentMain->name}}</h1>
@@ -81,6 +91,7 @@
             </div>
         </div>
     </section>
+
     <section id="search-course" class="search-course-section search-course-secound">
         <div class="container">
             <div class="search-counter-up">
@@ -133,192 +144,7 @@
         </div>
     </section>
 
-    <section id="course-details" class="course-details-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-9">
-                    <div class="course-details-item">
-                        <div class="faq-tab mb65">
-                            <div class="faq-tab-ques  ul-li">
-                                <div class="course-details-category ul-li tab-button text-left mb25 tab-button text-left mb25">
-                                    <span>Course <b>Section:</b></span>
-                                    <ul class="product-tab ">
-                                        <li class="active" rel="tab1"> Summary </li>
-                                        <li rel="tab3"> Highlights </li>
-                                        <li rel="tab4">  Syllabus  </li>
-                                    </ul>
-                                </div>
-                                <!-- /tab-head -->
-                                <!-- tab content -->
-                                <div class="tab-container">
-                                    <!-- 1st tab -->
-                                    <div id="tab1" class="tab-content-1 pt35">
-                                        <div class="course-details-content">
-                                            <div class="course-single-text">
-                                                <div class="course-details-content">
-                                                    {!! $contentMain->description !!}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- #tab1 -->
-                                    <!-- #tab2 -->
-                                    <div id="tab3" class="tab-content-1 pt35">
-                                        <div class=" highlights">
-                                            <div class="affiliate-market-guide mb65">
-                                                {!! $courseMain->highlights !!}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- #tab3 -->
-                                    <div id="tab4" class="tab-content-1 pt35">
-                                        <div class="">
-                                            <div class="affiliate-market-guide mb65">
-                                                <div class="affiliate-market-accordion">
-                                                    <div id="accordion" class="panel-group">
-                                                        @foreach($carriculams as $key => $carriculam)
-                                                        @if($carriculam->name)
-                                                        <div class="panel">
-                                                            <div class="panel-title" id="heading{{$key}}">
-                                                                <div class="ac-head">												
-                                                                    <button class="btn btn-link {{ (count($carriculams) > 1)?'collapsed':'' ; }}" data-toggle="collapse" data-target="#collapse{{$key}}" aria-expanded="true" aria-controls="collapse{{$key}}">
-                                                                        <span>{{ ($key < "9" )?"0":""}}{{$key + 1}}</span> {{$carriculam->name}}
-                                                                    </button>
-                                                                    <div class="leanth-course">
-                                                                        <span>{{ $carriculam->duration }} Hours</span>
-                                                                        <span> {{ count(json_decode($carriculam->lecture)) }} Lecture</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                            <div id="collapse{{$key}}" class="collapse {{ (count($carriculams) > 1)?'':'show' ; }}" aria-labelledby="heading{{$key}}" data-parent="#accordion">
-                                                                <div class="panel-body">
-                                                                    @foreach(json_decode($carriculam->lecture) as $key => $lecture)
-                                                                        <div class="" >
-                                                                            <strong> Lecture {{$key + 1}} : </strong> {!! $lecture !!}
-                                                                        </div>
-                                                                    @endforeach
-                                                                    <div>
-                                                                        @if($carriculam->benefits)
-                                                                        <h4 class="benefit-title"> Module Benefit </h4>
-                                                                        <div class="benefit-content" >
-                                                                        {!! $carriculam->benefits !!}
-                                                                        </div>
-                                                                        @endif
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        @endif
-                                                        @endforeach
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- /market guide -->
-                                        </div>
-                                    </div>
-                                    <!-- #tab3 -->
-                                </div>
-                            </div>
-                        </div>		
-                    </div>						
-                </div>
-                <div class="col-md-3">
-                    <div class="side-bar">
-                        <div class="side-bar-widget">
-                            <h2 class="widget-title text-capitalize"><span>Important </span>Pointers.</h2>
-                        </div>
-                        @if(isset($courseMain->course_video_image) || $courseMain->course_video_image > 0)
-                        <div class="latest-area-content " >
-                            <div class="latest-video-poster relative-position mb20">
-                                <img src="{{ getSizedImage('',$courseMain->featured_image) }}" alt="">
-                            </div>
-                            <div class="vidoe-text text-center">
-                                <h3 class="latest-title bold-font"><a href="#">{{$courseMain->course_video_title}}</a></h3>
-                            </div>
-                        </div>
-                        @endif
-                        <div class="enrolled-student mt15">								
-                            <div class="comment-ratting float-left ul-li">
-                                <ul>
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                </ul>	
-                            </div>
-                            <div class="student-number bold-font">
-                                {{ thousandsCurrencyFormat($courseMain->number_of_rating) }} Rating
-                            </div>
-                        </div>
-                        <div class="couse-feature ul-li-block">
-                            <ul>
-                                <li>Enrolled <span>{{ thousandsCurrencyFormat($courseMain->number_of_enrolled) }} Enrolled </span></li>
-                                <li>Modules <span>{{ $courseMain->no_of_module }} Modules</span></li>
-                                <li>Duration <span>{{ $courseMain->duration }}</span></li>
-                                <li>Call  <a href="tel:{{ get_theme_setting('mobile') }}" ><span>+91 {{ get_theme_setting('mobile') }}</span></a> </li>
-                            </ul>
-                        </div>
-                        <div class="course-side-bar-widget">
-                            <div class="genius-btn gradient-bg text-center text-uppercase float-left bold-font">
-                                <a onclick="lead_capture_form_btn('',{{ $centerMain->id }})" href="javascript:void(0)"> <i class="fas fa-download"></i> Download Syllabus</a>
-                            </div>
-                            <div class="like-course">
-                                <a href="#"><i class="fas fa-heart"></i></a>
-                            </div>
-                        </div>
-                        <div class="side-bar-widget">
-                            <h2 class="widget-title text-capitalize"><span>Contact </span>Us.</h2>
-                            <div class="latest-news-posts">
-                                <ul class="side-bar-widget-contact-info" >
-                                    <li>
-                                        <div class="mail-phone">
-                                            <div class="info-icon">
-                                                <i class="text-gradiant fas fa-envelope"></i>
-                                            </div>
-                                            <div class="info-content" style="width: 80%;">
-                                                <a href="mailto:{{ $centerMain->email }}" class="info-id">{{ $centerMain->email }}</a>
-                                                <span class="info-text">Connect Via Email</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="mail-phone">
-                                            <div class="info-icon">
-                                                <i class="text-gradiant fas fa-phone-square"></i>
-                                            </div>
-                                            <div class="info-content" style="width: 80%;">
-                                                <a href="tel:{{ $centerMain->mobile }}" class="info-id">{{ $centerMain->mobile }}</a>
-                                                <span class="info-text">Connect Via Call</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="mail-phone">
-                                            <div class="info-icon">
-                                                <i class="text-gradiant fas fa-map-marker-alt"></i>
-                                            </div>
-                                            <div class="info-content"  style="width: 80%;">
-                                                <span class="info-id">ICA Edu Skills | {{ $centerMain->name }}</span>
-                                                <span class="info-text">
-                                                    <a href="javascript:void(0)" > {{ $centerMain->address }} </a>
-                                                    <br>
-                                                    <a href="#"  class="info-id"> Get Direction </a>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </section>
-
+   
     <!-- Start of sponsor section
 		============================================= -->
 		<section id="career" class="sponsor-section">
@@ -367,13 +193,13 @@
                                     </ul>													
                                 </div>
                                 <div class="course-details-btn">
-                                    <a href="{{ URL::to('/centers/'.$centerMain->slug) }}/{{ $value->slug }}">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
+                                    <a href="{{ url('courses/'.$value->slug) }}">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
                                 </div>
                                 <div class="blakish-overlay"></div>
                             </div>
                             <div class="best-course-text">
                                 <div class="course-title mb20 headline relative-position height-60">
-                                    <h3><a href="{{ URL::to('/centers/'.$centerMain->slug) }}/{{ $value->slug }}"> {{ $value->name }} </a> 
+                                    <h3><a href="{{ url('courses/'.$value->slug) }}"> {{ $value->name }} </a> 
                                         <span class="trend-bestseller text-uppercase bold-font">
                                         <i class="fas fa-bolt"></i> Bestseller</span> 
                                     </h3>
@@ -388,7 +214,7 @@
                                     <a class="btn-filled" href="javascript:void(0)" onclick="lead_capture_form_btn('',{{ $centerMain->id }})"><i class="fas fa-download"></i> Brochure</a>
                                 </div>
                                 <div class="course-type-list">														
-                                    <a class="btn-outline" href="{{ URL::to('/centers/'.$centerMain->slug) }}/{{ $value->slug }}" >View More <i class="fas fa-caret-right"></i></a>
+                                    <a class="btn-outline" href="{{ url('courses/'.$value->slug) }}" >View More <i class="fas fa-caret-right"></i></a>
                                 </div>														
                             </div>
                         </div>
@@ -410,7 +236,7 @@
 					<h3>Connecting Talent with <span>Job Opportunities</span></h3>
 				</div>
 				<div  id="placement-slide-item" class="placement-slide-area">
-					@foreach(getJoinees('',$courseMain->id) as $value)						
+					@foreach(getJoinees('',$centerMain->id) as $value)						
 					<div class="placement-content">
 						<div class="text-center">
 							<div class="" style="width: 98px; height: 115px; margin: auto; padding: 2px; border: 1px solid #e3e2e2; border-radius: 6px;">
@@ -434,41 +260,6 @@
 		</div>
 	</section>
 	@endif
-
-<!-- Start of testimonial secound section
-
-		============================================= -->
-
-		<section id="alumni" class="testimonial_2_section">
-			<div class="container">
-				<div class="testimonial-slide">
-					<div class="section-title mb20 headline text-center">
-						<span class="subtitle text-uppercase">About This Course </span>
-						<h3>Student<span> Speaks.</span></h3>
-					</div>
-
-					<div  id="testimonial-slide-item" class="testimonial-slide-area">
-						@foreach(getTestimonials() as $value)						
-						<div class="student-qoute">
-							<div class="course-pic relative-position text-center">
-								<div class="circle-img">
-									<img src="{{ (isset($value->featured_image))?getSizedImage('',$value->featured_image):'https://dummyimage.com/140x140' }}" alt="">	
-								</div>					
-							</div>
-							{!! $value->comment !!}
-							<div class="student-name-designation">
-								<span class="st-name bold-font">{{ $value->name }}</span>
-								<span class="st-designation">{{ $value->dasignation }}</span>
-							</div>
-						</div>
-						@endforeach
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- End  of testimonial secound section
-		============================================= -->
-
 
     @php
         $reviewRatings = get_reviews_ratings("CenterCourse",$contentMain->id);

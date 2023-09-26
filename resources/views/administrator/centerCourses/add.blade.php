@@ -32,6 +32,12 @@
 							</div>
 						</div>
 						<div class="form-group row">
+							<label for="slug" class="col-sm-3 text-right control-label col-form-label">Slug</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" name="slug" id="slug" placeholder="Enter Slug Here" >
+							</div>
+						</div>
+						<div class="form-group row">
 							<label for="description" class="col-sm-3 text-right control-label col-form-label">Description</label>
 							<div class="col-sm-9">
 								<textarea class="form-control editor" name="description"  id="description" placeholder="Enter description Here" ></textarea>
@@ -43,19 +49,18 @@
 								<textarea class="form-control" name="excerpt" id="excerpt" placeholder="Enter excerpt Here" ></textarea>
 							</div>
 						</div>
-										
-					</div>
-					<div class="col-md-4">
 						<div class="form-group row">
-							<label for="course_id" class="col-sm-12 text-left control-label col-form-label">Courses</label>
-							<div class="col-sm-12">
-								<select name="course_id" id="course_id" class="select2 form-control custom-select" style="width: 100%; height:36px;">	
-									@foreach ($course as $value)
-									<option value="{{  $value->id }}" > {{  $value->name }} </option>
+							<label for="course_id" class="col-md-3 text-right control-label col-form-label">Courses</label>
+							<div class="col-sm-9">
+								<select name="course_id[]" id="course_id" class="select2 form-control custom-select" multiple style="height:300px">	
+									@foreach($course as $value)
+									<option value="{{ $value->id }}" > {{  $value->name }} </option>
 									@endforeach
 								<select>
 							</div>
-						</div>
+						</div>		
+					</div>
+					<div class="col-md-4">
 						<div class="form-group row">
 							<label for="state" class="col-sm-12 text-left control-label col-form-label">Enable OTP</label>
 							<div class="col-sm-12">
@@ -74,6 +79,15 @@
 									<option value="1" selected> Publish</option>
 									<option value="0" > Private </option>
 								<select>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="tags" class="col-md-6 text-left control-label col-form-label">Featured Image</label>
+							<div class="col-sm-6 text-center">
+								<a href="#imageBox" class="image-profile open-popup-link">
+									<img src="https://dummyimage.com/150x150?text=Add%20Image" alt="">
+									<input type="hidden" name="featured_image" id="featured_image" value="" >	
+								</a>	
 							</div>
 						</div>
 					</div>

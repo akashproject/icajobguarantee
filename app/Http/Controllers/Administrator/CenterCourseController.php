@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Administrator;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\CourseType;
+use App\Models\Course;
 use App\Models\Center;
 use App\Models\CenterCourse;
 use Illuminate\Support\Facades\DB;
@@ -24,7 +24,7 @@ class CenterCourseController extends Controller
     }
 
     public function add($id) {
-        $course = CourseType::all();
+        $course = Course::all();
         $center = Center::all();
         return view('administrator.centerCourses.add',compact('course','center','id'));
     }
@@ -33,7 +33,7 @@ class CenterCourseController extends Controller
     {
         try {
             $centerCourse = CenterCourse::find($id);
-            $course = CourseType::all();
+            $course = Course::all();
             $center = Center::all();
             return view('administrator.centerCourses.show',compact('centerCourse','course','center'));
         } catch(\Illuminate\Database\QueryException $e){

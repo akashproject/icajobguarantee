@@ -430,12 +430,15 @@ if (! function_exists('getCourseCarriculams')) {
 }
 
 if (! function_exists('getEvents')) {
-    function getEvents(){
+    function getEvents($center_id = null){
         try {
             $events = DB::table('events')
             ->join('centers', 'centers.id', '=', 'events.center_id')
-            ->select('events.*', 'events.name as event','centers.name as center','centers.id as center_id','centers.slug as center_slug')
-            ->where('events.status', '1')
+            ->select('events.*', 'events.name as event','centers.name as center','centers.id as center_id','centers.slug as center_slug');
+            if($center_id){
+                $events->where('center_id',$center_id);
+            } 
+            $events = $events->where('events.status', '1')
             ->distinct()
             ->orderBy('events.id', 'asc')
             ->get();

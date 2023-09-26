@@ -20,25 +20,18 @@ class CenterCourseController extends Controller
     {
         try {
             $centerMain = Center::where('slug', $center_slug)->first(); 
-            $courseMain = Course::where('slug', $course_slug)->first(); 
 
-            $contentMain = CenterCourse::where('center_id',$centerMain->id)->where('course_id',$courseMain->id)->first();
+            $contentMain = CenterCourse::where('slug',$course_slug)->where('center_id',$centerMain->id)->first();
             if(!$contentMain){
                 abort(404);
             }
-            $carriculams = Curriculum::where('course_id',$courseMain->id)->get();
-            
+            $center = $centerMain->name;
             //Related Courses
             $courses = DB::table('courses')
-            ->join('course_type', 'course_type.id', '=', 'courses.type_id')
-            ->join('center_courses', 'center_courses.course_id', '=', 'courses.id')
-            ->select('courses.*', 'courses.name as course_name','course_type.name as category','course_type.id as category_id')
-            ->where('courses.id', '!=', $courseMain->id)
-            ->where('courses.type_id', $courseMain->type_id)
-            ->where('courses.status', 1)
+            ->whereIn('id', json_decode($contentMain->course_id))
             ->get();
 
-            return view('centers.course',compact('centerMain','courseMain','courses','carriculams','contentMain'));
+            return view('centers.course',compact('centerMain','courses','center','contentMain'));
         } catch(\Illuminate\Database\QueryException $e){
         }
     }

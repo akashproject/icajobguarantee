@@ -297,51 +297,51 @@
 	</section>
 	<!-- Start of faq section
 	============================================= -->
-		<section id="faq" class="teacher-details-area">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-9">
-					<div class="about-teacher about-faq faq-secound-home-version">
-							<div class="section-title-2  headline text-left">
-								<h2>Frequently  <span>Ask &amp; Questions.</span></h2>
-							</div>							
-							<div class="faq-tab mb35">
-								<div class="faq-tab-ques  ul-li">
-									<div id="accordion3" class="panel-group">
-										@foreach(getFaqs($model) as $key => $value)
-										<div class="panel">
-											<div class="panel-title" id="heading_{{$key}}">
-												<h3>
-													<button class="btn btn-link" data-toggle="collapse" data-target="#collapse_{{$key}}" aria-expanded="true" aria-controls="collapse_{{$key}}">
-													{{ $value->question }}
-													</button>
-												</h3>
-											</div>
-											<div id="collapse_{{$key}}" class="collapse" aria-labelledby="heading_{{$key}}" data-parent="#accordion3">
-												<div class="panel-body">
-												{!! $value->answer !!}
-												</div>
+	<section id="faq" class="teacher-details-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9">
+				<div class="about-teacher about-faq faq-secound-home-version">
+						<div class="section-title-2  headline text-left">
+							<h2>Frequently  <span>Ask &amp; Questions.</span></h2>
+						</div>							
+						<div class="faq-tab mb35">
+							<div class="faq-tab-ques  ul-li">
+								<div id="accordion3" class="panel-group">
+									@foreach(getFaqs($model) as $key => $value)
+									<div class="panel">
+										<div class="panel-title" id="heading_{{$key}}">
+											<h3>
+												<button class="btn btn-link" data-toggle="collapse" data-target="#collapse_{{$key}}" aria-expanded="true" aria-controls="collapse_{{$key}}">
+												{{ $value->question }}
+												</button>
+											</h3>
+										</div>
+										<div id="collapse_{{$key}}" class="collapse" aria-labelledby="heading_{{$key}}" data-parent="#accordion3">
+											<div class="panel-body">
+											{!! $value->answer !!}
 											</div>
 										</div>
-										@endforeach                                       
 									</div>
-									<!-- end of #accordion -->
+									@endforeach                                       
 								</div>
+								<!-- end of #accordion -->
 							</div>
+						</div>
 
-							<div class="about-btn">
-								<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
-									<a href="#">Make Question <i class="fas fa-caret-right"></i></a>
-								</div>
-								<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
-									<a href="#">contact us <i class="fas fa-caret-right"></i></a>
-								</div>
+						<div class="about-btn">
+							<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
+								<a href="#">Make Question <i class="fas fa-caret-right"></i></a>
+							</div>
+							<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
+								<a href="#">contact us <i class="fas fa-caret-right"></i></a>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</section>
+		</div>
+	</section>
 	<!-- End of faq section
 	============================================= -->
     @endsection

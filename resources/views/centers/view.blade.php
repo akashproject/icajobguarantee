@@ -246,6 +246,60 @@
 		</section>
 	<!-- End of course details section
 		============================================= -->	
+
+	<!-- End of sponsor section
+	============================================= -->
+	<section id="courses" class="best-course-section">
+		<div class="container">
+			<div class="section-title mb10 headline text-center">
+				<span class="subtitle text-uppercase">SEARCH OUR COURSES</span>
+				<h3>Check<span> Another Domain.</span></h3>
+			</div>
+			<div class="best-course-area mb10">
+				<div class="row">
+					@foreach($centerCourses as $value)
+					<div class="col-md-3">
+						<div class="best-course-pic-text relative-position">
+							<div class="best-course-pic relative-position">
+								<img src="{{ (isset($value->featured_image))?getSizedImage('',$value->featured_image):url('assets/img/course/c-1.jpg') }}" alt="">
+								<div class="course-rate ul-li">
+									<ul>
+										<li><i class="fas fa-star"></i></li>
+										<li><i class="fas fa-star"></i></li>
+										<li><i class="fas fa-star"></i></li>
+										<li><i class="fas fa-star"></i></li>
+										<li><i class="fas fa-star"></i></li>
+									</ul>
+								</div>
+								<div class="course-details-btn">
+									<a target="_blank" href="{{ url('centers/'.$contentMain->slug.'/'.$value->slug) }}">Know More <i class="fas fa-arrow-right"></i></a>
+								</div>
+								<div class="blakish-overlay"></div>
+							</div>
+							<div class="best-course-text">
+								<div class="course-type-title mb10 headline relative-position">
+									<h3><a href="{{ url('centers/'.$contentMain->slug.'/'.$value->slug) }}">{{ $value->name }}</a></h3>
+								</div>
+								<div class="course-short-description mb10">
+									{!! substr($value->excerpt,0,100); !!}...
+								</div>
+								
+							</div>
+							<div class="more-btn text-center">
+								<div class="course-type-list">	
+									<a class="btn-filled" href="javascript:void(0)" onclick="lead_capture_form_btn([&quot;1&quot;],'')"><i class="fas fa-download"></i> Brochure</a>
+								</div>
+								<div class="course-type-list">														
+									<a class="btn-outline" target="_blank" href="{{ url('centers/'.$contentMain->slug.'/'.$value->slug) }}">View More <i class="fas fa-caret-right"></i></a>
+								</div>														
+							</div>
+						</div>
+					</div>
+					@endforeach	
+				</div>
+			</div>
+		</div>
+	</section>
 	<!-- Start of sponsor section
 		============================================= -->
 		<section id="career" class="sponsor-section">
@@ -267,79 +321,80 @@
 
 	<!-- Start of testimonial secound section
 	============================================= -->
-	<section id="alumni" class="testimonial_2_section">
-		<div class="container">
-			<div class="testimonial-slide">
-				<div class="section-title mb20 headline text-center">
-					<span class="subtitle text-uppercase">About This Course </span>
-					<h3>Student<span> Speaks.</span></h3>
-				</div>
-				<div  id="testimonial-slide-item" class="testimonial-slide-area">
-					@foreach(getTestimonials() as $value)
-					<div class="student-qoute">
-						<div class="course-pic relative-position text-center">
-							<div class="circle-img">
-								<img src="{{ (isset($value->featured_image))?getSizedImage('',$value->featured_image):'https://dummyimage.com/140x140' }}" alt="">	
-							</div>					
-						</div>
-						{!! $value->comment !!}
-						<div class="student-name-designation">
-							<span class="st-name bold-font">{{ $value->name }}</span>
-							<span class="st-designation">{{ $value->dasignation }}</span>
-						</div>
+		<section id="alumni" class="testimonial_2_section">
+			<div class="container">
+				<div class="testimonial-slide">
+					<div class="section-title mb20 headline text-center">
+						<span class="subtitle text-uppercase">About This Course </span>
+						<h3>Student<span> Speaks.</span></h3>
 					</div>
-					@endforeach
+					<div  id="testimonial-slide-item" class="testimonial-slide-area">
+						@foreach(getTestimonials() as $value)
+						<div class="student-qoute">
+							<div class="course-pic relative-position text-center">
+								<div class="circle-img">
+									<img src="{{ (isset($value->featured_image))?getSizedImage('',$value->featured_image):'https://dummyimage.com/140x140' }}" alt="">	
+								</div>					
+							</div>
+							{!! $value->comment !!}
+							<div class="student-name-designation">
+								<span class="st-name bold-font">{{ $value->name }}</span>
+								<span class="st-designation">{{ $value->dasignation }}</span>
+							</div>
+						</div>
+						@endforeach
+					</div>
 				</div>
 			</div>
-		</div>
-	</section>
+		</section>
 	<!-- End  of testimonial secound section
 	============================================= -->
 	<!-- Start of best course
 	============================================= -->
-	<section id="best-course" class="best-course-section">
-		<div class="container">
-			<div class="section-title mb45 headline text-center">
-				<span class="subtitle text-uppercase">Events & Celebration</span>
-				<h3>Perticipates <span> Our Events.</span></h3>
-			</div>
-			<div class="teachers-archive">
-				<div class="row">
-					@foreach(getEvents() as $value)
-					<div class="col-md-3 col-sm-6">
-						<div class="teacher-pic-content">
-							<div class="teacher-img-content relative-position">
-								<img src="{{ ($value->featured_image)?getSizedImage('',$value->featured_image):url('assets/img/logo/center-logo.webp') }}" alt="">
-								<div class="teacher-hover-item">
-									<div class="teacher-social-name ul-li-block">
-										<ul>
-											<li><a href="https://www.facebook.com/sharer/sharer.php?u={{ route('view-event',$value->slug) }}"><i class="fab fa-facebook-f"></i></a></li>
-											<li><a href="https://wa.me/?text={{ route('view-event',$value->slug) }}"><i class="fab fa-whatsapp"></i></a></li>
-											<li><a href="mailto:?subject=Enroll In Event&body=Hello,<br>Please Click on this link<br>{{ route('view-event',$value->slug) }}"><i class="fas fa-envelope"></i></a></li>
-										</ul>
+	@if(count(getEvents($contentMain->id)) > 0)
+		<section id="best-course" class="best-course-section">
+			<div class="container">
+				<div class="section-title mb45 headline text-center">
+					<span class="subtitle text-uppercase">Events & Celebration</span>
+					<h3>Perticipates <span> Our Events.</span></h3>
+				</div>
+				<div class="teachers-archive">
+					<div class="row">
+						@foreach(getEvents($contentMain->id) as $value)
+						<div class="col-md-3 col-sm-6">
+							<div class="teacher-pic-content">
+								<div class="teacher-img-content relative-position">
+									<img src="{{ ($value->featured_image)?getSizedImage('',$value->featured_image):url('assets/img/logo/center-logo.webp') }}" alt="">
+									<div class="teacher-hover-item">
+										<div class="teacher-social-name ul-li-block">
+											<ul>
+												<li><a href="https://www.facebook.com/sharer/sharer.php?u={{ route('view-event',$value->slug) }}"><i class="fab fa-facebook-f"></i></a></li>
+												<li><a href="https://wa.me/?text={{ route('view-event',$value->slug) }}"><i class="fab fa-whatsapp"></i></a></li>
+												<li><a href="mailto:?subject=Enroll In Event&body=Hello,<br>Please Click on this link<br>{{ route('view-event',$value->slug) }}"><i class="fas fa-envelope"></i></a></li>
+											</ul>
+										</div>
+										<div class="teacher-text">
+											{{$value->excerpt}}
+										</div>
 									</div>
-									<div class="teacher-text">
-										{{$value->excerpt}}
+									<div class="teacher-next text-center">
+										<a href="{{url('/events/'.$value->slug)}}"><i class="text-gradiant fas fa-arrow-right"></i></a>
 									</div>
 								</div>
-								<div class="teacher-next text-center">
-									<a href="{{url('/events/'.$value->slug)}}"><i class="text-gradiant fas fa-arrow-right"></i></a>
+								<div class="teacher-name-designation">
+									<a class="teacher-name" href="{{url('/events/'.$value->slug)}}" >{{$value->name}}</a>
+									<span class="teacher-designation">{{$value->center}}</span>
 								</div>
-							</div>
-							<div class="teacher-name-designation">
-								<a class="teacher-name" href="{{url('/events/'.$value->slug)}}" >{{$value->name}}</a>
-								<span class="teacher-designation">{{$value->center}}</span>
 							</div>
 						</div>
+						@endforeach
 					</div>
-					@endforeach
 				</div>
 			</div>
-		</div>
-	</section>
+		</section>
 	<!-- End of best course
 	============================================= -->
-
+	@endif
 	<!-- Start of best course
 	============================================= -->
 	<section id="best-course" class="best-course-section">
@@ -465,9 +520,7 @@
 	</section>
 	<!-- End of Faqs
 	============================================= -->
-
 	<!-- /course-categori -->
-	
 	<section id="review" class="teacher-details-area" >
 		<div class="container"> 				
 			<div class="row" >
