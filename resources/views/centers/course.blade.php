@@ -70,7 +70,7 @@
                     
                     <div class="inner-banner-content">
                         <div class="inner-banner-title">
-                            <h1>{{$contentMain->name}}</h1>
+                            <h1>{{$contentMain->name}} in {{ $centerMain->name }}</h1>
                         </div>
                         <div class="inner-banner-description">
                             <div class="mb10">
@@ -144,32 +144,80 @@
         </div>
     </section>
 
-   
-    <!-- Start of sponsor section
+   <!-- Start of course details section
 		============================================= -->
-		<section id="career" class="sponsor-section">
-            <div class="container">
-                <div class="section-title-2 mb65 headline text-left">
-                    <h2>Get placed <span> where you belong.</span></h2>
-                </div>
-                <div class="sponsor-item sponsor-1">
-                    @foreach(getRecruiters() as $value)
-                    <div class="sponsor-pic text-center">
-                        <img src="{{ getSizedImage('',$value->featured_image) }}" alt="">
-                    </div>
-                    @endforeach					
-                </div>
-            </div>
-        </section>
-<!-- End of sponsor section
+		<section id="course-details" class="course-details-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8">
+						<div class="course-details-item">
+							<div class="course-single-text">
+								{!! $contentMain->description !!}
+							</div>
+						</div>
+						<!-- /course-details -->
+					</div>
 
-============================================= -->
+					<div class="col-md-4">
+						<div class="side-bar">													
+							<div class="side-bar-widget">
+								<h2 class="widget-title text-capitalize"><span>Contact </span>Us.</h2>
+								<div class="latest-news-posts">
+									<ul class="side-bar-widget-contact-info" >
+										<li>
+											<div class="mail-phone">
+												<div class="info-icon">
+													<i class="text-gradiant fas fa-envelope"></i>
+												</div>
+												<div class="info-content">
+													<a href="mailto:{{ $centerMain->email }}" class="info-id">{{ $centerMain->email }}</a>
+													<span class="info-text">Connect Via Email</span>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="mail-phone">
+												<div class="info-icon">
+													<i class="text-gradiant fas fa-phone-square"></i>
+												</div>
+												<div class="info-content">
+													<a href="tel:{{ $centerMain->mobile }}" class="info-id">{{ $centerMain->mobile }}</a>
+													<span class="info-text">Connect Via Call</span>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="mail-phone">
+												<div class="info-icon">
+													<i class="text-gradiant fas fa-map-marker-alt"></i>
+												</div>
+												<div class="info-content">
+													<span class="info-id">ICA Edu Skills | {{ $centerMain->name }}</span>
+													<span class="info-text">
+														<a href="javascript:void(0)" > {{ $centerMain->address }} </a>
+														<br>
+														<a href="#"  class="info-id"> Get Direction </a>
+													</span>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>			
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	<!-- End of course details section
+		============================================= -->	
+    
 
     <section id="courses" class="best-course-section">
         <div class="container">
             <div class="section-title mb10 headline text-center">
-                <span class="subtitle text-uppercase">SEARCH OUR COURSES</span>
-                <h3>Check<span> Related Course.</span></h3>
+                <span class="subtitle text-uppercase">Featured Courses</span>
+                <h3>Explore The Best <span> {{ $contentMain->name }} in {{ $centerMain->name }}</span></h3>
             </div>
             <div class="best-course-area mb10">
                 <div class="row justify-content-center">
@@ -256,6 +304,50 @@
 					</div>
 					@endforeach
 				</div>
+			<!--/div-->
+		</div>
+	</section>
+	@endif
+
+    <!-- Start of sponsor section
+        ============================================= -->
+    <section id="career" class="sponsor-section">
+        <div class="container">
+            <div class="section-title-2 mb65 headline text-left">
+                <h2>Top<span> Recruiters</span> List</h2>
+            </div>
+            <div class="sponsor-item sponsor-1">
+                @foreach(getRecruiters() as $value)
+                <div class="sponsor-pic text-center">
+                    <img src="{{ getSizedImage('',$value->featured_image) }}" alt="">
+                </div>
+                @endforeach					
+            </div>
+        </div>
+    </section>
+    <!-- End of sponsor section
+        ============================================= -->
+    @if(count($galleryImg) > 0)
+	<section id="placements" class="testimonial_2_section">
+		<div class="container">
+			<!--div class="testimonial-slide"-->
+				<div class="section-title mb20 headline text-center">
+					<span class="subtitle text-uppercase"> Student Placement </span>
+					<h3>Connecting Talent with <span>Job Opportunities</span></h3>
+				</div>
+				<div class="row">
+                    @foreach($galleryImg as $value )
+                        <div class="col-md-2 photo-list" >
+                            <img src="{{url('/public/gallery/'.$value)}}" alt="">
+                            <div class="blakish-overlay"></div>
+                            <div class="pop-up-icon">
+                                <a href="/public/gallery/{{ $value }}" data-lightbox="roadtrip">
+                                    <i class="fas fa-search"></i>
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
 			<!--/div-->
 		</div>
 	</section>

@@ -90,6 +90,18 @@
 								</a>	
 							</div>
 						</div>
+						<div class="form-group row">
+							<label for="tags" class="col-md-6 text-left control-label col-form-label">Banner Image</label>
+							<div class="col-sm-6 text-center">
+								<a href="#imageBox" class="image-profile open-popup-link">
+									<img src="https://dummyimage.com/150x150?text=Add%20Image" alt="">
+									<input type="hidden" name="banner_image" id="banner_image" value="" >	
+								</a>	
+								@if(isset($course->banner_image))
+									<a href="javascript:void(0)" class="removeImage" style="color: #c90f0f;font-weight: 600;"> Remove Image </a>	
+								@endif					
+							</div>
+						</div>
 					</div>
 
 				</div>

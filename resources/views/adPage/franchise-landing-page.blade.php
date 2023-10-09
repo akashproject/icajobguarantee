@@ -34,11 +34,18 @@
 						<nav class="navbar-menu float-right">
 							<div class="nav-menu ul-li">
 								<ul>
-									@foreach ($adHeaderMenu as $key => $menuItem)
-										<li class="">
-											<a href="{{ url($key) }}">{{ $menuItem }}</a>
-										</li>
-									@endforeach
+                                    <li class="">
+                                        <a href="{{ url('#about') }}"> About Us</a>
+                                    </li>
+                                    <li class="">
+                                        <a href="{{ url('#model') }}"> Business Model</a>
+                                    </li>
+                                    <li class="">
+                                        <a href="{{ url('#why') }}"> Why ICA</a>
+                                    </li>
+                                    <li class="">
+                                        <a href="{{ url('#benefits') }}"> Benefits</a>
+                                    </li>
 								</ul>
 							</div>
 						</nav>
@@ -46,12 +53,19 @@
 						<div class="mobile-menu">
 							<div class="logo"><a href="javascript:void(0)"><img src="{{ url('assets/img/logo/logo.png') }}" alt="Logo"></a></div>
 							<nav>
-								<ul>
-									@foreach ($adHeaderMenu as $key => $menuItem)
-										<li class="">
-											<a href="{{ url($key) }}">{{ $menuItem }}</a>
-										</li>
-									@endforeach
+                                <ul>
+                                    <li class="">
+                                        <a href="{{ url('#about') }}"> About Us</a>
+                                    </li>
+                                    <li class="">
+                                        <a href="{{ url('#model') }}"> Business Model</a>
+                                    </li>
+                                    <li class="">
+                                        <a href="{{ url('#why') }}"> Why ICA</a>
+                                    </li>
+                                    <li class="">
+                                        <a href="{{ url('#benefits') }}"> Benefits</a>
+                                    </li>
 								</ul>
 							</nav>
 
@@ -62,31 +76,57 @@
 		</div>
 	</header>	
 
-	<section id="breadcrumb" class="ad-page-banner relative-position backgroud-style" style="background-image: url({{ (isset($contentMain->banner_image))?getSizedImage('',$contentMain->banner_image):url('assets/img/banner/brt-1.jpg') }});" >
-		<div class="container">
-			<div class="row">
-				<div class="col-md-7">
-					<div class="ad-banner-content">
-						<div class="ad-banner-title">
-							<h1>10X Your Monthly Income: Experience Exponential Growth</h1>
-						</div>
-						<div class="ad-banner-sub-title">
-							<h2>Be an Active Partner in India's Skilling Mission with ICA Edu Skills, India's Largest Education Network</h2>
-						</div>
-						<div class="ad-banner-description">
-							{!!(isset($contentMain))?$contentMain->description:"" !!}
-						</div>
-						
-					</div>
-				</div>
-				<div class="col-md-5">
-					
-				</div>
-			</div>
-		</div>
-	</section>
-    <!-- End of breadcrumb section
-    ============================================= -->
+    <!-- Start of Header section -->
+    <section id="breadcrumb" class="ad-page-banner relative-position backgroud-style" style="background-image: url({{ (isset($contentMain->banner_image))?getSizedImage('',$contentMain->banner_image):url('assets/img/banner/brt-1.jpg') }});" >
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="mt-5">
+                    <div class="ad-banner-title">
+                        <h1 class="text-center" style="font-size: 32px!important; font-weight: 700!important;"> <h1>Generate a minimum monthly income of 4 Lakh rupees</h1> </h1>
+                    </div>
+                    <div class="ad-banner-subtitle">
+                        <h4> Partner with India's largest education network </h4>
+                        <p> Partner with India's top-ranked Accounting and Taxation Training Institute and become a part of a noble vision to build 'Skilled Manpower' among job-focused youth in India and make them employable at an affordable fee. </p>
+                    </div>
+                    <div class="ad-banner-sub-title">
+                        <p class="text-white" style="font-size: 21px;margin: 0;"> <i class="fa fa-check"></i> Area Required: Minimum 1000 - 2500 SQFT </p>
+                        <p class="text-white" style="font-size: 21px;margin: 0;"> <i class="fa fa-check"></i> Investment: 10 - 20 Lakh  </p>
+                        <p class="text-white" style="font-size: 21px;margin: 0;"> <i class="fa fa-check"></i> No. of Franchises: 100+  </p>
+                        <p class="text-white" style="font-size: 21px;margin: 0;"> <i class="fa fa-check"></i> Establishment Year: 1999  </p>
+                    </div>
+                            
+                </div>
+            </div>
+            <div id="apply" class="col-md-5">
+                <div class="highlighted-content-wrapper text-center">
+                <div class="ad_banner_form_wrapeer" >
+                    <div class="register-fomr-title text-center">
+                        <h3 class="bold-font text-white">Business Partner!</h3>
+                    </div>
+                    <div class="register-form-area text-left" >
+                        <form id="banner_lead_capture_form" class="lead_form" action="{{ url('franchise-capture-lead') }}" method="POST" enctype="multipart/form-data">
+                            <div class="form_process" >
+                            <div class="lead_steps step1 active" >
+                                @include('common.franchiseLeadCaptureFormField')
+                            </div>
+                            @include('common.leadCaptureFormOtpField')
+                            </div>
+                            <div class="form_success" style="display:none">
+                                <div class="form-success-content">
+                                    <span class="success-icon"> <i class="fas fa-check"></i> </span>
+                                    <h4> Thank You! Your Application Submitted Successfully </h4>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    <!-- End of Header section -->
     <!-- Start of Search Courses
     ============================================= -->
     <section id="search-course" class="search-course-section search-course-secound">

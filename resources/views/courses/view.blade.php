@@ -63,37 +63,27 @@
 				<div class="row">
 
 					<div class="col-md-9">
-
-
-
-						<div class="inner-banner-breadcrumb" >
-
-							<span class="breadcrumbElement"> 
-
-								<a href="{{url('/')}}" > Home </a> 
-
-							</span>
-
-							<span class="breadcrumbElement"> 
-
-								<i class="fas fa-chevron-right"> </i>
-
-							</span> 
-
-							<span class="breadcrumbElement"> 
-
-								{{(isset($contentMain))?$contentMain->name:"Default Page" }}
-
-							</span>
-
-						</div>
+						<ol class="inner-banner-breadcrumb">
+							<li class="breadcrumbElement">
+								<a href="{{ route('index') }}">Home</a>
+								<span> 
+									<i class="fas fa-chevron-right"> </i>
+								</span> 
+							</li>
+							<li class="breadcrumbElement">
+								<a href="{{ url('/courses') }}">Courses</a>
+								<span class="breadcrumbElement"> 
+									<i class="fas fa-chevron-right"> </i>
+								</span> 
+							</li>
+							<li class="breadcrumbElement">
+								{{ $contentMain->name }}
+							</li>
+						</ol>
 
 						<div class="inner-banner-content">
-
 							<div class="inner-banner-title">
-
 								<h1>{{(isset($contentMain))?$contentMain->name:"Default Page" }}</h1>
-
 							</div>
 
 							<div class="inner-banner-description">
@@ -101,19 +91,14 @@
 									{!! (isset($contentMain))?$contentMain->excerpt:"Default Description" !!}
 								</div>
 								{!! $contentMain->criteria !!}
-
 							</div>
-
 						</div>
-
 					</div>
-
 					<div class="col-md-3">
 
 						
 
 					</div>
-
 				</div>
 
 			</div>
@@ -340,7 +325,7 @@
 															<div class="panel">
 																<div class="panel-title" id="heading{{$key}}">
 																	<div class="ac-head">
-																		<button class="btn btn-link {{ (count($carriculams) > 1)?'collapsed':'' ; }}" data-toggle="collapse" data-target="#collapse{{$key}}" aria-expanded="true" aria-controls="collapse{{$key}}">
+																		<button class="btn btn-link module_title {{ (count($carriculams) > 1)?'collapsed':'' ; }}" data-toggle="collapse" data-target="#collapse{{$key}}" aria-expanded="true" aria-controls="collapse{{$key}}">
 																			<span>{{ ($key < "9" )?"0":""}}{{$key + 1}}</span> {{$carriculam->name}}
 																		</button>
 
@@ -354,8 +339,8 @@
 																<div id="collapse{{$key}}" class="collapse {{ (count($carriculams) > 1)?'':'show' ; }}" aria-labelledby="heading{{$key}}" data-parent="#accordion">
 																	<div class="panel-body">
 																		@foreach(json_decode($carriculam->lecture) as $key => $lecture)
-																			<div class="" >
-																				<strong> Lecture {{$key + 1}} : </strong> {!! $lecture !!}
+																			<div class="module-lecture" >
+																				<strong> <i class="play-icon text-gradiant fa fa-book"></i> Lecture {{$key + 1}} : </strong> {!! $lecture !!}
 																			</div>
 																		@endforeach
 																		<div>

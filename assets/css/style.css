@@ -513,6 +513,11 @@ ul.product-tab.index-category-tab li.active,ul.course-tab.index-category-tab li.
 /* .fa-star {
   color: #ffc926;
 } */
+.module_title {
+  font-size: 24px;
+  font-weight: 600 !important;
+  color: #303030 !important;
+}
 
 .fa-whatsapp {
 color: #128C7E;
@@ -4616,7 +4621,12 @@ a.comment-reply-link {
   color: #eeeeee !important; }
 
 .affiliate-market-accordion .panel-group .panel-title .btn-link span {
-  color: #393185; }
+  color: #393185 !important; }
+
+  .module-lecture {
+    margin: 5px 0;
+    font-size: 18px;
+}
 
 .affiliate-market-accordion .leanth-course {
   position: absolute;
@@ -5783,4 +5793,8 @@ img.width-100 {
   height: 7px;
   left: 0;
   top: 6px;
+}
+.course-single-text h3 {
+  font-size: 18px;
+  color: #333;
 }

@@ -236,6 +236,21 @@ if (! function_exists('getCityById')) {
     }
 }
 
+if (! function_exists('getCitiesByStateName')) {
+    function getCitiesByStateName($state){
+        try {
+            $cities = DB::table('cities')
+            ->join('states', 'cities.state_id', '=', 'states.id')
+            ->where('states.name',$state)
+            ->select('cities.*')
+            ->get();
+            return $cities;
+        } catch(\Illuminate\Database\QueryException $e){
+            throw $e;
+        }
+    }
+}
+
 if (! function_exists('getCenters')) {
     function getCenters($course_id=null, $center_id=null){
         $centers = DB::table('centers');
@@ -253,6 +268,8 @@ if (! function_exists('getCenters')) {
         //$centers->whereBetween('lat', [$radies['minLat'], $radies['maxLat']]);
         if(isset($_COOKIE['lng']) && isset($_COOKIE['lat'])){
             $centers->orderBy(DB::raw('POW((lng-'.$_COOKIE['lng'].'),2) + POW((lat-'.$_COOKIE['lat'].'),2)'));
+        } else {
+            $centers->orderBy("name","asc");
         }
         $centers->where('status',1);
         $centers = $centers->get();       

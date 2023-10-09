@@ -8,25 +8,39 @@
 <div class="contact-info">
     <input class="mobile" name="mobile" type="number" placeholder="Enter Your Mobile" autocomplete="off" min="6000000000" max="9999999999" required>
 </div>
-<div class="register-form-area">
-    <select class="state" name="state" required>
-        <option value="">Select State</option>
-        @foreach(getStates() as $value)
+
+
+@if(isset($_GET['state']))
+    <input type="hidden" name="state" value="{{ (isset($_GET['state']) )?$_GET['state']:'' }}">
+    <div class="register-form-area">
+        <select class="city_id" name="city" required>
+            <option value="">Select City</option>
+            @foreach(getCitiesByStateName($_GET['state']) as $value)
             <option value="{{$value->name}}" data-id="{{$value->id}}"> {{$value->name}} </option>
-        @endforeach
-    </select>
-</div>
-<div class="register-form-area">
-    <select class="city_id" name="city" required>
-        <option value="">Select City</option>
-    </select>
-</div>
+            @endforeach
+        </select>
+    </div>
+@else
+    <div class="register-form-area">
+        <select class="state" name="state" required>
+            <option value="">Select State</option>
+            @foreach(getStates() as $value)
+                <option value="{{$value->name}}" data-id="{{$value->id}}"> {{$value->name}} </option>
+            @endforeach
+        </select>
+    </div>
+    <div class="register-form-area">
+        <select class="city_id" name="city" required>
+            <option value="">Select City</option>
+        </select>
+    </div>
+@endif
 <div class="contact-info">
     <input type="text" class="occupation" name="occupation" placeholder="Enter Your Occupation" autocomplete="off" required>
 </div>
 <div class="register-form-area">
     <select class="invest" name="invest" required>
-        <option value="">Are you ready to Invest  15-20 lakh ?</option>
+        <option value="">Are you ready to Invest  18-20 lakh ?</option>
         <option value="Yes">Yes</option>
         <option value="No">No</option>
     </select>

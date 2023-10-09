@@ -6,18 +6,18 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-9">
-
-					<div class="inner-banner-breadcrumb" >
-						<span class="breadcrumbElement"> 
-							<a href="{{url('/')}}" > Home </a> 
-						</span>
-						<span class="breadcrumbElement"> 
-							 <i class="fas fa-chevron-right"> </i>
-						</span> 
-						<span class="breadcrumbElement"> 
+					<ol class="inner-banner-breadcrumb">
+                        <li class="breadcrumbElement">
+                            <a href="{{ route('index') }}">Home</a>
+                            <span> 
+                                <i class="fas fa-chevron-right"> </i>
+                            </span> 
+                        </li>
+                        <li class="breadcrumbElement">
 							{{(isset($contentMain))?$contentMain->name:"Default Page" }}
-						 </span>
-					</div>
+                        </li>
+                    </ol>
+					
 					<div class="inner-banner-content">
 						<div class="inner-banner-title">
 							<h1>{{(isset($contentMain))?$contentMain->name:"Default Page" }}</h1>

@@ -96,9 +96,6 @@
 				<div class="row">
 					<div class="col-md-8">
 						<div class="course-details-item">
-							<!-- <div class="course-single-pic mb30">
-								<img src="{{ url('assets/img/course/cs-1.jpg') }}" alt="">
-							</div> -->
 							<div class="faq-tab mb65">
 								<div class="faq-tab-ques  ul-li">
 									<div class="course-details-category ul-li tab-button text-left mb25 tab-button text-left mb25">
@@ -125,7 +122,6 @@
 											</div>
 										</div>
 										<!-- #tab1 -->
-
 										<div id="tab2" class="tab-content-1 pt35">
 											<div class="center-details-content highlights">
 												<div class="affiliate-market-guide mb65">
@@ -302,20 +298,20 @@
 	</section>
 	<!-- Start of sponsor section
 		============================================= -->
-		<section id="career" class="sponsor-section">
-			<div class="container">
-				<div class="section-title-2 mb65 headline text-left">
-					<h2>Get placed <span> where you belong.</span></h2>
-				</div>
-				<div class="sponsor-item sponsor-1">
-					@foreach(getRecruiters() as $value)
-					<div class="sponsor-pic text-center">
-						<img src="{{ getSizedImage('',$value->featured_image) }}" alt="">
-					</div>
-					@endforeach					
-				</div>
+	<section id="career" class="sponsor-section">
+		<div class="container">
+			<div class="section-title-2 mb65 headline text-left">
+				<h2>Get placed <span> where you belong.</span></h2>
 			</div>
-		</section>
+			<div class="sponsor-item sponsor-1">
+				@foreach(getRecruiters() as $value)
+				<div class="sponsor-pic text-center">
+					<img src="{{ getSizedImage('',$value->featured_image) }}" alt="">
+				</div>
+				@endforeach					
+			</div>
+		</div>
+	</section>
 	<!-- End of sponsor section
 	============================================= -->
 

@@ -47,7 +47,7 @@ class CenterCourseController extends Controller
                 'center_id' => 'required',
                 'course_id' => 'required',
             ]);
-
+            $data['course_id'] = json_encode($data['course_id']);
             if($data['centerCourse_id'] <= 0){
                 $centerCourse = CenterCourse::create($data);
             } else {

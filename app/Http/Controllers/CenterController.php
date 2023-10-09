@@ -94,8 +94,6 @@ class CenterController extends Controller
             $states = State::where('status', 1)->get();
             $center = $contentMain->name;
 
-            $directoryPath = 'u';
-
             $gallery = DB::table('gallery')->where("center_id",$contentMain->id)->get();
 
 

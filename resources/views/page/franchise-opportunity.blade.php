@@ -296,7 +296,7 @@
 							<li class="cat-item"> Best Training facilities in Accounts, Finance and Taxation </li>
 							<li class="cat-item"> All time student rush due to high demand for CIA courses </li>
 							<li class="cat-item"> 100+ centers in Pan India </li>
-							<li class="cat-item"> Investment of just 15-20 lakh </li>
+							<li class="cat-item"> Investment of just 18-20 lakh </li>
 						</ul>
 					</div>
 				</div>

@@ -482,13 +482,15 @@ ul.product-tab.index-category-tab li.active {
   color: #fff;
 }
 .inner-banner-breadcrumb {
-    color: #fff;
-    margin-bottom: 0.9rem;
+  color: #fff;
+  margin-bottom: 0.9rem;
+  padding-left: 0;
 }
 
 .inner-banner-breadcrumb .breadcrumbElement {
   font-size: 16px;
   margin: 0 0.2rem;
+  display: inline;
 }
 
 .inner-banner-title h1 {

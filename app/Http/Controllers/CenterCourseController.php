@@ -12,6 +12,7 @@ use App\Models\Gallery;
 use App\Models\CourseType;
 use App\Models\CenterCourse;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 
 class CenterCourseController extends Controller
 {
@@ -31,7 +32,18 @@ class CenterCourseController extends Controller
             ->whereIn('id', json_decode($contentMain->course_id))
             ->get();
 
-            return view('centers.course',compact('centerMain','courses','center','contentMain'));
+            $directoryPath = public_path('gallery/'.$centerMain->slug);
+            $fileNames = [];
+            if (File::isDirectory($directoryPath)) {
+                $fileNames = File::files($directoryPath);
+            }
+            $galleryImg=[];
+
+            foreach ($fileNames as $file) {
+                $galleryImg[] = $centerMain->slug.'/'.pathinfo($file, PATHINFO_FILENAME).'.'.pathinfo($file, PATHINFO_EXTENSION);
+            }
+
+            return view('centers.course',compact('centerMain','courses','center','contentMain','galleryImg'));
         } catch(\Illuminate\Database\QueryException $e){
         }
     }

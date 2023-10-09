@@ -12,6 +12,6 @@ class CenterCourse extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'id','course_id','center_id','featured_image','name','slug','title','description','excerpt','enable_otp','meta_description','schema','robots','canonical','utm_campaign','utm_source','status','created_at',
+        'id','course_id','center_id','featured_image','banner_image','name','slug','title','description','excerpt','enable_otp','meta_description','schema','robots','canonical','utm_campaign','utm_source','status','created_at',
     ];
 }

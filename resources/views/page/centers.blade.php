@@ -2,22 +2,21 @@
     @section('content')
 	<!-- Start of breadcrumb section
 		============================================= -->
-	<section id="breadcrumb" class="inner-banner relative-position backgroud-style"  style="background-image: url({{ (isset($contentMain->banner_image))?getSizedImage('',$contentMain->banner_image):url('assets/img/banner/brt-1.jpg') }});">
+	<section id="breadcrumb" class="inner-banner relative-position backgroud-style" style="background-image: url({{ (isset($contentMain->banner_image))?getSizedImage('',$contentMain->banner_image):url('assets/img/banner/brt-1.jpg') }});">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-9">
-
-					<div class="inner-banner-breadcrumb" >
-						<span class="breadcrumbElement"> 
-							<a href="{{url('/')}}" > Home </a> 
-						</span>
-						<span class="breadcrumbElement"> 
-							 <i class="fas fa-chevron-right"> </i>
-						</span> 
-						<span class="breadcrumbElement"> 
+					<ol class="inner-banner-breadcrumb">
+                        <li class="breadcrumbElement">
+                            <a href="{{ route('index') }}">Home</a>
+                            <span> 
+                                <i class="fas fa-chevron-right"> </i>
+                            </span> 
+                        </li>
+                        <li class="breadcrumbElement">
 							{{(isset($contentMain))?$contentMain->name:"Default Page" }}
-						 </span>
-					</div>
+                        </li>
+                    </ol>
 					<div class="inner-banner-content">
 						<div class="inner-banner-title">
 							<h1>{{(isset($contentMain))?$contentMain->name:"Default Page" }}</h1>
@@ -93,13 +92,16 @@
 																<div class="course-title headline">
 																	<h3><a target="_blank" href="{{ URL::to('/centers') }}/{{ $value->slug }}">{{ $value->name }}</a></h3>
 																</div>
-															</div>															
+															</div>		
 														</div>	
 														<div class="course-meta mb10 text-center">
 															<span class="course-category">
-																<a href="{{ url('/state/'.getStateById($value->state_id)->slug) }}"><i class="fas fa-map-marker"></i> {{ getStateById($value->state_id)->name }}</a> ,
-																<a href="{{ url('/city/'.(getCityById($value->city_id) !== null)?'adsad':'') }}"> {{ (getCityById($value->city_id) !== null)?getCityById($value->city_id)->name:'' }} </a>
-																
+																<a href="{{ url('/state/'.getStateById($value->state_id)->slug) }}">
+																	<i class="fas fa-map-marker"></i> {{ getStateById($value->state_id)->name }}
+																</a>,
+																<a href="{{ url('/city/'.(getCityById($value->city_id) !== null)?'adsad':'') }}">
+																	 {{ (getCityById($value->city_id) !== null)?getCityById($value->city_id)->name:'' }}
+																</a>
 															</span>
 														</div>
 														<div class="more-btn text-center" >
@@ -120,7 +122,6 @@
 							</div>
 						</div>
 					</div>
-					
 				</div>
 			</div>
 		</div>
@@ -129,57 +130,57 @@
 		============================================= -->
 	<!-- Start of recent view product
 		============================================= -->
-		<section id="courses" class="best-course-section">
-			<div class="container">
-				<div class="section-title mb10 headline text-center">
-					<span class="subtitle text-uppercase">SEARCH OUR COURSES</span>
-					<h3>Check<span> Another Domain.</span></h3>
-				</div>
-				<div class="best-course-area mb10">
-					<div class="row">
-						@foreach (getCourseTypes() as $value)
-						<div class="col-md-3">
-							<div class="best-course-pic-text relative-position">
-								<div class="best-course-pic relative-position">
-									<img src="{{ (isset($value->featured_image))?getSizedImage('',$value->featured_image):url('/assets/img/course/bc-1.jpg') }}" alt="">
-									<div class="course-rate ul-li">
-										<ul>
-											<li><i class="fas fa-star"></i></li>
-											<li><i class="fas fa-star"></i></li>
-											<li><i class="fas fa-star"></i></li>
-											<li><i class="fas fa-star"></i></li>
-											<li><i class="fas fa-star"></i></li>
-										</ul>
-									</div>
-									<div class="course-details-btn">
-										<a  target="_blank" href="{{ URL::to('/category') }}/{{ $value->slug }}">Know More <i class="fas fa-arrow-right"></i></a>
-									</div>
-									<div class="blakish-overlay"></div>
+	<section id="courses" class="best-course-section">
+		<div class="container">
+			<div class="section-title mb10 headline text-center">
+				<span class="subtitle text-uppercase">SEARCH OUR COURSES</span>
+				<h3>Check<span> Another Domain.</span></h3>
+			</div>
+			<div class="best-course-area mb10">
+				<div class="row">
+					@foreach (getCourseTypes() as $value)
+					<div class="col-md-3">
+						<div class="best-course-pic-text relative-position">
+							<div class="best-course-pic relative-position">
+								<img src="{{ (isset($value->featured_image))?getSizedImage('',$value->featured_image):url('/assets/img/course/bc-1.jpg') }}" alt="">
+								<div class="course-rate ul-li">
+									<ul>
+										<li><i class="fas fa-star"></i></li>
+										<li><i class="fas fa-star"></i></li>
+										<li><i class="fas fa-star"></i></li>
+										<li><i class="fas fa-star"></i></li>
+										<li><i class="fas fa-star"></i></li>
+									</ul>
 								</div>
-								<div class="best-course-text">
-									<div class="course-title mb10 headline relative-position">
-										<h3><a href="{{ URL::to('/category') }}/{{ $value->slug }}">{{ $value->name }}</a></h3>
-									</div>
-									<div class="course-short-description mb10" >
-										{!! substr($value->excerpt,0,100); !!}...
-									</div>
+								<div class="course-details-btn">
+									<a  target="_blank" href="{{ URL::to('/category') }}/{{ $value->slug }}">Know More <i class="fas fa-arrow-right"></i></a>
 								</div>
-								<div class="more-btn text-center" >
-									<div class="course-type-list">	
-										<a class="btn-filled" href="javascript:void(0)" onclick="lead_capture_form_btn({{ $value->id }},'')"><i class="fas fa-download"></i> Brochure</a>
-									</div>
-									<div class="course-type-list">														
-										<a class="btn-outline" href="{{ URL::to('/category') }}/{{ $value->slug }}" >View More <i class="fas fa-caret-right"></i></a>
-									</div>														
+								<div class="blakish-overlay"></div>
+							</div>
+							<div class="best-course-text">
+								<div class="course-title mb10 headline relative-position">
+									<h3><a href="{{ URL::to('/category') }}/{{ $value->slug }}">{{ $value->name }}</a></h3>
+								</div>
+								<div class="course-short-description mb10" >
+									{!! substr($value->excerpt,0,100); !!}...
 								</div>
 							</div>
+							<div class="more-btn text-center" >
+								<div class="course-type-list">	
+									<a class="btn-filled" href="javascript:void(0)" onclick="lead_capture_form_btn({{ $value->id }},'')"><i class="fas fa-download"></i> Brochure</a>
+								</div>
+								<div class="course-type-list">														
+									<a class="btn-outline" href="{{ URL::to('/category') }}/{{ $value->slug }}" >View More <i class="fas fa-caret-right"></i></a>
+								</div>														
+							</div>
 						</div>
-						<!-- /course -->
-						@endforeach		
 					</div>
+					<!-- /course -->
+					@endforeach		
 				</div>
 			</div>
-		</section>
+		</div>
+	</section>
 	<!-- End of recent view product
 		============================================= -->
 	<!-- Start of faq section
@@ -188,7 +189,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-9">
-				<div class="about-teacher about-faq faq-secound-home-version">
+					<div class="about-teacher about-faq faq-secound-home-version">
 						<div class="section-title-2  headline text-left">
 							<h2>Frequently  <span>Ask &amp; Questions.</span></h2>
 						</div>							
