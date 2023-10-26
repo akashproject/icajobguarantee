@@ -164,6 +164,25 @@ if (! function_exists('getAllFaqs')) {
     }
 }
 
+if (! function_exists('getAllBlogs')) {
+    function getAllBlogs(){
+        // Get Post
+        $url = "https://www.icajobguarantee.com/blog/wp-json/wp/v2/posts?per_page=100&_fields=id,title";
+        $curl = curl_init($url);
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+        //for debug only!
+        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+
+        $resp = curl_exec($curl);
+        curl_close($curl);
+
+        $post = json_decode($resp);
+        return $post;
+    }
+}
 
 if (! function_exists('getRecruiters')) {
     function getRecruiters($model="",$model_id=""){
@@ -514,10 +533,18 @@ if (! function_exists('getRadius')) {
 }
 
 if (! function_exists('getBlogs')) {
-    function getBlogs(){
+    function getBlogs($ids = null){
         try {
-            // Get Post
-            $url = "https://www.icajobguarantee.com/blog/wp-json/wp/v2/posts?per_page=2";
+            
+            $post = array();
+            $includes = '';
+            if ($ids == null) {
+                return $post = [];
+            }
+            
+            $ids = implode(",",json_decode($ids,true));
+            $includes = "?include=".$ids;
+            $url = "https://www.icajobguarantee.com/blog/wp-json/wp/v2/posts".$includes;
             $curl = curl_init($url);
             curl_setopt($curl, CURLOPT_URL, $url);
             curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -528,7 +555,6 @@ if (! function_exists('getBlogs')) {
 
             $resp = curl_exec($curl);
             curl_close($curl);
-
             $post = json_decode($resp);
 
             foreach ($post as $key => $value) {
@@ -548,10 +574,10 @@ if (! function_exists('getBlogs')) {
                 $media = json_decode($resp);
                 $post[$key]->source_url = ($media->source_url)?$media->source_url:"";
             }
-
+            
             return $post;
         } catch (\Throwable $th) {
-           // var_dump($th);
+            var_dump($th);
         }
     }
 }

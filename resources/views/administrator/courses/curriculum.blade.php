@@ -5,7 +5,9 @@
 			<form class="form-horizontal" method="post" action="{{ url('administrator/save-curriculum') }}" enctype="multipart/form-data">
 				@csrf
 				<div class="card-body">
-					<h4 class="card-title"> Curriculum </h4>
+					<h3 class="card-title"> {{$course->name}} </h3>
+					<h5 class="card-title"> Curriculum </h5>
+					
 					@if ($errors->any())
 						<div class="alert alert-danger">
 							<ul>

@@ -13,7 +13,7 @@ let pincode;
 				this.menuBar();
 				this.onePageNav();
 				this.quickScroll2();
-				this.counterUp();
+				//this.counterUp();
 				this.courseSlide();
 				this.fourGridSlide();
 				this.threeGridSlide();
@@ -1096,6 +1096,7 @@ searchBAR: function (){
 }
 	jQuery(document).ready(function (){
 		Genius.init();
+		let popUp;
 		if (popUp != 0) {
 			if (!jQuery.cookie("showPopup")) {
 				lead_capture_form_btn();

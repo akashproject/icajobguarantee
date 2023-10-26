@@ -44,7 +44,9 @@ class IndexController extends Controller
             ->get();
             $courseTypes = CourseType::where('status', 1)->get();
 
-            return view($this->layout.'index',compact('courses','courseTypes'));
+            $blogs = getBlogs('["5765","5555"]');
+
+            return view($this->layout.'index',compact('courses','courseTypes','blogs'));
         } catch(\Illuminate\Database\QueryException $e){
             //throw $th;
         }

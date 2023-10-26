@@ -645,10 +645,10 @@
 					<div class="col-md-4">
 						<div class="latest-area-content  " >
 							<div class="section-title-2 mb65 headline text-left">
-								<h2>Latest <span>News.</span></h2>
+								<h2>Latest <span>Blogs.</span></h2>
 							</div>
 							<div class="latest-news-posts">
-								@foreach(getBlogs() as $value)
+								@foreach($blogs as $key => $value)
 								<div class="latest-news-area">
 									<div class="latest-news-thumbnile relative-position">
 										<img src="{{ $value->source_url }}" alt="{{ $value->title->rendered }}">
@@ -660,10 +660,11 @@
 									<div class="date-meta">
 										<i class="fas fa-calendar-alt"></i> {{ date("d M Y",strtotime($value->date))}}
 									</div>
-									<h3 class="latest-title bold-font"><a target="_blank" href="{{ $value->link }}">{{ $value->title->rendered }}</a></h3>
-									
+									<h3 class="latest-title bold-font"><a target="_blank" href="{{ $value->link }}">{!! $value->title->rendered !!}</a></h3>
 								</div>
-								<!-- /post -->
+								@if($key == 1)
+									 @break
+								@endif
 								@endforeach
 								
 								<div class="view-all-btn bold-font">

@@ -580,7 +580,6 @@ Redirect 301 /gst-tally-accounts-sap-fico-finance-course-training-institute /cen
 Redirect 301 /accounts-gst-sap-tally-career-opportunities /placements
 Redirect 301 /bcom-bsc-college-courses https://eduversity.icajobguarantee.com
 Redirect 301 /eduversity https://eduversity.icajobguarantee.com
-Redirect 301 /blogs /blog/
 Redirect 301 /terms-of-use /terms-conditions
 Redirect 301 /Verify/OnlineCertificateView.aspx https://student.icajobguarantee.com/Verify/OnlineCertificateView.aspx
 RedirectMatch 301 ^/teams/.*$   /about-us

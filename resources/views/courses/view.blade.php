@@ -53,7 +53,6 @@
 		</div>
 
 		<!-- Start of breadcrumb section
-
 		============================================= -->
 
 		<section id="breadcrumb" class="inner-banner relative-position backgroud-style"  style="background-image: url({{ (isset($contentMain->banner_image))?getSizedImage('',$contentMain->banner_image):url('assets/img/banner/brt-1.jpg') }});">
@@ -106,10 +105,7 @@
 		</section>
 
 		<!-- End of breadcrumb section
-
 		============================================= -->
-
-   
 
 		<section id="search-course" class="search-course-section search-course-secound">
 
@@ -217,22 +213,14 @@
 
 		</section>
 
-
-
 		<!-- Start of course details section
-
 		============================================= -->
 
 		<section id="course-details" class="course-details-section">
-
 			<div class="container">
-
 				<div class="row">
-
 					<div class="col-md-9">
-
 						<div class="course-details-item">
-
 							<!-- <div class="course-single-pic mb30">
 
 								<img src="{{ url('assets/img/course/cs-1.jpg') }}" alt="">
@@ -240,51 +228,30 @@
 							</div> -->
 
 							<div class="faq-tab mb65">
-
 								<div class="faq-tab-ques  ul-li">
-
 									<div class="course-details-category ul-li tab-button text-left mb25 tab-button text-left mb25">
 
 										<span>Course <b>Section:</b></span>
-
 										<ul class="product-tab ">
-
 											<li class="active" rel="tab1"> Summary </li>
-
 											<li rel="tab3"> Highlights </li>
-
 											<li rel="tab4">  Syllabus  </li>
-
 										</ul>
-
 									</div>
-
 									<!-- /tab-head -->
-
-
-
 									<!-- tab content -->
-
 									<div class="tab-container">
 
 										<!-- 1st tab -->
 
 										<div id="tab1" class="tab-content-1 pt35">
-
 											<div class="course-details-content">
-
 												<div class="course-single-text">
-
 													<div class="course-details-content">
-
 														{!! $contentMain->description !!}
-
 													</div>
-
 												</div>
-
 											</div>
-
 										</div>
 
 										<!-- #tab1 -->
@@ -298,15 +265,10 @@
 
 
 										<div id="tab3" class="tab-content-1 pt35">
-
 											<div class="highlights">
-
 												<div class="affiliate-market-guide mb65">
-
 													{!! $contentMain->highlights !!}
-
 												</div>
-
 											</div>
 
 										</div>
@@ -754,7 +716,45 @@
 			</div>
 
 		</section>
+		@if(getBlogs($contentMain->blog))
+		<section id="blogs" class="best-course-section">
+			<div class="container">
+				<div class="section-title mb10 headline text-center">
+					<span class="subtitle text-uppercase"> Grap Knowledge</span>
+					<h3>Check<span> Our Blogs.</span></h3>
+				</div>
+				<div class="best-course-area mb10">
+					<div class="row justify-content-center">
+						@foreach(getBlogs($contentMain->blog) as $key => $value)
+						<div class="col-md-4 my-3">
+							<div class="blog-post-img-content">
+								<div class="blog-img-date relative-position">
+									<div class="blog-thumnile">
+										<img src="{{ $value->source_url }}" alt="{{ $value->title->rendered }}">
+									</div>
+									<div class="course-price text-center gradient-bg">
+										<span>{{ date("d M Y",strtotime($value->date))}}</span>
+									</div>
+								</div>
+								<div class="blog-title-content headline">
+									<h3><a href="{{ $value->link }}">{!! $value->title->rendered !!}</a></h3>
+									<div class="blog-content">
+										{!! substr($value->excerpt->rendered,0, 200) !!}...
+									</div>
 
+									<div class="view-all-btn bold-font">
+										<a href="{{ $value->link }}">Read More <i class="fas fa-chevron-circle-right"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						@endforeach
+						
+					</div>
+				</div>
+			</div>
+		</section>
+		@endif
 		@php
 			$reviewRatings = get_reviews_ratings("Course",$contentMain->id);
 		@endphp

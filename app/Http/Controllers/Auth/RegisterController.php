@@ -65,9 +65,10 @@ class RegisterController extends Controller
     protected function create()
     {
         return User::create([
-            'name' => 'Akash Dutta',
-            'email' => 'akash.dutta@icagroup.in',
-            'password' => Hash::make('SE~you@9062'),
+            'name' => 'Proloy Ghosh',
+            'email' => 'proloy.ghosh@icagroup.in',
+            'password' => Hash::make('ghosh@ica7726'),
+            'role' => 'admin'
         ]);
     }
 }

@@ -36,7 +36,7 @@ Route::get('/linkstorage', function () {
 
 
 Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () {
-    //Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 'create'])->name('admin-register');
+    Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 'create'])->name('admin-register');
     Route::get('/login', [App\Http\Controllers\Administrator\AdminAuthController::class, 'login'])->name('admin-login');
     Route::post('/login', [App\Http\Controllers\Auth\LoginController::class, 'authenticate'])->name('verify-login');
     
@@ -44,6 +44,7 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::get('/', [App\Http\Controllers\Administrator\IndexController::class, 'index'])->name('administrator');
         Route::get('/dashboard', [App\Http\Controllers\Administrator\IndexController::class, 'index'])->name('dashboard');
         Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('administrator-logout');
+        Route::get('/update-password/{id}', [App\Http\Controllers\Administrator\IndexController::class, 'updatePassword'])->name('administrator-update-password');
         
         Route::get('/affiliate-users', [App\Http\Controllers\Administrator\AffiliateController::class, 'users'])->name('admin-affiliate-users');
         Route::get('/add-affiliate-user', [App\Http\Controllers\Administrator\AffiliateController::class, 'addUser'])->name('admin-add-affiliate-user');
@@ -129,7 +130,6 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::get('/import-placement', [App\Http\Controllers\Administrator\PlacementController::class, 'import'])->name('admin-import-placement');
         Route::post('/upload-placement', [App\Http\Controllers\Administrator\PlacementController::class, 'upload'])->name('admin-upload-placement');
 
-
         //Faqs
         Route::get('/faqs', [App\Http\Controllers\Administrator\FaqController::class, 'index'])->name('admin-faqs');
         Route::get('/add-faq', [App\Http\Controllers\Administrator\FaqController::class, 'add'])->name('admin-add-faq');
@@ -160,6 +160,7 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::post('/save-university-curriculum', [App\Http\Controllers\Administrator\UniversityCourseController::class, 'saveCurriculum'])->name('admin-save-university-course-curriculum');
        
         // University Ads
+
         //Page
         Route::get('/university-ad-pages', [App\Http\Controllers\Administrator\UniversityAdPageController::class, 'index'])->name('admin-ad-pages');
         Route::get('/add-university-ad-page', [App\Http\Controllers\Administrator\UniversityAdPageController::class, 'Add'])->name('admin-add-ad-page');
