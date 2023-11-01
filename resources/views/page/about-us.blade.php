@@ -9,7 +9,7 @@
 
 					<div class="inner-banner-breadcrumb" >
 						<span class="breadcrumbElement"> 
-							<a href="{{url('/')}}" > Home Proloy</a> 
+							<a href="{{url('/')}}" > Home </a> 
 						</span>
 						<span class="breadcrumbElement"> 
 							 <i class="fas fa-chevron-right"> </i>
