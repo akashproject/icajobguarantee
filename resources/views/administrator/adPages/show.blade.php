@@ -76,7 +76,7 @@
 								<select name="course_id" id="course_id" class="select2 form-control custom-select">	
 									<option value="">Select Course</option>
 									@foreach($courses as $course)
-									<option value="{{ $course->id }}"  >{{ $course->name }}</option>
+									<option value="{{ $course->id }}" {{ ($course->id == $adPage->course_id)?'selected':'' }} >{{ $course->name }}</option>
 									@endforeach
 								<select>
 							</div>
