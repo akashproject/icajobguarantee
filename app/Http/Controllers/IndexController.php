@@ -293,7 +293,7 @@ class IndexController extends Controller
             'LeadSource' => $postData['utm_source'],
             'LeadName' => $postData['utm_campaign'],
             'SourceTo' => "offline",
-            'Entity4' => (isset($postData['course']))?$postData['course']:'',
+            'Entity4' => (isset($postData['course_id']))?getErpCourseCode($postData['course_id'])->course_erp_code:'',
             'EducationalQualification' => $postData['source_url'],
             'Textb1' => $postData['utm_term'],
             'Field3' => $postData['utm_device'],
@@ -309,6 +309,7 @@ class IndexController extends Controller
         $curl = curl_init();
         
         $data = json_encode($apiData);
+       
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_URL, $url);
         curl_setopt($curl, CURLOPT_POST, true);

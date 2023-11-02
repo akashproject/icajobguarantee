@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Adspage;
 use App\Models\CourseType;
 use App\Models\Center;
+use App\Models\Course;
 use Illuminate\Support\Facades\DB;
 
 class AdPageController extends Controller
@@ -37,9 +38,10 @@ class AdPageController extends Controller
     {
         try {
             $courseCategories = CourseType::all();
+            $courses = Course::all();
             $centers = Center::all();
             $adPage = Adspage::findorFail($id);
-            return view('administrator.adPages.show',compact('adPage','courseCategories','centers'));
+            return view('administrator.adPages.show',compact('adPage','courseCategories','centers','courses'));
         } catch(\Illuminate\Database\QueryException $e){
         }        
     }

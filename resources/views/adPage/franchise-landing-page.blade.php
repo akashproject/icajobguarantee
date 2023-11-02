@@ -83,11 +83,11 @@
             <div class="col-md-7">
                 <div class="mt-5">
                     <div class="ad-banner-title">
-                        <h1 class="text-center" style="font-size: 32px!important; font-weight: 700!important;"> <h1>Generate a minimum monthly income of 4 Lakh rupees</h1> </h1>
+                        <h1 class="text-white" style="font-size: 32px!important; font-weight: 700!important;">Generate a minimum monthly income of 4 Lakh rupees</h1>
                     </div>
-                    <div class="ad-banner-subtitle">
-                        <h4> Partner with India's largest education network </h4>
-                        <p> Partner with India's top-ranked Accounting and Taxation Training Institute and become a part of a noble vision to build 'Skilled Manpower' among job-focused youth in India and make them employable at an affordable fee. </p>
+                    <div class="ad-banner-subtitle text-white">
+                        <h4 class="text-white"> Partner with India's largest education network </h4>
+                        <p class="text-white"> Partner with India's top-ranked Accounting and Taxation Training Institute and become a part of a noble vision to build 'Skilled Manpower' among job-focused youth in India and make them employable at an affordable fee. </p>
                     </div>
                     <div class="ad-banner-sub-title">
                         <p class="text-white" style="font-size: 21px;margin: 0;"> <i class="fa fa-check"></i> Area Required: Minimum 1000 - 2500 SQFT </p>

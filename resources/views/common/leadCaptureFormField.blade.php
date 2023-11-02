@@ -31,5 +31,9 @@
 @else 
 <input type="hidden" name="center" value="{{ (isset($center) )?$center:'' }}">
 @endif
-<input type="hidden" name="course_id" value="">
+
+@if(isset($contentMain->course_id))
+<input type="hidden" name="course_id" value="{{$contentMain->course_id}}">
+@endif
+
 <input type="hidden" name="brochure_id" value="">

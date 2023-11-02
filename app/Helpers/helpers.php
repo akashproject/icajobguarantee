@@ -406,6 +406,21 @@ if (! function_exists('getCourses')) {
     }
 }
 
+if (! function_exists('getErpCourseCode')) {
+    function getErpCourseCode($course_id = null){
+        try {
+            $course = DB::table('courses');
+            if($course_id){
+                $course->where('id',$course_id);
+            }
+            return $course = $course->first();       
+            //return view('courses.index',compact('model','courses','courseTypes'));
+        } catch(\Illuminate\Database\QueryException $e){
+            throw $e;
+        }
+    }
+}
+
 if (! function_exists('getUniversityCourses')) {
     function getUniversityCourses($university_id = null){
         try {
