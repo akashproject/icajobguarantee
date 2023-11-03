@@ -5515,3 +5515,16 @@ a.sticky-btn {
   width: 100%;
   height: 100%;
 }
+
+.ad-page-banner:before {
+  background-image: url(https://www.careerlauncher.com/cuet/graduation-in-india/images/black-background.png);
+  height: 100%;
+  position: absolute;
+  right: 0;
+  opacity: inherit;
+  top: 0;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: "";
+}

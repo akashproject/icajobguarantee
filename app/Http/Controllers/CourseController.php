@@ -46,6 +46,7 @@ class CourseController extends Controller
         try {
 
             $contentMain = Course::where('slug', $slug)->first();
+            $contentMain->course_id = $contentMain->id;
             if ($contentMain->tags) {
                 $contentMain->tags = Tag::select('name','slug')->whereIn("id",json_decode($contentMain->tags))->get();
             }

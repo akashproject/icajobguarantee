@@ -57,12 +57,26 @@
 					<div class="col-md-5">
 						@if($adPage->course_type_id !== null)
 						<div class="form-group row">
-							<label for="course_type_id" class="col-sm-3 text-right control-label col-form-label">Courses</label>
+							<label for="course_type_id" class="col-sm-3 text-right control-label col-form-label">Course Category</label>
 							<div class="col-sm-9">
 								<select name="course_type_id[]" id="course_type_id" class="select2 form-control custom-select" style="width: 100%; height:136px;" multiple>	
 									<option value="">Select Course Type</option>
 									@foreach($courseCategories as $category)
 									<option value="{{ $category->id }}" {{ (in_array($category->id,  json_decode($adPage->course_type_id)))?'selected' : '' }} >{{ $category->name }}</option>
+									@endforeach
+								<select>
+							</div>
+						</div>
+						@endif
+
+						@if($courses !== null)
+						<div class="form-group row">
+							<label for="course_id" class="col-sm-3 text-right control-label col-form-label">Course</label>
+							<div class="col-sm-9">
+								<select name="course_id" id="course_id" class="select2 form-control custom-select">	
+									<option value="">Select Course</option>
+									@foreach($courses as $course)
+									<option value="{{ $course->id }}" {{ ($course->id == $adPage->course_id)?'selected':'' }} >{{ $course->name }}</option>
 									@endforeach
 								<select>
 							</div>

@@ -105,7 +105,7 @@
 				<div class="col-md-7">
 					<div class="ad-banner-content text-white">
 						<div class="ad-banner-title">
-							<h1 class="text-center">MIS Course - Certificate in MIS Analytics</h1>
+							<h1 class="text-center text-white">MIS Course - Certificate in MIS Analytics</h1>
 						</div>
 						<div class="ad-banner-sub-title">
 							<h3 class="text-center" style="font-size: 1.2rem!important;"> Build a powerful in-demand skills set to help corporates in making informed decision-making and make a dynamic and rewarding career for a prosperous future </h3>
@@ -410,6 +410,7 @@
 	
 	<!-- Start of Courses Listings
 	============================================= -->
+	@if(count($courseType) > 0)
 	<section id="courses" class="best-course-section">
 		<div class="container">
 			<div class="section-title mb45 headline text-center">
@@ -493,6 +494,7 @@
 		</div>
 	</section>
 	<!-- /course-categori -->
+	@endif
 	<!-- End of best course
 	============================================= -->
 	<section id="detail-course" class="course-detail-section">
@@ -953,66 +955,66 @@
 	
         <!-- Start of Placament process
 	============================================= -->	
-	    <section id="courses" class="best-course-section">
-           <div class="container">
-              <div class="section-title mb35 headline text-center">
-                 <span class="subtitle text-uppercase">Five Steps Placement Process</span>					
-                 <h3>Connecting Talent with <span>Job Opportunities</span></h3>
-              </div>
-              <div class="best-course-area mb35">
-                 <div class="row">
-                    <div class="four-grid-slide text-center">
-                       <div class="four-grid-box text-center">
-                          <div class="circle-icon">
-                              <img src="https://www.icajobguarantee.com/assets/img/icons/education.png">
-                          </div>
-                          <div class="category-title">
-                             <h4>Training Completion</h4>
-                          </div>
-                          <div class="category-description"></div>
-                       </div>
-                       <div class="four-grid-box text-center">
-                          <div class="circle-icon">
-                              <img src="https://www.icajobguarantee.com/assets/img/icons/cv.png">
-                          </div>
-                          <div class="category-title">
-                             <h4>CV Preparation</h4>
-                          </div>
-                          <div class="category-description"></div>
-                       </div>
-                       <div class="four-grid-box text-center">
-                          <div class="circle-icon">
-                              <img src="https://www.icajobguarantee.com/assets/img/icons/job-interview.png">
-                          </div>
-                          <div class="category-title">
-                             <h4>Mock Interviews</h4>
-                          </div>
-                          <div class="category-description"></div>
-                       </div>
-                       <div class="four-grid-box text-center">
-                          <div class="circle-icon">
-                              <img src="https://www.icajobguarantee.com/assets/img/icons/interview.png">
-                          </div>
-                          <div class="category-title">
-                             <h4>Student Interviews</h4>
-                          </div>
-                          <div class="category-description"></div>
-                       </div>
-                       <div class="four-grid-box text-center">
-                          <div class="circle-icon">
-                              <img src="https://www.icajobguarantee.com/assets/img/icons/appointment.png">
-                          </div>
-                          <div class="category-title">
-                             <h4>Appointment Letter</h4>
-                          </div>
-                          <div class="category-description"></div>
-                       </div>
-                    </div>
-                 </div>
-              </div>
-            </div>
-        </section>
-        <!-- End of Placament process
+	<section id="courses" class="best-course-section">
+		<div class="container">
+			<div class="section-title mb35 headline text-center">
+				<span class="subtitle text-uppercase">Five Steps Placement Process</span>					
+				<h3>Connecting Talent with <span>Job Opportunities</span></h3>
+			</div>
+			<div class="best-course-area mb35">
+				<div class="row">
+				<div class="four-grid-slide text-center">
+					<div class="four-grid-box text-center">
+						<div class="circle-icon">
+							<img src="https://www.icajobguarantee.com/assets/img/icons/education.png">
+						</div>
+						<div class="category-title">
+							<h4>Training Completion</h4>
+						</div>
+						<div class="category-description"></div>
+					</div>
+					<div class="four-grid-box text-center">
+						<div class="circle-icon">
+							<img src="https://www.icajobguarantee.com/assets/img/icons/cv.png">
+						</div>
+						<div class="category-title">
+							<h4>CV Preparation</h4>
+						</div>
+						<div class="category-description"></div>
+					</div>
+					<div class="four-grid-box text-center">
+						<div class="circle-icon">
+							<img src="https://www.icajobguarantee.com/assets/img/icons/job-interview.png">
+						</div>
+						<div class="category-title">
+							<h4>Mock Interviews</h4>
+						</div>
+						<div class="category-description"></div>
+					</div>
+					<div class="four-grid-box text-center">
+						<div class="circle-icon">
+							<img src="https://www.icajobguarantee.com/assets/img/icons/interview.png">
+						</div>
+						<div class="category-title">
+							<h4>Student Interviews</h4>
+						</div>
+						<div class="category-description"></div>
+					</div>
+					<div class="four-grid-box text-center">
+						<div class="circle-icon">
+							<img src="https://www.icajobguarantee.com/assets/img/icons/appointment.png">
+						</div>
+						<div class="category-title">
+							<h4>Appointment Letter</h4>
+						</div>
+						<div class="category-description"></div>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+	</section>
+		<!-- End of Placament process
 	============================================= -->	
 
         <!-- End of Placament process

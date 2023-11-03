@@ -49,6 +49,12 @@
 							</div>
 						</div>
 						<div class="form-group row">
+							<label for="course_erp_code" class="col-sm-3 text-right control-label col-form-label">ERP Course Code</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" name="course_erp_code" id="course_erp_code" placeholder="Enter ERP Course Code Here"  value="{{ $course->course_erp_code }}" >
+							</div>
+						</div>
+						<div class="form-group row">
 							<label for="course_video_title" class="col-sm-3 text-right control-label col-form-label">Video Title</label>
 							<div class="col-sm-9">
 								<input type="text" class="form-control" name="course_video_title" id="course_video_title" placeholder="Enter Video Title Here" value="{{ $course->course_video_title }}">
