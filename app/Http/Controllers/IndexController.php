@@ -215,6 +215,11 @@ class IndexController extends Controller
             $postData['lastname'] = implode(" ",$nameArray);
             $postData['role'] = "b2b";
 
+            if(!isset($data['state'])){
+                $city = DB::table('cities')->where('name',$data['city'])->first();
+                $postData['state'] = getStateById($city->state_id)->name;
+            }
+            
             $response = $this->captureLeadToDB($postData);
             $response = $this->franchiseLeadCaptureToExtraage($postData);
 

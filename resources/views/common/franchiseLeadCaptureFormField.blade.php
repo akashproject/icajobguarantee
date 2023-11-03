@@ -21,6 +21,10 @@
         </select>
     </div>
 @else
+    @if(isset($_GET['city']))
+    <input type="hidden" name="city" value="{{ (isset($_GET['city']) )?$_GET['city']:'' }}"> 
+
+    @else 
     <div class="register-form-area">
         <select class="state" name="state" required>
             <option value="">Select State</option>
@@ -34,6 +38,8 @@
             <option value="">Select City</option>
         </select>
     </div>
+    @endif
+
 @endif
 <div class="contact-info">
     <input type="text" class="occupation" name="occupation" placeholder="Enter Your Occupation" autocomplete="off" required>
