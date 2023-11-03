@@ -8,7 +8,7 @@
         <input class="verify_otp" name="verify_otp" type="text" placeholder="Enter One Time Password" autocomplete="off">
     </div>
     <div class="otp-content">
-        <p class="message"> Did not recive OTP?
+        <p class="message"> Did not receive OTP?
             <span class="countdown_label"> Resend in <span class="countdown" >59</span> Sec </span>
             <a class="resendOtp display-none" href="javascript:void(0)"> Resend OTP </a>
         </p>
