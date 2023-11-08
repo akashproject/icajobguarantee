@@ -12,24 +12,30 @@
 </div>
 @if(isset($_GET['city']))
     <select class="center" name="center" required>
-        @if(!isset($_GET['center']))
-            <option value="">Select Center</option>
-        @endif
         @foreach(getCenterByCityId($_GET['city']) as $value)
             <option value="{{$value->name}}" data-id="{{$value->id}}"> {{$value->name}} </option>
         @endforeach
     </select>
-@elseif(isset($_GET['state']))
+@endif
+
+@if(isset($_GET['state']))
     <select class="center" name="center" required>
-        @if(!isset($_GET['center']))
-            <option value="">Select Center</option>
-        @endif
         @foreach(getCenterByStateId($_GET['state']) as $value)
             <option value="{{$value->name}}" data-id="{{$value->id}}"> {{$value->name}} </option>
         @endforeach
     </select>
-@else 
-<input type="hidden" name="center" value="{{ (isset($center) )?$center:'' }}">
+@endif
+
+@if(isset($_GET['combo']))
+    <select class="center" name="center" required>
+        @foreach(getCenterByAdBucket($contentMain->center_id) as $value)
+            <option value="{{$value->name}}" data-id="{{$value->id}}"> {{$value->name}} </option>
+        @endforeach
+    </select>
+@endif
+
+@if(isset($center))
+    <input type="hidden" name="center" value="{{ (isset($center) )?$center:'' }}">
 @endif
 
 @if(isset($contentMain->course_id))

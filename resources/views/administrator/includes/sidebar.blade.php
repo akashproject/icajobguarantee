@@ -70,6 +70,7 @@
                                 <ul aria-expanded="false" class="collapse  first-level">
                                     <li class="sidebar-item"><a href="{{ url('administrator/centers') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> All Centers </span></a></li>
                                     <li class="sidebar-item"><a href="{{ url('administrator/add-center') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Add Center </span></a></li>
+                                    <li class="sidebar-item"><a href="{{ url('administrator/buckets') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Buckets </span></a></li>
                                 </ul>
                             </li>	
 

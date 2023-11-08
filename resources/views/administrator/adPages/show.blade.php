@@ -53,6 +53,17 @@
 								<input type="text" class="form-control" name="mobile" id="mobile" placeholder="Enter Mobile Here"  value="{{ $adPage->mobile }}" >
 							</div>
 						</div>
+						<div class="form-group row">
+							<label for="center_id" class="col-sm-3 text-right control-label col-form-label">Centers</label>
+							<div class="col-sm-9">
+								<select name="center_id[]" id="center_id" class="select2 form-control custom-select" multiple style="height:300px">	
+									<option value="">Select Center</option>
+									@foreach ($centers as $value)
+									<option value="{{  $value->id }}" > {{  $value->name }} </option>
+									@endforeach
+								<select>
+							</div>
+						</div>
 					</div>
 					<div class="col-md-5">
 						@if($adPage->course_type_id !== null)
@@ -82,17 +93,7 @@
 							</div>
 						</div>
 						@endif
-						<!-- <div class="form-group row">
-							<label for="center_id" class="col-sm-3 text-left control-label col-form-label">Centers</label>
-							<div class="col-sm-9">
-								<select name="center_id" id="center_id" class="select2 form-control custom-select" style="width: 100%; height:36px;">	
-									<option value="">Select Center</option>
-									@foreach ($centers as $value)
-									<option value="{{  $value->id }}" {{ ( $value->id ==  $adPage->center_id )? 'selected' : '' }}> {{  $value->name }} </option>
-									@endforeach
-								<select>
-							</div>
-						</div> -->
+						
 						<div class="form-group row">
 							<label for="template" class="col-sm-3 text-right control-label col-form-label">Template</label>
 							<div class="col-sm-9">

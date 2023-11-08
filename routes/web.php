@@ -98,7 +98,14 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::get('/delete-center/{id}', [App\Http\Controllers\Administrator\CenterController::class, 'delete'])->name('admin-delete-center');
         Route::post('/get-city-by-state-id', [App\Http\Controllers\Administrator\CenterController::class, 'getCitiesByStateId'])->name('get-city-by-state-id');
        
-       //Center Courses
+        //Buckets
+        Route::get('/buckets', [App\Http\Controllers\Administrator\CenterBucketController::class, 'index'])->name('admin-buckets');
+        Route::get('/add-bucket', [App\Http\Controllers\Administrator\CenterBucketController::class, 'add'])->name('admin-add-bucket');
+        Route::get('/view-bucket/{id}', [App\Http\Controllers\Administrator\CenterBucketController::class, 'show'])->name('admin-view-bucket');
+        Route::post('/save-bucket', [App\Http\Controllers\Administrator\CenterBucketController::class, 'save'])->name('admin-save-bucket');
+        Route::get('/delete-bucket/{id}', [App\Http\Controllers\Administrator\CenterBucketController::class, 'delete'])->name('admin-delete-bucket');
+
+        //Center Courses
         Route::get('/center-courses/{id}', [App\Http\Controllers\Administrator\CenterCourseController::class, 'index'])->name('center-courses');
         Route::get('/add-center-course/{id}', [App\Http\Controllers\Administrator\CenterCourseController::class, 'add'])->name('admin-add-center-course');
         Route::get('/view-center-course/{id}', [App\Http\Controllers\Administrator\CenterCourseController::class, 'show'])->name('admin-view-center-course');

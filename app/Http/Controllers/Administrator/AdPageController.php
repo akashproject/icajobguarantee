@@ -55,9 +55,10 @@ class AdPageController extends Controller
                 'slug' => 'required',
             ]);
 
-            if (isset($data['course_type_id']) && $data['course_type_id']!='') {
-                $data['course_type_id'] = json_encode($data['course_type_id']);
-            }
+            // if (isset($data['course_type_id']) && $data['course_type_id']!='') {
+            //     $data['course_type_id'] = json_encode($data['course_type_id']);
+            // }
+
             if($data['adPage_id'] <= 0){
                 $adPage = Adspage::create($data);
             } else {
@@ -77,9 +78,6 @@ class AdPageController extends Controller
                 }
                 
             }
-
-
-
 
             return redirect()->back()->with('message', 'Ad Page updated successfully!');
         } catch(\Illuminate\Database\QueryException $e){
