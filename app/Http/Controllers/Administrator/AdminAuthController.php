@@ -24,6 +24,7 @@ class AdminAuthController extends Controller
                 return redirect()->route('dashboard');
             }
         }else {
+            echo "here"; exit;
             return back()->with('error','Whoops! invalid email and password.');
         }
     }

@@ -28,6 +28,7 @@ class CourseTypeController extends Controller
     {
         try {
             $courseType = CourseType::find($id);
+            $posts = $courseType->course()->where('approved', 'true')->paginate(15);
             $listCourseType = CourseType::all();
             $brochures = Brochure::all();
 

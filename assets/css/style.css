@@ -4040,7 +4040,7 @@ ul.product-tab li.active:after,ul.course-tab li.active:after {
     top: inherit; }
   .blog-post-img-content .blog-img-date {
     border-radius: 4px;
-    margin-bottom: 30px; }
+    margin-bottom: 10px; }
 
 .blog-title-content h3 {
   font-size: 25px;
@@ -4190,7 +4190,9 @@ ul.product-tab li.active:after,ul.course-tab li.active:after {
     font-size: 13px;
     color: #393185;
     font-weight: 700;
-    margin-right: 20px; }
+    margin: 0 20px;
+    text-decoration: none !important;
+  }
     .blog-details-content .date-meta a i {
       color: #393185; }
 

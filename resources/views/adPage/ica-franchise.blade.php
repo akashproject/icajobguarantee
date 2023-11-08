@@ -2,42 +2,42 @@
     @section('content')
     <style>
         .franchise-banner:before {
-        background-image: url(https://www.careerlauncher.com/cuet/graduation-in-india/images/black-background.png);
-        height: 100%;
-        position: absolute;
-        right: 0;
-        opacity: inherit;
-        top: 0;
-        width: 100%;
-        background-repeat: no-repeat;
-        background-size: cover;
-        content: "";
-    }
+            background-image: url(https://www.careerlauncher.com/cuet/graduation-in-india/images/black-background.png);
+            height: 100%;
+            position: absolute;
+            right: 0;
+            opacity: inherit;
+            top: 0;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            content: "";
+        }
 
-    .franchise-banner h4 {
-        font-size: 24px;
-        color: #ffe202;
-        margin: 20px 0;
-    }
+        .franchise-banner h4 {
+            font-size: 24px;
+            color: #ffe202;
+            margin: 20px 0;
+        }
 
-    .collaborate {
-        height: 100px;
-        padding: 19px 3px;
-        width: auto;
-        border-radius: 6px;
-        border: 3px solid #ccc;
-    }
+        .collaborate {
+            height: 100px;
+            padding: 19px 3px;
+            width: auto;
+            border-radius: 6px;
+            border: 3px solid #ccc;
+        }
 
-    .process-count {
-        text-align: left;
-        padding-left: 20px;
-    }
+        .process-count {
+            text-align: left;
+            padding-left: 20px;
+        }
 
-    .process-count h1 {
-        font-size: 64px;
-        font-weight: 800;
-        color: #393185;
-    }
+        .process-count h1 {
+            font-size: 64px;
+            font-weight: 800;
+            color: #393185;
+        }
 
     </style>
     	<!-- Start of Header section
@@ -134,76 +134,76 @@
 
     <!-- Start of Header section -->
     <section id="breadcrumb" class="ad-page-banner relative-position backgroud-style franchise-banner" style="background-image: url({{ (isset($contentMain->banner_image))?getSizedImage('',$contentMain->banner_image):url('assets/img/banner/brt-1.jpg') }});" >
-    <div class="container">
-        <div class="row">
-            <div class="col-md-7">
-                <div class="mt-5">
-                    <div class="ad-banner-title">
-                        <h1 class="text-white" style="font-weight: 700!important;">Generate a monthly income of at least 4 lakh rupees</h1>
-                    </div>
-                    <div class="ad-banner-subtitle">
-                        <h4> Partner with India's Largest Education Network </h4>
-                        <p class="text-white"> Partner with India's top-ranked Accounting and Taxation Training Institute and become a part of a noble vision to build 'Skilled Manpower' among job-focused youth in India and make them employable at an affordable fee. </p>
-                    </div>
-                    <div class="ad-banner-sub-title">
-                        <p class="text-white" style="font-size: 21px;margin: 0;"> <i class="fa fa-check"></i> Area Required: Minimum 1000 - 2500 SQFT </p>
-                        <p class="text-white" style="font-size: 21px;margin: 0;"> <i class="fa fa-check"></i> Investment: 10 - 20 Lakhs  </p>
-                        <p class="text-white" style="font-size: 21px;margin: 0;"> <i class="fa fa-check"></i> Zeal to be your own boss  </p>
-                    </div>
-                    <div class="ad-banner-sub-title">    
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="bg-white collaborate text-center">
-                                    <img src="https://www.icajobguarantee.com/public/upload/2023-10-31/sap-fico-logo.webp">
-                                </div>    
-                            </div> 
-                            <div class="col-md-3">
-                                <div class="bg-white collaborate text-center">
-                                    <img src="https://www.icajobguarantee.com/public/upload/2023-10-31/zoho-logo.webp">
-                                </div>    
-                            </div>   
-                            <div class="col-md-3">
-                                <div class="bg-white collaborate text-center">
-                                    <img src="https://www.icajobguarantee.com/public/upload/2023-10-31/nsc-logo.webp">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="mt-5">
+                        <div class="ad-banner-title">
+                            <h1 class="text-white" style="font-weight: 700!important;">Generate a monthly income of at least 4 lakh rupees</h1>
+                        </div>
+                        <div class="ad-banner-subtitle">
+                            <h4> Partner with India's Largest Education Network </h4>
+                            <p class="text-white"> Partner with India's top-ranked Accounting and Taxation Training Institute and become a part of a noble vision to build 'Skilled Manpower' among job-focused youth in India and make them employable at an affordable fee. </p>
+                        </div>
+                        <div class="ad-banner-sub-title">
+                            <p class="text-white" style="font-size: 21px;margin: 0;"> <i class="fa fa-check"></i> Area Required: Minimum 1000 - 2500 SQFT </p>
+                            <p class="text-white" style="font-size: 21px;margin: 0;"> <i class="fa fa-check"></i> Investment: 10 - 20 Lakhs  </p>
+                            <p class="text-white" style="font-size: 21px;margin: 0;"> <i class="fa fa-check"></i> Zeal to be your own boss  </p>
+                        </div>
+                        <div class="ad-banner-sub-title">    
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="bg-white collaborate text-center">
+                                        <img src="https://www.icajobguarantee.com/public/upload/2023-10-31/sap-fico-logo.webp">
+                                    </div>    
                                 </div> 
-                            </div> 
-                            <div class="col-md-3">
-                                <div class="bg-white collaborate text-center">
-                                    <img src="https://www.icajobguarantee.com/public/upload/2023-10-31/ica-nism-logo.webp">
+                                <div class="col-md-3">
+                                    <div class="bg-white collaborate text-center">
+                                        <img src="https://www.icajobguarantee.com/public/upload/2023-10-31/zoho-logo.webp">
+                                    </div>    
+                                </div>   
+                                <div class="col-md-3">
+                                    <div class="bg-white collaborate text-center">
+                                        <img src="https://www.icajobguarantee.com/public/upload/2023-10-31/nsc-logo.webp">
+                                    </div> 
                                 </div> 
-                            </div> 
+                                <div class="col-md-3">
+                                    <div class="bg-white collaborate text-center">
+                                        <img src="https://www.icajobguarantee.com/public/upload/2023-10-31/ica-nism-logo.webp">
+                                    </div> 
+                                </div> 
 
-                        </div>    
+                            </div>    
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div id="apply" class="col-md-5">
-                <div class="highlighted-content-wrapper text-center">
-                <div class="ad_banner_form_wrapeer" >
-                    <div class="register-fomr-title text-center">
-                        <h4 class="bold-font text-white">Join the family of 100+ EdTech Chain in India</h4>
-                    </div>
-                    <div class="register-form-area text-left" >
-                        <form id="banner_lead_capture_form" class="lead_form" action="{{ url('franchise-capture-lead') }}" method="POST" enctype="multipart/form-data">
-                            <div class="form_process" >
-                            <div class="lead_steps step1 active" >
-                                @include('common.franchiseLeadCaptureFormField')
-                            </div>
-                            @include('common.leadCaptureFormOtpField')
-                            </div>
-                            <div class="form_success" style="display:none">
-                                <div class="form-success-content">
-                                    <span class="success-icon"> <i class="fas fa-check"></i> </span>
-                                    <h4> Thank You! Your Application Submitted Successfully </h4>
+                <div id="apply" class="col-md-5">
+                    <div class="highlighted-content-wrapper text-center">
+                    <div class="ad_banner_form_wrapeer" >
+                        <div class="register-fomr-title text-center">
+                            <h4 class="bold-font text-white">Join the family of 100+ EdTech Chain in India</h4>
+                        </div>
+                        <div class="register-form-area text-left" >
+                            <form id="banner_lead_capture_form" class="lead_form" action="{{ url('franchise-capture-lead') }}" method="POST" enctype="multipart/form-data">
+                                <div class="form_process" >
+                                <div class="lead_steps step1 active" >
+                                    @include('common.franchiseLeadCaptureFormField')
                                 </div>
-                            </div>
-                        </form>
+                                @include('common.leadCaptureFormOtpField')
+                                </div>
+                                <div class="form_success" style="display:none">
+                                    <div class="form-success-content">
+                                        <span class="success-icon"> <i class="fas fa-check"></i> </span>
+                                        <h4> Thank You! Your Application Submitted Successfully </h4>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     </section>
     <!-- End of Header section -->
     
@@ -688,9 +688,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="row text-center">
-                    <div class="genius-btn mb20 gradient-bg text-center text-uppercase ul-li-block bold-font">
-                        <a data-toggle="modal" data-target="#franchise-lead-generation-form" href="javascript:void(0)" > <i class="fas fa-download" style="color: #fff;"></i> Request a Call Back </a>
+                <div class="row">
+                    <div class="col-md-5"></div>
+                    <div class="col-md-6">
+                        <div class="genius-btn mb20 gradient-bg text-center text-uppercase ul-li-block bold-font">
+                            <a data-toggle="modal" data-target="#franchise-lead-generation-form" href="javascript:void(0)" > <i class="fas fa-download" style="color: #fff;"></i> Request a Call Back </a>
+                        </div>
                     </div>
                 </div>    
             </div>

@@ -27,8 +27,9 @@ class AdPageController extends Controller
     public function add() {
         try {
             $courseCategories = CourseType::all();
+            $courses = Course::all();
             $centers = Center::all();
-            return view('administrator.adPages.add',compact('courseCategories','centers'));
+            return view('administrator.adPages.add',compact('courseCategories','centers','courses'));
         } catch(\Illuminate\Database\QueryException $e){
             //throw $th;
         }
