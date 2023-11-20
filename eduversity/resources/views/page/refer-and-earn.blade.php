@@ -29,6 +29,7 @@
                                         <div class="form_process">
                                             <div class="lead_steps step-1 active" >
                                                 @csrf
+                                                @honeypot
                                                 <div class="contact-info formFieldName">
                                                     <input id="formFieldName" name="name" type="text" placeholder="Enter Your Name" autocomplete="off" required="">
                                                 </div>

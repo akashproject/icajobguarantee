@@ -305,4 +305,24 @@ function getCitiesByStateId(event){
     });
 }
 
+function changeUserStatus(event,user_id){
+    let status = event.value;
+
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    $.ajax({
+        url: `${globalUrl}administrator/change-affiliate-user-status/`+user_id,
+        type: "get",
+        data: {
+            status: status,
+        },
+        success: function(result) {
+           location.reload();
+        }
+    });
+}
+
 

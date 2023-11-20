@@ -50,16 +50,18 @@ class AdPageController extends Controller
     public function save(Request $request) {
         try {
             $data = $request->all();
+			
             $validatedData = $request->validate([
                 'title' => 'required',
                 'slug' => 'required',
             ]);
 
-            // if (isset($data['course_type_id']) && $data['course_type_id']!='') {
-            //     $data['course_type_id'] = json_encode($data['course_type_id']);
-            // }
+            if (isset($data['course_type_id']) && $data['course_type_id']!='') {
+                $data['course_type_id'] = json_encode($data['course_type_id']);
+            }
 
             if($data['adPage_id'] <= 0){
+				//echo "<pre>"; print_r($data); exit;
                 $adPage = Adspage::create($data);
             } else {
                 $adPage = Adspage::findOrFail($data['adPage_id']);

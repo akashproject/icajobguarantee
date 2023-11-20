@@ -45,7 +45,13 @@ class CenterController extends Controller
             $center = Center::findorFail($id);
             $states = State::all();
             $cities = City::where('state_id', $center->state_id)->orderBy('name', 'asc')->get();
-            return view('administrator.centers.show',compact('center','states','cities','courses'));
+            $faq = DB::table('faq_meta')->select('faqs')->where('model','Center')->where('model_id',$center->id)->first();
+            if($faq !== null){
+                $faq = json_decode($faq->faqs,true);
+            } else {
+                $faq = [];
+            }
+            return view('administrator.centers.show',compact('center','states','cities','courses','faq'));
         } catch(\Illuminate\Database\QueryException $e){
         }        
     }

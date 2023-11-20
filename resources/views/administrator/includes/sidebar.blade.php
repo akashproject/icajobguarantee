@@ -21,7 +21,8 @@
 
                             <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-face"></i><span class="hide-menu">Users </span></a>
                                 <ul aria-expanded="false" class="collapse  first-level">
-                                    <li class="sidebar-item"><a href="{{ url('users') }}" class="sidebar-link"><i class="mdi mdi-emoticon"></i><span class="hide-menu"> All Users </span></a></li>
+                                    <li class="sidebar-item"><a href="{{ url('administrator/center-login') }}" class="sidebar-link"><i class="mdi mdi-emoticon"></i><span class="hide-menu"> Centers Logins</span></a></li>
+                                    <li class="sidebar-item"><a href="{{ url('administrator/university-login') }}" class="sidebar-link"><i class="mdi mdi-emoticon"></i><span class="hide-menu"> University Login</span></a></li>
                                     <li class="sidebar-item"><a href="{{ url('administrator/affiliate-users') }}" class="sidebar-link"><i class="mdi mdi-emoticon"></i><span class="hide-menu"> All Affiliate Users </span></a></li>
                                 </ul>
                             </li> 

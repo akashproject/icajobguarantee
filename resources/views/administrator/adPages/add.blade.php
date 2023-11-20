@@ -58,7 +58,7 @@
 					</div>
 					<div class="col-md-5">	
 						<div class="form-group row">
-							<label for="course_type_id" class="col-sm-3 text-right control-label col-form-label">Courses</label>
+							<label for="course_type_id" class="col-sm-3 text-right control-label col-form-label">Course Category</label>
 							<div class="col-sm-9">
 								<select name="course_type_id[]" id="course_type_id" class="select2 form-control custom-select" style="width: 100%; height:136px;" multiple>	
 									<option value="">Select Course Type</option>
@@ -68,17 +68,19 @@
 								<select>
 							</div>
 						</div>
-						<!-- <div class="form-group row">
-							<label for="center_id" class="col-sm-3 text-left control-label col-form-label">Centers</label>
+
+						<div class="form-group row">
+							<label for="course_id" class="col-sm-3 text-right control-label col-form-label">Course</label>
 							<div class="col-sm-9">
-								<select name="center_id" id="center_id" class="select2 form-control custom-select" style="width: 100%; height:36px;">	
-									<option value="">Select Center</option>
-									@foreach ($centers as $value)
-									<option value="{{  $value->id }}" > {{  $value->name }} </option>
+								<select name="course_id" id="course_id" class="select2 form-control custom-select">	
+									<option value="">Select Course</option>
+									@foreach($courses as $course)
+									<option value="{{ $course->id }}" >{{ $course->name }}</option>
 									@endforeach
 								<select>
 							</div>
-						</div> -->
+						</div>
+						
 						<div class="form-group row">
 							<label for="template" class="col-sm-3 text-right control-label col-form-label">Template</label>
 							<div class="col-sm-9">

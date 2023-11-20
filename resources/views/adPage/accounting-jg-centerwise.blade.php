@@ -196,19 +196,19 @@
 
 						<div class="ad-banner-title">
 
-							<h1 class="text-center">Industrial Accounting Courses</h1>
+							<h1 class="text-center text-white">Industrial Accounting Courses</h1>
 
 						</div>
 
 						<div class="ad-banner-sub-title">
 
-							<h3 class="text-center" style="font-size: 1.2rem!important;"> 100% Job Guarantee | Triple Certifications | 7 Simulation Softwares </h3>
+							<h3 class="text-center text-white" style="font-size: 1.2rem!important;"> 100% Job Guarantee | Triple Certifications | 7 Simulation Softwares </h3>
 
 						</div>
 
 						<div class="ad-banner-option">
 
-						    <div class="">
+						    <div class="text-white">
 
 						        <p>Elevate your skills and transform your career with specialized training towards professional excellence</p>
 

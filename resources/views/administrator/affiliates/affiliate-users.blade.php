@@ -23,7 +23,12 @@
 								<td>{{ $value->mobile }}</td>													
 								<td>{{ $value->code }}</td>													
 								<td>
-									<a href="{{ url('affiliate-dashboard') }}/{{ $value->code }}" class="btn btn-success btn-lg">View</a>
+									<div style="display: inline-block;">
+										<select name="status" id="status" class="select2 form-control change-status" style="width: 100%; height:38px;" onChange="changeUserStatus(this,{{$value->id}});">
+											<option value="1" {{ ( '1' ==  $value->status )? 'selected' : '' }} > Enable</option>
+											<option value="0" {{ ( '0' ==  $value->status )? 'selected' : '' }} > Disable</option>
+										<select>
+									</div>
 									<a href="{{ url('administrator/view-affiliate-user') }}/{{ $value->id }}" class="btn btn-primary btn-lg">Edit</a>
 									<a href="{{ url('administrator/delete-affiliate-user') }}/{{ $value->id }}" class="btn btn-danger btn-lg" onclick="return confirm('Are you sure?')"; >Delete </a>
 								</td>

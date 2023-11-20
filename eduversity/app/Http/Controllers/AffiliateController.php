@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\AffiliateUser;
+use Mail;
 
 class AffiliateController extends Controller
 {
@@ -20,8 +21,8 @@ class AffiliateController extends Controller
             $data = $request->all();
             $data['code'] = "Vendor-ICA_".$this->random_strings(6);
             $data['center_id'] = "103";
+            $data['model'] = "University";
             $affiliateUser = AffiliateUser::create($data);
-            $request->session()->put('user',$affiliateUser);
             return redirect()->back()->with('message', 'You have registerd successfully! Confirmation will be sent to you email address');
         } catch(\Illuminate\Database\QueryException $e){
             //throw $th;

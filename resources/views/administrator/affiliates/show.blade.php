@@ -104,6 +104,16 @@
 								<input type="file" class="form-control" name="cheque" id="cheque" placeholder="Enter Account Holder Name" value="">
 							</div>
 						</div>
+						<div class="form-group row">
+							<label for="state" class="col-sm-12 text-left control-label col-form-label">Status</label>
+							<div class="col-sm-12">
+								<select name="status" id="status" class="select2 form-control custom-select" style="width: 100%; height:36px;">	
+									<option value="">Update Status</option>
+									<option value="1" {{ ( $affiliateUser->status ==  '1' )? 'selected' : '' }} > Enable</option>
+									<option value="0" {{ ( $affiliateUser->status ==  '0' )? 'selected' : '' }}> Disable </option>
+								<select>
+							</div>
+						</div>
 						@if($user->role == 'center')
 						<div class="form-group row">
 							<label for="no_of_module" class="col-sm-12 text-left control-label col-form-label">QR Code</label>

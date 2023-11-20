@@ -22,7 +22,7 @@ class CenterBucketController extends Controller
  
     public function add() {
         try {
-            $centers = Center::all();
+            $centers = Center::orderBy('name')->get();;
             return view('administrator.buckets.add',compact('centers'));
         } catch(\Illuminate\Database\QueryException $e){
             //throw $th;
@@ -33,9 +33,9 @@ class CenterBucketController extends Controller
     public function show($id)
     {
         try {
-                $center = Center::all();
+                $center = Center::orderBy('name')->get();;
                 $bucket = CenterBucket::findorFail($id);
-
+                $bucket->center_id = json_decode($bucket->center_id);
                 return view('administrator.buckets.show',compact('bucket','center'));
         } catch(\Illuminate\Database\QueryException $e){
         }        
@@ -49,6 +49,10 @@ class CenterBucketController extends Controller
                 'name' => 'required',
                 'center_id' => 'required',
             ]);
+            $data['center_id'] = json_encode($data['center_id']);
+
+            // print_r($data);
+            // exit;
             if($data['bucket_id'] <= 0){
                 CenterBucket::create($data);
             } else {

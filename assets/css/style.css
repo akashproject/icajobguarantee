@@ -4032,9 +4032,12 @@ ul.product-tab li.active:after,ul.course-tab li.active:after {
   background-color: #393185; }
 
 .blog-post-img-content {
-  border-bottom: 1px solid #eeeeee;
-  padding-bottom: 35px;
-  margin-bottom: 30px; }
+    border-bottom: 1px solid #eeeeee;
+    margin-bottom: 30px;
+    background: #f2f0ff;
+    padding: 10px;
+    box-shadow: 0px 0px 3px #b0abf0;
+}
   .blog-post-img-content .course-price {
     bottom: 20px;
     top: inherit; }
@@ -4042,11 +4045,12 @@ ul.product-tab li.active:after,ul.course-tab li.active:after {
     border-radius: 4px;
     margin-bottom: 10px; }
 
-.blog-title-content h3 {
-  font-size: 25px;
-  font-weight: 600;
-  color: #333333;
-  margin-bottom: 15px; }
+  .blog-title-content h3 {
+    font-size: 19px;
+    font-weight: 600;
+    color: #333333;
+    margin: 20px 0;
+  }
 
 .blog-list-view {
   width: 100%; }

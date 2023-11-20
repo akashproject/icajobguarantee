@@ -44,7 +44,14 @@ class CourseController extends Controller
             $brochures = Brochure::all();
             
             $courseType = CourseType::all();
-            return view('administrator.courses.show',compact('course','courseType','brochures'));
+
+            $faq = DB::table('faq_meta')->select('faqs')->where('model','Course')->where('model_id',$course->id)->first();
+            if($faq !== null){
+                $faq = json_decode($faq->faqs,true);
+            } else {
+                $faq = [];
+            }
+            return view('administrator.courses.show',compact('course','courseType','brochures','faq'));
         } catch(\Illuminate\Database\QueryException $e){
         }        
     }

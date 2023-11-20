@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\AffiliateUser;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Center;
+use Mail;
 
 class AffiliateController extends Controller
 {
@@ -15,7 +16,8 @@ class AffiliateController extends Controller
     {
         try {
             $userData = Auth::user();
-            $affiliateUsers = AffiliateUser::where('center_id',$userData->id)->get();
+            $model = ucfirst($userData->role);
+            $affiliateUsers = AffiliateUser::where('center_id',$userData->id)->where('model',$model)->get();
             return view('administrator.affiliates.affiliate-users',compact('affiliateUsers'));
 
         } catch(\Illuminate\Database\QueryException $e){
@@ -43,6 +45,29 @@ class AffiliateController extends Controller
         }        
     }
 
+    public function ChangeUserStatus(Request $request,$id){
+        try {
+            $status = request()->get('status');
+            $affiliates = AffiliateUser::findOrFail($id);
+            $data = ['status'=>$status];
+            $affiliates->update($data);
+            if($status == 1){
+                $data = [
+                    'code' => $affiliates->code,
+                    'center_id' => '103',
+                    'model' => 'University',
+                    'email' =>  $affiliates->email,
+                    'name' =>  $affiliates->name,
+                ];
+                $this->sendRegistrationMail($data);
+            }
+            return true;
+        } catch(\Illuminate\Database\QueryException $e){
+            var_dump($e);
+        }
+    }
+
+
     public function saveUser(Request $request) {
         try {
             $data = $request->all();
@@ -65,6 +90,9 @@ class AffiliateController extends Controller
                 $userData = Auth::user();
                 $data['center_id'] = $userData->id;
                 $data['code'] = "Vendor-ICA_".$this->random_strings(6);
+                $data['model'] = ucfirst($userData->role);
+                // echo "<pre>"; print_r($data);
+                // exit;
                 $affiliateUser = AffiliateUser::create($data);
                 return redirect('/administrator/view-affiliate-user/'.$affiliateUser->id);
             } else {
@@ -81,6 +109,21 @@ class AffiliateController extends Controller
         $course = AffiliateUser::findOrFail($id);
         $course->delete();
         return redirect()->back()->with('message', 'Affiliate user deleted successfully!');
+    }
+
+    public function sendRegistrationMail($postData){
+        try {
+            //print_r($postData); exit;
+        
+            $mail = Mail::send('administrator.email.registrationMail', $postData, function ($m) use ($postData) {
+                $m->from('connect@icajobguarantee.com', 'ICA Edu Skils');
+                $m->to($postData['email'], $postData['name'])->subject("Registration has been completed successfully");
+            });
+
+        } catch(\Illuminate\Database\QueryException $e){
+            //throw $th;
+            var_dump($e);
+        }
     }
 
     public function random_strings($length_of_string)

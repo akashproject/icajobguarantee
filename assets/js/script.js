@@ -24,6 +24,7 @@ let pincode;
 				this.testimonialSlide();
 				this.videoPopup();
 				this.sponsorSlide();
+				this.blogsSlide();
 				this.bestproductSlide();
 				this.faqTAB();
 				this.contactMAP();
@@ -463,6 +464,39 @@ sponsorSlide: function (){
 /* End Of service slide
 ================================================*/
 
+
+/* Start Of service slide
+================================================*/
+blogsSlide: function (){
+	$('.blogs-item').owlCarousel({
+		margin: 2,
+		responsiveClass:true,
+		nav: true,
+		loop: true,
+		autoplay: true,
+		navText:["<i class='fas fa-chevron-left'></i>","<i class='fas fa-chevron-right'></i>"],
+		dots: true,
+		smartSpeed: 1000,
+		responsive:{
+			0:{
+				items:1,
+			},
+			400:{
+				items:1,
+			},
+			600:{
+				items:1,
+			},
+			700:{
+				items:1,
+			},
+			1000:{
+				items:1,
+
+			}
+		},
+	})
+},
 /* Start Of best product
 ================================================*/
 bestproductSlide: function (){

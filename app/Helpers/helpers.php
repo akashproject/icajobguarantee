@@ -367,6 +367,21 @@ if (!function_exists('getCenterByStateId')) {
     }
 }
 
+if (!function_exists('getCenterByBucket')) {
+    function getCenterByBucket($name = null){
+        $bucket = DB::table('center_buckets')->where("name",$name)->first();
+        $center_id = json_decode($bucket->center_id);
+        
+        $centers = DB::table('centers')
+                ->whereIn('id',$center_id)
+                ->orderBy('name', 'asc')
+                ->get();
+       
+  
+        return $centers;
+    }
+}
+
 if (! function_exists('getGallery')) {
     function getGallery($course_id=null, $center_id=null){
         $gallery = DB::table('gallery');

@@ -34,7 +34,7 @@
 						<div class="form-group row">
 							<label for="center_id" class="col-sm-3 text-right control-label col-form-label">Center</label>
 							<div class="col-sm-9">
-								<select name="center_id[]" id="center_id" class="select2 form-control custom-select" multiple style="height:300px">	
+								<select name="center_id[]" id="center_id" class="select2 form-control custom-select" multiple style="height:300px" required>	
 									<option value="">Select Center</option>
 									@foreach ($centers as $value)
 									<option value="{{  $value->id }}" > {{  $value->name }} </option>

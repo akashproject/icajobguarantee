@@ -219,7 +219,7 @@
 							<div class="col-sm-12">
 								<select name="faq[]" class="form-control" multiple style="height:300px" >
 									@foreach(getAllFaqs() as $key => $value)
-									<option value="{{ $value->id }}" >{{$key+1}}. {{ $value->question }} </option>
+									<option value="{{ $value->id }}" {{ (in_array($value->id,  $faq))?'selected' : '' }}>{{$key+1}}. {{ $value->question }} </option>
 									@endforeach
 								</select>
 							</div>

@@ -328,6 +328,11 @@
 	.popup_banner_form_wrapeer {
 		padding: 0px 10px;
 	}
+
+	.photo-list img {
+		height: auto;
+	}
+
 }
 @media screen and (max-width: 480px) { 
 	.section-title.mb20.headline.text-left {

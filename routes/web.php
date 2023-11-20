@@ -50,10 +50,16 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('administrator-logout');
         Route::get('/update-password/{id}', [App\Http\Controllers\Administrator\IndexController::class, 'updatePassword'])->name('administrator-update-password');
         
+       //Users
+       Route::get('/center-login', [App\Http\Controllers\Administrator\UserController::class, 'centerLogin'])->name('admin-center-login');
+       Route::get('/university-login', [App\Http\Controllers\Administrator\UserController::class, 'universityLogin'])->name('admin-university-login');
+       
         Route::get('/affiliate-users', [App\Http\Controllers\Administrator\AffiliateController::class, 'users'])->name('admin-affiliate-users');
         Route::get('/add-affiliate-user', [App\Http\Controllers\Administrator\AffiliateController::class, 'addUser'])->name('admin-add-affiliate-user');
         Route::get('/view-affiliate-user/{id}', [App\Http\Controllers\Administrator\AffiliateController::class, 'showUser'])->name('admin-view-affiliate-user');
         Route::post('/save-affiliate-user', [App\Http\Controllers\Administrator\AffiliateController::class, 'saveUser'])->name('admin-save-affiliate-user');
+        
+        Route::get('/change-affiliate-user-status/{id}', [App\Http\Controllers\Administrator\AffiliateController::class, 'ChangeUserStatus'])->name('admin-change-affiliate-user-status'); 
         Route::get('/delete-affiliate-user/{id}', [App\Http\Controllers\Administrator\AffiliateController::class, 'deleteUser'])->name('admin-delete-affiliate-user');
         
         Route::get('/enquires', [App\Http\Controllers\Administrator\EnquiryController::class, 'index'])->name('admin-enquires');

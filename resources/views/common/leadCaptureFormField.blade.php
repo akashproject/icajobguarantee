@@ -12,6 +12,7 @@
 </div>
 @if(isset($_GET['city']))
     <select class="center" name="center" required>
+        <option value="">Select Center</option>
         @foreach(getCenterByCityId($_GET['city']) as $value)
             <option value="{{$value->name}}" data-id="{{$value->id}}"> {{$value->name}} </option>
         @endforeach
@@ -20,16 +21,18 @@
 
 @if(isset($_GET['state']))
     <select class="center" name="center" required>
+        <option value="">Select Center</option>
         @foreach(getCenterByStateId($_GET['state']) as $value)
             <option value="{{$value->name}}" data-id="{{$value->id}}"> {{$value->name}} </option>
         @endforeach
     </select>
 @endif
 
-@if(isset($_GET['combo']))
+@if(isset($_GET['bucket']))
     <select class="center" name="center" required>
-        @foreach(getCenterByAdBucket($contentMain->center_id) as $value)
-            <option value="{{$value->name}}" data-id="{{$value->id}}"> {{$value->name}} </option>
+        <option value="">Select Center</option>
+        @foreach(getCenterByBucket($_GET['bucket']) as $value)
+            <option value="{{$value->name}}" > {{$value->name}} </option>
         @endforeach
     </select>
 @endif
