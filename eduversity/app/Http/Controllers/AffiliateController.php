@@ -9,11 +9,19 @@ use Mail;
 class AffiliateController extends Controller
 {
     //
-    public function dashboard($slug)
-    {
 
-        return view('affiliates.dashboard');
-    }
+    public function dashboard()
+    {
+        
+        try {
+
+            $affiliateUser = AffiliateUser::find(1);
+            return view('affiliates.dashboard',compact('affiliateUser'));
+        } catch(\Illuminate\Database\QueryException $e){
+            //throw $th;
+            var_dump($th);
+        }
+    }   
 
     public function registration(Request $request)
     {
@@ -29,6 +37,72 @@ class AffiliateController extends Controller
             var_dump($th);
         }
     }
+
+    public function affliateProfile()
+    {
+        
+        try {
+
+            $affiliateUser = AffiliateUser::find(1);
+            return view('affiliates.profile',compact('affiliateUser'));
+        } catch(\Illuminate\Database\QueryException $e){
+            //throw $th;
+            var_dump($th);
+        }
+    } 
+    
+    public function referralLinks()
+    {
+        
+        try {
+
+            $affiliateUser = AffiliateUser::find(1);
+            return view('affiliates.referral-links',compact('affiliateUser'));
+        } catch(\Illuminate\Database\QueryException $e){
+            //throw $th;
+            var_dump($th);
+        }
+    } 
+
+    public function referralSupport()
+    {
+        
+        try {
+
+            $affiliateUser = AffiliateUser::find(1);
+            return view('affiliates.dashboard',compact('affiliateUser'));
+        } catch(\Illuminate\Database\QueryException $e){
+            //throw $th;
+            var_dump($th);
+        }
+    } 
+
+    public function saveUser(Request $request) {
+        try {
+            $data = $request->all();
+            $validatedData = $request->validate([
+                'name' => 'required',
+                'mobile' => 'required',
+                'pan_photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'aadhar_photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'cheque' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            ]);
+
+            // if ($request->hasFile('pan_photo')) {
+            //     $panPhoto = strtolower($data['name']).'_logo_'.time().'.'.$request->image->extension();  
+                
+            //     $request->image->move(public_path('images/brand'), $imageFile);
+            //     $data['pan_photo'] = "brand/".$imageFile;
+            // }
+            
+            $affiliateUser = AffiliateUser::findOrFail($data['affiliate_user_id']);
+            $affiliateUser->update($data);
+            
+            return redirect()->back()->with('message', 'Affiliate user updated successfully!');
+        } catch(\Illuminate\Database\QueryException $e){
+            var_dump($e->getMessage()); 
+        }
+    } 
 
     public function random_strings($length_of_string)
     {

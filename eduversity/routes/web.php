@@ -27,3 +27,9 @@ Route::post('/submit-mobile-otp', [App\Http\Controllers\IndexController::class, 
 
 Route::get('/ads/{slug}', [App\Http\Controllers\UniversityAdPageController::class, 'index'])->name('ads');
 Route::post('/affliate-registration', [App\Http\Controllers\AffiliateController::class, 'registration'])->name('affliate-registration');
+Route::get('/user/affliate-dashboard', [App\Http\Controllers\AffiliateController::class, 'dashboard'])->name('affliate-dashboard');
+Route::get('/user/affliate-profile', [App\Http\Controllers\AffiliateController::class, 'affliateProfile'])->name('affliate-profile');
+Route::get('/user/referral-links', [App\Http\Controllers\AffiliateController::class, 'referralLinks'])->name('referral-links');
+Route::get('/user/referral-support', [App\Http\Controllers\AffiliateController::class, 'referralSupport'])->name('referral-support');
+Route::get('/user/referral-logout', [App\Http\Controllers\AffiliateController::class, 'referralLogout'])->name('referral-logout');
+Route::post('/save-affiliate-user', [App\Http\Controllers\AffiliateController::class, 'saveUser'])->name('save-affiliate-user');

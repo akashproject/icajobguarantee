@@ -113,14 +113,15 @@ class AffiliateController extends Controller
 
     public function sendRegistrationMail($postData){
         try {
-            //print_r($postData); exit;
-        
+            
             $mail = Mail::send('administrator.email.registrationMail', $postData, function ($m) use ($postData) {
                 $m->from('connect@icajobguarantee.com', 'ICA Edu Skils');
                 $m->to($postData['email'], $postData['name'])->subject("Registration has been completed successfully");
             });
 
         } catch(\Illuminate\Database\QueryException $e){
+
+            
             //throw $th;
             var_dump($e);
         }

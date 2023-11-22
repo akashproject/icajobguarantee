@@ -720,14 +720,15 @@ class IndexController extends Controller
     function createCenterLogin(){
         $center = Center::select('name','email','mobile')->get();
 
-        foreach ($center as $key => $value) {
-            
+        DB::table('users')->where('role', "center")->delete();
 
+
+        foreach ($center as $key => $value) {
             $centerData = [
                 'name'=>$value->name,
                 'email'=>$value->email,
                 'mobile'=>$value->mobile,
-                'password'=> Hash::make('Admin@1234'),
+                'password'=> Hash::make("IcaEduSkills@2023"),
                 'is_admin'=>'0',
                 'status'=>'1',
             ];
