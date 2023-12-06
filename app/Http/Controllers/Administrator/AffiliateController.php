@@ -89,7 +89,7 @@ class AffiliateController extends Controller
             if($data['affiliate_user_id'] <= 0){
                 $userData = Auth::user();
                 $data['center_id'] = $userData->id;
-                $data['code'] = "Vendor-ICA_".$this->random_strings(6);
+                $data['code'] = "Vendor-ICA_".random_strings(6);
                 $data['model'] = ucfirst($userData->role);
                 // echo "<pre>"; print_r($data);
                 // exit;
@@ -126,16 +126,5 @@ class AffiliateController extends Controller
             var_dump($e);
         }
     }
-
-    public function random_strings($length_of_string)
-    {
     
-        // String of all alphanumeric character
-        $str_result = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    
-        // Shuffle the $str_result and returns substring
-        // of specified length
-        return substr(str_shuffle($str_result),
-                        0, $length_of_string);
-    }
 }

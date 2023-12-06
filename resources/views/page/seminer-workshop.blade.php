@@ -94,19 +94,33 @@
 									</div>
 									@if(isset($_GET['city']))
 										<select class="center" name="center" required>
-											@if(!isset($_GET['center']))
-												<option value="">Select Center</option>
-											@endif
-											@php
-												$center = (isset($_GET['center']))?$_GET['center']:''
-											@endphp
-										
-											@foreach(getCenterByCityId($_GET['city'],$center) as $value)
+											<option value="">Select Center</option>
+											@foreach(getCenterByCityId($_GET['city']) as $value)
 												<option value="{{$value->name}}" data-id="{{$value->id}}"> {{$value->name}} </option>
 											@endforeach
 										</select>
-									@else
-									<input type="hidden" name="center" value="{{ (isset($center) )?$center:'' }}">
+									@endif
+
+									@if(isset($_GET['state']))
+										<select class="center" name="center" required>
+											<option value="">Select Center</option>
+											@foreach(getCenterByStateId($_GET['state']) as $value)
+												<option value="{{$value->name}}" data-id="{{$value->id}}"> {{$value->name}} </option>
+											@endforeach
+										</select>
+									@endif
+
+									@if(isset($_GET['bucket']))
+										<select class="center" name="center" required>
+											<option value="">Select Center</option>
+											@foreach(getCenterByBucket($_GET['bucket']) as $value)
+												<option value="{{$value->name}}" > {{$value->name}} </option>
+											@endforeach
+										</select>
+									@endif
+
+									@if(isset($center))
+										<input type="hidden" name="center" value="{{ (isset($center) )?$center:'' }}">
 									@endif
 									<input type="hidden" name="course_id" value="">
 									<input type="hidden" name="brochure_id" value="">
