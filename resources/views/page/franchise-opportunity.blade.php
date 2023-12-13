@@ -1,7 +1,7 @@
 @extends('layouts.main')
     @section('content')
 	<script>
-         popUp = 0
+         popUp = 0;
 	</script>
 	<!-- Start of breadcrumb section
 		============================================= -->

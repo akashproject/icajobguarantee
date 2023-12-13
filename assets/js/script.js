@@ -1131,7 +1131,8 @@ searchBAR: function (){
 	jQuery(document).ready(function (){
 		Genius.init();
 		let popUp;
-		if (popUp != 0) {
+		console.log(window.location.pathname);
+		if (window.location.pathname != '/franchise-opportunity') {
 			if (!jQuery.cookie("showPopup")) {
 				lead_capture_form_btn();
 				jQuery.cookie("showPopup",true);
