@@ -49,6 +49,10 @@
                         <li class="">
                            <a href="#certification">Certification</a>
                         </li>
+                        <!--li class="">
+                           <a href="#testimonials">Testimonials</a>
+                           
+                           </li-->
                         <li class="">
                            <a href="#faqs">FAQs</a>
                         </li>
@@ -77,6 +81,10 @@
                         <li class="">
                            <a href="#certification">Certification</a>
                         </li>
+                        <!--li class="">
+                           <a href="#testimonials">Testimonials</a>
+                           
+                           </li-->
                         <li class="">
                            <a href="#faqs">FAQs</a>
                         </li>
@@ -94,55 +102,19 @@
    <div class="container">
       <div class="row">
          <div class="col-md-7">
-            <div class="ad-banner-content">
-               <div class="ad-banner-title">
-                  <h1 class="text-center">MS Office Courses | MS Office Tutorial | Advanced Excel Course</h1>
-               </div>
-               <div class="ad-banner-sub-title">
-                  <h3 class="text-center" style="font-size: 1.2rem!important;"> Level Up Your Career with Microsoft Certified Training Program. Dive into In-Demand Skills, Unleash Job Opportunities </h3>
-               </div>
-               <div class="ad-banner-option">
-                  <div class="row">
-                     <div class="col-md-6">
-                        <ul>
-                           <li><strong>Eligibility:</strong> 12+/Graduate</li>
-                           <li><strong>Course Type:</strong> Short Term Course</li>
-                           <li><strong>Delivery Mode:</strong> Classroom/Offline</li>
-                           <li><strong>Language:</strong> English/Hindi</li>
-                        </ul>
-                     </div>
-                     <div class="col-md-6">
-                        <ul>
-                           <li><strong>Difficulty Level:</strong> Beginner</li>
-                           <li><strong>No. of Lectures:</strong> 25 Lectures</li>
-                           <li><strong>Duration:</strong> 48 Hours</li>
-                           <li><strong>Doubt Clearing Session:</strong> Yes</li>
-                        </ul>
-                     </div>
-                  </div>
-                  <div class="row">
-                     <div class="col-md-12 text-center bold-font" style=" padding: 5px; background: #0034D7;">
-                        <div class="total-rating text-white">
-                           Rating: <a href="javascript:void(0)" style="color: #fff;" > 4.0 </a>
-                           <div class="ratings " style="display: inline;margin: 0 6px;">
-                              <i class="fas fa-star active"></i>
-                              <i class="fas fa-star active"></i>
-                              <i class="fas fa-star active"></i>
-                              <i class="fas fa-star active"></i>
-                           </div>
-                           <a href="javascript:void(0)" class="text-white" style="cursor: auto;margin: 0 6px;"> (1934 Reviews )</a> <span class="text-white total-enroll" > 2389 students </span>
-                        </div>
-                     </div>
-                  </div>
-               </div>
+            <div style="padding:20px;">
+                <!--div class="ad-banner-title">
+                    <h1 class="text-center text-white">ICA's Yuva Pratibha Scholarship</h1>
+                </div-->
+                <img src="https://www.icajobguarantee.com/public/upload/2023-08-23/yuva-pratibha-scholarship.jpg" alt="yuva pratibha scholarship">
             </div>
          </div>
          <div class="col-md-5">
             <div class="highlighted-content-wrapper text-center">
-               <div class="ad_banner_form_wrapeer" >
+               <div class="ad_banner_form_wrapeer" style="background:#0B151B!important;">
                   <div class="register-fomr-title text-center">
-                     <h3 class="bold-font" style="font-size: 23px!important;"><span> Become a </span><br /> Microsoft Certified Professional </h3>
-                     <p style="color: #222!important;" class="bold-font">Our experts will help you choose the ideal MS Office Certificate Training program for a successful career.</p>
+                     <h3 class="bold-font text-white" style="font-size: 21px!important;"><span> Empowering </span> Young Talents </h3>
+                     <p class="bold-font text-white" style="font-size: 18px!important;">Yuva Pratibha Scholarship is Open</p>
                   </div>
                   <div class="register-form-area text-left" >
                      <form id="banner_lead_capture_form" class="lead_form" action="{{ url('capture-lead') }}" method="POST" enctype="multipart/form-data">
@@ -150,10 +122,10 @@
                            <div class="lead_steps step1 active">
                               @include('common.leadCaptureFormField')
                               <div class="form-group disclaimer text-left">
-                                 <p style="margin:0">
+                                 <p class="text-white" style="margin:0">
                                     <input style="margin-left: 0;width: auto;vertical-align: middle;height: auto;" type="checkbox" class="" checked="">  I agree to receive updates on <i class="fa fa-whatsapp" style="color: green;"></i> whatsapp. 
                                  </p>
-                                 <p>
+                                 <p class="text-white">
                                     <input style="margin-left: 0;width: auto;vertical-align: middle;height: auto;" type="checkbox" class="" checked=""> I agree to <a href="/privacy-policy" target="_blank">Privacy Policy</a> &amp; overriding DNC/NDNC request for Call/SMS. 
                                  </p>
                               </div>
@@ -253,7 +225,7 @@
          <div class="placement-content">
             <div class="text-center">
                <div class="" style="width: 98px; height: 115px; margin: auto; padding: 2px; border: 1px solid #e3e2e2; border-radius: 6px;">
-                  <img src="{{ (isset($value->featured_image))?getSizedImage('',$value->featured_image):'https://dummyimage.com/140x140' }}" alt="" style="height: 100%;">	
+                  <img src="{{ url('assets/img/placements/'.strtolower(str_replace(' ','-',$value->name)).'.png') }}" alt="Student {{ $value->name }} placement in {{getCourseById($value->course_id)->name}} in {{ getCenterById($value->center_id)->name }}" style="height: 100%;">
                </div>
             </div>
             <div class="text-center my-2">
@@ -284,43 +256,43 @@
          <div class="col-md-7 mt10">
             <div class="section-title mb20 headline text-center">
                <span class="subtitle text-uppercase"> Info </span>
-               <h3> MS Office Certificate Training  <span>  Highlights </span></h3>
+               <h3> Accounting Course <span>  Features </span></h3>
             </div>
             <div class="row text-center">
                <div class="col-md-4 col-6">
-                  <div class="key-highlights" >
+                  <div class="key-highlights">
                      <img src="{{ url('assets/img/icons/tick.png')}}" >
-                     <h6> Microsoft Certified Training </h6>
+                     <h6> 100% Job Guarantee </h6>
                   </div>
                </div>
                <div class="col-md-4 col-6">
-                  <div class="key-highlights" >
+                  <div class="key-highlights">
+                     <img src="{{ url('assets/img/icons/tick.png')}}" >
+                     <h6> Triple Certification </h6>
+                  </div>
+               </div>
+               <div class="col-md-4 col-6">
+                  <div class="key-highlights">
                      <img src="{{ url('assets/img/icons/tick.png')}}" >
                      <h6> Interactive Classes </h6>
                   </div>
                </div>
                <div class="col-md-4 col-6">
-                  <div class="key-highlights" >
+                  <div class="key-highlights">
                      <img src="{{ url('assets/img/icons/tick.png')}}" >
-                     <h6> 90% Practical + 10% Theory </h6>
+                     <h6> Any Time Job Card </h6>
                   </div>
                </div>
                <div class="col-md-4 col-6">
-                  <div class="key-highlights" >
-                     <img src="{{ url('assets/img/icons/tick.png')}}" >
-                     <h6> Real Life Projects </h6>
-                  </div>
-               </div>
-               <div class="col-md-4 col-6">
-                  <div class="key-highlights" >
+                  <div class="key-highlights">
                      <img src="{{ url('assets/img/icons/tick.png')}}" >
                      <h6> Mock Interviews </h6>
                   </div>
                </div>
                <div class="col-md-4 col-6">
-                  <div class="key-highlights" >
+                  <div class="key-highlights">
                      <img src="{{ url('assets/img/icons/tick.png')}}" >
-                     <h6> 100% Job Assurance </h6>
+                     <h6> 90% Practical </h6>
                   </div>
                </div>
             </div>
@@ -337,7 +309,7 @@
    <div class="testimonial-slide">
       <div class="section-title mb20 headline text-center">
          <span class="subtitle text-uppercase">Course Info</span>
-         <h3> MS Office <span> Training </span> Syllabus </h3>
+         <h3> Accounting <span> Training </span> Syllabus </h3>
       </div>
       <div class="row">
          <div class="col-md-12">
@@ -345,142 +317,94 @@
                <div class="col-md-3 col-6">
                   <div class="key-highlights" >
                      <img src="{{ url('assets/img/icons/tick.png')}}" >
-                     <h6> Lecture 1 <br /> Hardware & Software </h6>
+                     <h6> Module 1 <br /> Business Computer Application </h6>
+                     <p>  </p>
                   </div>
                </div>
                <div class="col-md-3 col-6">
                   <div class="key-highlights" >
                      <img src="{{ url('assets/img/icons/tick.png')}}" >
-                     <h6> Lecture 2 <br /> Working with Windows 10 </h6>
+                     <h6> Module  2 <br /> Business Accounting </h6>
+                     <p>  </p>
                   </div>
                </div>
                <div class="col-md-3 col-6">
                   <div class="key-highlights" >
                      <img src="{{ url('assets/img/icons/tick.png')}}" >
-                     <h6> Lecture 3 <br /> File & Folder Management </h6>
+                     <h6> Module  3 <br /> TallyPrime </h6>
+                     <p>  </p>
                   </div>
                </div>
                <div class="col-md-3 col-6">
                   <div class="key-highlights" >
                      <img src="{{ url('assets/img/icons/tick.png')}}" >
-                     <h6> Lecture 4 <br /> Introduction to Ms Word 2019 </h6>
+                     <h6> Module  4 <br /> Business Communication </h6>
+                     <p>  </p>
                   </div>
                </div>
                <div class="col-md-3 col-6">
                   <div class="key-highlights" >
                      <img src="{{ url('assets/img/icons/tick.png')}}" >
-                     <h6> Lecture 5 <br /> Page Setup </h6>
+                     <h6> Module  5 <br /> Direct Tax </h6>
+                     <p>  </p>
                   </div>
                </div>
                <div class="col-md-3 col-6">
                   <div class="key-highlights" >
                      <img src="{{ url('assets/img/icons/tick.png')}}" >
-                     <h6> Lecture 6 <br /> Drafting & Formatting Documents </h6>
+                     <h6> Module  6 <br /> GST </h6>
+                     <p>  </p>
                   </div>
                </div>
                <div class="col-md-3 col-6">
                   <div class="key-highlights" >
                      <img src="{{ url('assets/img/icons/tick.png')}}" >
-                     <h6> Lecture 7 <br /> Tables </h6>
+                     <h6> Module  7 <br /> Advanced Accounts </h6>
+                     <p>  </p>
                   </div>
                </div>
                <div class="col-md-3 col-6">
                   <div class="key-highlights" >
                      <img src="{{ url('assets/img/icons/tick.png')}}" >
-                     <h6> Lecture 8 <br /> Header & Footer </h6>
+                     <h6> Module  8 <br /> Additional Accounting Package </h6>
+                     <p>  </p>
                   </div>
                </div>
                <div class="col-md-3 col-6">
                   <div class="key-highlights" >
                      <img src="{{ url('assets/img/icons/tick.png')}}" >
-                     <h6> Lecture 9 <br /> Introduction to Ms Excel 2019 </h6>
+                     <h6> Module  9 <br /> Advanced MS Excel </h6>
+                     <p>  </p>
                   </div>
                </div>
                <div class="col-md-3 col-6">
                   <div class="key-highlights" >
                      <img src="{{ url('assets/img/icons/tick.png')}}" >
-                     <h6> Lecture 10 <br /> Database Design </h6>
+                     <h6> Module  10 <br /> SAP FICO </h6>
+                     <p>  </p>
                   </div>
                </div>
                <div class="col-md-3 col-6">
                   <div class="key-highlights" >
                      <img src="{{ url('assets/img/icons/tick.png')}}" >
-                     <h6> Lecture 11 <br /> Cell Reference </h6>
+                     <h6> Module  11 <br /> Banking and Auditing </h6>
+                     <p>  </p>
                   </div>
                </div>
                <div class="col-md-3 col-6">
                   <div class="key-highlights" >
                      <img src="{{ url('assets/img/icons/tick.png')}}" >
-                     <h6> Lecture 12 <br /> Number & Conditional Formatting </h6>
-
+                     <h6> Module  12 <br /> MCA (including XBRL and LLP) </h6>
+                     <p> </p>
                   </div>
                </div>
                <div class="col-md-3 col-6">
                   <div class="key-highlights" >
                      <img src="{{ url('assets/img/icons/tick.png')}}" >
-                     <h6> Lecture 13 <br /> Lookup & Reference Functions </h6>
+                     <h6> Module  13 <br /> Ind AS </h6>
+                     <p> </p>
                   </div>
                </div>
-               <div class="col-md-3 col-6">
-                  <div class="key-highlights" >
-                     <img src="{{ url('assets/img/icons/tick.png')}}" >
-                     <h6> Lecture 14 <br /> Logical Functions </h6>
-                  </div>
-               </div>
-               <div class="col-md-3 col-6">
-                  <div class="key-highlights" >
-                     <img src="{{ url('assets/img/icons/tick.png')}}" >
-                     <h6> Lecture 15 <br /> Financial Functions </h6>
-                  </div>
-               </div>
-               <div class="col-md-3 col-6">
-                  <div class="key-highlights" >
-                     <img src="{{ url('assets/img/icons/tick.png')}}" >
-                     <h6> Lecture 16 <br /> Sort & Filter </h6>
-                  </div>
-               </div>
-               <div class="col-md-3 col-6">
-                  <div class="key-highlights" >
-                     <img src="{{ url('assets/img/icons/tick.png')}}" >
-                     <h6> Lecture 17 <br /> Pivot Table & Pivot Chart </h6>
-                  </div>
-               </div>
-               <div class="col-md-3 col-6">
-                  <div class="key-highlights" >
-                     <img src="{{ url('assets/img/icons/tick.png')}}" >
-                     <h6> Lecture 18 <br /> Protection </h6>
-                  </div>
-               </div>
-               <div class="col-md-3 col-6">
-                  <div class="key-highlights" >
-                     <img src="{{ url('assets/img/icons/tick.png')}}" >
-                     <h6> Lecture 19 <br /> Project on Excel </h6>
-                  </div>
-               </div>
-               <div class="col-md-3 col-6">
-                  <div class="key-highlights" >
-                     <img src="{{ url('assets/img/icons/tick.png')}}" >
-                     <h6> Lecture 20 <br /> MS PowerPoint 2019 </h6>
-                  </div>
-               </div>
-               <div class="col-md-3 col-6">
-                  <div class="key-highlights" >
-                     <img src="{{ url('assets/img/icons/tick.png')}}" >
-                     <h6> Lecture 21 <br /> MS Outlook 2019 </h6>
-                  </div>
-               </div>
-               <div class="col-md-3 col-6">
-                  <div class="key-highlights" >
-                     <img src="{{ url('assets/img/icons/tick.png')}}" >
-                     <h6> Lecture 22 <br /> Internet & Email Writing </h6>
-                  </div>
-               </div>
-               <div class="col-md-3 col-6">
-                  <div class="key-highlights" >
-                     <img src="{{ url('assets/img/icons/tick.png')}}" >
-                     <h6> Lecture 22 <br /> Mail Merge </h6>
-                  </div>
-               </div>               
             </div>
          </div>
       </div>
@@ -494,7 +418,7 @@
    <div class="container">
       <div class="section-title mb45 headline text-center">
          <span class="subtitle text-uppercase"> COURSES </span>
-         <h3> Browse Our <span> Best MS Office </span> Courses </h3>
+         <h3> Browse Our <span> Yuva Pratibha Scholarship </span> Courses </h3>
       </div>
       <div class="faq-tab mb65">
          <div class="faq-tab-ques ul-li">
@@ -512,10 +436,12 @@
                <!-- 1st tab -->
                <div id="course{{$key}}" class="course-tab-content-1 pt35" style="display:{{ ($key == 0)?'block':'none' }}">
                   <div class="row justify-content-center">
+                     @foreach($courses as $course)
+                     @if($course->categorySlug == $value->slug)
                      <div class="col-md-3">
                         <div class="best-course-pic-text relative-position">
                            <div class="best-course-pic relative-position">
-                              <img src="https://www.icajobguarantee.com/public/upload/2023-08-31/course-thumbnails-ms-excel.png" alt="">
+                              <img src="{{ (isset($course->featured_image))?getSizedImage('',$course->featured_image):url('assets/img/course/c-1.jpg') }}" alt="">
                               <div class="trend-badge-2 text-center text-uppercase">
                                  <i class="fas fa-bolt"></i>
                                  <span>Trending</span>
@@ -530,76 +456,34 @@
                                  </ul>
                               </div>
                               <div class="course-details-btn">
-                                 <a href="https://www.icajobguarantee.com/courses/advanced-excel-course">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
+                                 <a href="{{ URL::to('/courses') }}/{{ $course->slug }}">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
                               </div>
                               <div class="blakish-overlay"></div>
                            </div>
                            <div class="best-course-text">
                               <div class="course-title mb20 headline relative-position height-60">
-                                 <h3> Advanced Excel  
+                                 <h3> {{ $course->name }}  
                                     <span class="trend-bestseller text-uppercase bold-font">
                                     <i class="fas fa-bolt"></i> Bestseller</span> 
                                  </h3>
                               </div>
                               <div class="course-meta">
-                                 <span class="course-category"><i class="fas fa-clock"></i> 18 Hours</span>
-                                 <span class="course-author"><i class="fas fa-book"></i> 1 Modules</span>
+                                 <span class="course-category"><i class="fas fa-clock"></i> {{ $course->duration }}</span>
+                                 <span class="course-author"><i class="fas fa-book"></i> {{ $course->no_of_module }} Modules</span>
                               </div>
                            </div>
-                           <div class="more-btn text-center">
+                           <div class="more-btn text-center" >
                               <div class="course-type-list">	
-                                 <a class="btn-filled" href="javascript:void(0)" onclick="lead_capture_form_btn('',21)"><i class="fas fa-download"></i> Brochure</a>
+                                 <a class="btn-filled" href="javascript:void(0)" onclick="lead_capture_form_btn('',{{ $contentMain->id }})"><i class="fas fa-download"></i> Brochure</a>
                               </div>
                               <div class="course-type-list">														
-                                 <a class="btn-outline course-detail-tab-btn" data-id="course-view-5" href="#detail-course">View More <i class="fas fa-caret-right"></i></a>
+                                 <a class="btn-outline course-detail-tab-btn" data-id="course-view-{{$course->id}}" href="#detail-course" >View More <i class="fas fa-caret-right"></i></a>
                               </div>
                            </div>
                         </div>
                      </div>
-                     <div class="col-md-3">
-                        <div class="best-course-pic-text relative-position">
-                           <div class="best-course-pic relative-position">
-                              <img src="https://www.icajobguarantee.com/public/upload/2023-05-15/course-thumbnails-mc.png" alt="">
-                              <div class="trend-badge-2 text-center text-uppercase">
-                                 <i class="fas fa-bolt"></i>
-                                 <span>Trending</span>
-                              </div>
-                              <div class="course-rate ul-li">
-                                 <ul>
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                 </ul>
-                              </div>
-                              <div class="course-details-btn">
-                                 <a href="https://www.icajobguarantee.com/courses/ms-office-2019-course">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
-                              </div>
-                              <div class="blakish-overlay"></div>
-                           </div>
-                           <div class="best-course-text">
-                              <div class="course-title mb20 headline relative-position height-60">
-                                 <h3> Microsoft Certification  
-                                    <span class="trend-bestseller text-uppercase bold-font">
-                                    <i class="fas fa-bolt"></i> Bestseller</span> 
-                                 </h3>
-                              </div>
-                              <div class="course-meta">
-                                 <span class="course-category"><i class="fas fa-clock"></i> 48 Hours</span>
-                                 <span class="course-author"><i class="fas fa-book"></i> 1 Modules</span>
-                              </div>
-                           </div>
-                           <div class="more-btn text-center">
-                              <div class="course-type-list">	
-                                 <a class="btn-filled" href="javascript:void(0)" onclick="lead_capture_form_btn('',21)"><i class="fas fa-download"></i> Brochure</a>
-                              </div>
-                              <div class="course-type-list">														
-                                 <a class="btn-outline course-detail-tab-btn" data-id="course-view-16" href="#detail-course">View More <i class="fas fa-caret-right"></i></a>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
+                     @endif
+                     @endforeach
                   </div>
                </div>
                <!-- #tab1 -->
@@ -774,7 +658,7 @@
    <div class="testimonial-slide">
       <div class="section-title mb20 headline text-center">
          <span class="subtitle text-uppercase">Our Trainers</span>
-         <h3> Learn from <span> Industry Experts </span></h3>
+         <h3> Learn from <span> Market Experts </span></h3>
       </div>
       <div  id="testimonial-slide-item" class="testimonial-slide-area">
          <div class="student-qoute">
@@ -866,7 +750,7 @@
       <div class="testimonial-slide">
          <div class="section-title mb20 headline text-center">
             <span class="subtitle text-uppercase">gallery</span>
-            <h3> MS Office <span> Classroom </span> Views </h3>
+            <h3> Accounting <span> Classroom </span> Views </h3>
          </div>
          <div class="row">
             <div class="col-md-12">
@@ -945,7 +829,7 @@
    <div class="testimonial-slide">
       <div class="section-title mb20 headline text-center">
          <span class="subtitle text-uppercase">Training Process</span>
-         <h3> How <span> MS Office Training Classes </span> Works? </h3>
+         <h3> How <span> Accounting Training Classes </span> Works? </h3>
       </div>
       <div class="row">
          <div class="col-md-12">
@@ -953,8 +837,8 @@
                <div class="col-md-4 col-6">
                   <div class="key-highlights" >
                      <img src="{{ url('assets/img/icons/tick.png')}}" >
-                     <h6> Up-to-Date MS Certification Syllabus </h6>
-                     <p> Ammended MS Certification modules to keep you on track with the industry </p>
+                     <h6> Up-to-Date Accounts Syllabus </h6>
+                     <p> Ammended accounting course modules to keep you on track with the industry </p>
                   </div>
                </div>
                <div class="col-md-4 col-6">
@@ -989,7 +873,7 @@
                   <div class="key-highlights" >
                      <img src="{{ url('assets/img/icons/tick.png')}}" >
                      <h6> Get Industry Recognized Certification </h6>
-                     <p> You will be certified in Certified Microsoft Certified Professional by ICA Edu Skills and NSDC. </p>
+                     <p> You will be certified as Accounting Professional by ICA Edu Skills and NSDC </p>
                   </div>
                </div>
             </div>
@@ -1004,22 +888,79 @@
    <div class="container">
       <div class="section-title mb35 headline text-center">
          <span class="subtitle text-uppercase"> COURSE INFO </span>
-         <h3> Microsoft <span> Office Training </span> Certification </h3>
+         <h3> Accounting <span> Training </span> Certification </h3>
       </div>
       <div class="row">
          <div class="col-md-6 mt10 text-center">
-            <h3>About ICA Edu Skills</h3>
-            <p style="text-align: left;">We are ICA Edu Skills, India’s No. 1 Training & Skill development institute specialising in job-oriented courses to make you industry-ready. We insure the careers of the Indian Youth by combining learning with the best-in-class training and placement services at the most affordable fees possible. The courses are jointly certified with National Skill Development Corporation (NSDC).</p>
+            <img src="https://www.icajobguarantee.com/public/upload/2023-08-23/CIA-Plus-Certificate.webp" />
          </div>
          <div class="col-md-6 mt10 text-center">
-            <img src="https://www.icajobguarantee.com/public/upload/2023-08-23/MS-Office-Certificate.webp" />
+            <img src="https://www.icajobguarantee.com/public/upload/2023-08-23/SAP-FICO-Certificate.webp" />
          </div>
       </div>
    </div>
 </section>
 <!-- End  of certificate section -->	
-
-
+<!-- Start of Testimonials
+   ============================================= -->
+<!--section id="testimonials" class="testimonial_2_section">
+   <div class="container">
+   
+   	<div class="testimonial-slide">
+   
+   		<div class="section-title mb20 headline text-center">
+   
+   			<span class="subtitle text-uppercase">About This Course </span>
+   
+   			<h3>Student<span> Speaks.</span></h3>
+   
+   		</div>
+   
+   		<div  id="testimonial-slide-item" class="testimonial-slide-area">
+   
+   			@foreach(getTestimonials() as $testimonial)						
+   
+   			<div class="student-qoute">
+   
+   				<div class="course-pic relative-position text-center">
+   
+   					<div class="circle-img">
+   
+   						<img src="{{ (isset($testimonial->featured_image))?getSizedImage('',$testimonial->featured_image):'https://dummyimage.com/140x140' }}" alt="">	
+   
+   					</div>					
+   
+   				</div>
+   
+   				{!! $testimonial->comment !!}
+   
+   				<div class="student-name-designation">
+   
+   					<span class="st-name bold-font">{{ $testimonial->name }}</span>
+   
+   					<span class="st-designation">{{ $testimonial->dasignation }}</span>
+   
+   				</div>
+   
+   				<div class="alumni-placed-at text-center">
+   
+   					<img src="{{ (getRecruterById($testimonial->placed_at)->featured_image)?getSizedImage('',getRecruterById($testimonial->placed_at)->featured_image):'https://dummyimage.com/32' }}" >
+   
+   				</div>
+   
+   			</div>
+   
+   			@endforeach
+   
+   		</div>
+   
+   	</div>
+   
+   </div>
+   
+   </section-->
+<!-- End  of Testimonials
+   ============================================= -->
 <!-- Start of Placament process
    ============================================= -->	
 <section id="courses" class="best-course-section">

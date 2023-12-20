@@ -1,7 +1,7 @@
 @extends('layouts.ad-main')
     @section('content')
 
-    	<!-- Start of Header section
+    <!-- Start of Header section
 	============================================= -->
 	<header>
 		<div id="main-menu"  class="main-menu-container header-style-2">
@@ -75,23 +75,24 @@
 			</div>
 		</div>
 	</header>	
-
-    <!-- Start of Header section -->
+    <!-- EndStart of Header section -->
+    
+    
     <section id="breadcrumb" class="ad-page-banner relative-position backgroud-style" style="background-image: url({{ (isset($contentMain->banner_image))?getSizedImage('',$contentMain->banner_image):url('assets/img/banner/brt-1.jpg') }});" >
     <div class="container">
         <div class="row">
             <div class="col-md-7">
                 <div class="mt-5">
                     <div class="ad-banner-title">
-                        <h1 class="text-white" style="font-size: 32px!important; font-weight: 700!important;">Generate a minimum monthly income of 4 Lakh rupees</h1>
+                        <h1 class="text-center" style="font-size: 32px!important; font-weight: 700!important;"> <h1>Generate a minimum monthly income of 4 Lakh rupees</h1> </h1>
                     </div>
-                    <div class="ad-banner-subtitle text-white">
-                        <h4 class="text-white"> Partner with India's largest education network </h4>
-                        <p class="text-white"> Partner with India's top-ranked Accounting and Taxation Training Institute and become a part of a noble vision to build 'Skilled Manpower' among job-focused youth in India and make them employable at an affordable fee. </p>
+                    <div class="ad-banner-subtitle">
+                        <h4> Partner with India's largest education network </h4>
+                        <p> Partner with India's top-ranked Accounting and Taxation Training Institute and become a part of a noble vision to build 'Skilled Manpower' among job-focused youth in India and make them employable at an affordable fee. </p>
                     </div>
                     <div class="ad-banner-sub-title">
                         <p class="text-white" style="font-size: 21px;margin: 0;"> <i class="fa fa-check"></i> Area Required: Minimum 1000 - 2500 SQFT </p>
-                        <p class="text-white" style="font-size: 21px;margin: 0;"> <i class="fa fa-check"></i> Investment: 10 - 20 Lakh  </p>
+                        <p class="text-white" style="font-size: 21px;margin: 0;"> <i class="fa fa-check"></i> Investment: 18 - 20 Lakh  </p>
                         <p class="text-white" style="font-size: 21px;margin: 0;"> <i class="fa fa-check"></i> No. of Franchises: 100+  </p>
                         <p class="text-white" style="font-size: 21px;margin: 0;"> <i class="fa fa-check"></i> Establishment Year: 1999  </p>
                     </div>
@@ -184,6 +185,44 @@
 
     <!-- End of Search Courses
     ============================================= -->
+    
+    <!-- Start of franchise success stories
+    ============================================= -->	
+    <section id="success-stories" class="best-course-section">
+        <div class="container">
+            <div class="section-title mb10 headline text-center">
+                <span class="subtitle text-uppercase">Franchise Success Stories</span>
+                <h3>What our <span> Partner has to say </span></h3>
+            </div>
+            <div class="best-course-area mb10">
+                <div class="row">
+                    <div class="tree-grid-slide text-center">
+					
+                        <div class="four-grid-box text-center">
+                            <iframe width="100%" height="180" src="https://www.youtube.com/embed/WJLuzTGosNU?si=GZUsnhh4ZqIGf8zc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+
+                        <div class="four-grid-box text-center">
+                            <iframe width="100%" height="180" src="https://www.youtube.com/embed/CrfeJpVYIJ4?si=GZUsnhh4ZqIGf8zc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+
+                        <div class="four-grid-box text-center">
+                            <iframe width="100%" height="180" src="https://www.youtube.com/embed/hzkVRQ3z-xU?si=GZUsnhh4ZqIGf8zc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+
+                        <div class="four-grid-box text-center">
+                            <iframe width="100%" height="180" src="https://www.youtube.com/embed/xMGlWBKxSdo?si=GZUsnhh4ZqIGf8zc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of franchise success stories
+    ============================================= --> 	    
+    
+    
     <!-- Start of course details section
     ============================================= -->
     <section id="course-details" class="course-details-section">
@@ -229,7 +268,7 @@
         </div>
     </section>
 
-    <!-- End of course details section
+    <!-- Start of Francise Model section
     ============================================= -->	
     <section id="courses" class="best-course-section">
         <div class="container">
@@ -246,7 +285,7 @@
                             </div>
                             <div class="category-title">
                                 <h4>Minimum Carpet Area of <br> 1000-2500 Sqft</h4>
-                                <p>We have been successfully imparting knowledge to the Indian Youth in 16 states and 61+ cities in India for over 22 glorious years</p>
+                                <p>We have been successfully imparting knowledge to the Indian Youth in 23+ states in India for over 24+ glorious years</p>
                             </div>
                             <div class="category-description">
                                 
@@ -258,7 +297,7 @@
                                 <img src="{{ url('assets/img/Investment.svg') }}" >
                             </div>
                             <div class="category-title">
-                                <h4>10-20 lakhs of Investment </h4>
+                                <h4>18-20 lakhs of Investment </h4>
                                 <p> We have been expertly teaching and training students, college graduates, and professionals and preparing them academically for facing the job market for over two decades </p>
                             </div>
                             <div class="category-description">
@@ -282,7 +321,7 @@
                             </div>
                             <div class="category-title">
                                 <h4>Minimum Carpet Area of 1000-2500 Sqft</h4>
-                                <p>We have been successfully imparting knowledge to the Indian Youth in 16 states and 61+ cities in India for over 22 glorious years</p>
+                                <p>We have been successfully imparting knowledge to the Indian Youth in 23+ states in India for over 24+ glorious years</p>
                             </div>
                             <div class="category-description">
                                 
@@ -294,6 +333,8 @@
             </div>
         </div>
     </section>
+    <!-- End of Francise Model section
+    ============================================= -->    
 
     <!-- Start Course category
         ============================================= -->
@@ -389,7 +430,7 @@
                         <li class="cat-item"> Best Training facilities in Accounts, Finance and Taxation </li>
                         <li class="cat-item"> All time student rush due to high demand for CIA courses </li>
                         <li class="cat-item"> 100+ centers in Pan India </li>
-                        <li class="cat-item"> Investment of just 15-20 lakh </li>
+                        <li class="cat-item"> Investment of just 18-20 lakh </li>
                     </ul>
                 </div>
             </div>

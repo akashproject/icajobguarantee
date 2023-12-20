@@ -107,11 +107,11 @@
 						<th><span style="border-bottom:5px solid #071e62!important;">We Offer</span></th>
 					</tr>	
 					<tr>
-						<td><strong>To Create Wealth</strong></td>
+						<td><strong>Earn regular money</strong></td>
 						<td><strong>Stock Trading Training<br />Option Trading Training</strong></td>
 					</tr>						
 					<tr>
-						<td><strong>To Grow Wealth</strong></td>
+						<td><strong>Build long-term wealth</strong></td>
 						<td><strong>Stock Investment Training<br />Mutual Fund Training<br />Bond Market Training</strong></td>
 					</tr>	
 					<tr>
@@ -131,12 +131,12 @@
                   <div class="row batch-schedule">
                      <div class="col-6 text-center" style="border-left:2px dashed #fff;">
                         <h5 style="color: #071e62; font-weight: 700; font-size: 16px!important;">Weekend Batch</h5>
-                        <h6 style="color: #071e62; font-weight: 700; font-size: 14px!important">6<sup>th</sup> Jan, 2024</h6>
+                        <h6 style="color: #071e62; font-weight: 700; font-size: 14px!important">16<sup>th</sup> Dec, 2023</h6>
                         <p style="color: #071e62; font-size: 14px;">Sat | Sun</p>
                      </div>                  
                      <div class="col-6 text-center" style="border-right:2px dashed #fff;">
                         <h5 style="color: #071e62; font-weight: 700; font-size: 16px!important;">Weekly Batch</h5>
-                        <h6 style="color: #071e62; font-weight: 700; font-size: 14px!important">8<sup>th</sup> Jan, 2024</h6>
+                        <h6 style="color: #071e62; font-weight: 700; font-size: 14px!important">18<sup>th</sup> Dec, 2023</h6>
                         <p style="color: #071e62; font-size: 14px;">Mon | Wed | Fri</p>
                      </div>
                   </div>

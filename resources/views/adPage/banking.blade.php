@@ -812,7 +812,7 @@
          <div class="student-qoute">
             <div class="course-pic relative-position text-center">
                <div class="circle-img">
-                  <img src="https://wpv1.icajobguarantee.com/wp-content/uploads/2023/08/trainers/toshali-banerjee.jpg" alt="toshali-banerjee">	
+                  <img src="https://www.icajobguarantee.com/public/upload/2023-08-23/toshali-banerjee.jpg" alt="toshali-banerjee">	
                </div>
             </div>
             <p><strong>Industry Experience:</strong> B.Sc in Pure Science + 2 yrs exp. as Computer Faculty. Trains students in Business Apps, Excel, Tally for industry-ready skills and improved job placements in a competitive market. </p>
@@ -823,7 +823,7 @@
          <div class="student-qoute">
             <div class="course-pic relative-position text-center">
                <div class="circle-img">
-                  <img src="https://wpv1.icajobguarantee.com/wp-content/uploads/2023/08/trainers/vibhanshu-sarkar.jpg" alt="vibhanshu-sarkar">
+                  <img src="https://www.icajobguarantee.com/public/upload/2023-08-23/vibhanshu-sarkar.jpg" alt="vibhanshu-sarkar">
                </div>
             </div>
             <p><strong>Industry Experience:</strong> Semi Qualified cost accountant and Master in Commerce. 8 years experience in academics, Tax Consultant and GST Practitioner . worked with numerous clients to optimize their tax strategies. </p>
@@ -834,7 +834,7 @@
          <div class="student-qoute">
             <div class="course-pic relative-position text-center">
                <div class="circle-img">
-                  <img src="https://wpv1.icajobguarantee.com/wp-content/uploads/2023/08/trainers/debajyoti-kundu.jpg" alt="debajyoti-kundu">
+                  <img src="https://www.icajobguarantee.com/public/upload/2023-08-23/debajyoti-kundu.jpg" alt="debajyoti-kundu">
                </div>
             </div>
             <p><strong>Industry Experience:</strong> M.Com + 10 yrs exp. as faculty and mentor. Microsoft Excel Certified Trainer teaching Tally, Ms. Excel, Advanced Excel, practical MIS Reporting. Enhances skills of young aspirants for industry readiness. </p>
@@ -845,7 +845,7 @@
          <div class="student-qoute">
             <div class="course-pic relative-position text-center">
                <div class="circle-img">
-                  <img src="https://wpv1.icajobguarantee.com/wp-content/uploads/2023/08/trainers/projata-dey-chatterjee.jpg" alt="projata-dey-chatterjee">
+                  <img src="https://www.icajobguarantee.com/public/upload/2023-08-23/projata-dey-chatterjee.jpg" alt="projata-dey-chatterjee">
                </div>
             </div>
             <p><strong>Industry Experience:</strong> 14 yrs exp. in education: English Facilitator, Business Communication Faculty, Mentor, Academic Manager. Sharp skills in identifying potential, teaching, and grooming students for Industry-Readiness. </p>
@@ -856,7 +856,7 @@
          <div class="student-qoute">
             <div class="course-pic relative-position text-center">
                <div class="circle-img">
-                  <img src="https://wpv1.icajobguarantee.com/wp-content/uploads/2023/08/trainers/md-naved.jpg" alt="md-naved">
+                  <img src="https://www.icajobguarantee.com/public/upload/2023-08-23/md-naved.jpg" alt="md-naved">
                </div>
             </div>
             <p><strong>Industry Experience:</strong> B. Com (Hons) and Microsoft Certified Trainer with over 14 years of expertise in Software Training like Tally, Excel & Advanced Excel. And also have a loads of Corporate Training Experience. </p>
@@ -867,7 +867,7 @@
          <div class="student-qoute">
             <div class="course-pic relative-position text-center">
                <div class="circle-img">
-                  <img src="https://wpv1.icajobguarantee.com/wp-content/uploads/2023/08/trainers/rajat-ghosh.jpg" alt="rajat-ghosh">
+                  <img src="https://www.icajobguarantee.com/public/upload/2023-08-23/rajat-ghosh.jpg" alt="rajat-ghosh">
                </div>
             </div>
             <p><strong>Industry Experience:</strong> 25 yrs exp. in Computer Academics. 19 yrs as Sr. Computer Faculty at ICA Edu Skills. Corporate Trainer, Tally Prime, Advanced Excel, MIS expert. Thousands of students succeed in corporate roles. </p>
@@ -878,7 +878,7 @@
          <div class="student-qoute">
             <div class="course-pic relative-position text-center">
                <div class="circle-img">
-                  <img src="https://wpv1.icajobguarantee.com/wp-content/uploads/2023/08/trainers/arith-das.jpg" alt="arith-das">
+                  <img src="https://www.icajobguarantee.com/public/upload/2023-08-23/arith-das.jpg" alt="arith-das">
                </div>
             </div>
             <p><strong>Industry Experience:</strong> B.Com (H) 1 yr teaching experience. Expertise: Business Computer Apps, Excel, Tally Prime. Equips students for job market success with interactive, hands-on teaching, making them industry-ready. </p>
@@ -894,6 +894,7 @@
    
 <!-- Start of View Classroom
    ============================================= -->
+   
 <section id="classroom" class="galleries-section">
    <div class="container">
       <div class="testimonial-slide">
@@ -904,63 +905,63 @@
          <div class="row">
             <div class="col-md-12">
                <div class="photo-list ul-li">
-                  <ul>
+<ul>
                      <li>
-                        <img src="https://wpv1.icajobguarantee.com/wp-content/uploads/2023/07/data-science-students.webp" alt="">
+                        <img src="https://www.icajobguarantee.com/public/upload/2023-06-12/1.jpg" alt="">
                         <div class="blakish-overlay"></div>
                         <div class="pop-up-icon">
-                           <a href="https://wpv1.icajobguarantee.com/wp-content/uploads/2023/07/data-science-students.webp" data-lightbox="roadtrip">
+                           <a href="https://www.icajobguarantee.com/public/upload/2023-06-12/1.jpg" data-lightbox="roadtrip">
                            <i class="fas fa-search"></i>
                            </a>
                         </div>
                      </li>
                      <li>
-                        <img src="https://wpv1.icajobguarantee.com/wp-content/uploads/2019/11/85872fa8-ff43-4a00-9882-3f9d1848238f.jpg" alt="">
+                        <img src="https://www.icajobguarantee.com/public/upload/2023-06-12/2.jpg" alt="">
                         <div class="blakish-overlay"></div>
                         <div class="pop-up-icon">
-                           <a href="https://wpv1.icajobguarantee.com/wp-content/uploads/2019/11/85872fa8-ff43-4a00-9882-3f9d1848238f.jpg" data-lightbox="roadtrip">
+                           <a href="https://www.icajobguarantee.com/public/upload/2023-06-12/2.jpg" data-lightbox="roadtrip">
                            <i class="fas fa-search"></i>
                            </a>
                         </div>
                      </li>
                      <li>
-                        <img src="https://wpv1.icajobguarantee.com/wp-content/uploads/2022/12/4.jpg" alt="">
+                        <img src="https://www.icajobguarantee.com/public/upload/2023-06-12/3.jpg" alt="">
                         <div class="blakish-overlay"></div>
                         <div class="pop-up-icon">
-                           <a href="https://wpv1.icajobguarantee.com/wp-content/uploads/2022/12/4.jpg" data-lightbox="roadtrip">
+                           <a href="https://www.icajobguarantee.com/public/upload/2023-06-12/3.jpg" data-lightbox="roadtrip">
                            <i class="fas fa-search"></i>
                            </a>
                         </div>
                      </li>
                      <li>
-                        <img src="https://wpv1.icajobguarantee.com/wp-content/uploads/2020/08/Classroom3.jpeg" alt="">
+                        <img src="https://www.icajobguarantee.com/public/upload/2023-06-12/4.jpg" alt="">
                         <div class="blakish-overlay"></div>
                         <div class="pop-up-icon">
-                           <a href="https://wpv1.icajobguarantee.com/wp-content/uploads/2020/08/Classroom3.jpeg" data-lightbox="roadtrip">
+                           <a href="https://www.icajobguarantee.com/public/upload/2023-06-12/1.jpg" data-lightbox="roadtrip">
                            <i class="fas fa-search"></i>
                            </a>
                         </div>
                      </li>
                      <li>
-                        <img src="https://wpv1.icajobguarantee.com/wp-content/uploads/2023/07/image-data-science-class-room.webp" alt="">
+                        <img src="https://www.icajobguarantee.com/public/upload/2023-06-12/5.jpg" alt="">
                         <div class="blakish-overlay"></div>
                         <div class="pop-up-icon">
-                           <a href="https://wpv1.icajobguarantee.com/wp-content/uploads/2023/07/image-data-science-class-room.webp" data-lightbox="roadtrip">
+                           <a href="https://www.icajobguarantee.com/public/upload/2023-06-12/2.jpg" data-lightbox="roadtrip">
                            <i class="fas fa-search"></i>
                            </a>
                         </div>
                      </li>
                      <li>
-                        <img src="https://wpv1.icajobguarantee.com/wp-content/uploads/2023/07/pic-Student_of_dataseience.webp" alt="">
+                        <img src="https://www.icajobguarantee.com/public/upload/2023-06-12/6.jpg" alt="">
                         <div class="blakish-overlay"></div>
                         <div class="pop-up-icon">
-                           <a href="https://wpv1.icajobguarantee.com/wp-content/uploads/2023/07/pic-Student_of_dataseience.webp" data-lightbox="roadtrip">
+                           <a href="https://www.icajobguarantee.com/public/upload/2023-06-12/3.jpg" data-lightbox="roadtrip">
                            <i class="fas fa-search"></i>
                            </a>
                         </div>
                      </li>
                   </ul>
-               </div>
+              </div>
             </div>
          </div>
       </div>
