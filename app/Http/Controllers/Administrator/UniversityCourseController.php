@@ -36,7 +36,7 @@ class UniversityCourseController extends Controller
                 $universityCourse->tags = Tag::select('id','name')->whereIn("id",json_decode($universityCourse->tags))->get();
             }
             $brochures = Brochure::all();
-            return view('administrator.universityCourses.show',compact('universityCourse','university','brochures'));
+            return view('administrator.universityCourses.show',compact('universityCourse','brochures'));
         } catch(\Illuminate\Database\QueryException $e){
         }        
     }

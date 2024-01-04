@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class AdPageController extends Controller
 {
-    public function index($slug,    )
+    public function index($slug,Request $request)
     {
         try {
             $center = ($request->has("center"))?$request->input('center'):null;

@@ -19,10 +19,12 @@ class EventController extends Controller
             ->where('events.status', "1")
             ->select('events.*', 'events.name as event','centers.name as center','centers.id as center_id','centers.slug as center_slug')
             ->first();
+            
+            $center = $contentMain->center; 
             if ($contentMain === null) {
                 return redirect('/events');
             }
-            return view("events.view",compact('contentMain'));
+            return view("events.view",compact('contentMain','center'));
 
         } catch(\Illuminate\Database\QueryException $th){
             throw $th;

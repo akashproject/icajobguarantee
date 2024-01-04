@@ -15,6 +15,7 @@ class CourseTypeController extends Controller
         try {
 
             $courseType = CourseType::all();
+            
             $brochures = Brochure::all();
             return view('administrator.coursetype.index',compact('courseType','brochures'));
 
