@@ -131,7 +131,7 @@
                   <h3 class="text-center" style="font-size: 24px!important;"> Professional Banking Diploma Course </h3>
                </div>               
                <div class="ad-banner-sub-title text-white">
-                  <h3 class="text-center" style="font-size: 24px!important;"> For 12th+ and Graduates </h3>
+                  <h3 class="text-center" style="font-size: 24px!important;"> Only For Graduates </h3>
                </div>
                <div class="ad-banner-option">
                   <div class="text-white">

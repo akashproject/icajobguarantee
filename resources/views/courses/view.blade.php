@@ -742,9 +742,9 @@
 										{!! substr($value->excerpt->rendered,0, 200) !!}...
 									</div>
 
-									<div class="view-all-btn bold-font">
+									<!--div class="view-all-btn bold-font">
 										<a href="{{ $value->link }}">Read More <i class="fas fa-chevron-circle-right"></i></a>
-									</div>
+									</div-->
 								</div>
 							</div>
 						</div>
@@ -758,7 +758,7 @@
 		@php
 			$reviewRatings = get_reviews_ratings("Course",$contentMain->id);
 		@endphp
-		<section id="review" class="teacher-details-area" >
+		<!--section id="review" class="teacher-details-area" >
 
 			<div class="container"> 
 
@@ -770,7 +770,7 @@
 
 						@if($reviewRatings)
 
-						<!-- /course-details -->				
+										
 
 						<div class="course-review">
 
@@ -850,7 +850,6 @@
 
 						</div>
 
-						<!-- /review overview -->
 
 						@else
 
@@ -1080,7 +1079,7 @@
 
 			</div>
 
-		</section>
+		</section-->
 
 	<!-- Start of Faqs
 	============================================= -->

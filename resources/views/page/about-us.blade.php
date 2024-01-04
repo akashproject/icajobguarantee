@@ -51,7 +51,7 @@
 									ICA takes pride in contributing to India’s skill development initiatives – not only as an independent set-up but also as a training partner for multiple educational brands and government projects.
 								</p>
 								<p>
-									With over 200 training centers across the country, we are recognised to be the best training institute in India and widely appreciated for our work by many brands and organizations every year.
+									With over 100+ training centers across the country, we are recognised to be the best training institute in India and widely appreciated for our work by many brands and organizations every year.
 								</p>
 
 							</div>
