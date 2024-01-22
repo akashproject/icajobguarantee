@@ -74,7 +74,7 @@
 			<div class="container">
 				<div class="section-title mb20 headline text-left">
 					<span class="subtitle text-uppercase">LEARN NEW SKILLS</span>
-					<h3><span>Univercity</span> Programms.</h3>
+					<h3><span>University</span> Programms.</h3>
 				</div>
 				<div id="course-slide-item" class="course-slide">
 					@if(getUniversities())

@@ -292,6 +292,7 @@ Route::post('/submit-mobile-otp', [App\Http\Controllers\IndexController::class, 
 Route::post('/capture-lead', [App\Http\Controllers\IndexController::class, 'captureLead'])->name('capture-lead');
 Route::post('/franchise-capture-lead', [App\Http\Controllers\IndexController::class, 'franchiseCaptureLead'])->name('capture-lead');
 Route::post('/capture-job-application', [App\Http\Controllers\IndexController::class, 'captureJobApplication'])->name('capture-job-application');
+Route::post('/weabiner-capture-lead', [App\Http\Controllers\IndexController::class, 'weabinerCaptureLead'])->name('weabiner-capture-lead');
 
 Route::post('/get-centers', [App\Http\Controllers\IndexController::class, 'getCenter'])->name('get-centers');
 Route::post('/get-city-by-state-id', [App\Http\Controllers\Administrator\CenterController::class, 'getCitiesByStateId'])->name('get-city-by-state-id');

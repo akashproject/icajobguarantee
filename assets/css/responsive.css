@@ -332,6 +332,36 @@
 	.photo-list img {
 		height: auto;
 	}
+	.webiner-content {
+		padding: 1rem 0;
+	}
+	.webiner-content h1 {
+		font-size: 28px;
+	}
+	.webiner-content h4 {
+		font-size: 16px;
+		margin-top: 22px;
+	}
+	.foobar {
+		position: relative !important;
+	}
+	.foobar h1 {
+		font-size: 34px;
+	}
+	
+
+	.foobar .date-meta{
+		font-size: 18px;
+	}
+
+	.webiner-content h1 {
+		font-size: 34px;
+		line-height: 36px;
+	}
+	.date-meta span {
+		padding: 4px 0 !important;
+		display: block;
+	 }
 
 }
 @media screen and (max-width: 480px) { 
