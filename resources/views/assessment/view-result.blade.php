@@ -1,8 +1,47 @@
 @extends('layouts.ad-main')
     @section('content')
-    <aside class="left-sidebar" data-sidebarbg="skin5">
-        @include('common.menu')
-    </aside>
+    <header>
+        <div id="main-menu"  class="main-menu-container header-style-2">
+            <div class="header-top">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-7">
+                        </div>
+
+                        <div class="col-md-5 top-right-bar">
+                            <div class="header-top-bar ul-li">
+                                <ul>
+                                    <li><a href="mailto:{{get_theme_setting('email')}}" ><i class="fas fa-envelope"></i> {{get_theme_setting('email')}}</a></li>
+                                    <li><a href="tel:{{get_theme_setting('mobile')}}" ><i class="fas fa-phone-square"></i> {{get_theme_setting('mobile')}}</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-menu">
+                <div class="container">
+                    <div class="navbar-default">
+                    <div class="navbar-header float-left">
+                            <a class="navbar-brand text-uppercase" href="javascript:void(0)"><img src="{{ url('assets/images/logo.png') }}" alt="ICA Edu Skills"></a>
+                        </div>
+                        <!-- /.navbar-header -->						
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+
+                        <nav class="navbar-menu float-right">
+                            <div class="nav-menu ul-li">
+                                <ul>      
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="header-devider"></section>
+    <section class="header-margin"></section>
     <section class="page-wrapper" >
         <div class="container-fluid">
             <div class="row">          
@@ -12,7 +51,7 @@
                 <div id="secondary" class="col-xl-9 col-lg-8 col-md-12 col-sm-12">
                     <div class="row">
                         <div class="result_assessment_heading" >     
-                            <h4 class=>{{ $report->name }} </h4>
+                            <h4 class=>{{ $contentMain->name }} </h4>
                         </div> 
                     </div> 
                     <!-- Services Start -->
@@ -23,12 +62,10 @@
                                 <!-- Box -->
                                 <div class="col-lg-3 col-md-6">
                                     <div class="counter_box">
-                                        <div class="icon">
-                                            <img src="{{ url('assets/images/trophy.png') }}" alt="icon" class="image-fit">
-                                        </div>
+                                       
                                         <div class="text">
                                             <div class="counter">
-                                                <span>{{$report->score}} / {{$report->total_mark}}</span>
+                                                <span>{{$contentMain->score}} / {{$contentMain->total_mark}}</span>
                                             </div>
                                             <p class="mb-0">Score</p>
                                         </div>
@@ -38,12 +75,10 @@
                                 <!-- Box -->
                                 <div class="col-lg-3 col-md-6">
                                     <div class="counter_box">
-                                        <div class="icon">
-                                            <img src="{{ url('assets/images/conclusion.png') }}" alt="icon" class="image-fit">
-                                        </div>
+                                        
                                         <div class="text">
                                             <div class="counter">
-                                                <span>{{$report->attempt}} / {{$report->total_question}}</span>
+                                                <span>{{$contentMain->attempt}} / {{$contentMain->total_question}}</span>
                                             </div>
                                             <p class="mb-0">Attempted</p>
                                         </div>
@@ -53,12 +88,10 @@
                                 <!-- Box -->
                                 <div class="col-lg-3 col-md-6">
                                     <div class="counter_box">
-                                        <div class="icon">
-                                            <img src="{{ url('assets/images/dart.png') }}" alt="icon" class="image-fit">
-                                        </div>
+                                       
                                         <div class="text">
                                             <div class="counter">
-                                                <span>{{$report->accuracy}}</span>
+                                                <span>{{$contentMain->accuracy}}</span>
                                             </div>
                                             <p class="mb-0">Accuracy</p>
                                         </div>
@@ -68,12 +101,10 @@
                                 <!-- Box -->
                                 <div class="col-lg-3 col-md-6">
                                     <div class="counter_box">
-                                        <div class="icon">
-                                            <img src="{{ url('assets/images/percent.png') }}" alt="icon" class="image-fit">
-                                        </div>
+                                        
                                         <div class="text">
                                             <div class="counter">
-                                                <span>{{$report->percentile}}</span>
+                                                <span>{{$contentMain->percentile}}</span>
                                             </div>
                                             <p class="mb-0">Percentile</p>
                                         </div>
@@ -87,7 +118,6 @@
                     <!-- Services Start -->
                     <section class="section-padding wow fadeInUp">
                         <div class="container">      
-                            <h6 style="font-size: 18px;margin-bottom: 5px;"> Detail Report </h6>   
                             <div class="row">  
                                 @php
                                     $i = 1;

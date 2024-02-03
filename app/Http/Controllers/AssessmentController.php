@@ -7,21 +7,22 @@ use App\Models\Assessment;
 use App\Models\Question;
 use App\Models\Answer;
 use App\Models\Report;
+use Illuminate\Support\Facades\DB;
 use Cookie;
 use Session;
 
 class AssessmentController extends Controller
 {
     //
-    public function startTest() {
-        try {
-            $contentMain = Adspage::where('slug', $slug)->firstOrFail();
-            $assessments = Assessment::all();
-            return view('assessment.tests',compact('assessments'));
-        } catch(\Illuminate\Database\QueryException $e){
-            return response()->json(['error' => $e->errorInfo[2]], 401);
-        }
-    }
+    // public function startTest() {
+    //     try {
+    //         $contentMain = Adspage::where('slug', $slug)->firstOrFail();
+    //         $assessments = Assessment::all();
+    //         return view('assessment.tests',compact('assessments'));
+    //     } catch(\Illuminate\Database\QueryException $e){
+    //         return response()->json(['error' => $e->errorInfo[2]], 401);
+    //     }
+    // }
 
     public function instruction($assessment_id) {
         try {
@@ -113,15 +114,16 @@ class AssessmentController extends Controller
 
     public function viewResult($id) {
         try {
-            $report = DB::table('assessment_reports')
+            $contentMain = DB::table('assessment_reports')
             ->join('assessments', 'assessments.id', '=', 'assessment_reports.assessment_id')
             ->select('assessment_reports.*','assessments.*','assessment_reports.id as report_id')
             ->where('assessment_reports.id',$id)
             ->first();
 
-            $answerSheet = json_decode($report->report,true);
+            $contentMain->enable_otp = 1;
+            $answerSheet = json_decode($contentMain->report,true);
            
-            $quesionData = Question::where('assessment_id', $report->assessment_id);
+            $quesionData = Question::where('assessment_id', $contentMain->assessment_id);
             $quesions = $quesionData->get();
             $quesionAnswer = array();
 
@@ -139,7 +141,7 @@ class AssessmentController extends Controller
                 $quesionAnswer[$quesion->id]['answer'] = $answers;
             }
             
-            return view('assessment.view-result',compact('report','quesionAnswer'));
+            return view('assessment.view-result',compact('contentMain','quesionAnswer'));
         } catch(\Illuminate\Database\QueryException $e){
             return response()->json(['error' => $e->errorInfo[2]], 401);
         }

@@ -45,10 +45,21 @@
     </header>
     <section class="header-devider"></section>
     <section class="header-margin"></section>
+    
     <section class="page-wrapper" >
-        <div class="header_portal">
-            <div class="row">
-                <h4 class="portal_heading" > <i class="fal fa-exclamation-triangle"></i> READ THE INSTRUCTIONS CAREFULLY  </h4>
+        <div class="container-fluid">
+            <div class="header_portal">
+                <div class="container">
+                    <div class="row">
+                        <div class="course-title mt10 headline relative-position height-60">
+                            <h3>
+                                <a href="courses/accounting-course-cia-foundation">
+                                    READ THE INSTRUCTIONS CAREFULLY
+                                </a> 
+                            </h3>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="container-fluid">
@@ -59,7 +70,7 @@
                 <div class="col-md-10">
                     <div class="text-center" >
                     </div>
-                    <div class="instruction_content" >
+                    <div class="course-details-content" >
                         <h6> General Information </h6>
                         <ul class="about_list style_2">
                             <li>Total duration of the paper is 3 hours (180 minutes).</li>
@@ -68,7 +79,7 @@
 
                         </ul>
                     </div>
-                    <div class="instruction_content" >
+                    <div class="course-details-content" >
                         <h6> NAVIGATING THROUGH PARTS/ SECTIONS OF QUESTION PAPER </h6>
                         <ul class="about_list style_2">
                             <li> Parts (PHYSICS, CHEMISTRY and MATHEMATICS) and sections of the parts thereof in the question paper are displayed on the top of the screen. Questions within a section can be viewed by clicking on the corresponding section name. The section which you will be viewing will be highlighted. </li>
@@ -76,7 +87,7 @@
                             <li> You can shuffle between parts/sections and questions within parts/sections anytime during the paper as per your convenience. </li>                            
                         </ul>
                     </div>
-                    <div class="instruction_content" >
+                    <div class="course-details-content" >
                         <h6> NAVIGATING TO A QUESTION </h6>
                         <p> To navigate between questions, you need to do the following: </p>
                         <ul class="about_list style_2">

@@ -5666,6 +5666,7 @@ a.sticky-btn {
 .counter h3 {
   font-size: 16px;
   color: #333;
+  margin-bottom: 30px;
 }
 .questionlist.active {
   display: block;
@@ -5712,6 +5713,7 @@ a.logout {
   border-radius: 14px;
   box-shadow: 0px 1px 8px 1px #b8becb;
   margin-bottom: 30px;
+  background: #fff;
 }
 .answers_wrap h6, .conditions_wrap h6 {
   margin: 0;
@@ -5806,4 +5808,63 @@ input.accessory_input, input.answer_input, input.condition_input {
 }
 span#counter {
   color: red;
+}
+.result_assessment_heading {
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem 0;
+  box-shadow: -1px 0px 7px 0px #c7c7c7bf;
+  background: #fff;
+  border-radius: 6px;
+}
+.result_assessment_heading h4 {
+  margin: 0;
+  font-size: 22px;
+}
+.perfomance_summary .counter_box {
+  padding: 10px;
+}
+.counter_box {
+  box-shadow: 0px 1px 30px 1px #ecf2ff;
+  display: flex;
+  align-items: center;
+  background-color: var(--thm-white);
+  padding: 31px;
+  width: 100%;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+.counter_box .text .counter>span {
+  font-size: 22px;
+  line-height: 1;
+  font-weight: 800;
+}
+.perfomance_summary .counter_box .text p {
+  font-weight: 600;
+  color: #979797;
+}
+.section-padding {
+  padding: 10px;
+}
+.answer_input + .answers_wrap.selected h6,.answer_input + .answers_wrap.true h6 {
+  color: #ffffff;
+}
+
+.answer_input + .answers_wrap.selected {
+  background: #a33a3a;
+  border: none;
+}
+.answer_input + .answers_wrap.true {
+  background: #45a145;
+  border: none;
+}
+.page-wrapper {
+  background: #eef5f9;
+  position: relative;
+}
+.instruction_content h6 {
+  margin: 0.9rem 0;
+}
+.course-details-content {
+  color: #333;
 }

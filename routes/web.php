@@ -325,7 +325,7 @@ Route::post('/index/payment-success', [App\Http\Controllers\IndexController::cla
 Route::post('/index/payment-failed', [App\Http\Controllers\IndexController::class, 'paymentFailed'])->name('payment-failed');
 
 //Assesments
-Route::get('/assesments/start-test', [App\Http\Controllers\AssessmentController::class, 'startTest'])->name('start-test');
+//Route::get('/assesments/start-test', [App\Http\Controllers\AssessmentController::class, 'startTest'])->name('start-test');
 //Route::get('/assesments/{assessment_id}', [App\Http\Controllers\AssessmentController::class, 'state'])->name('states');
 Route::get('/instruction/{assessment_id}', [App\Http\Controllers\AssessmentController::class, 'instruction'])->name('instruction');
 

@@ -1526,6 +1526,14 @@ countDown:  function (){
 		console.log("hi");
 		console.log(jQuery(this).attr("data-id"));
 	});
+
+	jQuery(".question_navigation").on("click",function(){
+        let id = jQuery(this).attr("data-id");
+        jQuery(".summary-wrap.questionlist").removeClass("active");
+        jQuery("#question_"+id).addClass("active");
+        jQuery(".question_navigation").removeClass("active");
+        jQuery(this).addClass("active");
+    });
 	
 
 

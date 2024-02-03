@@ -78,17 +78,18 @@
     </header>
     
     <section class="page-wrapper assessment-content" >
-        <div class="header_portal">
-            <div class="row">
-                <h3 class="portal_heading" > <span class="tag" > Free </span> Recommended Test Series </h3>
-                <ul class="chapter-features">
-                    <li >Examined by Experts</li>
-                    <li >Detailed solutions and analytics</li>
-                    <li >Reattempt</li></ul>
+        <div class="container">
+            <div class="header_portal">
+                <div class="row">
+                    <h3 class="portal_heading" > <span class="tag" > Free </span> Recommended Test Series </h3>
+                    <ul class="chapter-features">
+                        <li >Examined by Experts</li>
+                        <li >Detailed solutions and analytics</li>
+                        <li >Reattempt</li></ul>
+                </div>
             </div>
         </div>
         <div class="container-fluid">
-            
             <div class="row">
                 @foreach (getAssessment() as $value)
                     <div class="col-lg-6">

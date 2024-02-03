@@ -54,7 +54,7 @@
                     <div class="container">           
                         <div class="row">           
                             <div class="col-lg-8" style="border-right: 1px solid;">
-                                <div class="row text-right">
+                                <div class="row text-center">
                                     <div class="col-lg-4">
                                         <div class="counter" >
                                             <h3> Total Duration : <span> {{$contentMain->duration }} Min </span>
