@@ -1657,8 +1657,6 @@ function lead_capture_form_btn(course_id,center_id) {
 	jQuery(".lead_steps").removeClass("active");
 	jQuery(".lead_steps.step1").addClass("active");
 	jQuery('#lead-generation-form').modal('show');
-	console.log(course_id);
-	console.log(center_id);
 	if (center_id) {
 		getCenter(course_id,center_id);
 	}
@@ -1682,4 +1680,14 @@ function getCenter(course_id,center_id) {
 			$("#lead_capture_form .course_id").val(course_id);
 		}
 	});
+}
+
+function gotoPrev(params) {
+    $(".summary-wrap.questionlist").removeClass("active");
+    $("#question_"+params).addClass("active");
+}
+
+function gotoNext(params) {
+    $(".summary-wrap.questionlist").removeClass("active");
+    $("#question_"+params).addClass("active");
 }

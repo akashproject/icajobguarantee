@@ -5543,3 +5543,267 @@ a.sticky-btn {
 .ad-banner-option ul {
   color: #fff;
 }
+
+/* Assesment */
+.header_portal {
+  background: linear-gradient(167.46deg,#E9FAF1 -42.28%,#fff 134.66%);
+  position: sticky;
+  padding: 16px 26px;
+  margin-bottom: 20px;
+  color: #333;
+}
+.portal_heading {
+  font-size: 22px;
+  margin: 0.9rem 1.5rem 1.3rem 1.5rem;
+  width: 100%;
+}
+
+.portal_heading .tag {
+  position: relative;
+  border-radius: 0.25rem;
+  color: #fff;
+  display: inline-block;
+  font-weight: 600;
+  line-height: normal;
+  font-size: .75rem;
+  text-transform: uppercase;
+  overflow: hidden;
+  background-image: linear-gradient(136deg,#75cd25 2%,#25cd71 64%);
+  padding: 3px 0.5rem;
+}
+
+.header_portal {
+  background: linear-gradient(167.46deg,#E9FAF1 -42.28%,#fff 134.66%);
+  position: sticky;
+  padding: 16px 26px;
+  margin-bottom: 20px;
+}
+.header_portal .chapter-features {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: .75rem;
+  margin-left: 24px;
+}
+
+
+.header_portal .chapter-features li {
+  padding-left: 1rem;
+  background: url(../images/green-tick.svg) no-repeat left center;
+  background-size: 12px 12px;
+}
+
+/*service_block*/
+
+.service_block {
+  padding: 0;
+  margin-bottom: 30px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  z-index: 1;
+  position: relative;
+  box-shadow: 1px 1px 6px 0px #ccccccd1;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.service_block .icon {
+  margin-bottom: 17px;
+  display: inline;
+  margin-right: 15px;
+}
+
+.service_block .text {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.service_block .text .title {
+  font-weight: 600;
+  margin-bottom: 10px;
+  width: 100%;
+  background: #6c6edd;
+  text-align: center;
+  padding: 9px;
+}
+
+.service_block .text .title a {
+  font-size: 18px;
+  color: #fff;
+}
+
+.result_content {
+  padding-left: 24px;
+}
+
+.result_assessment_heading {
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem 0;
+  box-shadow: -1px 0px 7px 0px #c7c7c7bf;
+  background: #fff;
+  border-radius: 6px;
+}
+.result_assessment_heading h4 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.perfomance_summary h3 {
+  margin: 0;
+}
+
+.assessment-content {
+  padding-top: 104px;
+  color: #333;
+}
+.counter h3 {
+  font-size: 16px;
+  color: #333;
+}
+.questionlist.active {
+  display: block;
+}
+.questionlist {
+  display: none;
+}
+
+div#secondary {
+  padding-top: 20px;
+}
+
+.thank-you-img-wrap {
+  width: 113px;
+  border: 2px solid #1b991b;
+  border-radius: 50%;
+  height  : 113px;
+  margin: auto;
+  text-align: center;
+  padding-top: 22px;
+  padding-left: 7px;
+}
+
+.assessment_contact span {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 12px;
+}
+a.logout {
+  font-size: 27px;
+  padding-right: 10px;
+}
+
+#primary .student_left_menu {
+  position: fixed;
+  width: 20%;
+}
+
+.assessment_contact {
+  margin-bottom: 30px;
+}
+.summary-wrap {
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0px 1px 8px 1px #b8becb;
+  margin-bottom: 30px;
+}
+.answers_wrap h6, .conditions_wrap h6 {
+  margin: 0;
+  padding: 9px 20px;
+  font-size: 14px;
+  background: #0013980d;
+}
+.accessory_input:checked + .accessories_wrap, .answer_input:checked + .answers_wrap, .condition_input:checked + .conditions_wrap, .form-check-input:checked + .form-check-label {
+  font-weight: bold;
+  border: 1px solid #393185;
+}
+.answers_wrap {
+  width: 100%;
+}
+input.accessory_input, input.answer_input, input.condition_input {
+  position: absolute;
+  visibility: hidden;
+}
+.summary-heading {
+  font-size: 24px;
+  margin-bottom: 3px;
+  color: #333;
+}
+.summary-description {
+  margin-bottom: 30px;
+}
+.answers_wrap h6, .conditions_wrap h6 {
+  margin: 0;
+  padding: 9px 20px;
+  font-size: 14px;
+  background: #0013980d;
+  color: #333;
+}
+
+.sidebar.style_3 .info_widget.device_summary >li {
+  width: 40px;
+  display: inline-block;
+  margin: 4px 2px;
+  background: #fff;
+  border-radius: 50%;
+  height: 40px;
+  color: #3e4095;
+  border: 1px solid;
+  text-align: center;
+}
+.sidebar.style_3 .info_widget>li {
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--thm-font);
+  color: var(--thm-color-one);
+  list-style: disc;
+  margin-left: 20px;
+  padding: 9px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.sidebar_widget_inner h6 {
+  font-size: 20px;
+  line-height: 1.7;
+  color: #333;
+}
+.sidebar.style_3 .info_widget.device_summary {
+  margin: 20px 0;
+  padding: 0;
+}
+.sidebar.style_3 .info_widget.device_summary >li a {
+  width: 100%;
+  padding: 2px;
+}
+
+.sidebar.style_3 .info_widget.device_summary >li:hover {
+  background: #3e4095;
+}
+
+.sidebar.style_3 .info_widget.device_summary >li:hover a{
+  color: #fff;;
+}
+
+.sidebar.style_3 .info_widget.device_summary >li.question_navigation.active {
+  background: #3e4095;
+}
+
+.sidebar.style_3 .info_widget.device_summary >li.question_navigation.active a{
+  color: #fff;;
+}
+.sidebar.style_3 .sidebar_widget_inner {
+  padding: 30px;
+}
+.sidebar .recent_widgets ul li .text h6 {
+  font-size: 18px;
+  color: #333;
+}
+span#counter {
+  color: red;
+}

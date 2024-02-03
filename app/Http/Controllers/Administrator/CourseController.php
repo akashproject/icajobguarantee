@@ -17,9 +17,7 @@ class CourseController extends Controller
     public function index()
     {
         try {
-
             $courses = Course::all();
-            
             return view('administrator.courses.index',compact('courses'));
 
         } catch(\Illuminate\Database\QueryException $e){

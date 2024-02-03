@@ -19,6 +19,10 @@ use App\Models\Author;
 use App\Models\Tag;
 use App\Models\Category;
 use App\Models\Curriculum;
+use App\Models\Assessment;
+use App\Models\Question;
+use App\Models\Answer;
+use App\Models\Report;
 
 if (! function_exists('check_device')) {
     function check_device($param = null){
@@ -195,6 +199,17 @@ if (! function_exists('getRecruiters')) {
         }   
         $placements = $placements->where('status',"1")->get();
         return $placements;
+    }
+}
+
+if (! function_exists('getAssessment')) {
+    function getAssessment() {
+        try {
+            $assessment = Assessment::all();
+            return $assessment;
+        } catch(\Illuminate\Database\QueryException $e){
+            throw $e;
+        }
     }
 }
 
@@ -697,6 +712,7 @@ if (! function_exists('hextobin')) {
         return $binString; 
     } 
 }
+
 if (! function_exists('random_strings')) {
     function random_strings($length_of_string) {
     
@@ -709,4 +725,5 @@ if (! function_exists('random_strings')) {
                         0, $length_of_string);
     }
 }
+
 //Cripto

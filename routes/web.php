@@ -253,6 +253,23 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
  
         Route::get('/qrcode', [App\Http\Controllers\Administrator\SettingController::class, 'qrcode'])->name('qrcode');
         Route::get('/generate-qrcode', [App\Http\Controllers\Administrator\SettingController::class, 'generateQrcode'])->name('generate-qrcode');
+   
+        //Assessments
+        Route::get('/assessments', [App\Http\Controllers\Administrator\AssessmentController::class, 'index'])->name('admin-assessments');
+        Route::get('/add-assessment', [App\Http\Controllers\Administrator\AssessmentController::class, 'add'])->name('admin-add-assessment');
+        Route::get('/question/{id}', [App\Http\Controllers\Administrator\AssessmentController::class, 'question'])->name('admin-question');
+        Route::get('/view-assessment/{id}', [App\Http\Controllers\Administrator\AssessmentController::class, 'show'])->name('admin-view-assessment');
+        Route::post('/save-assessment', [App\Http\Controllers\Administrator\AssessmentController::class, 'save'])->name('admin-save-assessment');
+        Route::get('/delete-assessment/{id}', [App\Http\Controllers\Administrator\AssessmentController::class, 'show'])->name('admin-delete-assessment');
+
+        //Questions
+        Route::get('/questions', [App\Http\Controllers\Administrator\QuestionController::class, 'index'])->name('admin-questions');
+        Route::get('/add-question', [App\Http\Controllers\Administrator\QuestionController::class, 'add'])->name('admin-add-question');
+        Route::get('/view-question/{id}', [App\Http\Controllers\Administrator\QuestionController::class, 'show'])->name('admin-view-question');
+        Route::post('/save-question', [App\Http\Controllers\Administrator\QuestionController::class, 'save'])->name('admin-save-question');
+        Route::get('/delete-question/{id}', [App\Http\Controllers\Administrator\QuestionController::class, 'delete'])->name('admin-delete-question');
+   
+   
     });
     // Will be inside middleware
 });
@@ -307,6 +324,18 @@ Route::any('/enquiry-form-submit', [App\Http\Controllers\IndexController::class,
 Route::post('/index/payment-success', [App\Http\Controllers\IndexController::class, 'paymentSuccess'])->name('payment-success');
 Route::post('/index/payment-failed', [App\Http\Controllers\IndexController::class, 'paymentFailed'])->name('payment-failed');
 
+//Assesments
+Route::get('/assesments/start-test', [App\Http\Controllers\AssessmentController::class, 'startTest'])->name('start-test');
+//Route::get('/assesments/{assessment_id}', [App\Http\Controllers\AssessmentController::class, 'state'])->name('states');
+Route::get('/instruction/{assessment_id}', [App\Http\Controllers\AssessmentController::class, 'instruction'])->name('instruction');
+
+Route::get('/assesment/results', [App\Http\Controllers\AssessmentController::class, 'result'])->name('results');
+Route::get('/assesment/view-result/{id}', [App\Http\Controllers\AssessmentController::class, 'viewResult'])->name('view-result');
+Route::get('/assesment/start', [App\Http\Controllers\AssessmentController::class, 'startAssessment'])->name('start-assessment');
+Route::post('/assesment/submit', [App\Http\Controllers\AssessmentController::class, 'submitAssessment'])->name('submit-assessment');
+Route::get('/assessment-success', function () {
+    return view('user.assessment-success');
+})->name('assessment-success');
 //Route::get('/index/create-center-login', [App\Http\Controllers\IndexController::class, 'createCenterLogin'])->name('create-center-login');
 //Route::get('/index/create-university-login', [App\Http\Controllers\IndexController::class, 'createUniversityLogin'])->name('create-university-login');
 

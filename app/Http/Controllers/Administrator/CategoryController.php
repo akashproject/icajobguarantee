@@ -60,8 +60,7 @@ class CategoryController extends Controller
             var_dump($e->getMessage()); 
         }
     }
-
-    
+ 
     public function delete($id) {
         $course = Category::findOrFail($id);
         $course->delete();

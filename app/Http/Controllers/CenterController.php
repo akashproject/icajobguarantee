@@ -56,7 +56,7 @@ class CenterController extends Controller
     public function viewCenters($slug)
     {
         try {
-            $contentMain = Center::where('slug', $slug)->first();
+            $contentMain = Center::where('slug', $slug)->where('status', 1)->first();
 
             if ($contentMain === null) {
                 return redirect('/centers');
