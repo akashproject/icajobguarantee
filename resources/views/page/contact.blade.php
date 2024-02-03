@@ -53,7 +53,7 @@
 								<img src="{{ url('assets/img/customer-support-Icon.png') }}" alt="icon" class="image-fit-contain">
 							</div>
 							<div class="text">
-								<h4>Get instant support</h4>
+								<h4>Get Instant Support</h4>
 								<p>Talk to our expert counselor to enter into the career enhancement you are looking for.</p>
 								<a href="tel:+{{ get_theme_setting('mobile') }}" class="genius-btn gradient-bg text-center text-uppercase">Call Us<i class="fas fa-chevron-right ml-2"></i></a>
 							</div>
@@ -77,7 +77,7 @@
 								<img src="{{ url('assets/img/deal.png') }}" alt="icon" class="image-fit-contain">
 							</div>
 							<div class="text">
-								<h4>For ICA Partner?</h4>
+								<h4>For ICA Partnership</h4>
 								<p>Let's connect &amp; escalate all the doubts regarding the specialized course curriculum!</p>
 								<a href="tel:+{{ get_theme_setting('franchise_mobile') }}" class="genius-btn gradient-bg text-center text-uppercase">Call Us<i class="fas fa-chevron-right ml-2"></i></a>
 							</div>
@@ -91,7 +91,7 @@
 							<div class="text">
 								<h4>For Content Partnership</h4>
 								<p> ICA Edu Skills welcomes passionate writers ready to share insightful perspectives on Accounting, Taxation, Tally, GST and SAP</p>
-								<a href="mailto:arindam.mitra@icagroup.in" class="genius-btn gradient-bg text-center text-uppercase">Mail Us<i class="fas fa-chevron-right ml-2"></i></a>
+								<a href="/write-for-us" target="_blank" class="genius-btn gradient-bg text-center text-uppercase">Write For Us<i class="fas fa-chevron-right ml-2"></i></a>
 							</div>
 						</div>
 					</div>
@@ -177,7 +177,7 @@
 										</div>
 										<div class="address-details ul-li-block">
 											<ul>
-												<li><span>Primary: </span>{!! get_theme_setting('address') !!}</li>
+												<li><span>Head Office: </span>{!! get_theme_setting('address') !!}</li>
 											</ul>
 										</div>
 									</div>
