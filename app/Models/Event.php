@@ -12,6 +12,6 @@ class Event extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'id','name','title','slug','center_id','banner_image','featured_image','speaker_avatar','speaker','excerpt','description','start_date','end_date','venue','online_link','gmap','interested','enable_otp','meta_description','schema','robots','canonical','utm_campaign','utm_source','status','created_at'
+        'id','event_type_id','name','title','slug','center_id','banner_image','featured_image','speaker_avatar','speaker','excerpt','description','start_date','end_date','venue','online_link','gmap','interested','enable_otp','meta_description','schema','robots','canonical','utm_campaign','utm_source','status','created_at'
     ];
 }

@@ -25,11 +25,22 @@
 				@endif
 				<div class="row">
 					<div class="col-md-9" >
-
+						<div class="form-group row">
+							<label for="event_id" class="col-sm-3 text-right control-label col-form-label">Events</label>
+							<div class="col-sm-9">
+								<select name="event_id" id="event_id" class="select2 form-control custom-select" style="width: 100%; height:36px;">	
+									<option value="" > Select Events </option>
+									@foreach ($events as $event)
+									<option value="{{ $event->id }}" > {{ $event->name }} </option>
+									@endforeach
+								<select>
+							</div>
+						</div>
 						<div class="form-group row">
 							<label for="course_id" class="col-sm-3 text-right control-label col-form-label">Course</label>
 							<div class="col-sm-9">
 								<select name="course_id" id="course_id" class="select2 form-control custom-select" style="width: 100%; height:36px;">	
+									<option value="" > Select Courses </option>
 									@foreach($courses as $course)
 									<option value="{{ $course->id }}"  >{{ $course->name }}</option>
 									@endforeach

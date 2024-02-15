@@ -17,17 +17,28 @@ class AdPageController extends Controller
             $courseType = null;
             $courses = null;
             if ($contentMain->course_type_id) {
-                # code...
+                $course_id = [];
+                if($contentMain->course_id){
+                    $course_id[] = $contentMain->course_id;
+                } else {
+                    $courses = DB::table('courses')->select('id')->whereIn('type_id',json_decode($contentMain->course_type_id))->get()->toArray();
+                    foreach ($courses as $key => $value) {
+                        $course_id[$key] = $value->id;
+                    }
+                }
+                
                 $courseType = CourseType::whereIn('id', json_decode($contentMain->course_type_id))->get();
                 $courses = DB::table('courses')
                 ->join('course_type', 'course_type.id', '=', 'courses.type_id')
                 ->select('courses.*', 'courses.name as course_name','course_type.id as category_id','course_type.name as category','course_type.slug as categorySlug')
                 ->whereIn('course_type.id', json_decode($contentMain->course_type_id))
+                ->whereIn('courses.id', $course_id)
                 ->where('courses.status', 1)
                 ->distinct()
                 ->orderBy('courses.id', 'asc')
                 ->get();
             }
+           
             // $contentMain = Adspage::all();
             // $contentMain = $contentMain->firstOrFail();
             //print_r($contentMain->template); exit;

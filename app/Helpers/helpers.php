@@ -389,6 +389,7 @@ if (!function_exists('getCenterByBucket')) {
         
         $centers = DB::table('centers')
                 ->whereIn('id',$center_id)
+                ->where('status',1)
                 ->orderBy('name', 'asc')
                 ->get();
        
@@ -627,6 +628,17 @@ if (! function_exists('getBlogs')) {
     }
 }
 
+if (! function_exists('getNews')) {
+    function getNews(){
+        try {
+            $news = DB::table('news')->where('status',"1")->get();
+            return $news;
+        } catch (\Throwable $th) {
+            var_dump($th);
+        }
+    }
+}
+
 if (! function_exists('getTags')) {
     function getTags(){
         $tags = Tag::orderBy("id", "DESC")->take(10)->get();
@@ -725,5 +737,3 @@ if (! function_exists('random_strings')) {
                         0, $length_of_string);
     }
 }
-
-//Cripto

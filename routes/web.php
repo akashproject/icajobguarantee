@@ -176,8 +176,6 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::get('/university-curriculum/{id}', [App\Http\Controllers\Administrator\UniversityCourseController::class, 'curriculum'])->name('admin-university-course-curriculum');
         Route::post('/save-university-curriculum', [App\Http\Controllers\Administrator\UniversityCourseController::class, 'saveCurriculum'])->name('admin-save-university-course-curriculum');
        
-        // University Ads
-
         //Page
         Route::get('/university-ad-pages', [App\Http\Controllers\Administrator\UniversityAdPageController::class, 'index'])->name('admin-ad-pages');
         Route::get('/add-university-ad-page', [App\Http\Controllers\Administrator\UniversityAdPageController::class, 'Add'])->name('admin-add-ad-page');
@@ -217,6 +215,19 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::post('/save-event', [App\Http\Controllers\Administrator\EventController::class, 'save'])->name('admin-save-event');
         Route::get('/delete-event/{id}', [App\Http\Controllers\Administrator\EventController::class, 'delete'])->name('admin-delete-event');
 
+        //Event Type
+        Route::get('/event-types', [App\Http\Controllers\Administrator\EventTypeController::class, 'index'])->name('admin-event-types');
+        Route::get('/add-event-type', [App\Http\Controllers\Administrator\EventTypeController::class, 'Add'])->name('admin-add-event-type');
+        Route::get('/view-event-type/{id}', [App\Http\Controllers\Administrator\EventTypeController::class, 'show'])->name('admin-view-event-type');
+        Route::post('/save-event-type', [App\Http\Controllers\Administrator\EventTypeController::class, 'save'])->name('admin-save-event-type');
+        Route::get('/delete-event-type/{id}', [App\Http\Controllers\Administrator\EventTypeController::class, 'delete'])->name('admin-delete-event-type');
+
+        //News
+        Route::get('/news', [App\Http\Controllers\Administrator\NewsController::class, 'index'])->name('admin-news');
+        Route::get('/add-news', [App\Http\Controllers\Administrator\NewsController::class, 'add'])->name('admin-add-new');
+        Route::get('/view-news/{id}', [App\Http\Controllers\Administrator\NewsController::class, 'show'])->name('admin-view-new');
+        Route::post('/save-news', [App\Http\Controllers\Administrator\NewsController::class, 'save'])->name('admin-save-new');
+
         //Categories
         Route::get('/categories', [App\Http\Controllers\Administrator\CategoryController::class, 'index'])->name('admin-categories');
         Route::get('/add-category', [App\Http\Controllers\Administrator\CategoryController::class, 'add'])->name('admin-add-category');
@@ -250,7 +261,6 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         //Settings
         Route::get('/settings', [App\Http\Controllers\Administrator\SettingController::class, 'show'])->name('admin-settings');
         Route::post('/save-settings', [App\Http\Controllers\Administrator\SettingController::class, 'save'])->name('admin-save-settings');
- 
         Route::get('/qrcode', [App\Http\Controllers\Administrator\SettingController::class, 'qrcode'])->name('qrcode');
         Route::get('/generate-qrcode', [App\Http\Controllers\Administrator\SettingController::class, 'generateQrcode'])->name('generate-qrcode');
    
@@ -268,7 +278,6 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::get('/view-question/{id}', [App\Http\Controllers\Administrator\QuestionController::class, 'show'])->name('admin-view-question');
         Route::post('/save-question', [App\Http\Controllers\Administrator\QuestionController::class, 'save'])->name('admin-save-question');
         Route::get('/delete-question/{id}', [App\Http\Controllers\Administrator\QuestionController::class, 'delete'])->name('admin-delete-question');
-   
    
     });
     // Will be inside middleware
@@ -316,9 +325,7 @@ Route::post('/get-city-by-state-id', [App\Http\Controllers\Administrator\CenterC
 Route::post('/center/get-center-by-pincode', [App\Http\Controllers\IndexController::class, 'getCenterByPincode'])->name('get-center-by-pincode');
 
 Route::get('/events/{slug}', [App\Http\Controllers\EventController::class, 'index'])->name('view-event');
-
 Route::any('/index/test-code', [App\Http\Controllers\IndexController::class, 'testCode'])->name('test-code');
-
 Route::any('/global-other-form-submit', [App\Http\Controllers\IndexController::class, 'globalFormSubmit'])->name('global-other-form-submit');
 Route::any('/enquiry-form-submit', [App\Http\Controllers\IndexController::class, 'enquiryFormSubmit'])->name('enquiry-form-submit');
 Route::post('/index/payment-success', [App\Http\Controllers\IndexController::class, 'paymentSuccess'])->name('payment-success');
@@ -331,11 +338,13 @@ Route::get('/instruction/{assessment_id}', [App\Http\Controllers\AssessmentContr
 
 Route::get('/assesment/results', [App\Http\Controllers\AssessmentController::class, 'result'])->name('results');
 Route::get('/assesment/view-result/{id}', [App\Http\Controllers\AssessmentController::class, 'viewResult'])->name('view-result');
+Route::get('/assessments/thank-you', [App\Http\Controllers\AssessmentController::class, 'thankyou'])->name('assessments-thank-you');
 Route::get('/assesment/start', [App\Http\Controllers\AssessmentController::class, 'startAssessment'])->name('start-assessment');
-Route::post('/assesment/submit', [App\Http\Controllers\AssessmentController::class, 'submitAssessment'])->name('submit-assessment');
+Route::post('/submit-assessment', [App\Http\Controllers\AssessmentController::class, 'submitAssessment'])->name('submit-assessment');
 Route::get('/assessment-success', function () {
     return view('user.assessment-success');
 })->name('assessment-success');
+
 //Route::get('/index/create-center-login', [App\Http\Controllers\IndexController::class, 'createCenterLogin'])->name('create-center-login');
 //Route::get('/index/create-university-login', [App\Http\Controllers\IndexController::class, 'createUniversityLogin'])->name('create-university-login');
 

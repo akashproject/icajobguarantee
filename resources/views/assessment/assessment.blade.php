@@ -112,14 +112,17 @@
                             <div class="col-lg-4">
                                 <div class="sidebar style_3">
                                     <div class="sidebar_widget recent_widgets assessment_side">
-                                        <h5 class="widget_title">Assessment Details</h5>
-                                        <ul>
-                                            <li style="padding: 10px 0 0 23px;">                                  
+                                        <div class="course-title mt10 headline relative-position height-60">
+                                            <h5>
+                                                <a href="courses/accounting-course-cia-foundation">
+                                                    {{$contentMain->name}}
+                                                </a> 
+                                            </h5>
+                                        </div>
+                                        <ul style="padding: 0;list-style: none;">
+                                            <li style="padding: 10px 0 0;">                                  
                                                 <div class="text">
-                                                    <h6 class="mb-0">
-                                                        <a href="javascript:void(0)"> {{$contentMain->name}}</a>
-                                                    </h6>
-                                                    <p> {{$contentMain->description}} </p>
+                                                    <p> {!!$contentMain->description!!} </p>
                                                 </div>
                                             </li>
                                         </ul>
@@ -144,11 +147,8 @@
                                             </ul>
                                             <div class="submit_answer text-center" > 
                                                 <div class="submit_assessment genius-btn mb20 gradient-bg text-center text-uppercase ul-li-block bold-font">
-                                                    <a data-toggle="modal" data-target="#franchise-lead-generation-form" href="#submit_assessment_popup"> Submit Assessment Paper  </a>
+                                                    <a data-toggle="modal" data-target="#submit_assessment_paper" href="javascript:void(0)"> Submit Assessment Paper  </a>
                                                 </div>
-                                                <a href="#submit_assessment_popup" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle open_submit_assessment_popup" style="width: 100%;margin: auto;display: block;"> 
-                                                    Submit Test Paper 
-                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -157,30 +157,39 @@
                         </div>
                     </div>
                 </section>
-                <div id="select-city-popup" class="white-popup mfp-hide">
-                    <h5 class="text-center">Thank You! Assessment Timining Exeed</h2>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="submit_assessment genius-btn mb20 gradient-bg text-center text-uppercase ul-li-block bold-font">
-								<a data-toggle="modal" data-target="#franchise-lead-generation-form" href="javascript:void(0)"> <i class="fas fa-download" style="color: #fff;"></i> Submit Assessment Paper  </a>
-							</div>
+                <div class="modal fade" id="lead-generation-form" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div id="select-city-popup" class="white-popup mfp-hide">
+                        <h5 class="text-center">Thank You! Assessment Timining Exeed</h2>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="submit_assessment genius-btn mb20 gradient-bg text-center text-uppercase ul-li-block bold-font">
+                                    <a data-toggle="modal" data-target="#franchise-lead-generation-form" href="javascript:void(0)"> <i class="fas fa-download" style="color: #fff;"></i> Submit Assessment Paper  </a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>       
+                    </div>     
+                </div>     
+                <div class="modal fade" id="submit_assessment_paper" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            
+                            <!-- Modal body -->
+
+                            <div class="modal-body">    
+                                <div class="text-center" >
+                                    <h4 class="text-center mb-2" style="margin-bottom:0;color:#333">Ready to submit</h4>
+                                    <p> Are you sure to submit assessment </p>
+                                </div>
+                                <button type="submit" class=" genius-btn mb20 gradient-bg text-center text-uppercase ul-li-block bold-font" style="width: auto;margin: 30px auto 0;display: block;"> 
+                                    Confirm 
+                                </button>
+                            </div>
+                        </div>  
+                    </div>  
+                </div>  
             </form>
-            <div id="submit_assessment_popup" class="white-popup mfp-hide">
-                <div class="text-center" >
-                    <h5 class="text-center" style="margin-bottom:0">Ready to submit</h2>
-                    <p> Are you sure to submit assessment </p>
-                </div>
-                <div class="row">
-                    <div class="col-12 text-center">
-                        <a href="javascript:void(0)" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle submit_assessment" style="width: 100%;margin: auto;display: block;"> 
-                            Confirm 
-                        </a>
-                    </div>
-                </div>
-            </div>
+
+            
         </div>
     </section>
     @endsection   

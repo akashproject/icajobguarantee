@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Event;
 use App\Models\Center;
+use App\Models\EventType;
 
 class EventController extends Controller
 {
@@ -23,7 +24,8 @@ class EventController extends Controller
     public function add() {
         try {
             $center = Center::all();
-            return view('administrator.events.add',compact('center'));
+            $eventType = EventType::all();
+            return view('administrator.events.add',compact('center','eventType'));
         } catch(\Illuminate\Database\QueryException $e){
             //throw $th;
         }
@@ -32,13 +34,13 @@ class EventController extends Controller
  
     public function show($id)
     {
-    try {
+        try {
             $center = Center::all();
             $event = Event::findorFail($id);
-
-            return view('administrator.events.show',compact('event','center'));
-    } catch(\Illuminate\Database\QueryException $e){
-    }        
+            $eventType = EventType::all();
+            return view('administrator.events.show',compact('event','center','eventType'));
+        } catch(\Illuminate\Database\QueryException $e){
+        }        
     }
  
     public function save(Request $request) {

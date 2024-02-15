@@ -10,19 +10,10 @@ use App\Models\Report;
 use Illuminate\Support\Facades\DB;
 use Cookie;
 use Session;
+use Mail;
 
 class AssessmentController extends Controller
 {
-    //
-    // public function startTest() {
-    //     try {
-    //         $contentMain = Adspage::where('slug', $slug)->firstOrFail();
-    //         $assessments = Assessment::all();
-    //         return view('assessment.tests',compact('assessments'));
-    //     } catch(\Illuminate\Database\QueryException $e){
-    //         return response()->json(['error' => $e->errorInfo[2]], 401);
-    //     }
-    // }
 
     public function instruction($assessment_id) {
         try {
@@ -76,10 +67,9 @@ class AssessmentController extends Controller
             $takenTime = isset($seconds) ? $hours * 3600 + $minutes * 60 + $seconds : $hours * 60 + $minutes;
 
             $timeLeft = ($requestData['total_duration']*60) - $takenTime;
-
             $requestData['taken_time'] = gmdate("i:s", $timeLeft);
             $requestData['report'] = json_encode($requestData['question_answer']);
-            $requestData['lead_id'] = Session::get('user')->id;
+            $requestData['lead_id'] = Session::get('lead_id');
             $requestData['attempt'] = count($requestData['question_answer']);
             $requestData['correct'] = count($answers);
             $requestData['accuracy'] = $this->cal_percentage(count($answers), $requestData['total_question']).'%';
@@ -87,7 +77,7 @@ class AssessmentController extends Controller
             $requestData['percentile'] = $this->cal_percentage($score, $requestData['total_mark']).'%';
             
             if(Report::create($requestData)){
-                return redirect('/assessment-success');
+                return redirect('/assessments/thank-you');
             }
         } catch(\Illuminate\Database\QueryException $e){
             return response()->json(['error' => $e->errorInfo[2]], 401);
@@ -147,8 +137,41 @@ class AssessmentController extends Controller
         }
     }
 
+    public function thankyou(){
+        try {
+            $this->sendEmailAssessmentReport();
+            return view('assessment.thank-you');
+        } catch(\Illuminate\Database\QueryException $e){
+            return response()->json(['error' => $e->errorInfo[2]], 401);
+        }
+    }
+
     public function faq(){
         return view('assessment.faq');
+    }
+
+    public function sendEmailAssessmentReport(){
+        try {
+            $lead_id = Session::get('lead_id');
+            $report = DB::table('assessment_reports')
+            ->join('assessments', 'assessments.id', '=', 'assessment_reports.assessment_id')
+            ->join('leads', 'leads.id', '=', 'assessment_reports.lead_id')
+            ->select('assessment_reports.*','leads.*','assessment_reports.id as report_id')
+            ->where('leads.id',$lead_id)
+            ->first();
+            
+            $data['email'] = $report->email;
+            $data['name'] = $report->name;
+
+            $mail = Mail::send("email.assessmentScoreReport", $data, function ($m) use ($data) {
+                $m->from("connect@icajobguarantee.com", "ICA Edu Skils");
+                $m->to($data["email"], $data["name"])->subject(
+                    "Assessment Report Summary"
+                );
+            });
+        } catch(\Illuminate\Database\QueryException $e){
+            return response()->json(['error' => $e->errorInfo[2]], 401);
+        }
     }
 
     private function cal_percentage($num_amount, $num_total) {

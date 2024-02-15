@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Assessment;
 use App\Models\Question;
 use App\Models\Course;
+use App\Models\Event;
 
 class AssessmentController extends Controller
 {
@@ -14,6 +15,7 @@ class AssessmentController extends Controller
 
     public function index(){
         try {
+            
             $assessments = Assessment::all();
             return view('administrator.assessments.index',compact('assessments'));
         } catch(\Illuminate\Database\QueryException $e){
@@ -31,8 +33,8 @@ class AssessmentController extends Controller
     public function add(){
         try {
             $courses = Course::all();
-
-            return view('administrator.assessments.add',compact('courses'));
+            $events = Event::all();
+            return view('administrator.assessments.add',compact('courses','events'));
         } catch(\Illuminate\Database\QueryException $e){
         } 
     }
@@ -41,7 +43,8 @@ class AssessmentController extends Controller
         try {
             $assessment = Assessment::findOrFail($id);
             $courses = Course::all();
-            return view('administrator.assessments.show',compact('assessment','courses'));
+            $events = Event::all();
+            return view('administrator.assessments.show',compact('assessment','courses','events'));
         } catch(\Illuminate\Database\QueryException $e){
         } 
     }

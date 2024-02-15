@@ -6,50 +6,50 @@
 
    ============================================= -->
 <style >
-section#footer-area {
-    display: none;
-}
-.foobar {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-.sticky-footer {
-   display: none;
-}
-.webinar-list li {
-   margin: 10px 0;
-}
-
-.webinar-list li {
-    margin: 10px 0;
-    list-style: disc;
-    font-size: 18px;
-}
-.date-meta {
-    font-size: 18px;
-}
-.date-meta span {
-   padding: 4px 0 !important;
-   display: block;
-}
-.blink {
-   animation: blinker 1s linear infinite;
-   color:red;
-}
-
-form#banner_lead_capture_form p {
-    color: #fff;
-} 
-form#banner_lead_capture_form h4 {
-    color: #fff;
-}
-
-@keyframes blinker {
-   50% {
-         opacity: 0;
+   section#footer-area {
+      display: none;
    }
-}
+   .foobar {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+   }
+   .sticky-footer {
+      display: none;
+   }
+   .webinar-list li {
+      margin: 10px 0;
+   }
+
+   .webinar-list li {
+      margin: 10px 0;
+      list-style: disc;
+      font-size: 18px;
+   }
+   .date-meta {
+      font-size: 18px;
+   }
+   .date-meta span {
+      padding: 4px 0 !important;
+      display: block;
+   }
+   .blink {
+      animation: blinker 1s linear infinite;
+      color:red;
+   }
+
+   form#banner_lead_capture_form p {
+      color: #fff;
+   } 
+   form#banner_lead_capture_form h4 {
+      color: #fff;
+   }
+
+   @keyframes blinker {
+      50% {
+            opacity: 0;
+      }
+   }
 </style>
 <header>
 
