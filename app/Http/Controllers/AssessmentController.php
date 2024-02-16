@@ -117,7 +117,6 @@ class AssessmentController extends Controller
             $quesions = $quesionData->get();
             $quesionAnswer = array();
 
-
             foreach ($quesions as $key => $quesion) {
                 $quesionAnswer[$quesion->id] = array(
                     'id' => $quesion->id,
@@ -125,7 +124,6 @@ class AssessmentController extends Controller
                     'description' => $quesion->description,
                     'score' => $quesion->score,
                     'selected_answer' => (isset($answerSheet[$quesion->id]))?$answerSheet[$quesion->id]:'',
-
                 );
                 $answers = Answer::where('question_id', $quesion->id)->get();
                 $quesionAnswer[$quesion->id]['answer'] = $answers;
@@ -160,10 +158,20 @@ class AssessmentController extends Controller
             ->where('leads.id',$lead_id)
             ->first();
             
+            $scoreData = [
+                'id'=> $report->report_id,
+                'score'=> $report->score,
+                'total_mark'=> $report->total_mark,
+                'attempt'=> $report->attempt,
+                'total_question'=> $report->total_question,
+                'accuracy'=> $report->accuracy,
+                'percentile'=> $report->percentile,
+            ];
+
             $data['email'] = $report->email;
             $data['name'] = $report->name;
 
-            $mail = Mail::send("email.assessmentScoreReport", $data, function ($m) use ($data) {
+            $mail = Mail::send("email.assessmentScoreReport", $scoreData, function ($m) use ($data) {
                 $m->from("connect@icajobguarantee.com", "ICA Edu Skils");
                 $m->to($data["email"], $data["name"])->subject(
                     "Assessment Report Summary"
