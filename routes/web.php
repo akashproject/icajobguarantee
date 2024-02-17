@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Spatie\Honeypot\ProtectAgainstSpam;
+use Spatie\Sitemap\SitemapGenerator;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -285,6 +286,10 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
 //Page
 Route::get('/home', function () {
     return redirect()->route('administrator');  
+});
+
+Route::get('/index/sitemap', function () {
+    SitemapGenerator::create('https://www.icajobguarantee.com/')->getSitemap()->writeToDisk('public', 'sitemap.xml', true);
 });
 
 Route::get('/{slug}', [App\Http\Controllers\PageController::class, 'index'])->where('slug', '([A-Za-z0-9\-]+)');
