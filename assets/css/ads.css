@@ -5522,7 +5522,7 @@ a.sticky-btn {
   height: 100%;
 }
 
-.ad-page-banner:before {
+.banner-black-shadow:before {
   background-image: url(https://www.careerlauncher.com/cuet/graduation-in-india/images/black-background.png);
   height: 100%;
   position: absolute;
@@ -5534,6 +5534,7 @@ a.sticky-btn {
   background-size: cover;
   content: "";
 }
+
 .ad-banner-title h1 {
   color: #fff;
 }
