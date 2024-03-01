@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\DB;
 use Jenssegers\Agent\Facades\Agent;
+use Illuminate\Support\Facades\Cache;
 use Razorpay\Api\Api;
 use App\Models\Center;
 use App\Models\Course;
@@ -135,14 +136,17 @@ if (! function_exists('get_reviews_ratings')) {
 
 if (! function_exists('getTestimonials')) {
     function getTestimonials($model="",$model_id=""){
-        $testimonials = DB::table('testimonials');
-        if($model){
-            $testimonials->where('model',$model);
-        } 
-        if($model_id){
-            $testimonials->where('model_id',$model_id);
-        }   
-        $testimonials = $testimonials->where('status',"1")->get();
+
+        $testimonials = Cache::rememberForever('testimonials', function () use($model,$model_id) {
+            $testimonials = DB::table('testimonials');
+            if($model){
+                $testimonials->where('model',$model);
+            } 
+            if($model_id){
+                $testimonials->where('model_id',$model_id);
+            }   
+            return $testimonials->where('status',"1")->get();
+        });
         return $testimonials;
     }
 }
@@ -171,7 +175,7 @@ if (! function_exists('getAllFaqs')) {
 if (! function_exists('getAllBlogs')) {
     function getAllBlogs(){
         // Get Post
-        $url = "https://www.icajobguarantee.com/blog/wp-json/wp/v2/posts?per_page=100&_fields=id,title";
+        $url = "https://www.icajobguarantee.com/blog/wp-json/wp/v2/posts?filter[orderby]=date&order=desc&per_page=100&_fields=id,title,date";
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_URL, $url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -190,14 +194,16 @@ if (! function_exists('getAllBlogs')) {
 
 if (! function_exists('getRecruiters')) {
     function getRecruiters($model="",$model_id=""){
-        $placements = DB::table('recruiters');
-        if($model){
-            $placements->where('model',$model);
-        } 
-        if($model_id){
-            $placements->where('model_id',$model_id);
-        }   
-        $placements = $placements->where('status',"1")->get();
+        $placements = Cache::rememberForever('recruiters', function () use ($model,$model_id){
+            $placements = DB::table('recruiters');
+            if($model){
+                $placements->where('model',$model);
+            } 
+            if($model_id){
+                $placements->where('model_id',$model_id);
+            }   
+            return $placements->where('status',"1")->get();
+        });
         return $placements;
     }
 }
@@ -287,26 +293,25 @@ if (! function_exists('getCitiesByStateName')) {
 
 if (! function_exists('getCenters')) {
     function getCenters($course_id=null, $center_id=null){
-        $centers = DB::table('centers');
-        if($course_id){
-            $centers->where('courses','like', '%"' . $course_id . '"%');
-        } 
-        if($center_id){
-            $centers->where('id',$center_id);
-        } 
-        
-        $centers = $centers->where('status',"1");
 
-        //$radies = getRadius($_COOKIE['lat'],$_COOKIE['lng']);
-        //$centers->whereBetween('lng', [$radies['minLon'], $radies['maxLon']]);
-        //$centers->whereBetween('lat', [$radies['minLat'], $radies['maxLat']]);
-        if(isset($_COOKIE['lng']) && isset($_COOKIE['lat'])){
-            $centers->orderBy(DB::raw('POW((lng-'.$_COOKIE['lng'].'),2) + POW((lat-'.$_COOKIE['lat'].'),2)'));
-        } else {
-            $centers->orderBy("name","asc");
-        }
-        $centers->where('status',1);
-        $centers = $centers->get();       
+        
+        $centers = Cache::rememberForever('centers', function () use ($course_id,$center_id){
+            $centers = DB::table('centers');
+            if($course_id){
+                $centers->where('courses','like', '%"' . $course_id . '"%');
+            } 
+            if($center_id){
+                $centers->where('id',$center_id);
+            } 
+            $centers = $centers->where('status',"1");
+            if(isset($_COOKIE['lng']) && isset($_COOKIE['lat'])){
+                $centers->orderBy(DB::raw('POW((lng-'.$_COOKIE['lng'].'),2) + POW((lat-'.$_COOKIE['lat'].'),2)'));
+            } else {
+                $centers->orderBy("name","asc");
+            }
+            $centers->where('status',1);
+            return $centers->get();     
+        });
         return $centers;
     }
 }
@@ -494,6 +499,7 @@ if (! function_exists('getCourseById')) {
 if (! function_exists('getCourseTypes')) {
     function getCourseTypes(){
         try {
+            
             return $courseTypes = CourseType::where('status', 1)->get();
         } catch(\Illuminate\Database\QueryException $e){
             throw $e;
@@ -589,8 +595,8 @@ if (! function_exists('getBlogs')) {
             }
             
             $ids = implode(",",json_decode($ids,true));
-            $includes = "?include=".$ids;
-            $url = "https://www.icajobguarantee.com/blog/wp-json/wp/v2/posts".$includes;
+            $includes = "include=".$ids;
+            $url = "https://www.icajobguarantee.com/blog/wp-json/wp/v2/posts?".$includes."&_fields=id,title,excerpt,featured_media,date,link&date";
             $curl = curl_init($url);
             curl_setopt($curl, CURLOPT_URL, $url);
             curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);

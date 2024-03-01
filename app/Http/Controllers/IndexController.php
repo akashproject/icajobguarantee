@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -37,7 +38,8 @@ class IndexController extends Controller
     {
         try {
             $request->session()->get("userData");
-            $courses = DB::table("courses")
+            $courses = Cache::rememberForever('accounting-courses', function (){
+                return DB::table("courses")
                 ->join("course_type", "course_type.id", "=", "courses.type_id")
                 ->select(
                     "courses.*",
@@ -49,14 +51,16 @@ class IndexController extends Controller
                 ->distinct()
                 ->orderBy("courses.id", "asc")
                 ->get();
+            });
+            
+            $courseTypes = Cache::rememberForever('course-type', function (){
+                CourseType::where("status", 1)->get();
+            });
 
-            $courseTypes = CourseType::where("status", 1)->get();
             $blogs = getBlogs('["5765","5555"]');
 
-            return view(
-                $this->layout . "index",
-                compact("courses", "courseTypes", "blogs")
-            );
+            return view($this->layout . "index",compact("courses", "courseTypes", "blogs"));
+
         } catch (\Illuminate\Database\QueryException $e) {
             //throw $th;
         }

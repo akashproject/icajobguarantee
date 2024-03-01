@@ -7,65 +7,9 @@
 		============================================= -->
 
 	<section id="breadcrumb" class="inner-banner relative-position backgroud-style"  style="padding: 0;margin-top: 44px;">
-
 		<div class="container">
-
-			<div class="row">
-
-				<div class="col-md-9">
-
-
-
-					<div class="inner-banner-breadcrumb" >
-
-						<span class="breadcrumbElement"> 
-
-							<a href="{{url('/')}}" > Home </a> 
-
-						</span>
-
-						<span class="breadcrumbElement"> 
-
-							 <i class="fas fa-chevron-right"> </i>
-
-						</span> 
-
-						<span class="breadcrumbElement"> 
-
-							
-
-						 </span>
-
-					</div>
-
-					<div class="inner-banner-content">
-
-						<div class="inner-banner-title">
-
-						
-
-						</div>
-
-						<div class="inner-banner-description">
-
-							
-
-						</div>
-
-					</div>
-
-				</div>
-
-				<div class="col-md-3">
-
-					
-
-				</div>
-
-			</div>
-
+			<img src="{{ getSizedImage('',$contentMain->banner) }}" >
 		</div>
-
 	</section>
 
 	<!-- End of breadcrumb section
@@ -76,10 +20,7 @@
 		<div class="container">
 			<div class="row event-title">
 				<div class="col-md-9">
-					<h2> {{ $contentMain->name }} </h2>
-					<div class="date-meta">
-						<span class="mr-5"><i class="fas fa-user"></i> Organized By : ICA Edu Skills | {{ $contentMain->center }}  </span>
-					</div>
+					<h2> {{ $contentMain->event }} </h2>
 				</div>
 				<div class="col-md-3">
 					@if(isset($enableAssessment) && $enableAssessment != '')

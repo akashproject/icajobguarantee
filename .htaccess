@@ -2,8 +2,9 @@
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
     </IfModule>
-
     RewriteEngine On
+    RewriteCond %{SERVER_PORT} 80
+    RewriteRule ^(.*)$ https://www.icajobguarantee.com/$1 [R,L]
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
@@ -14,8 +15,676 @@
     RewriteCond %{REQUEST_URI} (.+)/$
     RewriteRule ^ %1 [L,R=301]
 
+    RewriteCond %{HTTP_HOST} ^icajobguarantee.com [NC]
+    RewriteRule ^(.*)$ http://www.icajobguarantee.com/$1 [L,R=301]
+
     # Send Requests To Front Controller...
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 </IfModule>
+<IfModule mod_headers.c>
+  Header set X-UA-Compatible "IE=Edge"
+  # mod_headers can't match by content-type, but we don't want to send this header on *everything*...
+  <FilesMatch "\.(appcache|crx|css|eot|gif|htc|ico|jpe?g|js|m4a|m4v|manifest|mp4|oex|oga|ogg|ogv|otf|pdf|png|safariextz|svg|svgz|ttf|vcf|webm|webp|woff|woff2|xml|xpi)$">
+    Header unset X-UA-Compatible
+  </FilesMatch>
+</IfModule>
+
+
+# ----------------------------------------------------------------------
+# Cross-domain AJAX requests
+# ----------------------------------------------------------------------
+
+# Serve cross-domain Ajax requests, disabled by default.
+# enable-cors.org
+# code.google.com/p/html5security/wiki/CrossOriginRequestSecurity
+
+#  <IfModule mod_headers.c>
+#    Header set Access-Control-Allow-Origin "*"
+#  </IfModule>
+
+
+# ----------------------------------------------------------------------
+# CORS-enabled images (@crossorigin)
+# ----------------------------------------------------------------------
+
+# Send CORS headers if browsers request them; enabled by default for images.
+# developer.mozilla.org/en/CORS_Enabled_Image
+# blog.chromium.org/2011/07/using-cross-domain-images-in-webgl-and.html
+# hacks.mozilla.org/2011/11/using-cors-to-load-webgl-textures-from-cross-domain-images/
+# wiki.mozilla.org/Security/Reviews/crossoriginAttribute
+
+<IfModule mod_setenvif.c>
+  <IfModule mod_headers.c>
+    # mod_headers, y u no match by Content-Type?!
+    <FilesMatch "\.(gif|ico|jpe?g|png|svg|svgz|webp)$">
+      SetEnvIf Origin ":" IS_CORS
+      Header set Access-Control-Allow-Origin "*" env=IS_CORS
+    </FilesMatch>
+  </IfModule>
+</IfModule>
+
+
+# ----------------------------------------------------------------------
+# Webfont access
+# ----------------------------------------------------------------------
+
+# Allow access from all domains for webfonts.
+# Alternatively you could only whitelist your
+# subdomains like "subdomain.example.com".
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(eot|font.css|otf|ttc|ttf|woff|woff2)$">
+    Header set Access-Control-Allow-Origin "*"
+  </FilesMatch>
+</IfModule>
+
+
+# ----------------------------------------------------------------------
+# Proper MIME type for all files
+# ----------------------------------------------------------------------
+
+# JavaScript
+#   Normalize to standard type (it's sniffed in IE anyways)
+#   tools.ietf.org/html/rfc4329#section-7.2
+AddType application/javascript         js jsonp
+AddType application/json               json
+
+# Audio
+AddType audio/mp4                      m4a f4a f4b
+AddType audio/ogg                      oga ogg
+
+# Video
+AddType video/mp4                      mp4 m4v f4v f4p
+AddType video/ogg                      ogv
+AddType video/webm                     webm
+AddType video/x-flv                    flv
+
+# SVG
+#   Required for svg webfonts on iPad
+#   twitter.com/FontSquirrel/status/14855840545
+AddType     image/svg+xml              svg svgz
+AddEncoding gzip                       svgz
+
+# Webfonts
+AddType application/vnd.ms-fontobject  eot
+AddType application/x-font-ttf         ttf ttc
+AddType application/x-font-woff        woff
+AddType application/x-font-woff        woff2
+AddType font/opentype                  otf
+
+# Assorted types
+AddType application/octet-stream            safariextz
+AddType application/x-chrome-extension      crx
+AddType application/x-opera-extension       oex
+AddType application/x-shockwave-flash       swf
+AddType application/x-web-app-manifest+json webapp
+AddType application/x-xpinstall             xpi
+AddType application/xml                     rss atom xml rdf
+AddType image/webp                          webp
+AddType image/x-icon                        ico
+AddType text/cache-manifest                 appcache manifest
+AddType text/vtt                            vtt
+AddType text/x-component                    htc
+AddType text/x-vcard                        vcf
+
+
+# ----------------------------------------------------------------------
+# Allow concatenation from within specific js and css files
+# ----------------------------------------------------------------------
+
+# e.g. Inside of script.combined.js you could have
+#   <!--#include file="libs/jquery-1.5.0.min.js" -->
+#   <!--#include file="plugins/jquery.idletimer.js" -->
+# and they would be included into this single file.
+
+# This is not in use in the boilerplate as it stands. You may
+# choose to use this technique if you do not have a build process.
+
+#<FilesMatch "\.combined\.js$">
+#  Options +Includes
+#  AddOutputFilterByType INCLUDES application/javascript application/json
+#  SetOutputFilter INCLUDES
+#</FilesMatch>
+
+#<FilesMatch "\.combined\.css$">
+#  Options +Includes
+#  AddOutputFilterByType INCLUDES text/css
+#  SetOutputFilter INCLUDES
+#</FilesMatch>
+
+
+# ----------------------------------------------------------------------
+# Gzip compression
+# ----------------------------------------------------------------------
+
+<IfModule mod_deflate.c>
+
+  # Force deflate for mangled headers developer.yahoo.com/blogs/ydn/posts/2010/12/pushing-beyond-gzipping/
+  <IfModule mod_setenvif.c>
+    <IfModule mod_headers.c>
+      SetEnvIfNoCase ^(Accept-EncodXng|X-cept-Encoding|X{15}|~{15}|-{15})$ ^((gzip|deflate)\s*,?\s*)+|[X~-]{4,13}$ HAVE_Accept-Encoding
+      RequestHeader append Accept-Encoding "gzip,deflate" env=HAVE_Accept-Encoding
+    </IfModule>
+  </IfModule>
+
+  # Compress all output labeled with one of the following MIME-types
+  # (for Apache versions below 2.3.7, you don't need to enable `mod_filter`
+  # and can remove the `<IfModule mod_filter.c>` and `</IfModule>` lines as
+  # `AddOutputFilterByType` is still in the core directives)
+  <IfModule mod_filter.c>
+    AddOutputFilterByType DEFLATE application/atom+xml \
+                                  application/javascript \
+                                  application/json \
+                                  application/rss+xml \
+                                  application/vnd.ms-fontobject \
+                                  application/x-font-ttf \
+                                  application/xhtml+xml \
+                                  application/xml \
+                                  font/opentype \
+                                  image/svg+xml \
+                                  image/x-icon \
+                                  text/css \
+                                  text/html \
+                                  text/plain \
+                                  text/x-component \
+                                  text/xml
+  </IfModule>
+
+</IfModule>
+
+
+# ----------------------------------------------------------------------
+# Expires headers (for better cache control)
+# ----------------------------------------------------------------------
+
+# These are pretty far-future expires headers.
+# They assume you control versioning with filename-based cache busting
+# Additionally, consider that outdated proxies may miscache
+#   www.stevesouders.com/blog/2008/08/23/revving-filenames-dont-use-querystring/
+
+# If you don't use filenames to version, lower the CSS and JS to something like
+# "access plus 1 week".
+
+<IfModule mod_expires.c>
+  ExpiresActive on
+
+# Perhaps better to whitelist expires rules? Perhaps.
+  ExpiresDefault                          "access plus 1 month"
+
+# cache.appcache needs re-requests in FF 3.6 (thanks Remy ~Introducing HTML5)
+  ExpiresByType text/cache-manifest       "access plus 0 seconds"
+
+# Your document html
+  ExpiresByType text/html                 "access plus 0 seconds"
+
+# Data
+  ExpiresByType application/json          "access plus 0 seconds"
+  ExpiresByType application/xml           "access plus 0 seconds"
+  ExpiresByType text/xml                  "access plus 0 seconds"
+
+# Feed
+  ExpiresByType application/atom+xml      "access plus 1 hour"
+  ExpiresByType application/rss+xml       "access plus 1 hour"
+
+# Favicon (cannot be renamed)
+  ExpiresByType image/x-icon              "access plus 1 week"
+
+# Media: images, video, audio
+  ExpiresByType audio/ogg                 "access plus 1 month"
+  ExpiresByType image/gif                 "access plus 1 month"
+  ExpiresByType image/jpeg                "access plus 1 month"
+  ExpiresByType image/png                 "access plus 1 month"
+  ExpiresByType video/mp4                 "access plus 1 month"
+  ExpiresByType video/ogg                 "access plus 1 month"
+  ExpiresByType video/webm                "access plus 1 month"
+
+# HTC files  (css3pie)
+  ExpiresByType text/x-component          "access plus 1 month"
+
+# Webfonts
+  ExpiresByType application/vnd.ms-fontobject "access plus 1 month"
+  ExpiresByType application/x-font-ttf    "access plus 1 month"
+  ExpiresByType application/x-font-woff   "access plus 1 month"
+  ExpiresByType font/opentype             "access plus 1 month"
+  ExpiresByType image/svg+xml             "access plus 1 month"
+
+# CSS and JavaScript
+  ExpiresByType application/javascript    "access plus 1 year"
+  ExpiresByType text/css                  "access plus 1 year"
+
+</IfModule>
+
+
+# ----------------------------------------------------------------------
+# Prevent mobile network providers from modifying your site
+# ----------------------------------------------------------------------
+
+# The following header prevents modification of your code over 3G on some
+# European providers.
+# This is the official 'bypass' suggested by O2 in the UK.
+
+# <IfModule mod_headers.c>
+# Header set Cache-Control "no-transform"
+# </IfModule>
+
+
+# ----------------------------------------------------------------------
+# ETag removal
+# ----------------------------------------------------------------------
+
+# FileETag None is not enough for every server.
+<IfModule mod_headers.c>
+  Header unset ETag
+</IfModule>
+
+# Since we're sending far-future expires, we don't need ETags for
+# static content.
+#   developer.yahoo.com/performance/rules.html#etags
+FileETag None
+
+
+# ----------------------------------------------------------------------
+# Stop screen flicker in IE on CSS rollovers
+# ----------------------------------------------------------------------
+
+# The following directives stop screen flicker in IE on CSS rollovers - in
+# combination with the "ExpiresByType" rules for images (see above).
+
+# BrowserMatch "MSIE" brokenvary=1
+# BrowserMatch "Mozilla/4.[0-9]{2}" brokenvary=1
+# BrowserMatch "Opera" !brokenvary
+# SetEnvIf brokenvary 1 force-no-vary
+
+
+# ----------------------------------------------------------------------
+# Set Keep-Alive Header
+# ----------------------------------------------------------------------
+
+# Keep-Alive allows the server to send multiple requests through one
+# TCP-connection. Be aware of possible disadvantages of this setting. Turn on
+# if you serve a lot of static content.
+
+# <IfModule mod_headers.c>
+#   Header set Connection Keep-Alive
+# </IfModule>
+
+
+# ----------------------------------------------------------------------
+# Cookie setting from iframes
+# ----------------------------------------------------------------------
+
+# Allow cookies to be set from iframes (for IE only)
+# If needed, specify a path or regex in the Location directive.
+
+# <IfModule mod_headers.c>
+#   Header set P3P "policyref=\"/w3c/p3p.xml\", CP=\"IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT\""
+# </IfModule>
+
+
+# ----------------------------------------------------------------------
+# Start rewrite engine
+# ----------------------------------------------------------------------
+
+# Turning on the rewrite engine is necessary for the following rules and
+# features. FollowSymLinks must be enabled for this to work.
+
+# Some cloud hosting services require RewriteBase to be set: goo.gl/HOcPN
+# If using the h5bp in a subdirectory, use `RewriteBase /foo` instead where
+# 'foo' is your directory.
+
+# If your web host doesn't allow the FollowSymlinks option, you may need to
+# comment it out and use `Options +SymLinksIfOwnerMatch`, but be aware of the
+# performance impact: http://goo.gl/Mluzd
+
+<IfModule mod_rewrite.c>
+  <IfModule mod_negotiation.c>
+    Options -MultiViews -Indexes
+  </IfModule>
+
+  RewriteEngine On
+
+  # Handle Authorization Header
+  RewriteCond %{HTTP:Authorization} .
+  RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+  # Redirect Trailing Slashes If Not A Folder...
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} (.+)/$
+  RewriteRule ^ %1 [L,R=301]
+
+  # Handle Front Controller...
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^ index.php [L]
+</IfModule>
+
+
+# ----------------------------------------------------------------------
+# Suppress or force the "www." at the beginning of URLs
+# ----------------------------------------------------------------------
+
+# The same content should never be available under two different URLs -
+# especially not with and without "www." at the beginning, since this can cause
+# SEO problems (duplicate content). That's why you should choose one of the
+# alternatives and redirect the other one.
+
+# By default option 1 (no "www.") is activated.
+# no-www.org/faq.php?q=class_b
+
+# If you'd prefer to use option 2, just comment out all option 1 lines
+# and uncomment option 2.
+
+# IMPORTANT: NEVER USE BOTH RULES AT THE SAME TIME!
+
+# ----------------------------------------------------------------------
+
+# Option 1:
+# Rewrite "www.example.com -> example.com".
+
+<IfModule mod_rewrite.c>
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ http://%1%{REQUEST_URI} [R=301,L]
+</IfModule>
+
+# ----------------------------------------------------------------------
+
+
+Options -MultiViews
+
+
+# ----------------------------------------------------------------------
+# Custom 404 page
+# ----------------------------------------------------------------------
+
+# You can add custom pages to handle 500 or 403 pretty easily, if you like.
+# If you are hosting your site in subdirectory, adjust this accordingly
+#    e.g. ErrorDocument 404 /subdir/404.html
+ErrorDocument 404 /404.html
+
+
+# ----------------------------------------------------------------------
+# UTF-8 encoding
+# ----------------------------------------------------------------------
+
+# Use UTF-8 encoding for anything served text/plain or text/html
+AddDefaultCharset utf-8
+
+# Force UTF-8 for a number of file formats
+AddCharset utf-8 .atom .css .js .json .rss .vtt .xml
+
+<IfModule mod_autoindex.c>
+  Options -Indexes
+</IfModule>
+
+# Block access to "hidden" directories or files whose names begin with a
+# period. This includes directories used by version control systems such as
+# Subversion or Git.
+<IfModule mod_rewrite.c>
+  RewriteCond %{SCRIPT_FILENAME} -d [OR]
+  RewriteCond %{SCRIPT_FILENAME} -f
+  RewriteRule "(^|/)\." - [F]
+</IfModule>
+
+# Block access to backup and source files. These files may be left by some
+# text/html editors and pose a great security danger, when anyone can access
+# them.
+<FilesMatch "(\.(bak|config|dist|fla|inc|ini|log|psd|sh|sql|swp)|~)$">
+  Order allow,deny
+  Deny from all
+  Satisfy All
+</FilesMatch>
+
+
+# Increase cookie security
+<IfModule mod_php5.c>
+  php_value session.cookie_httponly true
+</IfModule>
+
+# Redirect Engine switched on
+RewriteEngine On
+
+#A all redirected pages
+
+#Wildcard Landing Page Redirection
+RedirectMatch 301 ^/enroll/.*$  /ads/accounting-courses
+RedirectMatch 301 ^/enrol/.*$  /ads/accounting-courses
+#Wildcard Landing Page Redirection
+
+#A1 at website header & footer of old site
+Redirect 301 /awards-recognition /about-us
+Redirect 301 /ica-edu-skills-team /about-us
+Redirect 301 /gst-tally-accounts-sap-fico-finance-course-training-institute /centers
+Redirect 301 /accounts-gst-sap-tally-career-opportunities /placements
+Redirect 301 /bcom-bsc-college-courses https://eduversity.icajobguarantee.com
+Redirect 301 /eduversity https://eduversity.icajobguarantee.com
+Redirect 301 /terms-of-use /terms-conditions
+Redirect 301 /Verify/OnlineCertificateView.aspx https://student.icajobguarantee.com/Verify/OnlineCertificateView.aspx
+RedirectMatch 301 ^/teams/.*$   /about-us
+
+#A1 at website header & footer of old site
+
+#A2 all old course pages
+Redirect 301 /courses/accounts-course	/courses/accounting-course-cia
+Redirect 301 /courses/accounting-taxation-course	/courses/accounting-course-sap-fico
+Redirect 301 /courses/best-accounts-finance-banking-courses	/courses/accounting-course-cia-express
+Redirect 301 /courses/tally-gst-sap-fico-accounts-course	/courses/accounting-course-sap-fico
+Redirect 301 /courses/mis-microsoft-excel-office-courses	/courses/accounting-course-cia-foundation
+Redirect 301 /courses/tally-course-training-institute	/courses/tallyprime-gst-course
+Redirect 301 /courses/gst-course-training-institute	/courses/gst-certification-course
+Redirect 301 /courses/sap-course-training-institute	/courses/sap-fico-course
+Redirect 301 /courses/best-stock-market-certification-course	/courses/stock-market-certification-course-nccmp
+Redirect 301 /courses/cia-courses-accounts-finance-taxation	/courses/accounting-course-cia
+Redirect 301 /courses/cia-foundation	/courses/accounting-course-cia-foundation
+Redirect 301 /courses/cia-plus-accounting-course	/courses/accounting-course-sap-fico
+Redirect 301 /courses/sap-business-user	/courses/sap-fico-course
+Redirect 301 /courses/goods-and-service-tax	/courses/gst-certification-course
+#A2 all old course pages
+
+#A3 at website all center pages
+Redirect 301 /centers/rajendra-nagar-bilaspur /centers/rajendra-nagar-road-bilaspur
+Redirect 301 /centers/accounts-gst-tally-sap-course-bangalore-rajaji-nagar	/centers/1st-main-road-rajaji-nagar
+Redirect 301 /centers/accounts-gst-tally-sap-course-north-campus	/centers/22-mall-road-north-campus
+Redirect 301 /centers/accounts-gst-tally-sap-course-gandhipuram-coimbatore	/centers/7th-cross-street-gandhipuram
+Redirect 301 /centers/accounts-gst-tally-sap-course-sakchi	/centers/aambagan-sakchi-jamshedpur
+Redirect 301 /centers/accounts-gst-tally-sap-course-alambagh-lucknow	/centers/alambagh-lucknow
+Redirect 301 /centers/accounts-gst-tally-sap-course-ambernath	/centers/ambernath-thane
+Redirect 301 /centers/accounts-gst-tally-sap-course-andheri	/centers/andheri-mumbai
+Redirect 301 /centers/accounts-gst-tally-sap-course-cuttack	/centers/arundoya-market-cuttack
+Redirect 301 /centers/accounts-gst-tally-sap-course-ahmedabad	/centers/ashram-road-ahmedabad
+Redirect 301 /centers/accounts-gst-tally-sap-course-maligaon	/centers/assam-trunk-rd-maligaon
+Redirect 301 /centers/accounts-gst-tally-sap-course-serampore	/centers/b.p-dey-street-serampore
+Redirect 301 /centers/accounts-gst-tally-sap-course-jorhat	/centers/babupatty-jorhat
+Redirect 301 /centers/accounts-gst-tally-sap-course-kashipur	/centers/bajpur-rd-kashipur
+Redirect 301 /centers/accounts-gst-tally-sap-course-ballygunge	/centers/ballygunge-kolkata
+Redirect 301 /centers/accounts-gst-tally-sap-course-bandra	/centers/bandra-west-mumbai
+Redirect 301 /centers/accounts-gst-tally-sap-course-alwar	/centers/baraf-khana-road-alwar
+Redirect 301 /centers/accounts-gst-tally-sap-course-barasat	/centers/barasat-kolkata
+Redirect 301 /centers/accounts-gst-tally-sap-course-barrackpore	/centers/barrackpore-kolkata
+Redirect 301 /centers/accounts-gst-tally-sap-course-coochbehar	/centers/bazar-coochbehar
+Redirect 301 /centers/accounts-gst-tally-sap-course-behala	/centers/behala-kolkata
+Redirect 301 /centers/accounts-gst-tally-sap-course-noida	/centers/bhoja-market-noida
+Redirect 301 /centers/accounts-gst-tally-sap-course-preet-vihar	/centers/block-f-preet-vihar
+Redirect 301 /centers/accounts-gst-tally-sap-course-borivali	/centers/borivali-west-mumbai
+Redirect 301 /centers/accounts-gst-tally-sap-course-vashi	/centers/business-park-corporate-wing-vashi
+Redirect 301 /centers/accounts-gst-tally-sap-course-gorakhpur-bakshipur	/centers/buxipur-road-gorakhpur
+Redirect 301 /centers/accounts-gst-tally-sap-course-camp	/centers/camp-pune
+Redirect 301 /centers/accounts-gst-tally-sap-course-chandannagar	/centers/chandannagar-hooghly
+Redirect 301 /centers/accounts-gst-tally-sap-course-chinchwad	/centers/chinchwad-east-pune
+Redirect 301 /centers/accounts-gst-tally-sap-course-exide-more-chowringhee	/centers/chowringhee-road-exide-more-kolkata
+Redirect 301 /centers/accounts-gst-tally-sap-course-durgapur	/centers/city-center-durgapur
+Redirect 301 /centers/accounts-gst-tally-sap-course-dhanbad-city-centre	/centers/city-centre-dhanbad
+Redirect 301 /centers/accounts-gst-tally-sap-course-jalandhar	/centers/civil-line-jalandhar
+Redirect 301 /centers/accounts-gst-tally-sap-course-bhubaneswar	/centers/cs-pur-road-bhubaneswar
+Redirect 301 /centers/accounts-gst-tally-sap-course-hajipur	/centers/dackbanglow-road-hajipur
+Redirect 301 /centers/accounts-gst-tally-sap-course-dadar	/centers/dadar-west-mumbai
+Redirect 301 /centers/accounts-gst-tally-sap-course-pathankot	/centers/dalhousie-bypass-pathankot
+Redirect 301 /centers/accounts-gst-tally-sap-course-dalhousie	/centers/dalhousie-kolkata
+Redirect 301 /centers/accounts-gst-tally-sap-course-panbazar	/centers/danish-road-panbazar
+Redirect 301 /centers/accounts-gst-tally-sap-course-dhankawadi	/centers/dhankawadi-pune
+Redirect 301 /centers/accounts-gst-tally-sap-course-palakkad	/centers/district-hospital-road-palakkad
+Redirect 301 /centers/accounts-gst-tally-sap-course-howrah	/centers/dobson-road-howrah
+Redirect 301 /centers/accounts-gst-tally-sap-course-dombivili	/centers/dombivli-east-thane
+Redirect 301 /centers/accounts-gst-tally-sap-course-malappuram	/centers/down-hill-malappuram
+Redirect 301 /centers/accounts-gst-tally-sap-course-dunlop	/centers/dunlop-kolkata
+Redirect 301 /centers/accounts-gst-tally-sap-course-dwarka-mor	/centers/dwarka-mor-metro-station-delhi
+Redirect 301 /centers/accounts-gst-tally-sap-course-dehradun-ec-road	/centers/ec-road-dehradun
+Redirect 301 /centers/accounts-gst-tally-sap-course-ballia	/centers/gadwar-road-ballia
+Redirect 301 /centers/accounts-gst-tally-sap-course-rishikesh	/centers/ganga-nagar-rishikesh
+Redirect 301 /centers/accounts-gst-tally-sap-course-thane	/centers/gokhale-road-thane
+Redirect 301 /centers/accounts-gst-tally-sap-course-sovabazar	/centers/grey-st-sovabazar
+Redirect 301 /centers/accounts-gst-tally-sap-course-kukatpally	/centers/hyder-nagar-kukatpally
+Redirect 301 /centers/accounts-gst-tally-sap-course-patna-kidwaipuri	/centers/income-tax-chauraha-kidwaipuri
+Redirect 301 /centers/accounts-gst-tally-sap-course-lucknow-indira-nagar	/centers/indira-nagar-lucknow
+Redirect 301 /centers/accounts-gst-tally-sap-course-guwahati-6-mile	/centers/jayanagar-road-six-mile-guwahati
+Redirect 301 /centers/accounts-gst-tally-sap-course-joka	/centers/joka-kolkata
+Redirect 301 /centers/accounts-gst-tally-sap-course-hazaribag	/centers/julu-park-road-hazaribagh
+Redirect 301 /centers/accounts-gst-tally-sap-course-kalkaji	/centers/kalkaji-delhi
+Redirect 301 /centers/accounts-gst-tally-sap-course-kalyani	/centers/kalyani-nadia
+Redirect 301 /centers/accounts-gst-tally-sap-course-kankarbagh	/centers/kankarbagh-patna
+Redirect 301 /centers/accounts-gst-tally-sap-course-pitampura-rohini	/centers/kapil-vihar-pitampura
+Redirect 301 /centers/accounts-gst-tally-sap-course-kothrud	/centers/karve-rd-kothrud
+Redirect 301 /centers/accounts-gst-tally-sap-course-midnapore	/centers/keranitola-midnapore
+Redirect 301 /centers/accounts-gst-tally-sap-course-khanpur	/centers/khanpur-delhi
+Redirect 301 /centers/accounts-gst-tally-sap-course-burdwan	/centers/khosbagan-bardhaman
+Redirect 301 /centers/accounts-gst-tally-sap-course-asansol-kumarpur/	/centers/kumarpur-asansol
+Redirect 301 /centers/accounts-gst-tally-sap-course-bistupur	/centers/l-road-bistupur
+Redirect 301 /centers/accounts-gst-tally-sap-course-faridabad	/centers/main-market-faridabad
+Redirect 301 /centers/accounts-gst-tally-sap-course-ranchi-main-road	/centers/main-road-ranchi
+Redirect 301 /centers/accounts-gst-tally-sap-course-peeragarhi	/centers/main-rohtak-road-peeragarhi
+Redirect 301 /centers/accounts-gst-tally-sap-course-nelamangala	/centers/maruthi-nagar-main-road-nelamangala
+Redirect 301 /centers/accounts-gst-tally-sap-course-gandhinagar	/centers/meghmalhar-complex-gandhinagar
+Redirect 301 /centers/accounts-gst-tally-sap-course-ameerpet-hyderabad	/centers/nilgeri-block-ameerpet
+Redirect 301 /centers/accounts-gst-tally-sap-course-tollygunge	/centers/n-s-c-bose-road-tollygunge
+Redirect 301 /centers/accounts-gst-tally-sap-course-bathinda	/centers/old-bus-stand-bhatinda
+Redirect 301 /centers/accounts-gst-tally-sap-course-gurgaon	/centers/old-dlf-colony-gurgaon
+Redirect 301 /centers/accounts-gst-tally-sap-course-janakpuri	/centers/pankha-rd-janakpuri
+Redirect 301 /centers/accounts-gst-tally-sap-course-udaipur	/centers/patel-market-udaipur-city
+Redirect 301 /centers/accounts-gst-tally-sap-course-cochin	/centers/pukkattupady-road-cochin
+Redirect 301 /centers/accounts-gst-tally-sap-course-siliguri	/centers/punjabi-para-siliguri
+Redirect 301 /centers/accounts-gst-tally-sap-course-vasai	/centers/purvee-chamber-vasai
+Redirect 301 /centers/accounts-gst-tally-sap-course-pusa-road	/centers/pusa-road-delhi
+Redirect 301 /centers/accounts-gst-tally-sap-course-kolhapur	/centers/rajarampuri-kolhapur
+Redirect 301 /centers/accounts-gst-tally-sap-course-jadavpur	/centers/raja-subodh-chandra-mallick-road-jadavpur
+Redirect 301 /centers/accounts-gst-tally-sap-course-rajouri-garden	/centers/ring-road-rajouri-garden
+Redirect 301 /centers/accounts-gst-tally-sap-course-mau	/centers/sahadatpura-mau
+Redirect 301 /centers/accounts-gst-tally-sap-course-ahmednagar	/centers/savedi-road-ahemednagar
+Redirect 301 /centers/accounts-gst-tally-sap-course-chandigarh	/centers/sector-34a-chandigarh
+Redirect 301 /centers/accounts-gst-tally-sap-course-saltlake	/centers/sec-v-saltlake-bidhannagar
+Redirect 301 /centers/accounts-gst-tally-sap-course-allahabad-shantipuram	/centers/shantipuram-allahabad
+Redirect 301 /centers/accounts-gst-tally-sap-course-jammu	/centers/shastri-nagar-jammu
+Redirect 301 /centers/accounts-gst-tally-sap-course-sodepur	/centers/sodepur-kolkata
+Redirect 301 /centers/accounts-gst-tally-sap-course-hadapsar	/centers/solapur-road-hadapsar
+Redirect 301 /centers/accounts-gst-tally-sap-course-yehalanka	/centers/someshwara-nagar-main-road-yelahanka
+Redirect 301 /centers/accounts-gst-tally-sap-course-panvel	/centers/st-depot-panvel
+Redirect 301 /centers/accounts-gst-tally-sap-course-allahabad-civil-lines	/centers/tashkand-marg-allahabad
+Redirect 301 /centers/accounts-gst-tally-sap-course-tilak-road	/centers/tilak-road-pune
+Redirect 301 /centers/accounts-gst-tally-sap-course-ultadanga	/centers/vip-road-ultadanga-more-bidhannagar
+Redirect 301 /centers/accounts-gst-tally-sap-course-yamuna-vihar	/centers/yamuna-vihar-road-delhi
+Redirect 301 /centers/accounts-gst-tally-sap-course-purulia    /centers/ranchi-purulia-road
+Redirect 301 /centers/purulia-road    /centers/ranchi-purulia-road
+Redirect 301 /centers/maligaon  /centers/assam-trunk-rd-maligaon
+Redirect 301 /centers/savedi-road-ahemednagar /centers/savedi-road-ahmednagar
+Redirect 301 /centers/a-b-p-dey-street-serampore /centers/b.p-dey-street-serampore
+#A3 at website all center pages
+
+
+#A4 at website all blog pages
+Redirect 301 /accounting-course-know-all-about-indian-accounting-standards /blog/accounting-course-know-all-about-indian-accounting-standards
+Redirect 301 /accounting-institute-top-10-accounting-software-in-india   /blog/accounting-institute-top-10-accounting-software-in-india
+Redirect 301 /accounts-training-institute-role-of-accounting-in-corporate-governance /blog/accounts-training-institute-role-of-accounting-in-corporate-governance
+Redirect 301 /best-sap-courses-to-enhance-career-in-finance-management   /blog/best-sap-courses-to-enhance-career-in-finance-management
+Redirect 301 /best-sap-training-institute-2022   /blog/best-sap-training-institute-2022
+Redirect 301 /best-tally-training-institute  /blog/best-tally-training-institute
+Redirect 301 /gst-course-reverse-charge-mechanism   /blog/gst-course-reverse-charge-mechanism
+Redirect 301 /gst-professional-training /gst-professional-training
+Redirect 301 /gst-training-tax-structure-in-india-simplified /blog/gst-training-tax-structure-in-india-simplified
+Redirect 301 /importance-of-financial-markets-course-in-2020-indian-economy/ /blog/importance-of-financial-markets-course-in-2020-indian-economy
+Redirect 301 /professional-training-accounts-sap-tally/  /blog/professional-training-accounts-sap-tally/
+Redirect 301 /sap-course-for-non-it-students /blog/sap-course-for-non-it-students
+Redirect 301 /sap-course-top-questions-on-sap-fico /blog/sap-course-top-questions-on-sap-fico
+Redirect 301 /sap-fico-training-institute /blog/sap-fico-training-institute
+Redirect 301 /sap-training-institute-product-costing-in-sap-fico /blog/sap-training-institute-product-costing-in-sap-fico
+Redirect 301 /short-term-courses-for-accounts-professionals /blog/short-term-courses-for-accounts-professionals
+Redirect 301 /tally-course-preparing-balance-sheet-in-tally /blog/tally-course-preparing-balance-sheet-in-tally
+Redirect 301 /tally-institute-near-me-2022/ /blog/tally-institute-near-me-2022/
+Redirect 301 /weird-accounting-facts-we-bet-you-didnt-know  /blog/weird-accounting-facts-we-bet-you-didnt-know
+#A4 at website all blog pages
+
+
+#A5 at website which google found as 404 pages
+Redirect 301 /professional-training-accounts-sap-tally  /courses/accounting-course-sap-fico
+Redirect 301 /classroom-courses /courses
+Redirect 301 /all-courses	/courses
+Redirect 301 /all-course/   /courses
+RedirectMatch 301 ^/college_courses/.*$   https://eduversity.icajobguarantee.com
+RedirectMatch 301 ^/lpu/.*$	/courses
+RedirectMatch 301 ^/KnWdZ/.*$	/courses
+Redirect 301 /contact-page	/contact-us
+Redirect 301 /Placement/Other	/placements
+Redirect 301 /batch-schedule	/
+Redirect 301 /videos.php	/
+Redirect 301 /upcoming-webinar	/
+Redirect 301 /career.php	/career
+Redirect 301 /ciaglobal /courses
+Redirect 301 /professional-course	/category/career-courses
+Redirect 301 /GST_TALLY_ACCOUNTS_SAP/webinars	/
+Redirect 301 /course_type/career-course	/category/career-courses
+Redirect 301 /KnWdZ	/
+Redirect 301 /course/download-brochure.php?BId=MjIwMg==	/
+Redirect 301 /course_type/job-assistance-course	/
+Redirect 301 /emailer/all-field-lp	/
+Redirect 301 /Admissions_Sharda_University/index.html	https://eduversity.icajobguarantee.com
+Redirect 301 /?p=384	/
+Redirect 301 /career_jobs/senior-executive-digital-marketing	/career
+Redirect 301 /MQOgZ/centre	/centers
+Redirect 301 /ica-centers	/centers
+Redirect 301 /accounts_training_course/	/courses/accounting-course-cia
+Redirect 301 /short_term_accounting_course	/courses/accounting-course-cia-foundation
+Redirect 301 /accounting-tally-gst-course	/courses/accounting-course-cia-foundation
+Redirect 301 /accounts_gst_tally-erp_sap	/courses/accounting-course-cia-foundation
+Redirect 301 /diploma_finance_course	/courses/best-financial-market-course
+Redirect 301 /finance_certification_courses	/courses/best-financial-market-course
+Redirect 301 /courses/gst-course-training-institute	/courses/gst-certification-course
+Redirect 301 /best_gst_course	/courses/gst-certification-course
+Redirect 301 /best_sap_fico_course	/courses/sap-fico-course
+Redirect 301 /best_tally_prime_course	/courses/tallyprime-gst-course
+Redirect 301 /business-opportunity	/franchise-opportunity
+Redirect 301 /Students/Placements	/placements
+Redirect 301 /ica-placement	/placements
+Redirect 301 /interview-process	/placements
+Redirect 301 /placement-live /placements
+Redirect 301 /franchise-opportunities /franchise-opportunity
+Redirect 301 /job-search /career
+Redirect 301 /certified-gst-professional-training-courses /blog/certified-gst-professional-training-courses
+#A5 at website which google earlier found as 404 pages
+
+
+#A6 at website which are redirected to online website
+Redirect 301 /online-admission-form	https://www.icacourse.in/
+Redirect 301 /Online-Admission-form https://www.icacourse.in/
+Redirect 301 /professional-online-accounts-taxation-course/  /courses/accounting-course-online-cia/
+Redirect 301 /ciacourse/advanced-accounts   https://www.icacourse.in/courses/accounting-course-online-cia/
+Redirect 301 /ciacourse/advanced-ms-excel/  https://www.icacourse.in/courses/advance-excel-course-online/
+Redirect 301 /ciacourse/business-communication https://www.icacourse.in/courses/business-accounting-course-online/
+Redirect 301 /ciacourse/certified-industrial-accountant-express-cia https://www.icacourse.in/courses/accounting-course-online-cia/
+Redirect 301 /ciacourse/tallyprime-business-accounting-gst-tds/  https://www.icacourse.in/courses/business-accounting-and-taxation-course-online/
+Redirect 301 /ciacourse/tallyprime-gst-tds/\ https://www.icacourse.in/courses/tallyprime-gst-tds-course-online/
+Redirect 301 /ciacourse	https://www.icacourse.in/online-accounting-courses/
+Redirect 301 /ciacourse/certified-industrial-accountant-express-cia-express/	https://www.icacourse.in/courses/accounting-course-online-cia-express/
+Redirect 301 /ciacourse/accounts_gst_tallyprime_sap_fico_training_institute/	https://www.icacourse.in/courses/accounting-course-online-sap-fico
+Redirect 301 /ciacourse/certified-industrial-accountant-sap/	https://www.icacourse.in/courses/accounting-course-online-sap-fico/
+Redirect 301 /ciacourse/certified-industrial-accountant-plus-cia-plus/	https://www.icacourse.in/courses/accounting-course-online-sap-fico/
+Redirect 301 /ciacourse/advanced-ms-excel/	https://www.icacourse.in/courses/advance-excel-course-online/
+Redirect 301 /ciacourse/tallyprime-business-accounting-gst-tds/	https://www.icacourse.in/courses/business-accounting-and-taxation-course-online/
+Redirect 301 /ciacourse/business-accounting/	https://www.icacourse.in/courses/business-accounting-course-online/
+Redirect 301 /ciacourse/gst-tds/	https://www.icacourse.in/courses/gst-course-online-with-tds/
+Redirect 301 /ciacourse/goods-and-services-tax-gst/	https://www.icacourse.in/courses/gst-course-online-with-tds/
+Redirect 301 /ciacourse/ms-office-2019/	https://www.icacourse.in/courses/ms-office-2019-course-online/
+Redirect 301 /ciacourse/tallyprime-ms-office/	https://www.icacourse.in/courses/tallyprime-and-ms-office-online/
+Redirect 301 /ciacourse/tallyprime-gst-tds/	https://www.icacourse.in/courses/tallyprime-gst-tds-course-online/
+Redirect 301 /ciacourse/tallyprime-business-accounting/	https://www.icacourse.in/courses/tallyprime-with-business-accounting-online/
+Redirect 301 /ciacourse/tallyprime-payroll/	https://www.icacourse.in/courses/tallyprime-with-payroll-online/
+#A6 at website which are redirected to online website

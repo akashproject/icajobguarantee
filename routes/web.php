@@ -17,7 +17,7 @@ header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE, PATCH');
 header('Access-Control-Allow-Headers: Content-Type, X-Auth-Token, Origin, Authorization');
 
-Route::get('/clear-cache', function() {
+Route::get('/index/clear-cache', function() {
     echo $exitCode = Artisan::call('cache:clear');
     // return what you want
 });
@@ -30,6 +30,13 @@ Route::get('/schedule-run', function() {
     // return what you want
 });
 
+
+Route::get('/index/update-review', function() {
+    $output = [];
+    $exitCode = Artisan::call('update:review', $output);
+    dd($output);
+    // return what you want
+});
 Route::get('/linkstorage', function () {
    echo Artisan::call('storage:link');
 });
@@ -289,7 +296,7 @@ Route::get('/home', function () {
 });
 
 Route::get('/index/sitemap', function () {
-    SitemapGenerator::create('https://www.icajobguarantee.com/')->getSitemap()->writeToDisk('public', 'sitemap.xml', true);
+    SitemapGenerator::create('https://www.myidcm.com/')->getSitemap()->writeToDisk('public', 'sitemap.xml', true);
 });
 
 Route::get('/{slug}', [App\Http\Controllers\PageController::class, 'index'])->where('slug', '([A-Za-z0-9\-]+)');
