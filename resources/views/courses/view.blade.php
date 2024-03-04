@@ -106,7 +106,7 @@
                      <i class="text-gradiant flaticon-book"></i>
                   </div>
                   <div class="counter-number">
-                     <span class="counter-count bold-font">24</span><span>+</span>
+                     <span class="counter-count bold-font">25</span><span>+</span>
                      <p>Years of Excellence</p>
                   </div>
                </div>
