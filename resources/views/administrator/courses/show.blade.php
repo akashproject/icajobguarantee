@@ -416,7 +416,7 @@
 
 									@foreach(getAllBlogs() as $key => $value)
 
-									<option value="{{ $value->id }}" {{ (in_array($value->id,  json_decode($course->blog)))?'selected' : '' }} >{{$key+1}}. {{ $value->title->rendered }} </option>
+									<option value="{{ $value->id }}" {{ (isset($course->blog)  && in_array($value->id,  json_decode($course->blog)))?'selected' : '' }} >{{$key+1}}. {{ $value->title->rendered }} </option>
 
 									@endforeach
 

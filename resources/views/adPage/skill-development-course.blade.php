@@ -102,91 +102,108 @@
 </header>
 <!-- Start of Header section
    ============================================= -->
-<section id="breadcrumb" class="ad-page-banner relative-position backgroud-style" style="background-image: url({{ (isset($contentMain->banner_image))?getSizedImage('',$contentMain->banner_image):url('assets/img/banner/brt-1.jpg') }});" >
+<section id="breadcrumb" class="ad-page-banner relative-position backgroud-style" >
    <div class="container">
-      <div class="row">
-         <div class="col-md-7">
-            <div class="ad-banner-content">
-               <div class="ad-banner-title">
-                  <h1 class="text-center">Industrial Accounting Courses</h1>
-               </div>
-               <div class="ad-banner-sub-title">
-                  <h3 class="text-center" style="font-size: 1.2rem!important;"> 100% Job Guarantee | Triple Certifications | 7 Simulation Softwares </h3>
-               </div>
+      <div class="row text-dark-gray">
+         <div class="col-md-8">
+            <ol class="inner-banner-breadcrumb">
+                     <li class="breadcrumbElement">
+                     <a href="javascript:void(0)">Home</a>
+                     <span> 
+                     <i class="fas fa-chevron-right"> </i>
+                     </span> 
+               </li>
+                     <li class="breadcrumbElement">
+                     <a href="javascript:void(0)">Courses</a>
+                     <span class="breadcrumbElement"> 
+                     <i class="fas fa-chevron-right"> </i>
+                     </span> 
+                  </li>
+                  <li class="breadcrumbElement">
+                     Advanced Excel Course
+                  </li>
+               </ol>
+               <div class="ad-banner-content">
+                     <div class="ad-banner-title">
+                     <img src="{{url('assets/img/banner-icon.webp')}}" >
+                     </div>
                <div class="ad-banner-option">
-                  <div class="">
-                     <p>Elevate your skills and transform your career with specialized training towards professional excellence</p>
-                  </div>
-                  <div class="row">
-                     <div class="col-md-6">
-                        <ul>
-                           <li><strong>Eligibility:</strong> 12+/Graduate</li>
-                           <li><strong>Course Type:</strong> Short Term Course</li>
-                           <li><strong>Delivery Mode:</strong> Classroom/Offline</li>
-                           <li><strong>Language:</strong> English/Hindi</li>
-                        </ul>
-                     </div>
-                     <div class="col-md-6">
-                        <ul>
-                           <li><strong>Difficulty Level:</strong> Beginner</li>
-                           <li><strong>Duration:</strong> 6/8/12/18 Months</li>
-                           <li><strong>Offer:</strong> Any Time Job (ATJ) Card </li>
-                           <li><strong>Doubt Clearing Session:</strong> Yes</li>
-                        </ul>
+                     <div class="mt-2">
+                        <h5>Elevate your skills and transform your career with specialized training towards professional excellence</h5>
                      </div>
                   </div>
-                  <div class="row">
-                     <div class="col-md-12 text-center bold-font" style=" padding: 5px; background: #0034D7;">
-                        <div class="total-rating text-white">
-                           Rating: <a href="javascript:void(0)" style="color: #fff;" > 5.0 </a>
-                           <div class="ratings " style="display: inline;margin: 0 6px;">
-                              <i class="fas fa-star active"></i>
-                              <i class="fas fa-star active"></i>
-                              <i class="fas fa-star active"></i>
-                              <i class="fas fa-star active"></i>
-                              <i class="fas fa-star active"></i>
-                           </div>
-                           <a href="javascript:void(0)" class="text-white" style="cursor: auto;margin: 0 6px;"> (10167 Reviews)</a> <span class="text-white total-enroll" > 12589 students </span>
-                        </div>
+                  <div class="ad-banner-sub-title my-5">
+                  <div class="row"> 
+                     <div class="col-md-3 text-center" style="">
+                        <img src="{{url('assets/img/handshake.png')}}" >
+                        <h5 class="mt-2">100% Job Guarantee </h5>
                      </div>
+                     <div class="col-md-3 text-center" style="">
+                        <img src="{{url('assets/img/award.png')}}" >
+                        <h5 class="mt-2">Triple Certifications </h5>
+                     </div>
+                     <div class="col-md-3 text-center" style="">
+                        <img src="{{url('assets/img/software.png')}}" >
+                        <h5 class="mt-2">7 Simulation Softwares</h5>
+                     </div>
+                     <div class="col-md-3">
+                     </div>
+                  </div>
+                     </div>
+                     <div class="ad-banner-option my-5">
+                  <span class="enroll-btn genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font mb10">
+                     <a onclick="lead_capture_form_btn('',3)" href="javascript:void(0)"> Download Brochure </a>
+                  </span>
+
+                  <span class="apply-now">
+                     <a onclick="lead_capture_form_btn('',3)" href="javascript:void(0)"> Apply Now </a>
+                  </span>
+               </div>
+               </div>
+         </div>
+         <div class="col-md-4">
+            <div class="mt-5" >
+               <img src="https://dummyimage.com/420x390" >
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+<!-- Start of Header section
+   ============================================= -->
+<section id="" class="inline-lead-form-section">
+   <div class="container-fluid inline-lead-form" >
+      <div class="container">
+         <form method="post" action="" > 
+            <div class="row" >
+               <div class="col-md-2" >
+                  <div class="contact-info">
+                     <input class="mobile" name="mobile" type="number" placeholder="Enter Your Mobile" autocomplete="off" required>
+                  </div>
+               </div>
+               <div class="col-md-2" >
+                  <div class="contact-info">
+                     <input class="mobile" name="mobile" type="number" placeholder="Enter Your Mobile" autocomplete="off" required>
+                  </div>
+               </div>
+               <div class="col-md-2" >
+                  <div class="contact-info">
+                     <input class="mobile" name="mobile" type="number" placeholder="Enter Your Mobile" autocomplete="off" required>
+                  </div>
+               </div>
+               <div class="col-md-2" >
+                  <div class="contact-info">
+                     <input class="mobile" name="mobile" type="number" placeholder="Enter Your Mobile" autocomplete="off" required>
+                  </div>
+               </div>
+               <div class="col-md-2" >
+                  <div class="contact-info">
+                     <input class="mobile" name="mobile" type="number" placeholder="Enter Your Mobile" autocomplete="off" required>
                   </div>
                </div>
             </div>
-         </div>
-         <div class="col-md-5">
-            <div class="highlighted-content-wrapper text-center">
-               <div class="ad_banner_form_wrapeer" >
-                  <div class="register-fomr-title text-center">
-                     <h3 class="bold-font" style="font-size: 21px!important;"><span> Become a </span><br /> Certified Accounting Professional </h3>
-                     <p style="color: #222!important;" class="bold-font">Our experts will help you choose the best Accounting Training program for a successful career</p>
-                  </div>
-                  <div class="register-form-area text-left" >
-                     <form id="banner_lead_capture_form" class="lead_form" action="{{ url('capture-lead') }}" method="POST" enctype="multipart/form-data">
-                        <div class="form_process" >
-                           <div class="lead_steps step1 active">
-                              @include('common.leadCaptureFormField')
-                              <div class="form-group disclaimer text-left">
-                                 <p style="margin:0">
-                                    <input style="margin-left: 0;width: auto;vertical-align: middle;height: auto;" type="checkbox" class="" checked="">  I agree to receive updates on <i class="fa fa-whatsapp" style="color: green;"></i> whatsapp. 
-                                 </p>
-                                 <p>
-                                    <input style="margin-left: 0;width: auto;vertical-align: middle;height: auto;" type="checkbox" class="" checked=""> I agree to <a href="/privacy-policy" target="_blank">Privacy Policy</a> &amp; overriding DNC/NDNC request for Call/SMS. 
-                                 </p>
-                              </div>
-                           </div>
-                           @include('common.leadCaptureFormOtpField')
-                        </div>
-                        <div class="form_success" style="display:none">
-                           <div class="form-success-content">
-                              <span class="success-icon"> <i class="fas fa-check"></i> </span>
-                              <h4> Thank You! Your Application Submitted Successfully </h4>
-                           </div>
-                        </div>
-                     </form>
-                  </div>
-               </div>
-            </div>
-         </div>
+         </form>
       </div>
    </div>
 </section>
