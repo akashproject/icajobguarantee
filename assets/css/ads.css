@@ -190,29 +190,22 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
 }
 
-.ad-banner-option p {
-  color: #fff;
-}
-
 .ad-banner-content {
-  color: #fffdfd;
-  margin: 2.5rem 9px;
-  background: #ffffff21;
-  padding: 26px;
   border-radius: 20px;
+  padding-top: 14px;
 }
 
 .ad-banner-title h1 {
   line-height: 2.5rem;
   font-size: 38px;
   font-weight: 600;
-  color: #333;
 }
 .ad-banner-subtitle {
   color: #333;
 }
-.ad-banner-option {
-  margin: 2rem 0;
+
+.text-dark-gray {
+  color: #333;
 }
 
 .ad-banner-option span {
@@ -227,9 +220,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 15px;
   font-weight: 600;
 }
-.ad-banner-sub-title {
-  margin: 1.2rem 0;
-}
+
 .ad-banner-sub-title h2 {
   font-size: 22px;
 }
@@ -535,7 +526,6 @@ color: #128C7E;
   padding: 1.2rem;
   color: #1b1b1b;
   font-weight: 500;
-  width: 80%;
   margin: auto;
   border: 3px solid #d9d9d9;
   border-radius: 5px;
@@ -1057,6 +1047,13 @@ section.header-margin {
       border-radius: 4px;
       width: 100%;
       border: none; }
+      .inline-lead-form input, .inline-lead-form select, .inline-lead-form .register-form-area select, .register-form-area .inline-lead-form select, .inline-lead-form .register-form-area textarea, .register-form-area .inline-lead-form textarea {
+        height: 50px;
+        background-color: #eeeeee;
+        padding: 15px;
+        border-radius: 4px;
+        width: 100%;
+        border: none; }
  .nws-button button {
     height: 50px;
     width: 100%;
@@ -5522,7 +5519,7 @@ a.sticky-btn {
   height: 100%;
 }
 
-.ad-page-banner:before {
+.banner-black-shadow:before {
   background-image: url(https://www.careerlauncher.com/cuet/graduation-in-india/images/black-background.png);
   height: 100%;
   position: absolute;
@@ -5534,12 +5531,7 @@ a.sticky-btn {
   background-size: cover;
   content: "";
 }
-.ad-banner-title h1 {
-  color: #fff;
-}
-.ad-banner-sub-title h3 {
-  color: #fff;
-}
+
 .ad-banner-option ul {
   color: #fff;
 }
@@ -5867,4 +5859,22 @@ span#counter {
 }
 .course-details-content {
   color: #333;
+}
+.inner-banner-breadcrumb {
+  margin: 1.9rem 0;
+  padding: 0;
+}
+
+.inner-banner-breadcrumb .breadcrumbElement {
+  font-size: 16px;
+  margin: 0 0.2rem;
+  display: inline;
+}
+.inline-lead-form-section {
+  padding: 60px 0px  60px !important;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  top: -40px;
+  background: #535bbb;
 }

@@ -49,6 +49,7 @@ class CourseController extends Controller
             } else {
                 $faq = [];
             }
+            
             return view('administrator.courses.show',compact('course','courseType','brochures','faq'));
         } catch(\Illuminate\Database\QueryException $e){
         }        

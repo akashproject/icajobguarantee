@@ -20,7 +20,7 @@ class EventController extends Controller
             ->leftJoin('assessments', 'assessments.event_id', '=', 'events.id')
             ->where('events.slug', $slug)
             ->where('events.status', "1")
-            ->select('events.*','event_types.*', 'events.name as event','centers.name as center','centers.id as center_id','centers.slug as center_slug','assessments.id as assessment_id')
+            ->select('events.*','event_types.*', 'events.name as event','centers.name as center','centers.id as center_id','centers.slug as center_slug','assessments.id as assessment_id','events.banner_image as banner','events.speaker as speaker')
             ->first();
             
             $center = isset($contentMain->center)?$contentMain->center:'';
