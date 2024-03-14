@@ -62,10 +62,10 @@
 						</ul>
 					</div>
 					<div class="comment-ratting float-left ul-li px-3" style="font-weight: 600;border-left: 1px  solid;border-right: 1px solid;">
-                     <span>{{ number_format($contentMain->number_of_rating) }} Rating </span>
+                     <span>{{ number_format($contentMain->number_of_rating) }} Votes </span>
                   </div>
                <div class="comment-ratting float-left ul-li mx-3" style="font-weight: 600;">
-						<span>{{ number_format($contentMain->number_of_enrolled) }} Enrolled  </span>
+						<span>{{ number_format($contentMain->number_of_enrolled) }} Students  </span>
 					</div>
                
 				</div>

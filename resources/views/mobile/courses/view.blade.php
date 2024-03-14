@@ -62,10 +62,10 @@
                      </ul>
                   </div>
                   <div class="comment-ratting float-left ul-li px-3" style="font-weight: 600;border-left: 1px  solid;border-right: 1px solid;">
-                     <span>{{ $contentMain->number_of_rating }} Rating </span>
+                     <span>{{ $contentMain->number_of_rating }} Votes </span>
                   </div>
                   <div class="comment-ratting float-left ul-li mx-3" style="font-weight: 600;">
-                     <span>{{ thousandsCurrencyFormat($contentMain->number_of_enrolled) }} Enrolled  </span>
+                     <span>{{ $contentMain->number_of_enrolled }} Students  </span>
                   </div>
                </div>
                <div class="inner-banner-description">
