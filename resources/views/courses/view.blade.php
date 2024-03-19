@@ -44,7 +44,7 @@
                   </span> 
                </li>
                <li class="breadcrumbElement">
-                  {{ $contentMain->name }}
+                  {{ $contentMain->name }} <a class="share-popup social-share" href="#modelShare" ><i class="fas fa-share-alt"></i> </a>
                </li>
             </ol>
             <div class="inner-banner-content">
