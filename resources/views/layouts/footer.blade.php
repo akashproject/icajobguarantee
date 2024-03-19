@@ -95,6 +95,32 @@
     <div id="feedback">
         <a href="javascript:void(0)" onclick="lead_capture_form_btn(1,'')" >Enquire Now</a>
     </div>
+
+    <div id="modelShare" class="white-popup mfp-hide">
+        <h4> Share this page </h4>
+        <p> Share this page’s details with your family and friends. </p>
+        <div class="input-share-content" >
+            <div class="input-share" >
+                <input id="shareTextInput" type="text" value="{{url()->current()}}">
+            </div>
+            <div class="copy-link-btn" >
+                <a href="javascript:void(0)" > <i class="fa fa-copy"></i> Copy Link </a>
+            </div>
+        </div>
+        <div class="social-share-content" >
+            <p class="social-icon" > 
+                <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{url()->current()}}" > <i class="fab fa-facebook-f" style="color:#316FF6"></i> </a>
+            </p> 
+            <p class="social-icon" > 
+                <a target="_blank" href="https://www.linkedin.com/shareArticle?url={{url()->current()}}&title=Explore ICA Edu Skills" > <i class="fab fa-linkedin" style="color:#0A66C2" ></i> </a>
+            </p>
+            <p class="social-icon" > 
+                <a href="whatsapp://send?text=Explore ICA Edu Skills! {{url()->current()}}" data-action="share/whatsapp/share" > <i class="fab fa-whatsapp"></i> </a>
+            </p>
+           
+        </div>
+    </div>
+
     @if(!check_device('desktop'))
     <div class="sticky-footer">
         <div class="container">

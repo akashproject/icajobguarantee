@@ -11,7 +11,7 @@
 </div>
 
 <div class="contact-info formFieldPincode">
-    <input id="formFieldPincode" name="pincode" type="number" placeholder="Enter Your Address Pincode" min="100000" max="999999" autocomplete="off" required>
+    <input id="formFieldPincode" name="pincode" type="number" placeholder="Enter Pincode of Present Address" min="100000" max="999999" autocomplete="off" required>
 </div>
 
 @if(isset($_GET['city']))

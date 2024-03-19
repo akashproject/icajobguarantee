@@ -183,6 +183,9 @@
 	}
 }
 @media screen and (max-width: 767px) { 
+	.gradient-title {
+		width: 100%;
+	}
 	.about-resigter-form {
 		margin: 0 auto;
 		border-radius: 4px;
@@ -361,8 +364,33 @@
 	.date-meta span {
 		padding: 4px 0 !important;
 		display: block;
-	 }
+	}
 
+	#modelShare .input-share {
+		width: 100%;
+	}
+	.copy-link-btn {
+		display: block;
+		margin-bottom: 15px;
+	}
+
+	.banner-background-gradient {
+		padding: 0 10px 13px 10px;
+	}
+
+	.faq-section-title{
+		background: linear-gradient(to right, #5d59ff, #000000);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		font-weight: 600;
+	}
+	.usp-content {
+		width: 100% !important;
+	}
+	.faq-section-title h3 {
+		font-size: 32px;
+		line-height: 33px;
+	}
 }
 @media screen and (max-width: 480px) { 
 	.section-title.mb20.headline.text-left {

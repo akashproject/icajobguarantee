@@ -43,7 +43,7 @@ Route::get('/linkstorage', function () {
 
 
 
-Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () {
+Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () {   
     Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 'create'])->name('admin-register');
     Route::get('/login', [App\Http\Controllers\Administrator\AdminAuthController::class, 'login'])->name('admin-login');
     Route::post('/login', [App\Http\Controllers\Auth\LoginController::class, 'authenticate'])->name('verify-login');
@@ -71,6 +71,7 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::get('/delete-affiliate-user/{id}', [App\Http\Controllers\Administrator\AffiliateController::class, 'deleteUser'])->name('admin-delete-affiliate-user');
         
         Route::get('/enquires', [App\Http\Controllers\Administrator\EnquiryController::class, 'index'])->name('admin-enquires');
+        Route::get('/enquiry/{id}', [App\Http\Controllers\Administrator\EnquiryController::class, 'show'])->name('admin-enquiry');
         Route::get('/generate-enquiry-form', [App\Http\Controllers\Administrator\EnquiryController::class, 'createForm'])->name('admin-generate-enquiry-form');
 
         //Page

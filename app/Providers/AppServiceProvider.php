@@ -58,7 +58,7 @@ class AppServiceProvider extends ServiceProvider
 
             //student Menu
             $studentMenu = array(
-                "/category/career-courses" => 'Career Courses',
+                "/category/career-courses" => 'Job Guarantee Courses',
                 "/centers" => "Centers",
                 "/eduversity" => "University",
                 "https://www.icacourse.in" => "Online Courses",

@@ -5468,3 +5468,84 @@ img.width-100 {
   width: 100%;
   height: 100%;
 }
+
+.white-popup {
+  position: relative;
+  background: #FFF;
+  padding: 20px 40px;
+  width: auto;
+  max-width: 820px;
+  margin: 20px auto;
+  transition: 1s all;
+}
+.mfp-hide {
+  display: none !important;
+}
+#modelShare {
+  text-align: center;
+}
+#modelShare h4 {
+  color: #333;
+  text-align: center;
+  margin: 11px 0;
+}
+#modelShare p {
+  color: #545454;
+}
+
+#modelShare .input-share {
+  width: 80%;
+  display: inline-flex;
+  border-right: 1px solid #ccc;
+  overflow: hidden;
+}
+
+#modelShare input {
+  height: 50px;
+  padding: 15px;
+  width: 100%;
+  border: none;
+}
+
+.input-share-content {
+  border: 1px solid #ccc;
+  display: block;
+  overflow: hidden;
+}
+
+.social-share-content {
+  margin-top: 20px;
+}
+
+.copy-link-btn {
+  vertical-align: middle;
+  margin-top: 15px;
+  border: 1px #ccc;
+  display: inline;
+  padding-left: 17px;
+  color: #3b5bcd;
+}
+
+.social-icon {
+  display: inline-block;
+  padding-top: 5px;
+  margin: 0 7px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 1px solid;
+  font-size: 21px;
+}
+.section-usp-container {
+  width: 80%;
+  margin: auto;
+}
+.usp-content {
+  width: 100%;
+  padding: 3rem;
+  color: #fff;
+  border: 0.5px solid;
+  height: 220px;
+  text-align: center;
+  padding-top: 3.5rem;
+}

@@ -59,7 +59,7 @@ class CenterController extends Controller
             $contentMain = Center::where('slug', $slug)->where('status', 1)->first();
 
             if ($contentMain === null) {
-                return redirect('/centers');
+                return redirect('/centers',301);
             }
 
             $centerCourses = CenterCourse::where('center_id',$contentMain->id)->where('status',1)->get();

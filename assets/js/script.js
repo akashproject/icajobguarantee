@@ -23,6 +23,7 @@ let pincode;
 				this.placementSlide();
 				this.testimonialSlide();
 				this.videoPopup();
+				this.sharePopup();
 				this.sponsorSlide();
 				this.blogsSlide();
 				this.bestproductSlide();
@@ -83,7 +84,6 @@ menuBar: function (){
 			jQuery('.page-inside-menu').hide()
 			jQuery('.event-details-header').removeClass("stickey-header")
 		}
-
 	})
 
 },
@@ -424,7 +424,18 @@ videoPopup: function (){
 		preloader: false,
 		fixedContentPos: false
 	});
-	
+},
+/* End of popup
+================================================*/
+
+/* Start of popup
+================================================*/
+sharePopup: function (){
+	jQuery('.share-popup').magnificPopup({
+		type: 'inline',
+		midClick: true,
+		mainClass: 'mfp-fade'
+	});
 },
 /* End of popup
 ================================================*/
@@ -1141,6 +1152,19 @@ searchBAR: function (){
 		
 	});
 
+	jQuery(".copy-link-btn").on(function(){
+		var copyText = document.getElementById("shareTextInput");
+		// Select the text field
+		copyText.select();
+		copyText.setSelectionRange(0, 99999); // For mobile devices
+	  
+		 // Copy the text inside the text field
+		navigator.clipboard.writeText(copyText.value);
+		// Alert the copied text
+		alert("Copied the text: " + copyText.value);
+		
+	});
+
 	jQuery(".popup-close span").on("click",function(){
 		let id = $(this).parent().parent().parent().parent().parent().attr("id");
 		console.log(id);
@@ -1461,6 +1485,7 @@ searchBAR: function (){
 		countDown();
 		sendMobileOtp(formId);
 	});
+
 
 	function classroomOnFormSubmitProcess(form){
 		let formId = $(form).attr('id');

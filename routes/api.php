@@ -18,3 +18,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::group(['prefix' => 'api', 'namespace' => 'Api'], function () {   
+    Route::get('/city', function () {
+        return json_encode(['sddassa']);
+    });
+});

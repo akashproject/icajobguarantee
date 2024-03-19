@@ -27,6 +27,7 @@ class RouteServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->configureRateLimiting();
+        $this->removeIndexFromUrl();
 
         $this->routes(function () {
             Route::middleware('api')
@@ -48,5 +49,17 @@ class RouteServiceProvider extends ServiceProvider
         RateLimiter::for('api', function (Request $request) {
             return Limit::perMinute(60)->by($request->user()?->id ?: $request->ip());
         });
+    }
+
+    protected function removeIndexFromUrl()
+    {
+        if (strpos($_SERVER['REQUEST_URI'],'index.php') !== FALSE ) {
+            $url = str_replace('index.php/', '', request()->getRequestUri());
+
+            if (strlen($url) > 0) {
+                header("Location: $url", true, 301);
+                exit;
+            }
+        }
     }
 }

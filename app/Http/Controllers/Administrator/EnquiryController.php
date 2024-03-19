@@ -20,12 +20,31 @@ class EnquiryController extends Controller
             $center = Center::where('name',$name)->first();
 
             return view('administrator.enquiry.index',compact('enquiry','name','center'));
-
         } catch(\Illuminate\Database\QueryException $e){
             //throw $th;
         }
         
     }
 
+    public function show($id)
+    {
+        try {
+            $enquiry = Enquiry::findOrFail($id);
+            if(isset($enquiry->qualification)){
+                $qualification = [];
+                $enquiry->qualification = json_decode($enquiry->qualification);
+                foreach($enquiry->qualification as $key => $value){
+                    for ($i=0; $i < count($value); $i++) { 
+                        $qualification[$i] = $value[$i];
+                    }
+                }
+                print_r($qualification);
+            } else {
+                $enquiry->qualification;
+            }
+            return view('administrator.enquiry.show',compact('enquiry'));
+        } catch(\Illuminate\Database\QueryException $e){
 
+        }
+    }
 }

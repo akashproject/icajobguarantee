@@ -243,6 +243,15 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
+.gradient-title {
+  background: linear-gradient(to right, #5d59ff, #000000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+  width: 50%;
+  margin: auto !important;
+  text-align: center;
+}
 
 ul.product-tab.index-category-tab li.active,ul.course-tab.index-category-tab li.active {
   color: #393185;
@@ -5877,4 +5886,61 @@ span#counter {
   z-index: 2;
   top: -40px;
   background: #535bbb;
+}
+
+.usp-container {
+  background-color: #fffdfd;
+  padding: 60px 0px 10px !important;
+  margin: 0 auto;
+  border-radius: 5px;
+  position: relative;
+  z-index: 2;
+  top: -40px;
+  box-shadow: 0px 2px 6px 0px #cbcbcb;
+}
+
+.two-grid-panel {
+  border: double 2px transparent;
+  border-radius: 10px;
+  background-image: linear-gradient(white, white), linear-gradient(to right, #03A9F4, #00BCD4);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  overflow: hidden;
+}
+
+.affiliate-market-accordion .leanth-duration {
+  display: flex;
+  margin-top: 11px;
+}
+
+.affiliate-market-accordion .leanth-duration span {
+  background: linear-gradient(to right, #057eb5, #179edb, #2196F3);
+  padding: 12px 20px;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  border-radius: 4px;
+  text-transform: uppercase;
+  color: #fff;
+  margin-right: 6px;
+}
+
+.panel-group .two-grid-panel .panel-title .btn-link {
+  display: block;
+  padding: 8px;
+  position: relative;
+  width: 99%;
+  text-align: left;
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: 800;
+  color: #393185;
+  margin: 10px 3px;
+}
+.banner-background-gradient {
+  background: linear-gradient(to bottom, #010354 0%, #03067a 51%, #0106a7 100%);
+  border-radius: 28px;
+  padding: 0 42px 53px 57px;
+}
+.faq-section-title h3 {
+  font-size: 36px;
 }

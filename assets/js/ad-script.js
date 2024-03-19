@@ -1089,6 +1089,9 @@ mobileMenu: function (){
 }
 	jQuery(document).ready(function (){
 		Genius.init();
+		$('img').error(function(){
+			$(this).hide();
+		});
 	});
 
 	jQuery(".popup-close span").on("click",function(){
