@@ -150,7 +150,7 @@
                                                             <p style="margin:0;font-size:14px;mso-line-height-alt:16.8px">
                                                                <span style="font-size:38px;">
                                                                 <strong>
-                                                                    <span style="">ICA Dalhousi Share You a Lead</span>
+                                                                    <span style="">ICA {{$from_center_name}} Share You a Lead</span>
                                                                 </strong>
                                                                </span>
                                                             </p>
@@ -167,10 +167,10 @@
                                                    <td class="pad" style="padding-bottom:25px;padding-left:25px;padding-right:25px;padding-top:10px">
                                                       <div style="font-family:sans-serif">
                                                          <div class="" style="font-size:12px;font-family:Montserrat,Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;mso-line-height-alt:21.6px;color:#393d47;line-height:1.8">
-                                                            <p style="margin:0;font-size: 18px;font-weight: 600;"> Lead Name : Akash Dutta </p>
-                                                            <p style="margin:0;font-size: 18px;font-weight: 600;"> Mobile No : XXXXXX0231 </p>
-                                                            <p style="margin:0;font-size: 18px;font-weight: 600;"> City : Kolkata </p>
-                                                            <p style="margin:0;font-size: 18px;font-weight: 600;"> Pincode : 711203 </p>
+                                                            <p style="margin:0;font-size: 18px;font-weight: 600;"> Lead Name : {{$name}} </p>
+                                                            <p style="margin:0;font-size: 18px;font-weight: 600;"> Mobile No : {{$mobile}} </p>
+                                                            <p style="margin:0;font-size: 18px;font-weight: 600;"> City : {{$city}} </p>
+                                                            <p style="margin:0;font-size: 18px;font-weight: 600;"> Pincode : {{$pincode}} </p>
                                                          </div>
                                                       </div>
                                                    </td>
@@ -182,7 +182,7 @@
                                                              <p style="margin:0;font-size:14px;mso-line-height-alt:16.8px">
                                                                 <span style="font-size:38px;">
                                                                  <strong>
-                                                                     <span style=""><a href="" style="text-decoration: none;padding: 9px 30px;border: 1px solid;border-radius: 10px;vertical-align: middle;" > Accept </a></span>
+                                                                     <span style=""><a href="{{ url('update-lead-status/'.$lead_id) }}" style="text-decoration: none;padding: 9px 30px;border: 1px solid;border-radius: 10px;vertical-align: middle;background: #3328c5;color: #fff;" > Accept </a></span>
                                                                  </strong>
                                                                 </span>
                                                              </p>

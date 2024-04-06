@@ -7,6 +7,7 @@ use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvi
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -53,7 +54,8 @@ class RouteServiceProvider extends ServiceProvider
 
     protected function removeIndexFromUrl()
     {
-        if (strpos($_SERVER['REQUEST_URI'],'index.php') !== FALSE ) {
+        
+        if (strpos(URL::current(),'index.php') !== FALSE ) {
             $url = str_replace('index.php/', '', request()->getRequestUri());
 
             if (strlen($url) > 0) {
@@ -61,5 +63,7 @@ class RouteServiceProvider extends ServiceProvider
                 exit;
             }
         }
+
+        return true;
     }
 }

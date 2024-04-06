@@ -58,9 +58,9 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('administrator-logout');
         Route::get('/update-password/{id}', [App\Http\Controllers\Administrator\IndexController::class, 'updatePassword'])->name('administrator-update-password');
         
-       //Users
-       Route::get('/center-login', [App\Http\Controllers\Administrator\UserController::class, 'centerLogin'])->name('admin-center-login');
-       Route::get('/university-login', [App\Http\Controllers\Administrator\UserController::class, 'universityLogin'])->name('admin-university-login');
+        //Users
+        Route::get('/center-login', [App\Http\Controllers\Administrator\UserController::class, 'centerLogin'])->name('admin-center-login');
+        Route::get('/university-login', [App\Http\Controllers\Administrator\UserController::class, 'universityLogin'])->name('admin-university-login');
        
         Route::get('/affiliate-users', [App\Http\Controllers\Administrator\AffiliateController::class, 'users'])->name('admin-affiliate-users');
         Route::get('/add-affiliate-user', [App\Http\Controllers\Administrator\AffiliateController::class, 'addUser'])->name('admin-add-affiliate-user');
@@ -74,6 +74,12 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::get('/enquiry/{id}', [App\Http\Controllers\Administrator\EnquiryController::class, 'show'])->name('admin-enquiry');
         Route::get('/generate-enquiry-form', [App\Http\Controllers\Administrator\EnquiryController::class, 'createForm'])->name('admin-generate-enquiry-form');
 
+        //Lead Refer
+        Route::get('/lead-refer', [App\Http\Controllers\Administrator\LeadReferController::class, 'index'])->name('admin-lead-refer');
+        Route::get('/transfar-lead', [App\Http\Controllers\Administrator\LeadReferController::class, 'add'])->name('admin-transfar-lead');
+        Route::post('/send-lead', [App\Http\Controllers\Administrator\LeadReferController::class, 'send'])->name('admin-send-lead');
+        Route::get('/upload-leads', [App\Http\Controllers\Administrator\LeadReferController::class, 'uploadLead'])->name('admin-upload-leads');
+
         //Page
         Route::get('/pages', [App\Http\Controllers\Administrator\PageController::class, 'index'])->name('admin-pages');
         Route::get('/add-page', [App\Http\Controllers\Administrator\PageController::class, 'Add'])->name('admin-add-page');
@@ -81,7 +87,7 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::post('/save-page', [App\Http\Controllers\Administrator\PageController::class, 'save'])->name('admin-save-page');
         Route::get('/delete-page/{id}', [App\Http\Controllers\Administrator\PageController::class, 'delete'])->name('admin-delete-page');
 
-        //Page
+        //Ad Page
         Route::get('/ad-pages', [App\Http\Controllers\Administrator\AdPageController::class, 'index'])->name('admin-ad-pages');
         Route::get('/add-ad-page', [App\Http\Controllers\Administrator\AdPageController::class, 'Add'])->name('admin-add-ad-page');
         Route::get('/view-ad-page/{id}', [App\Http\Controllers\Administrator\AdPageController::class, 'show'])->name('admin-ad-view-page');
@@ -251,12 +257,12 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::get('/delete-author/{id}', [App\Http\Controllers\Administrator\AuthorController::class, 'delete'])->name('admin-delete-author');
 
         //Tags
-        Route::get('/tags', [App\Http\Controllers\Administrator\TagController::class, 'index'])->name('admin-tags');
-        Route::post('/get-tags', [App\Http\Controllers\Administrator\TagController::class, 'getTags'])->name('admin-get-tags');
-        Route::get('/add-tag', [App\Http\Controllers\Administrator\TagController::class, 'add'])->name('admin-add-tag');
-        Route::get('/view-tag/{id}', [App\Http\Controllers\Administrator\TagController::class, 'show'])->name('admin-view-tag');
-        Route::post('/save-tag', [App\Http\Controllers\Administrator\TagController::class, 'save'])->name('admin-save-tag');
-        Route::get('/delete-tag/{id}', [App\Http\Controllers\Administrator\TagController::class, 'delete'])->name('admin-delete-tag');
+        // Route::get('/tags', [App\Http\Controllers\Administrator\TagController::class, 'index'])->name('admin-tags');
+        // Route::post('/get-tags', [App\Http\Controllers\Administrator\TagController::class, 'getTags'])->name('admin-get-tags');
+        // Route::get('/add-tag', [App\Http\Controllers\Administrator\TagController::class, 'add'])->name('admin-add-tag');
+        // Route::get('/view-tag/{id}', [App\Http\Controllers\Administrator\TagController::class, 'show'])->name('admin-view-tag');
+        // Route::post('/save-tag', [App\Http\Controllers\Administrator\TagController::class, 'save'])->name('admin-save-tag');
+        // Route::get('/delete-tag/{id}', [App\Http\Controllers\Administrator\TagController::class, 'delete'])->name('admin-delete-tag');
         
         //Review
         Route::get('/reviews', [App\Http\Controllers\Administrator\ReviewController::class, 'index'])->name('admin-reviews');
@@ -300,6 +306,7 @@ Route::get('/index/sitemap', function () {
     SitemapGenerator::create('https://www.myidcm.com/')->getSitemap()->writeToDisk('public', 'sitemap.xml', true);
 });
 
+
 Route::get('/{slug}', [App\Http\Controllers\PageController::class, 'index'])->where('slug', '([A-Za-z0-9\-]+)');
 Route::get('/ads/{slug}', [App\Http\Controllers\AdPageController::class, 'index'])->where('slug', '([A-Za-z0-9\-]+)');
 
@@ -323,7 +330,7 @@ Route::get('/city/{slug}', [App\Http\Controllers\CenterController::class, 'city'
 Route::get('/centers/{center}/{course}', [App\Http\Controllers\CenterCourseController::class, 'viewCenterCourse'])->name('view-center-course');
 
 Route::post('/submit-review', [App\Http\Controllers\ReviewController::class, 'create'])->name('submit-review');
-Route::get('/tags/{slug}', [App\Http\Controllers\TagController::class, 'index'])->name('tags');
+//Route::get('/tags/{slug}', [App\Http\Controllers\TagController::class, 'index'])->name('tags');
 
 //Capture Leads
 Route::post('/save-contact', [App\Http\Controllers\PageController::class, 'saveContact'])->name('save-contact');
@@ -343,6 +350,8 @@ Route::any('/global-other-form-submit', [App\Http\Controllers\IndexController::c
 Route::any('/enquiry-form-submit', [App\Http\Controllers\IndexController::class, 'enquiryFormSubmit'])->name('enquiry-form-submit');
 Route::post('/index/payment-success', [App\Http\Controllers\IndexController::class, 'paymentSuccess'])->name('payment-success');
 Route::post('/index/payment-failed', [App\Http\Controllers\IndexController::class, 'paymentFailed'])->name('payment-failed');
+
+Route::get('/update-lead-status/{id}', [App\Http\Controllers\IndexController::class, 'updateLeadStatus'])->name('update-lead-status');
 
 //Assesments
 //Route::get('/assesments/start-test', [App\Http\Controllers\AssessmentController::class, 'startTest'])->name('start-test');

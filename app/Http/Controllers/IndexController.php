@@ -20,6 +20,7 @@ use App\Models\Brochure;
 use App\Jobs\SendEmailJob;
 use App\Mail\NotifyMail;
 use App\Jobs\ExtraaedgeApiRequest;
+use App\Models\LeadRefer;
 use Mail;
 use Cookie;
 use Session;
@@ -799,6 +800,21 @@ class IndexController extends Controller
             //throw $th;
 
             // return response()->json($response, $this->_statusErr);
+        }
+    }
+
+    public function updateLeadStatus($id){
+        try {
+            $data = [
+                'status' => "1"
+            ];
+            $event = LeadRefer::findOrFail($id);
+            $event->update($data);
+            $thankYouMsg = "Thank You Lead Will be added to your account shortly";
+
+            return view("thank-you",compact('thankYouMsg'));
+        } catch (\Illuminate\Database\QueryException $e) {
+            print_r($e);
         }
     }
 
