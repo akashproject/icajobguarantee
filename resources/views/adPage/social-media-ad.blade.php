@@ -241,7 +241,7 @@
         <div class="banner-content p-15 banner-background-gradient">
             <div class="row">
                 <div class="col-12 text-center">
-                    <ol class="inner-banner-breadcrumb text-white">
+                    <!--ol class="inner-banner-breadcrumb text-white">
                         <li class="breadcrumbElement">
                             <a href="javascript:void(0)">Home</a>
                             <span> 
@@ -257,17 +257,28 @@
                         <li class="breadcrumbElement">
                             Advanced Excel Course
                         </li>
-                    </ol>
+                    </ol-->
+
+                    <div class="ad-banner-content">
+                        <div style="padding-top: 20px;">&nbsp;</div>
+                    </div>
+
                     <div class="ad-banner-content">
                         <div class="ad-banner-title text-white text-center">
-                            <h1> DISCOVER LIMITLESS GROWTH <br> OPPORTUNITIES WITH US <h1>
+                            <h1 style="line-height: 1.2em; font-size: 250%;"> Build A Recession Proof Career <br /> in 12 Months <h1>
                         </div>
                         <div class="ad-banner-option text-white">
                             <div class="mt-4">
-                                <h5>Elevate your skills and transform your career with specialized training towards professional excellence</h5>
+                                <h4>Bridge the skills gap & get the expertise employers are looking for</h4>
                             </div>
                         </div>
-                        
+
+                        <div class="ad-banner-option text-white">
+                            <div class="mt-4">
+                                <span style="color:#000; background: #F9B219; padding: 3px 10px; border-radius: 10px; font-size: 15px; font-weight: bold;"><sup>*</sup> All courses listed here are 100% Job Guarantee Courses</span>
+                            </div>
+                        </div>
+
                         <div class="ad-banner-option my-5">
                             <span class="enroll-btn genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font mb10">
                                 <a onclick="lead_capture_form_btn('',3)" href="javascript:void(0)"> Download Brochure </a>
@@ -281,6 +292,15 @@
                 </div>
             </div>
             <div class="placement-grid-container" >
+                <div class="row">
+                    <div class="col-md-12 col-lg-12" >
+                        <div class="ad-banner-option text-white">
+                            <div class="text-center mt-4">
+                                <h2>** We Connect Talents With Job Opportunities **</h2>
+                            </div>
+                        </div>
+                    </div>    
+                </div>   
                 <div class="row">
                     @foreach(getJoinees('',1) as $value)
                     <div class="col-md-6 col-lg-2" >
@@ -310,7 +330,7 @@
 <section id="recruiters" class="sponsor-section">
     <div class="container">
         <div class="faq-section-title mb35 headline text-center">
-            <h3 class="gradient-title" >Our Alumni Worked At.</h3>
+            <h3 class="gradient-title" >Few Of Our Potential Recruiters</h3>
         </div>
         <div class="row" >
             @foreach(getRecruiters() as $value)
@@ -327,35 +347,35 @@
 <section id="recruiters" class="sponsor-section" style="background:url('/assets/img/section-background.webp');background-repeat: no-repeat;background-position: center;">
     <div class="container">
         <div class="faq-section-title mb35 headline text-center">
-            <h3 class="text-white" >Here's Why You Need to Master in Account</h3>
+            <h3 class="text-white" >ICA Edu Skills At A Glance</h3>
         </div>
         <div class="row" >
             <div class="col-12 text-center">
                 <div class="section-usp-container" >
                     <div class="usp-content"> 
                         <h2> 500K+ </h2>
-                        <h6> Satisfied Student </h6>
-                    </div>
-                    <div class="usp-content"> 
-                        <h2> 100+ </h2>
-                        <h6> Centers across Pan India </h6>
+                        <h6> Satisfied Students </h6>
                     </div>
                     <div class="usp-content"> 
                         <h2> 100% </h2>
                         <h6> Job Guarantee </h6>
                     </div>
                     <div class="usp-content"> 
-                        <h2> 70K+ </h2>
-                        <h6> Registerd Employers </h6>
+                        <h2> 25+ </h2>
+                        <h6> Years of Excellence </h6>
                     </div>
                     <div class="usp-content"> 
-                        <h2> 500K+ </h2>
+                        <h2> 90% </h2>
                         <h6> Practical Training </h6>
                     </div>
                     <div class="usp-content"> 
-                        <h2> 500K+ </h2>
-                        <h6> Satisfied Students </h6>
+                        <h2> 9 </h2>
+                        <h6> Simulation Software </h6>
                     </div>
+                    <div class="usp-content"> 
+                        <h2> ATJ </h2>
+                        <h6> All Time Job Card </h6>
+                    </div>                    
                 </div>
             </div>
         </div>
@@ -365,7 +385,8 @@
 <section id="courses" class="best-course-section">
    <div class="container">
         <div class="faq-section-title mb45 headline text-center">
-            <h3 class="gradient-title" > Here's your Actionable Roadmap to becoming a Top Accountant </h3>
+            <h3 class="gradient-title"> Explore The Best Accounting And Taxation Courses </h3>
+            <br /><span style="color:#000; background: #F9B219; padding: 3px 10px; border-radius: 10px; font-size: 15px; font-weight: bold;"><sup>*</sup> All courses listed here are 100% Job Guarantee Courses</span>
         </div>
         <div class="faq-tab mb65">
             <div class="faq-tab-ques ul-li">
@@ -521,7 +542,7 @@
 <section id="recruiters" class="sponsor-section" style="background:url('/assets/img/section-background.webp');background-repeat: no-repeat;background-position: center;">
     <div class="container">
         <div class="faq-section-title mb35 headline text-center">
-            <h3 class="text-white" >Here's Why You Need to Master in Account</h3>
+            <h3 class="text-white">5 Steps Process Of Our Job Guarantee Program</h3>
         </div>
         <div class="row" >
             <div class="col-12 text-center">
@@ -530,17 +551,17 @@
                         <div class="how-it-works-container aic">
                             <div class="div-block-608">
                                 <div class="how-it-works-item">
-                                    <h4 class="hiw-heading">Fill the Application</h4>
-                                    <div>Fill out the complete Application Form. <br>Note: SOP is mandatory to increase your chances of getting Shortlisted*</div>
+                                    <h4 class="hiw-heading">Training Completion</h4>
+                                    <div>Once you complete the training and pass the final exam, you will eligible for our career grooming program.</div>
                                 </div>
                             </div>
-                            <div class="d2c-stroke-circle cyber pm"><img src="https://assets-global.website-files.com/63c698560a57ab3deb917f5a/6475dc088ebae809e006795d_Group%20(5).svg" loading="lazy" alt=""></div>
+                            <div class="d2c-stroke-circle cyber pm"><img src="  https://assets-global.website-files.com/63c698560a57ab3deb917f5a/6475dc088ebae809e006795d_Group%20(5).svg" loading="lazy" alt=""></div>
                         </div>
                         <div class="how-it-works-container aic rev">
                             <div class="div-block-608 rev">
                                 <div class="how-it-works-item rev">
-                                    <h4 class="hiw-heading">Your Selection</h4>
-                                    <div>Once chosen, you will receive a comprehensive email with all the course details you need.</div>
+                                    <h4 class="hiw-heading">CV Preparetion</h4>
+                                    <div>Learn how to prepare a professional CV in order to impress employers from an expert HR Counselor.</div>
                                 </div>
                             </div>
                             <div class="d2c-stroke-circle cyber pm"><img src="https://assets-global.website-files.com/63c698560a57ab3deb917f5a/6475dc081d2a0976be314a8a_Vector%20(40).svg" loading="lazy" alt=""></div>
@@ -548,8 +569,8 @@
                         <div class="how-it-works-container aic">
                             <div class="div-block-608">
                                 <div class="how-it-works-item">
-                                    <h4 class="hiw-heading">Kickoff and Onboarding</h4>
-                                    <div>Get started with 6 months of intense learning, innovation, and growth!</div>
+                                    <h4 class="hiw-heading">GDs & Mock Interviews</h4>
+                                    <div>Participate in Group discussions and Mock Inteview programs organized by expert placement officers' panel</div>
                                 </div>
                             </div>
                             <div class="d2c-stroke-circle cyber pm"><img src="https://assets-global.website-files.com/63c698560a57ab3deb917f5a/6475dc0929962bfa51134b89_Group%20(6).svg" loading="lazy" alt=""></div>
@@ -557,8 +578,8 @@
                         <div class="how-it-works-container aic rev">
                             <div class="div-block-608 rev">
                                 <div class="how-it-works-item rev">
-                                    <h4 class="hiw-heading">Foster Relationships</h4>
-                                    <div>Connect, collaborate, and create with fellow aspiring Digital Marketers.</div>
+                                    <h4 class="hiw-heading">Student Interviews</h4>
+                                    <div>Prepare yourself to attend final interviews conducted by our registered employers across Pan India.</div>
                                 </div>
                             </div>
                             <div class="d2c-stroke-circle cyber pm"><img src="https://assets-global.website-files.com/63c698560a57ab3deb917f5a/6475dc087e884ecc0d305df8_Group%20(7).svg" loading="lazy" alt=""></div>
@@ -566,16 +587,16 @@
                         <div class="how-it-works-container aic">
                             <div class="div-block-608">
                                 <div class="how-it-works-item">
-                                    <h4 class="hiw-heading">Celebrate &amp; Share</h4>
-                                    <div>Celebrate your achievements with your peers and amplify your success across social platforms.<br></div>
+                                    <h4 class="hiw-heading">Appointment Letter</h4>
+                                    <div>Receive your appointment letter once you are selected by an employer and give a kick start to growing career.</div>
                                 </div>
                             </div>
                             <div class="d2c-stroke-circle cyber pm"><img src="https://assets-global.website-files.com/63c698560a57ab3deb917f5a/6475dc08b0904c332641b1b8_Group%20(8).svg" loading="lazy" alt=""></div>
                         </div>
-                        <div class="div-block-993 how-it-works aic">
+                        <!--div class="div-block-993 how-it-works aic">
                             <div class="d2c-inactive-line-8 ever"></div>
                             <div data-w-id="230825ab-19ff-da53-6797-a0ab7efcad6f" class="d2c-active-line cyber ever aic" style="will-change: width, height; height: 32.872%;"><img src="https://assets-global.website-files.com/63c698560a57ab3deb917f5a/6470563d0d72f61b1a4f4702_Group%201000002496.png" loading="lazy" alt="" class="image-491"></div>
-                        </div>
+                        </div-->
                     </div>
                 </div>
             </div>
@@ -586,8 +607,8 @@
 <section id="recruiters" class="sponsor-section">
     <div class="container">
         <div class="faq-section-title mb45 headline text-center">
-            <h3 class="gradient-title" > Before You Ask </h3>
-            <p> Yes! You will be certified for this program submission of your assignment. </p>
+            <h3 class="gradient-title" > Training Certifications </h3>
+            <p> After getting certified in an accounting course, several career opportunities await the aspiring candidates to join. To get the right skill set, invest in your future now. Join the Accounting Certification Program today! </p>
         </div>
         <div class="row" >
             <div class="col-md-4 text-center">
@@ -613,8 +634,7 @@
 <section id="recruiters" class="sponsor-section">
     <div class="container">
         <div class="faq-section-title mb45 headline text-center">
-            <h3 class="gradient-title" > Frequently Ask Question </h3>
-            <p> Yes! You will be certified for this program submission of your assignment. </p>
+            <h3 class="gradient-title" > Frequently Asked Questions </h3>
         </div>
         <div class="row" >
             <div class="col-12" >
@@ -653,7 +673,7 @@
     <div class="container">
         <div class="row" >
             <div class="col-6" >
-                <h3 style="color: #fff;font-weight: 600;width: 100%;margin: auto;"> BECOME AN ACCOUNTANT </h3>
+                <h3 style="color: #fff;font-weight: 600;width: 100%;margin: auto;"> Become An Accountant. Get Started </h3>
             </div>
             <div class="col-6 text-right" >
                 <a class="footer-sticky-btn" href="javascript:void(0)"  onclick="lead_capture_form_btn('',{{ $contentMain->id }})" > Apply Now</a>
