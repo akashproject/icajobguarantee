@@ -12,6 +12,6 @@ class Lead extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'id','name','email','mobile','center','pincode','latitude','longitude','longitude','utm_source','utm_campaign','role','crmStatus','mailStatus'
+        'id','name','email','mobile','center','pincode','latitude','longitude','longitude','utm_source','utm_campaign','role','otp_status','crmStatus','mailStatus'
     ];
 }

@@ -64,7 +64,8 @@ class CourseController extends Controller
             $utm_campaign = $contentMain->utm_campaign;
             $utm_source = $contentMain->utm_source;
 
-            return view($this->layout.'courses.view',compact('model','contentMain','course_id','carriculams','courses'));
+            $view = ($contentMain->type_id == '1')?"courses.jg-view":"courses.view";
+            return view($this->layout.$view,compact('model','contentMain','course_id','carriculams','courses'));
         } catch(\Illuminate\Database\QueryException $e){
         }
     }

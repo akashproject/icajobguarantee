@@ -150,15 +150,9 @@ class IndexController extends Controller
         }
     }
 
-    public function captureLead(Request $request)
-    {
+    function insertLeadRecord(Request $request){
         try {
             $postData = $request->all();
-            $validatedData = $request->validate([
-                "name" => "required",
-                "mobile" => "required",
-            ]);
-
             $nameArray = explode(" ", $postData["name"]);
             $postData["firstname"] = current(explode(" ", $postData["name"]));
             unset($nameArray["0"]);
@@ -193,21 +187,83 @@ class IndexController extends Controller
 
             $postData["role"] = "b2c";
             $leadFromdb = $this->captureLeadToDB($postData);
-           
+            return response()->json($leadFromdb, $this->_statusOK);
+        } catch (\Illuminate\Database\QueryException $e) {
+            return response()->json($e, $this->_statusOK);
+        }
+    }
+
+    public function captureLead(Request $request)
+    {
+        try {
+            $postData = $request->all();
+            $validatedData = $request->validate([
+                "name" => "required",
+                "mobile" => "required",
+            ]);
+
+            if($postData["lead_id"] != '') {
+                $lead = Lead::findOrFail($postData["lead_id"]);
+                //echo "<pre>";print_r($lead);
+                $lead->update(['otp_status' => "1"]);
+                //print_r($lead);
+                //exit;
+                $nameArray = explode(" ", $lead->name);
+                $postData["firstname"] = current(explode(" ", $lead->name));
+                unset($nameArray["0"]);
+                $postData["lastname"] = implode(" ", $nameArray);
+            } else {
+                $nameArray = explode(" ", $postData["name"]);
+                $postData["firstname"] = current(explode(" ", $postData["name"]));
+                unset($nameArray["0"]);
+                $postData["lastname"] = implode(" ", $nameArray);
+    
+                if (isset($postData["center"]) && $postData["center"] != "") {
+                    $city = Center::select("city_id")
+                        ->where("name", $postData["center"])
+                        ->first();
+                    $postData["city"] = City::where(
+                        "id",
+                        $city->city_id
+                    )->first()->name;
+                } else {
+                    //center by pincode
+                    $pincode = DB::table("pincodes")
+                        ->leftjoin(
+                            "centers",
+                            "pincodes.center_id",
+                            "=",
+                            "centers.id"
+                        )
+                        ->leftjoin("cities", "pincodes.city_id", "=", "cities.id")
+                        ->select("centers.name as center", "cities.name as city")
+                        ->where("pincodes.name", $postData["pincode"])
+                        ->where("centers.status", 1)
+                        ->inRandomOrder()
+                        ->first();
+                    $postData["city"] = $pincode ? $pincode->city : "";
+                    $postData["center"] = $pincode ? $pincode->center : "unknown";
+                }
+    
+                $postData["role"] = "b2c";
+                $leadFromdb = $this->captureLeadToDB($postData);
+            }
+
             if ($postData["store_area"] == 1) {
-                $this->classroomLeadCaptureLeadToExtraage($postData);
+                $this->classroomLeadCaptureToExtraage($postData);
             }
 
             $this->classroomCognoai_api_calling($postData);
 
             // Send Brochure
             $brochure_id = $postData["brochure_id"]
-                ? $postData["brochure_id"]
-                : get_theme_setting("brochure_id");
+            ? $postData["brochure_id"]
+            : get_theme_setting("brochure_id");
             $mediaId = Brochure::select("attachment")
-                ->where("id", $brochure_id)
-                ->first()->attachment;
+            ->where("id", $brochure_id)
+            ->first()->attachment;
             $brochure_path = getAttachmentUrl($mediaId);
+
 
             //$this->sendEmailBrochure($postData);
             if(isset($postData["assessment"]) && $postData["assessment"] != ''){
@@ -219,6 +275,7 @@ class IndexController extends Controller
                 Session::put('lead_id',$leadFromdb->id);
                 return redirect()->route('instruction', [$postData["assessment"]]);
             }
+            
 
             if (get_theme_setting("ajax_submit") == 1) {
                 return response()->json($brochure_path, $this->_statusOK);
@@ -248,7 +305,7 @@ class IndexController extends Controller
             $postData["role"] = "b2c";
             $this->captureLeadToDB($postData);
             if ($postData["store_area"] == 1) {
-                $this->classroomLeadCaptureLeadToExtraage($postData);
+                $this->classroomLeadCaptureToExtraage($postData);
             }
             $data = [];
             $mail = Mail::send(
@@ -388,7 +445,7 @@ class IndexController extends Controller
         }
     }
 
-    public function classroomLeadCaptureLeadToExtraage($postData)
+    public function classroomLeadCaptureToExtraage($postData)
     {
         $apiData = [
             "AuthToken" => "ICA-06-12-2017",
@@ -624,6 +681,7 @@ class IndexController extends Controller
                 "longitude" => isset($_COOKIE["lng"]) ? $_COOKIE["lat"] : "",
                 "utm_source" => $postData["utm_source"],
                 "utm_campaign" => $postData["utm_campaign"],
+                "otp_status" => "0",
                 "crmStatus" => "0",
                 "mailStatus" => "0",
             ];

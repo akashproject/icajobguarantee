@@ -47,47 +47,30 @@
 				<div class="row">
 
 					<div class="col-md-7" >
-
 						<div class="form-group row">
-
 							<label for="name" class="col-sm-3 text-right control-label col-form-label">Name</label>
-
 							<div class="col-sm-9">
-
 								<input type="text" class="form-control" name="name" id="name" placeholder="Name Here"  value="{{ $adPage->name }}" >
-
 							</div>
 
 						</div>
-
 						<div class="form-group row">
-
 							<label for="slug" class="col-sm-3 text-right control-label col-form-label">Slug</label>
-
 							<div class="col-sm-9">
-
 								<input type="text" class="form-control" name="slug" id="slug" placeholder="Slug Here"  value="{{ $adPage->slug }}" >
-
 							</div>
-
 						</div>
 
 						<div class="form-group row">
-
 							<label for="description" class="col-sm-3 text-right control-label col-form-label">Description</label>
-
 							<div class="col-sm-9">
-
 								<textarea class="form-control editor" name="description" id="description" placeholder="Enter description Here" >{{ $adPage->description }}</textarea>
-
 							</div>
 
 						</div>
 
 						<div class="form-group row">
-
 							<label for="email" class="col-sm-3 text-right control-label col-form-label">Email</label>
-
 							<div class="col-sm-9">
 
 								<input type="text" class="form-control" name="email" id="email" placeholder="Enter Email Here"  value="{{ $adPage->email }}" >

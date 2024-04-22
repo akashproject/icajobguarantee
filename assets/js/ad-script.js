@@ -1014,78 +1014,77 @@ searchBAR: function (){
 
 
 
-mobileMenu: function (){
-	jQuery('.mobile-menu nav').meanmenu();
-	function slideMenu() {
-		var activeState = jQuery('#menu-container .menu-list').hasClass('active');
-		jQuery('#menu-container .menu-list').animate({
-			left: activeState ? '0%' : '-100%'
-		}, 400);
-	}
-	jQuery('.alt-menu-btn').on ("click" , function(event) {
-		event.stopPropagation();
-		jQuery('.hamburger-menu').toggleClass('open');
-		jQuery('.menu-list').toggleClass('active');
-		slideMenu();
-
-		jQuery('body').toggleClass('overflow-hidden');
-	});
-},
-
-	countDown:  function (){
-		if ($('.coming-countdown').length > 0) {
-		// Specify the deadline date
-		var deadlineDate = new Date('Decembar 21, 2018 23:59:59').getTime();
-
-		// Cache all countdown boxes into consts
-		var countdownDays = document.querySelector('.days .number');
-		var countdownHours = document.querySelector('.hours .number');
-		var countdownMinutes = document.querySelector('.minutes .number');
-		var countdownSeconds = document.querySelector('.seconds .number');
-
-		// Update the count down every 1 second (1000 milliseconds)
-		setInterval(function () {
-		// Get current date and time
-		var currentDate = new Date().getTime();
-
-		// Calculate the distance between current date and time and the deadline date and time
-		var distance = deadlineDate - currentDate;
-
-		// Time calculations for days, hours, minutes and seconds
-		var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-		// Insert the result data into individual countdown boxes
-		countdownDays.innerHTML = days;
-		countdownHours.innerHTML = hours;
-		countdownMinutes.innerHTML = minutes;
-		countdownSeconds.innerHTML = seconds;
-	}, 1000);
-		
-	};
-	},
-
-	quickScroll: function (){
-		$(window).on("scroll", function() {
-			if ($(this).scrollTop() > 200) {
-				$('.scrollup').fadeIn();
-			} else {
-				$('.scrollup').fadeOut();
+		mobileMenu: function (){
+			jQuery('.mobile-menu nav').meanmenu();
+			function slideMenu() {
+				var activeState = jQuery('#menu-container .menu-list').hasClass('active');
+				jQuery('#menu-container .menu-list').animate({
+					left: activeState ? '0%' : '-100%'
+				}, 400);
 			}
-		});
+			jQuery('.alt-menu-btn').on ("click" , function(event) {
+				event.stopPropagation();
+				jQuery('.hamburger-menu').toggleClass('open');
+				jQuery('.menu-list').toggleClass('active');
+				slideMenu();
 
-		$('.scrollup').on("click", function()  {
-			$("html, body").animate({
-				scrollTop: 0
-			}, 800);
-			return false;
-		});
-	},
+				jQuery('body').toggleClass('overflow-hidden');
+			});
+		},
 
+		countDown:  function (){
+			if ($('.coming-countdown').length > 0) {
+			// Specify the deadline date
+			var deadlineDate = new Date('Decembar 21, 2018 23:59:59').getTime();
 
-}
+			// Cache all countdown boxes into consts
+			var countdownDays = document.querySelector('.days .number');
+			var countdownHours = document.querySelector('.hours .number');
+			var countdownMinutes = document.querySelector('.minutes .number');
+			var countdownSeconds = document.querySelector('.seconds .number');
+
+			// Update the count down every 1 second (1000 milliseconds)
+			setInterval(function () {
+			// Get current date and time
+			var currentDate = new Date().getTime();
+
+			// Calculate the distance between current date and time and the deadline date and time
+			var distance = deadlineDate - currentDate;
+
+			// Time calculations for days, hours, minutes and seconds
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+			// Insert the result data into individual countdown boxes
+			countdownDays.innerHTML = days;
+			countdownHours.innerHTML = hours;
+			countdownMinutes.innerHTML = minutes;
+			countdownSeconds.innerHTML = seconds;
+		}, 1000);
+			
+		};
+		},
+
+		quickScroll: function (){
+			$(window).on("scroll", function() {
+				if ($(this).scrollTop() > 200) {
+					$('.scrollup').fadeIn();
+				} else {
+					$('.scrollup').fadeOut();
+				}
+			});
+
+			$('.scrollup').on("click", function()  {
+				$("html, body").animate({
+					scrollTop: 0
+				}, 800);
+				return false;
+			});
+		},
+
+	}
 }
 	jQuery(document).ready(function (){
 		Genius.init();
@@ -1095,8 +1094,8 @@ mobileMenu: function (){
 	});
 
 	jQuery(".popup-close span").on("click",function(){
-		let id = $(this).parent().parent().parent().parent().attr("id");
-		console.log(id);
+		
+		let id = $(this).parent().parent().parent().parent().parent().attr("id");
 		$("#"+id).modal('hide');
 	});
 

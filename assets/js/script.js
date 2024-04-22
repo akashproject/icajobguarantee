@@ -1499,6 +1499,7 @@ searchBAR: function (){
 		if(`${isEnableOtp}` == 1 && `${isAjaxSubmit}` == 0){
 			if(jQuery("#" + formId + " .formFieldOtpResponse").val() == ""){
 				jQuery("#" + formId + " .submit_classroom_lead_generation_form").prop('disabled', 'disabled');
+				insertLeadRecord(form,formId);
 				sendMobileOtp(formId);
 				countDown()
 				return false;
@@ -1565,6 +1566,29 @@ searchBAR: function (){
 		});
 	}
 
+	function insertLeadRecord(form,formId) {
+		$.ajaxSetup({
+			headers: {
+			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			}
+		});
+		$.ajax({
+			url: `${globalUrl}insert-lead-records`,
+			type: "post",
+			data: jQuery(form).serialize(),
+			success: function(result) {
+				console.log(result);
+				jQuery("#" + formId + " .lead_id").val(result.id);
+				// jQuery("#" + formId + " .form_process").hide();
+				// jQuery("#" + formId + " .form_success").addClass("googleTrackerActive");
+				// jQuery("#" + formId + " .form_success").show();
+				// jQuery("#" + formId)[0].reset();
+				// downloadBrochure(result);
+				return true;
+			}
+		});
+	}
+
 	function captureLead(form,formId){
 		$.ajaxSetup({
 			headers: {
@@ -1576,11 +1600,11 @@ searchBAR: function (){
 			type: "post",
 			data: jQuery(form).serialize(),
 			success: function(result) {
-				jQuery("#" + formId + " .form_process").hide();
-				jQuery("#" + formId + " .form_success").addClass("googleTrackerActive");
-				jQuery("#" + formId + " .form_success").show();
-				jQuery("#" + formId)[0].reset();
-				downloadBrochure(result);
+				// jQuery("#" + formId + " .form_process").hide();
+				// jQuery("#" + formId + " .form_success").addClass("googleTrackerActive");
+				// jQuery("#" + formId + " .form_success").show();
+				// jQuery("#" + formId)[0].reset();
+				// downloadBrochure(result);
 				return true;
 			}
 		});

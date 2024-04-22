@@ -79,6 +79,7 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::get('/transfar-lead', [App\Http\Controllers\Administrator\LeadReferController::class, 'add'])->name('admin-transfar-lead');
         Route::post('/send-lead', [App\Http\Controllers\Administrator\LeadReferController::class, 'send'])->name('admin-send-lead');
         Route::get('/upload-leads', [App\Http\Controllers\Administrator\LeadReferController::class, 'uploadLead'])->name('admin-upload-leads');
+        Route::get('/backlog-leads', [App\Http\Controllers\Administrator\LeadReferController::class, 'backLogLeads'])->name('admin-backlog-leads');
 
         //Page
         Route::get('/pages', [App\Http\Controllers\Administrator\PageController::class, 'index'])->name('admin-pages');
@@ -335,7 +336,8 @@ Route::post('/submit-review', [App\Http\Controllers\ReviewController::class, 'cr
 //Capture Leads
 Route::post('/save-contact', [App\Http\Controllers\PageController::class, 'saveContact'])->name('save-contact');
 Route::post('/submit-mobile-otp', [App\Http\Controllers\IndexController::class, 'submitMobileOtp'])->name('submit-mobile-otp');
-Route::post('/capture-lead', [App\Http\Controllers\IndexController::class, 'captureLead'])->name('capture-lead');
+Route::post('/capture-lead', [App\Http\Controllers\IndexController::class, 'captureLead'])->name('insert-lead-records');
+Route::post('/insert-lead-records', [App\Http\Controllers\IndexController::class, 'insertLeadRecord'])->name('capture-lead');
 Route::post('/franchise-capture-lead', [App\Http\Controllers\IndexController::class, 'franchiseCaptureLead'])->name('capture-lead');
 Route::post('/capture-job-application', [App\Http\Controllers\IndexController::class, 'captureJobApplication'])->name('capture-job-application');
 Route::post('/weabiner-capture-lead', [App\Http\Controllers\IndexController::class, 'weabinerCaptureLead'])->name('weabiner-capture-lead');
@@ -350,7 +352,6 @@ Route::any('/global-other-form-submit', [App\Http\Controllers\IndexController::c
 Route::any('/enquiry-form-submit', [App\Http\Controllers\IndexController::class, 'enquiryFormSubmit'])->name('enquiry-form-submit');
 Route::post('/index/payment-success', [App\Http\Controllers\IndexController::class, 'paymentSuccess'])->name('payment-success');
 Route::post('/index/payment-failed', [App\Http\Controllers\IndexController::class, 'paymentFailed'])->name('payment-failed');
-
 Route::get('/update-lead-status/{id}', [App\Http\Controllers\IndexController::class, 'updateLeadStatus'])->name('update-lead-status');
 
 //Assesments

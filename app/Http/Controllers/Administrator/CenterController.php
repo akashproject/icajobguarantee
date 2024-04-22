@@ -9,7 +9,7 @@ use App\Models\State;
 use App\Models\City;
 use App\Models\Course;
 use App\Models\CourseType;
-
+use Mail;
 use Illuminate\Support\Facades\DB;
 
 class CenterController extends Controller
@@ -64,7 +64,6 @@ class CenterController extends Controller
                 'slug' => 'required',
                 'courses' => 'required',
                 'description' => 'required',
-                'state_id' => 'center_pincode',
                 'state_id' => 'required',
                 'lat' => 'required',
                 'lng' => 'required',
@@ -74,6 +73,9 @@ class CenterController extends Controller
                 Center::create($data);
             } else {
                 $center = Center::findOrFail($data['center_id']);
+                if($data['status'] != $center->status) {
+                    $this->sendEmailTemplate($center);
+                }
                 $center->update($data);
             }
 
@@ -209,12 +211,10 @@ class CenterController extends Controller
             //throw $th;
             return response()->json(['error' => $e->errorInfo[2]], 401);
         }
-        
     }
 
     public function pincode($id){
         try {
-
             $center = Center::findOrFail($id);
             return view('administrator.centers.pincode',compact('center'));       
         } catch(\Illuminate\Database\QueryException $e){
@@ -223,8 +223,6 @@ class CenterController extends Controller
 
     public function savePincode(Request $request) {
         try {
-
-
             $data = $request->all();
             $request->validate([
                 'pincode' => 'required|mimes:csv,txt',
@@ -237,9 +235,8 @@ class CenterController extends Controller
 
             $csv = $request->file('pincode');
             $file = fopen($csv, "r");
-            while (($pincodeArray = fgetcsv($file, 10000, ",")) !==FALSE ) {
-                //Checking Duplicate                
-                if (!DB::table('pincodes')->select('id')->where('center_id',$data['center_id'])->where('name',$pincodeArray[0])->exists()) {
+            while(($pincodeArray = fgetcsv($file, 10000, ",")) !==FALSE ) {
+                if(!DB::table('pincodes')->select('id')->where('center_id',$data['center_id'])->where('name',$pincodeArray[0])->exists()) {
                     $pincodeArray['city_id'] = $data['city_id'];
                     $pincodeArray['center_id'] = $data['center_id'];               
                     $pincodeArray['name'] = $pincodeArray[0];
@@ -259,5 +256,24 @@ class CenterController extends Controller
         $center = Center::findOrFail($id);
         $center->delete();
         return redirect('/administrator/centers');
+    }
+
+    public function sendEmailTemplate($center){
+        try {
+            $data['emails'] = ['akash.dutta@icagroup.in','chandanghosh@icagroup.in', 'dm.exe.vdocontent@icagroup.in','sumana.paul@icagroup.in','suraj.saha@icagroup.in'];
+            $data['center'] = $center;
+            $data['message'][1] = "temporary deactivated";
+            $data['message'][0] = "activated";
+            $mail = Mail::send([], [], function ($m) use ($data) {
+                $m->from("connect@icajobguarantee.com", "ICA Edu Skils");
+                $m->to($data['emails'])
+                    ->subject($data['center']->name." has been ".$data['message'][$data['center']->status])
+                    ->html('<h1>'.$data['center']->name.'</h1><br> has been '.$data['message'][$data['center']->status], 'text/html')
+                    ->cc('backup.proloy.ghosh@icagroup.in'); // For HTML rich messages
+            });
+            return redirect()->back()->with('message', 'Lead Transfard successfully!');
+        } catch(\Illuminate\Database\QueryException $e){
+            var_dump($e->getMessage()); 
+        }
     }
 }

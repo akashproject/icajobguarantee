@@ -91,14 +91,13 @@ class AppServiceProvider extends ServiceProvider
             );
             $view->with('courseMenu', $courseMenu);
 
-            $courseTypes = CourseType::All();
+            $courseTypes = CourseType::where('status',1)->get();
             foreach ($courseTypes as $key => $value) {
                 $courses = DB::table('courses')->where("type_id",$value->id)->where("status",1)->get();
                 $courseTypes[$key]->courses = $courses;
             }
 
             $view->with('courseTypes', $courseTypes);
-
 
             $centerMenu = array(
                 '#tab3' => array('rel'=>"tab3",'value'=>"Highlights"),
@@ -110,7 +109,6 @@ class AppServiceProvider extends ServiceProvider
                 '#faq' => array('rel'=>"",'value'=>"FAQs"),
             );
             $view->with('centerMenu', $centerMenu);
-
 
             //Models
             $models =  array("Blog","Center","Course","CourseType","University");

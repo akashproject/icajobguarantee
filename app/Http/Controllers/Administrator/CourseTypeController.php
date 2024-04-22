@@ -29,12 +29,13 @@ class CourseTypeController extends Controller
     {
         try {
             $courseType = CourseType::find($id);
-            $posts = $courseType->course()->where('approved', 'true')->paginate(15);
+            //$posts = $courseType->course()->where('approved', 'true')->paginate(15);
             $listCourseType = CourseType::all();
             $brochures = Brochure::all();
 
             return view('administrator.coursetype.show',compact('courseType','listCourseType','brochures'));
         } catch(\Illuminate\Database\QueryException $e){
+            var_dump($e->getMessage()); 
         }        
     }
 
@@ -50,12 +51,11 @@ class CourseTypeController extends Controller
                 'utm_campaign' => 'required',
                 'utm_source' => 'required',
             ]);
-
             if($data['course_type_id'] <= 0){
                 CourseType::create($data);
             } else {
-                $institute = CourseType::findOrFail($data['course_type_id']);
-                $institute->update($data);
+                $courseType = CourseType::findOrFail($data['course_type_id']);
+                $courseType->update($data);
             }
             return redirect()->back()->with('message', 'Page updated successfully!');
         } catch(\Illuminate\Database\QueryException $e){

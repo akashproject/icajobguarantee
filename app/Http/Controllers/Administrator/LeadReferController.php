@@ -90,6 +90,15 @@ class LeadReferController extends Controller
         }
     }
 
+    public function backLogLeads(){
+        try {
+            $leads = DB::table('leads')->where('otp_status',"0")->get();
+            return view('administrator.leads-refer.backlog',compact('leads'));
+        } catch(\Illuminate\Database\QueryException $e){
+            var_dump($e->getMessage()); 
+        }
+    }
+
     public function sendEmailTemplate($data,$postData){
         try {
             $data['mobile'] = "XXXXXX".substr($data["mobile"], -4);
