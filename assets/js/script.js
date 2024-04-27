@@ -554,6 +554,9 @@ faqTAB: function (){
 	$(".course-tab-content-1").hide();
 	$(".course-tab-content-1:first").show();
 
+	$(".module-tab-content-1").hide();
+	$(".module-tab-content-1:first").show();
+
 	/* if in tab mode */
 	$("ul.product-tab").on("click", "li", function() {
 		
@@ -562,6 +565,21 @@ faqTAB: function (){
 		$("#"+activeTab).fadeIn();    
 		
 		$("ul.product-tab li").removeClass("active");
+		$(this).addClass("active");
+
+		$(".tab_drawer_heading").removeClass("d_active");
+		$(".tab_drawer_heading[rel^='"+activeTab+"']").addClass("d_active");
+		
+	});
+
+	/* if in tab mode */
+	$("ul.module-tab").on("click", "li", function() {
+		
+		$(".module-tab-content-1").hide();
+		var activeTab = $(this).attr("rel"); 
+		$("#"+activeTab).fadeIn();    
+		
+		$("ul.module-tab li").removeClass("active");
 		$(this).addClass("active");
 
 		$(".tab_drawer_heading").removeClass("d_active");
@@ -619,6 +637,7 @@ faqTAB: function (){
      of last tab */
 	$('ul.product-tab li').last().addClass("tab_last");
 	$('ul.course-tab li').last().addClass("tab_last");
+	$('ul.module-tab li').last().addClass("tab_last");
 },
 /* End Of best product
 ================================================*/
@@ -1579,11 +1598,6 @@ searchBAR: function (){
 			success: function(result) {
 				console.log(result);
 				jQuery("#" + formId + " .lead_id").val(result.id);
-				// jQuery("#" + formId + " .form_process").hide();
-				// jQuery("#" + formId + " .form_success").addClass("googleTrackerActive");
-				// jQuery("#" + formId + " .form_success").show();
-				// jQuery("#" + formId)[0].reset();
-				// downloadBrochure(result);
 				return true;
 			}
 		});

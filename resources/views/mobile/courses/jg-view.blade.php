@@ -183,10 +183,10 @@
                         <div id="tab4" class="tab-content-1 pt35">
                            <div class="course-details-category text-left mb25 tab-button text-left mb25">
                               <ul class="module-tab">
-                                 <li class="active col-2" rel="module-tab1" style="text-align: center;">CIA <br> ( {{ count(getCourseModules(1,'')) }} Modules )</li>
-                                 <li class="col-2" rel="module-tab2" style="text-align: center;">CIA Plus <br> ({{ count(getCourseModules(3,'')) }} Modules )</li>
-                                 <li class="col-2" rel="module-tab3" style="text-align: center;">CIA Express <br> ({{ count(getCourseModules(4,'')) }} Modules )</li>
-                                 <li class="col-2" rel="module-tab4" style="text-align: center;">CIA Foundation <br> ({{ count(getCourseModules(11,'')) }} Modules )</li>
+                                 <li class="active " rel="module-tab1" style="text-align: center;">CIA <br> ( {{ count(getCourseModules(1,'')) }} Modules )</li>
+                                 <li class="" rel="module-tab2" style="text-align: center;">CIA Plus <br> ({{ count(getCourseModules(3,'')) }} Modules )</li>
+                                 <li class="" rel="module-tab3" style="text-align: center;">CIA Express <br> ({{ count(getCourseModules(4,'')) }} Modules )</li>
+                                 <li class="" rel="module-tab4" style="text-align: center;">CIA Foundation <br> ({{ count(getCourseModules(11,'')) }} Modules )</li>
                               </ul>
                            </div>
                            <div class="tab-container">
@@ -206,7 +206,7 @@
                                                          </button>
                                                          <div class="leanth-course">
                                                             <span>{{ $carriculam->duration }} Hours</span>
-                                                            <span> {{ count(json_decode($carriculam->lecture)) }} Lectures</span>
+                                                            <span> {{ count(json_decode($carriculam->lecture)) }} Lecture</span>
                                                          </div>
                                                       </div>
                                                    </div>
@@ -250,7 +250,7 @@
                                                          </button>
                                                          <div class="leanth-course">
                                                             <span>{{ $carriculam->duration }} Hours</span>
-                                                            <span> {{ count(json_decode($carriculam->lecture)) }} Lectures</span>
+                                                            <span> {{ count(json_decode($carriculam->lecture)) }} Lecture</span>
                                                          </div>
                                                       </div>
                                                    </div>
@@ -294,7 +294,7 @@
                                                          </button>
                                                          <div class="leanth-course">
                                                             <span>{{ $carriculam->duration }} Hours</span>
-                                                            <span> {{ count(json_decode($carriculam->lecture)) }} Lectures</span>
+                                                            <span> {{ count(json_decode($carriculam->lecture)) }} Lecture</span>
                                                          </div>
                                                       </div>
                                                    </div>
@@ -338,7 +338,7 @@
                                                          </button>
                                                          <div class="leanth-course">
                                                             <span>{{ $carriculam->duration }} Hours</span>
-                                                            <span> {{ count(json_decode($carriculam->lecture)) }} Lectures</span>
+                                                            <span> {{ count(json_decode($carriculam->lecture)) }} Lecture</span>
                                                          </div>
                                                       </div>
                                                    </div>

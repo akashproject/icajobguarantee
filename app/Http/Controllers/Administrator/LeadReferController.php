@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Administrator;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\LeadRefer;
+use App\Models\Lead;
 use App\Models\Center;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -92,8 +93,23 @@ class LeadReferController extends Controller
 
     public function backLogLeads(){
         try {
-            $leads = DB::table('leads')->where('otp_status',"0")->get();
+            $leads = DB::table('leads')
+                ->whereNot('otp_status','1')
+                ->groupBy('mobile')
+                ->havingRaw("crmStatus != '1'")
+                ->orderBy('id', 'ASC')->get();
             return view('administrator.leads-refer.backlog',compact('leads'));
+        } catch(\Illuminate\Database\QueryException $e){
+            var_dump($e->getMessage()); 
+        }
+    }
+
+    public function updateLeadStatus($id){
+        try {
+            $data = ['crmStatus' => '1'];
+            $lead = Lead::findOrFail($id);
+            $lead->update($data);
+            return redirect()->back()->with('message', 'Lead updated successfully!');
         } catch(\Illuminate\Database\QueryException $e){
             var_dump($e->getMessage()); 
         }

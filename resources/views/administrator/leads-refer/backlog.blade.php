@@ -17,6 +17,10 @@
 								<th>Mobile</th>
 								<th>Center</th>
 								<th>Pincode</th>
+								<th>UTM Campaign</th>
+								<th>UTM Source</th>
+								<th>Created At</th>
+								<th>Option</th>
 							</tr>
 
 						</thead>
@@ -28,6 +32,12 @@
 								<td>{{ $value->mobile }}</td>													
 								<td>{{ $value->center }}</td>													
 								<td>{{ $value->pincode }}</td>													
+								<td>{{ $value->utm_campaign }}</td>													
+								<td>{{ $value->utm_source }}</td>													
+								<td>{{ $value->created_at }}</td>													
+								<td>
+									<a href="{{ route('admin-update-lead-status',$value->id) }}" class="btn btn-primary btn" onclick="return confirm('Are you sure?')"; > Update </a>
+								</td>													
 							</tr>
 							@endforeach							
 						</tbody>

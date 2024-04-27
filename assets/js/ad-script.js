@@ -1458,6 +1458,24 @@ searchBAR: function (){
 		});
 	}
 
+	function insertLeadRecord(form,formId) {
+		$.ajaxSetup({
+			headers: {
+			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			}
+		});
+		$.ajax({
+			url: `${globalUrl}insert-lead-records`,
+			type: "post",
+			data: jQuery(form).serialize(),
+			success: function(result) {
+				console.log(result);
+				jQuery("#" + formId + " .lead_id").val(result.id);
+				return true;
+			}
+		});
+	}
+
 	function captureLead(form,formId){
 		$.ajaxSetup({
 			headers: {
@@ -1551,6 +1569,7 @@ searchBAR: function (){
 		if(`${isEnableOtp}` == 1 && `${isAjaxSubmit}` == 0){
 			if(jQuery("#" + formId + " .formFieldOtpResponse").val() == ""){
 				sendMobileOtp(formId);
+				insertLeadRecord(form,formId);
 				countDown()
 				return false;
 			}

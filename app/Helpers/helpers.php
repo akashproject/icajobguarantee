@@ -133,7 +133,7 @@ if (! function_exists('get_reviews_ratings')) {
         return $reviewRatings;
     }
 }
-
+    
 if (! function_exists('getTestimonials')) {
     function getTestimonials($model="",$model_id=""){
 
@@ -303,16 +303,22 @@ if (! function_exists('getCenters')) {
             if($center_id){
                 $centers->where('id',$center_id);
             } 
-            $centers = $centers->where('status',"1");
+            
             if(isset($_COOKIE['lng']) && isset($_COOKIE['lat'])){
                 $centers->orderBy(DB::raw('POW((lng-'.$_COOKIE['lng'].'),2) + POW((lat-'.$_COOKIE['lat'].'),2)'));
             } else {
                 $centers->orderBy("name","asc");
             }
-            $centers->where('status',1);
+            $centers = $centers->where('status',"1");
             return $centers->get();     
         });
         return $centers;
+    }
+}
+
+if (! function_exists('getCourseModules')) {
+    function getCourseModules($course_id=null, $course_type_id=null){
+        return $carriculams = DB::table('curriculums')->where('course_id',$course_id)->get();
     }
 }
 

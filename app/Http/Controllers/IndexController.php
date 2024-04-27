@@ -203,13 +203,10 @@ class IndexController extends Controller
             ]);
 
             if($postData["lead_id"] != '') {
-                $lead = Lead::findOrFail($postData["lead_id"]);
-                //echo "<pre>";print_r($lead);
-                $lead->update(['otp_status' => "1"]);
-                //print_r($lead);
-                //exit;
-                $nameArray = explode(" ", $lead->name);
-                $postData["firstname"] = current(explode(" ", $lead->name));
+                $leadFromdb = Lead::findOrFail($postData["lead_id"]);
+                $leadFromdb->update(['otp_status' => "1"]);
+                $nameArray = explode(" ", $leadFromdb->name);
+                $postData["firstname"] = current(explode(" ", $leadFromdb->name));
                 unset($nameArray["0"]);
                 $postData["lastname"] = implode(" ", $nameArray);
             } else {
@@ -248,7 +245,7 @@ class IndexController extends Controller
                 $postData["role"] = "b2c";
                 $leadFromdb = $this->captureLeadToDB($postData);
             }
-
+            Session::put('lead_id',$leadFromdb->id);
             if ($postData["store_area"] == 1) {
                 $this->classroomLeadCaptureToExtraage($postData);
             }
@@ -272,7 +269,6 @@ class IndexController extends Controller
                     "meta_key" => "assessment",
                     "meta_value" => $postData["assessment"],
                 ]);
-                Session::put('lead_id',$leadFromdb->id);
                 return redirect()->route('instruction', [$postData["assessment"]]);
             }
             
