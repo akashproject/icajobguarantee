@@ -4492,10 +4492,6 @@ a.comment-reply-link {
       display: inline-flex;
       width: 49%;
       font-size: 16px; }
-.course-single-text p {
-  font-size: 14px;
-  margin-bottom: 30px;
-  color: #333333; }
 
 .course-details-category span {
   font-weight: 300;
@@ -5788,67 +5784,6 @@ img.width-100 {
 .certificate img:hover {
   transform: scale(1.5);
 }
-
-.course-details-content h1,.course-details-content h2,.course-details-content h3,.course-details-content h4,.course-details-content h5,.course-details-content h6,.course-details-content table.table {
-  color: #404040;
-  margin: 0px 0px 3px 0;
-}
-.course-details-content h1 {
-  font-size: 30px;
-}
-.course-details-content h2 {
-  font-size: 28px;
-}
-.course-details-content h3 {
-  font-size: 25px;
-}
-.course-details-content h4 {
-  font-size: 22px;
-}
-.course-details-content h5 {
-  font-size: 20px;
-}
-.course-details-content h6 {
-  font-size: 18px;
-}
-.course-details-content ul {
-  margin: 10px 0;
-}
-.course-details-content ol {
-  color: #333;
-  margin: 10px 0;
-}
-.course-single-text p {
-  margin: 0px 0px 15px 0;
-  color: #333333;
-  line-height: 20px;
-}
-.course-details-content .table thead th {
-  font-weight: 600;
-  font-size: 20px;
-}
-.course-details-content a {
-  color: #4c4ebf !important;
-  font-weight: 600;
-}
-.course-details-content ul li {
-  display: block;
-  list-style: disc;
-  color: #333;
-  position: relative;
-  padding-left: 12px;
-  margin-left: 15px;
-}
-
-.course-details-content ul li::before {
-  content: "";
-  position: absolute;
-  width: 6px;
-  background: #3e4095;
-  height: 7px;
-  left: 0;
-  top: 6px;
-}
 .white-popup {
   position: relative;
   background: #FFF;
@@ -5916,3 +5851,70 @@ img.width-100 {
   border: 1px solid;
   font-size: 21px;
 }
+/* course page text content css */
+.course-details-content h1, .course-details-content h2, .course-details-content h3, .course-details-content h4, .course-details-content h5, .course-details-content h6 {
+  color: #393185;
+  margin: 15px 0px;
+}
+.course-details-content h1 {
+  font-size: 28px;
+}
+.course-details-content h2 {
+  font-size: 26px;
+}
+.course-details-content h3 {
+  font-size: 24px;
+}
+.course-details-content h4 {
+  font-size: 22px;
+}
+.course-details-content h5 {
+  font-size: 20px;
+}
+.course-details-content h6 {
+  font-size: 18px;
+}
+.course-details-content p {
+  margin: 10px 0;
+  color: #333;
+}
+.course-details-content a {
+  color: #393185 !important;
+  font-weight: 600;
+}
+.course-details-content ul, .course-details-content ol {
+  color: #333;
+  margin: 10px 0;
+}
+.course-details-content ul li {
+  display: block;
+  list-style: disc;
+  color: #333;
+  position: relative;
+  padding-left: 12px;
+  margin-left: 15px;
+}
+.course-details-content ul li::before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  background: #3e4095;
+  height: 7px;
+  left: 0;
+  top: 6px;
+}
+.course-details-content ol li {
+  display: block;
+  color: #333;
+  position: relative;
+  padding-left: 12px;
+  margin-left: 15px;
+}
+.course-details-content .table {
+  padding: 8px;
+}
+.course-details-content .table thead th {
+  font-weight: 600;
+  font-size: 20px;
+}
+/* course page text content css */
