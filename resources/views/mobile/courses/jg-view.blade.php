@@ -190,7 +190,6 @@
                               </ul>
                            </div>
                            <div class="tab-container">
-                              <!-- 1st tab -->
                               <div id="module-tab1" class="module-tab-content-1 pt35">
                                  <div class="">
                                     <div class="affiliate-market-guide mb65">

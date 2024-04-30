@@ -159,7 +159,10 @@
                         <li class="sidebar-item"><a href="{{ url('administrator/add-ad-page') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Add Ad Page </span></a></li>
                      </ul>
                   </li>
-                  <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('administrator/media') }}" aria-expanded="false"><i class="mdi mdi-folder-multiple-image"></i><span class="hide-menu">Media Library</span></a></li>
+                  <li class="sidebar-item"> 
+                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('administrator/media') }}" aria-expanded="false"><i class="mdi mdi-folder-multiple-image"></i><span class="hide-menu">Media Library</span>
+                     </a>
+                  </li>
                   <li class="sidebar-item">
                      <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-book-multiple-variant"></i><span class="hide-menu">Courses </span></a>
                      <ul aria-expanded="false" class="collapse  first-level">
@@ -388,7 +391,7 @@
                      </ul>
                   </li>
                   <li class="sidebar-item">
-                     <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-face"></i><span class="hide-menu">Enquiries</span></a>
+                     <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-face"></i><span class="hide-menu">Pink Form Enquires</span></a>
                      <ul aria-expanded="false" class="collapse first-level">
                         <li class="sidebar-item"><a href="{{ url('administrator/enquires') }}" class="sidebar-link"><i class="mdi mdi-emoticon"></i><span class="hide-menu"> All Enquiries </span></a></li>
                      </ul>
@@ -396,8 +399,8 @@
                   <li class="sidebar-item">
                      <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-face"></i><span class="hide-menu">Lead Refer</span></a>
                      <ul aria-expanded="false" class="collapse first-level">
-                        <li class="sidebar-item"><a href="{{ url('administrator/lead-refer') }}" class="sidebar-link"><i class="mdi mdi-emoticon"></i><span class="hide-menu"> All Leads </span></a></li>
-                        <li class="sidebar-item"><a href="{{ url('administrator/transfar-lead') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Transfar New Lead </span></a></li>
+                        <li class="sidebar-item"><a href="{{ url('administrator/lead-refer') }}" class="sidebar-link"><i class="mdi mdi-emoticon"></i><span class="hide-menu"> Recived Leads </span></a></li>
+                        <li class="sidebar-item"><a href="{{ url('administrator/transfar-lead') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Transfer New Lead </span></a></li>
                      </ul>
                   </li>
                   <li class="sidebar-item">

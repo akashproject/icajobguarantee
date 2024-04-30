@@ -15,10 +15,11 @@ class AffiliateController extends Controller
     public function users()
     {
         try {
+            $status = 0;
             $userData = Auth::user();
             $model = ucfirst($userData->role);
             $affiliateUsers = AffiliateUser::where('center_id',$userData->id)->where('model',$model)->get();
-            return view('administrator.affiliates.affiliate-users',compact('affiliateUsers'));
+            return view('administrator.affiliates.affiliate-users',compact('affiliateUsers','status'));
 
         } catch(\Illuminate\Database\QueryException $e){
             //throw $th;

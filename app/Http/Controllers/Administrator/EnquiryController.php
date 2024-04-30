@@ -10,16 +10,15 @@ use App\Models\Center;
 
 class EnquiryController extends Controller
 {
-    //
     public function index()
     {
         try {
-
+            $status = 0;
             $enquiry = Enquiry::all();
             $name = Auth::user()->name;
             $center = Center::where('name',$name)->first();
 
-            return view('administrator.enquiry.index',compact('enquiry','name','center'));
+            return view('administrator.enquiry.index',compact('enquiry','name','center','status'));
         } catch(\Illuminate\Database\QueryException $e){
             //throw $th;
         }

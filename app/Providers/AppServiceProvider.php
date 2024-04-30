@@ -58,7 +58,7 @@ class AppServiceProvider extends ServiceProvider
 
             //student Menu
             $studentMenu = array(
-                "/category/career-courses" => 'Job Guarantee Courses',
+                "/category/accounting-courses" => 'Job Guarantee Courses',
                 "/centers" => "Centers",
                 "/eduversity" => "University",
                 "https://www.icacourse.in" => "Online Courses",
@@ -69,7 +69,7 @@ class AppServiceProvider extends ServiceProvider
 
              //student Menu
              $termsMenu = array(
-                '/category/career-courses' => 'Career Courses',
+                '/category/accounting-courses' => 'Career Courses',
                 '/centers' => 'Centers',
                 '/eduversity' => "University",
                 '/online-courses' => "Online Courses",
