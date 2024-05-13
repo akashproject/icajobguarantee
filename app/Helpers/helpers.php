@@ -145,7 +145,7 @@ if (! function_exists('getTestimonials')) {
             if($model_id){
                 $testimonials->where('model_id',$model_id);
             }   
-            return $testimonials->where('status',"1")->get();
+            return $testimonials->where('status',"1")->orderBy('id', 'DESC')->get();
         });
         return $testimonials;
     }

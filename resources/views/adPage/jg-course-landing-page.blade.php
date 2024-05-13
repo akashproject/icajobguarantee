@@ -1257,59 +1257,36 @@
 	</section>
 
 	<!-- End  of testimonial secound section
-
 	============================================= -->
 
 
 
 	<!-- Start of testimonial secound section
-
 	============================================= -->
-
 	<section id="alumni" class="testimonial_2_section">
-
 		<div class="container">
-
 			<div class="testimonial-slide">
-
 				<div class="section-title mb20 headline text-center">
-
 					<span class="subtitle text-uppercase">About This Course </span>
-
 					<h3>Student<span> Speaks.</span></h3>
-
 				</div>
 
 				<div  id="testimonial-slide-item" class="testimonial-slide-area">
-
 					@foreach(getTestimonials() as $testimonial)						
-
 					<div class="student-qoute">
-
 						<div class="course-pic relative-position text-center">
-
 							<div class="circle-img">
-
 								<img src="{{ (isset($testimonial->featured_image))?getSizedImage('',$testimonial->featured_image):'https://dummyimage.com/140x140' }}" alt="">	
-
-							</div>					
-
+							</div>
 						</div>
-
 						{!! $testimonial->comment !!}
-
 						<div class="student-name-designation">
-
 							<span class="st-name bold-font">{{ $testimonial->name }}</span>
-
 							<span class="st-designation">{{ $testimonial->dasignation }}</span>
-
 						</div>
 
 						<div class="alumni-placed-at text-center">
-
-							<img src="{{ (getRecruterById($testimonial->placed_at)->featured_image)?getSizedImage('',getRecruterById($testimonial->placed_at)->featured_image):'https://dummyimage.com/32' }}" >
-
+							<img src="{{ isset(getRecruterById($testimonial->placed_at)->featured_image)?getSizedImage('',getRecruterById($testimonial->placed_at)->featured_image):'https://dummyimage.com/32' }}" >
 						</div>
 
 					</div>
@@ -1331,33 +1308,21 @@
 
 
 	<section id="faq" class="teacher-details-area">
-
 			<div class="container">
-
 				<div class="row">
-
 					<div class="col-md-9">
-
                     	<div class="about-teacher about-faq faq-secound-home-version">
-
 							<div class="section-title-2  headline text-left">
-
 								<h2>Frequently  <span>Ask &amp; Questions.</span></h2>
-
 							</div>							
 
 							<div class="faq-tab mb35">
-
 								<div class="faq-tab-ques  ul-li">
-
                                     <div id="accordion3" class="panel-group">
-
 										@foreach(getFaqs("Adpage",$contentMain->id) as $key => $value)
-
                                         <div class="panel">
 
                                             <div class="panel-title" id="heading_{{$key}}">
-
                                                 <h3 class="mb-{{$key}}">
 
                                                     <button class="btn btn-link" data-toggle="collapse" data-target="#collapse_{{$key}}" aria-expanded="true" aria-controls="collapse_{{$key}}">
