@@ -10,7 +10,6 @@
 	============================================= -->
 	<header>
 		<div id="main-menu"  class="main-menu-container header-style-2">
-			
 			<div class="main-menu">
 				<div class="container">
 					<div class="navbar-default">
@@ -172,123 +171,123 @@
 
 	<!-- Start of Search Courses
 		============================================= -->
-		<section id="usp" class="search-course-section search-course-secound">
-			<div class="container">
-				<div class="search-counter-up">
-					<div class="row">
-						<div class="col-md-3">
-							<div class="counter-icon-number "  >
-								<div class="counter-icon">
-									<i class="text-gradiant flaticon-graduation-hat"></i>
-								</div>
-								<div class="counter-number">
-									<span class="counter-count bold-font">53260</span><span>+</span>
-									<p>Jobs In Naukri</p>
-								</div>
+	<section id="usp" class="search-course-section search-course-secound">
+		<div class="container">
+			<div class="search-counter-up">
+				<div class="row">
+					<div class="col-md-3">
+						<div class="counter-icon-number "  >
+							<div class="counter-icon">
+								<i class="text-gradiant flaticon-graduation-hat"></i>
+							</div>
+							<div class="counter-number">
+								<span class="counter-count bold-font">53260</span><span>+</span>
+								<p>Jobs In Naukri</p>
 							</div>
 						</div>
-						<!-- /counter -->
-
-						<div class="col-md-3">
-							<div class="counter-icon-number "  >
-								<div class="counter-icon">
-									<i class="text-gradiant flaticon-book"></i>
-								</div>
-								<div class="counter-number">
-									<span class="counter-count bold-font">37642</span><span>+</span>
-									<p>Jobs In Linkedin</p>
-								</div>
-							</div>
-						</div>
-						<!-- /counter -->
-
-						<div class="col-md-3">
-							<div class="counter-icon-number "  >
-								<div class="counter-icon">
-									<i class="text-gradiant flaticon-favorites-button"></i>
-								</div>
-								<div class="counter-number">
-									<span class="counter-count bold-font">13194</span><span>+</span>
-									<p>Jobs In Timejobs</p>
-								</div>
-							</div>
-						</div>
-						<!-- /counter -->
-
-						<div class="col-md-3">
-							<div class="counter-icon-number "  >
-								<div class="counter-icon">
-									<i class="text-gradiant flaticon-group"></i>
-								</div>
-								<div class="counter-number">
-									<span class="counter-count bold-font">20000</span><span>/mo</span>
-									<p>Average Salary</p>
-								</div>
-							</div>
-						</div>
-						<!-- /counter -->
 					</div>
+					<!-- /counter -->
+
+					<div class="col-md-3">
+						<div class="counter-icon-number "  >
+							<div class="counter-icon">
+								<i class="text-gradiant flaticon-book"></i>
+							</div>
+							<div class="counter-number">
+								<span class="counter-count bold-font">37642</span><span>+</span>
+								<p>Jobs In Linkedin</p>
+							</div>
+						</div>
+					</div>
+					<!-- /counter -->
+
+					<div class="col-md-3">
+						<div class="counter-icon-number "  >
+							<div class="counter-icon">
+								<i class="text-gradiant flaticon-favorites-button"></i>
+							</div>
+							<div class="counter-number">
+								<span class="counter-count bold-font">13194</span><span>+</span>
+								<p>Jobs In Timejobs</p>
+							</div>
+						</div>
+					</div>
+					<!-- /counter -->
+
+					<div class="col-md-3">
+						<div class="counter-icon-number "  >
+							<div class="counter-icon">
+								<i class="text-gradiant flaticon-group"></i>
+							</div>
+							<div class="counter-number">
+								<span class="counter-count bold-font">20000</span><span>/mo</span>
+								<p>Average Salary</p>
+							</div>
+						</div>
+					</div>
+					<!-- /counter -->
 				</div>
 			</div>
-		</section>
+		</div>
+	</section>
 	<!-- End of Search Courses
 		============================================= -->
 
 	<!-- Hightlists section
 		============================================= -->
-		<section id="about" class="highlights-section">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-5 mb20 text-center">
-						<img src="https://www.myidcm.com/wp-content/uploads/2022/10/IDCM-Landing-Page_Image-500×580-1-1.png">
+	<section id="about" class="highlights-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5 mb20 text-center">
+					<img src="https://www.myidcm.com/wp-content/uploads/2022/10/IDCM-Landing-Page_Image-500×580-1-1.png">
+				</div>
+				<div class="col-md-7 mt10">
+					<div class="section-title mb20 headline text-center">
+						<span class="subtitle text-uppercase">Key Highlights </span>
+						<h3>Best Prefferd<span> Modules.</span></h3>
 					</div>
-					<div class="col-md-7 mt10">
-						<div class="section-title mb20 headline text-center">
-							<span class="subtitle text-uppercase">Key Highlights </span>
-							<h3>Best Prefferd<span> Modules.</span></h3>
+					<div class="row text-center">
+						<div class="col-md-4 col-6"> 
+							<div class="key-highlights" >
+								<img src="{{ url('assets/img/icons/tick.png')}}" >
+								<h6> 100% Job Guarantee </h6>
+							</div>
 						</div>
-						<div class="row text-center">
-							<div class="col-md-4 col-6"> 
-								<div class="key-highlights" >
-									<img src="{{ url('assets/img/icons/tick.png')}}" >
-									<h6> 100% Job Guarantee </h6>
-								</div>
+						<div class="col-md-4 col-6"> 
+							<div class="key-highlights" >
+								<img src="{{ url('assets/img/icons/tick.png')}}" >
+								<h6> Triple Certification </h6>
 							</div>
-							<div class="col-md-4 col-6"> 
-								<div class="key-highlights" >
-									<img src="{{ url('assets/img/icons/tick.png')}}" >
-									<h6> Triple Certification </h6>
-								</div>
+						</div>
+						<div class="col-md-4 col-6"> 
+							<div class="key-highlights" >
+								<img src="{{ url('assets/img/icons/tick.png')}}" >
+								<h6> Interactive E-Classes </h6>
 							</div>
-							<div class="col-md-4 col-6"> 
-								<div class="key-highlights" >
-									<img src="{{ url('assets/img/icons/tick.png')}}" >
-									<h6> Interactive E-Classes </h6>
-								</div>
+						</div>
+						<div class="col-md-4 col-6"> 
+							<div class="key-highlights" >
+								<img src="{{ url('assets/img/icons/tick.png')}}" >
+								<h6> Any Time Job Card Facility </h6>
 							</div>
-							<div class="col-md-4 col-6"> 
-								<div class="key-highlights" >
-									<img src="{{ url('assets/img/icons/tick.png')}}" >
-									<h6> Any Time Job Card Facility </h6>
-								</div>
+						</div>
+						<div class="col-md-4 col-6"> 
+							<div class="key-highlights" >
+								<img src="{{ url('assets/img/icons/tick.png')}}" >
+								<h6> Mock Interviews </h6>
 							</div>
-							<div class="col-md-4 col-6"> 
-								<div class="key-highlights" >
-									<img src="{{ url('assets/img/icons/tick.png')}}" >
-									<h6> Mock Interviews </h6>
-								</div>
-							</div>
-							<div class="col-md-4 col-6"> 
-								<div class="key-highlights" >
-									<img src="{{ url('assets/img/icons/tick.png')}}" >
-									<h6> 90% Practical + 10% Theory </h6>
-								</div>
+						</div>
+						<div class="col-md-4 col-6"> 
+							<div class="key-highlights" >
+								<img src="{{ url('assets/img/icons/tick.png')}}" >
+								<h6> 90% Practical + 10% Theory </h6>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</section>
+		</div>
+	</section>
 
 	<!-- End Hightlists section
 	============================================= -->
