@@ -596,7 +596,7 @@
 							<span class="st-designation">{{ $testimonial->dasignation }}</span>
 						</div>
 						<div class="alumni-placed-at text-center">
-							<img src="{{ (getRecruterById($testimonial->placed_at)->featured_image)?getSizedImage('',getRecruterById($testimonial->placed_at)->featured_image):'https://dummyimage.com/32' }}" >
+							<img src="{{ isset(getRecruterById($testimonial->placed_at)->featured_image)?getSizedImage('',getRecruterById($testimonial->placed_at)->featured_image):'https://dummyimage.com/32' }}" >
 						</div>
 					</div>
 					@endforeach
