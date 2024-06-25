@@ -50,8 +50,8 @@
 									<i class="text-gradiant flaticon-graduation-hat"></i>
 								</div>
 								<div class="counter-number">
-									<span class="counter-count bold-font">10 </span><span>K+</span>
-									<p>Daily Admission</p>
+									<span class="counter-count bold-font">25 </span> <span>Years</span>
+									<p>of Excellence</p>
 								</div>
 							</div>
 						</div>
@@ -63,8 +63,8 @@
 									<i class="text-gradiant flaticon-book"></i>
 								</div>
 								<div class="counter-number">
-									<span class="counter-count bold-font">100</span><span>+</span>
-									<p>Pan India Center</p>
+									<span class="counter-count bold-font">100</span> <span>+</span>
+									<p>Pan India Centers</p>
 								</div>
 							</div>
 						</div>
@@ -76,7 +76,7 @@
 									<i class="text-gradiant flaticon-group"></i>
 								</div>
 								<div class="counter-number">
-									<span class="counter-count bold-font">6</span><span>Lacs +</span>
+									<span class="counter-count bold-font">4</span> <span>Lacs</span>
 									<p>Monthly Income</p>
 								</div>
 							</div>
@@ -124,7 +124,7 @@
 								<div class="latest-video-poster relative-position mb20">
 									<img src="{{ url('assets/img/franchise-videothumb.png') }}" alt="">
 									<div class="video-play-btn text-center gradient-bg">
-										<a class="popup-with-zoom-anim" href="https://www.youtube.com/watch?v=hjbKYGXJ7i4"><i class="fas fa-play"></i></a>
+										<a class="popup-with-zoom-anim" href="https://www.youtube.com/watch?v=VGXY8YiPPBU"><i class="fas fa-play"></i></a>
 									</div>
 								</div>
 								<div class="course-desc">
