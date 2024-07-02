@@ -785,20 +785,16 @@ class IndexController extends Controller
     {
         try {
             $postData = $request->all();
-
             $data = [
                 "name" => $postData["name"],
                 "mobile" => $postData["mobile"],
                 "email" => $postData["email"],
-                "amount" => "15000",
-                "center" => $postData["center"],
-                "partners" => $postData["partners"],
-                "counselors" => $postData["counselors"],
+                "pincode" => $postData["pincode"],
+                "amount" => "1",
                 "order_id" => "ragistration_" . $this->random_strings(8),
                 "payment_status" => "pending",
             ];
-
-            $ragistration = DB::table("training_ragistration")->insert($data);
+            $ragistration = DB::table("nks_webinar")->insert($data);
             $merchant_data = "";
             $working_key = "BE3CFB0CFCFA73C7989C65A12957B6CA"; //Shared by CCAVENUES
             $access_code = "AVEV11IG91BE22VEEB"; //Shared by CCAVENUES
@@ -806,7 +802,7 @@ class IndexController extends Controller
                 "merchant_id" => "415669",
                 "order_id" => $data["order_id"],
                 "language" => "EN",
-                "amount" => 15000, //(isset($_POST['extanded_stay']) && $_POST['extanded_stay'] !='')?$_POST['extanded_stay']+5000:5000
+                "amount" => 1, //(isset($_POST['extanded_stay']) && $_POST['extanded_stay'] !='')?$_POST['extanded_stay']+5000:5000
                 "currency" => "INR",
                 "redirect_url" =>
                     "https://www.icajobguarantee.com/index/payment-success",
@@ -884,14 +880,14 @@ class IndexController extends Controller
             }
 
             if ($order_status === "Success") {
-                $ragistration = DB::table("training_ragistration")
+                $ragistration = DB::table("nks_webinar")
                     ->where("order_id", $responseData["order_id"])
                     ->update([
                         "payment_id" => $responseData["tracking_id"],
                         "payment_status" => "success",
                     ]);
             } else {
-                $ragistration = DB::table("training_ragistration")
+                $ragistration = DB::table("nks_webinar")
                     ->where("order_id", $responseData["order_id"])
                     ->update(["payment_status" => "failed"]);
             }
