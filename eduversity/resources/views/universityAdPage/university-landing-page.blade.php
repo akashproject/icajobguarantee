@@ -70,12 +70,12 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-7">
-						<div class="ad-banner-content">
+						<div class="ad-banner-content" style="padding-top: 74px;">
 							<div class="ad-banner-title">
-								<h1>The Only 3 Years Bachelor Degree That Gives You 1 Year Work Experience!</h1>
+								<h1 style="color: #000;">The Only 3 Years Bachelor Degree That Gives You 1 Year Work Experience!</h1>
 							</div>
 							<div class="ad-banner-sub-title">
-								<h2>Why Settle for Traditional Graduation Programs? Join <span style="font-size: 30px;color: #393185;font-weight: 800;">{{$university->name}}</span> to power up your career. </h2>
+								<h2 style="color: #000;">Why Settle for Traditional Graduation Programs? Join <span style="font-size: 30px;color: #393185;font-weight: 800;">{{$university->name}}</span> to power up your career. </h2>
 							</div>
 							
 						</div>
@@ -200,7 +200,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-5 mb20 text-center">
-						<img src="https://www.myidcm.com/wp-content/uploads/2022/10/IDCM-Landing-Page_Image-500×580-1-1.png">
+						<img src="{{ url('/assets/img/left-image.png') }}">
 					</div>
 					<div class="col-md-7 mt10">
 						<div class="section-title mb20 headline text-center">
@@ -575,7 +575,7 @@
 
 	<!-- Start of testimonial secound section
 	============================================= -->
-	<section id="alumni" class="testimonial_2_section">
+	<!-- <section id="alumni" class="testimonial_2_section">
 		<div class="container">
 			<div class="testimonial-slide">
 				<div class="section-title mb20 headline text-center">
@@ -603,7 +603,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 	<!-- End  of testimonial secound section
 	============================================= -->
 

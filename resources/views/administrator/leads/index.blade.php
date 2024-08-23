@@ -3,16 +3,31 @@
 
 
 @section('content')
+
+
+
 <div class="col-12">
 
 
 
 	@if($leads)
 
+	
+
 		<div class="card">
+
+
+
 			<div class="card-body">
+
+
+
 				<div class="form-group row">
+
 					<label for="no_of_module" class="col-sm-2 text-left control-label col-form-label">Lead History</label>
+
+					
+
 				</div>
 
 
@@ -26,10 +41,15 @@
 
 
 						<thead>
+
 							<tr>
+
 								<th>Name</th>
+
 								<th>Mobile</th>
+
 								<th>Options</th>
+
 							</tr>
 
 						</thead>

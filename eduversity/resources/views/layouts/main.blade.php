@@ -33,23 +33,19 @@
     <meta name="twitter:label2" content="Est. reading time" />
     <meta name="twitter:data2" content="1 minute" />
     <!-- Css -->
-    <link rel="icon" href="https://www.icajobguarantee.com/assets/images/favicon.ico">
-    <link href="https://www.icajobguarantee.com/assets/css/owl.carousel.css" rel="stylesheet">
-    <link href="https://www.icajobguarantee.com/assets/css/fontawesome-all.css" rel="stylesheet">
-    <link href="https://www.icajobguarantee.com/assets/css/flaticon.css" rel="stylesheet">
-    <link href="https://www.icajobguarantee.com/assets/css/meanmenu.css" rel="stylesheet">
-    <link href="https://www.icajobguarantee.com/assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://www.icajobguarantee.com/assets/css/video.min.css" rel="stylesheet">
-    <link href="https://www.icajobguarantee.com/assets/css/lightbox.css" rel="stylesheet">
-    <link href="https://www.icajobguarantee.com/assets/css/progess.css" rel="stylesheet">
-    <link href="https://www.icajobguarantee.com/assets/css/animate.min.css" rel="stylesheet">
-    @if(check_device('mobile'))
-    <link href="{{ url('https://www.icajobguarantee.com/assets/css/mobile.css') }}" rel="stylesheet">
-    @else
-    <link href="{{ url('https://www.icajobguarantee.com/assets/css/style.css') }}" rel="stylesheet">
-    @endif
-    <link href="https://www.icajobguarantee.com/assets/css/responsive.css" rel="stylesheet">
-    <link href="https://www.icajobguarantee.com/assets/css/colors/color-7.css" rel="alternate stylesheet" type="text/css" title="color-7">
+    <link rel="icon" href="{{ asset('assets/images/favicon.ico') }}">
+    <link href="{{ url('assets/css/owl.carousel.css') }}" rel="stylesheet">
+    <link href="{{ url('assets/css/fontawesome-all.css') }}" rel="stylesheet">
+    <link href="{{ url('assets/css/flaticon.css') }}" rel="stylesheet">
+    <link href="{{ url('assets/css/meanmenu.css') }}" rel="stylesheet">
+    <link href="{{ url('assets/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url('assets/css/video.min.css') }}" rel="stylesheet">
+    <link href="{{ url('assets/css/lightbox.css') }}" rel="stylesheet">
+    <link href="{{ url('assets/css/progess.css') }}" rel="stylesheet">
+    <link href="{{ url('assets/css/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ url('assets/css/ads.css') }}" rel="stylesheet">
+    <link href="{{ url('assets/css/responsive.css') }}" rel="stylesheet">
+    <link href="{{ url('assets/css/colors/color-7.css') }}" rel="alternate stylesheet" type="text/css" title="color-7">
     @yield('style')
     @if(isset($contentMain->schema))
     {!! $contentMain->schema !!}
@@ -92,18 +88,19 @@
     <script src="https://www.icajobguarantee.com/assets/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
-    <script src="https://www.icajobguarantee.com/assets/js/popper.min.js"></script>
-    <script src="https://www.icajobguarantee.com/assets/js/owl.carousel.min.js"></script>
-    <script src="https://www.icajobguarantee.com/assets/js/jarallax.js"></script>
-    <script src="https://www.icajobguarantee.com/assets/js/jquery.magnific-popup.min.js"></script>
-    <script src="https://www.icajobguarantee.com/assets/js/lightbox.js"></script>
-    <script src="https://www.icajobguarantee.com/assets/js/jquery.meanmenu.js"></script>
-    <script src="https://www.icajobguarantee.com/assets/js/scrollreveal.min.js"></script>
-    <script src="https://www.icajobguarantee.com/assets/js/jquery.counterup.min.js"></script>
-    <script src="https://www.icajobguarantee.com/assets/js/waypoints.min.js"></script>
-    <script src="https://www.icajobguarantee.com/assets/js/jquery-ui.js"></script>
-    <script src="https://www.icajobguarantee.com/assets/js/script.js"></script>
+    <script type="text/javascript" src="https://app.cognocart.com/files/deploy/embed_chatbot_47.js"></script>
+    <script src="{{ url('assets/js/popper.min.js') }}"></script>
+    <script src="{{ url('assets/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ url('assets/js/jarallax.js') }}"></script>
+    <script src="{{ url('assets/js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ url('assets/js/lightbox.js') }}"></script>
+    <script src="{{ url('assets/js/jquery.meanmenu.js') }}"></script>
+    <script src="{{ url('assets/js/scrollreveal.min.js') }}"></script>
+    <script src="{{ url('assets/js/jquery.counterup.min.js') }}"></script>
+    <script src="{{ url('assets/js/waypoints.min.js') }}"></script>
+    <script src="{{ url('assets/js/jquery-ui.js') }}"></script>
     <script src="{{ url('assets/js/script.js') }}"></script>
+    <script src="{{ url('assets/js/eduversityscript.js') }}"></script>
 </body>
 
 </html>

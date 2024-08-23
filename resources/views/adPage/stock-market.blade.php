@@ -186,7 +186,7 @@
 
       <div class="row">
 
-         <div class="col-md-7">
+         <div class="col-md-7" style="margin-top: 40px!important;">
 
             <div class="ad-banner-content" style="color: #071e62!important; background: #e9e9e9!important;">
 
@@ -264,7 +264,7 @@
 
                         <h5 style="color: #071e62; font-weight: 700; font-size: 16px!important;">Weekend Batch</h5>
 
-                        <h6 style="color: #071e62; font-weight: 700; font-size: 14px!important">6<sup>th</sup> Jan, 2024</h6>
+                        <h6 style="color: #071e62; font-weight: 700; font-size: 14px!important">1<sup>st</sup> June, 2024</h6>
 
                         <p style="color: #071e62; font-size: 14px;">Sat | Sun</p>
 
@@ -274,7 +274,7 @@
 
                         <h5 style="color: #071e62; font-weight: 700; font-size: 16px!important;">Weekly Batch</h5>
 
-                        <h6 style="color: #071e62; font-weight: 700; font-size: 14px!important">8<sup>th</sup> Jan, 2024</h6>
+                        <h6 style="color: #071e62; font-weight: 700; font-size: 14px!important">3<sup>rd</sup> June`, 2024</h6>
 
                         <p style="color: #071e62; font-size: 14px;">Mon | Wed | Fri</p>
 

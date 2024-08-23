@@ -164,7 +164,7 @@
 
 						<div class="form-group row">
 
-							<label for="event_type_id" class="col-sm-12 text-left control-label col-form-label">Cateogry</label>
+							<label for="type_id" class="col-sm-12 text-left control-label col-form-label">Cateogry</label>
 
 							<div class="col-sm-12">
 

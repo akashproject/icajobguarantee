@@ -29,9 +29,9 @@
 																	<h3><a target="_blank" href="{{ $value->link }}">{{ $value->name }}</a></h3>
 																</div>
 																<div>
-																	{!! $value->description !!}
+																	{!! $value->description!!}
 																</div>
-															</div>		
+															</div>															
 														</div>
 														<div class="more-btn text-center" >
 															<div class="course-type-list">	
@@ -39,8 +39,8 @@
 															</div>
 															<div class="course-type-list">														
 																<a class="btn-outline" target="_blank" href="{{ $value->link }}" > Explore <i class="fas fa-caret-right"></i></a>
-															</div>	
-														</div>
+															</div>														
+														</div>														
 													</div>
 												</div>
 												@endforeach													

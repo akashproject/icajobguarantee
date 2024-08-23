@@ -61,7 +61,7 @@ class Handler extends ExceptionHandler
             $content['body'] = request()->all();
             $content['ip'] = request()->ip();
    
-            Mail::to('backup.proloy.ghosh@icagroup.in')->send(new ExceptionOccured($content));
+            //Mail::to('backup.proloy.ghosh@icagroup.in')->send(new ExceptionOccured($content));
   
         } catch (Throwable $exception) {
             Log::error($exception);

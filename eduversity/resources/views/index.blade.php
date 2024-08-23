@@ -8,7 +8,7 @@
 			<div class="container-fluid">
 				<div class="">
 					<video playsinline="" autoplay="" muted="" loop="" poster="polina.jpg" id="bgvid" style="width: 100%;">
-						<source src="https://university.icajobguarantee.com/wp-content/uploads/2023/02/ICA-UA-video-banner-2-1.m4v" type="video/mp4">
+						<source src="{{ url('assets/videos/banner.m4v') }}" type="video/mp4">
 					</video>
 				</div>
 			</div>
@@ -196,7 +196,7 @@
 
 						<div class="col-sm-4">
 							<div class="extra-pic text-center">
-								<img src="https://university.icajobguarantee.com/wp-content/themes/scriptcrown/img/banner/wc-2.png" alt="img">
+								<img src="{{ url('/assets/img/banner/wc-2.png') }}" alt="img">
 							</div>
 						</div>
 						<!-- /col-sm-6 -->
@@ -216,7 +216,7 @@
 												<h3>Paid Internship</h3>
 											</div>
 											<div class="features-text-dec text-right">
-												<span>The curriculum contains 2 years of fulltime classroom training &amp; 1 year paid internship.</span>
+												<span>The curriculum contains 3 years of fulltime classroom training &amp; 1 year paid internship.</span>
 											</div>
 										</div>
 									</div>

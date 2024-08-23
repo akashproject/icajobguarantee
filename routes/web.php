@@ -30,6 +30,7 @@ Route::get('/schedule-run', function() {
     // return what you want
 });
 
+Route::any('/index/pip-mail', [App\Http\Controllers\IndexController::class, 'pipMail'])->name('pip-mail');
 
 Route::get('/index/update-review', function() {
     $output = [];
