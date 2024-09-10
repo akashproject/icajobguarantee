@@ -109,6 +109,7 @@
     <script src="{{ url('assets/js/waypoints.min.js') }}"></script>
     <script src="{{ url('assets/js/jquery-ui.js') }}"></script>
     <script src="{{ url('assets/js/script.js') }}"></script>
+    
 </body>
 
 </html>

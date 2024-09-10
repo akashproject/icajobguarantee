@@ -59,8 +59,8 @@ class IndexController extends Controller
             });
 
             $blogs = getBlogs('["5765","5555"]');
-
-            return view($this->layout . "index",compact("courses", "courseTypes", "blogs"));
+            $contentMain = (object)['enable_otp'=>1];
+            return view($this->layout . "index",compact("courses", "courseTypes", "blogs", "contentMain"));
 
         } catch (\Illuminate\Database\QueryException $e) {
             //throw $th;
@@ -111,33 +111,27 @@ class IndexController extends Controller
             $data = $request->all();
             $otpvalue = rand(1111, 9999);
             $lastdigit = substr($_POST["mobile"], -4);
-            $curl = curl_init();
-            curl_setopt_array($curl, [
-                CURLOPT_URL =>
-                    "https://mysmsshop.in/V2/http-api.php?apikey=8bhPdcPVJabXWdla&senderid=ICAEDU&number=" .
-                    $_POST["mobile"] .
-                    "&message=" .
-                    $otpvalue .
-                    "%20is%20your%20One%20Time%20Password%20(OTP)%20for%20online%20course%20enquiry%20at%20ICA%20Edu%20Skills%20Pvt%20Ltd.%20for%20the%20mobile%20number%20xxxxxx" .
-                    $lastdigit .
-                    ".%20Thank%20you%20for%20your%20inquiry.%20PLS%20DO%20NOT%20SHARE%20IT%20WITH%20ANYONE%20APART%20FROM%20ICA%20representative.",
+            $url = "https://mysmsshop.in/V2/http-api.php?apikey=8bhPdcPVJabXWdla&senderid=ICAEDU&number=".$_POST["mobile"]."&message=".$otpvalue."%20is%20your%20One%20Time%20Password%20(OTP)%20for%20online%20course%20enquiry%20at%20ICA%20Edu%20Skills%20Pvt%20Ltd.%20for%20the%20mobile%20number%20xxxxxx".$lastdigit.".%20Thank%20you%20for%20your%20inquiry.%20PLS%20DO%20NOT%20SHARE%20IT%20WITH%20ANYONE%20APART%20FROM%20ICA%20representative.";
 
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_ENCODING => "",
-                CURLOPT_MAXREDIRS => 10,
-                CURLOPT_TIMEOUT => 0,
-                CURLOPT_FOLLOWLOCATION => true,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => "GET",
-            ]);
+            $curl = curl_init($url);
+            curl_setopt($curl, CURLOPT_URL, $url);
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+            $headers = array(
+            "Accept: */*",
+            );
+            curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+            //for debug only!
+            curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+            curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
             $response = curl_exec($curl);
-            curl_close($curl);
             $data = [
                 "lastdigit" => $lastdigit,
                 "otp_value" => $otpvalue,
             ];
 
+            
             if ($response) {
                 $data["status"] = "success";
             } else {
@@ -875,7 +869,7 @@ class IndexController extends Controller
                 $payment = explode("=", $decryptValues[$i]);
                 $responseData[$payment[0]] = $payment[1];
                 if ($i == 3) {
-                    $order_status = $payment[1];
+                    $order_status = $payment[1]; 
                 }
             }
 

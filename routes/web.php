@@ -82,7 +82,7 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::get('/upload-leads', [App\Http\Controllers\Administrator\LeadReferController::class, 'uploadLead'])->name('admin-upload-leads');
         Route::get('/backlog-leads', [App\Http\Controllers\Administrator\LeadReferController::class, 'backLogLeads'])->name('admin-backlog-leads');
         Route::get('/update-lead-status/{id}', [App\Http\Controllers\Administrator\LeadReferController::class, 'updateLeadStatus'])->name('admin-update-lead-status');
-
+        Route::get('/export-lead-csv', [App\Http\Controllers\Administrator\LeadReferController::class, 'exportLeadCsv'])->name('admin-export-lead-csv');
         //Page
         Route::get('/pages', [App\Http\Controllers\Administrator\PageController::class, 'index'])->name('admin-pages');
         Route::get('/add-page', [App\Http\Controllers\Administrator\PageController::class, 'Add'])->name('admin-add-page');

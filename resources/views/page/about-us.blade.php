@@ -148,9 +148,9 @@
 							<div class="blakish-overlay"></div>
 							<div class="teacher-social-list ul-li">
 								<ul>
-									<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-									<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+									<li><a href="https://www.facebook.com/narendra.shyamsukha" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+									<li><a href="https://x.com/nkshyamsukha" target="_blank"><i class="fab fa-twitter"></i></a></li>
+									<li><a href="https://www.linkedin.com/in/narendrashyamsukha/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
 								</ul>
 							</div>
 						</div>
@@ -166,9 +166,9 @@
 							<div class="blakish-overlay"></div>
 							<div class="teacher-social-list ul-li">
 								<ul>
-									<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-									<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+									<li><a href="https://www.facebook.com/ankitshyamsukha" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+									<li><a href="https://x.com/ankitshyamsukha" target="_blank"><i class="fab fa-twitter"></i></a></li>
+									<li><a href="https://www.linkedin.com/in/ankitshyamsukha/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
 								</ul>
 							</div>
 						</div>
@@ -184,9 +184,9 @@
 							<div class="blakish-overlay"></div>
 							<div class="teacher-social-list ul-li">
 								<ul>
-									<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+									<li><a href="https://www.facebook.com/kanhaiya.poddar.75" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
 									<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+									<li><a href="https://www.linkedin.com/in/kanhaiya-poddar-0a094a23/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
 								</ul>
 							</div>
 						</div>
@@ -202,9 +202,9 @@
 							<div class="blakish-overlay"></div>
 							<div class="teacher-social-list ul-li">
 								<ul>
-									<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-									<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+									<li><a href="https://www.facebook.com/tirthankar.sanyal" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+									<li><a href="https://x.com/TirthankarSany1" target="_blank"><i class="fab fa-twitter"></i></a></li>
+									<li><a href="https://www.linkedin.com/in/tirthankar-sanyal-40588640/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
 								</ul>
 							</div>
 						</div>

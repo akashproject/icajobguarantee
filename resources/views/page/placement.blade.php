@@ -235,7 +235,7 @@
 					</div>
 					<div class="col-md-12 mt10" >
 						<div class="genius-btn mb20 gradient-bg text-center text-uppercase ul-li-block bold-font" style="margin: auto;">
-							<a href="javascript:void(0)"> <i class="fas fa-avator" style="color: #fff;"></i> View All Students</a>
+							<a href="https://www.icajobguarantee.com/all-placement-student" target="_blank"> <i class="fas fa-avator" style="color: #fff;"></i> View All Students</a>
 						</div>
 					</div>
 				</div>

@@ -5,7 +5,13 @@
 		<div class="card">
 			<div class="card-body">
 				<div class="form-group row">
-					<label for="no_of_module" class="col-sm-2 text-left control-label col-form-label">Lead History</label>
+					<div class="col-md-6 text-left">
+						<label for="no_of_module" class="text-left control-label col-form-label">Lead History</label>
+					</div>
+					<div class="col-md-6 text-right">
+						<a href="{{ route('admin-export-lead-csv') }}" target="_blank" class="btn btn-success btn-medium"> Export Csv</a>
+					</div>
+					
 				</div>
 				<div class="table-responsive">
 					<table id="zero_config" class="table table-striped table-bordered">

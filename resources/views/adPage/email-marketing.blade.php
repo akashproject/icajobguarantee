@@ -1,0 +1,2 @@
+<iframe src="https://29r4apnn.sibpages.com?redirectParent=true" frameborder="0" scrolling="yes" width="100%" height="100%" marginheight="0" marginwidth="0" name="landing-page-embed-frame" wmode="transparent" style="height: 100vh"></iframe>
+    <script type="text/javascript">window.addEventListener("message",function(e){if(e.data&&e.data.redirect){window.location.href=e.data.url}})</script>

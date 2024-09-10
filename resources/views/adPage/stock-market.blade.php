@@ -264,7 +264,7 @@
 
                         <h5 style="color: #071e62; font-weight: 700; font-size: 16px!important;">Weekend Batch</h5>
 
-                        <h6 style="color: #071e62; font-weight: 700; font-size: 14px!important">1<sup>st</sup> June, 2024</h6>
+                        <h6 style="color: #071e62; font-weight: 700; font-size: 14px!important">3<sup>rd</sup> Aug, 2024</h6>
 
                         <p style="color: #071e62; font-size: 14px;">Sat | Sun</p>
 
@@ -274,7 +274,7 @@
 
                         <h5 style="color: #071e62; font-weight: 700; font-size: 16px!important;">Weekly Batch</h5>
 
-                        <h6 style="color: #071e62; font-weight: 700; font-size: 14px!important">3<sup>rd</sup> June`, 2024</h6>
+                        <h6 style="color: #071e62; font-weight: 700; font-size: 14px!important">1<sup>st</sup> Aug, 2024</h6>
 
                         <p style="color: #071e62; font-size: 14px;">Mon | Wed | Fri</p>
 
