@@ -38,6 +38,7 @@ class AppServiceProvider extends ServiceProvider
 
             // Header Menu
             $primaryMenu = array(
+                '/about-us' => "About Us",                
                 '/centers' => "Centers",                
                 '/franchise-opportunity' => "Franchise",               
                 '/eduversity' => "University",
@@ -91,6 +92,17 @@ class AppServiceProvider extends ServiceProvider
             );
             $view->with('courseMenu', $courseMenu);
 
+            $centerMenu = array(
+                '#course' => array('rel'=>"tab3",'value'=>"Course"),
+                '#gallery' => array('rel'=>"tab4",'value'=>"Gallery"),
+                '#placement' => array('rel'=>"",'value'=>"Placement"),
+                '#alumni' => array('rel'=>"",'value'=>"Testimonials"),
+                '#contact' => array('rel'=>"",'value'=>"Contacts"),
+                // '#review' => array('rel'=>"",'value'=>"Reviews"),
+                // '#faq' => array('rel'=>"",'value'=>"FAQs"),
+            );
+            $view->with('centerMenu', $centerMenu);
+
             $courseTypes = CourseType::where('status',1)->get();
             foreach ($courseTypes as $key => $value) {
                 $courses = DB::table('courses')->where("type_id",$value->id)->where("status",1)->get();
@@ -98,18 +110,6 @@ class AppServiceProvider extends ServiceProvider
             }
 
             $view->with('courseTypes', $courseTypes);
-
-            $centerMenu = array(
-                '#tab3' => array('rel'=>"tab3",'value'=>"Highlights"),
-                '#tab4' => array('rel'=>"tab4",'value'=>"Curriculam"),
-                '#career' => array('rel'=>"",'value'=>"Careers"),
-                '#alumni' => array('rel'=>"",'value'=>"Alumni"),
-                '#courses' => array('rel'=>"",'value'=>"Related Courses"),
-                '#review' => array('rel'=>"",'value'=>"Reviews"),
-                '#faq' => array('rel'=>"",'value'=>"FAQs"),
-            );
-            $view->with('centerMenu', $centerMenu);
-
             //Models
             $models =  array("Blog","Center","Course","CourseType","University");
             $view->with('models', $models);

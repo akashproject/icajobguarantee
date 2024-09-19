@@ -4238,11 +4238,23 @@ ul.product-tab li.active:after,ul.course-tab li.active:after {
   margin: 0.5rem 0;
 }
 
+.blog-description p {
+  display: block;
+  width: 100%;
+  line-height: 21px;
+  margin: 10px 0;
+}
+
+.blog-description ul {
+  margin: 15px 0;
+}
+
 .blog-description li {
   color: #121212;
   list-style: disc;
-  margin: 0.5rem 0;
+  margin: 0;
 }
+
 .blog-description table {
   color: #333;
   margin: 1.2rem 0;
@@ -5918,3 +5930,26 @@ img.width-100 {
   font-size: 20px;
 }
 /* course page text content css */
+span.course-category {
+  font-size: 14px;
+}
+
+.course_highlights p {
+  margin: 3px 0;
+}
+.course_highlights ul {
+  padding: 0;
+  font-size: 14px;
+  line-height: 22px;
+}
+.course_highlights li:before {
+  content: "\f192";
+  font-family: Font Awesome\ 5 Free;
+  font-weight: 400;
+  margin-right: 5px;
+}
+.course_highlights ul li {
+  list-style: none;
+  font-weight: 600;
+  color: #000000;
+}

@@ -28,6 +28,7 @@
 <input type="hidden" name ="utm_device" value="{{ (isset($_GET['utm_device']))?$_GET['utm_device']:'' }}" >  
 <input type="hidden" name ="utm_adgroup" value="{{(isset($_GET['utm_adgroup']))?$_GET['utm_adgroup']:''}}" >  
 <input type="hidden" name ="utm_content" value="{{(isset($_GET['utm_content']))?$_GET['utm_content']:''}}" >   
+<input type="hidden" name ="utm_adset" value="{{(isset($_GET['utm_adset']))?$_GET['utm_adset']:''}}" > <!-- Optional | Only For Franchise -->
 <input type="hidden" name ="store_area" value="{{ isset($contentMain->store_area)?$contentMain->store_area:'1' }}" >
 <input type="hidden" name ="ref_code" value="{{ (isset($_GET['ref']))?$_GET['ref']:'' }}" >  
 <input type="hidden" name ="source_url" value="{{ url()->current() }}" >

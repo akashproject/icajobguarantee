@@ -529,7 +529,7 @@ color: #128C7E;
 }
 
 .popup_banner_form_wrapeer{
-  padding: 0 65px;
+  padding: 0 26px;
 }
 .ad_banner_form_wrapeer {
   padding: 1.2rem;
@@ -5167,6 +5167,10 @@ a.comment-reply-link {
   margin-bottom: 10px;
 }
 
+#global_other_details_form .contact-info, .register-form-area {
+  margin-bottom: 20px;
+}
+
 .lead_capture_form label.error {
   color: #d81a1a;
   font-size: 13px;
@@ -5435,7 +5439,7 @@ a.sticky-btn {
 #global_other_details_form .form_process h3 {
   padding: 10px 29px;
   color: #616cfc;
-  margin: 26px 0;
+  margin-bottom: 26px;
   font-size: 22px;
   font-weight: 700;
   border-bottom: 2px solid;
@@ -5453,9 +5457,28 @@ a.sticky-btn {
 #global_other_details_form .form_process label.error {
   color: red;
   position: absolute;
-  top: -20px;
+  bottom: 4px;
   left: 14px;
   font-size: 12px;
+}
+
+.form_section {
+  display: none;
+}
+
+#global_other_details_form .form_section.active {
+  display: block;
+}
+
+#global_other_details_form input, #global_other_details_form select, #global_other_details_form .register-form-area select, .register-form-area #global_other_details_form select, #global_other_details_form .register-form-area textarea, .register-form-area #global_other_details_form textarea {
+  height: 50px;
+  border: 2px solid #5256d0;
+  padding: 0 15px;
+  border-radius: 4px;
+  width: 100%;
+  font-size: 26px;
+  color: #555bd9;
+  background-color: #fff;
 }
 
 .display-none{
@@ -5520,7 +5543,6 @@ a.sticky-btn {
 }
 .photo-list {
   padding: 3px;
-  background: #ccc;
   margin: 1px;
 }
 .photo-list img {
@@ -5943,4 +5965,41 @@ span#counter {
 }
 .faq-section-title h3 {
   font-size: 36px;
+}
+.wizerd_header {
+  background: #fff;
+  color: #393185;
+  width: 89%;
+  position: relative;
+  border: 1px solid #413d9d;
+  margin: 10px 0;
+}
+.wizerd_header.active {
+  background: linear-gradient(to right, #616dfd 0%, #393185 51%, #616dfd 100%);
+  color: #fff;
+  border: none;
+}
+
+.wizerd_header span {
+  font-size: 26px;
+  display: inline-flex;
+  font-weight: 800;
+  margin-right: 12px;
+  border-right: 1px solid;
+  padding: 12px;
+  vertical-align: middle;
+}
+.wizerd_header h4 {
+  display: inline;
+  font-size: 20px;
+  line-height: 0;
+}
+.wizerd_header::after {
+  content: "";
+  position: absolute;
+  right: -30px;
+  border-top: 33px solid transparent;
+  border-bottom: 29px solid transparent;
+  border-left: 30px solid #616cfc;
+  top: -1px;
 }

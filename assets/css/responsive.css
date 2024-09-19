@@ -391,6 +391,35 @@
 		font-size: 32px;
 		line-height: 33px;
 	}
+	.wizerd_header {
+		background: linear-gradient(to right, #616dfd 0%, #393185 51%, #616dfd 100%);
+		margin-bottom: 10px;
+		color: #fff;
+		width: 86%;
+	}
+	.wizerd_header span {
+		font-size: 26px;
+		display: inline-flex;
+		font-weight: 800;
+		margin-right: 0;
+		border-right: 1px solid;
+		padding: 12px;
+	}
+	.wizerd_header h4 {
+		margin: 0;
+		padding: 10px 20px;
+		display: inline;
+		font-size: 22px;
+	}
+	.wizerd_header::after {
+		content: "";
+		position: absolute;
+		left: 282px;
+		border-top: 31px solid transparent;
+		border-bottom: 29px solid transparent;
+		border-left: 29px solid #616cfc;
+	}
+	
 }
 @media screen and (max-width: 480px) { 
 	.section-title.mb20.headline.text-left {

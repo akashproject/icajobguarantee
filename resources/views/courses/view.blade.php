@@ -1120,7 +1120,7 @@ $reviewRatings = get_reviews_ratings("Course",$contentMain->id);
    
    </section-->
 
-   <!-- Start of Faqs
+<!-- Start of Faqs
    ============================================= -->
 <section id="faqs" class="teacher-details-area">
    <div class="container">

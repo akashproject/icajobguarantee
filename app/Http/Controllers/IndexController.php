@@ -510,6 +510,7 @@ class IndexController extends Controller
             "LeadType" => "DM",
             "LeadSource" => $postData["utm_source"],
             "LeadName" => $postData["utm_campaign"],
+            "textb9" => isset($postData["utm_adset"]) ? $postData["utm_adset"] : "",
         ];
 
         $data = json_encode($data);
