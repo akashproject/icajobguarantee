@@ -1,0 +1,141 @@
+
+.wizerd_header {
+    background: #ffffff;
+    color: #393185;
+    width: 96%;
+    position: relative;
+    border: 1px solid #413d9d;
+    margin: 10px 0;
+  }
+  
+  .wizerd_header.active, .wizerd_header.activeted {
+    background: linear-gradient(to right, #616dfd 0%, #393185 51%, #616dfd 100%);
+    color: #fff;
+    border: none;
+  }
+  
+  .wizerd_header span {
+    font-size: 26px;
+    display: inline-flex;
+    font-weight: 800;
+    margin-right: 12px;
+    border-right: 1px solid;
+    padding: 12px;
+    vertical-align: middle;
+  }
+  
+  .wizerd_header h4 {
+    display: inline;
+    font-size: 20px;
+    line-height: 0;
+  }
+  
+  .wizerd_header::after {
+    content: "";
+    position: absolute;
+    right: -30px;
+    border-top: 33px solid transparent;
+    border-bottom: 29px solid transparent;
+    border-left: 30px solid #616cfc;
+    top: -1px;
+  }
+  .occupation_wrap {
+    padding: 15px 28px;
+    border: 1px solid #d2d5ff;
+    background: #f6f8ff;
+    border-radius: 3px;
+  }
+  
+  .parent_occupation:checked + .occupation_wrap {
+    background: #ccc;
+  }
+  
+  .welcome_message_wrap {
+    border: 2px solid #4949b5;
+    border-radius: 10px;
+    display: none;
+    height: 100%;
+    padding: 20px;
+    box-shadow: 0px 0px 6px 1px #c1bbff;
+  }
+
+  .welcome_message_wrap.active{
+    display: block;
+  }
+  
+  .welcome_message h2 {
+    line-height: 620px;
+    color: #3d3890;
+  }
+
+  .form-wizard-next-btn,.form-wizard-previous-btn {
+    background-color: #393185;
+    color: #fff;
+    padding: 11px 60px;
+    border-radius: 4px;
+  }
+  .formFieldKnowAboutIca span{
+    width: 45%;
+    display: inline-flex;
+  }
+  .formFieldParentOccupation span {
+    padding: 0;
+    display: inline-flex;
+    width: 100%;
+    float: left;
+    font-size: 14px;
+  }
+
+  .welcome_screen {
+    height: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 6px 1px #c1bbff;
+  }
+
+  .welcome_msg_content h1 {
+    font-size: 56px;
+    font-weight: 800;
+    color: #214b96;
+    margin: 20px 0;
+  }
+
+  .welcome_msg_content .subheading h3 {
+    font-size: 35px;
+    color: #214b96;
+    font-weight: 800;
+  }
+
+  .course_selection {
+    display: flex;
+    width: 70%;
+    margin: 30px auto;
+   } 
+
+  #global_other_details_form .form_process label.couse_input_label {
+    width: 100%;
+    height: 150px;
+    background: #e8f0ff;
+    color: #214b96;
+    font-size: 23px;
+    line-height: 29px;
+    padding: 58px 10px;
+    box-shadow: 0px 0px 4px 2px #beb2dd8a;
+    border-radius: 5px;
+  }
+ 
+  .course_selection input{
+    visibility: hidden;
+  }
+
+  .course_selection input[type="radio"]:checked+.course_selection label {
+    background-color: #bbb;
+  }
+
+  .list-group-item {
+    padding: .75rem 2.25rem;
+  }
+
+  .course_list {
+    display: none;
+  }

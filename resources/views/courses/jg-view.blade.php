@@ -139,7 +139,7 @@
 <section id="course-details" class="course-details-section">
    <div class="container">
       <div class="row">
-         <div class="col-md-9">
+         <div class="col-md-12">
             <div class="course-details-item">
                <!-- <div class="course-single-pic mb30">
                   <img src="{{ url('assets/img/course/cs-1.jpg') }}" alt="">
@@ -375,68 +375,7 @@
                </div>
             </div>
          </div>
-         <div class="col-md-3">
-            <div class="side-bar">
-               @if(isset($contentMain->course_video_image) || $contentMain->course_video_image > 0)
-               <div class="latest-area-content " >
-                  <div class="latest-video-poster relative-position mb20">
-                     <img src="{{ getSizedImage('',$contentMain->featured_image) }}" alt="{{ $contentMain->name }}">
-                     <!-- <div class="video-play-btn text-center gradient-bg">
-                        <a class="popup-with-zoom-anim" href="{{$contentMain->course_video_link}}"><i class="fas fa-play"></i></a>
-                        
-                        
-                        
-                        </div> -->
-                  </div>
-                  <div class="vidoe-text text-center">
-                     <h3 class="latest-title bold-font"><a href="#">{{$contentMain->course_video_title}}</a></h3>
-                  </div>
-               </div>
-               @endif
-               <div class="enrolled-student mt15">
-                  <div class="comment-ratting float-left ul-li">
-                     <ul>
-                        <li><i class="fas fa-star"></i></li>
-                        <li><i class="fas fa-star"></i></li>
-                        <li><i class="fas fa-star"></i></li>
-                        <li><i class="fas fa-star"></i></li>
-                        <li><i class="fas fa-star"></i></li>
-                     </ul>
-                  </div>
-                  <div class="student-number bold-font">
-                     {{ thousandsCurrencyFormat($contentMain->number_of_rating) }} Rating
-                  </div>
-               </div>
-               <div class="couse-feature ul-li-block">
-                  <ul>
-                     <li>Enrolled <span>{{ thousandsCurrencyFormat($contentMain->number_of_enrolled) }} Enrolled </span></li>
-                     <li>Modules <span>{{ $contentMain->no_of_module }} Modules</span></li>
-                     <li>Duration <span>{{ $contentMain->duration }}</span></li>
-                     <li>Call  <a href="tel:{{ get_theme_setting('mobile') }}" ><span>+91 {{ get_theme_setting('mobile') }}</span></a> </li>
-                  </ul>
-               </div>
-               <div class="course-side-bar-widget">
-                  <div class="genius-btn gradient-bg text-center text-uppercase float-left bold-font">
-                     <a onclick="lead_capture_form_btn({{ $contentMain->brochure_id }},'')" href="javascript:void(0)"> <i class="fas fa-download"></i> Download Syllabus</a>
-                  </div>
-                  <div class="like-course">
-                     <a href="#"><i class="fas fa-heart"></i></a>
-                  </div>
-               </div>
-            </div>
-            @if(isset($contentMain->tags))
-            <div class="side-bar-widget">
-               <h2 class="widget-title text-capitalize">Popular <span>Tag's.</span></h2>
-               <div class="tag-clouds ul-li">
-                  <ul>
-                     @foreach($contentMain->tags as $value)
-                     <li><a href="{{url('tags')}}/{{$value->slug}}">{{$value->name}}</a></li>
-                     @endforeach
-                  </ul>
-               </div>
-            </div>
-            @endif
-         </div>
+         
       </div>
    </div>
 </section>

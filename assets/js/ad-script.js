@@ -1,13 +1,3 @@
-/* -----------------------------------------------------------------------------
-
-
-
-File:           JS Core
-Version:        1.0
-Last change:    00/00/00 
-Author:         HTMLMATE Team
-
--------------------------------------------------------------------------------- */
 (function() {
 	"use strict";
 	var Genius = {
@@ -48,9 +38,6 @@ Author:         HTMLMATE Team
 				this.countDown();
 				this.quickScroll();
 			},
-
-
-
 
 /* Start Of Preloader
 ================================================*/
@@ -1267,39 +1254,7 @@ searchBAR: function (){
 			return false; // required to block normal submit since you used ajax
 		}
 	});
-
-	$("#global_other_details_form").validate({
-		rules: {
-            "know_from[]": "required",
-            "qualification[degree][]": "required",
-            "qualification[board][]": "required",
-        },
-		messages: {
-			name: {
-				required: "Please enter full name",
-			},
-			email: {
-				required: "Please enter valid email address",
-			},
-			mobile: {
-				required: "Please enter valid mobile number",
-				min: "Please enter valid mobile number",
-				max: "Please enter valid mobile number",
-			},
-			center: {
-				required: "Please enter center name",
-			},
-			location: {
-				required: "Please select prefferd city",
-			},
-		},
-		submitHandler: function(form) {
-			console.log(form);
-			globalFormSubmitProcess(form);
-			return false; // required to block normal submit since you used ajax
-		}
-	});
-
+	
 	//Homepage Form Page Validation
 	$("#banner_lead_capture_form").validate({
 		messages: {

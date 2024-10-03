@@ -56,7 +56,7 @@ class LeadReferController extends Controller
         try {
             $user = Auth::user();
             $center = Center::select('city_id','id')->where('email',$user->email)->first();
-            $centers = Center::whereIn('city_id',$center)->where('id', '!=' , $user->id)->orderBy('name')->get();
+            $centers = Center::where('id', '!=' , $user->id)->orderBy('name')->get();
             return view('administrator.leads-refer.add',compact('centers','center'));
         } catch(\Illuminate\Database\QueryException $e){
             var_dump($e->getMessage()); 

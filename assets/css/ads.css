@@ -5436,7 +5436,7 @@ a.sticky-btn {
   width: 100%;
 }
 
-#global_other_details_form .form_process h3 {
+#global_other_details_form .form_process h3.heading {
   padding: 10px 29px;
   color: #616cfc;
   margin-bottom: 26px;
@@ -5456,7 +5456,7 @@ a.sticky-btn {
 
 #global_other_details_form .form_process label.error {
   color: red;
-  position: absolute;
+  /* position: absolute; */
   bottom: 4px;
   left: 14px;
   font-size: 12px;
@@ -5470,15 +5470,13 @@ a.sticky-btn {
   display: block;
 }
 
-#global_other_details_form input, #global_other_details_form select, #global_other_details_form .register-form-area select, .register-form-area #global_other_details_form select, #global_other_details_form .register-form-area textarea, .register-form-area #global_other_details_form textarea {
-  height: 50px;
-  border: 2px solid #5256d0;
+#global_other_details_form input, #global_other_details_form select {
+  border: 1px solid #d2d5ff;
   padding: 0 15px;
   border-radius: 4px;
-  width: 100%;
-  font-size: 26px;
+  font-size: 18px;
   color: #555bd9;
-  background-color: #fff;
+  background-color: #f6f8ff;
 }
 
 .display-none{
@@ -5965,41 +5963,4 @@ span#counter {
 }
 .faq-section-title h3 {
   font-size: 36px;
-}
-.wizerd_header {
-  background: #fff;
-  color: #393185;
-  width: 89%;
-  position: relative;
-  border: 1px solid #413d9d;
-  margin: 10px 0;
-}
-.wizerd_header.active {
-  background: linear-gradient(to right, #616dfd 0%, #393185 51%, #616dfd 100%);
-  color: #fff;
-  border: none;
-}
-
-.wizerd_header span {
-  font-size: 26px;
-  display: inline-flex;
-  font-weight: 800;
-  margin-right: 12px;
-  border-right: 1px solid;
-  padding: 12px;
-  vertical-align: middle;
-}
-.wizerd_header h4 {
-  display: inline;
-  font-size: 20px;
-  line-height: 0;
-}
-.wizerd_header::after {
-  content: "";
-  position: absolute;
-  right: -30px;
-  border-top: 33px solid transparent;
-  border-bottom: 29px solid transparent;
-  border-left: 30px solid #616cfc;
-  top: -1px;
 }

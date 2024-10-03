@@ -1206,12 +1206,9 @@
 
 		============================================= -->
 
-		<section id="latest-area" class="latest-area-section">
-
+		<!-- <section id="latest-area" class="latest-area-section">
 			<div class="container">
-
 				<div class="row">
-
 					<div class="col-md-4">
 
 						<div class="latest-area-content  " >
@@ -1263,37 +1260,19 @@
 									</div>
 
 								</div>
-
-								<!-- /post -->
-
 								@endforeach
-
-								
-
 								<div class="view-all-btn bold-font">
-
 									<a target="_blank" href="/blog">View All News <i class="fas fa-chevron-circle-right"></i></a>
-
 								</div>
-
 							</div>
-
 						</div>
-
 					</div>
 
-					<!-- /latest-news -->
-
 					<div class="col-md-4">
-
 						<div class="latest-area-content " >
-
 							<div class="section-title-2 mb65 headline text-left">
-
 								<h2>Upcoming <span>Events.</span></h2>
-
 							</div>
-
 							@foreach(getEvents() as $value)
 
 							<div class="latest-events">
@@ -1340,36 +1319,22 @@
 
 					</div>
 
-					<!-- /events -->
-
-
-
 					<div class="col-md-4">
-
 						<div class="latest-area-content " >
-
 							<div class="section-title-2 mb65 headline text-left">
-
 								<h2>Latest <span>Video.</span></h2>
-
 							</div>
 
 							<div class="latest-video-poster relative-position mb20">
-
 								<img src="{{url('assets/img/letest-video.webp')}}" alt="">
-
 								<div class="video-play-btn text-center gradient-bg">
-
 									<a class="popup-with-zoom-anim" href="https://www.youtube.com/watch?v=vV1urFhrijY"><i class="fas fa-play"></i></a>
-
 								</div>
-
 							</div>
 
 							<div class="vidoe-text">
 
 								<h3 class="latest-title bold-font"><a href="#">Learning With ICA Edu Skills.</a></h3>
-
 								<p class="mb25">Certified Industrial Accountant | Accounts Training Institute | Placement Support | ICA Edu Skills.</p>
 
 							</div>
@@ -1383,14 +1348,9 @@
 						</div>
 
 					</div>
-
-					<!-- /. -->
-
 				</div>
-
 			</div>
-
-		</section>
+		</section> -->
 
 	<!-- End latest section
 

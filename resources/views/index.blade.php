@@ -297,7 +297,7 @@
 										<li>100% Job Guarantee</li>
 										<li>AnyTime Job Card- Anytime, Anywhere</li>
 										<li>100+ Centres Pan-India and 30 Placement Offices</li>
-										<li>70, 000 Registered Employers</li>
+										<li>70,000 Registered Employers</li>
 										<li>Cutting-Edge Curriculum</li>
 									</ul>
 								</div>
