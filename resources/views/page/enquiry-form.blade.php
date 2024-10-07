@@ -74,7 +74,7 @@
                     <div class="form-container bg-white" >
                         <div class="gradient-bg"></div>
                         <div class="popup-text text-center gradient-bg text-white mb30">
-                            <h3 style="text-transform: uppercase;font-size: 25px;"> ENQUIRY FORM</h3> 
+                            <h3 style="text-transform: uppercase;font-size: 25px;">ENQUIRY FORM</h3> 
                         </div>
                         <div class="popup_banner_form_wrapeer" > 
                             <div class="row"> 
@@ -103,34 +103,32 @@
                                         @csrf
                                         <div class="form_process" >
                                             <div class="conversation_screen">
-                                                <div class="welcome_message_wrap screen_1 active"> 
-                                                    <div class="welcome_msg_content wizard-fieldset">
-                                                        <h1 >WELCOME TO<br> ICA EDU Skills</h1>
-                                                        <div class="text-center subheading mt-6">
-                                                            <h3>May I Know what are you Looking for</h3>
+                                                <div class="welcome_msg_content form_section wizard-fieldset active"> 
+                                                    <h1 >WELCOME TO<br> ICA EDU Skills</h1>
+                                                    <div class="text-center subheading mt-6">
+                                                        <h3>May I Know what are you Looking for</h3>
+                                                    </div>
+                                                    <div class="course_selection">
+                                                        <div style="width: 50%;overflow: hidden;padding: 10px 15px;text-align: center;">
+                                                            <label for="career_course"  class="couse_input_label"> 
+                                                                <span class="" >Career courses</span>
+                                                            </label>
+                                                            <input type="radio" id="career_course" name="course_name" value="career_course" class="couse_input wizard-required" required>
                                                         </div>
-                                                        <div class="course_selection">
-                                                            <div style="width: 50%;overflow: hidden;padding: 10px 15px;text-align: center;">
-                                                                <label for="career_course"  class="couse_input_label"> 
-                                                                    <span class="" >Career courses</span>
-                                                                </label>
-                                                                <input type="radio" id="career_course" name="course_name" value="career_course" class="couse_input wizard-required" required>
-                                                            </div>
-                                                            <div style="width: 50%;overflow: hidden;padding: 10px 15px;text-align: center;">
-                                                                <label for="skill_course" class="couse_input_label"> 
-                                                                    <span class="" >Skill Developemnt</span>
-                                                                </label>
-                                                                <input type="radio" id="skill_course" name="course_name" value="skill_course" class="couse_input wizard-required">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-wizard-next-btn text-center" style="overflow:hidden">
-                                                            <a class="" href="javascript:void(0)">
-                                                                Lets Chat <i class="fas fa-arrow-right"> </i> 
-                                                            </a>  
+                                                        <div style="width: 50%;overflow: hidden;padding: 10px 15px;text-align: center;">
+                                                            <label for="skill_course" class="couse_input_label"> 
+                                                                <span class="" >Skill Developemnt</span>
+                                                            </label>
+                                                            <input type="radio" id="skill_course" name="course_name" value="skill_course" class="couse_input wizard-required">
                                                         </div>
                                                     </div>
+                                                    <div class="form-wizard-next-btn text-center" style="overflow:hidden">
+                                                        <a class="" href="javascript:void(0)">
+                                                            Lets Chat <i class="fas fa-arrow-right"> </i> 
+                                                        </a>  
+                                                    </div>
                                                 </div>
-                                                <div id="course_list" class="welcome_message_wrap step_1">
+                                                <div id="course_list" class="welcome_message_wrap screen_1">
                                                     <h3 class="heading"> Please select course</h3>
                                                     <ul class="list-group list-group-light course_list career_course">
                                                         <li class="list-group-item">
@@ -196,7 +194,7 @@
                                                         <img src="https://www.icacourse.in/wp-content/themes/scriptcrown/images/loader.gif" style="width: 42px; display:none;" class="checkout_loader">
                                                     </div>   
                                                 </div>
-                                                <div id="personal_details" class="form_section wizard-fieldset step_5">
+                                                <div id="personal_details" class="form_section wizard-fieldset step_3">
                                                     <h3 class="heading">Tell Me something about yourself</h3>
                                                     <div class="row" > 
                                                     
@@ -304,7 +302,7 @@
                                                         <img src="https://www.icacourse.in/wp-content/themes/scriptcrown/images/loader.gif" style="width: 42px; display:none;" class="checkout_loader">
                                                     </div>   
                                                 </div>
-                                                <div id="qualification" class="form_section wizard-fieldset step_2">
+                                                <div id="qualification" class="form_section wizard-fieldset step_1">
                                                     <h3 class="heading">  Academic Qualification 
                                                     <span style="font-size: 14px;color: #323232;"><span> </h3>
                                                     <div class="academic_qualification mb-3" >
@@ -399,7 +397,7 @@
                                                         <img src="https://www.icacourse.in/wp-content/themes/scriptcrown/images/loader.gif" style="width: 42px; display:none;" class="checkout_loader">
                                                     </div>   
                                                 </div>
-                                                <div id="experience" class="form_section wizard-fieldset step_3">
+                                                <div id="experience" class="form_section wizard-fieldset step_2">
                                                     <div class="bg-gray my-3">    
                                                         <h3 class="heading"> Work Experience (If Any)</h3>
                                                         <div class="work_experience" >
@@ -607,7 +605,7 @@
         </script>
         <script src="{{ url('assets/js/jquery-2.1.4.min.js') }}"></script>
         <script src="{{ url('assets/js/bootstrap.min.js') }}"></script>
-        <script src="{{ url('assets/js/enquiry-form.js') }}"></script>
+        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
     </body>

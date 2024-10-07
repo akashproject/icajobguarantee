@@ -12,6 +12,6 @@ class Faq extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'id','question','answer','model','model_id','model_id','created_at'
+        'id','question','answer','category_id','model','model_id','model_id','created_at'
     ];
 }

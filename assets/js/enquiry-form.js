@@ -1,5 +1,5 @@
 
-let screenCount = 2;
+let screenCount = 0;
 let stepCount = 1;
 
 function enqueryFormValidate(){
@@ -42,6 +42,7 @@ jQuery("#global_other_details_form").on("submit",function(){
 })
 
 jQuery('.conversational_init-btn').click(function() {
+	console.log(stepCount);
 	jQuery(this).parents(".welcome_message_wrap").removeClass("active");
     jQuery(".form_section.step_"+stepCount).addClass('active'); //form_section
 	stepCount++;
@@ -62,6 +63,7 @@ jQuery('.form-wizard-previous-btn').click(function() {
 });
 
 jQuery('.form-wizard-next-btn').click(function() {
+	console.log("hello",screenCount);
 	screenCount++;
     var parentFieldset = jQuery(this).parents('.wizard-fieldset');
     var next = jQuery(this);
@@ -78,7 +80,7 @@ jQuery('.form-wizard-next-btn').click(function() {
 
     if(nextWizardStep) {
         next.parents('.wizard-fieldset').removeClass("active","400");
-		console.log(currentWelcomeScreen);
+		console.log("hello",screenCount);
 		jQuery(".welcome_message_wrap").removeClass('active');
 		jQuery(".welcome_message_wrap.screen_"+screenCount).addClass('active');
     }

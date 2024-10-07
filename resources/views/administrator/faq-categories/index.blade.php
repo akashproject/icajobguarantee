@@ -4,17 +4,16 @@
 
 <div class="col-12">
 
-	@if($courseType)
+	@if($faqCategory)
 
 		<div class="card">
 
 			<div class="card-body">
 
-				<h5 class="card-title"> Add New Course Type</h5>
-				<form class="form-horizontal" method="post" action="{{ url('administrator/save-course-type') }}" enctype="multipart/form-data">
+				<h5 class="card-title"> Add New Faq Category</h5>
+				<form class="form-horizontal" method="post" action="{{ url('administrator/save-faq-category') }}" enctype="multipart/form-data">
 				@csrf
 				<div class="card-body">
-					<h4 class="card-title"> Add Course </h4>
 					@if ($errors->any())
 						<div class="alert alert-danger">
 							<ul>
@@ -45,26 +44,12 @@
 								</div>
 							</div>
 							<div class="form-group row">
-								<label for="excerpt" class="col-sm-3 text-right control-label col-form-label">Excerpt</label>
-								<div class="col-sm-9">
-									<textarea class="form-control" name="excerpt" id="excerpt" placeholder="Enter Excerpt Here" ></textarea>
-								</div>
-							</div>
-							<div class="form-group row">
 								<label for="description" class="col-sm-3 text-right control-label col-form-label">Description</label>
 								<div class="col-sm-9">
 									<textarea class="form-control editor" name="description" id="description" placeholder="Enter description Here" ></textarea>
 								</div>
 							</div>
-							<div class="form-group row text-center">
-								<label for="tags" class="col-md-2 text-left control-label col-form-label">Brochure</label>
-								<div class="col-sm-8 text-center">
-									<a href="#imageBox" class="image-profile open-popup-link">
-										<img src="https://dummyimage.com/150x150?text=Upload%20File" alt="">
-										<input type="hidden" name="brochure_id" id="attachment" value="" >	
-									</a>			
-								</div>
-							</div>	
+							
 							<div class="form-group row">
 								<label for="state" class="col-sm-3 text-right control-label col-form-label">Status</label>
 								<div class="col-sm-9">
@@ -130,17 +115,17 @@
 
 									<tbody>
 
-										@foreach ($courseType as $value)
+										@foreach ($faqCategory as $value)
 										<tr>
 											<td>{{ $value->name }}
 												<div>
-													<a href="{{ url('administrator/view-course-type') }}/{{ $value->id }}" class="">Edit</a> | 
-													<a href="{{ url('administrator/delete-course-type') }}/{{ $value->id }}" class=""; >Delete </a>
+													<a href="{{ url('administrator/view-faq-category') }}/{{ $value->id }}" class="">Edit</a> | 
+													<a href="{{ url('administrator/delete-faq-category') }}/{{ $value->id }}" class=""; >Delete </a>
 												</div>
 											</td>													
 											<td>{{ $value->slug }}</td>
 											<td>
-											<a href="{{ url('administrator/view-course-type') }}/{{ $value->id }}" class="">4</a>
+											<a href="{{ url('administrator/view-faq-category') }}/{{ $value->id }}" class="">4</a>
 											</td>
 										</tr>
 										@endforeach							
@@ -155,7 +140,7 @@
 					<div class="border-top">
 						<div class="card-body">
 							<button type="submit" class="btn btn-primary">Submit</button>
-							<input type="hidden" name="course_type_id" id="course_type_id" value="" >
+							<input type="hidden" name="faq_category_id" id="faq_category_id" value="" >
 						</div>
 
 					</div>

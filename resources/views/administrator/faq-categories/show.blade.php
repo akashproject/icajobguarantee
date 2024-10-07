@@ -4,17 +4,16 @@
 
 <div class="col-12">
 
-	@if($courseType)
+	@if($faqCategory)
 
 		<div class="card">
 
 			<div class="card-body">
 
-				<h5 class="card-title"> Add New Course Type</h5>
-				<form class="form-horizontal" method="post" action="{{ url('administrator/save-course-type') }}" enctype="multipart/form-data">
+				<h5 class="card-title"> Add New Faq Category</h5>
+				<form class="form-horizontal" method="post" action="{{ url('administrator/save-faq-category') }}" enctype="multipart/form-data">
 				@csrf
 				<div class="card-body">
-					<h4 class="card-title"> Add Course </h4>
 					@if ($errors->any())
 						<div class="alert alert-danger">
 							<ul>
@@ -34,37 +33,29 @@
 							<div class="form-group row">
 								<label for="name" class="col-sm-3 text-right control-label col-form-label">Name</label>
 								<div class="col-sm-9">
-									<input type="text" class="form-control" name="name" id="name" placeholder="Title Here" >
+									<input type="text" class="form-control" name="name" id="name" placeholder="Title Here" value="{{ $faqCategory->name}}">
 								</div>
 							</div>
 														
 							<div class="form-group row">
 								<label for="slug" class="col-sm-3 text-right control-label col-form-label">Slug</label>
 								<div class="col-sm-9">
-									<input type="text" class="form-control" name="slug" id="slug" placeholder="Slug Here" >
+									<input type="text" class="form-control" name="slug" id="slug" placeholder="Slug Here" value="{{ $faqCategory->slug}}" >
 								</div>
 							</div>
 							<div class="form-group row">
 								<label for="excerpt" class="col-sm-3 text-right control-label col-form-label">Excerpt</label>
 								<div class="col-sm-9">
-									<textarea class="form-control" name="excerpt" id="excerpt" placeholder="Enter Excerpt Here" ></textarea>
+									<textarea class="form-control" name="excerpt" id="excerpt" placeholder="Enter Excerpt Here" >{{ $faqCategory->excerpt}}</textarea>
 								</div>
 							</div>
 							<div class="form-group row">
 								<label for="description" class="col-sm-3 text-right control-label col-form-label">Description</label>
 								<div class="col-sm-9">
-									<textarea class="form-control editor" name="description" id="description" placeholder="Enter description Here" ></textarea>
+									<textarea class="form-control editor" name="description" id="description" placeholder="Enter description Here" >{{ $faqCategory->description}}</textarea>
 								</div>
 							</div>
-							<div class="form-group row text-center">
-								<label for="tags" class="col-md-2 text-left control-label col-form-label">Brochure</label>
-								<div class="col-sm-8 text-center">
-									<a href="#imageBox" class="image-profile open-popup-link">
-										<img src="https://dummyimage.com/150x150?text=Upload%20File" alt="">
-										<input type="hidden" name="brochure_id" id="attachment" value="" >	
-									</a>			
-								</div>
-							</div>	
+
 							<div class="form-group row">
 								<label for="state" class="col-sm-3 text-right control-label col-form-label">Status</label>
 								<div class="col-sm-9">
@@ -79,38 +70,38 @@
 							<div class="form-group row">
 								<label for="title" class="col-sm-3 text-right control-label col-form-label">Title</label>
 								<div class="col-sm-9">
-									<input type="text" class="form-control" name="title" id="title" placeholder="Title Here" >
+									<input type="text" class="form-control" name="title" id="title" placeholder="Title Here" value="{{ $faqCategory->title}}" >
 								</div>
 							</div>
 							<div class="form-group row">
 								<label for="meta_description" class="col-sm-3 text-right control-label col-form-label">Meta Description</label>
 								<div class="col-sm-9">
-									<textarea class="form-control" name="meta_description" id="meta_description" placeholder="Enter Meta Description Here" ></textarea>
+									<textarea class="form-control" name="meta_description" id="meta_description" placeholder="Enter Meta Description Here" >{{ $faqCategory->meta_description}}</textarea>
 								</div>
 							</div>
 							<div class="form-group row">
 								<label for="schema" class="col-sm-3 text-right control-label col-form-label">Schema Code</label>
 								<div class="col-sm-9">
-									<textarea class="form-control" name="schema" id="schema" placeholder="Enter Schema Code" ></textarea>
+									<textarea class="form-control" name="schema" id="schema" placeholder="Enter Schema Code" >{{ $faqCategory->schema}}</textarea>
 								</div>
 							</div>
 							<div class="form-group row">
 								<label for="utm_campaign" class="col-sm-3 text-right control-label col-form-label">Campaign</label>
 								<div class="col-sm-9">
-									<input type="text" class="form-control" name="utm_campaign" id="utm_campaign" placeholder="Enter Utm Campaign Here" >
+									<input type="text" class="form-control" name="utm_campaign" id="utm_campaign" placeholder="Enter Utm Campaign Here" value="{{ $faqCategory->utm_campaign}}" >
 								</div>
 							</div>
 
 							<div class="form-group row">
 								<label for="utm_source" class="col-sm-3 text-right control-label col-form-label">Source</label>
 								<div class="col-sm-9">
-									<input type="text" class="form-control" name="utm_source" id="utm_source" placeholder="Enter Utm Source Here" >
+									<input type="text" class="form-control" name="utm_source" id="utm_source" placeholder="Enter Utm Source Here"  value="{{ $faqCategory->utm_source}}">
 								</div>
 							</div>
 							<div class="form-group row">
 								<label for="robots" class="col-sm-3 text-right control-label col-form-label">Robots Content</label>
 								<div class="col-sm-9">
-								<input type="text" class="form-control" name="robots" id="robots" value="index, follow" placeholder="Enter Center Pincode Here" >
+								<input type="text" class="form-control" name="robots" id="robots" value="{{ $faqCategory->robots}}" placeholder="Enter Center Pincode Here" >
 								</div>
 							</div>
 						</div>
@@ -130,17 +121,17 @@
 
 									<tbody>
 
-										@foreach ($courseType as $value)
+										@foreach ($listCategory as $value)
 										<tr>
 											<td>{{ $value->name }}
 												<div>
-													<a href="{{ url('administrator/view-course-type') }}/{{ $value->id }}" class="">Edit</a> | 
-													<a href="{{ url('administrator/delete-course-type') }}/{{ $value->id }}" class=""; >Delete </a>
+													<a href="{{ url('administrator/view-faq-category') }}/{{ $value->id }}" class="">Edit</a> | 
+													<a href="{{ url('administrator/delete-faq-category') }}/{{ $value->id }}" class=""; >Delete </a>
 												</div>
 											</td>													
 											<td>{{ $value->slug }}</td>
 											<td>
-											<a href="{{ url('administrator/view-course-type') }}/{{ $value->id }}" class="">4</a>
+											<a href="{{ url('administrator/view-faq-category') }}/{{ $value->id }}" class="">4</a>
 											</td>
 										</tr>
 										@endforeach							
@@ -155,7 +146,7 @@
 					<div class="border-top">
 						<div class="card-body">
 							<button type="submit" class="btn btn-primary">Submit</button>
-							<input type="hidden" name="course_type_id" id="course_type_id" value="" >
+							<input type="hidden" name="faq_category_id" id="faq_category_id" value="{{ $faqCategory->id}}" >
 						</div>
 
 					</div>
@@ -180,4 +171,3 @@
 <!-- CHARTS -->
 
 @endsection
-

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Administrator;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Faq;
+use App\Models\FaqCategory;
 
 class FaqController extends Controller
 {
@@ -20,15 +21,19 @@ class FaqController extends Controller
         
     }
 
-    public function add() {       
-        return view('administrator.faq.add');
+    public function add() {   
+        $faqCategory = FaqCategory::all();
+        return view('administrator.faq.add',compact('faqCategory'));
     }
 
     public function show($id)
     {
         try {
             $faq = Faq::findOrFail($id);
-            return view('administrator.faq.show',compact('faq'));
+            $faq->category_id = json_decode($faq->category_id);
+            //dd($faq);
+            $faqCategories = FaqCategory::all();
+            return view('administrator.faq.show',compact('faq','faqCategories'));
         } catch(\Illuminate\Database\QueryException $e){
         }        
     }
@@ -41,7 +46,7 @@ class FaqController extends Controller
                 'answer' => 'required',
                 'status' => 'required',
             ]);
-            $data['model'] = json_encode($data['model']);
+            $data['category_id'] = (isset($data['category_id']))?json_encode($data['category_id']):array();
             if($data['faq_id'] <= 0){
                 Faq::create($data);
             } else {

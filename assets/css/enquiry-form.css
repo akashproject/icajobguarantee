@@ -93,14 +93,14 @@
     box-shadow: 0px 0px 6px 1px #c1bbff;
   }
 
-  .welcome_msg_content h1 {
+  .wizerd_welcome_screen h1 {
     font-size: 56px;
     font-weight: 800;
     color: #214b96;
     margin: 20px 0;
   }
 
-  .welcome_msg_content .subheading h3 {
+  .wizerd_welcome_screen .subheading h3 {
     font-size: 35px;
     color: #214b96;
     font-weight: 800;
@@ -112,7 +112,7 @@
     margin: 30px auto;
    } 
 
-  #global_other_details_form .form_process label.couse_input_label {
+  #global_other_details_form label.couse_input_label {
     width: 100%;
     height: 150px;
     background: #e8f0ff;
@@ -138,4 +138,17 @@
 
   .course_list {
     display: none;
+  }
+  .wizerd_group {
+    border: 1px solid #afc8ff;
+    padding: 20px;
+    box-shadow: 0 0 5px 2px #d1caff;
+    border-radius: 10px;
+  }
+  .wizerd_set {
+    display: none;
+  }
+
+  .wizerd_set.active {
+    display: block;
   }

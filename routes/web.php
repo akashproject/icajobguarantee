@@ -172,6 +172,13 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::post('/save-faq', [App\Http\Controllers\Administrator\FaqController::class, 'save'])->name('admin-save-faq');
         Route::get('/delete-faq/{id}', [App\Http\Controllers\Administrator\FaqController::class, 'delete'])->name('admin-save-delete');
         
+        //FaqCategory
+        Route::get('/faq-categories', [App\Http\Controllers\Administrator\FaqCategoryController::class, 'index'])->name('admin-faq-categories');
+        Route::get('/add-faq-category', [App\Http\Controllers\Administrator\FaqCategoryController::class, 'add'])->name('admin-add-faq-category');
+        Route::get('/view-faq-category/{id}', [App\Http\Controllers\Administrator\FaqCategoryController::class, 'show'])->name('admin-view-faq-category');
+        Route::post('/save-faq-category', [App\Http\Controllers\Administrator\FaqCategoryController::class, 'save'])->name('admin-save-faq-category');
+        Route::get('/delete-faq-category/{id}', [App\Http\Controllers\Administrator\FaqCategoryController::class, 'delete'])->name('admin-delete-faq-category');
+
         //Recruiters
         Route::get('/recruiters', [App\Http\Controllers\Administrator\RecruiterController::class, 'index'])->name('admin-recruiters');
         Route::get('/add-recruiter', [App\Http\Controllers\Administrator\RecruiterController::class, 'add'])->name('admin-add-recruiter');
@@ -305,11 +312,6 @@ Route::get('/home', function () {
     return redirect()->route('administrator');  
 });
 
-Route::get('/index/sitemap', function () {
-    SitemapGenerator::create('https://www.myidcm.com/')->getSitemap()->writeToDisk('public', 'sitemap.xml', true);
-});
-
-
 Route::get('/{slug}', [App\Http\Controllers\PageController::class, 'index'])->where('slug', '([A-Za-z0-9\-]+)');
 Route::get('/ads/{slug}', [App\Http\Controllers\AdPageController::class, 'index'])->where('slug', '([A-Za-z0-9\-]+)');
 
@@ -372,6 +374,9 @@ Route::get('/assessment-success', function () {
 
 //Route::get('/index/create-center-login', [App\Http\Controllers\IndexController::class, 'createCenterLogin'])->name('create-center-login');
 //Route::get('/index/create-university-login', [App\Http\Controllers\IndexController::class, 'createUniversityLogin'])->name('create-university-login');
+
+Route::get('/student/enquiry-form/{step}', [App\Http\Controllers\StudentController::class, 'index'])->name('create-center-login');
+Route::get('/student/enquiry-form', [App\Http\Controllers\StudentController::class, 'index'])->name('create-center-login');
 
 Route::middleware(ProtectAgainstSpam::class)->group(function() {
     Auth::routes();

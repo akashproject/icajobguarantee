@@ -75,6 +75,8 @@
                      <ul aria-expanded="false" class="collapse  first-level">
                         <li class="sidebar-item"><a href="{{ url('administrator/faqs') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> All Faqs </span></a></li>
                         <li class="sidebar-item"><a href="{{ url('administrator/add-faq') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Add Faq </span></a></li>
+                        <li class="sidebar-item"><a href="{{ url('administrator/faq-categories') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Categories </span></a></li>
+                    
                      </ul>
                   </li>
                   <li class="sidebar-item">
@@ -205,6 +207,8 @@
                      <ul aria-expanded="false" class="collapse  first-level">
                         <li class="sidebar-item"><a href="{{ url('administrator/faqs') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> All Faqs </span></a></li>
                         <li class="sidebar-item"><a href="{{ url('administrator/add-faq') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Add Faq </span></a></li>
+                        <li class="sidebar-item"><a href="{{ url('administrator/faq-categories') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Categories </span></a></li>
+
                      </ul>
                   </li>
                   <li class="sidebar-item">

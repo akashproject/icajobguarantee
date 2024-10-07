@@ -38,20 +38,14 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="model" class="col-sm-3 text-right control-label col-form-label">Model</label>
+							<label for="faq" class="col-sm-3 text-right control-label col-form-label">Faqs</label>
 							<div class="col-sm-9">
-								<select name="model[]" id="model" class="select2 form-control custom-select" style="width: 100%; height:136px;" multiple>	
-									<option value="">Select Model</option>
-									@foreach($models as $model)
-									<option value="{{ $model }}" {{ (in_array($model,  json_decode($faq->model)))?'selected' : '' }}> {{$model}}</option>
+								<select name="category_id[]" id="category_id" class="select2 form-control custom-select" style="width: 100%; height:300px;" multiple>	
+									<option value="">Select Category</option>
+									@foreach($faqCategories as $key => $value)
+										<option value="{{ $value->id }}"  {{ (isset($faq->category_id) && in_array($value->id,  $faq->category_id))?'selected' : '' }}>{{$value->id}}. {{ $value->name }} </option>
 									@endforeach
 								<select>
-							</div>
-						</div>
-						<div class="form-group row">
-							<label for="model_id" class="col-sm-3 text-right control-label col-form-label">Model id</label>
-							<div class="col-sm-9">
-								<input type="text" class="form-control" name="model_id" id="model_id" placeholder="Enter Model Id Here" >
 							</div>
 						</div>
 					</div>
