@@ -307,6 +307,7 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
     });
     // Will be inside middleware
 });
+
 //Page
 Route::get('/home', function () {
     return redirect()->route('administrator');  
@@ -375,8 +376,13 @@ Route::get('/assessment-success', function () {
 //Route::get('/index/create-center-login', [App\Http\Controllers\IndexController::class, 'createCenterLogin'])->name('create-center-login');
 //Route::get('/index/create-university-login', [App\Http\Controllers\IndexController::class, 'createUniversityLogin'])->name('create-university-login');
 
+// Pink Form
 Route::get('/student/enquiry-form/{step}', [App\Http\Controllers\StudentController::class, 'index'])->name('create-center-login');
 Route::get('/student/enquiry-form', [App\Http\Controllers\StudentController::class, 'index'])->name('create-center-login');
+
+// Template Development
+Route::get('/template/build-up', [App\Http\Controllers\IndexController::class, 'templateBuildUp'])->name('template-build-up');
+Route::post('/job-fair-capture-lead', [App\Http\Controllers\JobFairController::class, 'captureLead'])->name('job-fair-capture-lead');
 
 Route::middleware(ProtectAgainstSpam::class)->group(function() {
     Auth::routes();
