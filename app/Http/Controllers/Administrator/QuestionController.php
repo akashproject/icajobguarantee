@@ -9,7 +9,6 @@ use App\Models\Question;
 use App\Models\Assessment;
 use App\Models\Answer;
 
-
 class QuestionController extends Controller
 {
     //
@@ -38,6 +37,7 @@ class QuestionController extends Controller
         } catch(\Illuminate\Database\QueryException $e){
         } 
     }
+
 
     public function save(Request $request) {
         try {

@@ -15,7 +15,7 @@ class AffiliateController extends Controller
     public function users()
     {
         try {
-            $status = 0;
+            $status = 0;    
             $userData = Auth::user();
             $model = ucfirst($userData->role);
             $affiliateUsers = AffiliateUser::where('center_id',$userData->id)->where('model',$model)->get();

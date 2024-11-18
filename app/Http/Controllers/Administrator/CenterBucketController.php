@@ -22,7 +22,7 @@ class CenterBucketController extends Controller
  
     public function add() {
         try {
-            $centers = Center::orderBy('name')->get();
+            $centers = Center::orderBy('name')->get();;
             return view('administrator.buckets.add',compact('centers'));
         } catch(\Illuminate\Database\QueryException $e){
             //throw $th;

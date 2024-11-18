@@ -10,6 +10,7 @@ use App\Models\Center;
 
 class EnquiryController extends Controller
 {
+    //
     public function index()
     {
         try {

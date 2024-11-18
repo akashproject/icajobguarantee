@@ -55,8 +55,14 @@ class FaqCategoryController extends Controller
             if($data['faq_category_id'] <= 0){
                 $category = FaqCategory::create($data);
             } else {
+                
                 $category = FaqCategory::findOrFail($data['faq_category_id']);
                 $category->update($data);
+            }
+
+            if(isset($data['faq']) && !empty($data['faq'])){
+                $faqs = Faq::select("id","category_id")->whereIn('id',$data['faq'])->get();
+                dd($faqs);
             }
             return redirect()->back()->with('message', 'Page updated successfully!');
         } catch(\Illuminate\Database\QueryException $e){

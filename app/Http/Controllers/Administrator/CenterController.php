@@ -70,7 +70,7 @@ class CenterController extends Controller
             ]);
             $data['courses'] = json_encode($data['courses']);
             if($data['center_id'] <= 0){
-                Center::create($data);
+                $center = Center::create($data);
             } else {
                 $center = Center::findOrFail($data['center_id']);
                 if($data['status'] != $center->status) {
