@@ -42,24 +42,24 @@ jQuery("#global_other_details_form").on("submit",function(){
 })
 
 jQuery('.conversational_init-btn').click(function() {
-	console.log(stepCount);
-	jQuery(this).parents(".welcome_message_wrap").removeClass("active");
-    jQuery(".form_section.step_"+stepCount).addClass('active'); //form_section
-	stepCount++;
+	jQuery(this).parents(".wizerd_welcome_screen").hide();
+    jQuery(this).parents(".wizerd_set").children(".wizerd_fieldset").show();
 })
 
 jQuery('.couse_input').on('change',function(){
 	console.log(jQuery(this).val());
 	jQuery(".course_list").hide();
 	jQuery(".course_list."+jQuery(this).val()).show();
+	jQuery(this).parents(".wizerd_welcome_screen").hide();
+	jQuery(this).parents(".wizerd_set").children(".wizerd_fieldset").show();
 })
 
 jQuery('.form-wizard-previous-btn').click(function() {
-	stepCount--;
-	console.log(stepCount);
+	
     var previous = jQuery(this);
-	previous.parents('.wizard-fieldset').removeClass("active","400");
-	jQuery(".form_section.step_"+stepCount).addClass('active'); //form_section
+	previous.parents('.wizerd_fieldset').addClass("active","400");
+	jQuery(this).parents('.wizerd_fieldset').hide();
+	jQuery(this).parents(".wizerd_set").children(".wizerd_welcome_screen").show();
 });
 
 jQuery('.form-wizard-next-btn').click(function() {

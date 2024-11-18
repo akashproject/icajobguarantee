@@ -1703,3 +1703,54 @@ function secpass() {
         $(".open-city-popup").trigger("click");
     }
 }
+
+let screenCount = 1;
+
+jQuery('.init_screen').on("click",function() {	
+	jQuery(".welcome_message_wrap").hide();
+	jQuery(".form_section.step_"+screenCount).addClass('active'); //form_section
+	screenCount++;
+})
+function enqueryFormValidate(){
+	console.log("hi");
+	
+	jQuery("#global_other_details_form").valid({
+		rules: {
+			"know_from[]": "required",
+			"qualification[degree][]": "required",
+			"qualification[board][]": "required",
+		},
+		messages: {
+			name: {
+				required: "Please enter full name",
+			},
+			email: {
+				required: "Please enter valid email address",
+			},
+			mobile: {
+				required: "Please enter valid mobile number",
+				min: "Please enter valid mobile number",
+				max: "Please enter valid mobile number",
+			},
+			center: {
+				required: "Please enter center name",
+			},
+			location: {
+				required: "Please select prefferd city",
+			},
+		},
+		submitHandler: function(form) {                           
+			globalFormSubmitProcess(form);
+			return false; // required to block normal submit since you used ajax
+		}
+	});
+}
+
+jQuery("#global_other_details_form").on("submit",function(){
+	enqueryFormValidate();
+})
+
+jQuery(".gotoNextStep").on("click",function(){
+	console.log("here");
+	enqueryFormValidate();
+})

@@ -29,7 +29,7 @@ jQuery(document).ready(function() {
 							var innerWidth = jQuery(this).innerWidth();
 							var position = jQuery(this).position();
 							jQuery(document).find('.form-wizard-step-move').css({"left": position.left, "width": innerWidth});
-						} else{
+						}else{
 							jQuery(this).removeClass('active');
 						}
 					});
@@ -39,7 +39,7 @@ jQuery(document).ready(function() {
 	});
 	//click on previous button
 	jQuery('.form-wizard-previous-btn').click(function() {
-		var counter = parseInt(jQuery(".wizard-counter").text());
+		var counter = parseInt(jQuery(".wizard-counter").text());;
 		var prev =jQuery(this);
 		var currentActiveStep = jQuery(this).parents('.form-wizard').find('.form-wizard-steps .active');
 		prev.parents('.wizard-fieldset').removeClass("show","400");
