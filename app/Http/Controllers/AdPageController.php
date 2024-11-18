@@ -17,6 +17,7 @@ class AdPageController extends Controller
             $courseType = null;
             $courses = null;
             if ($contentMain->course_type_id) {
+                # code...
                 $course_id = [];
                 if($contentMain->course_id){
                     $course_id[] = $contentMain->course_id;

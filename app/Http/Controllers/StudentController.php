@@ -12,6 +12,8 @@ class StudentController extends Controller
     public function index($step = null)
     {
         //
-        return view('page.student-enquiry-form',compact('step'));
+        $center = (request()->has('center'))?request()->get('center'):"";
+        $enquiry = (request()->has('enquiry'))?base64_decode(request()->get('enquiry')):"";
+        return view('page.student-enquiry-form',compact('step','center','enquiry'));
     }
 }
