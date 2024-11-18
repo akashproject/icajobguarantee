@@ -37,7 +37,7 @@
 	<!-- End of breadcrumb section
 		============================================= -->
 
-    <!-- Start FAQ section
+<!-- Start FAQ section
 		============================================= -->
 		<section id="faq-page" class="faq-page-section">
 			<div class="container">
@@ -378,7 +378,7 @@
 									<a href="#">Make Question <i class="fas fa-caret-right"></i></a>
 								</div>
 								<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
-									<a href="#">Contact us <i class="fas fa-caret-right"></i></a>
+									<a href="#">contact us <i class="fas fa-caret-right"></i></a>
 								</div>
 							</div>
 						</div>

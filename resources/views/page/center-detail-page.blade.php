@@ -12,10 +12,10 @@
  					<div class="slider-text">
  						<div class="section-title mb20 headline text-left ">
  							<div class="layer-1-3">
-							 	<h1 style="font-size:42px!important; color:#3e4095;" class="secoud-title"> <span>ICA Edu Skills | 														Ahmedabad</span></h1>
+							 	<h1 style="font-size:42px!important; color:#3e4095;" class="secoud-title"> <span>{{(isset($contentMain))?$contentMain->name:"Default Page" }}</span></h1>
  							</div>
  							<div class="row">
-					<p class="col-md-6"style="font-size:18px!important;">Best Training Institute In Ahmedabad for Accounts, GST, Tally Prime, SAP FICO courses. It is one of the pioneers in the retail education sector in India providing Job Guarantee Courses.</p>
+					      <p class="col-md-6"style="font-size:18px!important;">{!! (isset($contentMain))?$contentMain->description:"Default Description" !!}</span></p>
  							</div>							
  						</div>
  						<div class="layer-1-4">
@@ -192,7 +192,7 @@
 
 								<div class="counter-number">
 
-									<span class="counter-count bold-font">25</span><span>+</span>
+									<span class="counter-count bold-font">26</span>
 
 									<p>Years of Excellence</p>
 
@@ -236,13 +236,13 @@
 						<nav class="navbar-menu inside-navbar">
 						<div class="nav-menu ul-li">
 							<ul class="courseMenu">
-									<li class="" rel="tab3"><a href="#popular-course">Courses</a></li>
-									<li class="" rel="tab4"><a href="#placement">Placement</a></li>
-									<!--<li class="" rel=""><a href="#career">Careers</a></li>-->
-									<li class="" rel=""><a href="#alumni">Alumni</a></li>
-									<li class="" rel=""><a href="#highlights">Highlights</a></li>
+									<li class="" rel=""><a href="#courses">Courses</a></li>
+									<li class="" rel=""><a href="#placements">Placements</a></li>
+									<li class="" rel=""><a href="#testimonials">Testimonials</a></li>
+									<li class="" rel=""><a href="#gallery">Gallery</a></li>
+									<li class="" rel=""><a href="#why-us">Why Us</a></li>
 									<li class="" rel=""><a href="#course-details">Course Details</a></li>
-									<!--<li class="" rel=""><a href="#faq">FAQs</a></li>-->
+									<li class="" rel=""><a href="#course-details">Contact Us</a></li>
 								</ul>
 						</div>
 						</nav>
@@ -263,49 +263,42 @@
 		<section id="popular-course" class="popular-course-section popular-three" style="background:#d0cfda">
 
 			<div class="container">
-					<div class="section-title mb20 headline text-center">
-						<span class="subtitle text-uppercase">COURSES IN AHMEDABAD</span>
-						<h2 style="font-size: 30px!important;">Explore The Best <span>Accounting, Taxation, GST, SAP FICO, TallyPrime</span> Courses</h2>
+					<div id="courses" class="section-title mb20 headline text-center">
+						<span class="subtitle text-uppercase">OUR COURSES</span>
+						<h1 style="font-size: 26px!important; color: #393185;">Explore The Best Advanced Excel, Accounting, GST, SAP FICO, Tally Prime Courses</h1>
 					</div>				
 					<div class="course-slide row">
 								
-									<div class="mb-3 col-md-4" >
+									<div class="mb-3 col-md-4">
 										<div class="shadow-lg bg-black rounded ">
 											<div class="course-item-pic-text">
 												<div class="course-pic relative-position mb25">
-													<img src="https://www.icajobguarantee.com/public/upload/2024-02-05/certified-industrial-accountant.webp" class="width-100" alt=""> 
-													<div class="course-details-btn">
-														<a href="courses/accounting-course-cia">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
-													</div>
+													<img src="https://www.icajobguarantee.com/public/upload/2024-02-05/certified-industrial-accountant.webp" class="width-100" alt="accounting course in <varible>">
 												</div>
 												<div class="course-item-text mb-20">
-													<div class="course-meta" style="font-size: 7px">
-														<span class="course-category"><i class="fas fa-user"></i> 109k &nbsp Students</span>
+													<div class="course-title mt10 headline relative-position  mb-3">
+														<h2 style="font-size: 22px; color: #000;"><a target="_blank" href="https://www.icajobguarantee.com/courses/accounting-course-cia">Certified Industrial Accountant</a> </h2>
+													</div>
+													<div class="course-meta  mb-3" style="font-size: 7px">
+														<span class="course-category"><i class="fas fa-user"></i> 247,910 Students </span>
 														<div class="course-rate ul-li">
 															<ul>
 																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
 															</ul>											
-														</div>
-														<span class="course-category">678 Rating</span>
+														</div>														
+														<span class="course-category">218,501 Votes </span>
+													</div>													
+													<div class="course_highlights alt-font p-1" style="color: #000;">                     
+															<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A;"></i>&nbsp;<strong>Course Type:</strong> 100% Job Guarantee</span></p>
+
+															<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A;"></i>&nbsp;<strong>Eligibility:</strong> 12+/Graduate</span></p>															
+															<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A;"></i>&nbsp;<strong>Delivery Mode:</strong> Classroom/Offline</span></p>										
+															<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A;"></i>&nbsp;<strong>Difficulty Level:</strong> No Prior Knowledge Required</span></p>										
+															<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A;"></i>&nbsp;<strong>Doubt Clearing Session:</strong> Yes</span></p>															
 													</div>
-													<div class="course-title mt10 headline relative-position  mb-0">
-														<h3 style="font-size: 20px"><a href="courses/accounting-course-cia">Certified Industrial Accountant</a> </h3>
-													</div>
-													<div class="course_highlights alt-font p-1 "style="color:black;">                     
-															<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; 100% Placement Assurance </span></p>					
-															<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; 3 Months Paid Internship</span></p>										
-															<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; 28 Live Projects</span></p>										
-															<p> <span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; Learn 40 Digital Automation Tools</span></p>										
-															<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; 6 Certifications</span></p>										
-															<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; Mock Interview Sessions</span></p>										
-													</div>
-													<div class="course-meta mt10 ">
-														<span class="course-category"><a href="#"><i class="fas fa-clock"></i> 12 Months</a></span>
-														<span class="course-author"><a href="#"><i class="fas fa-book"></i> 7 Modules</a></span>
+													<div class="course-meta mt10">
+														<span class="course-category"><i class="fas fa-clock"></i> 12 Months</span>
+														<span class="course-author"><i class="fas fa-book"></i> 7 Modules</span>
 													</div>
 												</div>
 												<div class="more-btn text-center" >
@@ -313,49 +306,44 @@
 														<a class="btn-filled" href="javascript:void(0)" onclick="lead_capture_form_btn(1,'')"><i class="fas fa-download"></i> Brochure</a>
 													</div>
 													<div class="course-type-list">														
-														<a class="btn-outline" href="https://www.icajobguarantee.com/courses/accounting-course-cia" >View More <i class="fas fa-caret-right"></i></a>
+														<a class="btn-outline" target="_blank" href="https://www.icajobguarantee.com/courses/accounting-course-cia" >View More <i class="fas fa-caret-right"></i></a>
 													</div>														
 												</div>
 											</div>
 										</div>
 									</div>
 
-								<div class="mb-3 col-md-4 " >
+								<div class="mb-3 col-md-4">
 									<div class="course-item-pic-text">
 										<div class="course-pic relative-position mb25">
-											<img src="https://www.icajobguarantee.com/public/upload/2024-02-06/advanced-excel-course.webp" class="width-100" alt=""> 
-											<div class="course-details-btn">
-												<a href="courses/advanced-excel-course">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
-											</div>
+											<img src="https://www.icajobguarantee.com/public/upload/2024-02-06/advanced-excel-course.webp" class="width-100" alt="advanced excel course in <variable>">
 										</div>
 										<div class="course-item-text mb-20">
-											<div class="course-meta" style="font-size: 7px">
-												<span class="course-category"><i class="fas fa-user"></i> 16.4k &nbsp Students</span>
-												<div class="course-rate ul-li">
-													<ul>
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-													</ul>											
-												</div>
-												<span class="course-category">678 Rating</span>
+											<div class="course-title mt10 headline relative-position  mb-3">
+												<h2 style="font-size: 22px; color: #000;"><a target="_blank" href="https://www.icajobguarantee.com/courses/advanced-excel-course">Advanced Excel Course</a> </h2>
 											</div>
-											<div class="course-title mt10 headline relative-position  mb-0">
-												<h3 style="font-size: 20px"><a href="courses/advanced-excel-course">Advanced Excel Course</a> </h3>
-											</div>
-											<div class="course_highlights alt-font p-1 "style="color:black;">                     
-													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; 100% Placement Assurance </span></p>					
-													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; 3 Months Paid Internship</span></p>										
-													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; 28 Live Projects</span></p>										
-													<p> <span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; Learn 40 Digital Automation Tools</span></p>										
-													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; 6 Certifications</span></p>										
-													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; Mock Interview Sessions</span></p>										
+													<div class="course-meta  mb-3" style="font-size: 7px">
+														<span class="course-category"><i class="fas fa-user"></i> 247,910 Students </span>
+														<div class="course-rate ul-li">
+															<ul>
+																<li><i class="fas fa-star"></i></li>
+															</ul>											
+														</div>														
+														<span class="course-category">218,501 Votes </span>
+													</div>												
+											<div class="course_highlights alt-font p-1" style="color: #000;">                     
+													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A;"></i>&nbsp;<strong>Course Type:</strong> Skills Development/Short Term</span></p>
+
+													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A;"></i>&nbsp;<strong>Eligibility:</strong> 12+/Graduate</span></p>															
+													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A;"></i>&nbsp;<strong>Delivery Mode:</strong> Classroom/Offline</span></p>										
+													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A;"></i>&nbsp;<strong>Difficulty Level:</strong> No Prior Knowledge 
+														Required</span></p>
+														
+													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A;"></i>&nbsp;<strong>Doubt Clearing Session:</strong> Yes</span></p>
 											</div>
 											<div class="course-meta mt10 ">
-												<span class="course-category"><a href="#"><i class="fas fa-clock"></i> 18 Hours</a></span>
-												<span class="course-author"><a href="#"><i class="fas fa-book"></i> 12 Modules</a></span>
+												<span class="course-category"><i class="fas fa-clock"></i> 18 Hours</span>
+												<span class="course-author"><i class="fas fa-book"></i> 12 Modules</span>
 											</div>
 										</div>
 										<div class="more-btn text-center" >
@@ -365,47 +353,43 @@
 												</a>
 											</div>
 											<div class="course-type-list">														
-												<a class="btn-outline" href="https://www.icajobguarantee.com/courses/advanced-excel-course" >View More <i class="fas fa-caret-right"></i></a>
+												<a class="btn-outline" target="_blank" href="https://www.icajobguarantee.com/courses/advanced-excel-course" >View More <i class="fas fa-caret-right"></i></a>
 											</div>														
 										</div>
 									</div>
 								</div>
-								<div class="mb-3 col-md-4" >
+								
+								<div class="mb-3 col-md-4">
 									<div class="course-item-pic-text">
 										<div class="course-pic relative-position mb25">
-											<img src="https://www.icajobguarantee.com/public/upload/2024-02-05/tally-prime-gst-course.webp" class="width-100" alt=""> 
-											<div class="course-details-btn">
-												<a href="courses/tallyprime-gst-course">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
-											</div>
+											<img src="https://www.icajobguarantee.com/public/upload/2024-02-05/tally-prime-gst-course.webp" class="width-100" alt="tally gst course in <variable>">
 										</div>
 										<div class="course-item-text mb-20">
-											<div class="course-meta" style="font-size: 7px">
-												<span class="course-category"><i class="fas fa-user"></i> 99.5k &nbsp Students</span>
-												<div class="course-rate ul-li">
-													<ul>
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-													</ul>											
-												</div>
-												<span class="course-category">678 Rating</span>
+											<div class="course-title mt10 headline relative-position  mb-3">
+												<h2 style="font-size: 22px; color: #000;"><a target="_blank" href="https://www.icajobguarantee.com/courses/tallyprime-gst-course">Tally Prime + GST Course</a> </h2>
 											</div>
-											<div class="course-title mt10 headline relative-position  mb-0">
-												<h3 style="font-size: 20px"><a href="courses/tallyprime-gst-course">Tally Prime + GST Course</a> </h3>
-											</div>
-											<div class="course_highlights alt-font p-1 "style="color:black;">                     
-													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; 100% Placement Assurance </span></p>					
-													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; 3 Months Paid Internship</span></p>										
-													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; 28 Live Projects</span></p>										
-													<p> <span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; Learn 40 Digital Automation Tools</span></p>										
-													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; 6 Certifications</span></p>										
-													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; Mock Interview Sessions</span></p>										
+													<div class="course-meta  mb-3" style="font-size: 7px">
+														<span class="course-category"><i class="fas fa-user"></i> 247,910 Students </span>
+														<div class="course-rate ul-li">
+															<ul>
+																<li><i class="fas fa-star"></i></li>
+															</ul>											
+														</div>														
+														<span class="course-category">218,501 Votes </span>
+													</div>											
+											<div class="course_highlights alt-font p-1" style="color: #000;">                     
+													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A;"></i>&nbsp;<strong>Course Type:</strong> Skills Development/Short Term</span></p>
+
+													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A;"></i>&nbsp;<strong>Eligibility:</strong> 12+/Graduate</span></p>															
+													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A;"></i>&nbsp;<strong>Delivery Mode:</strong> Classroom/Offline</span></p>										
+													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A;"></i>&nbsp;<strong>Difficulty Level:</strong> No Prior Knowledge 
+															Required</span></p>
+															
+													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A;"></i>&nbsp;<strong>Doubt Clearing Session:</strong> Yes</span></p>
 											</div>
 											<div class="course-meta mt10 ">
-												<span class="course-category"><a href="#"><i class="fas fa-clock"></i> 51 Hours</a></span>
-												<span class="course-author"><a href="#"><i class="fas fa-book"></i> 16 Modules</a></span>
+												<span class="course-category"><i class="fas fa-clock"></i> 51 Hours</span>
+												<span class="course-author"><i class="fas fa-book"></i> 16 Modules</span>
 											</div>
 										</div>
 										<div class="more-btn text-center" >
@@ -413,47 +397,43 @@
 												<a class="btn-filled" href="javascript:void(0)" onclick="lead_capture_form_btn(1,'')"><i class="fas fa-download"></i> Brochure</a>
 											</div>
 											<div class="course-type-list">														
-												<a class="btn-outline" href="https://www.icajobguarantee.com/courses/tallyprime-gst-course" >View More <i class="fas fa-caret-right"></i></a>
+												<a class="btn-outline" target="_blank" href="https://www.icajobguarantee.com/courses/tallyprime-gst-course" >View More <i class="fas fa-caret-right"></i></a>
 											</div>														
 										</div>
 									</div>
 								</div>
-								<div class="mb-3 col-md-4" >
+								
+								<div class="mb-3 col-md-4">
 									<div class="course-item-pic-text">
 										<div class="course-pic relative-position mb25">
-											<img src="https://www.icajobguarantee.com/public/upload/2024-02-15/gst-certification-course.webp" class="width-100" alt=""> 
-											<div class="course-details-btn">
-												<a href="courses/gst-certification-course">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
-											</div>
+											<img src="https://www.icajobguarantee.com/public/upload/2024-02-15/gst-certification-course.webp" class="width-100" alt="gst course in <variable>"> 
 										</div>
 										<div class="course-item-text mb-20">
-											<div class="course-meta" style="font-size: 7px">
-												<span class="course-category"><i class="fas fa-user"></i> 74.2k &nbsp Students</span>
-												<div class="course-rate ul-li">
-													<ul>
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-													</ul>											
-												</div>
-												<span class="course-category">678 Rating</span>
+											<div class="course-title mt10 headline relative-position  mb-3">
+												<h2 style="font-size: 22px; color: #000;"><a target="_blank" href="https://www.icajobguarantee.com/courses/gst-certification-course">GST Certification Course</a> </h2>
 											</div>
-											<div class="course-title mt10 headline relative-position  mb-0">
-												<h3 style="font-size: 20px"><a href="courses/gst-certification-course">GST Certification Course</a> </h3>
-											</div>
-											<div class="course_highlights alt-font p-1 "style="color:black;">                     
-													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; 100% Placement Assurance </span></p>					
-													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; 3 Months Paid Internship</span></p>										
-													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; 28 Live Projects</span></p>										
-													<p> <span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; Learn 40 Digital Automation Tools</span></p>										
-													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; 6 Certifications</span></p>										
-													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; Mock Interview Sessions</span></p>										
+													<div class="course-meta  mb-3" style="font-size: 7px">
+														<span class="course-category"><i class="fas fa-user"></i> 247,910 Students </span>
+														<div class="course-rate ul-li">
+															<ul>
+																<li><i class="fas fa-star"></i></li>
+															</ul>											
+														</div>														
+														<span class="course-category">218,501 Votes </span>
+													</div>											
+											<div class="course_highlights alt-font p-1 "style="color: #000;">                     
+												<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A;"></i>&nbsp;<strong>Course Type:</strong> Skills Development/Short Term</span></p>
+
+												<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A;"></i>&nbsp;<strong>Eligibility:</strong> 12+/Graduate</span></p>															
+												<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A;"></i>&nbsp;<strong>Delivery Mode:</strong> Classroom/Offline</span></p>										
+												<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A;"></i>&nbsp;<strong>Difficulty Level:</strong> No Prior Knowledge 
+														Required</span></p>
+														
+												<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A;"></i>&nbsp;<strong>Doubt Clearing Session:</strong> Yes</span></p>
 											</div>
 											<div class="course-meta mt10 ">
-												<span class="course-category"><a href="#"><i class="fas fa-clock"></i> 27 Hours</a></span>
-												<span class="course-author"><a href="#"><i class="fas fa-book"></i> 10 Modules</a></span>
+												<span class="course-category"><i class="fas fa-clock"></i> 27 Hours</span>
+												<span class="course-author"><i class="fas fa-book"></i> 10 Modules</span>
 											</div>
 										</div>
 										<div class="more-btn text-center" >
@@ -461,47 +441,42 @@
 												<a class="btn-filled" href="javascript:void(0)" onclick="lead_capture_form_btn(1,'')"><i class="fas fa-download"></i> Brochure</a>
 											</div>
 											<div class="course-type-list">														
-												<a class="btn-outline" href="https://www.icajobguarantee.com/courses/gst-certification-course" >View More <i class="fas fa-caret-right"></i></a>
+												<a class="btn-outline" target="_blank" href="https://www.icajobguarantee.com/courses/gst-certification-course">View More <i class="fas fa-caret-right"></i></a>
 											</div>														
 										</div>
 									</div>
 								</div>
-								<div class="mb-3 col-md-4" >
+								
+								<div class="mb-3 col-md-4">
 									<div class="course-item-pic-text">
 										<div class="course-pic relative-position mb25">
-											<img src="https://www.icajobguarantee.com/public/upload/2024-02-15/sap-fico-course-business-user.webp" class="width-100" alt=""> 
-											<div class="course-details-btn">
-												<a href="courses/sap-fico-course">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
-											</div>
+											<img src="https://www.icajobguarantee.com/public/upload/2024-02-15/sap-fico-course-business-user.webp" class="width-100" alt="sap fico course in <variable>">
 										</div>
 										<div class="course-item-text mb-20">
-											<div class="course-meta" style="font-size: 7px">
-												<span class="course-category"><i class="fas fa-user"></i> 60.9k &nbsp Students</span>
-												<div class="course-rate ul-li">
-													<ul>
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-													</ul>											
-												</div>
-												<span class="course-category">678 Rating</span>
+											<div class="course-title mt10 headline relative-position  mb-3">
+												<h2 style="font-size: 22px; color: #000;"><a target="_blank" href="https://www.icajobguarantee.com/courses/sap-fico-course">SAP FICO Course (Business User)</a> </h2>
 											</div>
-											<div class="course-title mt10 headline relative-position  mb-0">
-												<h3 style="font-size: 20px"><a href="courses/sap-fico-course">SAP FICO Course (Business User)</a> </h3>
-											</div>
-											<div class="course_highlights alt-font p-1 "style="color:black;">                     
-													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; 100% Placement Assurance </span></p>					
-													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; 3 Months Paid Internship</span></p>										
-													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; 28 Live Projects</span></p>										
-													<p> <span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; Learn 40 Digital Automation Tools</span></p>										
-													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; 6 Certifications</span></p>										
-													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; Mock Interview Sessions</span></p>										
+													<div class="course-meta  mb-3" style="font-size: 7px">
+														<span class="course-category"><i class="fas fa-user"></i> 247,910 Students </span>
+														<div class="course-rate ul-li">
+															<ul>
+																<li><i class="fas fa-star"></i></li>
+															</ul>											
+														</div>														
+														<span class="course-category">218,501 Votes </span>
+													</div>											
+											<div class="course_highlights alt-font p-1 "style="color: #000;">                     
+												<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A;"></i>&nbsp;<strong>Course Type:</strong> Skills Development/Short Term</span></p>
+
+												<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A;"></i>&nbsp;<strong>Eligibility:</strong> 12+/Graduate</span></p>															
+												<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A;"></i>&nbsp;<strong>Delivery Mode:</strong> Classroom/Offline</span></p>										
+												<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A;"></i>&nbsp;<strong>Difficulty Level:</strong> No Prior Knowledge Required</span></p>										
+												
+												<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A;"></i>&nbsp;<strong>Doubt Clearing Session:</strong> Yes</span></p>
 											</div>
 											<div class="course-meta mt10 ">
-												<span class="course-category"><a href="#"><i class="fas fa-clock"></i> 80 Hours</a></span>
-												<span class="course-author"><a href="#"><i class="fas fa-book"></i> 1 Modules</a></span>
+												<span class="course-category"><i class="fas fa-clock"></i> 80 Hours</span>
+												<span class="course-author"><i class="fas fa-book"></i> 1 Module</span>
 											</div>
 										</div>
 										<div class="more-btn text-center" >
@@ -514,42 +489,38 @@
 										</div>
 									</div>
 								</div>
-								<div class="mb-3 col-md-4" >
+								
+								<div class="mb-3 col-md-4">
 									<div class="course-item-pic-text">
 										<div class="course-pic relative-position mb25">
-											<img src="https://www.icajobguarantee.com/public/upload/2024-02-05/mis-analytics.webp" class="width-100" alt=""> 
-											<div class="course-details-btn">
-												<a href="courses/mis-course">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
-											</div>
+											<img src="https://www.icajobguarantee.com/public/upload/2024-02-05/mis-analytics.webp" class="width-100" alt="mis course in <variable>">
 										</div>
 										<div class="course-item-text mb-20">
-											<div class="course-meta" style="font-size: 7px">
-												<span class="course-category"><i class="fas fa-user"></i> 601 &nbsp Students</span>
-												<div class="course-rate ul-li">
-													<ul>
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-													</ul>											
-												</div>
-												<span class="course-category">678 Rating</span>
+											<div class="course-title mt10 headline relative-position  mb-3">
+												<h2 style="font-size: 22px; color: #000;"><a target="_blank" href="https://www.icajobguarantee.com/courses/mis-course">Certificate in MIS Analytics</a> </h2>
 											</div>
-											<div class="course-title mt10 headline relative-position  mb-0">
-												<h3 style="font-size: 20px"><a href="courses/mis-course">Certificate in MIS Analytics</a> </h3>
-											</div>
-											<div class="course_highlights alt-font p-1 "style="color:black;">                     
-													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; 100% Placement Assurance </span></p>					
-													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; 3 Months Paid Internship</span></p>										
-													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; 28 Live Projects</span></p>										
-													<p> <span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; Learn 40 Digital Automation Tools</span></p>										
-													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; 6 Certifications</span></p>										
-													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; Mock Interview Sessions</span></p>										
+													<div class="course-meta  mb-3" style="font-size: 7px">
+														<span class="course-category"><i class="fas fa-user"></i> 247,910 Students </span>
+														<div class="course-rate ul-li">
+															<ul>
+																<li><i class="fas fa-star"></i></li>
+															</ul>											
+														</div>														
+														<span class="course-category">218,501 Votes </span>
+													</div>											
+											<div class="course_highlights alt-font p-1 "style="color: #000;">                     
+													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A;"></i>&nbsp;<strong>Course Type:</strong> Skills Development/Short Term</span></p>
+
+													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A;"></i>&nbsp;<strong>Eligibility:</strong> 12+/Graduate</span></p>															
+													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A;"></i>&nbsp;<strong>Delivery Mode:</strong> Classroom/Offline</span></p>										
+													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A;"></i>&nbsp;<strong>Difficulty Level:</strong> No Prior Knowledge 
+														Required</span></p>
+														
+													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A;"></i>&nbsp;<strong>Doubt Clearing Session:</strong> Yes</span></p>
 											</div>
 											<div class="course-meta mt10 ">
-												<span class="course-category"><a href="#"><i class="fas fa-clock"></i> 4 Months</a></span>
-												<span class="course-author"><a href="#"><i class="fas fa-book"></i> 6 Modules</a></span>
+												<span class="course-category"><i class="fas fa-clock"></i> 4 Months</span>
+												<span class="course-author"><i class="fas fa-book"></i> 6 Modules</span>
 											</div>
 										</div>
 										<div class="more-btn text-center" >
@@ -557,47 +528,43 @@
 												<a class="btn-filled" href="javascript:void(0)" onclick="lead_capture_form_btn(1,'')"><i class="fas fa-download"></i> Brochure</a>
 											</div>
 											<div class="course-type-list">														
-												<a class="btn-outline" href="https://www.icajobguarantee.com/courses/mis-course" >View More <i class="fas fa-caret-right"></i></a>
+												<a class="btn-outline" target="_blank" href="https://www.icajobguarantee.com/courses/mis-course" >View More <i class="fas fa-caret-right"></i></a>
 											</div>														
 										</div>
 									</div>
 								</div>
-								<div class="mb-3 col-md-4" >
+								
+								<div class="mb-3 col-md-4">
 									<div class="course-item-pic-text">
 										<div class="course-pic relative-position mb25">
-											<img src="https://www.icajobguarantee.com/public/upload/2024-02-12/microsoft-certification.webp" class="width-100" alt=""> 
-											<div class="course-details-btn">
-												<a href="courses/microsoft-office-course">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
-											</div>
+											<img src="https://www.icajobguarantee.com/public/upload/2024-02-12/microsoft-certification.webp" class="width-100" alt="microsoft office course in <variable>">
 										</div>
 										<div class="course-item-text mb-20">
-											<div class="course-meta" style="font-size: 7px">
-												<span class="course-category"><i class="fas fa-user"></i> 1.9k &nbsp Students</span>
-												<div class="course-rate ul-li">
-													<ul>
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-													</ul>											
-												</div>
-												<span class="course-category">678 Rating</span>
+											<div class="course-title mt10 headline relative-position  mb-3">
+												<h2 style="font-size: 22px; color: #000;"><a target="_blank" href="https://www.icajobguarantee.com/courses/microsoft-office-course">Microsoft Office Certification</a> </h2>
 											</div>
-											<div class="course-title mt10 headline relative-position  mb-0">
-												<h3 style="font-size: 20px"><a href="courses/microsoft-office-course">Microsoft Office Certification</a> </h3>
-											</div>
-											<div class="course_highlights alt-font p-1 "style="color:black;">                     
-													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; 100% Placement Assurance </span></p>					
-													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; 3 Months Paid Internship</span></p>										
-													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; 28 Live Projects</span></p>										
-													<p> <span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; Learn 40 Digital Automation Tools</span></p>										
-													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; 6 Certifications</span></p>										
-													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; Mock Interview Sessions</span></p>										
+													<div class="course-meta  mb-3" style="font-size: 7px">
+														<span class="course-category"><i class="fas fa-user"></i> 247,910 Students </span>
+														<div class="course-rate ul-li">
+															<ul>
+																<li><i class="fas fa-star"></i></li>
+															</ul>											
+														</div>														
+														<span class="course-category">218,501 Votes </span>
+													</div>											
+											<div class="course_highlights alt-font p-1 "style="color: #000;">                     
+													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A;"></i>&nbsp;<strong>Course Type:</strong> Skills Development/Short Term</span></p>
+
+													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A;"></i>&nbsp;<strong>Eligibility:</strong> 12+/Graduate</span></p>															
+													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A;"></i>&nbsp;<strong>Delivery Mode:</strong> Classroom/Offline</span></p>										
+													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A;"></i>&nbsp;<strong>Difficulty Level:</strong> No Prior Knowledge 
+														Required</span></p>
+														
+													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A;"></i>&nbsp;<strong>Doubt Clearing Session:</strong> Yes</span></p>
 											</div>
 											<div class="course-meta mt10 ">
-												<span class="course-category"><a href="#"><i class="fas fa-clock"></i> 48 Hours</a></span>
-												<span class="course-author"><a href="#"><i class="fas fa-book"></i> 1 Modules</a></span>
+												<span class="course-category"><i class="fas fa-clock"></i> 48 Hours</span>
+												<span class="course-author"><i class="fas fa-book"></i> 1 Module</span>
 											</div>
 										</div>
 										<div class="more-btn text-center" >
@@ -605,47 +572,43 @@
 												<a class="btn-filled" href="javascript:void(0)" onclick="lead_capture_form_btn(1,'')"><i class="fas fa-download"></i> Brochure</a>
 											</div>
 											<div class="course-type-list">														
-												<a class="btn-outline" href="https://www.icajobguarantee.com/courses/microsoft-office-course" >View More <i class="fas fa-caret-right"></i></a>
+												<a class="btn-outline" target="_blank" href="https://www.icajobguarantee.com/courses/microsoft-office-course" >View More <i class="fas fa-caret-right"></i></a>
 											</div>														
 										</div>
 									</div>
 								</div>
-								<div class="mb-3 col-md-4" >
+								
+								<div class="mb-3 col-md-4">
 									<div class="course-item-pic-text">
 										<div class="course-pic relative-position mb25">
-											<img src="https://www.icajobguarantee.com/public/upload/2024-02-12/zoho.webp" class="width-100" alt=""> 
-											<div class="course-details-btn">
-												<a href="courses/zoho-books">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
-											</div>
+											<img src="https://www.icajobguarantee.com/public/upload/2024-02-12/zoho.webp" class="width-100" alt="zoho books course in <variable>">
 										</div>
 										<div class="course-item-text mb-20">
-											<div class="course-meta" style="font-size: 7px">
-												<span class="course-category"><i class="fas fa-user"></i> 391 &nbsp Students</span>
-												<div class="course-rate ul-li">
-													<ul>
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-													</ul>											
-												</div>
-												<span class="course-category">678 Rating</span>
+											<div class="course-title mt10 headline relative-position  mb-3">
+												<h2 style="font-size: 22px; color: #000;"><a target="_blank" href="https://www.icajobguarantee.com/courses/zoho-books">ZOHO Books</a> </h2>
 											</div>
-											<div class="course-title mt10 headline relative-position  mb-0">
-												<h3 style="font-size: 20px"><a href="courses/zoho-books">ZOHO Books</a> </h3>
-											</div>
-											<div class="course_highlights alt-font p-1 "style="color:black;">                     
-													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; 100% Placement Assurance </span></p>					
-													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; 3 Months Paid Internship</span></p>										
-													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; 28 Live Projects</span></p>										
-													<p> <span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; Learn 40 Digital Automation Tools</span></p>										
-													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; 6 Certifications</span></p>										
-													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A	;"></i>&nbsp; Mock Interview Sessions</span></p>										
+													<div class="course-meta  mb-3" style="font-size: 7px">
+														<span class="course-category"><i class="fas fa-user"></i> 247,910 Students </span>
+														<div class="course-rate ul-li">
+															<ul>
+																<li><i class="fas fa-star"></i></li>
+															</ul>											
+														</div>														
+														<span class="course-category">218,501 Votes </span>
+													</div>											
+											<div class="course_highlights alt-font p-1 "style="color: #000;">                     
+													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A;"></i>&nbsp;<strong>Course Type:</strong> Skills Development/Short Term</span></p>
+
+													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A;"></i>&nbsp;<strong>Eligibility:</strong> 12+/Graduate</span></p>															
+													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A;"></i>&nbsp;<strong>Delivery Mode:</strong> Classroom/Offline</span></p>										
+													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A;"></i>&nbsp;<strong>Difficulty Level:</strong> No Prior Knowledge 
+														Required</span></p>
+														
+													<p><span class="course-category"><i class="fas fa-solid fa-check-circle" style="color:#1B007A;"></i>&nbsp;<strong>Doubt Clearing Session:</strong> Yes</span></p>
 											</div>
 											<div class="course-meta mt10 ">
-												<span class="course-category"><a href="#"><i class="fas fa-clock"></i> 8 Hours</a></span>
-												<span class="course-author"><a href="#"><i class="fas fa-book"></i> 1 Modules</a></span>
+												<span class="course-category"><i class="fas fa-clock"></i> 8 Hours</span>
+												<span class="course-author"><i class="fas fa-book"></i> 1 Module</span>
 											</div>
 										</div>
 										<div class="more-btn text-center" >
@@ -653,7 +616,7 @@
 												<a class="btn-filled" href="javascript:void(0)" onclick="lead_capture_form_btn(1,'')"><i class="fas fa-download"></i> Brochure</a>
 											</div>
 											<div class="course-type-list">														
-												<a class="btn-outline" href="https://www.icajobguarantee.com/courses/zoho-books" >View More <i class="fas fa-caret-right"></i></a>
+												<a class="btn-outline" target="_blank" href="https://www.icajobguarantee.com/courses/zoho-books">View More <i class="fas fa-caret-right"></i></a>
 											</div>														
 										</div>
 									</div>
@@ -671,7 +634,7 @@
 					margin-right: 6px;
 					position: relative;
 				}
-				.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
+				.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
 				position: relative;
 				width: 100%;
 				min-height: 1px;
@@ -686,8 +649,8 @@
 	<!-- Start Placement Section -->
 	<Section  id="placement" class="popular-course-section popular-three" style="background:white">
 			<div class="container">
-					<div class="section-title mb20 headline text-center">
-						<span class="subtitle text-uppercase">STUDENT PLACEMENT</span>
+					<div id="placements" class="section-title mb20 headline text-center">
+						<span class="subtitle text-uppercase">STUDENT PLACEMENTS</span>
 						<h2 style="font-size: 30px!important;">Connecting Talent with <span> Job Opportunities </span></h2>
 					</div>
 					<div class="placement-section-row">
@@ -739,6 +702,11 @@
 
 	</Section>
 	<!-- End Placement Section -->
+		<div class="col-md-12 mt10" >
+			<div class="genius-btn mb20 gradient-bg text-center text-uppercase ul-li-block bold-font" style="margin: auto;">
+				<a href="https://www.icajobguarantee.com/all-placement-student" target="_blank"> <i class="fas fa-avator" style="color: #fff;"></i> View All Students</a>
+			</div>
+		</div>
 
 	<!-- Start of testimonial secound section
 	============================================= -->
@@ -746,7 +714,7 @@
 
 		<div class="container">
 
-			<div class="testimonial-slide">
+			<div id="testimonials" class="testimonial-slide">
 
 				<div class="section-title mb20 headline text-center">
 
@@ -839,19 +807,23 @@
 
 				<div class="row">
 
-					<div class="col-md-5 mb20 text-center">
+					<div class="col-md-4 mt10 mb20 text-center">
 
 						<img src="https://www.icajobguarantee.com/assets/img/left-image.png" class="border-10px-radius">
 
 					</div>
 
+					<div class="col-md-1">
+
+					</div>
+					
 					<div class="col-md-7 mt10">
 
-						<div class="section-title mb20 headline text-center">
+						<div id="why-us" class="section-title mb20 headline text-center">
 
 							<span class="subtitle text-uppercase"> <STROng>Training </STROng></span>
 
-							<h3 style="font-size:26px!important;"><STRONG> Why </STRONG>  <span> ICA Edu Skills Ahmedabad? </span></h3>
+							<h3 style="font-size:26px!important;"><STRONG> Why </STRONG>  <span> Us? </span></h3>
 
 						</div>
 	
@@ -859,12 +831,12 @@
 
 								<div class="col-md-4 col-6"> 
 
-									<div class="key-highlights" style="border: 5px solid #ccc; margin: 5px;">
+									<div class="key-highlights" style="margin: 3px;">
 
 										<img src="https://www.icajobguarantee.com/assets/img/icons/tick.png" >
 
-										<h6> 100% Job Guarantee </h6>
-										<p>is simply dummy text of the printing and typesetting industry</p>
+										<h5 style="color: #393185;"> 100% Job Guarantee </h5>
+										<p>We provide skill-based career oriented courses with guaranteed jobs</p>
 
 									</div>
 
@@ -872,60 +844,60 @@
 
 								<div class="col-md-4 col-6"> 
 
-									<div class="key-highlights" style="border: 5px solid #ccc; margin: 5px;">
+									<div class="key-highlights" style="margin: 3px;">
 
 										<img src="https://www.icajobguarantee.com/assets/img/icons/tick.png" >
 
-										<h6> Any Time Job Card </h6>
-										<p>is simply dummy text of the printing and typesetting industry</p>
+										<h5 style="color: #393185;"> Any Time Job Card </h5>
+										<p>We give you an ATJ Card to become a priority student for job openings</p>
 									</div>
 
 								</div>							
 
 								<div class="col-md-4 col-6"> 
 
-									<div class="key-highlights" style="border: 5px solid #ccc; margin: 5px;">
+									<div class="key-highlights" style="margin: 3px;">
 
 										<img src="https://www.icajobguarantee.com/assets/img/icons/tick.png" >
 
-										<h6> 9 Simulation Software </h6>
-										<p>is simply dummy text of the printing and typesetting industry</p>
+										<h5 style="color: #393185;"> 9 Simulation Software </h5>
+										<p>We teach you 9 updated software that most companies use in managing accounts</p>
 									</div>
 
 								</div>
 
 								<div class="col-md-4 col-6"> 
 
-									<div class="key-highlights" style="border: 5px solid #ccc; margin: 5px;">
+									<div class="key-highlights" style="margin: 3px;">
 
 										<img src="https://www.icajobguarantee.com/assets/img/icons/tick.png" >
 
-										<h6>  Triple Certification </h6>
-										<p>is simply dummy text of the printing and typesetting industry</p>
+										<h5 style="color: #393185;"> Triple Certification </h5>
+										<p>We prepare you as a strong contender in the highly competitive job market</p>
 									</div>
 
 								</div>
 
 								<div class="col-md-4 col-6"> 
 
-									<div class="key-highlights" style="border: 5px solid #ccc; margin: 5px;">
+									<div class="key-highlights" style="margin: 3px;">
 
 										<img src="https://www.icajobguarantee.com/assets/img/icons/tick.png" >
 
-										<h6> Mock Interviews </h6>
-										<p>is simply dummy text of the printing and typesetting industry</p>
+										<h5 style="color: #393185;"> Mock Interviews & GDs </h5>
+										<p>We prepare you to crack jobs with proper skill-based corporate training</p>
 									</div>
 
 								</div>
 
 								<div class="col-md-4 col-6"> 
 
-									<div class="key-highlights" style="border: 5px solid #ccc; margin: 5px;">
+									<div class="key-highlights" style="margin: 3px;">
 
 										<img src="https://www.icajobguarantee.com/assets/img/icons/tick.png" >
 
-										<h6> 90% Practical </h6>
-										<p>is simply dummy text of the printing and typesetting industry</p>
+										<h5 style="color: #393185;"> 90% Practical </h5>
+										<p>Our way of teaching is mostly practical that you actually face in real life</p>
 									</div>
 								</div>								
 							</div>
@@ -934,7 +906,7 @@
 			</div>
 		</section>
 <style>
-		.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
+		.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
     position: relative;
     width: 100%;
     min-height: 1px;

@@ -605,7 +605,7 @@
         </script>
         <script src="{{ url('assets/js/jquery-2.1.4.min.js') }}"></script>
         <script src="{{ url('assets/js/bootstrap.min.js') }}"></script>
-        
+        <script src="{{ url('assets/js/enquiry-form.js') }}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
     </body>

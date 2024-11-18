@@ -50,7 +50,7 @@
 									<i class="text-gradiant flaticon-graduation-hat"></i>
 								</div>
 								<div class="counter-number">
-									<span class="counter-count bold-font">25 </span> <span>Years</span>
+									<span class="counter-count bold-font">26</span> <span>Years</span>
 									<p>of Excellence</p>
 								</div>
 							</div>

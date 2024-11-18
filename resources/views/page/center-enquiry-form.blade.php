@@ -143,9 +143,9 @@
                                     <fieldset class="wizard-fieldset">
                                         <h5>Bank Information</h5>
                                         <div class="form-group">
-                                            <input type="text" class="form-control wizard-required" id="bname">
-                                            <label for="bname" class="wizard-form-text-label">Bank Name*</label>
-                                            <div class="wizard-form-error"></div>
+                                        <input type="text" class="form-control wizard-required" id="bname">
+                                        <label for="bname" class="wizard-form-text-label">Bank Name*</label>
+                                        <div class="wizard-form-error"></div>
                                         </div>
                                         <div class="form-group">
                                         <input type="text" class="form-control wizard-required" id="brname">

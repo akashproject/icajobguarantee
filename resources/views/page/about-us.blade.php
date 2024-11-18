@@ -43,12 +43,12 @@
 					<div class="col-md-9">
 						<div class="about-us-content-item">
 							<div class="about-text-item">
-								<p> ICA Edu Skills, one of the best training institutes in India began its journey in 1999 with a vision to train the job-focused youth in India and make them employable at affordable fees. As the industry demands ‘Skilled Manpower’, we too, expanded our horizon to not just provide practical training to our students but also support them with <a href="{{ url('/placements') }}"> placement at top companies and MNCs</a>. </p>
+								<p> ICA Edu Skills Pvt. Ltd. , one of the best training institutes in India began its journey in 1999 with a vision to train the job-focused youth in India and make them employable at affordable fees. As the industry demands ‘Skilled Manpower’, we too, expanded our horizon to not just provide practical training to our students but also support them with <a href="{{ url('/placements') }}"> placement at top companies and MNCs</a>. </p>
 								<p>
-									Today ICA is recognized as the best training institute in India to have shaped millions of careers and changed peoples’ perception about Accounts, Finance, and Tax Education.
+									Today ICA Edu Skills Pvt. Ltd. is recognized as the best training institute in India to have shaped millions of careers and changed peoples’ perception about Accounts, Finance, and Tax Education.
 								</p>
 								<p>
-									ICA takes pride in contributing to India’s skill development initiatives – not only as an independent set-up but also as a training partner for multiple educational brands and government projects.
+									ICA Edu Skills Pvt. Ltd. takes pride in contributing to India’s skill development initiatives – not only as an independent set-up but also as a training partner for multiple educational brands and government projects.
 								</p>
 								<p>
 									With over 100+ training centers across the country, we are recognised to be the best training institute in India and widely appreciated for our work by many brands and organizations every year.
@@ -65,7 +65,7 @@
 								</div>
 								<div class="col-md-6 mb10">
 									<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font" style="margin: auto;">
-										<a target="_blank" href="{{ url('franchise-opportunity')}}"> Become ICA Partner <i class="fas fa-caret-right"></i></a>
+										<a target="_blank" href="{{ url('franchise-opportunity')}}"> Become ICA Edu Skills Pvt. Ltd. Partner <i class="fas fa-caret-right"></i></a>
 									</div>
 								</div>
 							</div>
@@ -82,8 +82,8 @@
 									</div>
 								</div>
 								<div class="vidoe-text text-center">
-									<h3 class="latest-title bold-font"><a href="#">ICA Edu Skills - India's No.1 Computer Accounting and Finance Training Institute</a></h3>
-									<p>ICA was founded in 1999, and began its journey with the sole mission to provide high quality services at affordable prices to the masses
+									<h3 class="latest-title bold-font"><a href="#">ICA Edu Skills Pvt. Ltd. - India's No.1 Computer Accounting and Finance Training Institute</a></h3>
+									<p>ICA Edu Skills Pvt. Ltd. was founded in 1999, and began its journey with the sole mission to provide high quality services at affordable prices to the masses
 									</p>
 								</div>
 							</div>
@@ -126,8 +126,8 @@
 						<div class="mt10">
 							<h2 class="awards-recognition " > Awards & Recognition </h2>
 						</div>
-						<p> When we say ICA is the ‘No.1 Training Institute in Accounts and Finance’, it’s just not us; it’s an array of brands and organisations who have recognised our hard work and accomplishments over the years. </p>
-						<p> Every year ICA is conferred with awards and titles which we wear as a badge of honour. </p>
+						<p> When we say ICA Edu Skills Pvt. Ltd. is the ‘No.1 Training Institute in Accounts and Finance’, it’s just not us; it’s an array of brands and organisations who have recognised our hard work and accomplishments over the years. </p>
+						<p> Every year ICA Edu Skills Pvt. Ltd. is conferred with awards and titles which we wear as a badge of honour. </p>
 						<p> There’s not enough space to accommodate all of our acknowledgements all at the same time but we can certainly share some of our prized possessions here.. </p>
 					</div>
 				</div>
