@@ -1,4 +1,4 @@
-  body {
+body {
     background-color: #ffffff;
     color: #444444;
     font-family: 'Roboto', sans-serif;
@@ -23,6 +23,7 @@
     padding: 12px 20px;
     text-align: center;
   }
+  
   .form-wizard {
     color: #888888;
     padding: 30px;
@@ -182,7 +183,7 @@
     font-weight: 600;
     padding: 10px;
     color: #333;
-  }
+}
   .form-wizard-steps li.active span, .form-wizard-steps li.activated span {
     background:linear-gradient(to right, #616dfd 0%, #393185 51%, #616dfd 100%);
     color: #ffffff;
@@ -233,3 +234,4 @@
       height: auto;
     }
   }
+  

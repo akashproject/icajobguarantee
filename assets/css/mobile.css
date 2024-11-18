@@ -4293,8 +4293,6 @@ ul.product-tab li.active:after {
       width: 49%;
       font-size: 16px; }
 .course-single-text p {
-  font-size: 14px;
-  font-weight: 300;
   margin-bottom: 30px;
   color: #333333; }
 
@@ -5447,21 +5445,73 @@ img.width-100 {
   z-index: 9;
   cursor: pointer;
 }
+/* course page text content css */
+.course-details-content h1, .course-details-content h2, .course-details-content h3, .course-details-content h4, .course-details-content h5, .course-details-content h6 {
+  color: #393185;
+  margin: 15px 0px;
+}
+.course-details-content h1 {
+  font-size: 28px;
+}
+.course-details-content h2 {
+  font-size: 26px;
+}
 .course-details-content h3 {
+  font-size: 24px;
+}
+.course-details-content h4 {
+  font-size: 22px;
+}
+.course-details-content h5 {
+  font-size: 20px;
+}
+.course-details-content h6 {
+  font-size: 18px;
+}
+.course-details-content p {
+  margin: 10px 0;
   color: #333;
-  font-size: 21px;
-  margin-top: 15px;
 }
-.course-details-content ul {
-  padding: auto;
-  margin: auto;
+.course-details-content a {
+  color: #393185 !important;
+  font-weight: 600;
 }
-
+.course-details-content ul, .course-details-content ol {
+  color: #333;
+  margin: 10px 0;
+}
 .course-details-content ul li {
   display: block;
   list-style: disc;
   color: #333;
+  position: relative;
+  padding-left: 12px;
+  margin-left: 15px;
 }
+.course-details-content ul li::before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  background: #3e4095;
+  height: 7px;
+  left: 0;
+  top: 6px;
+}
+.course-details-content ol li {
+  display: block;
+  color: #333;
+  position: relative;
+  padding-left: 12px;
+  margin-left: 15px;
+}
+.course-details-content .table {
+  padding: 8px;
+}
+.course-details-content .table thead th {
+  font-weight: 600;
+  font-size: 20px;
+}
+/* course page text content css */
 .photo-list {
   padding: 3px;
   background: #ccc;

@@ -132,7 +132,9 @@ select:visited {
   margin: 0; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Roboto", sans-serif; }
+  font-family: "Roboto", sans-serif; 
+  color: #333;
+}
 
 .mb10 {
   margin-bottom: 10px; }
@@ -1926,8 +1928,7 @@ button.alt-menu-btn.float-left {
   padding: 0 15px;
   border-radius: 4px;
   color: #000;
-  margin-bottom: 5px;
-  border: none; }
+  border: 1px solid #c9c8c8; }
 
 .register-form-area textarea {
   height: 100px;
@@ -4995,7 +4996,7 @@ a.comment-reply-link {
 /*Contact  section*/
 /*----------------------------------------------------*/
 .footer-area-section {
-  padding: 105px 0px 0px 0px; }
+  padding: 20px 0px 0px 0px; }
 
 .footer-about-text p {
   font-size: 17px;
@@ -5165,6 +5166,10 @@ a.comment-reply-link {
 
 .contact-info, .register-form-area {
   margin-bottom: 10px;
+}
+
+.contact-info {
+  border-radius: 5px;
 }
 
 #global_other_details_form .contact-info, .register-form-area {
