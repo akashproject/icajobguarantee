@@ -12,6 +12,6 @@ class Enquiry extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'id','center_id','name','address','state_id','city','pincode','dob','occupation','mobile','email','parent_name','parent_mobile','parent_email','parent_occupation','qualification','professional_qualification','experience','know_from','job_interest','admission_date','slot_day','slot_time'
+        'id','center_id','course_type','course','name','address','state_id','city','pincode','dob','occupation','mobile','email','parent_name','parent_mobile','parent_email','parent_occupation','qualification','professional_qualification','passing_year','experience','know_from','job_interest','admission_date','slot_day','slot_time'
     ];
 }

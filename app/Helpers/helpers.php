@@ -220,7 +220,7 @@ if (! function_exists('getAssessment')) {
 }
 
 if (! function_exists('getJoinees')) {
-    function getJoinees($center_id=null,$course_id=null){
+    function getJoinees($center_id=null,$course_id=null,$count=12){
         $placements = DB::table('placements');
         if($center_id){
             $placements->where('center_id',$center_id);
@@ -231,7 +231,7 @@ if (! function_exists('getJoinees')) {
         } 
 
 
-        $placements = $placements->where('status',"1")->inRandomOrder()->paginate(12);
+        $placements = $placements->where('status',"1")->inRandomOrder()->paginate($count);
         return $placements;
     }
 }
