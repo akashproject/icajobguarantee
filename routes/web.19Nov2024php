@@ -377,8 +377,8 @@ Route::get('/assessment-success', function () {
 //Route::get('/index/create-university-login', [App\Http\Controllers\IndexController::class, 'createUniversityLogin'])->name('create-university-login');
 
 // Pink Form
-Route::get('/student/enquiry-form/{step}', [App\Http\Controllers\StudentController::class, 'index'])->name('student-enquiry-form-with-slug');
-Route::get('/student/enquiry-form', [App\Http\Controllers\StudentController::class, 'index'])->name('student-enquiry-form');
+Route::get('/student/enquiry-form/{step}', [App\Http\Controllers\StudentController::class, 'index'])->name('create-center-login');
+Route::get('/student/enquiry-form', [App\Http\Controllers\StudentController::class, 'index'])->name('create-center-login');
 
 // Template Development
 Route::get('/template/build-up', [App\Http\Controllers\IndexController::class, 'templateBuildUp'])->name('template-build-up');

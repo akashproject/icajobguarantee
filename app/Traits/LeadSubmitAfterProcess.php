@@ -21,13 +21,10 @@ trait LeadSubmitAfterProcess
                 'center_address' => $center->address,
                 'center_mobile' => $center->mobile,
             ];
-           
             $mail = \Mail::to($postData["email"], $postData["name"])->send(new \App\Mail\JobFairNotification($details));
-           
+            
             return true;
         } catch (\Illuminate\Database\QueryException $e) {
-            //throw $th;
-
             var_dump($e);
         }
     }
@@ -104,6 +101,8 @@ trait LeadSubmitAfterProcess
         $resp = curl_exec($curl);
         curl_close($curl);
 
+        
+
         return response()->json($resp, $this->_statusOK);
     }
 
@@ -112,6 +111,40 @@ trait LeadSubmitAfterProcess
         $whatsappArray = (object) [
             "authorization" => "5a1a48f7-f10f-47bd-becc-6b092dfcc2bb",
             "campaign_id" => "147222",
+            "whatsapp_bsp" => "1",
+            "client_data" => [
+                "phone_number" => "+91" . $postData["mobile"],
+                "name" => $postData["name"],
+                "dynamic_data" => [
+                    "1" => $postData["name"],
+                ],
+            ],
+        ];
+
+        $curl = curl_init();
+        curl_setopt_array($curl, [
+            CURLOPT_URL => "https://app.cognocart.com/campaign/external/send-event-based-triggered-whatsapp-campaign/",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "POST",
+            CURLOPT_POSTFIELDS => json_encode($whatsappArray),
+            CURLOPT_HTTPHEADER => ["Content-Type: application/json"],
+        ]);
+
+        $response = curl_exec($curl);
+        curl_close($curl);
+        return true;
+    }
+
+    function jobFairCognoai_api_calling($postData)
+    {
+        $whatsappArray = (object) [
+            "authorization" => "5a1a48f7-f10f-47bd-becc-6b092dfcc2bb",
+            "campaign_id" => "192672",
             "whatsapp_bsp" => "1",
             "client_data" => [
                 "phone_number" => "+91" . $postData["mobile"],
