@@ -72,15 +72,15 @@
             <div class="container">
                 <div class="row justify_center">	
                     <div class="col-md-12">
-                        <div class="popup-text text-center gradient-bg text-white mb30">
-                            <h3 style="text-transform: uppercase;font-size: 25px;">ENQUIRY FORM</h3> 
+                        <div class="popup-text text-center gradient-bg mb30">
+                            <h3 class="text-white" style="text-transform: uppercase;font-size: 25px;text-transform: uppercase;font-size: 25px;" >ENQUIRY FORM</h3> 
                         </div>
                         <div class="row">
                             <div class="col-md-4" >
                                 <div class="form_wizerd_header form-wizard-panel"> 
                                     <a href="{{ route('student-enquiry-form') }}"  class="wizerd_header form-wizard-steps {{ ($step == null)?'active':'' }}">
                                         <span>1.</span>
-                                        <h4>Check Courses</h4>
+                                        <h4 >Check Courses</h4>
                                     </a>
                                     <a href="{{ route('student-enquiry-form-with-slug',1) }}" class="wizerd_header form-wizard-steps {{ ($step == '1')?'active':'' }}" >
                                         <span>2.</span>
@@ -96,7 +96,7 @@
                                     </a>
                                     <a href="{{ route('student-enquiry-form-with-slug',4) }}"  class="wizerd_header form-wizard-steps {{ ($step == '4')?'active':'' }}">
                                         <span>4.</span>
-                                        <h4>ICA Details</h4>
+                                        <h4>Aspirational Details</h4>
                                     </a>
                                 </div>
                             </div>
@@ -208,20 +208,34 @@
                                                 
                                                 <div class="row" > 
                                                     <div class="col-12" >
-                                                        <div class="contact-info formFieldPassingYear">
-                                                            <label class="mb-0" style="color: #403c9c;font-weight: 600;"> May I know Last Qualification </label>
-                                                            <input id="formFieldPassingYear" name="qualification" type="text" placeholder="Enter Last Qualification" autocomplete="off" required class="wizard-required">
+                                                        <div class="contact-info formFieldHighestQualification">
+                                                            <label class="mb-0" style="color: #403c9c;font-weight: 600;"> What is your highest Qualification?  </label>
+                                                            <select id="formFieldHighestQualification" class="qualification" name="qualification" required class="wizard-required">
+                                                                <option value=""> Select Qualification</option>
+                                                                <option value="10+2"> 10+2 </option>
+                                                                <option value="B.Com"> B.Com </option>
+                                                                <option value="B.Sc"> B.Sc </option>
+                                                                <option value="BA"> BA </option>
+                                                                <option value="BBA"> BBA </option>
+                                                                <option value="BCA"> BCA </option>
+                                                                <option value="MBA"> MBA </option>
+                                                                <option value="MCA"> MCA </option>
+                                                                <option value="M.Com"> M.Com </option>
+                                                                <option value="MA"> MA </option>
+                                                                <option value="M.Sc"> M.Sc </option>
+                                                                <option value="Others"> Others </option>
+                                                            </select>
                                                         </div>
                                                     </div>
                                                     <div class="col-12" >
                                                         <div class="contact-info formFieldPassingYear">
-                                                            <label class="mb-0" style="color: #403c9c;font-weight: 600;"> May I know Passing Year </label>
+                                                            <label class="mb-0" style="color: #403c9c;font-weight: 600;"> Please specify your year of passing </label>
                                                             <input id="formFieldPassingYear" name="passing_year" type="month" placeholder="Enter Passing Year" autocomplete="off" required class="wizard-required">
                                                         </div>
                                                     </div>
                                                     <div class="col-12" >
                                                         <div class="contact-info formFieldInstitute">
-                                                            <label class="mb-0" style="color: #403c9c;font-weight: 600;"> From Which College/University Your are passing </label>
+                                                            <label class="mb-0" style="color: #403c9c;font-weight: 600;">Mention your College/university. </label>
                                                             <input id="formFieldInstitute" name="institute" type="text" placeholder="Enter Passing Collage/University" autocomplete="off" required class="wizard-required">
                                                         </div>
                                                     </div>
@@ -269,38 +283,32 @@
                                                 <h3 class="heading">Tell me something about yourself</h3>
                                                 <div class="row" > 
                                                     <div class="col-12" >
-                                                        <div class="contact-info formFieldOccupation">
-                                                            <select id="formFieldOccupation" class="occupation" name="occupation" required class="wizard-required">
-                                                                <option value="">Select Occupation</option>
-                                                                <option value="student"> Student </option>
-                                                                <option value="private_service"> Working On Private Sector </option>
-                                                                <option value="govt_service"> Working On Govt Job </option>
-                                                                <option value="business"> Own Business </option>
+                                                        <div class="contact-info formFieldIsWorkExperience">
+                                                            <select id="formFieldIsWorkExperience" class="is_work_experience" name="is_work_experience" required class="wizard-required">
+                                                                <option value="">Do you have any work experience? </option>
+                                                                <option value="Yes"> Yes </option>
+                                                                <option value="No"> No </option>
                                                             </select>
                                                         </div>
                                                     </div>
                                                     <div class="col-12" >
-                                                        <div class="contact-info formFieldOccupation">
-                                                            <select id="formFieldOccupation" class="occupation" name="occupation" required class="wizard-required">
-                                                                <option value="">Are you doing any other course</option>
-                                                                <option value="CA"> CA </option>
-                                                                <option value="CS"> CS </option>
-                                                                <option value="CMA"> CMA </option>
-                                                                <option value="MBA"> MBA </option>
-                                                                <option value="Bank PO / clerical"> Bank PO / clerical </option>
-                                                                <option value="Govt JOB / railways">Govt JOB / railways</option>
-                                                                <option value="Others">Others</option>
-                                                            </select>
+                                                        <div class="contact-info formFieldJobRole">
+                                                            <input id="formFieldJobRole" name="job_role" type="text" placeholder="What is your job role?" autocomplete="off" class="wizard-required">
+                                                            <div class="wizard-form-error"></div>
                                                         </div>
                                                     </div>
                                                     <div class="col-12" >
-                                                        <div class="contact-info formFieldOccupation">
-                                                            <select id="formFieldOccupation" class="occupation" name="occupation" required class="wizard-required">
-                                                                <option value="">Any Location preference</option>
-                                                                <option value="Same city"> Same city </option>
-                                                                <option value="Same state"> Same state </option>
-                                                                <option value="Anywhere in india"> Anywhere in india </option>
-                                                            </select>
+                                                        <div class="contact-info formFieldprofessionalCourses">
+                                                            <label class="mb-0" style="color: #403c9c;font-weight: 600;"> Have you completed or are you currently pursuing any other professional courses? [If yes, please specify.] </label>
+                                                            <input id="formFieldprofessionalCourses" name="professional_courses" type="text" placeholder="Enter your professional course" autocomplete="off" required class="wizard-required">
+                                                            <div class="wizard-form-error"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12" >
+                                                        <div class="contact-info formFieldlocationPrefarence">
+                                                            <label class="mb-0" style="color: #403c9c;font-weight: 600;"> Do you have any location preference for placement? [If yes, please specify]</label>
+                                                            <input id="formFieldlocationPrefarence" name="location_prefarence" type="text" placeholder="Enter your location preference" autocomplete="off" required class="wizard-required">
+                                                            <div class="wizard-form-error"></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -329,39 +337,29 @@
                                                 <div class="row" > 
                                                     <div class="col-12" >
                                                         <div class="contact-info formFieldName">
-                                                            <input id="formFieldName" name="name" type="text" placeholder="May I know your full name?" autocomplete="off" required class="wizard-required">
+                                                            <input id="formFieldName" name="name" type="text" placeholder="What is your name?" autocomplete="off" required class="wizard-required">
                                                             <div class="wizard-form-error"></div>
                                                         </div>
                                                     </div>
                                                     <div class="col-12" >
                                                         <div class="contact-info formFieldEmail">
-                                                            <input id="formFieldEmail" name="email" type="email" placeholder="Share Your Email ID" autocomplete="off" required class="wizard-required">
+                                                            <input id="formFieldEmail" name="email" type="email" placeholder="Please mention your email id." autocomplete="off" required class="wizard-required">
                                                         </div>
                                                     </div>
                                                     <div class="col-12" >
                                                         <div class="contact-info formFieldMobile">
-                                                            <input id="formFieldMobile" name="mobile" type="number" placeholder="Enter Your Mobile" autocomplete="off" min="6000000000" max="9999999999" required class="wizard-required">
+                                                            <input id="formFieldMobile" name="mobile" type="number" placeholder="Please mention your mobile number" autocomplete="off" min="6000000000" max="9999999999" required class="wizard-required">
                                                         </div>
                                                     </div>
                                                     <div class="col-12" >
                                                         <div class="contact-info formFieldDob">
-                                                            <label > May I know your Birthday </label>
+                                                            <label class="mb-0" style="color: #403c9c;font-weight: 600;">May I know your Birthday </label>
                                                             <input id="formFieldDob" name="dob" type="date" placeholder="Enter Date of Birth" autocomplete="off" required class="wizard-required">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12" >
                                                         <div class="contact-info formFieldAddress">
                                                             <input id="formFieldAddress" name="address" type="text" placeholder="Enter Your Address" autocomplete="off" required class="wizard-required">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-12" >
-                                                        <div class="contact-info formFieldPincode">
-                                                            <input id="formFieldPincode" name="pincode" type="text" placeholder="Enter Your Pincode" autocomplete="off" required class="wizard-required">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-12" >
-                                                        <div class="contact-info formFieldCity">
-                                                            <input id="formFieldCity" name="city" type="text" placeholder="Enter Your City" autocomplete="off" required class="wizard-required">
                                                         </div>
                                                     </div>
                                                     <div class="col-12" >
@@ -374,34 +372,60 @@
                                                             </select>
                                                         </div>
                                                     </div>
+                                                    <div class="col-12" >
+                                                        <div class="contact-info formFieldCity">
+                                                            <input id="formFieldCity" name="city" type="text" placeholder="Enter Your City" autocomplete="off" required class="wizard-required">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12" >
+                                                        <div class="contact-info formFieldPincode">
+                                                            <input id="formFieldPincode" name="pincode" type="text" placeholder="Enter Your Pincode" autocomplete="off" required class="wizard-required">
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <h3 class="heading">Guardian Details</h3>
                                                 <div class="row" > 
                                                     <div class="col-12" >
-                                                        <div class="contact-info formFieldParentName">
-                                                            <input id="formFieldParentName" name="parent_name" type="text" placeholder="Enter Father/Mother/Gurdian's Name" autocomplete="off">
+                                                        <div class="contact-info formFieldFatherName">
+                                                            <input id="formFieldFatherName" name="father_name" type="text" placeholder="What is your father’s name?" autocomplete="off">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12" >
+                                                        <div class="contact-info formFieldFatherOccupation">
+                                                            <select id="formFieldFatherOccupation" class="father_occupation" name="father_occupation" required class="wizard-required">
+                                                                <option value="">What is his occupation?</option>
+                                                                <option value="Business">Business</option>
+                                                                <option value="Govt. Employee">Govt. Employee</option>
+                                                                <option value="Private Employee">Private Employee</option>
+                                                                <option value="Self Employed">Self Employed</option>
+                                                                <option value="Agriculture">Agriculture</option>
+                                                                <option value="Retired">Retired</option>
+                                                                <option value="Others">Others</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12" >
+                                                        <div class="contact-info formFieldMotherName">
+                                                            <input id="formFieldMotherName" name="mother_name" type="text" placeholder="What is your mother’s name?" autocomplete="off">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12" >
+                                                        <div class="contact-info formFieldMotherOccupation">
+                                                            <select id="formFieldMotherOccupation" class="mother_occupation" name="mother_occupation" required class="wizard-required">
+                                                                <option value="">What is her occupation?</option>
+                                                                <option value="Business">Business</option>
+                                                                <option value="Govt. Employee">Govt. Employee</option>
+                                                                <option value="Private Employee">Private Employee</option>
+                                                                <option value="Self Employed">Self Employed</option>
+                                                                <option value="Agriculture">Agriculture</option>
+                                                                <option value="Retired">Retired</option>
+                                                                <option value="Others">Others</option>
+                                                            </select>
                                                         </div>
                                                     </div>
                                                     <div class="col-12" >
                                                         <div class="contact-info formFieldParentMobile">
-                                                            <input id="formFieldParentMobile" name="parent_mobile" type="number" placeholder="Gurdian's Mobile Number" autocomplete="off" min="6000000000" max="9999999999">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-12" >
-                                                        <div class="contact-info formFieldParentEmail">
-                                                            <input id="formFieldParentEmail" name="parent_email" type="email" placeholder="Gurdian's Email Address" autocomplete="off">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-12" >
-                                                        <div class="formFieldParentOccupation">
-                                                            <label for="business" class="occupation_wrap" >
-                                                                <input name="parent_occupation" class="parent_occupation" id="business" type="radio" autocomplete="off" value="Business" style="vertical-align: middle;">My Parent Doing Business
-                                                            </label>
-
-                                                            <label for="service" class="occupation_wrap" >
-                                                                <input name="parent_occupation"  class="parent_occupation" id="service" type="radio" autocomplete="off" value="Service" style="vertical-align: middle;"> My Parent Doing Service
-                                                            </label>
-                                                                
+                                                            <input id="formFieldParentMobile" name="parent_mobile" type="number" placeholder="Mention your guardian’s mobile no" autocomplete="off" min="6000000000" max="9999999999">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -416,7 +440,7 @@
                                         <div class="wizerd_set" >
                                             <div class="wizerd_welcome_screen" >
                                                 <div class="welcome_message text-center">
-                                                    <h2>From where you heard about ICA</h2>
+                                                    <h2>Tel Us about your goal</h2>
                                                 </div>
                                                 <div class="nws-button text-center white text-capitalize">
                                                     <button class="conversational_init-btn" type="button">
@@ -426,40 +450,28 @@
                                                 </div> 
                                             </div>
                                             <div class="wizerd_fieldset" >
-                                                <ul class="list-group list-group-light">
-                                                    <li class="list-group-item">
-                                                        <input id="friend" class="form-check-input me-1" type="checkbox" value="Friend" aria-label="..." />
-                                                        <label for="friend" class="ml-2" > Friend </label>
-                                                    </li>
-                                                    <li class="list-group-item">
-                                                        <input id="teacher" class="form-check-input me-1" type="checkbox" value="Teacher" aria-label="..." />
-                                                        <label for="teacher" class="ml-2" > Teacher  </label>
-                                                    </li>
-                                                    <li class="list-group-item">
-                                                        <input id="advertisement" class="form-check-input me-1" type="checkbox" value="Advertisement" aria-label="..." />
-                                                        <label for="advertisement" class="ml-2" > Advertisement  </label>
-                                                    </li>
-                                                    <li class="list-group-item">
-                                                        <input id="social_media" class="form-check-input me-1" type="checkbox" value="Social media" aria-label="..." />
-                                                        <label for="social_media" class="ml-2" > Social media </label>
-                                                    </li>
-                                                    <li class="list-group-item">
-                                                        <input id="google" class="form-check-input me-1" type="checkbox" value="Google" aria-label="..." />
-                                                        <label for="google" class="ml-2" >Google</label>
-                                                    </li>
-                                                    <li class="list-group-item">
-                                                        <input id="Seminar" class="form-check-input me-1" type="checkbox" value="Seminar" aria-label="..." />
-                                                        <label for="Seminar" class="ml-2" >Seminar</label>
-                                                    </li>
-                                                    <li class="list-group-item">
-                                                        <input id="employers" class="form-check-input me-1" type="checkbox" value="Employers" aria-label="..." />
-                                                        <label for="employers" class="ml-2" >Employers</label>
-                                                    </li>
-                                                    <li class="list-group-item">
-                                                        <input id="ca" class="form-check-input me-1" type="checkbox" value="CA" aria-label="..." />
-                                                        <label for="ca" class="ml-2" >CA</label>
-                                                    </li>
-                                                </ul>
+                                                <h3 class="heading">Tell Me something about goal</h3>
+                                                <div class="row" > 
+                                                    <div class="col-12" >
+                                                        <div class="contact-info formFieldNextGoal">
+                                                            <input id="formFieldNextGoal" name="next_goal" type="text" placeholder="Where do you want to see yourself after 5 years?" autocomplete="off" required class="wizard-required">
+                                                            <div class="wizard-form-error"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12" >
+                                                        <div class="contact-info formFieldExpectedCtc">
+                                                            <input id="formFieldExpectedCtc" name="expected_ctc" type="text" placeholder="Where would you like your CTC to be in 3 to 5 years?" autocomplete="off" required class="wizard-required">
+                                                            <div class="wizard-form-error"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12" >
+                                                        <div class="contact-info formFieldExpectedCtc">
+                                                            <label class="mb-0" style="color: #403c9c;font-weight: 600;">Do you have any dream company? (If yes, please specify)</label>
+                                                            <input id="formFieldExpectedCtc" name="expected_ctc" type="text" placeholder="Enter Company Name" autocomplete="off" required class="wizard-required">
+                                                            <div class="wizard-form-error"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                 <div class="nws-button text-center white text-capitalize mt-5">
                                                     <button class="conversational_init-btn" type="submit">
                                                         Submit Form

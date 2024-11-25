@@ -83,8 +83,13 @@
             height: 1px;
             margin: 0 10px;
         }
+        .creative_wrapper {
+            border: 1px solid #e5e5e5;
+            box-shadow: 0px 0px 3px #c3c3c3;
+            border-radius: 5px;
+        }
         .jobcountdown {
-            font-size: 36px;
+            font-size: 25px;
             color: #333;
             font-weight: 600;
         }
@@ -122,6 +127,22 @@
         }
         .navbar-header.float-left {
             padding-top: 38px;
+        }
+        .slot_content {
+            border: 1px solid #ccc;
+            border-bottom: none;
+            margin-bottom: 20px;
+            padding-top: 0;
+        }
+
+        .slot_content h4 {
+            background: #853167;
+            color: #ffff;
+            padding: 10px 0;
+        }
+
+        button.submit_classroom_lead_generation_form.form_step_1 {
+            display: none;
         }
         @media screen and (max-width: 767px) {
             .banner_header h1 {
@@ -170,35 +191,48 @@
         <div class="container-fluid">
             <div class="container">
                 <div class="row" style="margin-top: 40px;">
-                    <div class="col-md-8 py-5">
+                    <div class="col-md-8 py-2">
                         <div class="banner_container">
                             <div class="banner_header">
-                                <h1>Kickstart Your Career at Mumbai University’s Job Fair.</h1>
+                                <h1 style="color: #e53d3f;text-align: center;">Mumbai’s Biggest Job Fair*</h1>
+                                <h2 style="text-align:center;font-weight: 600;font-size: 41px;">Unlock Your Dream Career!</h2 style="font-">
                             </div>
-                            <!-- <div class="banner_content mt-5">
-                                <h2>Mastering Finance, One Webinar at a Time</h2>
-                            </div> -->
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="text-center py-5">
-                                    <div class="">
-                                        <h5 style="color: #af0e0e;font-weight: 400;"> <i class="fa fa-warning"></i> <span>Hurry Up!</span> Limited Slots Available </h5>
-                                    </div>
-                                    <div class="jobcountdown">
-                                        <i class="fa fa-clock"></i> 
-                                        <span id="days"></span>D: 
-                                        <span id="hours"></span>H: 
-                                        <span id="minutes"></span>M: 
-                                        <span id="seconds"></span>S
-                                    </div>
+                            <div class="text-center py-3">
+                               
+                                <div class="jobcountdown">
+                                    <span style="color:#ff0000">Starts IN </span>
+                                    <i class="fa fa-clock"></i> 
+                                    <span id="days"></span>D: 
+                                    <span id="hours"></span>H: 
+                                    <span id="minutes"></span>M: 
+                                    <span id="seconds"></span>S
                                 </div>
                             </div>
+                            <div class="banner_content">
+                                <div class="text-center">
+                                    <h5 style="color:#ff0000"> <strong>**No entry without registration.**</strong> </h5>
+                                </div>
+                            </div>
+
                         </div>
+                        
                     </div>
                     <div class="col-md-4">
                         <div class="highlighted-content-wrapper text-center">
-                            <div class="ad_banner_form_wrapeer" >
+                            <div class="register_cta_content mt-2" >
+                                <div class="slot_content">
+                                    <h4>Limited Slots Available!</h4>
+                                </div>
+                                <div class="p-3 creative_wrapper creative_register_btn" >
+                                    <img src="{{ url('/assets/img/job-fair-cta.png') }}" >
+                                </div>
+                                <div class="about-btn text-center mt-3">
+                                    <div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
+                                        <a class="creative_register_btn" href="javascript:void(0)"> Register Now <i class="fas fa-caret-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ad_banner_form_wrapeer" style="display:none;">
                                 <div class="register-fomr-title text-center">
                                     <h3 class="bold-font" style="font-size: 21px!important;"><span> Book </span> Your Seat Now </h3>
                                 </div>
@@ -207,75 +241,82 @@
                                     <form id="banner_lead_capture_form" class="lead_form" action="{{ url('job-fair-capture-lead') }}" method="POST" enctype="multipart/form-data">
                                         <div class="form_process" >
                                             <div class="lead_steps step1 active"> 
-                                                @include('common.leadCaptureFormField')
-                                                <div class="contact-info formFieldDob">
-                                                    <label for="formFieldDob" >Date of birth </label>
-                                                    <input id="formFieldDob" name="date_of_birth" type="date" placeholder="Date of birth" autocomplete="off" required>
+                                                <div class="field_step_1" >
+                                                    @include('common.leadCaptureFormField')
+                                                    <div class="nws-button text-center white text-capitalize">
+                                                        <button class="submit_classroom_lead_generation_form form_step_btn" type="button" disabled> Next <i class="fas fa-arrow-right" > </i> </button> 
+                                                        <img src="https://www.icacourse.in/wp-content/themes/scriptcrown/images/loader.gif" style="width: 42px; display:none;" class="checkout_loader">
+                                                    </div>
                                                 </div>
-                                                <div class="contact-info formFieldAlternateMobileNumber">
-                                                    <input id="formFieldAlternateMobileNumber" name="alternate_mobile_number" type="text" placeholder="Enter Your Alternative number" autocomplete="off" required>
-                                                </div>
-                                                <div class="register-form-area">
-                                                    <select class="batch_applied" name="qualification" required>
-                                                        <option value=""> Select Qualifications </option>
-                                                        <option value="10+2 - Arts">10+2 - Arts</option>
-                                                        <option value="10+2 - Commerce">10+2 - Commerce</option>
-                                                        <option value="10+2 - Science">10+2 - Science</option>
-                                                        <option value="B.A. - Arts">B.A. - Arts</option>
-                                                        <option value="B.Com - Commerce">B.Com - Commerce</option>
-                                                        <option value="B.Com(H) - Commerce">B.Com(H) - Commerce</option>
-                                                        <option value="B.Sc - Science">B.Sc - Science</option>
-                                                        <option value="BBA - Management">BBA - Management</option>
-                                                        <option value="CA(Final) - Commerce">CA(Final) - Commerce</option>
-                                                        <option value="CA(Inter) - Commerce">CA(Inter) - Commerce</option>
-                                                        <option value="CS - Commerce">CS - Commerce</option>
-                                                        <option value="M.A. - Arts">M.A. - Arts</option>
-                                                        <option value="M.Com - Commerce">M.Com - Commerce</option>
-                                                        <option value="M.Sc - Science">M.Sc - Science</option>
-                                                        <option value="MBA - Managment">MBA - Managment</option>
-                                                    </select>
-                                                </div>
-                                                <div class="contact-info formField⁠CollegeName">
-                                                    <input id="formField⁠CollegeName" name="institute" type="text" placeholder="Enter Your ⁠College Name" autocomplete="off" required>
-                                                </div>
-                                                <div class="hideshowtextfieldwrap" >
+                                                <div class="field_step_2" style="display:none">
+                                                    <div class="contact-info formFieldDob">
+                                                        <label for="formFieldDob" >Date of birth </label>
+                                                        <input id="formFieldDob" name="date_of_birth" type="date" placeholder="Date of birth" autocomplete="off" required>
+                                                    </div>
+                                                    <div class="contact-info formFieldAlternateMobileNumber">
+                                                        <input id="formFieldAlternateMobileNumber" name="alternate_mobile_number" type="text" placeholder="Enter Your Alternative number" autocomplete="off" required>
+                                                    </div>
                                                     <div class="register-form-area">
-                                                        <select class="experience hide_show_text_field" name="experience" required>
-                                                            <option value=""> Select Experience </option>
-                                                            <option value="Freshers">Freshers</option>
-                                                            <option value="6 months - 1 year of experience">6 months - 1 year of experience</option>
-                                                            <option value="More than 1 year of experience">More than 1 year of experience</option>
-                                                            <option value="Other">Other</option>
+                                                        <select class="batch_applied" name="qualification" required>
+                                                            <option value=""> Select Qualifications </option>
+                                                            <option value="10+2 - Arts">10+2 - Arts</option>
+                                                            <option value="10+2 - Commerce">10+2 - Commerce</option>
+                                                            <option value="10+2 - Science">10+2 - Science</option>
+                                                            <option value="B.A. - Arts">B.A. - Arts</option>
+                                                            <option value="B.Com - Commerce">B.Com - Commerce</option>
+                                                            <option value="B.Com(H) - Commerce">B.Com(H) - Commerce</option>
+                                                            <option value="B.Sc - Science">B.Sc - Science</option>
+                                                            <option value="BBA - Management">BBA - Management</option>
+                                                            <option value="CA(Final) - Commerce">CA(Final) - Commerce</option>
+                                                            <option value="CA(Inter) - Commerce">CA(Inter) - Commerce</option>
+                                                            <option value="CS - Commerce">CS - Commerce</option>
+                                                            <option value="M.A. - Arts">M.A. - Arts</option>
+                                                            <option value="M.Com - Commerce">M.Com - Commerce</option>
+                                                            <option value="M.Sc - Science">M.Sc - Science</option>
+                                                            <option value="MBA - Managment">MBA - Managment</option>
                                                         </select>
                                                     </div>
-                                                    <div class="contact-info formFieldSpecifyExperince" style="display:none" >
-                                                        <input id="formFieldSpecifyExperince" name="other_experience" type="text" placeholder="Please Specity" autocomplete="off" required>
+                                                    <div class="contact-info formField⁠CollegeName">
+                                                        <input id="formField⁠CollegeName" name="institute" type="text" placeholder="Enter Your College & Area Name" autocomplete="off" required>
                                                     </div>
-                                                </div>
-                                                <div class="hideshowtextfieldwrap" >
-                                                    <div class="register-form-area">
-                                                        <select class="career_option hide_show_text_field" name="career_option" required>
-                                                            <option value=""> Select Preferred Career Option </option>
-                                                            <option value="Banking">Banking</option>
-                                                            <option value="Accounts">Accounts</option>
-                                                            <option value="Sales">Sales</option>
-                                                            <option value="Finance">Finance</option>
-                                                            <option value="Data Analyst">Data Analyst</option>
-                                                            <option value="Other">Other</option>
-                                                        </select>
+                                                    <div class="hideshowtextfieldwrap" >
+                                                        <div class="register-form-area">
+                                                            <select class="experience hide_show_text_field" name="experience" required>
+                                                                <option value=""> Select Experience </option>
+                                                                <option value="Freshers">Freshers</option>
+                                                                <option value="6 months - 1 year of experience">6 months - 1 year of experience</option>
+                                                                <option value="More than 1 year of experience">More than 1 year of experience</option>
+                                                                <option value="Other">Other</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="contact-info formFieldSpecifyExperince" style="display:none" >
+                                                            <input id="formFieldSpecifyExperince" name="other_experience" type="text" placeholder="Please Specity" autocomplete="off" required>
+                                                        </div>
                                                     </div>
-                                                    <div class="contact-info formFieldSpecifycareer" style="display:none" >
-                                                        <input id="formFieldSpecifycareer" name="other_career_option" type="text" placeholder="Please Specity" autocomplete="off" required>
+                                                    <div class="hideshowtextfieldwrap" >
+                                                        <div class="register-form-area">
+                                                            <select class="career_option hide_show_text_field" name="career_option" required>
+                                                                <option value=""> Select Preferred Career Option </option>
+                                                                <option value="Banking">Accounts & Taxation</option>
+                                                                <option value="Accounts">Finance</option>
+                                                                <option value="Sales">MIS & Data Analysis</option>
+                                                                <option value="Finance">Banking</option>
+                                                                <option value="Data Analyst">Sales</option>
+                                                                <option value="Other">Other</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="contact-info formFieldSpecifycareer" style="display:none" >
+                                                            <input id="formFieldSpecifycareer" name="other_career_option" type="text" placeholder="Please Specity" autocomplete="off" required>
+                                                        </div>
                                                     </div>
-                                                </div>
-
-                                                <div class="form-group disclaimer text-left">
-                                                    <p style="margin:0">
-                                                        <input style="margin-left: 0;width: auto;vertical-align: middle;height: auto;" type="checkbox" class="" checked="">  I agree to receive updates on <i class="fa fa-whatsapp" style="color: green;"></i> whatsapp. 
-                                                    </p>
-                                                    <p>
-                                                        <input style="margin-left: 0;width: auto;vertical-align: middle;height: auto;" type="checkbox" class="" checked=""> I agree to <a href="/privacy-policy" target="_blank">Privacy Policy</a> &amp; overriding DNC/NDNC request for Call/SMS. 
-                                                    </p>
+                                                    <div class="form-group disclaimer text-left">
+                                                        <p style="margin:0">
+                                                            <input style="margin-left: 0;width: auto;vertical-align: middle;height: auto;" type="checkbox" class="" checked="">  I agree to receive updates on <i class="fa fa-whatsapp" style="color: green;"></i> whatsapp. 
+                                                        </p>
+                                                        <p>
+                                                            <input style="margin-left: 0;width: auto;vertical-align: middle;height: auto;" type="checkbox" class="" checked=""> I agree to <a href="/privacy-policy" target="_blank">Privacy Policy</a> &amp; overriding DNC/NDNC request for Call/SMS. 
+                                                        </p>
+                                                    </div>
                                                 </div>
                                             </div>
                                             @include('common.leadCaptureFormOtpField')
@@ -298,35 +339,30 @@
         </div>
     </section>
 
-    <section >
+    <!-- <section >
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
                     <div class="organizar py-3">
-                        <h1> ICA & Mumbai University Job Fair in Mumbai</h1>
+                        <h1> ICA & University of Mumbai, Job Fair 2024 at Kalina campus</h1>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="slot py-5">
                         <span> Event Date </span>
                         <h4> 12th December 2024 </h4>
                     </div>    
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="slot py-5">
                         <span> Event Time </span>
                         <h4> 10:00 am Onwards </h4>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="slot py-5">
-                        <span> Venue </span>
-                        <h4> Ranade Bhavan Campus, Mumbai University </h4>
-                    </div>
-                </div>
-                <div class="col-md-3">
+              
+                <div class="col-md-4">
                     <div class="slot py-5">
                         <span> Eligibility </span>
                         <h4>B.Com, BBA, BMS, BAF or M.Com</h4>
@@ -335,25 +371,35 @@
             </div>
             <hr class="dashed">
         </div>
-    </section>
+    </section> -->
 
-    <section class="section-padding pt-5" >
+    <section class="section-padding" >
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h3> What to expect </h3>
                     <div class="message_container my-4 p-5">
-                        <h4>Job Fair organized by Mumbai University in partnership with ICA Edu Skills</h4>
-                        <h6 class="mt-3" style="font-weight: 400;">Join us on 12th December 2024 for an exclusive Job Fair organized by Mumbai University in partnership with ICA Edu Skills! If you're a graduate or postgraduate in B.Com, BBA, BMS, or M.Com, this is your opportunity to meet top employers, explore high-demand roles, and kickstart a rewarding career. Don’t miss out on this chance to network, learn, and get hired!</h6>
-                        <!-- <ul>
-                            <li>🏫 Meet top business schools from around the world like Cox, Freeman, Rotman, Schulich, Edinburgh Business School and many more
-                            <li>📝 Get insights on business school applications, timelines, test prep & more from expert counsellors!</li>
-                            <li>💰  Apply to QS ImpACT scholarships worth $45K in total</li>
-                            <li>🎓 Attend panel discussions & presentations by higher education experts and women in leadership</li>
-                            <li>💼 This event is suitable for candidates with 2+ years of work experience</li>
-                            <li>👨‍🎓 Recent grad or less than 1 year of experience? Join our Master's event: TopUniversities.com/Mumbai</li>
-                            <li>💌 Got a question? Write to us: eventsupport@qs.com</li>
-                        </ul> -->
+                        <h1> Register to: </h1>
+                        <h3> Get Ready for a Life-Changing Experience! </h3>
+                        <ul>
+                            <li>📝 Connect with top companies,
+                            <li>📝 Explore career opportunities,
+                            <li>📝 Kick-start your success journey,
+                            <li>📝 Know your employability score
+                            <li>📝 you are a B.Com/BA/BBA/BMS/BBI,M.Com student Upgrade your skills </li>
+                            <li>📝 find alternate career paths</li>
+                            <li>📝 Meet with industry leaders and changemakers</li>
+                            <li>📝 Get updates from the corporate world</li>
+                        </ul>
+                        <h4 class="mb-4"> Exclusive Benefits </h4>
+                        <ul>
+                            <li> <i class="fa fa-check"></i> Job Opportunities in Accounts, Taxation, Finance, Banking, MIS, Sales, and more! </li>
+                            <li> <i class="fa fa-check"></i> Networking Opportunities with top companies and industry experts </li>
+                            <li> <i class="fa fa-check"></i> Free Employability Assessment & Orientation Workshop <strong>(worth 10000/-)</strong> </li>
+                            <li> <i class="fa fa-check"></i> Complimentary expert-led workshop </li>
+                            <li> <i class="fa fa-check"></i> Worth Rs: 30,000 for first 1000 registrations </li>
+                            <li> <i class="fa fa-check"></i> Focussed Tech Workshops in Accounts, Banking, MIS, Taxation, Finance worth Rs.10000. </li>
+                            <li> <i class="fa fa-check"></i> Registration on ICA Job Portal <strong>Rs.10000.</strong> </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -383,11 +429,28 @@
         </div>
     </section>
 
+    <section class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="agenda mb-5 mt-3">
+                        <div class="left-padding">
+
+                        </div>
+                        <div class="agenda-content message_container p-5" style="width: 100%;">
+                            <h3> *Held under Department of Commerce, University of Mumbai, for college students. </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- <section class="section-padding">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h3> Agenda </h3>
+                    <h3> Contact Support </h3>
                 </div>
                 <div class="col-12">
                     <div class="agenda mb-5 mt-3">
@@ -395,8 +458,11 @@
 
                         </div>
                         <div class="agenda-content message_container p-5" style="width: 100%;">
-                            <h3> <strong> 10:00am - 5:30pm | 7h 30m </strong></h3>
-                            <h6>Book interviews with your target B.Com, BBA, BMS, BAF or M.Com</h6>
+                            <h3> <strong> Visit your nearest ICA centre or call: </strong></h3>
+                            <a href="" > </a>
+                            <a href="" ></a>
+                            <a href="" ></a>
+                            <a href="" ></a>
                         </div>
                     </div>
                 </div>
@@ -491,6 +557,19 @@
                 }
                 
             });
+
+            jQuery(".creative_register_btn").on('click',function() {
+                console.log("hi");
+                
+                jQuery(".register_cta_content").hide();
+                jQuery(".ad_banner_form_wrapeer").show();
+            });
+
+            jQuery(".form_step_btn").on("click",function() {
+                jQuery(".field_step_1").hide();
+                jQuery(".field_step_2").show();
+                jQuery("button.submit_classroom_lead_generation_form.form_step_1").show();
+            })
         });
     </script>
 </body>

@@ -72,7 +72,7 @@ class JobFairController extends Controller
             $this->sendJobFairEmailNotification($postData);
             $this->jobFairCognoai_api_calling($postData); //Email Notification
 
-            return redirect("/thank-you");
+            return redirect("/job-fair-thank-you");
         } catch (\Illuminate\Database\QueryException $e) {
             return response()->json($e, $this->_statusOK);
         }
