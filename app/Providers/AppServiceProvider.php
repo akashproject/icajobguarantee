@@ -52,6 +52,7 @@ class AppServiceProvider extends ServiceProvider
             $footerMenu = array(
                 '/events' => 'Events',
                 '/blog' => 'Blogs',
+                '/awards-recognitions' => "Awards & Recognitions",
                 '/about-us' => 'About Us',
                 '/contact-us' => "Contact Us",
             );

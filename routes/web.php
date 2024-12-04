@@ -373,7 +373,7 @@ Route::get('/assessment-success', function () {
     return view('user.assessment-success');
 })->name('assessment-success');
 
-//Route::get('/index/create-center-login', [App\Http\Controllers\IndexController::class, 'createCenterLogin'])->name('create-center-login');
+Route::get('/index/create-center-login', [App\Http\Controllers\IndexController::class, 'createCenterLogin'])->name('create-center-login');
 //Route::get('/index/create-university-login', [App\Http\Controllers\IndexController::class, 'createUniversityLogin'])->name('create-university-login');
 
 // Pink Form

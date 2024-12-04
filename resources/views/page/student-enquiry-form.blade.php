@@ -27,6 +27,11 @@
         <link href="{{ url('assets/css/responsive.css') }}" rel="stylesheet">
         <link href="{{ url('assets/css/colors/color-7.css') }}" rel="alternate stylesheet" type="text/css" title="color-7">
         <link href="{{ url('assets/css/enquiry-form.css') }}" rel="stylesheet" type="text/css">
+        <style>
+            .wizerd_header.active h4 {
+                color: #fff;
+            }
+        </style>
     </head>
     <body class="{{ isset($contentMain->template)?$contentMain->template:'default-template' }}">
 	<header>
@@ -72,9 +77,7 @@
             <div class="container">
                 <div class="row justify_center">	
                     <div class="col-md-12">
-                        <div class="popup-text text-center gradient-bg mb30">
-                            <h3 class="text-white" style="text-transform: uppercase;font-size: 25px;text-transform: uppercase;font-size: 25px;" >ENQUIRY FORM</h3> 
-                        </div>
+                       
                         <div class="row">
                             <div class="col-md-4" >
                                 <div class="form_wizerd_header form-wizard-panel"> 
@@ -115,13 +118,13 @@
                                                 <div class="course_selection">
                                                     <div style="width: 50%;overflow: hidden;padding: 10px 15px;text-align: center;">
                                                         <label for="career_course"  class="couse_input_label"> 
-                                                            <span class="" >Job Oriented Courses</span>
+                                                            <span class="" >Job</span>
                                                         </label>
                                                         <input type="radio" id="career_course" name="course_type" value="career_course" class="couse_input wizard-required" required>
                                                     </div>
                                                     <div style="width: 50%;overflow: hidden;padding: 10px 15px;text-align: center;">
                                                         <label for="skill_course" class="couse_input_label"> 
-                                                            <span class="" >Skill Development Courses</span>
+                                                            <span class="" >Skill Development</span>
                                                         </label>
                                                         <input type="radio" id="skill_course" name="course_type" value="skill_course" class="couse_input wizard-required">
                                                     </div>
@@ -245,16 +248,7 @@
                                                                 <option value="">What is your preferred language for the training</option>
                                                                 <option value="English"> English </option>
                                                                 <option value="Bengali"> Bengali </option>
-                                                                <option value="Hindi"> Hindi </option>
-                                                                <option value="Odia"> Odia </option>
-                                                                <option value="Marathi"> Marathi </option>
-                                                                <option value="Telugu"> Telugu </option>
-                                                                <option value="Tamil"> Tamil </option>
-                                                                <option value="Assamese"> Assamese </option>
-                                                                <option value="Kannada"> Kannada </option>
-                                                                <option value="Punjabi"> Punjabi </option>
-                                                                <option value="Gujarati"> Gujarati </option>
-                                                                <option value="Malayali"> Malayali </option>
+                                                                <option value="Local"> Local </option>
                                                             </select>
                                                         </div>
                                                     </div>

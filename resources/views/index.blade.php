@@ -293,7 +293,7 @@
 								<p class=""  >Bringing change in education by making youth employable. What makes us the Industry Leader in the Job Market?</p>
 								<div class="about-list mb65 ul-li-block "  >
 									<ul>
-										<li>Hands on Experience with 7 Simulation Softwares</li>
+										<li>Hands on Experience with 10 Simulation Softwares</li>
 										<li>100% Job Guarantee</li>
 										<li>AnyTime Job Card- Anytime, Anywhere</li>
 										<li>100+ Centres Pan-India and 30 Placement Offices</li>

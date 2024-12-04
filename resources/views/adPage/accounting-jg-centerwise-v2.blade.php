@@ -345,13 +345,9 @@
 											</div>
 
 										</div>
-
 										@include('common.leadCaptureFormOtpField')
-
 									</div>
-
 									<div class="form_success" style="display:none">
-
 										<div class="form-success-content">
 
 											<span class="success-icon"> <i class="fas fa-check"></i> </span>
