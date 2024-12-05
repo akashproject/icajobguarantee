@@ -141,9 +141,7 @@
             padding: 10px 0;
         }
 
-        button.submit_classroom_lead_generation_form.form_step_1 {
-            display: none;
-        }
+
         @media screen and (max-width: 767px) {
             .banner_header h1 {
                 font-size: 36px;
@@ -203,11 +201,7 @@
                                     <span id="seconds"></span>S
                                 </div>
                             </div>
-                            <div class="banner_content">
-                                <div class="text-center">
-                                    <h5 style="color:#ff0000"> <strong>**No entry without registration.**</strong> </h5>
-                                </div>
-                            </div>
+                            
 
                         </div>
                         
@@ -303,7 +297,7 @@
                             <li>📝 Explore career opportunities,
                             <li>📝 Kick-start your success journey,
                             <li>📝 Know your employability score
-                            <li>📝 Open to everyone, no matter your educational stream</li>
+                            <li>📝 Open to candidates with a commerce background</li>
                             <li>📝 find alternate career paths</li>
                             <li>📝 Meet with industry leaders and changemakers</li>
                             <li>📝 Get updates from the corporate world</li>

@@ -85,7 +85,7 @@
                                         <span>1.</span>
                                         <h4 >Check Courses</h4>
                                     </a>
-                                    <a href="{{ route('student-enquiry-form-with-slug',1) }}" class="wizerd_header form-wizard-steps {{ ($step == '1')?'active':'' }}" >
+                                    <a href="{{ route('student-enquiry-form-with-slug',1,['center'=>$center]) }}" class="wizerd_header form-wizard-steps {{ ($step == '1')?'active':'' }}" >
                                         <span>2.</span>
                                         <h4>Educational Information</h4>
                                     </a>
@@ -193,7 +193,7 @@
                                         @case(1)
                                         <!-- Qualification -->
                                         <div class="wizerd_set" >
-                                            <div class="wizerd_welcome_screen" >
+                                            <!-- <div class="wizerd_welcome_screen" >
                                                 <div class="welcome_message text-center">
                                                     <h2>Let Talk About Your Educational qualification</h2>
                                                 </div>
@@ -203,7 +203,7 @@
                                                     </button> 
                                                     <img src="https://www.icacourse.in/wp-content/themes/scriptcrown/images/loader.gif" style="width: 42px; display:none;" class="checkout_loader">
                                                 </div> 
-                                            </div>
+                                            </div> -->
                                             <div class="wizerd_fieldset" >
                                                 <div class="text-center">
                                                     <h3 class="heading">Tell me about your qualification</h3>
@@ -231,9 +231,36 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-12" >
-                                                        <div class="contact-info formFieldPassingYear">
-                                                            <label class="mb-0" style="color: #403c9c;font-weight: 600;"> Please specify your year of passing </label>
-                                                            <input id="formFieldPassingYear" name="passing_year" type="month" placeholder="Enter Passing Year" autocomplete="off" required class="wizard-required">
+                                                        <div class="row" >
+                                                            <div class="col-6" >
+                                                                <div class="contact-info formFieldPassingYear">
+                                                                    <label class="mb-0" style="color: #403c9c;font-weight: 600;"> Please specify your year of passing </label>
+                                                                    <select id="formFieldPassingYear" class="passing_year" name="passing_year" required class="wizard-required">
+                                                                        <option value=""> Select Month</option>
+                                                                        <option value="January">January</option>
+                                                                        <option value="February">February</option>
+                                                                        <option value="March">March</option>
+                                                                        <option value="April">April</option>
+                                                                        <option value="May">May</option>
+                                                                        <option value="June">June</option>
+                                                                        <option value="July">July</option>
+                                                                        <option value="August">August</option>
+                                                                        <option value="September">September</option>
+                                                                        <option value="October">October</option>
+                                                                        <option value="November">November</option>
+                                                                        <option value="December">December</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6" >
+                                                                <label class="mb-0" style="color: #403c9c;font-weight: 600;">  </label>
+                                                                <select id="formFieldPassingYear" class="passing_year" name="passing_year" required class="wizard-required">
+                                                                    <option value=""> Select Year</option>
+                                                                    @for ($year = 1980; $year <= now()->year; $year++)
+                                                                        <option value="{{ $year }}">{{ $year }}</option>
+                                                                    @endfor
+                                                                </select>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div class="col-12" >
@@ -262,7 +289,7 @@
                                         @case(2)
                                         <!-- Work Experience -->
                                         <div class="wizerd_set" >
-                                            <div class="wizerd_welcome_screen" >
+                                            <!-- <div class="wizerd_welcome_screen" >
                                                 <div class="welcome_message text-center">
                                                     <h2>Let Talk About Your work experience</h2>
                                                 </div>
@@ -272,7 +299,7 @@
                                                     </button> 
                                                     <img src="https://www.icacourse.in/wp-content/themes/scriptcrown/images/loader.gif" style="width: 42px; display:none;" class="checkout_loader">
                                                 </div> 
-                                            </div>
+                                            </div> -->
                                             <div class="wizerd_fieldset" >
                                                 <h3 class="heading">Tell me something about yourself</h3>
                                                 <div class="row" > 
@@ -315,7 +342,7 @@
                                         @case(3)
                                         <!-- Personal Experience -->
                                         <div class="wizerd_set active" >
-                                            <div class="wizerd_welcome_screen" >
+                                            <!-- <div class="wizerd_welcome_screen" >
                                                 <div class="welcome_message text-center">
                                                     <h2>Let Talk About Your Personal Infomation</h2>
                                                 </div>
@@ -325,7 +352,7 @@
                                                     </button> 
                                                     <img src="https://www.icacourse.in/wp-content/themes/scriptcrown/images/loader.gif" style="width: 42px; display:none;" class="checkout_loader">
                                                 </div> 
-                                            </div>
+                                            </div> -->
                                             <div class="wizerd_fieldset" >
                                                 <h3 class="heading">Tell Me something about yourself</h3>
                                                 <div class="row" > 
@@ -432,7 +459,7 @@
                                         @case(4)
                                         <!-- Know ICA -->
                                         <div class="wizerd_set" >
-                                            <div class="wizerd_welcome_screen" >
+                                            <!-- <div class="wizerd_welcome_screen" >
                                                 <div class="welcome_message text-center">
                                                     <h2>Tel Us about your goal</h2>
                                                 </div>
@@ -442,10 +469,16 @@
                                                     </button> 
                                                     <img src="https://www.icacourse.in/wp-content/themes/scriptcrown/images/loader.gif" style="width: 42px; display:none;" class="checkout_loader">
                                                 </div> 
-                                            </div>
+                                            </div> -->
                                             <div class="wizerd_fieldset" >
                                                 <h3 class="heading">Tell Me something about goal</h3>
                                                 <div class="row" > 
+                                                    <div class="col-12" >
+                                                        <div class="contact-info formFieldNextGoal">
+                                                            <input id="formFieldNextGoal" name="starting_salary" type="text" placeholder="What is your Preferred starting salary?" autocomplete="off" required class="wizard-required">
+                                                            <div class="wizard-form-error"></div>
+                                                        </div>
+                                                    </div>
                                                     <div class="col-12" >
                                                         <div class="contact-info formFieldNextGoal">
                                                             <input id="formFieldNextGoal" name="next_goal" type="text" placeholder="Where do you want to see yourself after 5 years?" autocomplete="off" required class="wizard-required">
@@ -454,14 +487,7 @@
                                                     </div>
                                                     <div class="col-12" >
                                                         <div class="contact-info formFieldExpectedCtc">
-                                                            <input id="formFieldExpectedCtc" name="expected_ctc" type="text" placeholder="Where would you like your CTC to be in 3 to 5 years?" autocomplete="off" required class="wizard-required">
-                                                            <div class="wizard-form-error"></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-12" >
-                                                        <div class="contact-info formFieldExpectedCtc">
-                                                            <label class="mb-0" style="color: #403c9c;font-weight: 600;">Do you have any dream company? (If yes, please specify)</label>
-                                                            <input id="formFieldExpectedCtc" name="expected_ctc" type="text" placeholder="Enter Company Name" autocomplete="off" required class="wizard-required">
+                                                            <input id="formFieldExpectedCtc" name="expected_ctc" type="text" placeholder="What is your expected monthly CTC" autocomplete="off" required class="wizard-required">
                                                             <div class="wizard-form-error"></div>
                                                         </div>
                                                     </div>
