@@ -81,23 +81,23 @@
                         <div class="row">
                             <div class="col-md-4" >
                                 <div class="form_wizerd_header form-wizard-panel"> 
-                                    <a href="{{ route('student-enquiry-form') }}"  class="wizerd_header form-wizard-steps {{ ($step == null)?'active':'' }}">
+                                    <a href="javascript:void(0)"  class="wizerd_header form-wizard-steps {{ ($step == null)?'active':'' }}">
                                         <span>1.</span>
                                         <h4 >Check Courses</h4>
                                     </a>
-                                    <a href="{{ route('student-enquiry-form-with-slug',1,['center'=>$center]) }}" class="wizerd_header form-wizard-steps {{ ($step == '1')?'active':'' }}" >
+                                    <a href="javascript:void(0)" class="wizerd_header form-wizard-steps {{ ($step == '1')?'active':'' }}" >
                                         <span>2.</span>
                                         <h4>Educational Information</h4>
                                     </a>
-                                    <a href="{{ route('student-enquiry-form-with-slug',2) }}"  class="wizerd_header form-wizard-steps {{ ($step == '2')?'active':'' }}">
+                                    <a href="javascript:void(0)"  class="wizerd_header form-wizard-steps {{ ($step == '2')?'active':'' }}">
                                         <span>3.</span>
                                         <h4>Professional Information</h4>
                                     </a>
-                                    <a href="{{ route('student-enquiry-form-with-slug',3) }}" class="wizerd_header form-wizard-steps {{ ($step == '3')?'active':'' }}" >
+                                    <a href="javascript:void(0)" class="wizerd_header form-wizard-steps {{ ($step == '3')?'active':'' }}" >
                                         <span>2.</span>
                                         <h4>Personal Information</h4>
                                     </a>
-                                    <a href="{{ route('student-enquiry-form-with-slug',4) }}"  class="wizerd_header form-wizard-steps {{ ($step == '4')?'active':'' }}">
+                                    <a href="javascript:void(0)"  class="wizerd_header form-wizard-steps {{ ($step == '4')?'active':'' }}">
                                         <span>4.</span>
                                         <h4>Aspirational Details</h4>
                                     </a>
@@ -132,59 +132,18 @@
                                             </div>
                                             <div class="wizerd_fieldset" >
                                                 <h3 class="heading"> Please select course</h3>
-                                                <ul class="list-group list-group-light course_list career_course">
+                                                @foreach($courseByCategory as $key => $category)
+                                                <ul class="list-group list-group-light course_list {{$key}}">
+                                                    @foreach($category as $course)
                                                     <li class="list-group-item">
                                                         <input id="accounting_course" name="course[]" class="form-check-input me-1" type="checkbox" value="Accounts & Taxation" aria-label="..." />
-                                                        <label for="accounting_course" class="ml-2" > Accounts & Taxation </label>
+                                                        <label for="accounting_course" class="ml-2" > {{ $course }}</label>
                                                     </li>
-                                                    <li class="list-group-item">
-                                                        <input id="mis_course" name="course[]" class="form-check-input me-1" type="checkbox" value="MIS & Data Analytics" aria-label="..." />
-                                                        <label for="mis_course" class="ml-2" > MIS & Data Analytics  </label>
-                                                    </li>
-                                                    <li class="list-group-item">
-                                                        <input id="mis_course" name="course[]" class="form-check-input me-1" type="checkbox" value="Capital Market & Investment" aria-label="..." />
-                                                        <label for="mis_course" class="ml-2" > Capital Market & Investment  </label>
-                                                    </li>
-                                                    <li class="list-group-item">
-                                                        <input id="digital_marketing" name="course[]" class="form-check-input me-1" type="checkbox" value="Digital marketing" aria-label="..." />
-                                                        <label for="digital_marketing" class="ml-2" > Digital marketing  </label>
-                                                    </li>
+                                                    @endforeach
                                                 </ul>
-                                                <ul class="list-group list-group-light course_list skill_course">
-                                                    <li class="list-group-item">
-                                                        <input id="tally" name="course[]" class="form-check-input me-1" type="checkbox" value="Tally" aria-label="..." />
-                                                        <label for="tally" class="ml-2" > Tally </label>
-                                                    </li>
-                                                    <li class="list-group-item">
-                                                        <input id="business_computer_applications" name="course[]" class="form-check-input me-1" type="checkbox" value="Business Computer Applications" aria-label="..." />
-                                                        <label for="business_computer_applications" class="ml-2" >Business Computer Applications</label>
-                                                    </li>
-                                                    <li class="list-group-item">
-                                                        <input id="soft_skill" name="course[]" class="form-check-input me-1" type="checkbox" value="Soft skill and interviews skills" aria-label="..." />
-                                                        <label for="soft_skill" class="ml-2" >Soft skill and interviews skills</label>
-                                                    </li>
-                                                    <li class="list-group-item">
-                                                        <input id="gst" name="course[]" class="form-check-input me-1" type="checkbox" value="GST" aria-label="..." />
-                                                        <label for="gst" class="ml-2" >GST</label>
-                                                    </li>
-                                                    <li class="list-group-item">
-                                                        <input id="income_tax" name="course[]" class="form-check-input me-1" type="checkbox" value="income Tax" aria-label="..." />
-                                                        <label for="income_tax" class="ml-2" >income Tax</label>
-                                                    </li>
-                                                    <li class="list-group-item">
-                                                        <input id="tds" name="course[]" class="form-check-input me-1" type="checkbox" value="TDS" aria-label="..." />
-                                                        <label for="tds" class="ml-2" >TDS</label>
-                                                    </li>
-                                                    <li class="list-group-item">
-                                                        <input id="finalisation" name="course[]" class="form-check-input me-1" type="checkbox" value="Advance accounts - Finalisation and profit screening" aria-label="..." />
-                                                        <label for="finalisation" class="ml-2" >Advance accounts - Finalisation and profit screening</label>
-                                                    </li>
-                                                    <li class="list-group-item">
-                                                        <input id="sap" name="course[]" class="form-check-input me-1" type="checkbox" value="SAP" aria-label="..." />
-                                                        <label for="sap" class="ml-2" >SAP</label>
-                                                    </li>
-                                                </ul>
+                                                @endforeach
                                                 <div class="form-group clearfix  mt-3">
+                                                    <button href="javascript:;" class="form-wizard-previous-btn float-left">Previous</button>
                                                     <button type="submit" class="form-wizard-next-btn float-right">Next</button>
                                                 </div>
                                             </div>
@@ -281,6 +240,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group clearfix  mt-3">
+                                                    <button href="javascript:;" class="form-wizard-previous-btn float-left">Previous</button>
                                                     <button href="javascript:;" class="form-wizard-next-btn float-right">Next</button>
                                                 </div>
                                             </div>
@@ -451,6 +411,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group clearfix  mt-3">
+                                                    <button href="javascript:;" class="form-wizard-previous-btn float-left">Previous</button>
                                                     <button href="javascript:;" class="form-wizard-next-btn float-right">Next</button>
                                                 </div>
                                             </div>
@@ -475,7 +436,7 @@
                                                 <div class="row" > 
                                                     <div class="col-12" >
                                                         <div class="contact-info formFieldNextGoal">
-                                                            <input id="formFieldNextGoal" name="starting_salary" type="text" placeholder="What is your Preferred starting salary?" autocomplete="off" required class="wizard-required">
+                                                            <input id="formFieldNextGoal" name="starting_salary" type="number" placeholder="What is your Preferred starting salary?" autocomplete="off" required class="wizard-required">
                                                             <div class="wizard-form-error"></div>
                                                         </div>
                                                     </div>
@@ -487,7 +448,7 @@
                                                     </div>
                                                     <div class="col-12" >
                                                         <div class="contact-info formFieldExpectedCtc">
-                                                            <input id="formFieldExpectedCtc" name="expected_ctc" type="text" placeholder="What is your expected monthly CTC" autocomplete="off" required class="wizard-required">
+                                                            <input id="formFieldExpectedCtc" name="expected_ctc" type="number" placeholder="What is your expected monthly CTC" autocomplete="off" required class="wizard-required">
                                                             <div class="wizard-form-error"></div>
                                                         </div>
                                                     </div>

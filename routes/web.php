@@ -360,8 +360,8 @@ Route::post('/index/payment-failed', [App\Http\Controllers\IndexController::clas
 Route::get('/update-lead-status/{id}', [App\Http\Controllers\IndexController::class, 'updateLeadStatus'])->name('update-lead-status');
 
 //Assesments
-//Route::get('/assesments/start-test', [App\Http\Controllers\AssessmentController::class, 'startTest'])->name('start-test');
-//Route::get('/assesments/{assessment_id}', [App\Http\Controllers\AssessmentController::class, 'state'])->name('states');
+Route::get('/assesments/start-test', [App\Http\Controllers\AssessmentController::class, 'startTest'])->name('start-test');
+Route::get('/assesments/{assessment_id}', [App\Http\Controllers\AssessmentController::class, 'state'])->name('states');
 Route::get('/instruction/{assessment_id}', [App\Http\Controllers\AssessmentController::class, 'instruction'])->name('instruction');
 
 Route::get('/assesment/results', [App\Http\Controllers\AssessmentController::class, 'result'])->name('results');
