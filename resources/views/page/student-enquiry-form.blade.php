@@ -34,6 +34,12 @@
         </style>
     </head>
     <body class="{{ isset($contentMain->template)?$contentMain->template:'default-template' }}">
+        @php
+            $previousStep = null
+            if($step > 1) {
+                $previousStep = $step - 1;
+            }
+        @endphp
 	<header>
 		<div id="main-menu"  class="main-menu-container header-style-2">
 			<div class="header-top">
@@ -143,7 +149,6 @@
                                                 </ul>
                                                 @endforeach
                                                 <div class="form-group clearfix  mt-3">
-                                                    <button href="javascript:;" class="form-wizard-previous-btn float-left">Previous</button>
                                                     <button type="submit" class="form-wizard-next-btn float-right">Next</button>
                                                 </div>
                                             </div>
@@ -239,9 +244,9 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="form-group clearfix  mt-3">
-                                                    <button href="javascript:;" class="form-wizard-previous-btn float-left">Previous</button>
-                                                    <button href="javascript:;" class="form-wizard-next-btn float-right">Next</button>
+                                                <div class="form-group clearfix  mt-3"> 
+                                                    <a href="{{ route('student-enquiry-form-with-slug',[$previousStep,'center'=>$center,'enquiry'=>base64_encode($enquiry)]) }}" class="form-wizard-previous-btn float-left">Previous</a> 
+                                                    <button type="submit" class="form-wizard-next-btn float-right">Next</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -294,7 +299,8 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group clearfix  mt-3">
-                                                    <button href="javascript:;" class="form-wizard-next-btn float-right">Next</button>
+                                                    <a href="{{ route('student-enquiry-form-with-slug',[$step-1,'center'=>$center,'enquiry'=>base64_encode($enquiry)]) }}" class="form-wizard-previous-btn float-left">Previous</a> 
+                                                    <button class="form-wizard-next-btn float-right">Next</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -411,7 +417,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group clearfix  mt-3">
-                                                    <button href="javascript:;" class="form-wizard-previous-btn float-left">Previous</button>
+                                                    <a href="{{ route('student-enquiry-form-with-slug',[$step-1,'center'=>$center,'enquiry'=>base64_encode($enquiry)]) }}" class="form-wizard-previous-btn float-left">Previous</a> 
                                                     <button href="javascript:;" class="form-wizard-next-btn float-right">Next</button>
                                                 </div>
                                             </div>
@@ -465,12 +471,6 @@
                                         @endswitch
                                         <input name="center_id" type="hidden" value="{{ $center }}" >
                                         <input name="enquiry" type="hidden" value="{{ $enquiry }}" >
-                                        <div class="nws-button text-center white text-capitalize py-5" style="display:none">
-                                            <button class="submit_classroom_lead_generation_form form_step_1" type="submit">
-                                                Next <i class="fas fa-arrow-right"> </i> 
-                                            </button>
-                                            <img src="https://www.icacourse.in/wp-content/themes/scriptcrown/images/loader.gif" style="width: 42px; display:none;" class="checkout_loader">
-                                        </div>
                                     </div>
                                     <input name="step" type="hidden" value="{{ $step }}" >
                                 </form>

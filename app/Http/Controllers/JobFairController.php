@@ -16,7 +16,6 @@ use App\Models\Pincode;
 
 class JobFairController extends Controller
 {
-    //
     use LeadSubmitAfterProcess;
     public function captureLead(Request $request)
     {
