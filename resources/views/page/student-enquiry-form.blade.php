@@ -35,7 +35,7 @@
     </head>
     <body class="{{ isset($contentMain->template)?$contentMain->template:'default-template' }}">
         @php
-            $previousStep = null
+            $previousStep = null;
             if($step > 1) {
                 $previousStep = $step - 1;
             }
@@ -79,7 +79,7 @@
         <section class="header-devider"></section>
         <section class="header-margin"></section>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-        <section style="background: #eeeeee;">
+        <section>
             <div class="container">
                 <div class="row justify_center">	
                     <div class="col-md-12">
@@ -100,11 +100,11 @@
                                         <h4>Professional Information</h4>
                                     </a>
                                     <a href="javascript:void(0)" class="wizerd_header form-wizard-steps {{ ($step == '3')?'active':'' }}" >
-                                        <span>2.</span>
+                                        <span>4.</span>
                                         <h4>Personal Information</h4>
                                     </a>
                                     <a href="javascript:void(0)"  class="wizerd_header form-wizard-steps {{ ($step == '4')?'active':'' }}">
-                                        <span>4.</span>
+                                        <span>5.</span>
                                         <h4>Aspirational Details</h4>
                                     </a>
                                 </div>
@@ -137,17 +137,20 @@
                                                 </div>
                                             </div>
                                             <div class="wizerd_fieldset" >
-                                                <h3 class="heading"> Please select course</h3>
-                                                @foreach($courseByCategory as $key => $category)
-                                                <ul class="list-group list-group-light course_list {{$key}}">
-                                                    @foreach($category as $course)
-                                                    <li class="list-group-item">
-                                                        <input id="accounting_course" name="course[]" class="form-check-input me-1" type="checkbox" value="Accounts & Taxation" aria-label="..." />
-                                                        <label for="accounting_course" class="ml-2" > {{ $course }}</label>
-                                                    </li>
+                                                <div class="course_group" style="display:none;">
+                                                    <h3 class="heading">Please select course</h3>
+                                                    @foreach($courseByCategory as $key => $category)
+                                                    <ul class="list-group list-group-light course_list {{$key}}">
+                                                        @foreach($category as $childKey => $course)
+                                                        <li class="list-group-item">
+                                                            <label for="{{$key}}_{{$childKey}}" class="ml-2 list-group-item-label" > 
+                                                                    <input id="{{$key}}_{{$childKey}}" name="course[]" class="form-check-input me-1" type="checkbox" value="{{$course}}" aria-label="..." /> {{ $course }}
+                                                            </label>
+                                                        </li>
+                                                        @endforeach
+                                                    </ul>
                                                     @endforeach
-                                                </ul>
-                                                @endforeach
+                                                </div>
                                                 <div class="form-group clearfix  mt-3">
                                                     <button type="submit" class="form-wizard-next-btn float-right">Next</button>
                                                 </div>
@@ -245,7 +248,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group clearfix  mt-3"> 
-                                                    <a href="{{ route('student-enquiry-form-with-slug',[$previousStep,'center'=>$center,'enquiry'=>base64_encode($enquiry)]) }}" class="form-wizard-previous-btn float-left">Previous</a> 
+                                                    <a href="{{ route('student-enquiry-form',[$previousStep,'center'=>$center,'enquiry'=>base64_encode($enquiry)]) }}" class="form-wizard-previous-btn float-left">Previous</a> 
                                                     <button type="submit" class="form-wizard-next-btn float-right">Next</button>
                                                 </div>
                                             </div>
@@ -279,7 +282,10 @@
                                                     </div>
                                                     <div class="col-12" >
                                                         <div class="contact-info formFieldJobRole">
-                                                            <input id="formFieldJobRole" name="job_role" type="text" placeholder="What is your job role?" autocomplete="off" class="wizard-required">
+                                                            <div class="add_more_job_role">
+                                                                <input id="formFieldJobRole" name="job_role[]" type="text" placeholder="What is your job role?" autocomplete="off" class="wizard-required job_role_elem">
+                                                            </div>
+                                                            <a href="javascript:void(0)" class="add_more_role_btn">Add More</a>
                                                             <div class="wizard-form-error"></div>
                                                         </div>
                                                     </div>
@@ -299,7 +305,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group clearfix  mt-3">
-                                                    <a href="{{ route('student-enquiry-form-with-slug',[$step-1,'center'=>$center,'enquiry'=>base64_encode($enquiry)]) }}" class="form-wizard-previous-btn float-left">Previous</a> 
+                                                    <a href="{{ route('student-enquiry-form-with-slug',[$previousStep,'center'=>$center,'enquiry'=>base64_encode($enquiry)]) }}" class="form-wizard-previous-btn float-left">Previous</a> 
                                                     <button class="form-wizard-next-btn float-right">Next</button>
                                                 </div>
                                             </div>
@@ -417,7 +423,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group clearfix  mt-3">
-                                                    <a href="{{ route('student-enquiry-form-with-slug',[$step-1,'center'=>$center,'enquiry'=>base64_encode($enquiry)]) }}" class="form-wizard-previous-btn float-left">Previous</a> 
+                                                    <a href="{{ route('student-enquiry-form-with-slug',[$previousStep,'center'=>$center,'enquiry'=>base64_encode($enquiry)]) }}" class="form-wizard-previous-btn float-left">Previous</a> 
                                                     <button href="javascript:;" class="form-wizard-next-btn float-right">Next</button>
                                                 </div>
                                             </div>
@@ -459,12 +465,10 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="nws-button text-center white text-capitalize mt-5">
-                                                    <button class="conversational_init-btn" type="submit">
-                                                        Submit Form
-                                                    </button> 
-                                                    <img src="https://www.icacourse.in/wp-content/themes/scriptcrown/images/loader.gif" style="width: 42px; display:none;" class="checkout_loader">
-                                                </div> 
+                                                <div class="form-group clearfix  mt-3">
+                                                    <a href="{{ route('student-enquiry-form-with-slug',[$previousStep,'center'=>$center,'enquiry'=>base64_encode($enquiry)]) }}" class="form-wizard-previous-btn float-left">Previous</a> 
+                                                    <button href="javascript:;" class="form-wizard-next-btn float-right">Submit Form</button>
+                                                </div>
                                             </div>
                                         </div>
                                         @break

@@ -47,12 +47,20 @@ jQuery('.conversational_init-btn').click(function() {
 })
 
 jQuery('.couse_input').on('change',function(){
+	jQuery(".course_group").show();
 	jQuery(".course_list").hide();
 	jQuery(".course_list."+jQuery(this).val()).show();
 	jQuery(this).parents(".wizerd_welcome_screen").hide();
 	jQuery(this).parents(".wizerd_set").children(".wizerd_fieldset").show();
 })
 
+jQuery(".add_more_role_btn").on("click",function(){
+	let clonedElement = '<input id="formFieldJobRole" name="job_role[]" type="text" placeholder="What is your job role?" autocomplete="off" class="wizard-required job_role_elem">';
+
+	jQuery(".add_more_job_role").append(clonedElement);
+	console.log(clonedElement);
+	
+});
 // jQuery('.form-wizard-previous-btn').click(function() {
 	
 //     var previous = jQuery(this);

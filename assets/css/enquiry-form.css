@@ -134,7 +134,23 @@
   }
 
   .list-group-item {
-    padding: .75rem 2.25rem;
+    padding: 0;
+  }
+
+  .list-group-item-label {
+    width: 100%;
+    padding: 16px 31px;
+    margin-bottom: 0;
+  }
+
+  .form-check-input {
+    left: 30px;
+    top: 15px;
+  }
+
+  .form-wizard-previous-btn, .form-wizard-next-btn {
+    color: #fff !important;
+    border: none;
   }
 
   .course_list {
@@ -146,6 +162,26 @@
     box-shadow: 0 0 5px 2px #d1caff;
     border-radius: 10px;
   }
-  /* .wizerd_fieldset {
-    display: none;
-  } */
+
+  .add_more_role_btn {
+    padding: 6px 20px;
+    background: #393185;
+    color: #fff;
+    display: inline-block;
+    margin-top: 5px;
+    font-size: 12px;
+    border-radius: 3px;
+  }
+  .add_more_role_btn:hover {
+    color: #fff;
+  }
+  .job_role_elem {
+    margin-top: 5px;
+  }
+  @media screen and (max-width: 1024px) {
+    .wizerd_header h4 {
+      display: inline;
+      font-size: 12px;
+      line-height: 0;
+    }
+  }
