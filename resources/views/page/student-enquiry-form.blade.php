@@ -314,17 +314,6 @@
                                         @case(3)
                                         <!-- Personal Experience -->
                                         <div class="wizerd_set active" >
-                                            <!-- <div class="wizerd_welcome_screen" >
-                                                <div class="welcome_message text-center">
-                                                    <h2>Let Talk About Your Personal Infomation</h2>
-                                                </div>
-                                                <div class="nws-button text-center white text-capitalize">
-                                                    <button class="conversational_init-btn" type="button">
-                                                        Lets Chat <i class="fas fa-arrow-right"> </i> 
-                                                    </button> 
-                                                    <img src="https://www.icacourse.in/wp-content/themes/scriptcrown/images/loader.gif" style="width: 42px; display:none;" class="checkout_loader">
-                                                </div> 
-                                            </div> -->
                                             <div class="wizerd_fieldset" >
                                                 <h3 class="heading">Tell Me something about yourself</h3>
                                                 <div class="row" > 
@@ -422,9 +411,25 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div class="lead_steps step2">
+                                                    <div class="otp-content">
+                                                        <h4 class="otp-heading"> OTP Verification </h4>
+                                                        <p class="message"> <span class="message"> Enter the OTP you receive at </span> +91 XXXXXX<span class="lastDigit"></span> <span class="changeGivenNumber"> (Change) </span> </p>
+                                                        <p class="response_status" style="color: #000;"></p>
+                                                    </div> 
+                                                    <div class="contact-info">
+                                                        <input class="verify_otp" name="verify_otp" type="text" placeholder="Enter One Time Password" autocomplete="off">
+                                                    </div>
+                                                    <div class="otp-content">
+                                                        <p class="message"> Did not receive OTP?
+                                                            <span class="countdown_label"> Resend in <span class="countdown" >59</span> Sec </span>
+                                                            <a class="resendOtp display-none" href="javascript:void(0)"> Resend OTP </a>
+                                                        </p>
+                                                    </div>
+                                                </div>
                                                 <div class="form-group clearfix  mt-3">
                                                     <a href="{{ route('student-enquiry-form-with-slug',[$previousStep,'center'=>$center,'enquiry'=>base64_encode($enquiry)]) }}" class="form-wizard-previous-btn float-left">Previous</a> 
-                                                    <button href="javascript:;" class="form-wizard-next-btn float-right">Next</button>
+                                                    <button id="onClickSendOtp" class="form-wizard-next-btn float-right">Next</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -490,6 +495,7 @@
         <script src="{{ url('assets/js/jquery-2.1.4.min.js') }}"></script>
         <script src="{{ url('assets/js/bootstrap.min.js') }}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+        <script src="{{ url('assets/js/ad.js') }}"></script>
         <script src="{{ url('assets/js/enquiry-form.js') }}"></script>
     </body>
 </html>

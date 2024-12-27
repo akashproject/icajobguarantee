@@ -1,18 +1,24 @@
 <!DOCTYPE HTML>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
     <title>{{ isset($contentMain->title)?$contentMain->title:'Accounts | Finance | Taxation | Courses | Training Institute' }}</title>
+    <meta name="DC.title" content="{{ isset($contentMain->title)?$contentMain->title:'Accounts | Finance | Taxation | Courses | Training Institute' }}" />
+    <meta name="geo.region" content="{{ isset($state->region)?$state->region:'' }}" />
+    <meta name="geo.placename" content="{{ isset($contentMain->district)?$contentMain->district:'' }}" />
+    <meta name="geo.position" content="{{ isset($contentMain->lat)?$contentMain->lat.';'.$contentMain->lng:'' }}" />
+    <meta name="ICBM" content="{{ isset($contentMain->lat)?$contentMain->lat.','.$contentMain->lng:'' }}" />
+    <meta name="description" content="ICA Edu Skills is your one-stop Accounting, Tally, GST, Microsoft Excel, SAP FICO and MIS training institute in GTB Nagar, North Campus, Delhi. VISIT Now!" />
     <meta name="facebook-domain-verification" content="he9zy5upymc72288m3qpcwda5dygul" />
     <meta name="description" content="{{ isset($contentMain->meta_description)?$contentMain->meta_description:'Accounts | GST | Tally | SAP | Learn accounts, finance, taxation, and banking job guarantee courses. Enroll with India&#039;s No.1 Educational Training Institute.' }}" />
     <link rel="canonical" href="{{url()->current()}}"/>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="UTF-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="title" content="{{ isset($contentMain->title)?$contentMain->title:'' }}">
     <meta name="robots" content="{{ isset($contentMain->robots)?$contentMain->robots:'' }}" />
     <meta name="google-site-verification" content="_Is7-guFC312LQs0E9yYfc90B7NW6Dx--HQZrLtBeLs" />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale" content="en_IN" />
     <meta property="og:site_name" content="ICA Edu Skills" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="{{ isset($contentMain->title)?$contentMain->title:'Accounts | Finance | Taxation | Courses | Training Institute | Computerized Accounts Training Institute' }}" />
@@ -49,7 +55,6 @@
     @else
     <link href="{{ url('assets/css/mobile.css') }}" rel="stylesheet">
     @endif
-    
     <link href="{{ url('assets/css/colors/color-7.css') }}" rel="alternate stylesheet" type="text/css" title="color-7">
     @yield('style')
 

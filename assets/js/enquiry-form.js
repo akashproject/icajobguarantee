@@ -61,6 +61,20 @@ jQuery(".add_more_role_btn").on("click",function(){
 	console.log(clonedElement);
 	
 });
+
+
+jQuery("#onClickSendOtp").on("click",function(e){
+	var global_other_details_form = $('#global_other_details_form')[0];
+	if (global_other_details_form.checkValidity()) {
+        let formId = $(global_other_details_form).attr('id');
+		sendMobileOtp(formId);
+		countDown()
+	} else {
+		alert('Form is invalid!');
+	}
+	
+	return false;
+});
 // jQuery('.form-wizard-previous-btn').click(function() {
 	
 //     var previous = jQuery(this);

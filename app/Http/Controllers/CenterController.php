@@ -90,7 +90,6 @@ class CenterController extends Controller
                 $galleryImg[] = $contentMain->slug.'/'.pathinfo($file, PATHINFO_FILENAME).'.'.pathinfo($file, PATHINFO_EXTENSION);
             }
 
-            //$courses = Course::where('status', 1)->get();
             $states = State::where('status', 1)->get();
             $center = $contentMain->name;
 
@@ -98,8 +97,8 @@ class CenterController extends Controller
 
             $gallery = DB::table('gallery')->where("center_id",$contentMain->id)->get();
 
-
-            return view('centers.view',compact('contentMain','center','courses','courseType','gallery','states','centerCourses','galleryImg'));
+            $state = State::select('name','region')->where('id',$contentMain->state_id)->first();
+            return view('centers.view',compact('contentMain','center','courses','courseType','gallery','states','centerCourses','galleryImg','state'));
         } catch(\Illuminate\Database\QueryException $e){
             var_dump($e);
         }

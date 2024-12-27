@@ -1,6 +1,6 @@
 <div class="lead_steps step2">
     <div class="otp-content">
-        <h4 class="otp-heading"> OTP Verification </h4>                                   
+        <h4 class="otp-heading"> OTP Verification </h4>
         <p class="message"> <span class="message"> Enter the OTP you receive at </span> +91 XXXXXX<span class="lastDigit"></span> <span class="changeGivenNumber"> (Change) </span> </p>
         <p class="response_status" style="color: #000;"></p>
     </div> 
