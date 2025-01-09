@@ -89,7 +89,7 @@
                                 <div class="form_wizerd_header form-wizard-panel"> 
                                     <a href="javascript:void(0)"  class="wizerd_header form-wizard-steps {{ ($step == null)?'active':'' }}">
                                         <span>1.</span>
-                                        <h4 >Check Courses</h4>
+                                        <h4 >Check Requirement</h4>
                                     </a>
                                     <a href="javascript:void(0)" class="wizerd_header form-wizard-steps {{ ($step == '1')?'active':'' }}" >
                                         <span>2.</span>
@@ -257,17 +257,6 @@
                                         @case(2)
                                         <!-- Work Experience -->
                                         <div class="wizerd_set" >
-                                            <!-- <div class="wizerd_welcome_screen" >
-                                                <div class="welcome_message text-center">
-                                                    <h2>Let Talk About Your work experience</h2>
-                                                </div>
-                                                <div class="nws-button text-center white text-capitalize">
-                                                    <button class="conversational_init-btn" type="button">
-                                                        Lets Chat <i class="fas fa-arrow-right"> </i> 
-                                                    </button> 
-                                                    <img src="https://www.icacourse.in/wp-content/themes/scriptcrown/images/loader.gif" style="width: 42px; display:none;" class="checkout_loader">
-                                                </div> 
-                                            </div> -->
                                             <div class="wizerd_fieldset" >
                                                 <h3 class="heading">Tell me something about yourself</h3>
                                                 <div class="row" > 
@@ -280,12 +269,15 @@
                                                             </select>
                                                         </div>
                                                     </div>
+                                                    
                                                     <div class="col-12" >
+                                                        <span style="font-size: 12px;">*If you don’t have any work experience, you can skip the job role section.</span>
                                                         <div class="contact-info formFieldJobRole">
                                                             <div class="add_more_job_role">
                                                                 <input id="formFieldJobRole" name="job_role[]" type="text" placeholder="What is your job role?" autocomplete="off" class="wizard-required job_role_elem">
                                                             </div>
-                                                            <a href="javascript:void(0)" class="add_more_role_btn">Add More</a>
+                                                            <span style="font-size: 12px;">*If you have multiple job roles, click <a href="javascript:void(0)" class="add_more_role_btn">Add More</a> to include them all.</span>
+                                                            
                                                             <div class="wizard-form-error"></div>
                                                         </div>
                                                     </div>
@@ -293,13 +285,6 @@
                                                         <div class="contact-info formFieldprofessionalCourses">
                                                             <label class="mb-0" style="color: #403c9c;font-weight: 600;"> Have you completed or are you currently pursuing any other professional courses? [If yes, please specify.] </label>
                                                             <input id="formFieldprofessionalCourses" name="professional_courses" type="text" placeholder="Enter your professional course" autocomplete="off" required class="wizard-required">
-                                                            <div class="wizard-form-error"></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-12" >
-                                                        <div class="contact-info formFieldlocationPrefarence">
-                                                            <label class="mb-0" style="color: #403c9c;font-weight: 600;"> Do you have any location preference for placement? [If yes, please specify]</label>
-                                                            <input id="formFieldlocationPrefarence" name="location_prefarence" type="text" placeholder="Enter your location preference" autocomplete="off" required class="wizard-required">
                                                             <div class="wizard-form-error"></div>
                                                         </div>
                                                     </div>
@@ -466,6 +451,13 @@
                                                     <div class="col-12" >
                                                         <div class="contact-info formFieldExpectedCtc">
                                                             <input id="formFieldExpectedCtc" name="expected_ctc" type="number" placeholder="What is your expected monthly CTC" autocomplete="off" required class="wizard-required">
+                                                            <div class="wizard-form-error"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12" >
+                                                        <div class="contact-info formFieldlocationPrefarence">
+                                                            <label class="mb-0" style="color: #403c9c;font-weight: 600;"> Do you have any location preference for placement? [If yes, please specify]</label>
+                                                            <input id="formFieldlocationPrefarence" name="location_prefarence" type="text" placeholder="Enter your location preference" autocomplete="off" required class="wizard-required">
                                                             <div class="wizard-form-error"></div>
                                                         </div>
                                                     </div>

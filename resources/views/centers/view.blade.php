@@ -78,18 +78,18 @@
 					           <p class="col-md-6"style="font-size:18px!important;">{!! (isset($contentMain))?$contentMain->excerpt:"Default excerpt" !!}</p>
 							</div>							
 							<!--div class="course-meta" style="font-size: 7px">
-														<span class="course-category"><i class="fas fa-user"></i> 109k &nbsp Students</span>
-														<div class="course-rate ul-li">
-															<ul>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-															</ul>											
-														</div>
-														<span class="course-category">678 Rating</span>
-													</div-->
+								<span class="course-category"><i class="fas fa-user"></i> 109k &nbsp Students</span>
+								<div class="course-rate ul-li">
+									<ul>
+										<li><i class="fas fa-star"></i></li>
+										<li><i class="fas fa-star"></i></li>
+										<li><i class="fas fa-star"></i></li>
+										<li><i class="fas fa-star"></i></li>
+										<li><i class="fas fa-star"></i></li>
+									</ul>											
+								</div>
+								<span class="course-category">678 Rating</span>
+							</div-->
 						</div>
 					</div>
 				</div>
@@ -179,7 +179,7 @@
 								</div>
 
 								<div class="counter-number">
-									<span class="counter-count bold-font">25</span><span>+</span>
+									<span class="counter-count bold-font">26</span>
 									<p>Years of Excellence</p>
 								</div>
 							</div>
@@ -212,7 +212,7 @@
 			<div class="container">
 				<div id="courses" class="section-title mb20 headline text-center">
 					<span class="subtitle text-uppercase">OUR COURSES</span>
-					<h2 style="font-size: 26px!important; color: #393185;">Explore The Best Advanced Excel, Accounting, GST, SAP FICO, Tally Prime Courses</h2>
+					<h2 style="font-size: 26px!important; font-weight: bold; color: #393185;">Explore The Best Advanced Excel, Accounting, GST, SAP FICO, Tally Prime Courses</h2>
 				</div>				
 				<div class="course-slide row">
 					@foreach($courses as $value)
@@ -240,16 +240,8 @@
 									<div class="course-title mt10 headline relative-position">
 										<h2 style="font-size: 22px;color: #3e4095;font-weight: 600;"><a target="_blank" href="{{ URL::to('/courses') }}/{{ $value->slug }}"> {{$value->name}}</a> </h2>
 									</div>
-									<!-- <div class="course-meta  mb-3" style="font-size: 7px">
-										<span class="course-category"><i class="fas fa-user"></i> 247,910 Students </span>
-										<div class="course-rate ul-li">
-											<ul>
-												<li><i class="fas fa-star"></i></li>
-											</ul>											
-										</div>														
-										<span class="course-category">218,501 Votes </span>
-									</div>													 -->
-									<div class="course_highlights alt-font p-1" style="color: #000;">                     
+				
+									<div class="course_highlights alt-font p-1" style="color: #444!important;">                     
 										{!! $value->criteria !!}													
 									</div>
 									<div class="course-meta mt10">
@@ -268,7 +260,8 @@
 							</div>
 						</div>
 					</div>
-					@endforeach
+					@endforeach	
+					
 				</div>
 			</div>
 		</section>
@@ -287,13 +280,43 @@
 		</style>
 		<!-- End popular course
 		============================================= -->
+		
+		<!-- Start of certificate section
+		============================================= -->
+		<section id="alumni" class="testimonial_2_section">
+			<div class="container">
+				<div id="testimonials" class="testimonial-slide">
+					<div class="section-title mb20 headline text-center">
+						<span class="subtitle text-uppercase">Certified Courses</span>
+						<h3>Industry <span>Certifications</span></h3>
+					</div>
+					<div class="row">
+						<div class="col-md-3 mt10 mb20 text-center">
+							<img src="https://www.icajobguarantee.com/public/upload/2023-08-23/CIA-Plus-Certificate.webp" alt="" />
+						</div>
+						<div class="col-md-3 mt10 mb20 text-center">
+							<img src="https://www.icajobguarantee.com/public/upload/2023-05-12/sap-certificate.png" alt="" />
+						</div>
+						<div class="col-md-3 mt10 mb20 text-center">
+							<img src="https://www.icajobguarantee.com/public/upload/2024-05-24/ms-office-course-certification.webp" alt="" />
+						</div>
+						<div class="col-md-3 mt10 mb20 text-center">
+							<img src="https://www.icajobguarantee.com/public/upload/2024-09-23/zoho-books-certification.webp" alt="" />
+						</div>						
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End of certificate section
+		============================================= -->		
+		
 		<!-- Start Centers gallery Section -->
 		@if(count($galleryImg) > 0)
 		<Section id="gallery" class="popular-course-section popular-three" style="background:white">
 			<div class="container">
 				<div id="placements" class="section-title mb20 headline text-center">
-					<span class="subtitle text-uppercase">Center's Gallery</span>
-					<!-- <h2 style="font-size: 30px!important;">Connecting Talent with <span> Job Opportunities </span></h2> -->
+					<span class="subtitle text-uppercase">Gallery</span>
+					<h2 style="font-size: 30px!important;"> <span> ICA Edu Skills | {{(isset($contentMain))?$contentMain->name:"Default Page" }}</span>  Gallery </h2>
 				</div>
 				<div class="course-details-content">
 					<div class="affiliate-market-guide mb65">
@@ -382,6 +405,8 @@
 			</div>
 		</div>
 		@endif
+		
+		
 		<!-- Start of testimonial secound section
 		============================================= -->
 		<section id="alumni" class="testimonial_2_section">
@@ -526,7 +551,7 @@
 
 									<img src="https://www.icajobguarantee.com/assets/img/icons/tick.png" >
 
-									<h5 style="color: #393185;"> Triple Certification </h5>
+									<h5 style="color: #393185;"> 4 Certifications </h5>
 									<p>We prepare you as a strong contender in the highly competitive job market</p>
 								</div>
 
@@ -562,7 +587,11 @@
 		
 	<section id="course" class="popular-course-section popular-three" style="background:#fff">
 		<div class="container">
-			<div class="row blog-description">
+		    <div id="placements" class="section-title mb20 headline text-center">
+				<span class="subtitle text-uppercase">ABOUT THE COURSES</span>
+				<h2 style="font-size: 30px!important;">Learn, Grow and Grab Opportunities with <span>ICA Edu Skills | {{(isset($contentMain))?$contentMain->name:"Default Page" }}</span></h2>
+			</div>
+			<div class="row blog-description" style="padding: 10px;">
 			{!! $contentMain->description !!}
 			</div>
 	</section>

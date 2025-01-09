@@ -9,9 +9,8 @@
     <meta name="geo.placename" content="{{ isset($contentMain->district)?$contentMain->district:'' }}" />
     <meta name="geo.position" content="{{ isset($contentMain->lat)?$contentMain->lat.';'.$contentMain->lng:'' }}" />
     <meta name="ICBM" content="{{ isset($contentMain->lat)?$contentMain->lat.','.$contentMain->lng:'' }}" />
-    <meta name="description" content="ICA Edu Skills is your one-stop Accounting, Tally, GST, Microsoft Excel, SAP FICO and MIS training institute in GTB Nagar, North Campus, Delhi. VISIT Now!" />
-    <meta name="facebook-domain-verification" content="he9zy5upymc72288m3qpcwda5dygul" />
     <meta name="description" content="{{ isset($contentMain->meta_description)?$contentMain->meta_description:'Accounts | GST | Tally | SAP | Learn accounts, finance, taxation, and banking job guarantee courses. Enroll with India&#039;s No.1 Educational Training Institute.' }}" />
+    <meta name="facebook-domain-verification" content="he9zy5upymc72288m3qpcwda5dygul" />
     <link rel="canonical" href="{{url()->current()}}"/>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
