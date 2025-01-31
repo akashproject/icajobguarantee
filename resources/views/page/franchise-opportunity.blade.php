@@ -169,7 +169,7 @@
 									<img src="{{ url('assets/img/Investment.svg') }}" >
 								</div>
 								<div class="category-title">
-									<h4>10-20 lakhs of Investment </h4>
+									<h4>20-30 lakhs of Investment </h4>
 									<p> We have been expertly teaching and training students, college graduates, and professionals and preparing them academically for facing the job market for over two decades </p>
 								</div>
 								<div class="category-description">
@@ -281,22 +281,24 @@
 				<div class="row">
 					<div class="col-md-6" >
 						<ul class="benifit-wrap">
-							<li class="cat-item"> In-house ERP, CRM, and R&D Team </li>
+							<li class="cat-item"> In-house ERP, CRM, Digital Marketing, Staff Training and R&D Team </li>
 							<li class="cat-item"> Regular seminar and grooming session </li>
 							<li class="cat-item"> Practical Training sessions with fun activities </li>
 							<li class="cat-item"> Faculty Training </li>
 							<li class="cat-item"> Quality Assurance </li>
 							<li class="cat-item"> 100% Lead Generation through Digital Marketing </li>
+							<li class="cat-item"> Training Excellence: Simulations on TDS, ITR, GST, ESI, PF, Accounts </li>
 						</ul>
 					</div>
 					<div class="col-md-6" >
 						<ul class="benifit-wrap">
-							<li class="cat-item"> Earning potential of 1 – 4 Lakhs/month </li>
+							<li class="cat-item"> Earning potential of 2 – 5 Lakhs/month </li>
 							<li class="cat-item"> Partnership Advantage with India’s top-ranked training institute </li>
 							<li class="cat-item"> Best Training facilities in Accounts, Finance and Taxation </li>
 							<li class="cat-item"> All time student rush due to high demand for CIA courses </li>
 							<li class="cat-item"> 100+ centers in Pan India </li>
-							<li class="cat-item"> Investment of just 18-20 lakh </li>
+							<li class="cat-item"> Investment of just 20-30 lakh </li>
+							<li class="cat-item"> Certifications: Third-party validations from Microsoft, ZOHO & SAP </li>
 						</ul>
 					</div>
 				</div>

@@ -99,9 +99,7 @@ class IndexController extends Controller
             $postData['role'] = "b2c";
 
             $this->captureLeadToDB($postData);
-
             $this->leadCaptureLeadToExtraage($postData);
-
             $this->cognoai_api_calling($postData);
 
             // Send Brochure

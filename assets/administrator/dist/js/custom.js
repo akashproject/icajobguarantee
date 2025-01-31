@@ -240,20 +240,6 @@ $(function() {
             $(".image-thumbnail").removeClass("active");
         }
         $(this).toggleClass("active");
-        
-        // $(this).magnificPopup({
-        //     // you may add other options here, e.g.:
-        //     preloader: true,
-        //     callbacks: {
-        //       open: function() {
-        //         // Will fire when this exact popup is opened
-        //         // this - is Magnific Popup object
-        //       },
-        //       close: function() {
-        //         // Will fire when popup is closed
-        //       }
-        //     }
-        // });
     });
 
     $(".image-profile").on("click",function(){

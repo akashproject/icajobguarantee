@@ -1163,10 +1163,10 @@ searchBAR: function (){
 		let popUp;
 		console.log(window.location.pathname);
 		if (window.location.pathname != '/franchise-opportunity') {
-			if (!jQuery.cookie("showPopup")) {
-				lead_capture_form_btn();
-				jQuery.cookie("showPopup",true);
-			}
+			// if (!jQuery.cookie("showPopup")) {
+			// 	lead_capture_form_btn();
+			// 	jQuery.cookie("showPopup",true);
+			// }
 		}
 		
 	});

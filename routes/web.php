@@ -121,7 +121,7 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::post('/save-center', [App\Http\Controllers\Administrator\CenterController::class, 'save'])->name('admin-save-center');
         Route::get('/delete-center/{id}', [App\Http\Controllers\Administrator\CenterController::class, 'delete'])->name('admin-delete-center');
         Route::post('/get-city-by-state-id', [App\Http\Controllers\Administrator\CenterController::class, 'getCitiesByStateId'])->name('get-city-by-state-id');
-       
+        Route::get('/generate-pink-form/{id}', [App\Http\Controllers\Administrator\CenterController::class, 'generatePinkForm'])->name('admin-generate-pink-form');
         //Buckets
         Route::get('/buckets', [App\Http\Controllers\Administrator\CenterBucketController::class, 'index'])->name('admin-buckets');
         Route::get('/add-bucket', [App\Http\Controllers\Administrator\CenterBucketController::class, 'add'])->name('admin-add-bucket');

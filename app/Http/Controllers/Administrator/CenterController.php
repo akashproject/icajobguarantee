@@ -11,6 +11,7 @@ use App\Models\Course;
 use App\Models\CourseType;
 use Mail;
 use Illuminate\Support\Facades\DB;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class CenterController extends Controller
 {
@@ -272,6 +273,22 @@ class CenterController extends Controller
                     ->cc('backup.proloy.ghosh@icagroup.in'); // For HTML rich messages
             });
             return redirect()->back()->with('message', 'Lead Transfard successfully!');
+        } catch(\Illuminate\Database\QueryException $e){
+            var_dump($e->getMessage()); 
+        }
+    }
+
+    public function generatePinkForm($id){
+        try {
+            $qr_content = env('APP_URL').'student/enquiry-form?center='.$id;
+            $code = random_strings(6);
+            QrCode::merge('/assets/images/fab.png')
+            ->size(256)
+            ->margin(1)
+            ->generate($qr_content, public_path('images/qrcode_'.$code.'.svg'));
+
+            $qrPath = url("public/images/qrcode_").$code.'.svg';
+           return view('administrator.centers.pink-form',compact('qrPath'));
         } catch(\Illuminate\Database\QueryException $e){
             var_dump($e->getMessage()); 
         }

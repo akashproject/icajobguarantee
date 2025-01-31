@@ -36,7 +36,6 @@
 	<!-- End of breadcrumb section
 		============================================= -->
 
-
 	<!-- Start of shop product section
 		============================================= -->
 		<section id="shop-product" class="shop-product-section">
