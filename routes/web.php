@@ -384,6 +384,8 @@ Route::get('/student/enquiry-form', [App\Http\Controllers\StudentController::cla
 Route::get('/template/build-up', [App\Http\Controllers\IndexController::class, 'templateBuildUp'])->name('template-build-up');
 Route::post('/job-fair-capture-lead', [App\Http\Controllers\JobFairController::class, 'captureLead'])->name('job-fair-capture-lead');
 
+Route::post('/job-fair-bhim-rao-ambedkar-college', [App\Http\Controllers\JobFairController::class, 'jobFairAmbedkarCollege'])->name('job-fair-bhim-rao-ambedkar-college');
+
 Route::middleware(ProtectAgainstSpam::class)->group(function() {
     Auth::routes();
 });
