@@ -68,9 +68,8 @@ class JobFairController extends Controller
             }
             Session::put('lead_id',$leadFromdb->id);
 
-            $this->classroomLeadCaptureToExtraage($postData);
-            $this->sendJobFairEmailNotification($postData);
-            $this->jobFairCognoai_api_calling($postData); //Email Notification
+            $this->b2cLeadCaptureToExtraage($postData);
+            $this->cognoai_api_calling($postData,"225631"); 
 
             return redirect("/job-fair-thank-you");
         } catch (\Illuminate\Database\QueryException $e) {
@@ -126,8 +125,8 @@ class JobFairController extends Controller
                 $leadFromdb = $this->captureLeadToDB($postData);
             }
             Session::put('lead_id',$leadFromdb->id);
-            $this->leadCaptureToExtraage($postData);
-            $this->cognoai_api_calling($postData,"147222"); //Email Notification
+            $this->b2cLeadCaptureToExtraage($postData);
+            $this->cognoai_api_calling($postData,"225630"); 
             return redirect("/job-fair-thank-you");
         } catch (\Illuminate\Database\QueryException $e) {
             return response()->json($e, $this->_statusOK);

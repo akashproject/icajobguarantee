@@ -223,7 +223,7 @@
                                                                 <label class="mb-0" style="color: #403c9c;font-weight: 600;">  </label>
                                                                 <select id="formFieldPassingYear" class="passing_year" name="passing_year" required class="wizard-required">
                                                                     <option value=""> Select Year</option>
-                                                                    @for ($year = 1980; $year <= now()->year; $year++)
+                                                                    @for ($year = now()->year; $year >= 1980; $year--)
                                                                         <option value="{{ $year }}">{{ $year }}</option>
                                                                     @endfor
                                                                 </select>
@@ -241,7 +241,7 @@
                                                             <select id="formFieldLanguage" class="language" name="language" required class="wizard-required">
                                                                 <option value="">What is your preferred language for the training</option>
                                                                 <option value="English"> English </option>
-                                                                <option value="Bengali"> Bengali </option>
+                                                                <option value="Hindi"> Hindi </option>
                                                                 <option value="Local"> Local </option>
                                                             </select>
                                                         </div>
@@ -274,10 +274,16 @@
                                                         <span style="font-size: 12px;">*If you don’t have any work experience, you can skip the job role section.</span>
                                                         <div class="contact-info formFieldJobRole">
                                                             <div class="add_more_job_role">
-                                                                <input id="formFieldJobRole" name="job_role[]" type="text" placeholder="What is your job role?" autocomplete="off" class="wizard-required job_role_elem">
+                                                                <div class="row">
+                                                                    <div class="col-md-8">
+                                                                        <input id="formFieldJobRole" name="job_role[]" type="text" placeholder="What is your job role?" autocomplete="off" class="wizard-required job_role_elem">
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <input id="formFieldJobRoleTimePeriod" name="job_role_time[]" type="text" placeholder="Total Years" autocomplete="off" class="wizard-required job_role_elem">
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                             <span style="font-size: 12px;">*If you have multiple job roles, click <a href="javascript:void(0)" class="add_more_role_btn">Add More</a> to include them all.</span>
-                                                            
                                                             <div class="wizard-form-error"></div>
                                                         </div>
                                                     </div>
@@ -321,7 +327,7 @@
                                                     <div class="col-12" >
                                                         <div class="contact-info formFieldDob">
                                                             <label class="mb-0" style="color: #403c9c;font-weight: 600;">May I know your Birthday </label>
-                                                            <input id="formFieldDob" name="dob" type="date" placeholder="Enter Date of Birth" autocomplete="off" required class="wizard-required">
+                                                            <input id="formFieldDob" name="dob" type="date" placeholder="Enter Date of Birth" autocomplete="off" required class="wizard-required" min="1970-01-01" max="2018-12-31">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12" >
@@ -380,6 +386,7 @@
                                                         <div class="contact-info formFieldMotherOccupation">
                                                             <select id="formFieldMotherOccupation" class="mother_occupation" name="mother_occupation" required class="wizard-required">
                                                                 <option value="">What is her occupation?</option>
+                                                                <option value="House Wife">House Wife</option>
                                                                 <option value="Business">Business</option>
                                                                 <option value="Govt. Employee">Govt. Employee</option>
                                                                 <option value="Private Employee">Private Employee</option>
@@ -438,26 +445,34 @@
                                                 <div class="row" > 
                                                     <div class="col-12" >
                                                         <div class="contact-info formFieldNextGoal">
-                                                            <input id="formFieldNextGoal" name="starting_salary" type="number" placeholder="What is your Preferred starting salary?" autocomplete="off" required class="wizard-required">
+                                                            <label class="mb-0" style="color: #403c9c;font-weight: 600;"> What is your expected current salary</label>
+                                                            <input id="formFieldNextGoal" name="starting_salary" type="number" autocomplete="off" required class="wizard-required">
                                                             <div class="wizard-form-error"></div>
                                                         </div>
                                                     </div>
                                                     <div class="col-12" >
                                                         <div class="contact-info formFieldNextGoal">
-                                                            <input id="formFieldNextGoal" name="next_goal" type="text" placeholder="Where do you want to see yourself after 5 years?" autocomplete="off" required class="wizard-required">
+                                                            <label class="mb-0" style="color: #403c9c;font-weight: 600;"> Expected starting salary after 5 Years</label>
+                                                            <input id="formFieldNextGoal" name="next_goal" type="text" autocomplete="off" required class="wizard-required">
                                                             <div class="wizard-form-error"></div>
                                                         </div>
                                                     </div>
                                                     <div class="col-12" >
                                                         <div class="contact-info formFieldExpectedCtc">
-                                                            <input id="formFieldExpectedCtc" name="expected_ctc" type="number" placeholder="What is your expected monthly CTC" autocomplete="off" required class="wizard-required">
+                                                            <label class="mb-0" style="color: #403c9c;font-weight: 600;"> What is your expected monthly CTC</label>
+                                                            <input id="formFieldExpectedCtc" name="expected_ctc" type="number" autocomplete="off" required class="wizard-required">
                                                             <div class="wizard-form-error"></div>
                                                         </div>
                                                     </div>
                                                     <div class="col-12" >
                                                         <div class="contact-info formFieldlocationPrefarence">
                                                             <label class="mb-0" style="color: #403c9c;font-weight: 600;"> Do you have any location preference for placement? [If yes, please specify]</label>
-                                                            <input id="formFieldlocationPrefarence" name="location_prefarence" type="text" placeholder="Enter your location preference" autocomplete="off" required class="wizard-required">
+                                                            <div>
+                                                            <span><input type="radio" name="location_prefarence" value="same city" checked> Same City </span>
+                                                            <span><input type="radio" name="location_prefarence" value="same State"> Same State </span>
+                                                            <span><input type="radio" name="location_prefarence" value="Anywhere in India"> Anywhere in India </span>
+                                                            <span><input type="radio" name="location_prefarence" value="Anywhere in World"> Anywhere in World </span>
+                                                            </div>
                                                             <div class="wizard-form-error"></div>
                                                         </div>
                                                     </div>

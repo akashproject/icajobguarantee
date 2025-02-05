@@ -177,7 +177,7 @@
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="navbar-header float-right" style="width: auto;text-align: right;">
 							<a class="navbar-brand text-uppercase" href="javascript:void(0)"  style="text-align: center;"> 
-                                <img src="{{ url('assets/img/dr-bhim-rao-ambedkar-college-logo.jpg') }}" alt="ICA Edu Skills" style="width: 20%;">
+                                <img src="{{ url('assets/img/gurukul-college-west.png') }}" alt="ICA Edu Skills" style="width: 41%;">
                                 <p style="margin: 0;font-size: 14px;"> <strong> Department of commerce </strong></p>
                             </a>
 						</div><!-- /.navbar-header -->		
@@ -194,7 +194,7 @@
                     <div class="col-md-8 py-2">
                         <div class="banner_container">
                             <div class="banner_header">
-                                <h1 style="color: #e53d3f;text-align: center;">Delhi’s Biggest Job Fair*</h1>
+                                <h1 style="color: #e53d3f;text-align: center;">Mumbai’s Biggest Job Fair*</h1>
                                 <h2 style="text-align:center;font-weight: 600;font-size: 41px;">Unlock Your Dream Career!</h2 style="font-">
                             </div>
                             <div class="text-center py-3">
@@ -259,25 +259,28 @@
                                                     <div class="register-form-area">
                                                         <select class="batch_applied" name="qualification" required>
                                                             <option value=""> Select Qualifications </option>
-                                                            <option value="10+2 - Arts">10+2 - Arts</option>
-                                                            <option value="10+2 - Commerce">10+2 - Commerce</option>
-                                                            <option value="10+2 - Science">10+2 - Science</option>
-                                                            <option value="B.A. - Arts">B.A. - Arts</option>
-                                                            <option value="B.Com - Commerce">B.Com - Commerce</option>
-                                                            <option value="B.Com(H) - Commerce">B.Com(H) - Commerce</option>
-                                                            <option value="B.Sc - Science">B.Sc - Science</option>
-                                                            <option value="BBA - Management">BBA - Management</option>
-                                                            <option value="CA(Final) - Commerce">CA(Final) - Commerce</option>
-                                                            <option value="CA(Inter) - Commerce">CA(Inter) - Commerce</option>
-                                                            <option value="CS - Commerce">CS - Commerce</option>
-                                                            <option value="M.A. - Arts">M.A. - Arts</option>
-                                                            <option value="M.Com - Commerce">M.Com - Commerce</option>
-                                                            <option value="M.Sc - Science">M.Sc - Science</option>
-                                                            <option value="MBA - Managment">MBA - Managment</option>
+                                                            <option value="TYBCOM">TYBCOM</option>
+                                                            <option value="TYBAF">TYBAF</option>
+                                                            <option value="TYBMS">TYBMS</option>
+                                                            <option value="TYBBI">TYBBI</option>
+                                                            <option value="MCOM">MCOM</option>
+                                                            <option value="BCOM">BCOM</option>
+                                                            <option value="BAF">BAF</option>
+                                                            <option value="BMS">BMS</option>
+                                                            <option value="BBI">BBI</option>
                                                         </select>
                                                     </div>
                                                     <div class="contact-info formField⁠CollegeName">
-                                                        <input id="formField⁠CollegeName" name="institute" type="text" placeholder="Enter Your College & Area Name" autocomplete="off" required>
+                                                        <select id="formField⁠CollegeName" name="institute" type="text" autocomplete="off" required>
+                                                            <option value=""> Select College </option>
+                                                            <option value="Somaiya College">Somaiya College</option>
+                                                            <option value="Ramniranjan Jhunjhunwala College">Ramniranjan Jhunjhunwala College</option>
+                                                            <option value="Laxmichand Golwala College">Laxmichand Golwala College</option>
+                                                            <option value="Vidya Niketan College">Vidya Niketan College</option>
+                                                            <option value="Pune Vidya Bhavan College">Pune Vidya Bhavan College</option>
+                                                            <option value="Universal College">Universal College</option>
+                                                            <option value="Shivaji Technical Night College">Shivaji Technical Night College</option>
+                                                        </select>
                                                     </div>
                                                     <div class="hideshowtextfieldwrap" >
                                                         <div class="register-form-area">
@@ -344,7 +347,7 @@
             <div class="row">
                 <div class="col-12 text-center">
                     <div class="organizar py-3">
-                        <h1 style="font-size: 37px;"> ICA & Dr Bhim Rao Ambedkar College, Job Fair 2025</h1>
+                        <h1 style="font-size: 37px;"> ICA & Gurukul College of Commerce, Job Fair 2025</h1>
                     </div>
                 </div>
             </div>
@@ -352,13 +355,13 @@
                 <div class="col-md-4">
                     <div class="slot py-5">
                         <span> Event Date </span>
-                        <h4> 24th Feb 2025 </h4>
+                        <h4> 17th FEB 2025 </h4>
                     </div>    
                 </div>
                 <div class="col-md-4">
                     <div class="slot py-5">
                         <span> Event Time </span>
-                        <h4> 10 AM to 05.00 PM </h4>
+                        <h4> 9:30 AM to Onwords </h4>
                     </div>
                 </div>
               
@@ -504,7 +507,7 @@
         let globalUrl = "{{ env("APP_URL") }}"
         let isEnableOtp = {{ (get_theme_setting('enable_otp') == "1")?$contentMain->enable_otp:get_theme_setting('enable_otp') }}
         let isAjaxSubmit = "{{ get_theme_setting('ajax_submit') }}"
-        let eventDate = new Date("2025-02-24T09:59:59").getTime();
+        let eventDate = new Date("2025-02-17T09:59:59").getTime();
     </script>
     <script src="{{ url('assets/js/jquery-2.1.4.min.js') }}"></script>
     <script src="{{ url('assets/js/bootstrap.min.js') }}"></script>

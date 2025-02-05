@@ -231,7 +231,6 @@
     padding: 13px 0;
     box-shadow: -4px -3px 4px 0px #697AEF;
 }
-
 </style>
 <header>
     <div id="main-menu"  class="main-menu-container header-style-2">
@@ -250,38 +249,31 @@
         <div class="banner-content p-15 banner-background-gradient">
             <div class="row">
                 <div class="col-12 text-center">
-                    <!--ol class="inner-banner-breadcrumb text-white">
-                        <li class="breadcrumbElement">
-                            <a href="javascript:void(0)">Home</a>
-                            <span> 
-                                <i class="fas fa-chevron-right"> </i>
-                            </span> 
-                        </li>
-                        <li class="breadcrumbElement">
-                            <a href="javascript:void(0)">Courses</a>
-                            <span class="breadcrumbElement"> 
-                                <i class="fas fa-chevron-right"> </i>
-                            </span> 
-                        </li>
-                        <li class="breadcrumbElement">
-                            Advanced Excel Course
-                        </li>
-                    </ol-->
-
                     <div class="ad-banner-content">
                         <div style="padding-top: 20px;">&nbsp;</div>
                     </div>
 
                     <div class="ad-banner-content">
                         <div class="ad-banner-title text-white text-center">
-                            <h1 style="line-height: 1.2em; font-size: 250%;"> Become A Professional Accountant <br /> in 12 Months <h1>
+                            <h1 style="line-height: 1.2em; font-size: 250%; color: #fff!important;"> Become A Professional Accountant <br /> in 12 Months </h1>
                         </div>
                         <div class="ad-banner-option text-white">
                             <div class="mt-4">
-                                <h4>Business Accounting | Direct Tax | Payroll | GST | Business Communication <br /> Advanced Accounts | Advanced Excel | SAP FICO |  TallyPrime | ZOHO Books | Auditing</h4>
+                                <h4 style="color: #fff!important;">Business Accounting | Direct Tax | Payroll | GST | Business Communication <br /> Advanced Accounts | Advanced Excel | SAP FICO |  TallyPrime | ZOHO Books | Auditing</h4>
                             </div>
                         </div>
-
+                            <div class="row">
+                                <div class="col-md-12 text-center bold-font" style=" padding: 5px;">
+                                    <div class="total-rating text-white">
+                                        Rating: <a href="javascript:void(0)" style="color: #fff;" > 5.0 </a>
+                                        <div class="ratings " style="display: inline;margin: 0 6px;">
+                                            <i class="fas fa-star active"></i>
+                                        </div>
+                                        <a href="javascript:void(0)" class="text-white" style="cursor: auto;margin: 0 6px;"></a>( 227373 Ratings</a> <span class="text-white">|</span> <span class="text-white total-enroll" >252894 Students)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
                         <div class="ad-banner-option text-white">
                             <div class="mt-4">
                                 <span style="color:#000; background: #F9B219; padding: 5px 10px; border-radius: 10px; font-size: 16px; font-weight: bold;"><sup>*</sup> 100% Job Guarantee Courses -> <a style="color: blue;" href="#job-guarantee">Know more</a></span>
@@ -305,7 +297,7 @@
                     <div class="col-md-12 col-lg-12" >
                         <div class="ad-banner-option text-white">
                             <div class="text-center mt-4">
-                                <h2>** We Connect Talents With Job Opportunities **</h2>
+                                <h2 class="text-white">** We Connect Talents With Job Opportunities **</h2>
                             </div>
                         </div>
                     </div>    
@@ -361,30 +353,30 @@
         <div class="row">
             <div class="col-12 text-center">
                 <div class="section-usp-container" >
-                    <div class="usp-content"> 
-                        <h2> 500K+ </h2>
-                        <h6> Satisfied Students </h6>
+					<div class="usp-content"> 
+                        <h2 class="text-white"> 500K+ </h2>
+                        <h6 class="text-white"> Satisfied Students </h6>
                     </div>
                     <div class="usp-content"> 
-                        <h2> 100% </h2>
-                        <h6> Job Guarantee </h6>
+                        <h2 class="text-white"> 100% </h2>
+                        <h6 class="text-white"> Job Guarantee </h6>
                     </div>
                     <div class="usp-content"> 
-                        <h2> 25+ </h2>
-                        <h6> Years of Excellence </h6>
+                        <h2 class="text-white"> 26 </h2>
+                        <h6 class="text-white"> Years of Excellence </h6>
                     </div>
                     <div class="usp-content"> 
-                        <h2> 90% </h2>
-                        <h6> Practical Training </h6>
+                        <h2 class="text-white"> 90% </h2>
+                        <h6 class="text-white"> Practical Training </h6>
                     </div>
                     <div class="usp-content"> 
-                        <h2> 9 </h2>
-                        <h6> Simulation Software </h6>
+                        <h2 class="text-white"> 10 </h2>
+                        <h6 class="text-white"> Simulation Software </h6>
                     </div>
                     <div class="usp-content"> 
-                        <h2> ATJ </h2>
-                        <h6> Any Time Job Card </h6>
-                    </div>                    
+                        <h2 class="text-white"> ATJ </h2>
+                        <h6 class="text-white"> Any Time Job Card </h6>
+                    </div>     
                 </div>
             </div>
         </div>
@@ -630,7 +622,7 @@
 <section id="recruiters" class="sponsor-section">
     <div class="container">
         <div class="faq-section-title mb45 headline text-center">
-            <h3 class="gradient-title" > Training Certifications </h3>
+            <h3 class="gradient-title" > Triple Certifications </h3>
             <p> After getting certified in an accounting course, several career opportunities await the aspiring candidates to join. To get the right skill set, invest in your future now. Join the Accounting Certification Program today! </p>
         </div>
         <div class="row" >
@@ -695,10 +687,10 @@
 <div class="global-desktop-cty">
     <div class="container">
         <div class="row" >
-            <div class="col-6" >
-                <h3 style="color: #fff;font-weight: 600;width: 100%;margin: auto;"> Become A Professional Accountant</h3>
+            <div class="col-7 text-right" >
+                <h3 style="color: #fff; font-size:120%!important; font-weight: 600;width: 100%;margin: auto;"> Become A Professional Accountant</h3>
             </div>
-            <div class="col-6 text-right" >
+            <div class="col-5 text-left" style="padding-top: 20px;">
                 <a class="footer-sticky-btn" href="javascript:void(0)"  onclick="lead_capture_form_btn('',{{ $contentMain->id }})" > Apply Now</a>
             </div>
         </div>

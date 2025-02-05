@@ -55,7 +55,7 @@ jQuery('.couse_input').on('change',function(){
 })
 
 jQuery(".add_more_role_btn").on("click",function(){
-	let clonedElement = '<input id="formFieldJobRole" name="job_role[]" type="text" placeholder="What is your job role?" autocomplete="off" class="wizard-required job_role_elem">';
+	let clonedElement = '<div class="row"><div class="col-md-8"><input id="formFieldJobRole" name="job_role[]" type="text" placeholder="What is your job role?" autocomplete="off" class="wizard-required job_role_elem"></div><div class="col-md-4"><input id="formFieldJobRoleTimePeriod" name="job_role_time[]" type="text" placeholder="Total Years" autocomplete="off" class="wizard-required job_role_elem"></div></div>';
 
 	jQuery(".add_more_job_role").append(clonedElement);
 	console.log(clonedElement);
