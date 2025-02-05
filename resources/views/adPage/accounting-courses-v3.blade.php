@@ -68,6 +68,7 @@
   <link href="{{ url('assets/css/ads.css') }}" rel="stylesheet">
   <!-- Main Stylesheet -->
   <link href="{{ url('assets/frontend/theme-v3/styles/main.css') }}" rel="stylesheet" />
+    
 </head>
 
 <header class="header">
@@ -104,7 +105,26 @@
       </svg>
     </label>
     <!-- /navbar toggler -->
-    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-2 hidden w-full flex-[0_0_100%] lg:order-1 lg:flex lg:w-auto lg:flex-auto lg:justify-center lg:space-x-5"
+    >
+      <li class="nav-item">
+        <a href="" class="nav-link active">Home</a>
+      </li>
+      <li class="nav-item">
+        <a href="#about" class="nav-link">Features</a>
+      </li>
+      <li class="nav-item">
+        <a href="#features" class="nav-link">USPs</a>
+      </li>
+      <li class="nav-item">
+        <a href="#features" class="nav-link">Why Choose Us</a>
+      </li>
+      <li class="nav-item">
+        <a href="#testimonial" class="nav-link">Testimonials</a>
+      </li>
+    </ul>
     <div class="order-1 ml-auto hidden items-center md:order-2 md:ml-0 lg:flex">
       <a onclick="lead_capture_form_btn('',3)"  class="btn btn-white" href="javascript:void(0)"> Enroll now </a>
     </div>
@@ -112,20 +132,19 @@
 </header>
 
 <body><!-- Banner -->
-<section class="section banner relative">
+<section class="section banner relative" id="home">
   <div class="container">
     <div class="row items-center">
       <div class="lg:col-7">
         <h1 class="banner-title">
-            Industrial Accounting Courses
+          Learn Certified Industrial Accountant & Get 100% Assured Placement
         </h1>
         <p class="mt-6">
-            100% Job Guarantee | Triple Certifications | 7 Simulation Softwares
+            100% Job Guarantee | Four Certifications | 10 Simulation Softwares
         </p>
         <p class="mt-6">
             Elevate your skills and transform your career with specialized training towards professional excellence
         </p>
-        <a onclick="lead_capture_form_btn('',3)"  class="btn btn-white mt-8" href="javascript:void(0)"> Download Brochure </a>
       </div>
       <div class="lg:col-5">
         <div class="highlighted-content-wrapper text-center">
@@ -199,7 +218,7 @@
 <!-- ./end Banner -->
 
 <!-- Key features -->
-<section class="section key-feature relative">
+<section class="section key-feature relative" id="about">
   <img
     class="absolute left-0 top-0 -z-[1] -translate-y-1/2"
     src="{{ url('assets/frontend/theme-v3/images/icons/feature-shape.svg') }}"
@@ -316,29 +335,38 @@
 <!-- ./end Key features -->
 
 <!-- Services -->
-<section class="section services">
+<section class="section services" id="features">
   <div class="container">
     <div class="tab row gx-5 items-center" data-tab-group="integration-tab">
-      <div class="lg:col-7 lg:order-2">
+      <div class="lg:col-6 lg:order-2">
         <div class="tab-content" data-tab-content>
           <div class="tab-content-panel active" data-tab-panel="0">
-            <img
-              class="w-full object-contain"
-              src="{{ url('assets/frontend/theme-v3/images/sells-by-country.png') }}"
-            />
+            <div class="radious" style="border-radius: 15px;overflow: hidden;width: 80%;text-align: right;">
+              <img
+                class="w-full object-contain"
+                src="{{ url('assets/frontend/theme-v3/images/why_choose_us-min.jpg') }}"
+              />
+            </div>
           </div>
           <div class="tab-content-panel" data-tab-panel="1">
-            <img class="w-full object-contain" src="{{ url('assets/frontend/theme-v3/images/collaboration.png') }}" />
+            <div class="radious" style="border-radius: 15px;overflow: hidden;width: 80%;text-align: right;">
+              <img
+                class="w-full object-contain"
+                src="{{ url('assets/frontend/theme-v3/images/why_choose_us-min.jpg') }}"
+              />
+            </div>
           </div>
           <div class="tab-content-panel" data-tab-panel="2">
-            <img
-              class="w-full object-contain"
-              src="{{ url('assets/frontend/theme-v3/images/sells-by-country.png') }}"
-            />
+            <div class="radious" style="border-radius: 15px;overflow: hidden;width: 80%;text-align: right;">
+              <img
+                class="w-full object-contain"
+                src="{{ url('assets/frontend/theme-v3/images/why_choose_us-min.jpg') }}"
+              />
+            </div>
           </div>
         </div>
       </div>
-      <div class="mt-6 lg:col-5 lg:order-1 lg:mt-0">
+      <div class="mt-6 lg:col-6 lg:order-1 lg:mt-0">
         <div class="text-container">
           <h2 class="lg:text-4xl">
             Why do Accounting Training from ICA Edu Skills?
@@ -413,10 +441,10 @@
       <div class="mt-6 lg:col-5 lg:mt-0">
         <div class="text-container">
           <h2 class="lg:text-4xl">
-            How Accounting Training Classes Works?
+            How Our Training Process Works?
           </h2>
           <p class="mt-4">
-          Ammended accounting course modules to keep you on track with the industry
+          ICA Edu Skills leads in practical training with assured placements. Our training includes:
           </p>
           <ul class="mt-6 text-dark lg:-ml-4">
             <li class="flex items-center rounded px-4">
@@ -425,7 +453,7 @@
                 src="{{ url('assets/frontend/theme-v3/images/icons/checkmark-circle.svg') }}"
                 alt=""
               />
-              Up-to-Date Accounts Syllabus
+              Expert-led classroom sessions by CA faculty
             </li>
             <li class="flex items-center rounded px-4">
               <img
@@ -433,7 +461,7 @@
                 src="{{ url('assets/frontend/theme-v3/images/icons/checkmark-circle.svg') }}"
                 alt=""
               />
-              Get Hands on Experience
+              Hands-on learning with 10 simulation software
             </li>
             <li class="flex items-center rounded px-4">
               <img
@@ -441,7 +469,7 @@
                 src="{{ url('assets/frontend/theme-v3/images/icons/checkmark-circle.svg') }}"
                 alt=""
               />
-              Get Doubts Cleared
+              Rigorous assignments for skill evaluation
             </li>
             <li class="flex items-center rounded px-4">
               <img
@@ -449,7 +477,7 @@
                 src="{{ url('assets/frontend/theme-v3/images/icons/checkmark-circle.svg') }}"
                 alt=""
               />
-              Test Your Knowledge
+              6-month paid internship for real-world experience
             </li>
             <li class="flex items-center rounded px-4">
               <img
@@ -457,16 +485,9 @@
                 src="{{ url('assets/frontend/theme-v3/images/icons/checkmark-circle.svg') }}"
                 alt=""
               />
-              Sit for the Final Exam
+              100% guaranteed placement upon course completion
             </li>
-            <li class="flex items-center rounded px-4">
-              <img
-                class="mr-3"
-                src="{{ url('assets/frontend/theme-v3/images/icons/checkmark-circle.svg') }}"
-                alt=""
-              />
-              Get Industry Recognized Certification
-            </li>
+           
           </ul>
         </div>
       </div>
@@ -477,7 +498,7 @@
           <div class="video-thumbnail overflow-hidden rounded-2xl">
             <img
               class="w-full object-contain"
-              src="{{ url('assets/frontend/theme-v3/images/intro-thumbnail.png') }}"
+              src="{{ url('assets/frontend/theme-v3/images/video-thumb.jpeg') }}"
               alt=""
             />
             <button class="video-play-btn">
@@ -490,7 +511,7 @@
             <iframe
               class="h-full w-full"
               allowfullscreen=""
-              src="https://www.youtube.com/embed/g3-VxLQO7do?autoplay=1"
+              src="https://www.youtube.com/watch?v=WurU2MMqI6Y"
             ></iframe>
           </div>
           <img
@@ -517,16 +538,15 @@
 <!-- ./end Services -->
 
 <!-- Reviews -->
-<section class="reviews">
+<section class="reviews" id="testimonial">
   <div class="container">
     <div class="row justify-between">
       <div class="lg:col-6">
-        <h2>Learn from Market Experts</h2>
+        <h2>Hear from Our Students</h2>
       </div>
-      <div class="lg:col-4">
+      <div class="lg:col-6">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas
-          Werat viverra id et aliquet. vulputate egestas sollicitudin .
+          Our students share inspiring stories of personal and academic growth, highlighting their success and transformative learning experiences. Their testimonials reflect the impact of our supportive community and quality education.
         </p>
       </div>
     </div>
@@ -537,10 +557,7 @@
             @foreach(getTestimonials() as $testimonial)
             <div class="swiper-slide">
               <div class="review">
-                <div class="review-author-avatar" style="
-    border: 1px solid;
-    overflow: hidden;
-">
+                <div class="review-author-avatar" style="border: 1px solid;overflow: hidden;">
                     <img src="{{ (isset($testimonial->featured_image))?getSizedImage('',$testimonial->featured_image):'https://dummyimage.com/140x140' }}" alt="">	
                 </div>
                 <h4 class="mb-2">{{ $testimonial->name }}</h4>
@@ -579,14 +596,12 @@
       <div class="lg:col-11">
         <div class="row">
           <div class="lg:col-7">
-            <h2 class="h1 text-white">Helping teams in the world with focus</h2>
-            <a class="btn btn-white mt-8" href="#">Download The Theme</a>
+            <h2 class="h1 text-white">Want to know more about our Courses?</h2>
+            <a class="btn btn-white mt-8" href="#home">Download Brochure</a>
           </div>
           <div class="mt-8 lg:col-5 lg:mt-0">
             <p class="text-white">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-              egestas Werat viverra id et aliquet. vulputate egestas
-              sollicitudin .
+            We offer Job Guarantee and Skill Development programs designed to provide practical industry exposure and boost employability. Would you like to learn more?
             </p>
           </div>
         </div>

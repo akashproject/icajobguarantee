@@ -442,7 +442,7 @@
 
                         </div>
                         <div class="agenda-content message_container p-5" style="width: 100%;">
-                            <h3> *Held under Department of Commerce, Dr Bhim Rao Ambedkar College, for college students, graduate and working professional. </h3>
+                            <h3> *Held under Department of Commerce, Gurukul College, for college students, graduate and working professional. </h3>
                         </div>
                     </div>
                 </div>
