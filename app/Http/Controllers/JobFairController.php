@@ -26,7 +26,6 @@ class JobFairController extends Controller
                 "name" => "required",
                 "mobile" => "required",
             ]);
-
             $nameArray = explode(" ", $postData["name"]);
             $postData["firstname"] = current(explode(" ", $postData["name"]));
             unset($nameArray["0"]);
@@ -69,7 +68,7 @@ class JobFairController extends Controller
             Session::put('lead_id',$leadFromdb->id);
 
             $this->b2cLeadCaptureToExtraage($postData);
-            $this->cognoai_api_calling($postData,"225631"); 
+            $this->cognoai_api_calling($postData,"225974"); 
 
             return redirect("/job-fair-thank-you");
         } catch (\Illuminate\Database\QueryException $e) {

@@ -147,6 +147,7 @@
                                                                     <input id="{{$key}}_{{$childKey}}" name="course[]" class="form-check-input me-1" type="checkbox" value="{{$course}}" aria-label="..." /> {{ $course }}
                                                             </label>
                                                         </li>
+                                                        
                                                         @endforeach
                                                     </ul>
                                                     @endforeach

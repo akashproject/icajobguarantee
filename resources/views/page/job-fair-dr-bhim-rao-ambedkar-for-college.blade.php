@@ -126,7 +126,7 @@
             background-color: #f2f5fa!important;
         }
         .navbar-header.float-left {
-            padding-top: 16px;
+            padding-top: 38px;
         }
         .slot_content {
             border: 1px solid #ccc;
@@ -146,6 +146,9 @@
         }
         .mobile {
             display: none;
+        }
+        a.navbar-brand.text-uppercase img {
+            width: 35% !important;
         }
         @media screen and (max-width: 767px) {
             .banner_header h1 {
@@ -177,24 +180,30 @@
 <body>
     <header>
 		<div id="main-menu" class="main-menu-container header-style-2" style="box-shadow:-1px -1px 4px;margin: 0;padding: 0;">
-			<div class="main-menu py-1" style="height: 100px;">
+			<div class="main-menu py-1" style="height: 118px;">
 				<div class="container">
-					<div class="navbar-default desktop" style="display: flex;">
-						<div class="navbar-header float-left">
-							<a class="navbar-brand text-uppercase" href="javascript:void(0)"><img src="{{ url('assets/images/logo.png') }}" alt="ICA Edu Skills" style="width: 100%;"></a>
-						</div><!-- /.navbar-header -->						
-						<!-- Collect the nav links, forms, and other content for toggling -->
-						<div class="navbar-header float-right" style="width: auto;text-align: right;">
-							<a class="navbar-brand text-uppercase" href="javascript:void(0)"  style="text-align: center;"> 
-                                <img src="{{ url('assets/img/gurukul-college-west.png') }}" alt="ICA Edu Skills" style="width: 41%;">
+					<div class="navbar-default desktop" style="display: flex;justify-content: center;">
+						<div class="navbar-header">
+							<a class="navbar-brand text-uppercase" href="javascript:void(0)" style="text-align: left;">
+                                <img src="{{ url('assets/img/ica-logo.png') }}" alt="ICA Edu Skills" style="width: 100%;">
                             </a>
-						</div><!-- /.navbar-header -->		
+						</div>
+						<div class="navbar-header">
+							<a class="navbar-brand text-uppercase" href="javascript:void(0)"  style="text-align: center;"> 
+                                <img src="{{ url('assets/img/bhim-rao-logo.png') }}" alt="ICA Edu Skills" style="width: 100%;">
+                            </a>
+						</div>
+                        <div class="navbar-header">
+							<a class="navbar-brand text-uppercase" href="javascript:void(0)"  style="text-align: right;"> 
+                                <img src="{{ url('assets/img/commerce-logo.png') }}" alt="ICA Edu Skills" style="width: 100%;">
+                            </a>
+						</div>
 					</div>
-                    <div class="navbar-default mobile">
-						<div class="navbar-header text-center">
-							<a class="navbar-brand text-uppercase" href="javascript:void(0)"><img src="{{ url('assets/images/gurukul-logo.png') }}" alt="ICA Edu Skills" style="width: 100%;"></a>
-						</div><!-- /.navbar-header -->						
-						
+                    <div class="navbar-default mobile" >
+						<div class="navbar-header float-left">
+							<a class="navbar-brand text-uppercase" href="javascript:void(0)" style="width: 100%;">
+                                <img src="{{ url('assets/images/bhim-logo.png') }}" alt="ICA Edu Skills" style="width: 100% !important;"></a>
+						</div><!-- /.navbar-header -->	
 					</div>
 				</div>
 			</div>
@@ -208,7 +217,7 @@
                     <div class="col-md-8 py-2">
                         <div class="banner_container">
                             <div class="banner_header">
-                                <h1 style="color: #e53d3f;text-align: center;">Mumbai’s Biggest Job Fair*</h1>
+                                <h1 style="color: #e53d3f;text-align: center;">Delhi’s Biggest Job Fair*</h1>
                                 <h2 style="text-align:center;font-weight: 600;font-size: 41px;">Unlock Your Dream Career!</h2 style="font-">
                             </div>
                             <div class="text-center py-3">
@@ -222,7 +231,11 @@
                                     <span id="seconds"></span>S
                                 </div>
                             </div>
-                           
+                            <div class="banner_content">
+                                <div class="text-center">
+                                    <h5 style="color:#ff0000"> <strong>**No entry without registration.**</strong> </h5>
+                                </div>
+                            </div>
 
                         </div>
                         
@@ -248,7 +261,7 @@
                                 </div>
 
                                 <div class="register-form-area text-left" >
-                                    <form id="banner_lead_capture_form" class="lead_form" action="{{ url('job-fair-capture-lead') }}" method="POST" enctype="multipart/form-data">
+                                    <form id="banner_lead_capture_form" class="lead_form" action="{{ url('job-fair-bhim-rao-ambedkar-college') }}" method="POST" enctype="multipart/form-data">
                                         <div class="form_process" >
                                             <div class="lead_steps step1 active"> 
                                                 <div class="field_step_1" >
@@ -269,35 +282,25 @@
                                                     <div class="register-form-area">
                                                         <select class="batch_applied" name="qualification" required>
                                                             <option value=""> Select Qualifications </option>
-                                                            <option value="TYBCOM">TYBCOM</option>
-                                                            <option value="TYBAF">TYBAF</option>
-                                                            <option value="TYBMS">TYBMS</option>
-                                                            <option value="TYBBI">TYBBI</option>
-                                                            <option value="MCOM">MCOM</option>
-                                                            <option value="BCOM">BCOM</option>
-                                                            <option value="BAF">BAF</option>
-                                                            <option value="BMS">BMS</option>
-                                                            <option value="BBI">BBI</option>
+                                                            <option value="10+2 - Arts">10+2 - Arts</option>
+                                                            <option value="10+2 - Commerce">10+2 - Commerce</option>
+                                                            <option value="10+2 - Science">10+2 - Science</option>
+                                                            <option value="B.A. - Arts">B.A. - Arts</option>
+                                                            <option value="B.Com - Commerce">B.Com - Commerce</option>
+                                                            <option value="B.Com(H) - Commerce">B.Com(H) - Commerce</option>
+                                                            <option value="B.Sc - Science">B.Sc - Science</option>
+                                                            <option value="BBA - Management">BBA - Management</option>
+                                                            <option value="CA(Final) - Commerce">CA(Final) - Commerce</option>
+                                                            <option value="CA(Inter) - Commerce">CA(Inter) - Commerce</option>
+                                                            <option value="CS - Commerce">CS - Commerce</option>
+                                                            <option value="M.A. - Arts">M.A. - Arts</option>
+                                                            <option value="M.Com - Commerce">M.Com - Commerce</option>
+                                                            <option value="M.Sc - Science">M.Sc - Science</option>
+                                                            <option value="MBA - Managment">MBA - Managment</option>
                                                         </select>
                                                     </div>
                                                     <div class="contact-info formField⁠CollegeName">
-                                                        <div class="register-form-area">
-                                                            <select class="institute hide_show_text_field" name="institute" type="text" autocomplete="off" required>
-                                                                <option value=""> Select College </option>
-                                                                <option value="Gurukul College">Gurukul College</option>
-                                                                <option value="Somaiya College">Somaiya College</option>
-                                                                <option value="Ramniranjan Jhunjhunwala College">Ramniranjan Jhunjhunwala College</option>
-                                                                <option value="Laxmichand Golwala College">Laxmichand Golwala College</option>
-                                                                <option value="Vidya Niketan College">Vidya Niketan College</option>
-                                                                <option value="Pune Vidya Bhavan College">Pune Vidya Bhavan College</option>
-                                                                <option value="Universal College">Universal College</option>
-                                                                <option value="Shivaji Technical Night College">Shivaji Technical Night College</option>
-                                                                <option value="Other">Other</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="contact-info formFieldSpecifyCollege" style="display:none" >
-                                                            <input id="formFieldSpecifyCollege" name="other_institute" type="text" placeholder="Please Specity" autocomplete="off" required>
-                                                        </div>
+                                                        <input id="formField⁠CollegeName" name="institute" type="text" placeholder="Enter Your College & Area Name" autocomplete="off" required>
                                                     </div>
                                                     <div class="hideshowtextfieldwrap" >
                                                         <div class="register-form-area">
@@ -364,7 +367,7 @@
             <div class="row">
                 <div class="col-12 text-center">
                     <div class="organizar py-3">
-                        <h1 style="font-size: 37px;"> ICA & Gurukul College of Commerce, Job Fair 2025</h1>
+                        <h1 style="font-size: 37px;"> ICA & Dr Bhim Rao Ambedkar College, Job Fair 2025</h1>
                     </div>
                 </div>
             </div>
@@ -372,20 +375,20 @@
                 <div class="col-md-4">
                     <div class="slot py-5">
                         <span> Event Date </span>
-                        <h4> 17th FEB 2025 </h4>
+                        <h4> 24th Feb 2025 </h4>
                     </div>    
                 </div>
                 <div class="col-md-4">
                     <div class="slot py-5">
                         <span> Event Time </span>
-                        <h4> 9:30 AM Onwards </h4>
+                        <h4> 10 AM to 05.00 PM </h4>
                     </div>
                 </div>
               
                 <div class="col-md-4">
                     <div class="slot py-5">
                         <span> Eligibility </span>
-                        <h4 style="font-size: 18px;">Pass out and Final year students of TYBCOM/ TYBAF/ TYBBI/ TYBMS/ M.COM</h4>
+                        <h4>B.Com, M.Com, BBA, BA(OMSP, HRM)</h4>
                     </div>
                 </div>
             </div>
@@ -448,7 +451,13 @@
             </div>
         </div>
     </section>
-
+    <section class="section-padding" >
+        <div class="container">
+            <div class="row" style="background: #393185;">
+                <h2 class="text-white"> Note:-Employability test along FREE workshops are mandatory to avail job fair pass.</h2>
+            </div>
+        </div>
+    </section>
     <section class="section-padding">
         <div class="container">
             <div class="row">
@@ -459,7 +468,7 @@
 
                         </div>
                         <div class="agenda-content message_container p-5" style="width: 100%;">
-                            <h3> *Held for college students, graduate and working professional. </h3>
+                            <h3> *Held under Department of Commerce, Dr Bhim Rao Ambedkar College, for college students, graduate and working professional. </h3>
                         </div>
                     </div>
                 </div>
@@ -524,7 +533,7 @@
         let globalUrl = "{{ env("APP_URL") }}"
         let isEnableOtp = {{ (get_theme_setting('enable_otp') == "1")?$contentMain->enable_otp:get_theme_setting('enable_otp') }}
         let isAjaxSubmit = "{{ get_theme_setting('ajax_submit') }}"
-        let eventDate = new Date("2025-02-17T09:59:59").getTime();
+        let eventDate = new Date("2025-02-24T09:59:59").getTime();
     </script>
     <script src="{{ url('assets/js/jquery-2.1.4.min.js') }}"></script>
     <script src="{{ url('assets/js/bootstrap.min.js') }}"></script>

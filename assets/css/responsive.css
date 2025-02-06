@@ -419,6 +419,11 @@
 		border-bottom: 29px solid transparent;
 		border-left: 29px solid #616cfc;
 	}
+
+	.desktop {
+		display: none;
+	}
+	
 	
 }
 @media screen and (max-width: 480px) { 

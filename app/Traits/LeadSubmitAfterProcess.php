@@ -59,14 +59,14 @@ trait LeadSubmitAfterProcess
             "Textb2" => $postData["utm_adgroup"],
             "Textb3" => $postData["utm_content"],
             "Textb10" => $postData["utm_creative"],
-            "BatchApplied" => isset($postData["qualification"])
-                ? $postData["qualification"]
-                : "",
-            "Textb4" => isset($postData["institute"])
-                ? $postData["institute"]
-                : "",
+            "BatchApplied" => isset($postData["qualification"])? $postData["qualification"]: "",
+            "Textb4" => isset($postData["institute"])? $postData["institute"]: "",
             "Remarks" => '',
         ];
+
+        if(isset($postData["institute"]) && $postData["institute"] == "Other" ) {
+            $apiData['Textb4'] = $postData['institute'].':'.$postData["other_institute"];
+        }
 
         if(isset($postData["experience"]) && $postData["experience"] == "Other" ) {
             $apiData['Experience'] = $postData['experience'].':'.$postData["other_experience"];
@@ -78,7 +78,7 @@ trait LeadSubmitAfterProcess
             $apiData['Remarks'] = $apiData['Remarks'].' '.$postData["career_option"];
         }
         if(isset($postData["career_option"]) && $postData["career_option"] == "Other"){
-            $apiData['Remarks'] = " ".$apiData['Remarks'].' '.$postData['career_option'].':'.$postData["other_career_option"];
+            $apiData['Remarks'] = " ".$apiData['Remarks'].' :'.$postData["other_career_option"];
         }
         //ExtraaedgeApiRequest::dispatch($apiData);
 
