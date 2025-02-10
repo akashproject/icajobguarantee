@@ -144,6 +144,17 @@
         button.submit_classroom_lead_generation_form.form_step_1 {
             display: none;
         }
+        .slot_content h4 {
+            background: #853167;
+            color: #ffff;
+            padding: 10px 0;
+        }
+        .mobile {
+            display: none;
+        }
+        a.navbar-brand.text-uppercase img {
+            width: 35% !important;
+        }
         @media screen and (max-width: 767px) {
             .banner_header h1 {
                 font-size: 36px;
@@ -153,6 +164,12 @@
             }
             .navbar-header.float-left {
                 padding-top: 0;
+            }
+            .desktop {
+                display: none !important;
+            }
+            .mobile {
+                display: block;
             }
         }
     </style>
@@ -167,19 +184,31 @@
 </head>
 <body>
     <header>
-		<div id="main-menu" class="main-menu-container header-style-2" style="box-shadow:-1px -1px 4px;margin: 0;padding: 0;">
+    <div id="main-menu" class="main-menu-container header-style-2" style="box-shadow:-1px -1px 4px;margin: 0;padding: 0;">
 			<div class="main-menu py-1" style="height: 118px;">
 				<div class="container">
-					<div class="navbar-default">
-						<div class="navbar-header float-left">
-							<a class="navbar-brand text-uppercase" href="javascript:void(0)"><img src="{{ url('assets/images/logo.png') }}" alt="ICA Edu Skills" style="width: 100%;"></a>
-						</div><!-- /.navbar-header -->						
-						<!-- Collect the nav links, forms, and other content for toggling -->
-						<div class="navbar-header float-right" style="width: auto;text-align: right;">
-							<a class="navbar-brand text-uppercase" href="javascript:void(0)"  style="text-align: center;"> 
-                                <img src="{{ url('assets/img/dr-bhim-rao-ambedkar-college-logo.jpg') }}" alt="ICA Edu Skills" style="width: 20%;">
+					<div class="navbar-default desktop" style="display: flex;justify-content: center;">
+						<div class="navbar-header">
+							<a class="navbar-brand text-uppercase" href="javascript:void(0)" style="text-align: left;">
+                                <img src="{{ url('assets/img/ica-logo.png') }}" alt="ICA Edu Skills" style="width: 100%;">
                             </a>
-						</div><!-- /.navbar-header -->		
+						</div>
+						<div class="navbar-header">
+							<a class="navbar-brand text-uppercase" href="javascript:void(0)"  style="text-align: center;"> 
+                                <img src="{{ url('assets/img/bhim-rao-logo.png') }}" alt="ICA Edu Skills" style="width: 100%;">
+                            </a>
+						</div>
+                        <div class="navbar-header">
+							<a class="navbar-brand text-uppercase" href="javascript:void(0)"  style="text-align: right;"> 
+                                <img src="{{ url('assets/img/commerce-logo.png') }}" alt="ICA Edu Skills" style="width: 100%;">
+                            </a>
+						</div>
+					</div>
+                    <div class="navbar-default mobile" >
+						<div class="navbar-header float-left">
+							<a class="navbar-brand text-uppercase" href="javascript:void(0)" style="width: 100%;">
+                                <img src="{{ url('assets/images/bhim-logo.png') }}" alt="ICA Edu Skills" style="width: 100% !important;"></a>
+						</div><!-- /.navbar-header -->	
 					</div>
 				</div>
 			</div>

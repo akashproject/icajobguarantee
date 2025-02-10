@@ -144,12 +144,6 @@
         button.submit_classroom_lead_generation_form.form_step_1 {
             display: none;
         }
-        .mobile {
-            display: none;
-        }
-        a.navbar-brand.text-uppercase img {
-            width: 35% !important;
-        }
         @media screen and (max-width: 767px) {
             .banner_header h1 {
                 font-size: 36px;
@@ -159,12 +153,6 @@
             }
             .navbar-header.float-left {
                 padding-top: 0;
-            }
-            .desktop {
-                display: none !important;
-            }
-            .mobile {
-                display: block;
             }
         }
     </style>
@@ -182,28 +170,17 @@
 		<div id="main-menu" class="main-menu-container header-style-2" style="box-shadow:-1px -1px 4px;margin: 0;padding: 0;">
 			<div class="main-menu py-1" style="height: 118px;">
 				<div class="container">
-					<div class="navbar-default desktop" style="display: flex;justify-content: center;">
-						<div class="navbar-header">
-							<a class="navbar-brand text-uppercase" href="javascript:void(0)" style="text-align: left;">
-                                <img src="{{ url('assets/img/ica-logo.png') }}" alt="ICA Edu Skills" style="width: 100%;">
-                            </a>
-						</div>
-						<div class="navbar-header">
-							<a class="navbar-brand text-uppercase" href="javascript:void(0)"  style="text-align: center;"> 
-                                <img src="{{ url('assets/img/bhim-rao-logo.png') }}" alt="ICA Edu Skills" style="width: 100%;">
-                            </a>
-						</div>
-                        <div class="navbar-header">
-							<a class="navbar-brand text-uppercase" href="javascript:void(0)"  style="text-align: right;"> 
-                                <img src="{{ url('assets/img/commerce-logo.png') }}" alt="ICA Edu Skills" style="width: 100%;">
-                            </a>
-						</div>
-					</div>
-                    <div class="navbar-default mobile" >
+					<div class="navbar-default">
 						<div class="navbar-header float-left">
-							<a class="navbar-brand text-uppercase" href="javascript:void(0)" style="width: 100%;">
-                                <img src="{{ url('assets/images/bhim-logo.png') }}" alt="ICA Edu Skills" style="width: 100% !important;"></a>
-						</div><!-- /.navbar-header -->	
+							<a class="navbar-brand text-uppercase" href="javascript:void(0)"><img src="{{ url('assets/images/logo.png') }}" alt="ICA Edu Skills" style="width: 100%;"></a>
+						</div><!-- /.navbar-header -->						
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="navbar-header float-right" style="width: auto;text-align: right;">
+							<a class="navbar-brand text-uppercase" href="javascript:void(0)"  style="text-align: center;"> 
+                                <img src="{{ url('assets/img/dr-bhim-rao-ambedkar-college-logo.jpg') }}" alt="ICA Edu Skills" style="width: 20%;">
+                                <p style="margin: 0;font-size: 14px;"> <strong> Department of commerce </strong></p>
+                            </a>
+						</div><!-- /.navbar-header -->		
 					</div>
 				</div>
 			</div>
@@ -266,9 +243,6 @@
                                             <div class="lead_steps step1 active"> 
                                                 <div class="field_step_1" >
                                                     @include('common.leadCaptureFormField')
-                                                    <div class="contact-info formField⁠CollegeName">
-                                                        <input id="formField⁠CollegeName" name="institute" type="text" value="DR BHIM RAO AMBEDKAR COLLEGE" autocomplete="off" readonly>
-                                                    </div>
                                                     <div class="nws-button text-center white text-capitalize">
                                                         <button class="submit_classroom_lead_generation_form form_step_btn" type="button" disabled> Next <i class="fas fa-arrow-right" > </i> </button> 
                                                         <img src="https://www.icacourse.in/wp-content/themes/scriptcrown/images/loader.gif" style="width: 42px; display:none;" class="checkout_loader">
@@ -301,6 +275,9 @@
                                                             <option value="M.Sc - Science">M.Sc - Science</option>
                                                             <option value="MBA - Managment">MBA - Managment</option>
                                                         </select>
+                                                    </div>
+                                                    <div class="contact-info formField⁠CollegeName">
+                                                        <input id="formField⁠CollegeName" name="institute" type="text" placeholder="Enter Your College & Area Name" autocomplete="off" required>
                                                     </div>
                                                     <div class="hideshowtextfieldwrap" >
                                                         <div class="register-form-area">
@@ -388,7 +365,7 @@
                 <div class="col-md-4">
                     <div class="slot py-5">
                         <span> Eligibility </span>
-                        <h4>B.Com, M.Com, BBA, BA(OMSP, HRM)</h4>
+                        <h4>B.Com, M.Com, MBA, BBA, BA(OMSP, HRM)</h4>
                     </div>
                 </div>
             </div>
@@ -451,13 +428,7 @@
             </div>
         </div>
     </section>
-    <section class="section-padding" >
-        <div class="container">
-            <div class="row" style="background: #393185;">
-                <h2 class="text-white"> Note:-Employability test along FREE workshops are mandatory to avail job fair pass.</h2>
-            </div>
-        </div>
-    </section>
+
     <section class="section-padding">
         <div class="container">
             <div class="row">
