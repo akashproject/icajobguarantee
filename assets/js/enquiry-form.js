@@ -54,6 +54,14 @@ jQuery('.couse_input').on('change',function(){
 	jQuery(this).parents(".wizerd_set").children(".wizerd_fieldset").show();
 })
 
+jQuery('.lead_prefference').on('change',function(){
+	console.log(jQuery(this).attr("id"));
+	
+	
+	jQuery(".lead_preference_selection").removeClass('active');
+	jQuery("."+jQuery(this).attr("id")).addClass('active');
+});
+
 jQuery(".add_more_role_btn").on("click",function(){
 	let clonedElement = '<div class="row"><div class="col-md-8"><input id="formFieldJobRole" name="job_role[]" type="text" placeholder="What is your job role?" autocomplete="off" class="wizard-required job_role_elem"></div><div class="col-md-4"><input id="formFieldJobRoleTimePeriod" name="job_role_time[]" type="text" placeholder="Total Years" autocomplete="off" class="wizard-required job_role_elem"></div></div>';
 
@@ -72,39 +80,5 @@ jQuery("#onClickSendOtp").on("click",function(e){
 	} else {
 		alert('Form is invalid!');
 	}
-	
 	return false;
 });
-// jQuery('.form-wizard-previous-btn').click(function() {
-	
-//     var previous = jQuery(this);
-// 	previous.parents('.wizerd_fieldset').addClass("active","400");
-// 	jQuery(this).parents('.wizerd_fieldset').hide();
-// 	jQuery(this).parents(".wizerd_set").children(".wizerd_welcome_screen").show();
-// });
-
-// jQuery('.form-wizard-next-btn').click(function() {
-
-// 	console.log("hello",screenCount);
-// 	screenCount++;
-//     var parentFieldset = jQuery(this).parents('.wizard-fieldset');
-//     var next = jQuery(this);
-//     var nextWizardStep = true;
-//     var currentActiveStep = jQuery(this).parents('.form-wizard-panel').find('.form-wizard-steps .active');
-// 	var currentWelcomeScreen = jQuery(this).parents('.form_process').children().find('.welcome_message_wrap .active');
-    
-//     parentFieldset.find('.wizard-required').each(function(){
-//         var thisValue = jQuery(this).valid();
-//         if(!thisValue){
-//             nextWizardStep = false;
-//         }
-//     });
-
-//     if(nextWizardStep) {
-//         next.parents('.wizard-fieldset').removeClass("active","400");
-// 		console.log("hello",screenCount);
-// 		jQuery(".welcome_message_wrap").removeClass('active');
-// 		jQuery(".welcome_message_wrap.screen_"+screenCount).addClass('active');
-//     }
-	
-// });

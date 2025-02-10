@@ -354,7 +354,8 @@ Route::post('/center/get-center-by-pincode', [App\Http\Controllers\IndexControll
 Route::get('/events/{slug}', [App\Http\Controllers\EventController::class, 'index'])->name('view-event');
 Route::any('/index/test-code', [App\Http\Controllers\IndexController::class, 'testCode'])->name('test-code');
 Route::any('/global-other-form-submit', [App\Http\Controllers\IndexController::class, 'globalFormSubmit'])->name('global-other-form-submit');
-Route::any('/enquiry-form-submit', [App\Http\Controllers\IndexController::class, 'enquiryFormSubmit'])->name('enquiry-form-submit');
+Route::any('/enquiry-form-submit', [App\Http\Controllers\StudentController::class, 'enquiryFormSubmit'])->name('enquiry-form-submit');
+
 Route::post('/index/payment-success', [App\Http\Controllers\IndexController::class, 'paymentSuccess'])->name('payment-success');
 Route::post('/index/payment-failed', [App\Http\Controllers\IndexController::class, 'paymentFailed'])->name('payment-failed');
 Route::get('/update-lead-status/{id}', [App\Http\Controllers\IndexController::class, 'updateLeadStatus'])->name('update-lead-status');

@@ -178,7 +178,6 @@
 						<div class="navbar-header float-right" style="width: auto;text-align: right;">
 							<a class="navbar-brand text-uppercase" href="javascript:void(0)"  style="text-align: center;"> 
                                 <img src="{{ url('assets/img/dr-bhim-rao-ambedkar-college-logo.jpg') }}" alt="ICA Edu Skills" style="width: 20%;">
-                                <p style="margin: 0;font-size: 14px;"> <strong> Department of commerce </strong></p>
                             </a>
 						</div><!-- /.navbar-header -->		
 					</div>
