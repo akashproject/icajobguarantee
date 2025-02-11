@@ -1,479 +1,276 @@
 @extends('layouts.ad-main')
-
 @section('content')
-
 <style>
-
-    
-
     .placement-grid {
-
         border-radius: 15px;
-
         overflow: hidden;
-
         padding: 0;
-
         text-align: center;
-
         margin-top: 10px;
-
         position: relative;
-
     }
 
     .placement-student-name {
-
         background: #fff;
-
         border-radius: 7px;
-
         color: #333;
-
         width: 100%;
-
         margin: auto;
-
         text-align: center;
-
         padding: 8px 0;
-
         position: absolute;
-
         bottom: -35px;
-
     }
 
     .placement-student-name h5 {
-
         font-size: 12px;
-
         margin: 0;
-
     }
 
     .placement-grid {
-
         border-radius: 15px;
-
         overflow: visible;
-
         padding: 0;
-
         text-align: center;
-
         margin-top: 40px;
-
         position: relative;
-
         border: none;
-
         width: 110px;
-
         height: 110px;
-
     }
 
     .placement-grid-container {
-
         width: 80%;
-
         margin: auto;
-
     }
 
     .placement-grid img {
-
         border-radius: 10px;
-
         width: 140px;
-
         height: 137px;
-
     }
 
-
-
     .recruiters-grid {
-
         border-image: linear-gradient(#322fe7, #945ac7) 20;
-
         border-style: solid;
-
         border-width: 2px;
-
     }
 
     .section-usp-container {
-
         width: 80%;
-
         margin: auto;
-
     }
 
     .section-usp-container .usp-content h2 {
-
         font-size: 17px;
-
     }
 
     .section-usp-container .usp-content h6 {
-
         font-size: 15px;
-
 		font-weight: normal;
-
     }	
 
     .usp-content {
-
         float: left;
-
         width: 33%;
-
         padding: 3rem;
-
         color: #fff;
-
         border: 0.5px solid;
-
         height: 220px;
-
         text-align: center;
-
         padding-top: 3.5rem;
-
     }
 
     .job-guarantee-timeline {
-
         position: relative;
-
     }
 
     .how-it-works-container.aic {
-
         justify-content: flex-end;
-
     }
 
     .how-it-works-container.aic.rev {
-
-        justify-content: flex-start;
-
+     justify-content: flex-start;
     }
 
     .how-it-works-container {
-
         z-index: 3;
-
         align-items: center;
-
         margin-bottom: 2rem;
-
         display: flex;
-
         position: relative;
-
     }
 
     .div-block-608 {
-
         max-width: 45.1%;
-
         padding: 1px;
-
     }
 
     .how-it-works-item {
-
         grid-row-gap: 12px;
-
         color: rgba(255,255,255,.8);
-
         text-align: left;
-
         border-radius: 16px;
-
         flex-direction: column;
-
         display: flex;
-
     }
 
     .hiw-heading {
-
         color: #fff;
-
         font-family: IBM Plex Sans Condensed,sans-serif;
-
         font-size: 1.5rem;
-
         font-weight: 500;
-
         line-height: 1.25;
-
     }
 
     .d2c-stroke-circle {
-
         background-color: #fff;
-
         border-radius: 50px;
-
         position: absolute;
-
         top: 0%;
-
         bottom: auto;
-
         left: 50%;
-
         right: auto;
-
         transform: translate(-50%,-50%);
-
     }
 
     .d2c-stroke-circle.cyber.pm {
-
         width: 32px;
-
         height: 32px;
-
         background-color: transparent;
-
         background-image: linear-gradient(rgba(255,255,255,.21),rgba(255,255,255,0) 34%),radial-gradient(circle at 0 0,#602ea6,#c977d6);
-
         border: .5px solid rgba(255,255,255,.45);
-
         justify-content: center;
-
         align-items: center;
-
         display: flex;
-
         top: 20px;
-
     }
 
     .div-block-993.how-it-works.aic {
-
         height: 78%;
-
         top: 24px;
-
     }
 
     .div-block-993.how-it-works {
-
         z-index: 0;
-
         height: 93%;
-
         margin-top: 0;
-
     }
 
     .d2c-inactive-line-8.ever {
-
         width: 2px;
-
         border-radius: 20px;
-
     }
 
     .d2c-inactive-line-8 {
-
         width: 50%;
-
         height: 100%;
-
         background-color: rgba(196,196,196,.3);
-
         position: absolute;
-
         left: 50%;
-
         transform: translate(-50%);
-
         top:0;
-
     }
 
     .job-guarantee-timeline {
-
         position: relative;
-
         width: 60%;
-
         margin: auto;
-
     }
 
     .d2c-active-line.cyber.ever.aic {
-
         background-color: #c86ed8;
-
         left: 2px;
-
     }
 
     .d2c-active-line.cyber.ever {
-
         width: 2px;
-
         background-color: #70a2ff;
-
         top: auto;
-
         left: 9px;
-
     }
 
     .faq-panel {
-
         border: double 2px transparent;
-
         border-radius: 10px;
-
         background-image: linear-gradient(white, white), linear-gradient(to right, #03A9F4, #00BCD4);
-
         background-origin: border-box;
-
         background-clip: content-box, border-box;
-
         overflow: hidden;
-
         margin: 1rem 0;
-
         width: 100%;
-
     }
 
     .faq-panel-title h3 button {
-
         font-size: 20px;
-
         font-weight: 800;
-
         color: #333;
-
         padding: 12px 15px;
-
         width: 100%;
-
         text-align: left;
-
     }
 
     .faq-panel-title h3 button:hover {
-
         text-decoration:none;
-
     }
-
-
 
     .faq-panel-body {
-
         padding: 0 35px;
-
         padding-bottom: 14px;
-
         color: #333;
-
     }
-
-
 
     .certificate-image-wrapper {
-
         border: double 2px transparent;
-
         border-radius: 10px;
-
         background-image: linear-gradient(white, white), linear-gradient(to right, #03A9F4, #00BCD4);
-
         background-origin: border-box;
-
         background-clip: content-box, border-box;
-
         overflow: hidden;
-
     }
-
-    
 
     .global-desktop-cty {
-
         position: fixed;
-
         width: 100%;
-
         bottom: 0;
-
         background-image: linear-gradient(to right, #2132df, #192168, #3a49df);
-
         z-index: 9;
-
         padding: 30px 0;
-
         box-shadow: -4px -3px 4px 0px #697aef;
-
     }
-
-
 
     .footer-sticky-btn {
-
         background: #fff;
-
         color: #393185;
-
         border: 1px solid;
-
         display: inline;
-
         padding: 5px;
-
         border-radius: 4px;
-
         cursor: pointer;
-
         font-size: 18px;
-
         font-weight: 600;
-
     }
-
     .sticky-footer {
-
         display:none;
-
     }
 
-    .global-desktop-cty {
-
+.global-desktop-cty {
     position: fixed;
-
     width: 100%;
-
     bottom: 0;
-
     background-image: linear-gradient(to right, #2132DF, #192168, #3A49DF);
-
     z-index: 9;
-
     padding: 13px 0;
-
     box-shadow: -4px -3px 4px 0px #697AEF;
-
 }
 .usp-section{
-    background:url('/assets/img/section-background.webp');background-repeat: no-repeat;background-position: center;
+    background:url('/assets/img/section-background.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
+.usp-content h2, .usp-content h6 {
+    color: #fff;
 }
 @media screen and (max-width: 767px) {
     .usp-section{
@@ -533,7 +330,7 @@
 
                         <div class="ad-banner-title text-white text-center">
 
-                            <h1 style="line-height: 1.2em; font-size: 200%;"> Become A SAP Certified Professional with <br /> SAP FICO Training Course <h1>
+                            <h1 style="line-height: 1.2em; font-size: 200%; color: #fff!important;"> Become A SAP Certified Professional with <br /> SAP FICO Training Course <h1>
 
                         </div>
 
@@ -647,7 +444,7 @@
 
                             <div class="text-center mt-4">
 
-                                <h2>Job Placements</h2>
+                                <h2 class="text-white">Job Placements</h2>
 
                             </div>
 
@@ -760,51 +557,32 @@
                 <div class="section-usp-container" >
 
                     <div class="usp-content"> 
-
                         <h2> Updated SAP Syllabus </h2>
-
                         <h6> Amended SAP FICO modules to keep you on track with the industry. </h6>
-
                     </div>
 
                     <div class="usp-content"> 
-
                         <h2> Get Hands on Experience </h2>
-
                         <h6> Expereience our real-life project made by industry experts and academia. </h6>
-
                     </div>
 
                     <div class="usp-content"> 
-
                         <h2> Get Doubts Cleared </h2>
-
                         <h6> Our academia & trainers are always here to help you get your doubts solved. </h6>
-
                     </div>
 
                     <div class="usp-content"> 
-
                         <h2> Test Your Knowledge </h2>
-
                         <h6> With our Learnersmall App, you can test your concepts with assignments and quizzes. </h6>
-
                     </div>
 
                     <div class="usp-content"> 
-
                         <h2> Final Examination </h2>
-
                         <h6> Your training will be completed once you take the final examination. </h6>
-
                     </div>
-
                     <div class="usp-content"> 
-
                         <h2> SAP Certification </h2>
-
                         <h6> Get certified as Certified SAP FICO Professional by SAP, ICA Edu Skills and NSDC. </h6>
-
                     </div>                    
 
                 </div>

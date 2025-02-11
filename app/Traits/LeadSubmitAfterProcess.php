@@ -51,7 +51,7 @@ trait LeadSubmitAfterProcess
             "SourceTo" => "offline",
             "Entity4" => isset($postData["course_id"])
                 ? getErpCourseCode($postData["course_id"])->course_erp_code
-                : "",
+                : "Not Decided Yet",
             "EducationalQualification" => $postData["source_url"],
             "Experience" => isset($postData["experience"]) ? $postData["experience"] : "",
             "Textb1" => $postData["utm_term"],

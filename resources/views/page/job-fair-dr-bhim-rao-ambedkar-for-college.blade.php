@@ -267,7 +267,7 @@
                                                 <div class="field_step_1" >
                                                     @include('common.leadCaptureFormField')
                                                     <div class="contact-info formField⁠CollegeName">
-                                                        <input id="formField⁠CollegeName" name="institute" type="text" value="DR BHIM RAO AMBEDKAR COLLEGE" autocomplete="off" readonly>
+                                                        <input id="formField⁠CollegeName" name="institute" type="text" value="DR Bhim Rao Ambedkar College - Delhi University" autocomplete="off" readonly>
                                                     </div>
                                                     <div class="nws-button text-center white text-capitalize">
                                                         <button class="submit_classroom_lead_generation_form form_step_btn" type="button" disabled> Next <i class="fas fa-arrow-right" > </i> </button> 
