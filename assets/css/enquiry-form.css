@@ -95,7 +95,7 @@
   }
 
   .wizerd_welcome_screen h1 {
-    font-size: 56px;
+    font-size: 40px;
     font-weight: 800;
     color: #214b96;
     margin: 20px 0;
@@ -103,6 +103,11 @@
 
   .wizerd_welcome_screen .subheading h3 {
     font-size: 35px;
+    color: #214b96;
+    font-weight: 800;
+  }
+
+  .wizerd_welcome_screen .subheading h5 {
     color: #214b96;
     font-weight: 800;
   }
@@ -163,15 +168,20 @@
     border-radius: 10px;
   }
 
-  .add_more_role_btn {
-    padding: 6px 20px;
+  .add_more_role_btn,.remove_role_btn {
+    padding: 13px 15px;
     background: #393185;
     color: #fff;
     display: inline-block;
     margin-top: 5px;
-    font-size: 12px;
+    font-size: 15px;
     border-radius: 3px;
   }
+
+  .remove_role_btn {
+    background: rgb(235, 59, 59);
+  }
+
   .add_more_role_btn:hover {
     color: #fff;
   }

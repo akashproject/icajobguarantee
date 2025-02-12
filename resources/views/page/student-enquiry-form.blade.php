@@ -74,7 +74,7 @@
             label.lead_prefarence_list span {
                 font-weight: 600;
                 color: #214b96;
-                font-size: 18px;
+                font-size: 16px;
             }
         </style>
     </head>
@@ -161,7 +161,7 @@
                                         @case(null)
                                         <div class="wizerd_set" >
                                             <div class="wizerd_welcome_screen" >
-                                                <h1 >WELCOME TO<br> ICA EDU Skills</h1>
+                                                <h1 >WELCOME TO ICA EDU Skills</h1>
                                                 <div class="lead_preference_selection active">
                                                     <div class="text-center subheading mt-6">
                                                         <h3>May I Know what are you Looking for</h3>
@@ -183,7 +183,10 @@
                                                 </div>
                                                 <div class="lead_prefer_job lead_preference_selection">
                                                     <div class="text-center subheading mt-6">
-                                                        <h3>Please Select Prefared job type</h3>
+                                                        <h5>You need job in how many month</h5>
+                                                    </div>
+                                                    <div class="text-center subheading mt-6">
+                                                        <h3>Please Select Preferred job type</h3>
                                                     </div>
                                                     <div class="lead_prefarence_tab_container row" >
                                                         <div class="col-md-4">
@@ -213,39 +216,63 @@
                                                         </div>
                                                         <div class="lead_prefarence_tab_container row" >
                                                             <div class="col-md-6">
-                                                                <label for="skill_update_to_mis" class="lead_prefarence_list"> 
-                                                                    <input type="checkbox" id="skill_update_to_mis" name="skill_list[]" value="MIS Analytics" class="wizard-required">
-                                                                    <span class="" >MIS Analytics</span>
-                                                                </label>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <label for="skill_update_to_zoho" class="lead_prefarence_list"> 
-                                                                    <input type="checkbox" id="skill_update_to_zoho" name="skill_list[]" value="ZOHO Book" class="wizard-required"> 
-                                                                    <span class="" >ZOHO Book</span>
-                                                                </label>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <label for="skill_update_to_direct_taxt" class="lead_prefarence_list"> 
-                                                                    <input type="checkbox" id="skill_update_to_direct_taxt" name="skill_list[]" value="Direct Tax" class="wizard-required">
-                                                                    <span class="" >Direct Tax</span>
-                                                                </label>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <label for="skill_update_to_data_science" class="lead_prefarence_list"> 
-                                                                    <input type="checkbox" id="skill_update_to_data_science" name="skill_list[]" value="Data Science" class="wizard-required">
-                                                                    <span class="" >Data Science</span>
-                                                                </label>
-                                                            </div>
-                                                            <div class="col-md-6">
                                                                 <label for="skill_update_to_tally_prime" class="lead_prefarence_list"> 
-                                                                    <input type="checkbox" id="skill_update_to_tally_prime" name="skill_list[]" value="Tallyprime & Gst" class="wizard-required">
-                                                                    <span class="" >Tallyprime & Gst</span>
+                                                                    <input type="checkbox" id="skill_update_to_tally_prime" name="skill_list[]" value="Tally Prime" class="wizard-required">
+                                                                    <span class="" >Tally Prime</span>
                                                                 </label>
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <label for="skill_update_to_microsoft_office" class="lead_prefarence_list"> 
-                                                                    <input type="checkbox" id="skill_update_to_microsoft_office" name="skill_list[]" value="Microsoft Office" class="wizard-required">
+                                                                    <input type="checkbox" id="skill_update_to_microsoft_office" name="skill_list[]" value="Microsoft Office" class="wizard-required"> 
                                                                     <span class="" >Microsoft Office</span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <label for="skill_update_to_advance_excel" class="lead_prefarence_list"> 
+                                                                    <input type="checkbox" id="skill_update_to_advance_excel" name="skill_list[]" value="Advance Excel" class="wizard-required">
+                                                                    <span class="" >Advance Excel</span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <label for="skill_update_to_business_accounting" class="lead_prefarence_list"> 
+                                                                    <input type="checkbox" id="skill_update_to_business_accounting" name="skill_list[]" value="Business Accounting" class="wizard-required">
+                                                                    <span class="" >Business Accounting</span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <label for="skill_update_to_itr_tds" class="lead_prefarence_list"> 
+                                                                    <input type="checkbox" id="skill_update_to_itr_tds" name="skill_list[]" value="ITR & TDS" class="wizard-required">
+                                                                    <span class="" >ITR & TDS</span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <label for="skill_update_to_gst" class="lead_prefarence_list"> 
+                                                                    <input type="checkbox" id="skill_update_to_gst" name="skill_list[]" value="GST" class="wizard-required">
+                                                                    <span class="" >GST</span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <label for="skill_update_to_softskill" class="lead_prefarence_list"> 
+                                                                    <input type="checkbox" id="skill_update_to_softskill" name="skill_list[]" value="Soft skill and Interview Preparation" class="wizard-required">
+                                                                    <span class="" >Soft skill and Interview Preparation</span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <label for="skill_update_to_zoho_book" class="lead_prefarence_list"> 
+                                                                    <input type="checkbox" id="skill_update_to_zoho_book" name="skill_list[]" value="Zoho Book" class="wizard-required">
+                                                                    <span class="" >Zoho Book</span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <label for="skill_update_to_sap_fico" class="lead_prefarence_list"> 
+                                                                    <input type="checkbox" id="skill_update_to_sap_fico" name="skill_list[]" value="SAP FICO" class="wizard-required">
+                                                                    <span class="" >SAP FICO</span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <label for="lead_prefer_job" class="lead_prefarence_list"> 
+                                                                    <input type="checkbox" id="lead_prefer_job" name="lead_prefference" value="Full Time Job" class="lead_prefference wizard-required">
+                                                                    <span class="" >Job Guarantee Programm</span>
                                                                 </label>
                                                             </div>
                                                         </div>
@@ -260,25 +287,13 @@
                                                             <div class="col-md-6">
                                                                 <label for="career_to_accounting_course" class="lead_prefarence_list"> 
                                                                     <input type="checkbox" id="career_to_accounting_course" name="skill_list[]" value="Accounting Course" class="wizard-required">
-                                                                    <span class="" >Accounting Course</span>
-                                                                </label>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <label for="career_to_finance_course" class="lead_prefarence_list"> 
-                                                                    <input type="checkbox" id="career_to_finance_course" name="skill_list[]" value="Finance Course" class="wizard-required">
-                                                                    <span class="" >Finance Course</span>
+                                                                    <span class="" >Accounting & Finance Course</span>
                                                                 </label>
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <label for="career_to_mis_analytics" class="lead_prefarence_list"> 
                                                                     <input type="checkbox" id="career_to_mis_analytics" name="skill_list[]" value="MIS Analytics" class="wizard-required">
                                                                     <span class="" >MIS Analytics</span>
-                                                                </label>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <label for="career_to_data_science" class="lead_prefarence_list"> 
-                                                                    <input type="checkbox" id="career_to_data_science" name="skill_list[]" value="Data Science" class="wizard-required">
-                                                                    <span class="" >Data Science</span>
                                                                 </label>
                                                             </div>
                                                         </div>
@@ -291,27 +306,15 @@
                                                         </div>
                                                         <div class="lead_prefarence_tab_container row" >
                                                             <div class="col-md-6">
-                                                                <label for="mid_level_career_to_accounting_course" class="lead_prefarence_list"> 
-                                                                    <input type="checkbox" id="mid_level_career_to_accounting_course" name="skill_list[]" value="Accounting Course" class="wizard-required">
-                                                                    <span class="" >Accounting Course</span>
+                                                                <label for="career_to_accounting_course" class="lead_prefarence_list"> 
+                                                                    <input type="checkbox" id="career_to_accounting_course" name="skill_list[]" value="Accounting Course" class="wizard-required">
+                                                                    <span class="" >Accounting & Finance Course</span>
                                                                 </label>
                                                             </div>
                                                             <div class="col-md-6">
-                                                                <label for="mid_level_career_to_finance_course" class="lead_prefarence_list"> 
-                                                                    <input type="checkbox" id="mid_level_career_to_finance_course" name="skill_list[]" value="Finance Course" class="wizard-required">
-                                                                    <span class="" >Finance Course</span>
-                                                                </label>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <label for="mid_level_career_to_mis_analytics" class="lead_prefarence_list"> 
-                                                                    <input type="checkbox" id="mid_level_career_to_mis_analytics" name="skill_list[]" value="MIS Analytics" class="wizard-required">
+                                                                <label for="career_to_mis_analytics" class="lead_prefarence_list"> 
+                                                                    <input type="checkbox" id="career_to_mis_analytics" name="skill_list[]" value="MIS Analytics" class="wizard-required">
                                                                     <span class="" >MIS Analytics</span>
-                                                                </label>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <label for="mid_level_career_to_data_science" class="lead_prefarence_list"> 
-                                                                    <input type="checkbox" id="mid_level_career_to_data_science" name="skill_list[]" value="Data Science" class="wizard-required">
-                                                                    <span class="" >Data Science</span>
                                                                 </label>
                                                             </div>
                                                         </div>
@@ -324,33 +327,20 @@
                                                         </div>
                                                         <div class="lead_prefarence_tab_container row" >
                                                             <div class="col-md-6">
-                                                                <label for="senior_level_career_to_accounting_course" class="lead_prefarence_list"> 
-                                                                    <input type="checkbox" id="senior_level_career_to_accounting_course" name="skill_list[]" value="Accounting Course" class="wizard-required">
-                                                                    <span class="" >Accounting Course</span>
+                                                                <label for="career_to_accounting_course" class="lead_prefarence_list"> 
+                                                                    <input type="checkbox" id="career_to_accounting_course" name="skill_list[]" value="Accounting Course" class="wizard-required">
+                                                                    <span class="" >Accounting & Finance Course</span>
                                                                 </label>
                                                             </div>
                                                             <div class="col-md-6">
-                                                                <label for="senior_level_career_to_finance_course" class="lead_prefarence_list"> 
-                                                                    <input type="checkbox" id="senior_level_career_to_finance_course" name="skill_list[]" value="Finance Course" class="wizard-required">
-                                                                    <span class="" >Finance Course</span>
-                                                                </label>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <label for="senior_level_career_to_mis_analytics" class="lead_prefarence_list"> 
-                                                                    <input type="checkbox" id="senior_level_career_to_mis_analytics" name="skill_list[]" value="MIS Analytics" class="wizard-required">
+                                                                <label for="career_to_mis_analytics" class="lead_prefarence_list"> 
+                                                                    <input type="checkbox" id="career_to_mis_analytics" name="skill_list[]" value="MIS Analytics" class="wizard-required">
                                                                     <span class="" >MIS Analytics</span>
-                                                                </label>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <label for="senior_level_career_to_data_science" class="lead_prefarence_list"> 
-                                                                    <input type="checkbox" id="senior_level_career_to_data_science" name="skill_list[]" value="Data Science" class="wizard-required">
-                                                                    <span class="" >Data Science</span>
                                                                 </label>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-
                                             </div>
                                             <div class="wizerd_fieldset" >
                                                 
@@ -431,17 +421,20 @@
                                                     </div>
                                                     <div class="col-12" >
                                                         <div class="contact-info formFieldInstitute">
-                                                            <label class="mb-0" style="color: #403c9c;font-weight: 600;"> Any Other Course You did </label>
+                                                            <label class="mb-0" style="color: #403c9c;font-weight: 600;"> Have you completed or are you currently pursuing any professional courses? </label>
                                                             <div>
-                                                            <span><input type="checkbox" name="other_course[]" value="Bank PO"> Bank PO </span>
-                                                            <span><input type="checkbox" name="other_course[]" value="Railway"> Railway </span>
-                                                            <span><input type="checkbox" name="other_course[]" value="SSC"> SSC </span>
-                                                            <span><input type="checkbox" name="other_course[]" value="State Service Commission"> State Service Commission </span>
-                                                            <span><input type="checkbox" name="other_course[]" value="CA"> CA </span>
-                                                            <span><input type="checkbox" name="other_course[]" value="CS"> CS </span>
-                                                            <span><input type="checkbox" name="other_course[]" value="CMA"> CMA </span>
-                                                            <span><input type="checkbox" name="other_course[]" value="Other"> Other </span>
+                                                                <span><input type="checkbox" name="professional_course[]" value="Bank PO"> Bank PO </span>
+                                                                <span><input type="checkbox" name="professional_course[]" value="Railway"> Railway </span>
+                                                                <span><input type="checkbox" name="professional_course[]" value="SSC"> SSC </span>
+                                                                <span><input type="checkbox" name="professional_course[]" value="State Service Commission"> State Service Commission </span>
+                                                                <span><input type="checkbox" name="professional_course[]" value="CA"> CA </span>
+                                                                <span><input type="checkbox" name="professional_course[]" value="CS"> CS </span>
+                                                                <span><input type="checkbox" name="professional_course[]" value="CMA"> CMA </span>
+                                                                <span><input type="checkbox" name="professional_course[]" value="Other" class="hide_show_text_field"> Other </span>
                                                             </div>
+                                                        </div>
+                                                        <div class="specify_field formFieldSpecifyOtherCourse my-2" style="display:none" >
+                                                            <input id="formFieldSpecifyOtherCourse" name="professional_course[]" type="text" placeholder="Please Specity" autocomplete="off" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-12" >
@@ -483,22 +476,18 @@
                                                         <div class="contact-info formFieldJobRole">
                                                             <div class="add_more_job_role">
                                                                 <div class="row">
-                                                                    <div class="col-md-8">
+                                                                    <div class="col-md-7">
                                                                         <input id="formFieldJobRole" name="job_role[]" type="text" placeholder="What is your job role?" autocomplete="off" class="wizard-required job_role_elem">
                                                                     </div>
-                                                                    <div class="col-md-4">
-                                                                        <input id="formFieldJobRoleTimePeriod" name="job_role_time[]" type="text" placeholder="Total Years" autocomplete="off" class="wizard-required job_role_elem">
+                                                                    <div class="col-md-3">
+                                                                        <input id="formFieldJobRoleTimePeriod" name="job_role_time[]" type="number" placeholder="Total Years" autocomplete="off" class="wizard-required job_role_elem">
                                                                     </div>
+                                                                    <div class="col-md-2">
+                                                                        <a href="javascript:void(0)" class="add_more_role_btn">Add More</a>
+                                                                    </div> 
                                                                 </div>
                                                             </div>
-                                                            <span style="font-size: 12px;">*If you have multiple job roles, click <a href="javascript:void(0)" class="add_more_role_btn">Add More</a> to include them all.</span>
-                                                            <div class="wizard-form-error"></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-12" >
-                                                        <div class="contact-info formFieldprofessionalCourses">
-                                                            <label class="mb-0" style="color: #403c9c;font-weight: 600;"> Have you completed or are you currently pursuing any other professional courses? [If yes, please specify.] </label>
-                                                            <input id="formFieldprofessionalCourses" name="professional_courses" type="text" placeholder="Enter your professional course" autocomplete="off" required class="wizard-required">
+                                                            <span style="font-size: 12px;">*If you have multiple job roles, click Add More to include them all.</span>
                                                             <div class="wizard-form-error"></div>
                                                         </div>
                                                     </div>
@@ -651,13 +640,6 @@
                                                         <div class="contact-info formFieldNextGoal">
                                                             <label class="mb-0" style="color: #403c9c;font-weight: 600;"> Expected starting salary after 5 Years</label>
                                                             <input id="formFieldNextGoal" name="next_goal" type="text" autocomplete="off" required class="wizard-required">
-                                                            <div class="wizard-form-error"></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-12" >
-                                                        <div class="contact-info formFieldExpectedCtc">
-                                                            <label class="mb-0" style="color: #403c9c;font-weight: 600;"> What is your expected monthly CTC</label>
-                                                            <input id="formFieldExpectedCtc" name="expected_ctc" type="number" autocomplete="off" required class="wizard-required">
                                                             <div class="wizard-form-error"></div>
                                                         </div>
                                                     </div>

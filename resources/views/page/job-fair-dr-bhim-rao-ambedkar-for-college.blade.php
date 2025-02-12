@@ -580,12 +580,10 @@
 
             jQuery('.hide_show_text_field').change(function() {
                 if($(this).val() == "Other") {
-                    
                     $(this).parent().parent().children(".contact-info").show();
                 } else {
                     $(this).parent().parent().children(".contact-info").hide();
                 }
-                
             });
 
             jQuery(".creative_register_btn").on('click',function() {
