@@ -13,9 +13,7 @@
 								<li>{{ $error }}</li>
 							@endforeach
 						</ul>
-
 					</div>
-
 				@endif
 				@if(session()->has('message'))
 					<div class="alert alert-success">
@@ -92,6 +90,16 @@
 							<div class="col-sm-9">
 								<select name="enable_otp" id="enable_otp" class="select2 form-control custom-select" style="width: 100%; height:36px;">	
 									<option value="">Enable Otp</option>
+									<option value="1" > Yes</option>
+									<option value="0" > No </option>
+								<select>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="store_area" class="col-sm-3 text-right control-label col-form-label">Capture to CRM</label>
+							<div class="col-sm-9">
+								<select name="store_area" id="store_area" class="select2 form-control custom-select" style="width: 100%; height:36px;">	
+									<option value="">Select Option</option>
 									<option value="1" > Yes</option>
 									<option value="0" > No </option>
 								<select>

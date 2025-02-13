@@ -12,6 +12,6 @@ class Page extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'id','name','slug','banner_image','description','template','title','enable_otp','meta_description','schema','robots','canonical','utm_campaign','utm_source','lead_type','status','created_at',
+        'id','name','slug','banner_image','description','template','store_area','title','enable_otp','meta_description','schema','robots','canonical','utm_campaign','utm_source','lead_type','status','created_at',
     ];
 }
