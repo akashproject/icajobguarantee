@@ -85,41 +85,41 @@
                 $previousStep = $step - 1;
             }
         @endphp
-	<header>
-		<div id="main-menu"  class="main-menu-container header-style-2">
-			<div class="header-top">
-				<div class="container-fluid">
-					<div class="row">
-						<div class="col-md-6">
-							
-						</div>
-						<div class="col-md-6 top-right-bar">
-							<div class="header-top-bar ul-li">
-								<ul>
-									<li><a href="mailto:{{get_theme_setting('email')}}" ><i class="fas fa-envelope"></i> {{get_theme_setting('email')}}</a></li>
-									<li><a href="tel:{{get_theme_setting('mobile')}}" ><i class="fas fa-phone-square"></i> {{get_theme_setting('mobile')}}</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="main-menu">
-				<div class="container">
-					<div class="navbar-default">
-						<div class="navbar-header float-left">
-							<a class="navbar-brand text-uppercase" href="javascript:void(0)"><img src="{{ url('assets/images/logo.png') }}" alt="ICA Edu Skills"></a>
-								
-						</div><!-- /.navbar-header -->						
-						
-						<!-- Collect the nav links, forms, and other content for toggling -->
-						
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>	
-    <!-- Start of Header section
+        <header>
+            <div id="main-menu"  class="main-menu-container header-style-2">
+                <div class="header-top">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                
+                            </div>
+                            <div class="col-md-6 top-right-bar">
+                                <div class="header-top-bar ul-li">
+                                    <ul>
+                                        <li><a href="mailto:{{get_theme_setting('email')}}" ><i class="fas fa-envelope"></i> {{get_theme_setting('email')}}</a></li>
+                                        <li><a href="tel:{{get_theme_setting('mobile')}}" ><i class="fas fa-phone-square"></i> {{get_theme_setting('mobile')}}</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-menu">
+                    <div class="container">
+                        <div class="navbar-default">
+                            <div class="navbar-header float-left">
+                                <a class="navbar-brand text-uppercase" href="javascript:void(0)"><img src="{{ url('assets/images/logo.png') }}" alt="ICA Edu Skills"></a>
+                                    
+                            </div><!-- /.navbar-header -->						
+                            
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>	
+        <!-- Start of Header section
         ============================================= -->
         <section class="header-devider"></section>
         <section class="header-margin"></section>
@@ -127,7 +127,6 @@
             <div class="container">
                 <div class="row justify_center">	
                     <div class="col-md-12">
-                       
                         <div class="row">
                             <div class="col-md-4" >
                                 <div class="form_wizerd_header form-wizard-panel"> 
@@ -170,41 +169,69 @@
                                                         <div class="col-md-6">
                                                             <label for="lead_prefer_job" class="lead_prefarence_tab"> 
                                                                 <h2 class="" >FULL TIME JOB</h2>
-                                                                <input type="radio" id="lead_prefer_job" name="lead_prefference" value="Full Time Job" class="lead_prefference wizard-required" required>
+                                                                <input type="radio" id="lead_prefer_job" data-id="lead_prefer_job" name="lead_prefference" value="Full Time Job" class="lead_prefference wizard-required" required>
                                                             </label>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <label for="lead_prefer_skill_update" class="lead_prefarence_tab"> 
                                                                 <h2 class="" >SKILL DEVELOPMENT</h2>
-                                                                <input type="radio" id="lead_prefer_skill_update" name="lead_prefference" value="Skill Development" class="lead_prefference wizard-required">
+                                                                <input type="radio" id="lead_prefer_skill_update" data-id="lead_prefer_skill_update" name="lead_prefference" value="Skill Development" class="lead_prefference wizard-required">
                                                             </label>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="lead_prefer_job lead_preference_selection">
                                                     <div class="text-center subheading mt-6">
-                                                        <h5>You need job in how many month</h5>
-                                                    </div>
-                                                    <div class="text-center subheading mt-6">
                                                         <h3>Please Select Preferred job type</h3>
-                                                    </div>
+                                                    </div> 
                                                     <div class="lead_prefarence_tab_container row" >
                                                         <div class="col-md-4">
                                                             <label for="entry_level_job" class="lead_prefarence_tab"> 
                                                                 <h2 class="" >Entry Level Job</h2>
-                                                                <input type="radio" id="entry_level_job" name="job_type" value="Entry Level Job" class="lead_prefference wizard-required">
+                                                                <input type="radio" data-id="placement_duration" id="entry_level_job" name="job_type" value="Entry Level Job" class="lead_prefference wizard-required">
                                                             </label>
                                                         </div>
                                                         <div class="col-md-4">
                                                             <label for="mid_level_job" class="lead_prefarence_tab"> 
                                                                 <h2 class="" >Mid Level Job</h2>
-                                                                <input type="radio" id="mid_level_job" name="job_type" value="Mid Level Job" class="lead_prefference wizard-required">
+                                                                <input type="radio" data-id="placement_duration" id="mid_level_job" name="job_type" value="Mid Level Job" class="lead_prefference wizard-required">
                                                             </label>
                                                         </div>
                                                         <div class="col-md-4">
                                                             <label for="senior_level_job" class="lead_prefarence_tab"> 
-                                                                <h2 class="" >Seeking for senior Position</h2>
-                                                                <input type="radio" id="senior_level_job" name="job_type" value="Seeking for senior Position" class="lead_prefference wizard-required">
+                                                                <h2 class="" >Seeking for senior position</h2>
+                                                                <input type="radio" data-id="placement_duration" id="senior_level_job" name="job_type" value="Seeking for senior Position" class="lead_prefference wizard-required">
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="placement_duration lead_preference_selection">
+                                                    <div class="text-center subheading mt-6">
+                                                        <h3>You need job in how many month</h3>
+                                                    </div> 
+                                                    <div class="lead_prefarence_tab_container row" >
+                                                        <div class="col-md-6">
+                                                            <label for="get_job_in_3_month" class="lead_prefarence_tab"> 
+                                                                <h2 class="" >3 Month</h2>
+                                                                <input type="radio" id="get_job_in_3_month" data-id="select_preffered_course" name="placement_duration" value="3 Month" class="lead_prefference wizard-required">
+                                                            </label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="get_job_in_6_month" class="lead_prefarence_tab"> 
+                                                                <h2 class="" >6 Month</h2>
+                                                                <input type="radio" id="get_job_in_6_month" data-id="select_preffered_course" name="placement_duration" value="6 Month" class="lead_prefference wizard-required">
+                                                            </label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="get_job_in_12_month" class="lead_prefarence_tab"> 
+                                                                <h2 class="" >12 Month</h2>
+                                                                <input type="radio" id="get_job_in_12_month" data-id="select_preffered_course" name="placement_duration" value="12 Month" class="lead_prefference wizard-required">
+                                                            </label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="get_job_after_12_month" class="lead_prefarence_tab"> 
+                                                                <h2 class="" >After 12 Month</h2>
+                                                                <input type="radio" id="get_job_after_12_month" data-id="select_preffered_course" name="placement_duration" value="After 12 Month" class="lead_prefference wizard-required">
                                                             </label>
                                                         </div>
                                                     </div>
@@ -271,14 +298,14 @@
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <label for="lead_prefer_job" class="lead_prefarence_list"> 
-                                                                    <input type="checkbox" id="lead_prefer_job" name="lead_prefference" value="Full Time Job" class="lead_prefference wizard-required">
+                                                                    <input type="checkbox" id="lead_prefer_job" data-id="lead_prefer_job" name="lead_prefference" value="Full Time Job" class="lead_prefference wizard-required">
                                                                     <span class="" >Job Guarantee Programm</span>
                                                                 </label>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="entry_level_job lead_preference_selection">
+                                                <div class="select_preffered_course lead_preference_selection">
                                                     <div class="">
                                                         <div class="text-center subheading mt-6">
                                                             <h3>Which Zoner you want to build your career</h3>
@@ -299,51 +326,8 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="mid_level_job lead_preference_selection">
-                                                    <div class="">
-                                                        <div class="text-center subheading mt-6">
-                                                            <h3>Which Zone you want to build your career</h3>
-                                                        </div>
-                                                        <div class="lead_prefarence_tab_container row" >
-                                                            <div class="col-md-6">
-                                                                <label for="career_to_accounting_course" class="lead_prefarence_list"> 
-                                                                    <input type="checkbox" id="career_to_accounting_course" name="skill_list[]" value="Accounting Course" class="wizard-required">
-                                                                    <span class="" >Accounting & Finance Course</span>
-                                                                </label>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <label for="career_to_mis_analytics" class="lead_prefarence_list"> 
-                                                                    <input type="checkbox" id="career_to_mis_analytics" name="skill_list[]" value="MIS Analytics" class="wizard-required">
-                                                                    <span class="" >MIS Analytics</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="senior_level_job lead_preference_selection">
-                                                    <div class="">
-                                                        <div class="text-center subheading mt-6">
-                                                            <h3>Which Zone you want to build your career</h3>
-                                                        </div>
-                                                        <div class="lead_prefarence_tab_container row" >
-                                                            <div class="col-md-6">
-                                                                <label for="career_to_accounting_course" class="lead_prefarence_list"> 
-                                                                    <input type="checkbox" id="career_to_accounting_course" name="skill_list[]" value="Accounting Course" class="wizard-required">
-                                                                    <span class="" >Accounting & Finance Course</span>
-                                                                </label>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <label for="career_to_mis_analytics" class="lead_prefarence_list"> 
-                                                                    <input type="checkbox" id="career_to_mis_analytics" name="skill_list[]" value="MIS Analytics" class="wizard-required">
-                                                                    <span class="" >MIS Analytics</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             </div>
                                             <div class="wizerd_fieldset" >
-                                                
                                                 <div class="form-group clearfix  mt-3"> 
                                                     <a href="javascript:void(0)" onClick="location.reload();" class="form-wizard-previous-btn float-left">Reset</a> 
                                                     <button type="submit" class="form-wizard-next-btn float-right">Next</button>
@@ -358,7 +342,6 @@
                                                 <div class="text-center">
                                                     <h3 class="heading">Tell me about your qualification</h3>
                                                 </div>
-                                                
                                                 <div class="row" > 
                                                     <div class="col-12" >
                                                         <div class="contact-info formFieldHighestQualification">
@@ -423,18 +406,18 @@
                                                         <div class="contact-info formFieldInstitute">
                                                             <label class="mb-0" style="color: #403c9c;font-weight: 600;"> Have you completed or are you currently pursuing any professional courses? </label>
                                                             <div>
-                                                                <span><input type="checkbox" name="professional_course[]" value="Bank PO"> Bank PO </span>
-                                                                <span><input type="checkbox" name="professional_course[]" value="Railway"> Railway </span>
-                                                                <span><input type="checkbox" name="professional_course[]" value="SSC"> SSC </span>
-                                                                <span><input type="checkbox" name="professional_course[]" value="State Service Commission"> State Service Commission </span>
-                                                                <span><input type="checkbox" name="professional_course[]" value="CA"> CA </span>
-                                                                <span><input type="checkbox" name="professional_course[]" value="CS"> CS </span>
-                                                                <span><input type="checkbox" name="professional_course[]" value="CMA"> CMA </span>
+                                                                <span><input type="checkbox" name="professional_course[]" value="Bank PO" > Bank PO </span>
+                                                                <span><input type="checkbox" name="professional_course[]" value="Railway" > Railway </span>
+                                                                <span><input type="checkbox" name="professional_course[]" value="SSC" > SSC </span>
+                                                                <span><input type="checkbox" name="professional_course[]" value="State Service Commission" > State Service Commission </span>
+                                                                <span><input type="checkbox" name="professional_course[]" value="CA" > CA </span>
+                                                                <span><input type="checkbox" name="professional_course[]" value="CS" > CS </span>
+                                                                <span><input type="checkbox" name="professional_course[]" value="CMA" > CMA </span>
                                                                 <span><input type="checkbox" name="professional_course[]" value="Other" class="hide_show_text_field"> Other </span>
                                                             </div>
                                                         </div>
-                                                        <div class="specify_field formFieldSpecifyOtherCourse my-2" style="display:none" >
-                                                            <input id="formFieldSpecifyOtherCourse" name="professional_course[]" type="text" placeholder="Please Specity" autocomplete="off" required>
+                                                        <div class="specify_field my-2" style="display:none" >
+                                                            <input id="formFieldSpecifyOtherCourse" name="professional_course[]" type="text" placeholder="Please Specity" autocomplete="off" >
                                                         </div>
                                                     </div>
                                                     <div class="col-12" >
@@ -459,7 +442,7 @@
                                         <!-- Work Experience -->
                                         <div class="wizerd_set" >
                                             <div class="wizerd_fieldset" >
-                                                <h3 class="heading">Tell me something about yourself</h3>
+                                                <h3 class="heading">Tell me about your professional information</h3>
                                                 <div class="row" > 
                                                     <div class="col-12" >
                                                         <div class="contact-info formFieldIsWorkExperience">
@@ -503,28 +486,36 @@
                                         <!-- Personal Experience -->
                                         <div class="wizerd_set" >
                                             <div class="wizerd_fieldset" >
-                                                <h3 class="heading">Tell Me something about yourself</h3>
+                                                <h3 class="heading">Tell me something about personal information</h3>
                                                 <div class="row" > 
                                                     <div class="col-12" >
                                                         <div class="contact-info formFieldName">
-                                                            <input id="formFieldName" name="name" type="text" placeholder="What is your name?" autocomplete="off" required class="wizard-required">
+                                                            <input id="formFieldName" name="name" type="text" placeholder="Please enter your name" autocomplete="off" required class="wizard-required">
                                                             <div class="wizard-form-error"></div>
                                                         </div>
                                                     </div>
                                                     <div class="col-12" >
                                                         <div class="contact-info formFieldEmail">
-                                                            <input id="formFieldEmail" name="email" type="email" placeholder="Please mention your email id." autocomplete="off" required class="wizard-required">
+                                                            <input id="formFieldEmail" name="email" type="email" placeholder="Please enter your email address" autocomplete="off" required class="wizard-required">
                                                         </div>
                                                     </div>
+                                                    
                                                     <div class="col-12" >
                                                         <div class="contact-info formFieldMobile">
-                                                            <input id="formFieldMobile" name="mobile" type="number" placeholder="Please mention your mobile number" autocomplete="off" min="6000000000" max="9999999999" required class="wizard-required">
+                                                            <input id="formFieldMobile" name="mobile" type="number" placeholder="Please enter your mobile number" autocomplete="off" min="6000000000" max="9999999999" required class="mb-2 wizard-required">
+                                                            <span><input type="checkbox" class="copy_mobile_no"> Is this your whatsapp number </span>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="col-12" >
+                                                        <div class="contact-info formFieldWhatsapp">
+                                                            <input id="formFieldWhatsapp" name="whatsapp" type="number" placeholder="Please enter your whatsapp number" autocomplete="off" min="6000000000" max="9999999999" required class="wizard-required">
                                                         </div>
                                                     </div>
                                                     <div class="col-12" >
                                                         <div class="contact-info formFieldDob">
                                                             <label class="mb-0" style="color: #403c9c;font-weight: 600;">May I know your Birthday </label>
-                                                            <input id="formFieldDob" name="dob" type="date" placeholder="Enter Date of Birth" autocomplete="off" required class="wizard-required" min="1970-01-01" max="2018-12-31">
+                                                            <input id="formFieldDob" name="dob" type="date" placeholder="Enter Date of Birth" autocomplete="off" required class="wizard-required" min="1970-01-01" max="2010-12-31">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12" >
@@ -549,7 +540,7 @@
                                                     </div>
                                                     <div class="col-12" >
                                                         <div class="contact-info formFieldPincode">
-                                                            <input id="formFieldPincode" name="pincode" type="text" placeholder="Enter Your Pincode" autocomplete="off" required class="wizard-required">
+                                                            <input id="formFieldPincode" name="pincode" type="text" placeholder="Enter Your Pincode" min="700000" max="799999" autocomplete="off" required class="wizard-required">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -562,7 +553,7 @@
                                                     </div>
                                                     <div class="col-12" >
                                                         <div class="contact-info formFieldFatherOccupation">
-                                                            <select id="formFieldFatherOccupation" class="father_occupation" name="father_occupation" required class="wizard-required">
+                                                            <select id="formFieldFatherOccupation" data-id="specify_father_occupation_field" class="occupation" name="father_occupation" class="wizard-required">
                                                                 <option value="">What is his occupation?</option>
                                                                 <option value="Business">Business</option>
                                                                 <option value="Govt. Employee">Govt. Employee</option>
@@ -570,8 +561,11 @@
                                                                 <option value="Self Employed">Self Employed</option>
                                                                 <option value="Agriculture">Agriculture</option>
                                                                 <option value="Retired">Retired</option>
-                                                                <option value="Others">Others</option>
+                                                                <option value="Other">Other</option>
                                                             </select>
+                                                        </div>
+                                                        <div class="specify_father_occupation_field my-2" style="display:none" >
+                                                            <input id="formFieldSpecifyOtherCourse" name="other_father_occupation" type="text" placeholder="Please specity other occupation" autocomplete="off" >
                                                         </div>
                                                     </div>
                                                     <div class="col-12" >
@@ -581,7 +575,7 @@
                                                     </div>
                                                     <div class="col-12" >
                                                         <div class="contact-info formFieldMotherOccupation">
-                                                            <select id="formFieldMotherOccupation" class="mother_occupation" name="mother_occupation" required class="wizard-required">
+                                                            <select id="formFieldMotherOccupation" data-id="specify_mother_occupation_field"  class="occupation" name="mother_occupation" class="wizard-required">
                                                                 <option value="">What is her occupation?</option>
                                                                 <option value="House Wife">House Wife</option>
                                                                 <option value="Business">Business</option>
@@ -590,8 +584,11 @@
                                                                 <option value="Self Employed">Self Employed</option>
                                                                 <option value="Agriculture">Agriculture</option>
                                                                 <option value="Retired">Retired</option>
-                                                                <option value="Others">Others</option>
+                                                                <option value="Other">Other</option>
                                                             </select>
+                                                        </div>
+                                                        <div class="specify_mother_occupation_field my-2" style="display:none" >
+                                                            <input id="formFieldSpecifyOtherCourse" name="other_mother_occupation" type="text" placeholder="Please specity other occupation" autocomplete="off" >
                                                         </div>
                                                     </div>
                                                     <div class="col-12" >
@@ -599,26 +596,16 @@
                                                             <input id="formFieldParentMobile" name="parent_mobile" type="number" placeholder="Mention your guardian’s mobile no" autocomplete="off" min="6000000000" max="9999999999">
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="lead_steps step2">
-                                                    <div class="otp-content">
-                                                        <h4 class="otp-heading"> OTP Verification </h4>
-                                                        <p class="message"> <span class="message"> Enter the OTP you receive at </span> +91 XXXXXX<span class="lastDigit"></span> <span class="changeGivenNumber"> (Change) </span> </p>
-                                                        <p class="response_status" style="color: #000;"></p>
-                                                    </div> 
-                                                    <div class="contact-info">
-                                                        <input class="verify_otp" name="verify_otp" type="text" placeholder="Enter One Time Password" autocomplete="off">
-                                                    </div>
-                                                    <div class="otp-content">
-                                                        <p class="message"> Did not receive OTP?
-                                                            <span class="countdown_label"> Resend in <span class="countdown" >59</span> Sec </span>
-                                                            <a class="resendOtp display-none" href="javascript:void(0)"> Resend OTP </a>
-                                                        </p>
+                                                    <div class="col-12" >
+                                                        <div class="contact-info formFieldOtherGurdian">
+                                                            <label class="mb-0" style="color: #403c9c;font-weight: 600;">*Please share if you have another gurdian detail</label>
+                                                            <textarea id="formFieldOtherGurdian" name="other_gurdian" class="textarea_form-field"></textarea>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="form-group clearfix  mt-3">
                                                     <a href="{{ route('student-enquiry-form-with-slug',[$previousStep,'center'=>$center,'enquiry'=>base64_encode($enquiry)]) }}" class="form-wizard-previous-btn float-left">Previous</a> 
-                                                    <button id="onClickSendOtp" class="form-wizard-next-btn float-right">Next</button>
+                                                    <button type="submit" class="form-wizard-next-btn float-right">Next</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -631,7 +618,7 @@
                                                 <div class="row" > 
                                                     <div class="col-12" >
                                                         <div class="contact-info formFieldNextGoal">
-                                                            <label class="mb-0" style="color: #403c9c;font-weight: 600;"> What is your expected current salary</label>
+                                                            <label class="mb-0" style="color: #403c9c;font-weight: 600;"> What is your expected starting salary</label>
                                                             <input id="formFieldNextGoal" name="starting_salary" type="number" autocomplete="off" required class="wizard-required">
                                                             <div class="wizard-form-error"></div>
                                                         </div>

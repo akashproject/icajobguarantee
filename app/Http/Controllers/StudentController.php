@@ -21,7 +21,7 @@ class StudentController extends Controller
         $courses = Course::whereIn('id',json_decode($centerModel->courses))->get();
         
         
-        return view('page.student-enquiry-form',compact('step','center','enquiry','courseByCategory'));
+        return view('page.student-enquiry-form',compact('step','center','enquiry'));
     }
 
     public function enquiryFormSubmit(Request $request)
@@ -40,11 +40,10 @@ class StudentController extends Controller
                 $enq = Enquiry::findOrFail($postData['enquiry']);
                 $enq->update($postData);
             }
-
             if ($step <= 4) {
                 return redirect()->route('student-enquiry-form-with-slug', [$step,'center' => '20','enquiry'=> base64_encode($enq->id)]);
             } else {
-                return redirect("/thank-you");
+                return redirect("/walkin-form-thank-you");
             }
             
         } catch (\Illuminate\Database\QueryException $e) {

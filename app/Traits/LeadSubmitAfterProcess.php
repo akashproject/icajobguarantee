@@ -80,6 +80,9 @@ trait LeadSubmitAfterProcess
         if(isset($postData["career_option"]) && $postData["career_option"] == "Other"){
             $apiData['Remarks'] = " ".$apiData['Remarks'].' :'.$postData["other_career_option"];
         }
+        if(isset($postData["year_of_study"])){
+            $apiData['Remarks'] = $apiData['Remarks'].' Year of Study:'.$postData["year_of_study"];
+        }
         //ExtraaedgeApiRequest::dispatch($apiData);
 
         $url = "https://prodivrapi.extraaedge.com/api/WebHook/addLead";
@@ -195,6 +198,10 @@ trait LeadSubmitAfterProcess
         if(isset($postData["career_option"]) && $postData["career_option"] == "Other"){
             $apiData['Remarks'] = " ".$apiData['Remarks'].' '.$postData['career_option'].':'.$postData["other_career_option"];
         }
+        if(isset($postData["year_of_study"])){
+            $apiData['Remarks'] = $apiData['Remarks'].' '.$postData["year_of_study"];
+        }
+
         //ExtraaedgeApiRequest::dispatch($apiData);
 
         $url = "https://prodivrapi.extraaedge.com/api/WebHook/addLead";

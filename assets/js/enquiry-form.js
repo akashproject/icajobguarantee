@@ -56,7 +56,8 @@ jQuery('.couse_input').on('change',function(){
 
 jQuery('.lead_prefference').on('change',function(){
 	jQuery(".lead_preference_selection").removeClass('active');
-	jQuery("."+jQuery(this).attr("id")).addClass('active');	
+	console.log(jQuery(this).attr("data-id"));
+	jQuery("."+jQuery(this).attr("data-id")).addClass('active');	
 });
 
 jQuery(".add_more_role_btn").on("click",function(){
@@ -74,25 +75,25 @@ jQuery(".add_more_role_btn").on("click",function(){
 });
 
 jQuery('.hide_show_text_field').change(function() {
-	console.log("hi",$(this).val());
-	if($(this).val() == "Other") {
-		$(this).parent().parent().parent().parent().children(".specify_field").show();
-		let specify_field = $(this).parent().parent().parent().parent();
-		console.log(specify_field);
-		
+	if(jQuery(this).is(':checked')) {
+		jQuery(this).parent().parent().parent().parent().children(".specify_field").show();
 	} else {
-		$(this).parent().parent().parent().parent().children(".specify_field").hide();
+		jQuery(this).parent().parent().parent().parent().children(".specify_field").hide();
 	}
 });
 
-jQuery("#onClickSendOtp").on("click",function(e){
-	var global_other_details_form = $('#global_other_details_form')[0];
-	if (global_other_details_form.checkValidity()) {
-        let formId = $(global_other_details_form).attr('id');
-		sendMobileOtp(formId);
-		countDown()
+jQuery(".copy_mobile_no").change(function(){
+	if(jQuery(this).is(':checked')) {		
+		let mobile = jQuery("#formFieldMobile").val();
+		jQuery("#formFieldWhatsapp").val(mobile);
 	} else {
-		alert('Form is invalid!');
+		jQuery("#formFieldWhatsapp").val("");
 	}
-	return false;
-});
+})
+
+jQuery(".occupation").on("change",function(){
+	if(jQuery(this).val() == "Other"){
+		
+		jQuery("."+jQuery(this).attr("data-id")).show();
+	}
+})
