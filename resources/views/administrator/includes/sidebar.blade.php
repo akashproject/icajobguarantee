@@ -18,13 +18,17 @@
                         <li class="sidebar-item"><a href="{{ url('administrator/affiliate-users') }}" class="sidebar-link"><i class="mdi mdi-emoticon"></i><span class="hide-menu"> All Affiliate Users </span></a></li>
                      </ul>
                   </li>
+                  
                   <li class="sidebar-item">
-                     <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-face"></i><span class="hide-menu">Leads</span></a>
-                     <ul aria-expanded="false" class="collapse first-level">
-                        <li class="sidebar-item"><a href="{{ url('administrator/upload-leads') }}" class="sidebar-link"><i class="mdi mdi-emoticon"></i><span class="hide-menu"> All Leads </span></a></li>
-                        <li class="sidebar-item"><a href="{{ url('administrator/backlog-leads') }}" class="sidebar-link"><i class="mdi mdi-emoticon"></i><span class="hide-menu"> Backlog Leads </span></a></li>
+                     <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-face"></i><span class="hide-menu">Leads </span></a>
+                     <ul aria-expanded="false" class="collapse  first-level">
+                        <li class="sidebar-item"><a href="{{ url('administrator/classroom-leads') }}" class="sidebar-link"><i class="mdi mdi-emoticon"></i><span class="hide-menu"> All Classroom Leads</span></a></li>
+                        <li class="sidebar-item"><a href="{{ url('administrator/local-stored-leads') }}" class="sidebar-link"><i class="mdi mdi-emoticon"></i><span class="hide-menu"> All Local Stored Leads</span></a></li>
+                        <li class="sidebar-item"><a href="{{ url('administrator/backlog-leads') }}" class="sidebar-link"><i class="mdi mdi-emoticon"></i><span class="hide-menu"> Backlogs </span></a></li>
+                        <li class="sidebar-item"><a href="{{ url('administrator/franchise-leads') }}" class="sidebar-link"><i class="mdi mdi-emoticon"></i><span class="hide-menu"> All Franchise Leads</span></a></li>
                      </ul>
                   </li>
+
                   <li class="sidebar-item">
                      <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-book-multiple-variant"></i><span class="hide-menu">Pages </span></a>
                      <ul aria-expanded="false" class="collapse  first-level">
@@ -435,7 +439,13 @@
                   </li>
                   @break
                @case("counsellor")
-                  
+                  <li class="sidebar-item">
+                     <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-face"></i><span class="hide-menu">Lead Refer</span></a>
+                     <ul aria-expanded="false" class="collapse first-level">
+                        <li class="sidebar-item"><a href="{{ url('administrator/upload-leads') }}" class="sidebar-link"><i class="mdi mdi-emoticon"></i><span class="hide-menu"> All Leads </span></a></li>
+                        <li class="sidebar-item"><a href="{{ url('administrator/backlog-leads') }}" class="sidebar-link"><i class="mdi mdi-emoticon"></i><span class="hide-menu"> Backlog Leads </span></a></li>
+                     </ul>
+                  </li>
                   @break
                @default
             @endswitch

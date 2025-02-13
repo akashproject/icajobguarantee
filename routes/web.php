@@ -75,6 +75,11 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::get('/enquiry/{id}', [App\Http\Controllers\Administrator\EnquiryController::class, 'show'])->name('admin-enquiry');
         Route::get('/generate-enquiry-form', [App\Http\Controllers\Administrator\EnquiryController::class, 'createForm'])->name('admin-generate-enquiry-form');
 
+        //Leads
+        Route::get('/classroom-leads', [App\Http\Controllers\Administrator\LeadController::class, 'classroomLeads'])->name('admin-classroom-leads');
+        Route::get('/local-stored-leads', [App\Http\Controllers\Administrator\LeadController::class, 'localStoredLeads'])->name('admin-local-stored-leads');
+        Route::get('/franchise-leads', [App\Http\Controllers\Administrator\LeadController::class, 'franchiseLeads'])->name('admin-franchise-leads');
+        
         //Lead Refer
         Route::get('/lead-refer', [App\Http\Controllers\Administrator\LeadReferController::class, 'index'])->name('admin-lead-refer');
         Route::get('/transfar-lead', [App\Http\Controllers\Administrator\LeadReferController::class, 'add'])->name('admin-transfar-lead');
