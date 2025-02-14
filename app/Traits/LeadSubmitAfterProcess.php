@@ -1,9 +1,23 @@
 <?php
 
 namespace App\Traits;
-use Mail;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\DB;
+use App\Models\Course;
+use App\Models\CourseType;
 use App\Models\Center;
-
+use App\Models\City;
+use App\Models\State;
+use App\Models\Pincode;
+use App\Models\Lead;
+use App\Models\Brochure;
+use App\Jobs\SendEmailJob;
+use App\Mail\NotifyMail;
+use App\Jobs\ExtraaedgeApiRequest;
+use App\Models\LeadRefer;
+use Cookie;
+use Session;
+use Mail;
 trait LeadSubmitAfterProcess
 {
     public $_statusOK = 200;
@@ -266,29 +280,23 @@ trait LeadSubmitAfterProcess
                 "name" => $postData["name"],
                 "email" => $postData["email"],
                 "mobile" => $postData["mobile"],
-                "center" => isset($postData["center"])
-                    ? $postData["center"]
-                    : "",
-                "pincode" => isset($postData["pincode"])
-                    ? $postData["pincode"]
-                    : "",
-
+                "center" => isset($postData["center"])? $postData["center"]: "",
+                "city" => isset($postData["city"])? $postData["city"]: "",
+                "pincode" => isset($postData["pincode"])? $postData["pincode"]: "",
                 "latitude" => isset($_COOKIE["lat"]) ? $_COOKIE["lat"] : "",
                 "longitude" => isset($_COOKIE["lng"]) ? $_COOKIE["lat"] : "",
                 "utm_source" => $postData["utm_source"],
                 "utm_campaign" => $postData["utm_campaign"],
                 "otp_status" => "0",
-                "crmStatus" => "0",
-                "mailStatus" => "0",
+                "crm_status" => "0",
+                "mail_status" => "0",
             ];
-
             $lead = Lead::create($data);
-
-            DB::table("leadmeta")->insert([
-                "lead_id" => $lead->id,
-                "meta_key" => "source",
-                "meta_value" => "cia",
-            ]);
+            // DB::table("leadmeta")->insert([
+            //     "lead_id" => $lead->id,
+            //     "meta_key" => "source",
+            //     "meta_value" => "cia",
+            // ]);
 
             return $lead;
         } catch (\Illuminate\Database\QueryException $e) {

@@ -22,7 +22,10 @@ class LeadController extends Controller
     public function localStoredLeads()
     {
         try {
-            $leads = [];
+            $leads = Lead::where('role','b2c')
+            ->where('otp_status','1')
+            ->where('crm_status','0')
+            ->limit('1000')->orderBy('id','desc')->get();
             return view('administrator.leads.local-storage-leads',compact('leads'));
         } catch(\Illuminate\Database\QueryException $e){
             var_dump($e->getMessage()); 
