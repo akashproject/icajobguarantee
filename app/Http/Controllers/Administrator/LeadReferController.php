@@ -97,7 +97,7 @@ class LeadReferController extends Controller
             $leads = DB::table('leads')
                 ->whereNot('otp_status','1')
                 ->groupBy('mobile')
-                ->havingRaw("crmStatus != '1'")
+                ->havingRaw("crm_status != '1'")
                 ->orderBy('id', 'ASC')->get();
             return view('administrator.leads-refer.backlog',compact('leads'));
         } catch(\Illuminate\Database\QueryException $e){
@@ -107,7 +107,7 @@ class LeadReferController extends Controller
 
     public function updateLeadStatus($id){
         try {
-            $data = ['crmStatus' => '1'];
+            $data = ['crm_status' => '1'];
             $lead = Lead::findOrFail($id);
             $lead->update($data);
             return redirect()->back()->with('message', 'Lead updated successfully!');
@@ -121,7 +121,7 @@ class LeadReferController extends Controller
             $leads = DB::table('leads')
             ->whereNot('otp_status','1')
             ->groupBy('mobile')
-            ->havingRaw("crmStatus != '1'")
+            ->havingRaw("crm_status != '1'")
             ->orderBy('id', 'ASC')->get();
             $report_header = ['Name','Email','Mobile','Center','City','Pincode','Source','Campaign','Created Date',];
             $leadReport = [];

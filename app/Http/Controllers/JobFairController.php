@@ -131,4 +131,59 @@ class JobFairController extends Controller
             return response()->json($e, $this->_statusOK);
         }
     }
+    
+    public function jobFairMotijheelRabindraMahavidyalayaCollege(Request $request) {
+        try {
+            $postData = $request->all();
+            $validatedData = $request->validate([
+                "name" => "required",
+                "mobile" => "required",
+            ]);
+
+            $nameArray = explode(" ", $postData["name"]);
+            $postData["firstname"] = current(explode(" ", $postData["name"]));
+            unset($nameArray["0"]);
+            $postData["lastname"] = implode(" ", $nameArray);
+
+            if(isset($postData["center"]) && $postData["center"] != "") {
+                $city = Center::select("city_id")
+                    ->where("name", $postData["center"])
+                    ->first();
+                $postData["city"] = City::where(
+                    "id",
+                    $city->city_id
+                )->first()->name;
+            } else {
+                //center by pincode
+                $pincode = DB::table("pincodes")
+                    ->leftjoin(
+                        "centers",
+                        "pincodes.center_id",
+                        "=",
+                        "centers.id"
+                    )
+                    ->leftjoin("cities", "pincodes.city_id", "=", "cities.id")
+                    ->select("centers.name as center", "cities.name as city")
+                    ->where("pincodes.name", $postData["pincode"])
+                    ->where("centers.status", 1)
+                    ->inRandomOrder()
+                    ->first();
+                $postData["city"] = $pincode ? $pincode->city : "";
+                $postData["center"] = $pincode ? $pincode->center : "unknown";
+            }
+            $postData["role"] = "b2c";
+
+            if($postData["lead_id"] != '') {
+                $leadFromdb = Lead::findOrFail($postData["lead_id"]);
+                $leadFromdb->update(['otp_status' => "1"]);
+            } else {
+                $leadFromdb = $this->captureLeadToDB($postData);
+            }
+            Session::put('lead_id',$leadFromdb->id);
+            $this->b2cLeadCaptureToExtraage($postData);
+            return redirect("/job-fair-thank-you");
+        } catch (\Illuminate\Database\QueryException $e) {
+            return response()->json($e, $this->_statusOK);
+        }
+    }
 }
