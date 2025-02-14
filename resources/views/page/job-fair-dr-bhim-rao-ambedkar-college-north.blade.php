@@ -287,25 +287,20 @@
                                                     <div class="register-form-area">
                                                         <select class="batch_applied" name="qualification" required>
                                                             <option value=""> Select Qualifications </option>
-                                                            <option value="10+2 - Arts">10+2 - Arts</option>
-                                                            <option value="10+2 - Commerce">10+2 - Commerce</option>
-                                                            <option value="10+2 - Science">10+2 - Science</option>
-                                                            <option value="B.A. - Arts">B.A. - Arts</option>
                                                             <option value="B.Com - Commerce">B.Com - Commerce</option>
                                                             <option value="B.Com(H) - Commerce">B.Com(H) - Commerce</option>
-                                                            <option value="B.Sc - Science">B.Sc - Science</option>
                                                             <option value="BBA - Management">BBA - Management</option>
-                                                            <option value="CA(Final) - Commerce">CA(Final) - Commerce</option>
-                                                            <option value="CA(Inter) - Commerce">CA(Inter) - Commerce</option>
-                                                            <option value="CS - Commerce">CS - Commerce</option>
-                                                            <option value="M.A. - Arts">M.A. - Arts</option>
+                                                            <option value="BA(OMSP)">BA(OMSP)</option>
                                                             <option value="M.Com - Commerce">M.Com - Commerce</option>
-                                                            <option value="M.Sc - Science">M.Sc - Science</option>
-                                                            <option value="MBA - Managment">MBA - Managment</option>
+                                                            <option value="M.Com (Hons)"> M.Com (Hons)</option>
+                                                            <option value="BA(HRM)">BA(HRM)</option>
                                                         </select>
                                                     </div>
                                                     <div class="contact-info formField⁠CollegeName">
                                                         <input id="formField⁠CollegeName" name="institute" type="text" placeholder="Enter Your College & Area Name" autocomplete="off" required>
+                                                    </div>
+                                                    <div class="contact-info formFieldYearOfStudy">
+                                                        <input id="formFieldYearOfStudy" name="year_of_study" type="text" placeholder="Enter Year Of Study" autocomplete="off" required>
                                                     </div>
                                                     <div class="hideshowtextfieldwrap" >
                                                         <div class="register-form-area">

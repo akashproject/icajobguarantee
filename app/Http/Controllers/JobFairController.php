@@ -38,7 +38,6 @@ class JobFairController extends Controller
                 $postData["firstname"] = current(explode(" ", $postData["name"]));
                 unset($nameArray["0"]);
                 $postData["lastname"] = implode(" ", $nameArray);
-                dd($postData);
                 $crmResponse = $this->b2cLeadCaptureToExtraage($postData);
                 $leadFromdb->update(['crm_status' => "1","crm_response"=>$crmResponse]);
             }
@@ -104,6 +103,7 @@ class JobFairController extends Controller
                 $crmResponse = $this->b2cLeadCaptureToExtraage($postData);
                 $leadFromdb->update(['crm_status' => "1","crm_response"=>$crmResponse]);
             }
+            return redirect("/job-fair-thank-you");
         } catch (\Illuminate\Database\QueryException $e) {
             return response()->json($e, $this->_statusOK);
         }
