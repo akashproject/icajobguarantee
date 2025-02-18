@@ -50,7 +50,7 @@
 				<div class="form-success-content">
 					<span class="success-icon"> <i class="fas fa-check"></i> </span>
 					<h4> Thank You! Your Application Submitted. </h4>
-					<h4> Counsellor will get back to you shortly </h4>
+					<h4> Our Career adviser will call you soon to suggest sweetable option to You </h4>
 				</div>
 			</div>
 		</div>

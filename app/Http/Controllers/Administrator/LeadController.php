@@ -51,18 +51,18 @@ class LeadController extends Controller
                     $leads = DB::table('leads')
                     ->whereNot('otp_status','1')
                     ->where('crm_status','0')
-                    ->orderBy('id', 'ASC')->get();
+                    ->orderBy('id', 'DESC')->get();
                     break;
                 case 'all':
                     $leads = DB::table('leads')
                     ->whereNot('otp_status','1')
                     ->where('crm_status','1')
-                    ->orderBy('id', 'ASC')->get();
+                    ->orderBy('id', 'DESC')->get();
                     break;
                 case 'backlog':
                     $leads = DB::table('leads')
                     ->whereNot('otp_status','0')
-                    ->orderBy('id', 'ASC')->get();
+                    ->orderBy('id', 'DESC')->get();
                     break;
             }
             

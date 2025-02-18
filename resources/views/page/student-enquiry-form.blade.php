@@ -160,10 +160,13 @@
                                         @case(null)
                                         <div class="wizerd_set" >
                                             <div class="wizerd_welcome_screen" >
-                                                <h1 >WELCOME TO ICA EDU Skills</h1>
+                                                
                                                 <div class="lead_preference_selection active">
                                                     <div class="text-center subheading mt-6">
-                                                        <h3>May I Know what are you Looking for</h3>
+                                                        <h2 style="color: #393185;font-weight: 600;">WELCOME TO ICA EDU Skills</h2>
+                                                    </div>
+                                                    <div class="subheading mt-6">
+                                                        <h5>May I Know what are you Looking for</h5>
                                                     </div>
                                                     <div class="lead_prefarence_tab_container row" >
                                                         <div class="col-md-6">
@@ -181,57 +184,57 @@
                                                     </div>
                                                 </div>
                                                 <div class="lead_prefer_job lead_preference_selection">
-                                                    <div class="text-center subheading mt-6">
-                                                        <h3>Please Select Preferred job type</h3>
+                                                    <div class="subheading mt-6">
+                                                        <h3>Which job position you want to reach in 3 - 5 year</h3>
                                                     </div> 
                                                     <div class="lead_prefarence_tab_container row" >
                                                         <div class="col-md-4">
                                                             <label for="entry_level_job" class="lead_prefarence_tab"> 
-                                                                <h2 class="" >Entry Level Job</h2>
-                                                                <input type="radio" data-id="placement_duration" id="entry_level_job" name="job_type" value="Entry Level Job" class="lead_prefference wizard-required">
+                                                                <h2 class="" >Entry Level</h2>
+                                                                <input type="radio" data-id="placement_duration" id="entry_level_job" name="job_type" value="Entry Level" class="lead_prefference wizard-required">
                                                             </label>
                                                         </div>
                                                         <div class="col-md-4">
                                                             <label for="mid_level_job" class="lead_prefarence_tab"> 
-                                                                <h2 class="" >Mid Level Job</h2>
-                                                                <input type="radio" data-id="placement_duration" id="mid_level_job" name="job_type" value="Mid Level Job" class="lead_prefference wizard-required">
+                                                                <h2 class="" >Mid Level</h2>
+                                                                <input type="radio" data-id="placement_duration" id="mid_level_job" name="job_type" value="Mid Level" class="lead_prefference wizard-required">
                                                             </label>
                                                         </div>
                                                         <div class="col-md-4">
                                                             <label for="senior_level_job" class="lead_prefarence_tab"> 
-                                                                <h2 class="" >Seeking for senior position</h2>
-                                                                <input type="radio" data-id="placement_duration" id="senior_level_job" name="job_type" value="Seeking for senior Position" class="lead_prefference wizard-required">
+                                                                <h2 class="" >Senior Level</h2>
+                                                                <input type="radio" data-id="placement_duration" id="senior_level_job" name="job_type" value="Senior Level" class="lead_prefference wizard-required">
                                                             </label>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="placement_duration lead_preference_selection">
                                                     <div class="text-center subheading mt-6">
-                                                        <h3>You need job in how many month</h3>
+                                                        <h3>Looking for to join in how many month</h3>
                                                     </div> 
                                                     <div class="lead_prefarence_tab_container row" >
                                                         <div class="col-md-6">
                                                             <label for="get_job_in_3_month" class="lead_prefarence_tab"> 
-                                                                <h2 class="" >3 Month</h2>
-                                                                <input type="radio" id="get_job_in_3_month" data-id="select_preffered_course" name="placement_duration" value="3 Month" class="lead_prefference wizard-required">
+                                                                <h2 class="" >3</h2>
+                                                                <input type="radio" id="get_job_in_3_month" data-id="select_preffered_course" name="placement_duration" value="3" class="lead_prefference wizard-required">
                                                             </label>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <label for="get_job_in_6_month" class="lead_prefarence_tab"> 
-                                                                <h2 class="" >6 Month</h2>
+                                                                <h2 class="" >6</h2>
                                                                 <input type="radio" id="get_job_in_6_month" data-id="select_preffered_course" name="placement_duration" value="6 Month" class="lead_prefference wizard-required">
                                                             </label>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <label for="get_job_in_12_month" class="lead_prefarence_tab"> 
-                                                                <h2 class="" >12 Month</h2>
+                                                                <h2 class="" >12</h2>
                                                                 <input type="radio" id="get_job_in_12_month" data-id="select_preffered_course" name="placement_duration" value="12 Month" class="lead_prefference wizard-required">
                                                             </label>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <label for="get_job_after_12_month" class="lead_prefarence_tab"> 
-                                                                <h2 class="" >After 12 Month</h2>
-                                                                <input type="radio" id="get_job_after_12_month" data-id="select_preffered_course" name="placement_duration" value="After 12 Month" class="lead_prefference wizard-required">
+                                                                <h2 class="" >> 12</h2>
+                                                                <input type="radio" id="get_job_after_12_month" data-id="select_preffered_course" name="placement_duration" value="> 12" class="lead_prefference wizard-required">
                                                             </label>
                                                         </div>
                                                     </div>
@@ -308,7 +311,7 @@
                                                 <div class="select_preffered_course lead_preference_selection">
                                                     <div class="">
                                                         <div class="text-center subheading mt-6">
-                                                            <h3>Which Zoner you want to build your career</h3>
+                                                            <h3>Which field you want to build your career</h3>
                                                         </div>
                                                         <div class="lead_prefarence_tab_container row" >
                                                             <div class="col-md-6">
@@ -618,15 +621,15 @@
                                                 <div class="row" > 
                                                     <div class="col-12" >
                                                         <div class="contact-info formFieldNextGoal">
-                                                            <label class="mb-0" style="color: #403c9c;font-weight: 600;"> What is your expected starting salary</label>
-                                                            <input id="formFieldNextGoal" name="starting_salary" type="number" autocomplete="off" required class="wizard-required">
+                                                            <label class="mb-0" style="color: #403c9c;font-weight: 600;"> What is your expected starting salary per moth</label>
+                                                            <input id="formFieldNextGoal" name="starting_salary" type="number" autocomplete="off" required class="wizard-required" min="10000">
                                                             <div class="wizard-form-error"></div>
                                                         </div>
                                                     </div>
                                                     <div class="col-12" >
                                                         <div class="contact-info formFieldNextGoal">
-                                                            <label class="mb-0" style="color: #403c9c;font-weight: 600;"> Expected starting salary after 5 Years</label>
-                                                            <input id="formFieldNextGoal" name="next_goal" type="text" autocomplete="off" required class="wizard-required">
+                                                            <label class="mb-0" style="color: #403c9c;font-weight: 600;"> Expected starting salary per month after 5 Years</label>
+                                                            <input id="formFieldNextGoal" name="next_goal" type="number" autocomplete="off" required class="wizard-required" min="10000">
                                                             <div class="wizard-form-error"></div>
                                                         </div>
                                                     </div>
