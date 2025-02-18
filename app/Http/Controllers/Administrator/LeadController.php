@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Lead;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Response;
 
 class LeadController extends Controller
 {
@@ -41,4 +42,71 @@ class LeadController extends Controller
             var_dump($e->getMessage()); 
         }
     }
+
+    public function exportLeads($type){
+        try {
+            
+            switch ($type) {
+                case 'local':
+                    $leads = DB::table('leads')
+                    ->whereNot('otp_status','1')
+                    ->where('crm_status','0')
+                    ->orderBy('id', 'ASC')->get();
+                    break;
+                case 'all':
+                    $leads = DB::table('leads')
+                    ->whereNot('otp_status','1')
+                    ->where('crm_status','1')
+                    ->orderBy('id', 'ASC')->get();
+                    break;
+                case 'backlog':
+                    $leads = DB::table('leads')
+                    ->whereNot('otp_status','0')
+                    ->orderBy('id', 'ASC')->get();
+                    break;
+            }
+            
+
+            $report_header = ['Name','Email','Mobile','Center','City','Pincode','Source','Campaign','Created Date'];
+            $leadReport = [];
+            foreach($leads as $key => $lead) {
+                $leadReport[$key]['Name'] = $lead->name;
+                $leadReport[$key]['Email'] = $lead->email;
+                $leadReport[$key]['Mobile'] = $lead->mobile;
+                $leadReport[$key]['Center'] = $lead->center;
+                $leadReport[$key]['City'] = $lead->city;
+                $leadReport[$key]['Pincode'] = $lead->pincode;
+                $leadReport[$key]['Source'] = $lead->utm_source;
+                $leadReport[$key]['Campaign'] = $lead->utm_campaign;
+                $leadReport[$key]['Created Date'] = $lead->created_at;
+            }
+
+          
+            $fileName = 'leads-'.date("y-m-d-h-i-s").'.csv';
+            $headers = [
+                "Content-type" => "text/csv",
+                "Content-Disposition" => "attachment; filename=$fileName",
+                "Pragma" => "no-cache",
+                "Cache-Control" => "must-revalidate, post-check=0, pre-check=0",
+                "Expires" => "0"
+            ];
+            
+           
+            $callback = function() use($leadReport, $report_header) {
+                $file = fopen('php://output', 'w');
+                fputcsv($file, $report_header);
+    
+                foreach ($leadReport as $record) {
+                    fputcsv($file, $record);
+                }
+    
+                fclose($file);
+            };
+    
+            return Response::stream($callback, 200, $headers);
+
+        } catch(\Illuminate\Database\QueryException $e){
+            var_dump($e->getMessage()); 
+        }
+    }   
 }

@@ -80,6 +80,10 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::get('/local-stored-leads', [App\Http\Controllers\Administrator\LeadController::class, 'localStoredLeads'])->name('admin-local-stored-leads');
         Route::get('/franchise-leads', [App\Http\Controllers\Administrator\LeadController::class, 'franchiseLeads'])->name('admin-franchise-leads');
         
+        // Export Leads 
+        
+        Route::get('/export-leads/{type}', [App\Http\Controllers\Administrator\LeadController::class, 'exportLeads'])->name('admin-export-leads');
+
         //Lead Refer
         Route::get('/lead-refer', [App\Http\Controllers\Administrator\LeadReferController::class, 'index'])->name('admin-lead-refer');
         Route::get('/transfar-lead', [App\Http\Controllers\Administrator\LeadReferController::class, 'add'])->name('admin-transfar-lead');
@@ -309,6 +313,7 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::post('/save-question', [App\Http\Controllers\Administrator\QuestionController::class, 'save'])->name('admin-save-question');
         Route::get('/delete-question/{id}', [App\Http\Controllers\Administrator\QuestionController::class, 'delete'])->name('admin-delete-question');
    
+
     });
     // Will be inside middleware
 });
