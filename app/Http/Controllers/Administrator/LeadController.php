@@ -82,7 +82,7 @@ class LeadController extends Controller
             }
 
           
-            $fileName = 'leads-'.date("y-m-d-h-i-s").'.csv';
+            $fileName = 'ica-classroom-leads-'.date("y-m-d-h-i-s").'.csv';
             $headers = [
                 "Content-type" => "text/csv",
                 "Content-Disposition" => "attachment; filename=$fileName",

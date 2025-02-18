@@ -107,7 +107,7 @@ class LeadReferController extends Controller
 
     public function updateLeadStatus($id){
         try {
-            $data = ['crm_status' => '1'];
+            $data = ['crm_status' => '1','otp_status' => '1'];
             $lead = Lead::findOrFail($id);
             $lead->update($data);
             return redirect()->back()->with('message', 'Lead updated successfully!');

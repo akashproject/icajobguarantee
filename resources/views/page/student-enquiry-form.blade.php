@@ -153,7 +153,7 @@
                                 </div>
                             </div>
                             <div class="col-md-8" >
-                                <form id="global_other_details_form" class="contact_form lead_form" action="{{ url('enquiry-form-submit') }}" method="POST" enctype="multipart/form-data">
+                                <form id="walking_lead_enquiry_form" class="contact_form lead_form" action="{{ url('enquiry-form-submit') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                     <div class="wizerd_group my-3" >
                                         @switch($step)
@@ -172,7 +172,7 @@
                                                         <div class="col-md-6">
                                                             <label for="lead_prefer_job" class="lead_prefarence_tab"> 
                                                                 <h2 class="" >FULL TIME JOB</h2>
-                                                                <input type="radio" id="lead_prefer_job" data-id="lead_prefer_job" name="lead_prefference" value="Full Time Job" class="lead_prefference wizard-required" required>
+                                                                <input type="radio" id="lead_prefer_job" data-id="lead_prefer_job" name="lead_prefference" value="Full Time Job" class="lead_prefference wizard-required">
                                                             </label>
                                                         </div>
                                                         <div class="col-md-6">
@@ -181,7 +181,11 @@
                                                                 <input type="radio" id="lead_prefer_skill_update" data-id="lead_prefer_skill_update" name="lead_prefference" value="Skill Development" class="lead_prefference wizard-required">
                                                             </label>
                                                         </div>
+                                                        <div class="col-md-12 text-center">
+                                                            <label class="error"></label>
+                                                        </div>
                                                     </div>
+                                                    
                                                 </div>
                                                 <div class="lead_prefer_job lead_preference_selection">
                                                     <div class="subheading mt-6">
@@ -191,7 +195,7 @@
                                                         <div class="col-md-4">
                                                             <label for="entry_level_job" class="lead_prefarence_tab"> 
                                                                 <h2 class="" >Entry Level</h2>
-                                                                <input type="radio" data-id="placement_duration" id="entry_level_job" name="job_type" value="Entry Level" class="lead_prefference wizard-required">
+                                                                <input type="radio" data-id="placement_duration" id="entry_level_job" name="job_type" value="Entry Level" class="lead_prefference wizard-required" required>
                                                             </label>
                                                         </div>
                                                         <div class="col-md-4">
@@ -206,11 +210,14 @@
                                                                 <input type="radio" data-id="placement_duration" id="senior_level_job" name="job_type" value="Senior Level" class="lead_prefference wizard-required">
                                                             </label>
                                                         </div>
+                                                        <div class="col-md-12 text-center">
+                                                            <label class="error"></label>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="placement_duration lead_preference_selection">
                                                     <div class="text-center subheading mt-6">
-                                                        <h3>Looking for to join in how many month</h3>
+                                                        <h3>Looking for to join in how many months</h3>
                                                     </div> 
                                                     <div class="lead_prefarence_tab_container row" >
                                                         <div class="col-md-6">
@@ -236,6 +243,9 @@
                                                                 <h2 class="" >> 12</h2>
                                                                 <input type="radio" id="get_job_after_12_month" data-id="select_preffered_course" name="placement_duration" value="> 12" class="lead_prefference wizard-required">
                                                             </label>
+                                                        </div>
+                                                        <div class="col-md-12 text-center">
+                                                            <label class="error"></label>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -305,6 +315,9 @@
                                                                     <span class="" >Job Guarantee Programm</span>
                                                                 </label>
                                                             </div>
+                                                            <div class="col-md-12 text-center">
+                                                                <label class="error"></label>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -325,6 +338,9 @@
                                                                     <input type="checkbox" id="career_to_mis_analytics" name="skill_list[]" value="MIS Analytics" class="wizard-required">
                                                                     <span class="" >MIS Analytics</span>
                                                                 </label>
+                                                            </div>
+                                                            <div class="col-md-12 text-center">
+                                                                <label class="error"></label>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -371,7 +387,7 @@
                                                             <div class="col-6" >
                                                                 <div class="contact-info formFieldPassingYear">
                                                                     <label class="mb-0" style="color: #403c9c;font-weight: 600;"> Please specify your year of passing </label>
-                                                                    <select id="formFieldPassingYear" class="passing_year" name="passing_year" required class="wizard-required">
+                                                                    <select id="formFieldPassingYear" class="passing_month" name="passing_month" required class="wizard-required">
                                                                         <option value=""> Select Month</option>
                                                                         <option value="January">January</option>
                                                                         <option value="February">February</option>
@@ -402,7 +418,7 @@
                                                     <div class="col-12" >
                                                         <div class="contact-info formFieldInstitute">
                                                             <label class="mb-0" style="color: #403c9c;font-weight: 600;">Mention your College/university. </label>
-                                                            <input id="formFieldInstitute" name="institute" type="text" placeholder="Enter Passing Collage/University" autocomplete="off" required class="wizard-required">
+                                                            <input id="formFieldInstitute" name="institute" type="text" placeholder="Enter Passing College/University" autocomplete="off" required class="wizard-required">
                                                         </div>
                                                     </div>
                                                     <div class="col-12" >
@@ -433,6 +449,7 @@
                                                             </select>
                                                         </div>
                                                     </div>
+                                                    
                                                 </div>
                                                 <div class="form-group clearfix  mt-3"> 
                                                     <a href="{{ route('student-enquiry-form',[$previousStep,'center'=>$center,'enquiry'=>base64_encode($enquiry)]) }}" class="form-wizard-previous-btn float-left">Previous</a> 
@@ -600,9 +617,9 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-12" >
-                                                        <div class="contact-info formFieldOtherGurdian">
-                                                            <label class="mb-0" style="color: #403c9c;font-weight: 600;">*Please share if you have another gurdian detail</label>
-                                                            <textarea id="formFieldOtherGurdian" name="other_gurdian" class="textarea_form-field"></textarea>
+                                                        <div class="contact-info formFieldOtherGuardian">
+                                                            <label class="mb-0" style="color: #403c9c;font-weight: 600;">*Please share if you have another guardian detail</label>
+                                                            <textarea id="formFieldOtherGuardian" name="other_guardian" class="textarea_form-field"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -617,11 +634,11 @@
                                         <!-- Know ICA -->
                                         <div class="wizerd_set" >
                                             <div class="wizerd_fieldset" >
-                                                <h3 class="heading">Tell Me something about goal</h3>
+                                                <h3 class="heading">Tell Me something about your goal</h3>
                                                 <div class="row" > 
                                                     <div class="col-12" >
                                                         <div class="contact-info formFieldNextGoal">
-                                                            <label class="mb-0" style="color: #403c9c;font-weight: 600;"> What is your expected starting salary per moth</label>
+                                                            <label class="mb-0" style="color: #403c9c;font-weight: 600;"> What is your expected starting salary per month</label>
                                                             <input id="formFieldNextGoal" name="starting_salary" type="number" autocomplete="off" required class="wizard-required" min="10000">
                                                             <div class="wizard-form-error"></div>
                                                         </div>
@@ -672,5 +689,43 @@
         <script src="{{ url('assets/js/bootstrap.min.js') }}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
         <script src="{{ url('assets/js/enquiry-form.js') }}"></script>
+
+        <script type="text/javascript">
+            jQuery("#walking_lead_enquiry_form").validate({
+                rules: {
+                    lead_prefference: {required: true},
+                    placement_duration: {required: true},
+                    "skill_list[]": { required: true }
+                },
+                messages: {
+                    lead_prefference: {
+                        required: "Please Select Any of the following option ",
+                    },
+                    placement_duration: {
+                        required: "Please Select Any of the following option ",
+                    },
+                    job_type: {
+                        required: "Please Select Any of the following option ",
+                    },
+                    "skill_list[]": {
+                        required: "Please Select Any of the following option ",
+                    },
+                    qualification: {
+                        required: "Please Select highest Qualification ",
+                    },
+                    passing_month: {
+                        required: "Please Select Passing Month ",
+                    },
+                    passing_year: {
+                        required: "Please Select Passing Year ",
+                    },
+                    institute: {
+                        required: "Enter Passing College/University",
+                    },
+                },
+                errorElement : 'label',
+                errorLabelContainer: '.error'
+            });
+        </script>
     </body>
 </html>
