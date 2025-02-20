@@ -171,9 +171,25 @@
   }
   .wizerd_group {
     border: 1px solid #afc8ff;
-    padding: 20px;
     box-shadow: 0 0 5px 2px #d1caff;
     border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .wizerd_panel_header {
+    padding: 8px 0;
+    background: #574cbb;
+  }
+
+  .wizerd_panel_header .heading {
+    color: #ffffff;
+  }
+
+  .wizerd_fieldset {
+    padding: 20px;
+  }
+  .lead_prefarence_tab_container {
+    padding: 20px;
   }
 
   .add_more_role_btn,.remove_role_btn {
@@ -196,10 +212,32 @@
   .job_role_elem {
     margin-top: 5px;
   }
+
+  .justify-content-center{
+    justify-content: center;
+  }
+
   @media screen and (max-width: 1024px) {
     .wizerd_header h4 {
       display: inline;
       font-size: 12px;
       line-height: 0;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .not_in_mobile {
+      display: none;
+    }
+    .field_checkbox_group label {
+      display: block;
+    }
+
+    .form-wizard-next-btn, .form-wizard-previous-btn {
+      padding: 11px 50px;
+    }
+    .wizerd_panel_header {
+      padding: 10px;
+      background: #574cbb;
     }
   }

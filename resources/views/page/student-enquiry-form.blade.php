@@ -128,7 +128,7 @@
                 <div class="row justify_center">	
                     <div class="col-md-12">
                         <div class="row">
-                            <div class="col-md-4" >
+                            <div class="col-md-4 not_in_mobile" >
                                 <div class="form_wizerd_header form-wizard-panel"> 
                                     <a href="javascript:void(0)"  class="wizerd_header form-wizard-steps {{ ($step == null)?'active':'' }}">
                                         <span>1.</span>
@@ -160,14 +160,28 @@
                                         @case(null)
                                         <div class="wizerd_set" >
                                             <div class="wizerd_welcome_screen" >
-                                                
                                                 <div class="lead_preference_selection active">
                                                     <div class="text-center subheading mt-6">
-                                                        <h2 style="color: #393185;font-weight: 600;">WELCOME TO ICA EDU Skills</h2>
+                                                        <h1 style="color: #393185;font-weight: 800;">WELCOME TO <br> ICA EDU Skills</h1>
+                                                        <div class="lead_prefarence_tab_container row justify-content-center">
+                                                            <div class="col-12 mb-3">
+                                                                <h5> Need some information to suggest a most suitable program for you </h5> 
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <label for="start_counselling" class="lead_prefarence_tab"> 
+                                                                    <h2 class="" >START</h2>
+                                                                    <input type="radio" id="start_counselling" data-id="start_counselling"  value="Full Time Job" class="lead_prefference wizard-required">
+                                                                </label>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <div class="subheading mt-6">
-                                                        <h5>May I Know what are you Looking for</h5>
-                                                    </div>
+                                                </div>
+                                                <div class="lead_preference_selection start_counselling">
+                                                    <div class="wizerd_panel_header">
+                                                        <div class="text-center">
+                                                            <h3 class="heading">May I Know what are you Looking for</h3>
+                                                        </div>
+                                                    </div>  
                                                     <div class="lead_prefarence_tab_container row" >
                                                         <div class="col-md-6">
                                                             <label for="lead_prefer_job" class="lead_prefarence_tab"> 
@@ -185,12 +199,13 @@
                                                             <label class="error"></label>
                                                         </div>
                                                     </div>
-                                                    
                                                 </div>
                                                 <div class="lead_prefer_job lead_preference_selection">
-                                                    <div class="subheading mt-6">
-                                                        <h3>Which job position you want to reach in 3 - 5 year</h3>
-                                                    </div> 
+                                                    <div class="wizerd_panel_header">
+                                                        <div class="text-center">
+                                                            <h3 class="heading">Which job position you want to reach in 3 - 5 year</h3>
+                                                        </div>
+                                                    </div>
                                                     <div class="lead_prefarence_tab_container row" >
                                                         <div class="col-md-4">
                                                             <label for="entry_level_job" class="lead_prefarence_tab"> 
@@ -216,9 +231,11 @@
                                                     </div>
                                                 </div>
                                                 <div class="placement_duration lead_preference_selection">
-                                                    <div class="text-center subheading mt-6">
-                                                        <h3>Looking for to join in how many months</h3>
-                                                    </div> 
+                                                    <div class="wizerd_panel_header">
+                                                        <div class="text-center">
+                                                            <h3 class="heading">Looking for to join in how many months</h3>
+                                                        </div>
+                                                    </div>
                                                     <div class="lead_prefarence_tab_container row" >
                                                         <div class="col-md-6">
                                                             <label for="get_job_in_3_month" class="lead_prefarence_tab"> 
@@ -251,8 +268,10 @@
                                                 </div>
                                                 <div class="lead_prefer_skill_update lead_preference_selection">
                                                     <div class="">
-                                                        <div class="text-center subheading mt-6">
-                                                            <h3>Which skill You want to add</h3>
+                                                        <div class="wizerd_panel_header">
+                                                            <div class="text-center">
+                                                                <h3 class="heading">Which skill You want to add</h3>
+                                                            </div>
                                                         </div>
                                                         <div class="lead_prefarence_tab_container row" >
                                                             <div class="col-md-6">
@@ -319,12 +338,18 @@
                                                                 <label class="error"></label>
                                                             </div>
                                                         </div>
+                                                        <div class="form-group clearfix px-3 mt-3"> 
+                                                            <a href="javascript:void(0)" onClick="location.reload();" class="form-wizard-previous-btn float-left">Reset</a> 
+                                                            <button type="submit" class="form-wizard-next-btn float-right">Next</button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="select_preffered_course lead_preference_selection">
                                                     <div class="">
-                                                        <div class="text-center subheading mt-6">
-                                                            <h3>Which field you want to build your career</h3>
+                                                        <div class="wizerd_panel_header">
+                                                            <div class="text-center">
+                                                                <h3 class="heading">Which field you want to build your career</h3>
+                                                            </div>
                                                         </div>
                                                         <div class="lead_prefarence_tab_container row" >
                                                             <div class="col-md-6">
@@ -343,24 +368,24 @@
                                                                 <label class="error"></label>
                                                             </div>
                                                         </div>
+                                                        <div class="form-group clearfix px-3 mt-3"> 
+                                                            <a href="javascript:void(0)" onClick="location.reload();" class="form-wizard-previous-btn float-left">Reset</a> 
+                                                            <button type="submit" class="form-wizard-next-btn float-right">Next</button>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            <div class="wizerd_fieldset" >
-                                                <div class="form-group clearfix  mt-3"> 
-                                                    <a href="javascript:void(0)" onClick="location.reload();" class="form-wizard-previous-btn float-left">Reset</a> 
-                                                    <button type="submit" class="form-wizard-next-btn float-right">Next</button>
                                                 </div>
                                             </div>
                                         </div>
                                         @break
                                         @case(1)
                                         <!-- Qualification -->
-                                        <div class="wizerd_set" >                                          
-                                            <div class="wizerd_fieldset" >
+                                        <div class="wizerd_set" >  
+                                            <div class="wizerd_panel_header">
                                                 <div class="text-center">
                                                     <h3 class="heading">Tell me about your qualification</h3>
                                                 </div>
+                                            </div>                                        
+                                            <div class="wizerd_fieldset" >
                                                 <div class="row" > 
                                                     <div class="col-12" >
                                                         <div class="contact-info formFieldHighestQualification">
@@ -384,9 +409,11 @@
                                                     </div>
                                                     <div class="col-12" >
                                                         <div class="row" >
+                                                            <div class="col-12">
+                                                                <label class="mb-0" style="color: #403c9c;font-weight: 600;"> Please specify your year of passing </label>
+                                                            </div>
                                                             <div class="col-6" >
                                                                 <div class="contact-info formFieldPassingYear">
-                                                                    <label class="mb-0" style="color: #403c9c;font-weight: 600;"> Please specify your year of passing </label>
                                                                     <select id="formFieldPassingYear" class="passing_month" name="passing_month" required class="wizard-required">
                                                                         <option value=""> Select Month</option>
                                                                         <option value="January">January</option>
@@ -405,7 +432,6 @@
                                                                 </div>
                                                             </div>
                                                             <div class="col-6" >
-                                                                <label class="mb-0" style="color: #403c9c;font-weight: 600;">  </label>
                                                                 <select id="formFieldPassingYear" class="passing_year" name="passing_year" required class="wizard-required">
                                                                     <option value=""> Select Year</option>
                                                                     @for ($year = now()->year; $year >= 1980; $year--)
@@ -424,15 +450,14 @@
                                                     <div class="col-12" >
                                                         <div class="contact-info formFieldInstitute">
                                                             <label class="mb-0" style="color: #403c9c;font-weight: 600;"> Have you completed or are you currently pursuing any professional courses? </label>
-                                                            <div>
-                                                                <span><input type="checkbox" name="professional_course[]" value="Bank PO" > Bank PO </span>
-                                                                <span><input type="checkbox" name="professional_course[]" value="Railway" > Railway </span>
-                                                                <span><input type="checkbox" name="professional_course[]" value="SSC" > SSC </span>
-                                                                <span><input type="checkbox" name="professional_course[]" value="State Service Commission" > State Service Commission </span>
-                                                                <span><input type="checkbox" name="professional_course[]" value="CA" > CA </span>
-                                                                <span><input type="checkbox" name="professional_course[]" value="CS" > CS </span>
-                                                                <span><input type="checkbox" name="professional_course[]" value="CMA" > CMA </span>
-                                                                <span><input type="checkbox" name="professional_course[]" value="Other" class="hide_show_text_field"> Other </span>
+                                                            <div class="field_checkbox_group mt-3">
+                                                                <label for="bank_po" ><input type="checkbox" id="bank_po" name="professional_course[]" value="Bank PO" > Bank PO </label>
+                                                                <label for="railway" ><input type="checkbox" id="railway" name="professional_course[]" value="Railway" > Railway </label>
+                                                                <label for="ssc" ><input type="checkbox" id="ssc" name="professional_course[]" value="State Service Commission" > State Service Commission </label>
+                                                                <label for="ca" ><input type="checkbox" id="ca" name="professional_course[]" value="CA" > CA </label>
+                                                                <label for="cs" ><input type="checkbox" id="cs" name="professional_course[]" value="CS" > CS </label>
+                                                                <label for="cma" ><input type="checkbox" id="cma" name="professional_course[]" value="CMA" > CMA </label>
+                                                                <label for="other" ><input type="checkbox" id="other" name="professional_course[]" value="Other" class="hide_show_text_field"> Other </label>
                                                             </div>
                                                         </div>
                                                         <div class="specify_field my-2" style="display:none" >
@@ -461,8 +486,13 @@
                                         @case(2)
                                         <!-- Work Experience -->
                                         <div class="wizerd_set" >
+                                            <div class="wizerd_panel_header">
+                                                <div class="text-center">
+                                                    <h3 class="heading">Tell me about your professional information</h3>
+                                                </div>
+                                            </div> 
                                             <div class="wizerd_fieldset" >
-                                                <h3 class="heading">Tell me about your professional information</h3>
+                                                
                                                 <div class="row" > 
                                                     <div class="col-12" >
                                                         <div class="contact-info formFieldIsWorkExperience">
@@ -505,8 +535,12 @@
                                         @case(3)
                                         <!-- Personal Experience -->
                                         <div class="wizerd_set" >
+                                            <div class="wizerd_panel_header">
+                                                <div class="text-center">
+                                                    <h3 class="heading">Tell me about personal information</h3>
+                                                </div>
+                                            </div> 
                                             <div class="wizerd_fieldset" >
-                                                <h3 class="heading">Tell me something about personal information</h3>
                                                 <div class="row" > 
                                                     <div class="col-12" >
                                                         <div class="contact-info formFieldName">
@@ -560,7 +594,7 @@
                                                     </div>
                                                     <div class="col-12" >
                                                         <div class="contact-info formFieldPincode">
-                                                            <input id="formFieldPincode" name="pincode" type="text" placeholder="Enter Your Pincode" min="700000" max="799999" autocomplete="off" required class="wizard-required">
+                                                            <input type="number" id="formFieldPincode" name="pincode" placeholder="Enter Your Pincode" min="700000" max="799999" autocomplete="off" required class="wizard-required">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -625,6 +659,7 @@
                                                 </div>
                                                 <div class="form-group clearfix  mt-3">
                                                     <a href="{{ route('student-enquiry-form-with-slug',[$previousStep,'center'=>$center,'enquiry'=>base64_encode($enquiry)]) }}" class="form-wizard-previous-btn float-left">Previous</a> 
+                                                    <input type="hidden" name="otp_validation" value="1" id="otp_validation" > 
                                                     <button type="submit" class="form-wizard-next-btn float-right">Next</button>
                                                 </div>
                                             </div>
@@ -633,8 +668,12 @@
                                         @case(4)
                                         <!-- Know ICA -->
                                         <div class="wizerd_set" >
+                                            <div class="wizerd_panel_header">
+                                                <div class="text-center">
+                                                    <h3 class="heading">Tell Me about your goal</h3>
+                                                </div>
+                                            </div>
                                             <div class="wizerd_fieldset" >
-                                                <h3 class="heading">Tell Me something about your goal</h3>
                                                 <div class="row" > 
                                                     <div class="col-12" >
                                                         <div class="contact-info formFieldNextGoal">
@@ -645,7 +684,7 @@
                                                     </div>
                                                     <div class="col-12" >
                                                         <div class="contact-info formFieldNextGoal">
-                                                            <label class="mb-0" style="color: #403c9c;font-weight: 600;"> Expected starting salary per month after 5 Years</label>
+                                                            <label class="mb-0" style="color: #403c9c;font-weight: 600;"> Expected salary per month after 5 Years</label>
                                                             <input id="formFieldNextGoal" name="next_goal" type="number" autocomplete="off" required class="wizard-required" min="10000">
                                                             <div class="wizard-form-error"></div>
                                                         </div>
@@ -653,11 +692,11 @@
                                                     <div class="col-12" >
                                                         <div class="contact-info formFieldlocationPrefarence">
                                                             <label class="mb-0" style="color: #403c9c;font-weight: 600;"> Do you have any location preference for placement? [If yes, please specify]</label>
-                                                            <div>
-                                                            <span><input type="radio" name="location_prefarence" value="same city" checked> Same City </span>
-                                                            <span><input type="radio" name="location_prefarence" value="same State"> Same State </span>
-                                                            <span><input type="radio" name="location_prefarence" value="Anywhere in India"> Anywhere in India </span>
-                                                            <span><input type="radio" name="location_prefarence" value="Anywhere in World"> Anywhere in World </span>
+                                                            <div class="field_checkbox_group mt-3">
+                                                                <label for="same_city" ><input type="radio" id="same_city" name="location_prefarence" value="same city" checked> Same City </label>
+                                                                <label for="same_state" ><input type="radio" id="same_state" name="location_prefarence" value="same State"> Same State </label>
+                                                                <label for="same_india" ><input type="radio" id="same_india" name="location_prefarence" value="Anywhere in India"> Anywhere in India </label>
+                                                                <label for="same_world" ><input type="radio" id="same_world" name="location_prefarence" value="Anywhere in World"> Anywhere in World </label>
                                                             </div>
                                                             <div class="wizard-form-error"></div>
                                                         </div>
@@ -665,7 +704,7 @@
                                                 </div>
                                                 <div class="form-group clearfix  mt-3">
                                                     <a href="{{ route('student-enquiry-form-with-slug',[$previousStep,'center'=>$center,'enquiry'=>base64_encode($enquiry)]) }}" class="form-wizard-previous-btn float-left">Previous</a> 
-                                                    <button href="javascript:;" class="form-wizard-next-btn float-right">Submit Form</button>
+                                                    <button href="javascript:void(0);" class="form-wizard-next-btn float-right">Submit</button>
                                                 </div>
                                             </div>
                                         </div>
