@@ -656,10 +656,26 @@
                                                             <textarea id="formFieldOtherGuardian" name="other_guardian" class="textarea_form-field"></textarea>
                                                         </div>
                                                     </div>
+
+                                                    <div class="col-lg-12 text-center response_success" style="display:none;">
+                                                        <div >
+                                                            <p class="margin-0px-bottom response_status" > Invalid One Time Password </p>
+                                                            <p class="margin-0px-bottom" >Please Enter OTP or <a href="javascript:void(0)" class="resendOtp" >Resend OTP</a> </p>
+                                                            <p class="margin-0px-bottom" >OTP will expire after 2mins : <span class="countdown"> 2:00 </span></p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group form_style response_success"  style="display:none;">
+                                                            <label>One time password<span class="required">*</span></label>
+                                                            <input type="number" name="verify_otp" class="form-control verify_otp" autocomplete="off" >
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <div class="form-group clearfix  mt-3">
                                                     <a href="{{ route('student-enquiry-form-with-slug',[$previousStep,'center'=>$center,'enquiry'=>base64_encode($enquiry)]) }}" class="form-wizard-previous-btn float-left">Previous</a> 
                                                     <input type="hidden" name="otp_validation" value="1" id="otp_validation" > 
+                                                    <input type="hidden" name="responsed_otp" class="responsed_otp" value="">
                                                     <button type="submit" class="form-wizard-next-btn float-right">Next</button>
                                                 </div>
                                             </div>
@@ -763,7 +779,28 @@
                     },
                 },
                 errorElement : 'label',
-                errorLabelContainer: '.error'
+                errorLabelContainer: '.error',
+                submitHandler: function(form) {
+                    let formId = $(form).attr('id');
+                    let otp_validation = jQuery("#" + formId + " #otp_validation").val()
+                    if(otp_validation == "1"){
+                        var verifyOtp = jQuery("#" + formId + " .verify_otp").val();
+                        var responsedOtp = jQuery("#" + formId + " .responsed_otp").val();
+                        if (verifyOtp != '' && verifyOtp == responsedOtp) {
+                            jQuery('.checkout_loader').show();
+                            form.submit();
+                        } else if (verifyOtp != '' && verifyOtp != responsedOtp) {
+                            jQuery("#" + formId + " .response_status").html("OTP is Invalid");
+                            jQuery("#" + formId + " .response_status").css("color","red");
+                        } else {
+                            sendMobileOtp(formId);
+                        }
+                        return false;
+                        
+                    } else {
+                        form.submit();
+                    }
+                }
             });
         </script>
     </body>

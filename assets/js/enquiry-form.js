@@ -93,7 +93,71 @@ jQuery(".copy_mobile_no").change(function(){
 
 jQuery(".occupation").on("change",function(){
 	if(jQuery(this).val() == "Other"){
-		
 		jQuery("."+jQuery(this).attr("data-id")).show();
 	}
 })
+
+function sendMobileOtp(formId) {
+    var mobileNo = jQuery("#" + formId + " input[name='mobile']").val();
+	$.ajaxSetup({
+		headers: {
+		'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+		}
+	});
+    jQuery.ajax({
+        url: `${globalUrl}submit-mobile-otp`,
+		type: "post",
+		data: {
+			mobile: mobileNo,
+		},
+        success: function(result) {
+            if (result.status == "success") {
+                countDown()
+                jQuery("#" + formId + " .responsed_otp").val(result.otp_value);
+                jQuery("#" + formId + " .response_success").show();
+                jQuery("#" + formId + " .response_status").html("OTP Has Been Sent Successfully");
+                jQuery("#" + formId + " .response_status").css("color","green");
+                return true;
+            } else {
+                jQuery("#" + formId + " .response_status").html("OTP Sent Failed! Please Try Again Later");
+                jQuery("#" + formId + " .response_status").css("color","red");
+                return true;
+            }
+        }
+    });
+}
+
+function countDown() {
+	if ($('.coming-countdown').length > 0) {
+		// Specify the deadline date
+		var deadlineDate = new Date('Decembar 21, 2018 23:59:59').getTime();
+
+		// Cache all countdown boxes into consts
+		var countdownDays = document.querySelector('.days .number');
+		var countdownHours = document.querySelector('.hours .number');
+		var countdownMinutes = document.querySelector('.minutes .number');
+		var countdownSeconds = document.querySelector('.seconds .number');
+
+		// Update the count down every 1 second (1000 milliseconds)
+		setInterval(function () {
+		// Get current date and time
+		var currentDate = new Date().getTime();
+
+		// Calculate the distance between current date and time and the deadline date and time
+		var distance = deadlineDate - currentDate;
+
+		// Time calculations for days, hours, minutes and seconds
+		var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+		// Insert the result data into individual countdown boxes
+		countdownDays.innerHTML = days;
+		countdownHours.innerHTML = hours;
+		countdownMinutes.innerHTML = minutes;
+		countdownSeconds.innerHTML = seconds;
+		}, 1000);
+	
+	};
+}
