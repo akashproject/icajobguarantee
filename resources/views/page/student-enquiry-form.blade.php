@@ -179,7 +179,7 @@
                                                 <div class="lead_preference_selection start_counselling">
                                                     <div class="wizerd_panel_header">
                                                         <div class="text-center">
-                                                            <h3 class="heading">May I Know what are you Looking for</h3>
+                                                            <h3 class="heading">May I know what are you looking for</h3>
                                                         </div>
                                                     </div>  
                                                     <div class="lead_prefarence_tab_container row" >
@@ -203,7 +203,7 @@
                                                 <div class="lead_prefer_job lead_preference_selection">
                                                     <div class="wizerd_panel_header">
                                                         <div class="text-center">
-                                                            <h3 class="heading">Which job position you want to reach in 3 - 5 year</h3>
+                                                            <h3 class="heading">Which job position you want to reach in 3 - 5 years</h3>
                                                         </div>
                                                     </div>
                                                     <div class="lead_prefarence_tab_container row" >
@@ -233,7 +233,7 @@
                                                 <div class="placement_duration lead_preference_selection">
                                                     <div class="wizerd_panel_header">
                                                         <div class="text-center">
-                                                            <h3 class="heading">Looking for to join in how many months</h3>
+                                                            <h3 class="heading">How many months are you looking to join in?</h3>
                                                         </div>
                                                     </div>
                                                     <div class="lead_prefarence_tab_container row" >
@@ -270,7 +270,7 @@
                                                     <div class="">
                                                         <div class="wizerd_panel_header">
                                                             <div class="text-center">
-                                                                <h3 class="heading">Which skill You want to add</h3>
+                                                                <h3 class="heading">Which skill you want to add</h3>
                                                             </div>
                                                         </div>
                                                         <div class="lead_prefarence_tab_container row" >
