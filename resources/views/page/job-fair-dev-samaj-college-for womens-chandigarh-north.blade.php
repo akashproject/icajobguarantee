@@ -271,6 +271,7 @@
                                                             <option value="M.A. - Arts">M.A. - Arts</option>
                                                             <option value="M.Com - Commerce">M.Com - Commerce</option>
                                                             <option value="M.Sc - Science">M.Sc - Science</option>
+                                                            <option value="M.Sc - Science">BCA</option>
                                                             <option value="MBA - Managment">MBA - Managment</option>
                                                         </select>
                                                     </div>

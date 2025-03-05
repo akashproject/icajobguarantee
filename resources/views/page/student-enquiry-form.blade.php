@@ -52,6 +52,7 @@
                 margin: 0 5px;
                 border-radius: 10px;
                 position: relative;
+                z-index: 999;
             }
             .lead_prefarence_tab h2 {
                 font-size: 30px;
@@ -75,6 +76,14 @@
                 font-weight: 600;
                 color: #214b96;
                 font-size: 16px;
+            }
+            @media screen and (max-width: 991px) {
+                .navbar-header {
+                    position: relative;
+                }
+            }
+            .navbar-header {
+                width: 100%;
             }
         </style>
     </head>
@@ -162,7 +171,7 @@
                                             <div class="wizerd_welcome_screen" >
                                                 <div class="lead_preference_selection active">
                                                     <div class="text-center subheading mt-6">
-                                                        <h1 style="color: #393185;font-weight: 800;">WELCOME TO <br> ICA EDU Skills</h1>
+                                                        <h1 style="color: #393185;font-weight: 800;">WELCOME TO <br> ICA EDU SKILLS</h1>
                                                         <div class="lead_prefarence_tab_container row justify-content-center">
                                                             <div class="col-12 mb-3">
                                                                 <h5> Need some information to suggest a most suitable program for you </h5> 
@@ -277,7 +286,7 @@
                                                             <div class="col-md-6">
                                                                 <label for="skill_update_to_tally_prime" class="lead_prefarence_list"> 
                                                                     <input type="checkbox" id="skill_update_to_tally_prime" name="skill_list[]" value="Tally Prime" class="wizard-required">
-                                                                    <span class="" >Tally Prime</span>
+                                                                    <span class="" >TallyPrime</span>
                                                                 </label>
                                                             </div>
                                                             <div class="col-md-6">
@@ -289,7 +298,7 @@
                                                             <div class="col-md-6">
                                                                 <label for="skill_update_to_advance_excel" class="lead_prefarence_list"> 
                                                                     <input type="checkbox" id="skill_update_to_advance_excel" name="skill_list[]" value="Advance Excel" class="wizard-required">
-                                                                    <span class="" >Advance Excel</span>
+                                                                    <span class="" >Advanced Excel</span>
                                                                 </label>
                                                             </div>
                                                             <div class="col-md-6">
@@ -313,7 +322,7 @@
                                                             <div class="col-md-6">
                                                                 <label for="skill_update_to_softskill" class="lead_prefarence_list"> 
                                                                     <input type="checkbox" id="skill_update_to_softskill" name="skill_list[]" value="Soft skill and Interview Preparation" class="wizard-required">
-                                                                    <span class="" >Soft skill and Interview Preparation</span>
+                                                                    <span class="" >Soft Skill And Interview Preparation</span>
                                                                 </label>
                                                             </div>
                                                             <div class="col-md-6">
@@ -331,7 +340,7 @@
                                                             <div class="col-md-6">
                                                                 <label for="lead_prefer_job" class="lead_prefarence_list"> 
                                                                     <input type="checkbox" id="lead_prefer_job" data-id="lead_prefer_job" name="lead_prefference" value="Full Time Job" class="lead_prefference wizard-required">
-                                                                    <span class="" >Job Guarantee Programm</span>
+                                                                    <span class="" >Job Guarantee Program</span>
                                                                 </label>
                                                             </div>
                                                             <div class="col-md-12 text-center">

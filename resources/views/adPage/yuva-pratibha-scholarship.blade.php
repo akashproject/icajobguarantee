@@ -49,10 +49,6 @@
                         <li class="">
                            <a href="#certification">Certification</a>
                         </li>
-                        <!--li class="">
-                           <a href="#testimonials">Testimonials</a>
-                           
-                           </li-->
                         <li class="">
                            <a href="#faqs">FAQs</a>
                         </li>
@@ -81,10 +77,6 @@
                         <li class="">
                            <a href="#certification">Certification</a>
                         </li>
-                        <!--li class="">
-                           <a href="#testimonials">Testimonials</a>
-                           
-                           </li-->
                         <li class="">
                            <a href="#faqs">FAQs</a>
                         </li>
@@ -101,19 +93,16 @@
 <section id="breadcrumb" class="ad-page-banner banner-black-shadow relative-position backgroud-style" style="background-image: url({{ (isset($contentMain->banner_image))?getSizedImage('',$contentMain->banner_image):url('assets/img/banner/brt-1.jpg') }});" >
    <div class="container">
       <div class="row">
-         <div class="col-md-7">
-            <div style="padding:20px;">
-                <!--div class="ad-banner-title">
-                    <h1 class="text-center text-white">ICA's Yuva Pratibha Scholarship</h1>
-                </div-->
-                <img src="https://www.icajobguarantee.com/public/upload/2023-08-23/yuva-pratibha-scholarship.jpg" alt="yuva pratibha scholarship">
+         <div class="col-md-8">
+            <div style="padding-top:20px;">
+                <img src="https://www.icajobguarantee.com/public/upload/2024-12-10/website-banner.png" alt="yuva pratibha scholarship">
             </div>
          </div>
-         <div class="col-md-5">
+         <div class="col-md-4">
             <div class="highlighted-content-wrapper text-center">
-               <div class="ad_banner_form_wrapeer" style="background:#0B151B!important;">
+               <div class="ad_banner_form_wrapeer" style="background:#222D33!important;">
                   <div class="register-fomr-title text-center">
-                     <h3 class="bold-font text-white" style="font-size: 21px!important;"><span> Empowering </span> Young Talents </h3>
+                     <h3 class="bold-font text-white" style="font-size: 23px!important;"><span> Empowering </span> Young Talents </h3>
                      <p class="bold-font text-white" style="font-size: 18px!important;">Yuva Pratibha Scholarship is Open</p>
                   </div>
                   <div class="register-form-area text-left" >
@@ -170,7 +159,7 @@
                      <i class="text-gradiant flaticon-book"></i>
                   </div>
                   <div class="counter-number">
-                     <span class="counter-count bold-font">24</span><span>+</span>
+                     <span class="counter-count bold-font">26</span>
                      <p>Years of Excelllence</p>
                   </div>
                </div>
@@ -194,8 +183,8 @@
                      <i class="text-gradiant flaticon-group"></i>
                   </div>
                   <div class="counter-number">
-                     <span class="counter-count bold-font">Live</span>
-                     <p>Projects</p>
+                     <span class="counter-count bold-font">100%</span>
+                     <p>Job Guarantee</p>
                   </div>
                </div>
             </div>
@@ -217,7 +206,7 @@
    <div class="container">
       <!--div class="testimonial-slide"-->
       <div class="section-title mb20 headline text-center">
-         <span class="subtitle text-uppercase"> Student Placement </span>
+         <span class="subtitle text-uppercase"> Few Students' Job Placement Record </span>
          <h3>Connecting Talent with <span>Job Opportunities</span></h3>
       </div>
       <div  id="placement-slide-item" class="placement-slide-area">
@@ -268,13 +257,13 @@
                <div class="col-md-4 col-6">
                   <div class="key-highlights">
                      <img src="{{ url('assets/img/icons/tick.png')}}" >
-                     <h6> Triple Certification </h6>
+                     <h6> 4 Certifications </h6>
                   </div>
                </div>
                <div class="col-md-4 col-6">
                   <div class="key-highlights">
                      <img src="{{ url('assets/img/icons/tick.png')}}" >
-                     <h6> Interactive Classes </h6>
+                     <h6> 10 Simulation Software </h6>
                   </div>
                </div>
                <div class="col-md-4 col-6">
@@ -292,7 +281,7 @@
                <div class="col-md-4 col-6">
                   <div class="key-highlights">
                      <img src="{{ url('assets/img/icons/tick.png')}}" >
-                     <h6> 90% Practical </h6>
+                     <h6> Real-Life Projects </h6>
                   </div>
                </div>
             </div>
@@ -417,8 +406,8 @@
 <section id="courses" class="best-course-section">
    <div class="container">
       <div class="section-title mb45 headline text-center">
-         <span class="subtitle text-uppercase"> COURSES </span>
-         <h3> Browse Our <span> Yuva Pratibha Scholarship </span> Courses </h3>
+         <span class="subtitle text-uppercase"> COURSE INFO </span>
+         <h3> View our <span> Yuva Pratibha Scholarship </span> Course </h3>
       </div>
       <div class="faq-tab mb65">
          <div class="faq-tab-ques ul-li">
@@ -505,7 +494,7 @@
             <h3><span>  {{ $course->name }}.</span></h3>
          </div>
          <div class="row" >
-            <div class="col-md-9">
+            <div class="col-md-12">
                <div class="course-details-item">
                   <div class="faq-tab mb65">
                      <div class="faq-tab-ques  ul-li">
@@ -597,7 +586,7 @@
                   </div>
                </div>
             </div>
-            <div class="col-md-3">
+            <!--div class="col-md-3">
                <div class="side-bar">
                   @if(isset($course->course_video_image) || $course->course_video_image > 0)
                   <div class="latest-area-content " >
@@ -643,7 +632,7 @@
                      </div>
                   </div>
                </div>
-            </div>
+            </div-->
          </div>
       </div>
       @endforeach
@@ -884,7 +873,7 @@
 <!-- End of How Training Works
    ============================================= -->
 <!-- Start  of Certification -->
-<section id="certification" class="sponsor-section">
+<!--section id="certification" class="sponsor-section">
    <div class="container">
       <div class="section-title mb35 headline text-center">
          <span class="subtitle text-uppercase"> COURSE INFO </span>
@@ -899,7 +888,7 @@
          </div>
       </div>
    </div>
-</section>
+</section-->
 <!-- End  of certificate section -->	
 <!-- Start of Testimonials
    ============================================= -->

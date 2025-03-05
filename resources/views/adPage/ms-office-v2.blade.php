@@ -533,8 +533,8 @@
 
                         <div class="ad-banner-title text-white text-center">
 
-                            <h1 style="line-height: 1.2em; font-size: 200%;"> Microsoft Office Certification </h1>
-							<span>Master Class on Ms Word | MS Excel | MS Powerpoint | MS Outlook</span>
+                            <h1 style="line-height: 1.2em; font-size: 200%; color: #fff!important;"> Microsoft Office Certification </h1>
+							<span style="color: #fff!important;">Master Class on Ms Word | MS Excel | MS Powerpoint | MS Outlook</span>
 							
 
                         </div>

@@ -192,13 +192,13 @@
 
                <div class="ad-banner-title">
 
-                  <h1 class="text-center" style="font-size: 32px!important; font-weight: 700!important;"> Post Graduate Diploma in Artificial Intelligence & Machine Learning </h1>
+                  <h1 class="text-center" style="font-size: 32px!important; font-weight: 700!important; color:#fff!important;"> Post Graduate Diploma in Artificial Intelligence & Machine Learning </h1>
 
                </div>
 
                <div class="ad-banner-sub-title">
 
-                  <h2 class="text-center"> Certified by IOK UK </h2>
+                  <h2 class="text-center" style="color:#fff!important;"> Certified by IOK UK </h2>
 
                </div>
 

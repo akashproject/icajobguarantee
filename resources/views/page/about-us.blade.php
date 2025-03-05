@@ -65,7 +65,7 @@
 								</div>
 								<div class="col-md-6 mb10">
 									<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font" style="margin: auto;">
-										<a target="_blank" href="{{ url('franchise-opportunity')}}"> Become ICA Edu Skills Pvt. Ltd. Partner <i class="fas fa-caret-right"></i></a>
+										<a target="_blank" href="{{ url('franchise-opportunity')}}"> Become Our Partner <i class="fas fa-caret-right"></i></a>
 									</div>
 								</div>
 							</div>
@@ -94,7 +94,7 @@
 		</section>
 	<!-- End of about us content
 		============================================= -->
-	<!-- Start secound testimonial section
+	<!-- Start award slides section
 		============================================= -->
 		<section id="testimonial-secound" class="secound-teacher-section">
 			<div class="container">
@@ -114,26 +114,66 @@
 				</div>
 			</div>
 		</section>
-	<!-- End secound testimonial section
+	<!-- End award slides section
 		============================================= -->
+		
+	<!-- Start Awards section
+		============================================= -->		
 		<section id="about-page" class="best-course-section">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-5">
-						<img src="{{ url('/assets/img/awards-recognition.png')}}">
+						<img src="{{ url('/assets/img/awards-recognition.png')}}" alt="ICA Edu Skills: Awards & Recognition" />
 					</div>
-					<div class="col-md-7 ">
+					<div class="col-md-7">
 						<div class="mt10">
-							<h2 class="awards-recognition " > Awards & Recognition </h2>
+							<h2 class="awards-recognition"> Awards & Recognition </h2>
 						</div>
 						<p> When we say ICA Edu Skills Pvt. Ltd. is the ‘No.1 Training Institute in Accounts and Finance’, it’s just not us; it’s an array of brands and organisations who have recognised our hard work and accomplishments over the years. </p>
 						<p> Every year ICA Edu Skills Pvt. Ltd. is conferred with awards and titles which we wear as a badge of honour. </p>
 						<p> There’s not enough space to accommodate all of our acknowledgements all at the same time but we can certainly share some of our prized possessions here.. </p>
+						<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font" style="margin: auto;">
+							<a target="_blank" href="https://www.icajobguarantee.com/awards-recognitions"> View Awards <i class="fas fa-caret-right"></i></a>
+						</div>
 					</div>
 				</div>
 			</div>
 		</section>
-	<!-- Start secound teacher section
+		<!-- End Awards section
+		============================================= -->	
+		
+	<!-- Start ISO Certification section
+		============================================= -->		
+		<section id="about-page" class="best-course-section">
+			<div class="container">
+				<div class="row">
+				    <div class="col-md-5 text-center">
+						<img src="{{ url('/assets/images/ica-edu-skills-ISO-14001-2015.webp')}}" alt="ICA Edu Skills: An ISO 14001:2015 Institution" style="width: 100%; max-width: 300px; height: auto;" />
+					</div>
+					<div class="col-md-7">
+						<div class="mt10">
+							<h2 class="awards-recognition"> An ISO 14001:2015 Institution </h2>
+						</div>
+						<p> ICA Edu Skills Pvt. Ltd., a leading provider of vocational training and skill development programs, demonstrates its commitment to environmental sustainability by achieving ISO 14001:2015 certification. This prestigious accreditation signifies the institution's adherence to globally recognized environmental management standards. </p>
+					    <p> By achieving ISO 14001:2015 certification, ICA Edu Skills establishes itself as a leader in sustainable education, demonstrating its commitment to both academic excellence and a reduced environmental footprint. </p>
+					    <ul style="color: #333!important;">
+					        <li><strong>Reduced Environmental Impact:</strong> ICA Edu Skills minimizes its ecological footprint by efficiently using resources, reducing waste, and preventing pollution.</li>
+                            <li><strong>Enhanced Operational Efficiency:</strong> The ISO 14001 framework improves operations and reduces environmental risks.</li>
+                            <li><strong>Stronger Corporate Social Responsibility:</strong> Prioritizing sustainability demonstrates ICA Edu Skills' commitment to social responsibility and a healthier planet.</li>
+					    </ul>
+					    
+						<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font" style="margin: auto;">
+							<a target="_blank" href="https://www.icajobguarantee.com/assets/certificates/ica-edu-skills-ISO-14001-2015.pdf"> View Certificate <i class="fas fa-caret-right"></i></a>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</section>
+		<!-- End ISO Certification section
+		============================================= -->	
+		
+	    <!-- Start secound teacher section
 		============================================= -->
 		<section id="teacher-2" class="secound-teacher-section">
 			<div class="container">

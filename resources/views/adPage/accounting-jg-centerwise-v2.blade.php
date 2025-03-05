@@ -214,13 +214,13 @@
 
 						<div class="ad-banner-title">
 
-							<h1 class="text-center">Industrial Accounting Courses</h1>
+							<h1 class="text-center" style="color:#fff;">Industrial Accounting Courses</h1>
 
 						</div>
 
 						<div class="ad-banner-sub-title">
 
-							<h3 class="text-center" style="font-size: 1.2rem!important;"> 100% Job Guarantee | Triple Certifications | 7 Simulation Softwares </h3>
+							<h3 class="text-center" style="font-size: 1.2rem!important;color:#fff;"> 100% Job Guarantee | Triple Certifications | 10 Simulation Softwares </h3>
 
 						</div>
 
@@ -228,7 +228,7 @@
 
 						    <div class="">
 
-						        <p>Elevate your skills and transform your career with specialized training towards professional excellence</p>
+						        <p style="color:#fff!important;">Elevate your skills and transform your career with specialized training towards professional excellence</p>
 
 						    </div>
 
@@ -290,7 +290,7 @@
 
                                         </div>
 
-                                        <a href="javascript:void(0)" class="text-white" style="cursor: auto;margin: 0 6px;"> (10167 Reviews)</a> <span class="text-white total-enroll" > 12589 students </span>
+                                        <a href="javascript:void(0)" class="text-white" style="cursor: auto;margin: 0 6px;"> (222893 Reviews)</a> <span class="text-white total-enroll" > 252894 students </span>
 
                                     </div>
 
@@ -345,9 +345,13 @@
 											</div>
 
 										</div>
+
 										@include('common.leadCaptureFormOtpField')
+
 									</div>
+
 									<div class="form_success" style="display:none">
+
 										<div class="form-success-content">
 
 											<span class="success-icon"> <i class="fas fa-check"></i> </span>
@@ -426,7 +430,7 @@
 
 								<div class="counter-number">
 
-									<span class="counter-count bold-font">24</span><span>+</span>
+									<span class="counter-count bold-font">26</span>
 
 									<p>Years of Excelllence</p>
 

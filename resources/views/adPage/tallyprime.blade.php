@@ -108,10 +108,10 @@
          <div class="col-md-7">
             <div class="ad-banner-content">
                <div class="ad-banner-title">
-                  <h1 class="text-center">Tally Certification Course</h1>
+                  <h1 class="text-center" style="color: #fff!important;">Tally Certification Course</h1>
                </div>
                <div class="ad-banner-sub-title">
-                  <h3 class="text-center" style="font-size: 1.2rem!important;"> Elevate your career with essential Tally skills - boost job opportunities and efficiency. </h3>
+                  <h3 class="text-center" style="font-size: 1.2rem!important; color: #fff!important;"> Elevate your career with essential Tally skills - boost job opportunities and efficiency. </h3>
                </div>
                <div class="ad-banner-option">
                   <div class="row">

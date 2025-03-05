@@ -220,7 +220,7 @@
 
 						<div class="ad-banner-sub-title">
 
-							<h3 class="text-center text-white" style="font-size: 1.2rem!important;"> 100% Job Guarantee | Triple Certifications | 7 Simulation Softwares </h3>
+							<h3 class="text-center text-white" style="font-size: 1.2rem!important;"> 100% Job Guarantee | 4 Certifications | 10 Simulation Software </h3>
 
 						</div>
 
@@ -290,7 +290,7 @@
 
                                         </div>
 
-                                        <a href="javascript:void(0)" class="text-white" style="cursor: auto;margin: 0 6px;"> (10167 Reviews)</a> <span class="text-white total-enroll" > 12589 students </span>
+                                        <br /><a href="javascript:void(0)" class="text-white" style="cursor: auto;margin: 0 6px;"> 229647 Votes </a> <span class="text-white total-enroll" > 260556 Students </span>
 
                                     </div>
 
@@ -312,9 +312,9 @@
 
 							<div class="register-fomr-title text-center">
 
-								<h3 class="bold-font" style="font-size: 21px!important;"><span> Become a </span><br /> Certified Accounting Professional </h3>
+								<h3 class="bold-font text-white" style="font-size: 21px!important;"><span> Become a </span><br /> Certified Accounting Professional </h3>
 
-								<p style="color: #222!important;" class="bold-font">Our experts will help you choose the best Accounting Training program for a successful career</p>
+								<p style="color: #fff!important;" class="bold-font">Our experts will help you choose the best Accounting Training program for a successful career</p>
 
 							</div>
 
@@ -430,7 +430,7 @@
 
 								<div class="counter-number">
 
-									<span class="counter-count bold-font">24</span><span>+</span>
+									<span class="counter-count bold-font">26</span>
 
 									<p>Years of Excelllence</p>
 
@@ -636,7 +636,7 @@
 
 									<img src="{{ url('assets/img/icons/tick.png')}}" >
 
-									<h6> Triple Certification </h6>
+									<h6> Four Certification </h6>
 
 								</div>
 
@@ -1861,48 +1861,34 @@
 	============================================= -->
 
 
-
-    <!-- Start  of Certification -->
-
-	<section id="certification" class="sponsor-section">
-
-		<div class="container">
-
-			<div class="section-title mb35 headline text-center">
-
-				<span class="subtitle text-uppercase"> COURSE INFO </span>
-
-				<h3> Accounting <span> Training </span> Certification </h3>
-
-			</div>
-
-	       <div class="row">
-
-				<div class="col-md-6 mt10 text-center">
-
-					 <img src="https://www.icajobguarantee.com/public/upload/2023-08-23/CIA-Plus-Certificate.webp" />
-
-			    </div>
-
-					
-
-				<div class="col-md-6 mt10 text-center">
-
-                    <img src="https://www.icajobguarantee.com/public/upload/2023-08-23/SAP-FICO-Certificate.webp" />
-
+		<!-- Start of certificate section
+		============================================= -->
+		<section id="alumni" class="testimonial_2_section">
+			<div class="container">
+				<div id="testimonials" class="testimonial-slide">
+					<div class="section-title mb20 headline text-center">
+						<span class="subtitle text-uppercase">Certified Courses</span>
+						<h3>Accounting <span>Training Certifications</span></h3>
+					</div>
+					<div class="row">
+						<div class="col-md-3 mt10 mb20 text-center">
+							<img src="https://www.icajobguarantee.com/public/upload/2023-08-23/CIA-Plus-Certificate.webp" alt="" />
+						</div>
+						<div class="col-md-3 mt10 mb20 text-center">
+							<img src="https://www.icajobguarantee.com/public/upload/2023-05-12/sap-certificate.png" alt="" />
+						</div>
+						<div class="col-md-3 mt10 mb20 text-center">
+							<img src="https://www.icajobguarantee.com/public/upload/2024-05-24/ms-office-course-certification.webp" alt="" />
+						</div>
+						<div class="col-md-3 mt10 mb20 text-center">
+							<img src="https://www.icajobguarantee.com/public/upload/2024-09-23/zoho-books-certification.webp" alt="" />
+						</div>						
+					</div>
 				</div>
-
 			</div>
-
-		</div>
-
-	</section>	
-
-	<!-- End  of certificate section -->	
-
-
-
-
+		</section>
+		<!-- End of certificate section
+		============================================= -->		
 
 	<!-- Start of Testimonials
 

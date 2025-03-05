@@ -212,13 +212,13 @@
 
 						<div class="ad-banner-title">
 
-							<h1 class="text-center text-white">MIS Course - Certificate in MIS Analytics</h1>
+							<h1 class="text-center text-white" style="color: #fff!important;">MIS Course - Certificate in MIS Analytics</h1>
 
 						</div>
 
 						<div class="ad-banner-sub-title">
 
-							<h3 class="text-center" style="font-size: 1.2rem!important;"> Build a powerful in-demand skills set to help corporates in making informed decision-making and make a dynamic and rewarding career for a prosperous future </h3>
+							<h3 class="text-center" style="font-size: 1.2rem!important; color: #fff!important;"> Build a powerful in-demand skills set to help corporates in making informed decision-making and make a dynamic and rewarding career for a prosperous future </h3>
 
 						</div>
 

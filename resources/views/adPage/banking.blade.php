@@ -125,17 +125,17 @@
          <div class="col-md-7">
             <div class="ad-banner-content text-white">
                <div class="ad-banner-title">
-                  <h1 class="text-center text-white">Build Career As a Banker</h1>
+                  <h1 class="text-center text-white" style="color:#fff!important;">Build Career As a Banker</h1>
                </div>
                <div class="ad-banner-sub-title text-white">
-                  <h3 class="text-center" style="font-size: 24px!important;"> Professional Banking Diploma Course </h3>
+                  <h3 class="text-center" style="font-size: 24px!important; color:#fff!important;"> Professional Banking Diploma Course </h3>
                </div>               
                <div class="ad-banner-sub-title text-white">
-                  <h3 class="text-center" style="font-size: 24px!important;"> Only For Graduates </h3>
+                  <h3 class="text-center" style="font-size: 24px!important; color:#fff!important;"> Only For Graduates </h3>
                </div>
                <div class="ad-banner-option">
                   <div class="text-white">
-                     <p class="text-white">Amp up your career in banking by enrolling in a specialized short-term vocational course that focuses on equipping individuals with the necessary skills and knowledge to excel in the field of banking.</p>
+                     <p class="text-white" style="color:#fff!important;">Amp up your career in banking by enrolling in a specialized short-term vocational course that focuses on equipping individuals with the necessary skills and knowledge to excel in the field of banking.</p>
                   </div>
                   <div class="row">
                      <div class="col-md-6">

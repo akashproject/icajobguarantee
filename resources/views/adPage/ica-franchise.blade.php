@@ -302,7 +302,13 @@
 
                         </div>
 
-                        <div class="ad-banner-sub-title">    
+                        <div class="ad-banner-sub-title"> 
+                        
+                            <div class="row text-white mt15 mb15">
+                                <div class="text-center col-md-12">
+                                    <strong>Authorised Training Partner of</strong>
+                                </div>
+                            </div>    
 
                             <div class="row">
 

@@ -533,7 +533,7 @@
 
                         <div class="ad-banner-title text-white text-center">
 
-                            <h1 style="line-height: 1.2em; font-size: 200%;"> Become A Certified Professional with <br /> Tally Prime + GST Course <h1>
+                            <h1 style="line-height: 1.2em; font-size: 200%;  color: #fff!important;"> Become A Certified Professional with <br /> Tally Prime + GST Course <h1>
 
                         </div>
 

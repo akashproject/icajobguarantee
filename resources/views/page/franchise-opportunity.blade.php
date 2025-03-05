@@ -63,8 +63,8 @@
 									<i class="text-gradiant flaticon-book"></i>
 								</div>
 								<div class="counter-number">
-									<span class="counter-count bold-font">100</span> <span>+</span>
-									<p>Pan India Centers</p>
+									<span class="counter-count bold-font">100+</span> <span>Centers</span>
+									<p>in Pan India</p>
 								</div>
 							</div>
 						</div>
@@ -76,7 +76,7 @@
 									<i class="text-gradiant flaticon-group"></i>
 								</div>
 								<div class="counter-number">
-									<span class="counter-count bold-font">4</span> <span>Lacs</span>
+									<span class="counter-count bold-font">2-5</span> <span>Lakhs</span>
 									<p>Monthly Income</p>
 								</div>
 							</div>
@@ -157,7 +157,7 @@
 								</div>
 								<div class="category-title">
 									<h4>Minimum Carpet Area of <br> 1000-2500 Sqft</h4>
-									<p>We have been successfully imparting knowledge to the Indian Youth in 16 states and 61+ cities in India for over 24 glorious years</p>
+									<p>We have been successfully imparting knowledge to the Indian Youth in 16 states and 61+ cities in India for over 26 glorious years</p>
 								</div>
 								<div class="category-description">
 									
@@ -169,7 +169,7 @@
 									<img src="{{ url('assets/img/Investment.svg') }}" >
 								</div>
 								<div class="category-title">
-									<h4>20-30 lakhs of Investment </h4>
+									<h4>15-20 lakhs of Investment </h4>
 									<p> We have been expertly teaching and training students, college graduates, and professionals and preparing them academically for facing the job market for over two decades </p>
 								</div>
 								<div class="category-description">
@@ -226,7 +226,7 @@
 										<img src="{{ url('assets/img/300-Centers.svg') }}" >
 									</div>
 									<div class="category-title">
-										<h4>500K+ Satisfied Students.</h4>
+										<h4>500K+ Satisfied Students</h4>
 										<p> We have been expertly teaching and training students, college graduates, and professionals to prepare them academically and practically for facing the dynamic job market for over two decades. </p>
 									</div>
 								</div>
@@ -237,8 +237,8 @@
 										<img src="{{ url('assets/img/Candidates-Placed.svg') }}" >
 									</div>
 									<div class="category-title">
-										<h4>100+ centers in pan India</h4>
-										<p>We have 100+ regional centers spread out over PAN India in 23+ states. Students who want to be future professionals can find the nearest training center from their homes and undergo a systematic training program.</p>
+										<h4>100+ Centers in Pan India</h4>
+										<p>We have 100+ regional centers spread out over PAN India. Students who want to be future professionals can find the nearest training center from their homes and undergo a systematic training program.</p>
 									</div>
 								</div>
 							</div>
@@ -259,7 +259,7 @@
 										<img src="{{ url('assets/img/300-Centers.svg') }}" >
 									</div>
 									<div class="category-title">
-										<h4>70k+ Registered Employers.</h4>
+										<h4>70K+ Registered Employers.</h4>
 										<p>We have access to a wide network of employers across Pan India who value professional skills and expertise. These Companies operate in diversified businesses and can offer you incredible job opportunities.</p>
 									</div>
 								</div>
@@ -281,24 +281,20 @@
 				<div class="row">
 					<div class="col-md-6" >
 						<ul class="benifit-wrap">
-							<li class="cat-item"> In-house ERP, CRM, Digital Marketing, Staff Training and R&D Team </li>
-							<li class="cat-item"> Regular seminar and grooming session </li>
-							<li class="cat-item"> Practical Training sessions with fun activities </li>
-							<li class="cat-item"> Faculty Training </li>
-							<li class="cat-item"> Quality Assurance </li>
-							<li class="cat-item"> 100% Lead Generation through Digital Marketing </li>
-							<li class="cat-item"> Training Excellence: Simulations on TDS, ITR, GST, ESI, PF, Accounts </li>
+							<li class="cat-item"> In-house ERP, CRM, Digital Marketing, Staff Training and R&D Team</li>
+							<li class="cat-item"> Practical Training Sessions with Fun Activities</li>
+							<li class="cat-item"> Regular Faculty Training and Upgradation Program</li>
+							<li class="cat-item"> Quality Assurance on Training and Development Programs</li>
+							<li class="cat-item"> Training Excellence: Simulations on TDS, ITR, GST, ESI, PF, Accounts</li>
 						</ul>
 					</div>
 					<div class="col-md-6" >
 						<ul class="benifit-wrap">
-							<li class="cat-item"> Earning potential of 2 – 5 Lakhs/month </li>
-							<li class="cat-item"> Partnership Advantage with India’s top-ranked training institute </li>
-							<li class="cat-item"> Best Training facilities in Accounts, Finance and Taxation </li>
-							<li class="cat-item"> All time student rush due to high demand for CIA courses </li>
-							<li class="cat-item"> 100+ centers in Pan India </li>
-							<li class="cat-item"> Investment of just 20-30 lakh </li>
-							<li class="cat-item"> Certifications: Third-party validations from Microsoft, ZOHO & SAP </li>
+							<li class="cat-item"> Earning Potential of 2 – 5 Lakhs per month</li>
+							<li class="cat-item"> Partnership Advantage with India’s Top-Ranked Training Institute</li>
+							<li class="cat-item"> Best Training Facilities in Accounts, Finance and Taxation</li>
+							<li class="cat-item"> All Time Student rush due to high demand for Job Guarantee Courses</li>
+							<li class="cat-item"> Certifications: Third-party validations from Microsoft, ZOHO & SAP</li>
 						</ul>
 					</div>
 				</div>

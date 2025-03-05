@@ -533,7 +533,7 @@
 
                         <div class="ad-banner-title text-white text-center">
 
-                            <h1 style="line-height: 1.2em; font-size: 200%;"> GST Certification Course </h1>
+                            <h1 style="line-height: 1.2em; font-size: 200%; color: #fff!important;"> GST Certification Course </h1>
 							<span>For students after 12 and B.Com with latest GST policies and strategies</span>
 
                         </div>

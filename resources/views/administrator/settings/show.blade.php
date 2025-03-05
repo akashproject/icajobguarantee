@@ -171,6 +171,12 @@
 											</div>
 										</div>
 										<div class="form-group row">
+											<label for="instagram" class="col-sm-3 text-right control-label col-form-label">Instagram Link</label>
+											<div class="col-sm-9">
+												<input type="text" class="form-control" name="instagram" id="instagram" placeholder="Enter Instagram Link Here" value="{{ (isset($settings['instagram']))?$settings['instagram']:'' }}" >    
+											</div>
+										</div>
+										<div class="form-group row">
 											<label for="twitter" class="col-sm-3 text-right control-label col-form-label">Twitter Link</label>
 											<div class="col-sm-9">
 												<input type="text" class="form-control" name="twitter" id="twitter" placeholder="Enter Twitter Link Here" value="{{ (isset($settings['twitter']))?$settings['twitter']:'' }}" >

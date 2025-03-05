@@ -58,6 +58,8 @@
 
                                     <li><a href="{{ get_theme_setting('facebook') }}"><i class="fab fa-facebook-f"></i></a></li>
 
+                                    <li><a href="{{ get_theme_setting('instagram') }}"><i class="fab fa-instagram"></i></a></li>
+
                                     <li><a href="{{ get_theme_setting('twitter') }}"><i class="fab fa-twitter"></i></a></li>
 
                                     <li><a href="{{ get_theme_setting('linkedin') }}"><i class="fab fa-linkedin"></i></a></li>
@@ -195,6 +197,7 @@
                 <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{url()->current()}}" > <i class="fab fa-facebook-f" style="color:#316FF6"></i> </a>
 
             </p> 
+            
 
             <p class="social-icon" > 
 

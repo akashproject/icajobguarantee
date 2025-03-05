@@ -430,7 +430,7 @@
 
 
 
-							<h1 class="text-center">SAP Certified Training Course</h1>
+							<h1 class="text-center" style="color: #fff!important;">SAP Certified Training Course</h1>
 
 
 
@@ -442,7 +442,7 @@
 
 
 
-							<h3 class="text-center" style="font-size: 1.2rem!important;"> Level Up Your Career with SAP Certified Training. Dive into In-Demand Skills, Unleash Job Opportunities </h3>
+							<h3 class="text-center" style="font-size: 1.2rem!important; color: #fff!important;"> Level Up Your Career with SAP Certified Training. Dive into In-Demand Skills, Unleash Job Opportunities </h3>
 
 
 

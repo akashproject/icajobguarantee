@@ -196,13 +196,13 @@
 
 						<div class="ad-banner-title">
 
-							<h1 class="text-center">Industrial Accounting Courses</h1>
+							<h1 class="text-center" style="color:#fff!important;">Industrial Accounting Courses</h1>
 
 						</div>
 
 						<div class="ad-banner-sub-title">
 
-							<h3 class="text-center" style="font-size: 1.2rem!important;"> 100% Job Guarantee | Triple Certifications | 7 Simulation Softwares </h3>
+							<h3 class="text-center" style="font-size: 1.2rem!important; color:#fff!important;"> 100% Job Guarantee | Triple Certifications | 10 Simulation Softwares </h3>
 
 						</div>
 
@@ -272,7 +272,7 @@
 
                                         </div>
 
-                                        <a href="javascript:void(0)" class="text-white" style="cursor: auto;margin: 0 6px;"> (10167 Reviews)</a> <span class="text-white total-enroll" > 12589 students </span>
+                                        <a href="javascript:void(0)" class="text-white" style="cursor: auto;margin: 0 6px;"> (222893 Reviews)</a> <span class="text-white total-enroll" > 252894 students </span>
 
                                     </div>
 
@@ -294,9 +294,9 @@
 
 							<div class="register-fomr-title text-center">
 
-								<h3 class="bold-font" style="font-size: 21px!important;"><span> Become a </span><br /> Certified Accounting Professional </h3>
+								<h3 class="bold-font" style="font-size: 21px!important;color:#fff;"><span> Become a </span><br /> Certified Accounting Professional </h3>
 
-								<p style="color: #222!important;" class="bold-font">Our experts will help you choose the best Accounting Training program for a successful career</p>
+								<p style="color: #fff!important;" class="bold-font">Our experts will help you choose the best Accounting Training program for a successful career</p>
 
 							</div>
 
@@ -314,13 +314,13 @@
 
 												<p style="margin:0">
 
-													<input style="margin-left: 0;width: auto;vertical-align: middle;height: auto;" type="checkbox" class="" checked="">  I agree to receive updates on <i class="fa fa-whatsapp" style="color: green;"></i> whatsapp. 
+													<input style="color:#fff!important; margin-left: 0;width: auto;vertical-align: middle;height: auto;" type="checkbox" class="" checked="">  I agree to receive updates on <i class="fa fa-whatsapp" style="color: green;"></i> whatsapp. 
 
 												</p>
 
 												<p>
 
-													<input style="margin-left: 0;width: auto;vertical-align: middle;height: auto;" type="checkbox" class="" checked=""> I agree to <a href="/privacy-policy" target="_blank">Privacy Policy</a> &amp; overriding DNC/NDNC request for Call/SMS. 
+													<input style="color:#fff!important; margin-left: 0;width: auto;vertical-align: middle;height: auto;" type="checkbox" class="" checked=""> I agree to <a href="/privacy-policy" target="_blank">Privacy Policy</a> &amp; overriding DNC/NDNC request for Call/SMS. 
 
 												</p>
 
@@ -412,7 +412,7 @@
 
 								<div class="counter-number">
 
-									<span class="counter-count bold-font">24</span><span>+</span>
+									<span class="counter-count bold-font">26</span>
 
 									<p>Years of Excelllence</p>
 
