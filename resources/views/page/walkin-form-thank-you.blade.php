@@ -6,7 +6,6 @@
 
     <!-- Start of breadcrumb section
 		============================================= -->
-
 	<section id="breadcrumb" class="inner-banner relative-position backgroud-style"  style="background-image: url({{ (isset($contentMain->banner_image))?getSizedImage('',$contentMain->banner_image):url('assets/img/banner/brt-1.jpg') }});">
 		<div class="container">
 			<div class="row">
@@ -43,30 +42,19 @@
 
 	<!-- End of breadcrumb section
 		============================================= -->
-
 	<div class="container" >
 		<div class="row justify-content-center mt60" >
 			<div class="col-md-6 text-center" >
 				<div class="form-success-content">
 					<span class="success-icon"> <i class="fas fa-check"></i> </span>
 					<h4> Thank You! Your Application Submitted. </h4>
-					<h4> Our Career adviser will call you soon to suggest sweetable option to You </h4>
+					<h4> Our Career adviser will call you soon to suggest suitable option to You </h4>
 				</div>
 			</div>
 		</div>
 	</div>
     @endsection
-
 @section('script')
-
-
-
 <!-- ============================================================== -->
-
-
-
 <!-- CHARTS -->
-
-
-
 @endsection

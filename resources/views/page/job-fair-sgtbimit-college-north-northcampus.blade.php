@@ -176,7 +176,7 @@
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="navbar-header float-right" style="width: auto;text-align: right;">
 							<a class="navbar-brand text-uppercase" href="javascript:void(0)"  style="text-align: center;"> 
-                                <img src="{{ url('assets/img/dumdum-motijheel-rabindra-mahavidyalaya.png') }}" alt="ICA Edu Skills" style="width: 35%;">
+                                <img src="{{ url('assets/img/job-fair-sgtbimit-college-north-northcampus.png') }}" alt="ICA Edu Skills" style="width: 35%;">
                             </a>
 						</div><!-- /.navbar-header -->		
 					</div>

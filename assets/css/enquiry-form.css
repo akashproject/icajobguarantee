@@ -1,17 +1,19 @@
-
+.form_wizerd_header {
+  margin-top: 5px;
+}
 .wizerd_header {
-    background: #ffffff;
-    color: #393185;
-    width: 96%;
-    position: relative;
-    border: 1px solid #413d9d;
-    margin: 10px 0;
-    display: block;
-  }
+  background: #ffffff;
+  color: #393185;
+  padding: 20px 0;
+  position: relative;
+  margin: 10px 0;
+  display: inline;
+}
   
-  a.wizerd_header.active,a.wizerd_header.activeted {
+  .wizerd_header.active,.wizerd_header.activeted {
     background: linear-gradient(to right, #616dfd 0%, #393185 51%, #616dfd 100%);
     color: #fff;
+    padding: 21px 0;
     border: none;
   }
   
@@ -20,7 +22,6 @@
     display: inline-flex;
     font-weight: 800;
     margin-right: 12px;
-    border-right: 1px solid;
     padding: 12px;
     vertical-align: middle;
   }
@@ -34,11 +35,25 @@
   .wizerd_header::after {
     content: "";
     position: absolute;
-    right: -30px;
-    border-top: 33px solid transparent;
-    border-bottom: 29px solid transparent;
-    border-left: 30px solid #616cfc;
+    right: -53px;
+    width: 53px;
+    height: 61px;
+    background-image: url('/assets/images/shape-after.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 0;
+  }
+
+  .wizerd_header::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    background-image: url('/assets/images/shape-before.png');
+    background-size: cover;
+    background-repeat: no-repeat;
     top: -1px;
+    width: 55px;
+    height: 63px;
   }
   .occupation_wrap {
     padding: 15px 28px;

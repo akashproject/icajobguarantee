@@ -78,7 +78,7 @@
                         </div>
                         <div class="popup_banner_form_wrapeer" > 
                             <div class="row"> 
-                                <div class="col-md-4" >
+                                <div class="col-md-12" >
                                     <div class="form_wizerd_header form-wizard-panel"> 
                                         <div class="wizerd_header form-wizard-steps active">
                                             <span>1.</span>
@@ -98,7 +98,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-8" >
+                                <div class="col-md-12" >
                                     <form id="global_other_details_form" class="contact_form lead_form" action="{{ url('enquiry-form-submit') }}" method="POST" enctype="multipart/form-data">
                                         @csrf
                                         <div class="form_process" >

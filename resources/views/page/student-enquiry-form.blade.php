@@ -137,31 +137,35 @@
                 <div class="row justify_center">	
                     <div class="col-md-12">
                         <div class="row">
-                            <div class="col-md-4 not_in_mobile" >
+                            <div class="col-md-12 not_in_mobile" >
                                 <div class="form_wizerd_header form-wizard-panel"> 
-                                    <a href="javascript:void(0)"  class="wizerd_header form-wizard-steps {{ ($step == null)?'active':'' }}">
+                                    <div href="javascript:void(0)"  class="wizerd_header form-wizard-steps {{ ($step == null)?'active':'' }}">
                                         <span>1.</span>
-                                        <h4 >Check Requirement</h4>
-                                    </a>
-                                    <a href="javascript:void(0)" class="wizerd_header form-wizard-steps {{ ($step == '1')?'active':'' }}" >
+                                        @if($step == null)<h4 >Check Requirement</h4>@endif
+                                    </div>
+                                    <div href="javascript:void(0)" class="wizerd_header form-wizard-steps {{ ($step == '1')?'active':'' }}" >
                                         <span>2.</span>
-                                        <h4>Educational Information</h4>
-                                    </a>
-                                    <a href="javascript:void(0)"  class="wizerd_header form-wizard-steps {{ ($step == '2')?'active':'' }}">
+                                        @if($step == '1')<h4>+Educational Information</h4>@endif
+                                    </div>
+                                    <div href="javascript:void(0)"  class="wizerd_header form-wizard-steps {{ ($step == '2')?'active':'' }}">
                                         <span>3.</span>
-                                        <h4>Professional Information</h4>
-                                    </a>
-                                    <a href="javascript:void(0)" class="wizerd_header form-wizard-steps {{ ($step == '3')?'active':'' }}" >
+                                        @if($step == '2')<h4>Professional Information</h4>@endif
+                                    </div>
+                                    <div href="javascript:void(0)" class="wizerd_header form-wizard-steps {{ ($step == '3')?'active':'' }}" >
                                         <span>4.</span>
-                                        <h4>Personal Information</h4>
-                                    </a>
-                                    <a href="javascript:void(0)"  class="wizerd_header form-wizard-steps {{ ($step == '4')?'active':'' }}">
+                                        @if($step == '3')<h4>Personal Information</h4>@endif
+                                    </div>
+                                    <div href="javascript:void(0)"  class="wizerd_header form-wizard-steps {{ ($step == '4')?'active':'' }}">
                                         <span>5.</span>
-                                        <h4>Aspirational Details</h4>
-                                    </a>
+                                        @if($step == '4')<h4>Aspirational Details</h4>@endif
+                                    </div>
+                                    <div href="javascript:void(0)"  class="wizerd_header form-wizard-steps {{ ($step == '5')?'active':'' }}">
+                                        <span>6.</span>
+                                        @if($step == '5')<h4>About ICA</h4>@endif
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-8" >
+                            <div class="col-md-12" >
                                 <form id="walking_lead_enquiry_form" class="contact_form lead_form" action="{{ url('enquiry-form-submit') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                     <div class="wizerd_group my-3" >
