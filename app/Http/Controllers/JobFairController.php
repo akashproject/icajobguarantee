@@ -108,4 +108,35 @@ class JobFairController extends Controller
             return response()->json($e, $this->_statusOK);
         }
     }
+
+    public function jobFairSgtbimitCollege(Request $request) {
+        try {
+
+            $postData = $request->all();
+            $validatedData = $request->validate([
+                "name" => "required",
+                "mobile" => "required",
+            ]);
+
+            if($postData["lead_id"] != '') {
+                $leadFromdb = Lead::findOrFail($postData["lead_id"]);
+            }
+            // is lead input otp
+            if($postData["verify_otp"] != ''){
+                $leadFromdb->update(['otp_status' => "1"]);
+            }
+            if($postData["store_area"] == 1) {
+                $nameArray = explode(" ", $postData["name"]);
+                $postData["firstname"] = current(explode(" ", $postData["name"]));
+                unset($nameArray["0"]);
+                $postData["lastname"] = implode(" ", $nameArray);
+                $crmResponse = $this->b2cLeadCaptureToExtraage($postData);
+                $leadFromdb->update(['crm_status' => "1","crm_response"=>$crmResponse]);
+            }
+            $this->cognoai_api_calling($postData,"238399"); 
+            return redirect("/job-fair-thank-you");
+        } catch (\Illuminate\Database\QueryException $e) {
+            return response()->json($e, $this->_statusOK);
+        }
+    }
 }

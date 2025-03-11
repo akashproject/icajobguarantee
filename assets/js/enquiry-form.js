@@ -97,6 +97,17 @@ jQuery(".occupation").on("change",function(){
 	}
 })
 
+jQuery(".guardian_relation").on("change",function(){
+	console.log(jQuery(this).val());
+	
+	if(jQuery(this).val() == "Other"){
+		jQuery("."+jQuery(this).attr("data-id")).show();
+	} else {
+		jQuery("."+jQuery(this).attr("data-id")).hide();
+		jQuery("."+jQuery(this).attr("data-id")).val("");
+	}
+})
+
 function sendMobileOtp(formId) {
     var mobileNo = jQuery("#" + formId + " input[name='mobile']").val();
 	$.ajaxSetup({

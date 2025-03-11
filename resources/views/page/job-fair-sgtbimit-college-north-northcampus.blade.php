@@ -192,7 +192,7 @@
                     <div class="col-md-8 py-2">
                         <div class="banner_container">
                             <div class="banner_header">
-                                <h1 style="color: #e53d3f;text-align: center;">Kolkata’s Biggest Job Fair*</h1>
+                                <h1 style="color: #e53d3f;text-align: center;">ICA North Campus & SGTBIMIT College’s Biggest Job Fair*</h1>
                                 <h2 style="text-align:center;font-weight: 600;font-size: 41px;">Unlock Your Dream Career!</h2 style="font-">
                             </div>
                             <div class="text-center py-3">
@@ -236,7 +236,7 @@
                                 </div>
 
                                 <div class="register-form-area text-left" >
-                                    <form id="banner_lead_capture_form" class="lead_form" action="{{ url('job-fair-motijheel-rabindra-mahavidyalaya-college') }}" method="POST" enctype="multipart/form-data">
+                                    <form id="banner_lead_capture_form" class="lead_form" action="{{ url('job-fair-sgtbimit-college') }}" method="POST" enctype="multipart/form-data">
                                         <div class="form_process" >
                                             <div class="lead_steps step1 active"> 
                                                 <div class="field_step_1" >
@@ -342,7 +342,7 @@
             <div class="row">
                 <div class="col-12 text-center">
                     <div class="organizar py-3">
-                        <h1 style="font-size: 37px;"> ICA Dum Dum & Motijheel Rabindra Mahavidyalaya, Job Fair 2025</h1>
+                        <h1 style="font-size: 37px;"> ICA North Campus & SGTBIMIT College, Job Fair 2025</h1>
                     </div>
                 </div>
             </div>
@@ -350,20 +350,20 @@
                 <div class="col-md-4">
                     <div class="slot py-5">
                         <span> Event Date </span>
-                        <h4> 11th Feb 2025 </h4>
+                        <h4> 26th Mar 2025 </h4>
                     </div>    
                 </div>
                 <div class="col-md-4">
                     <div class="slot py-5">
                         <span> Event Time </span>
-                        <h4> 10 AM </h4>
+                        <h4> 9 AM </h4>
                     </div>
                 </div>
               
                 <div class="col-md-4">
                     <div class="slot py-5">
                         <span> Eligibility </span>
-                        <h4>B.Com, M.Com, MBA, BBA, BA(OMSP, HRM)</h4>
+                        <h4>B.Com, BA, BBA, BCA</h4>
                     </div>
                 </div>
             </div>
@@ -383,7 +383,7 @@
                             <li>📝 Explore career opportunities,
                             <li>📝 Kick-start your success journey,
                             <li>📝 Know your employability score
-                            <li>📝 you are a B.Com/BA/BBA/BMS/BBI,M.Com student Upgrade your skills </li>
+                            <li>📝 you are a B.Com/BA/BBA/BCA student Upgrade your skills </li>
                             <li>📝 find alternate career paths</li>
                             <li>📝 Meet with industry leaders and changemakers</li>
                             <li>📝 Get updates from the corporate world</li>
@@ -437,7 +437,7 @@
 
                         </div>
                         <div class="agenda-content message_container p-5" style="width: 100%;">
-                            <h3> *Held under Motijheel Rabindra Mahavidyalaya, for college students, graduate and working professional. </h3>
+                            <h3> *Held under SGTBIMIT College, for college students, graduates. </h3>
                         </div>
                     </div>
                 </div>
@@ -502,7 +502,7 @@
         let globalUrl = "{{ env("APP_URL") }}"
         let isEnableOtp = {{ (get_theme_setting('enable_otp') == "1")?$contentMain->enable_otp:get_theme_setting('enable_otp') }}
         let isAjaxSubmit = "{{ get_theme_setting('ajax_submit') }}"
-        let eventDate = new Date("2025-02-11T09:59:59").getTime();
+        let eventDate = new Date("2025-03-26T08:59:59").getTime();
     </script>
     <script src="{{ url('assets/js/jquery-2.1.4.min.js') }}"></script>
     <script src="{{ url('assets/js/bootstrap.min.js') }}"></script>

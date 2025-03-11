@@ -40,7 +40,7 @@ class StudentController extends Controller
                 $enq = Enquiry::findOrFail($postData['enquiry']);
                 $enq->update($postData);
             }
-            if ($step <= 4) {
+            if ($step <= 5) {
                 return redirect()->route('student-enquiry-form-with-slug', [$step,'center' => '20','enquiry'=> base64_encode($enq->id)]);
             } else {
                 return redirect("/walkin-form-thank-you");

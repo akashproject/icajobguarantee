@@ -47,7 +47,7 @@
 			<div class="col-md-12 text-center" >
 				<div class="form-success-content">
 					<span class="success-icon"> <i class="fas fa-check"></i> </span>
-					<h4> Thank you for registering for the Job Fair! Details have been sent to your WhatsApp number.</h4>
+					<h4> Thank you for registering for the Job Fair!</h4>
 				</div>
 			</div>
 		</div>

@@ -397,6 +397,9 @@ Route::post('/job-fair-capture-lead', [App\Http\Controllers\JobFairController::c
 
 Route::post('/job-fair-bhim-rao-ambedkar-college', [App\Http\Controllers\JobFairController::class, 'jobFairAmbedkarCollege'])->name('job-fair-bhim-rao-ambedkar-college');
 
+Route::post('/job-fair-sgtbimit-college', [App\Http\Controllers\JobFairController::class, 'jobFairSgtbimitCollege'])->name('job-fair-sgtbimit-college');
+
+
 Route::post('/job-fair-motijheel-rabindra-mahavidyalaya-college', [App\Http\Controllers\JobFairController::class, 'jobFairMotijheelRabindraMahavidyalayaCollege'])->name('job-fair-motijheel-rabindra-mahavidyalaya-college');
 Route::middleware(ProtectAgainstSpam::class)->group(function() {
     Auth::routes();
