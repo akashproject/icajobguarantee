@@ -411,18 +411,13 @@
                                                                     <option value="BBA"> BBA </option>
                                                                     <option value="BCA"> BCA </option>
                                                                     <option value="B.Tech"> B.Tech </option>
-                                                                    <option value="MBA"> MBA </option>
-                                                                    <option value="MCA"> MCA </option>
-                                                                    <option value="M.Com"> M.Com </option>
-                                                                    <option value="MA"> MA </option>
-                                                                    <option value="M.Sc"> M.Sc </option>
-                                                                    <option value="Others"> Others </option>
+                                                                    <option value="Diploma"> Diploma </option>
                                                                 </select>
                                                             </div>
                                                         </div>
                                                         <div class="col-12" >
                                                             <div class="contact-info formFieldInstitute">
-                                                                <label class="mb-0" style="color: #403c9c;font-weight: 600;">Mention your School/College/university. </label>
+                                                                <label class="mb-0" style="color: #403c9c;font-weight: 600;">Mention your School/College/university.</label>
                                                                 <input id="formFieldInstitute" name="institute" type="text" placeholder="Enter Passing School/College/university" autocomplete="off" required class="wizard-required">
                                                             </div>
                                                         </div>
@@ -434,7 +429,7 @@
                                                                 <div class="col-6" >
                                                                     <div class="contact-info formFieldPassingYear">
                                                                         <select id="formFieldPassingYear" class="passing_month" name="passing_month" required class="wizard-required">
-                                                                            <option value=""> Select Month</option>
+                                                                           <option value=""> Select Month</option>
                                                                             <option value="January">January</option>
                                                                             <option value="February">February</option>
                                                                             <option value="March">March</option>
@@ -447,7 +442,7 @@
                                                                             <option value="October">October</option>
                                                                             <option value="November">November</option>
                                                                             <option value="December">December</option>
-                                                                        </select>
+                                                                        </select> 
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-6" >
@@ -461,28 +456,35 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-12" >
-                                                            <div class="row">
-                                                                <div class="col-5">
-                                                                    <hr>
-                                                                </div>
-                                                                <div class="col-2 text-center">
-                                                                    <span> OR</span>
-                                                                </div>
-                                                                <div class="col-5">
-                                                                    <hr>
-                                                                </div>
+                                                            <div class="contact-info formFieldstillPursuing mb-0">
+                                                                <label for="pursuing_degree mb-0">
+                                                                    <input type="checkbox" id="pursuing_degree" data-id="specify_semester_field" class="pursuing_degree" value="Still pursuing post graduation program"> 
+                                                                    <span style="color: #403c9c;font-weight: 600;" > Are you currently pursuing any Degree / Post Graduation Program? </span>
+                                                                </label>
                                                             </div>
-                                                        </div>
-                                                        <div class="col-12" >
-                                                            <div class="contact-info formFieldMobile">
-                                                                <span><input type="checkbox" class="copy_mobile_no" > I am currently persuing this </span>
+                                                            <div class="contact-info specify_semester_field" style="display:none;">
+                                                                <label class="mb-0" style="color: #403c9c;font-weight: 600;"> What is your Current Semester?  </label>
+                                                                <select id="formFieldSemester" class="semester" name="semester" required class="wizard-required" data-id="class_shift_field">
+                                                                    <option value="">Select Semester</option>
+                                                                    @for($i = 1; $i <= 8; $i++)
+                                                                    <option value="{{intToRoman($i)}}">{{intToRoman($i)}}</option>
+                                                                    @endfor
+                                                                </select>
+                                                            </div>
+                                                            <div class="contact-info class_shift_field" style="display:none;">
+                                                            <label class="mb-0" style="color: #403c9c;font-weight: 600;"> What is your college timing? </label>
+                                                                <div class="field_checkbox_group">
+                                                                    <label for="morning" ><input type="radio" id="morning" name="class_shift" value="Morning" > Morning </label>
+                                                                    <label for="day" ><input type="radio" id="day" name="class_shift" value="Day" > Day </label>                
+                                                                    <label for="evening" ><input type="radio" id="evening" name="class_shift" value="Evening" > Evening </label>                
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         
                                                         <div class="col-12" >
                                                             <div class="contact-info formFieldInstitute">
                                                                 <label class="mb-0" style="color: #403c9c;font-weight: 600;"> Have you completed or are you currently pursuing any professional courses? </label>
-                                                                <div class="field_checkbox_group mt-3">
+                                                                <div class="field_checkbox_group">
                                                                     <label for="bank_po" ><input type="checkbox" id="bank_po" name="professional_course[]" value="Bank PO" > Bank PO </label>
                                                                     <label for="railway" ><input type="checkbox" id="railway" name="professional_course[]" value="Railway" > Railway </label>
                                                                     <label for="ssc" ><input type="checkbox" id="ssc" name="professional_course[]" value="State Service Commission" > State Service Commission </label>
@@ -506,9 +508,8 @@
                                                                 </select>
                                                             </div>
                                                         </div>
-                                                        
                                                     </div>
-                                                    <div class="form-group clearfix  mt-3"> 
+                                                    <div class="form-group clearfix mt-3"> 
                                                         <a href="{{ route('student-enquiry-form',[$previousStep,'center'=>$center,'enquiry'=>base64_encode($enquiry)]) }}" class="form-wizard-previous-btn float-left">Previous</a> 
                                                         <button type="submit" class="form-wizard-next-btn float-right">Next</button>
                                                     </div>
@@ -612,8 +613,8 @@
                                                                         <select name="dob['month']" >
                                                                             <option> Select month</option>
                                                                             @for($i=1; $i<=12; $i++)
-                                                                            @php  $monthName = date('F', mktime(0, 0, 0, $i, 1)); @endphp
-                                                                            <option value='{{$monthName}}'>{{$monthName}}</option>
+                                                                                @php  $monthName = date('F', mktime(0, 0, 0, $i, 1)); @endphp
+                                                                                <option value='{{$monthName}}'>{{$monthName}}</option>
                                                                             @endfor
                                                                         </select>
                                                                     </div>
@@ -725,7 +726,7 @@
                                                         <div class="col-12 text-center response_success" style="display:none;">
                                                             <div >
                                                                 <p class="margin-0px-bottom response_status" > Invalid One Time Password </p>
-                                                                <p class="margin-0px-bottom" >Please Enter OTP or <a href="javascript:void(0)" class="resendOtp" >Resend OTP</a> </p>
+                                                                <p class="margin-0px-bottom" >Please Enter OTP or <a href="javascript:void(0)" class="resendOtp" style="color: #403b99;font-weight: 800;">Resend OTP</a> </p>
                                                                 <p class="margin-0px-bottom" >OTP will expire after 2mins : <span class="countdown"> 2:00 </span></p>
                                                             </div>
                                                         </div>
@@ -982,41 +983,39 @@
         <script type="text/javascript">
             jQuery("#walking_lead_enquiry_form").validate({
                 rules: {
-                    lead_prefference: {required: true},
-                    placement_duration: {required: true},
                     "skill_list[]": { required: true }
                 },
                 messages: {
                     lead_prefference: {
-                        required: "Please Select Any of the following option ",
+                        required: "Please Select Any of the following option.",
                     },
                     placement_duration: {
-                        required: "Please Select Any of the following option ",
+                        required: "Please Select Any of the following option.",
                     },
                     job_type: {
-                        required: "Please Select Any of the following option ",
+                        required: "Please Select Any of the following option.",
                     },
                     "skill_list[]": {
-                        required: "Please Select Any of the following option ",
+                        required: "Please Select Any of the following option.",
                     },
                     qualification: {
-                        required: "Please Select highest Qualification ",
+                        required: "Please Select highest Qualification.",
                     },
                     passing_month: {
-                        required: "Please Select Passing Month ",
+                        required: "Please Select Passing Month.",
                     },
                     passing_year: {
-                        required: "Please Select Passing Year ",
+                        required: "Please Select Passing Year.",
                     },
                     institute: {
-                        required: "Enter Passing College/University",
+                        required: "Enter Passing College/University.",
                     },
                 },
                 errorElement : 'label',
                 errorLabelContainer: '.error',
                 submitHandler: function(form) {
                     let formId = $(form).attr('id');
-                    let otp_validation = jQuery("#" + formId + " #otp_validation").val()
+                    let otp_validation = jQuery("#" + formId + " #otp_validation").val();
                     if(otp_validation == "1"){
                         var verifyOtp = jQuery("#" + formId + " .verify_otp").val();
                         var responsedOtp = jQuery("#" + formId + " .responsed_otp").val();
@@ -1030,7 +1029,6 @@
                             sendMobileOtp(formId);
                         }
                         return false;
-                        
                     } else {
                         form.submit();
                     }

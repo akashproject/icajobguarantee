@@ -62,7 +62,7 @@ jQuery('.lead_prefference').on('change',function(){
 
 jQuery(".add_more_role_btn").on("click",function(){
 	const fieldContainer = $('<div class="row"></div>');
-	const input = $('<div class=col-md-7><input autocomplete=off type="text" class="job_role_elem wizard-required"id=formFieldJobRole name=job_role[] placeholder="What is your job role?"></div><div class=col-md-3><input autocomplete=off class="job_role_elem wizard-required"id=formFieldJobRoleTimePeriod name=job_role_time[] placeholder="Total Years"type=number>');
+	const input = $('<div class=col-md-7><input autocomplete=off type="text" class="job_role_elem wizard-required"id=formFieldJobRole name=job_role[] placeholder="What is your job role?"></div><div class=col-md-3><input autocomplete=off class="job_role_elem wizard-required"id=formFieldJobRoleTimePeriod name=job_role_time[] placeholder="Total Years" type=number>');
 	const removeBtn = $('<div class=col-md-2><a class=remove_role_btn href=javascript:void(0)>Remove</a></div>');
 	
 	removeBtn.click(function() {
@@ -89,6 +89,22 @@ jQuery(".copy_mobile_no").change(function(){
 	} else {
 		jQuery("#formFieldWhatsapp").val("");
 	}
+});
+
+jQuery(".pursuing_degree").change(function(){
+	let field = jQuery(this).attr("data-id");
+	if(jQuery(this).is(':checked')) {	
+		jQuery('.'+field).show();
+	} else {
+		jQuery('.'+field).hide();
+	}
+});
+
+jQuery(".semester").change(function(){
+	let field = jQuery(this).attr("data-id");
+	console.log(field);
+	
+	jQuery('.'+field).show();
 })
 
 jQuery(".occupation").on("change",function(){
@@ -98,8 +114,6 @@ jQuery(".occupation").on("change",function(){
 })
 
 jQuery(".guardian_relation").on("change",function(){
-	console.log(jQuery(this).val());
-	
 	if(jQuery(this).val() == "Other"){
 		jQuery("."+jQuery(this).attr("data-id")).show();
 	} else {

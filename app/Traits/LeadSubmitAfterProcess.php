@@ -161,85 +161,6 @@ trait LeadSubmitAfterProcess
         return json_decode($resp);
     }
 
-    public function classroomLeadCaptureToExtraage($postData)
-    {
-        $apiData = [
-            "AuthToken" => "ICA-06-12-2017",
-            "Source" => "ica",
-            "FirstName" => $postData["firstname"],
-            "LastName" => $postData["lastname"],
-            "Email" => $postData["email"],
-            "MobileNumber" => $postData["mobile"],
-            "DateOfBirth" => isset($postData["date_of_birth"]) ? $postData["date_of_birth"] : "",
-            "AlternateMobileNumber" => isset($postData["alternate_mobile_number"]) ? $postData["alternate_mobile_number"] : "",
-            "Center" => isset($postData["city"]) ? $postData["city"] : "",
-            "Location" => isset($postData["center"]) ? $postData["center"] : "",
-            "Pincode" => isset($postData["pincode"])
-                ? $postData["pincode"]
-                : "",
-            "LeadType" => $postData["LeadType"],
-            "LeadSource" => $postData["utm_source"],
-            "LeadName" => $postData["utm_campaign"],
-            "SourceTo" => "offline",
-            "Entity4" => isset($postData["course_id"])
-                ? getErpCourseCode($postData["course_id"])->course_erp_code
-                : "",
-            "EducationalQualification" => $postData["source_url"],
-            "Experience" => isset($postData["experience"]) ? $postData["experience"] : "",
-            "Textb1" => $postData["utm_term"],
-            "Field3" => $postData["utm_device"],
-            "Textb2" => $postData["utm_adgroup"],
-            "Textb3" => $postData["utm_content"],
-            "Textb10" => $postData["utm_creative"],
-            "BatchApplied" => isset($postData["qualification"])
-                ? $postData["qualification"]
-                : "",
-            "Textb4" => isset($postData["institute"])
-                ? $postData["institute"]
-                : "",
-            "Remarks" => '',
-        ];
-
-        if(isset($postData["experience"]) && $postData["experience"] == "Other" ) {
-            $apiData['Experience'] = $postData['experience'].':'.$postData["other_experience"];
-        }
-        if(isset($postData["occupation"])){
-            $apiData['Remarks'] = $apiData['Remarks'].' '.$postData["occupation"];
-        }
-        if(isset($postData["career_option"])){
-            $apiData['Remarks'] = $apiData['Remarks'].' '.$postData["career_option"];
-        }
-        if(isset($postData["career_option"]) && $postData["career_option"] == "Other"){
-            $apiData['Remarks'] = " ".$apiData['Remarks'].' '.$postData['career_option'].':'.$postData["other_career_option"];
-        }
-        if(isset($postData["year_of_study"])){
-            $apiData['Remarks'] = $apiData['Remarks'].' '.$postData["year_of_study"];
-        }
-
-        //ExtraaedgeApiRequest::dispatch($apiData);
-
-        $url = "https://prodivrapi.extraaedge.com/api/WebHook/addLead";
-        $curl = curl_init();
-
-        $data = json_encode($apiData);
-        $curl = curl_init($url);
-        curl_setopt($curl, CURLOPT_URL, $url);
-        curl_setopt($curl, CURLOPT_POST, true);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-
-        $headers = ["Content-Type: application/json"];
-
-        curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-        curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-
-        $resp = curl_exec($curl);
-        curl_close($curl);
-
-        return response()->json($resp, $this->_statusOK);
-    }
-
     function cognoai_api_calling($postData,$campaign_id=null) {
         $whatsappArray = (object) [
             "authorization" => "5a1a48f7-f10f-47bd-becc-6b092dfcc2bb",
@@ -307,7 +228,7 @@ trait LeadSubmitAfterProcess
     public function thankyouNotication($postData){
         try {
             
-            $url = "https://api.st-messaging.com/fe/api/v1/send?username=icaedu1.trans&password=Password@123&unicode=true&from=ICAEDU&to=".$postData["mobile"]."&text=Hi+".$postData["firstname"]."%2C+Thank+you+for+your+interest+in+our+career+programs.+We+have+received+your+details+and+will+be+in+touch+soon.+Thanks+%26+Regards%2C+ICA+Edu+Skills&dltContentId=1207173139255553618&dltPrincipalEntityId=1201159245568554682"; 
+            $url = "https://api.st-messaging.com/fe/api/v1/send?username=icaedu1.trans&password=Password@123&unicode=true&from=ICAEDU&to=".$postData["mobile"]."&text=Hi+".$postData["name"]."%2C+Thank+you+for+your+interest+in+our+career+programs.+We+have+received+your+details+and+will+be+in+touch+soon.+Thanks+%26+Regards%2C+ICA+Edu+Skills&dltContentId=1207173139255553618&dltPrincipalEntityId=1201159245568554682"; 
 
             $curl = curl_init($url);
             curl_setopt($curl, CURLOPT_URL, $url);

@@ -133,7 +133,7 @@ class JobFairController extends Controller
                 $crmResponse = $this->b2cLeadCaptureToExtraage($postData);
                 $leadFromdb->update(['crm_status' => "1","crm_response"=>$crmResponse]);
             }
-            $this->cognoai_api_calling($postData,"238399"); 
+            $this->cognoai_api_calling($postData,"238627"); 
             return redirect("/job-fair-thank-you");
         } catch (\Illuminate\Database\QueryException $e) {
             return response()->json($e, $this->_statusOK);
