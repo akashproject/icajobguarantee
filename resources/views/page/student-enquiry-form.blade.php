@@ -196,13 +196,74 @@
                                                             <div class="col-md-6">
                                                                 <label for="lead_prefer_job" class="lead_prefarence_tab"> 
                                                                     <h2 class="" >Job Guarantee Course</h2>
-                                                                    <input type="radio" id="lead_prefer_job" data-id="lead_prefer_job" name="lead_prefference" value="Job Guarantee Course" class="lead_prefference wizard-required">
+                                                                    <input type="radio" id="lead_prefer_job" data-id="daily_time_spend_job_readiness" name="lead_prefference" value="Job Guarantee Course" class="lead_prefference wizard-required">
                                                                 </label>
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <label for="lead_prefer_skill_update" class="lead_prefarence_tab"> 
                                                                     <h2 class="" >Skill Development Course</h2>
-                                                                    <input type="radio" id="lead_prefer_skill_update" data-id="lead_prefer_skill_update" name="lead_prefference" value="Skill Development Course" class="lead_prefference wizard-required">
+                                                                    <input type="radio" id="lead_prefer_skill_update" data-id="daily_time_spend_skill_development" name="lead_prefference" value="Skill Development Course" class="lead_prefference wizard-required">
+                                                                </label>
+                                                            </div>
+                                                            <div class="col-md-12 text-center">
+                                                                <label class="error"></label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="daily_time_spend_job_readiness lead_preference_selection">
+                                                        <div class="wizerd_panel_header">
+                                                            <div class="text-center">
+                                                                <h3 class="heading">How much time you can give daily Job Rediness?</h3>
+                                                            </div>
+                                                        </div>
+                                                        <div class="lead_prefarence_tab_container row" >
+                                                            <div class="col-md-4">
+                                                                <label for="daily_time_spend_1-5_hour" class="lead_prefarence_tab"> 
+                                                                    <h2 class="" >1.5 Hours</h2>
+                                                                    <input type="radio" id="daily_time_spend_1-5_hour" data-id="lead_prefer_job" name="daily_time_spend" value="1.5 Hours" class="lead_prefference wizard-required">
+                                                                </label>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <label for="daily_time_spend_3_hour" class="lead_prefarence_tab"> 
+                                                                    <h2 class="" >3 Hours</h2>
+                                                                    <input type="radio" id="daily_time_spend_3_hour" data-id="lead_prefer_job" name="daily_time_spend" value="3 Hours" class="lead_prefference wizard-required">
+                                                                </label>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <label for="daily_time_spend_4-5_hour" class="lead_prefarence_tab"> 
+                                                                    <h2 class="" >4.5 Hours</h2>
+                                                                    <input type="radio" id="daily_time_spend_4-5_hour" data-id="lead_prefer_job" name="daily_time_spend" value="4.5 Hours" class="lead_prefference wizard-required">
+                                                                </label>
+                                                            </div>
+                                                            <div class="col-md-12 text-center">
+                                                                <label class="error"></label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="daily_time_spend_skill_development lead_preference_selection">
+                                                        <div class="wizerd_panel_header">
+                                                            <div class="text-center">
+                                                                <h3 class="heading">How much time you can give daily Skill Development?</h3>
+                                                            </div>
+                                                        </div>
+                                                        <div class="lead_prefarence_tab_container row" >
+                                                            <div class="col-md-4">
+                                                                <label for="daily_time_spend_1-5_hour" class="lead_prefarence_tab"> 
+                                                                    <h2 class="" >1.5 Hours</h2>
+                                                                    <input type="radio" id="daily_time_spend_1-5_hour" data-id="lead_prefer_skill_update" name="daily_time_spend" value="1.5 Hours" class="lead_prefference wizard-required">
+                                                                </label>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <label for="daily_time_spend_3_hour" class="lead_prefarence_tab"> 
+                                                                    <h2 class="" >3 Hours</h2>
+                                                                    <input type="radio" id="daily_time_spend_3_hour" data-id="lead_prefer_skill_update" name="daily_time_spend" value="3 Hours" class="lead_prefference wizard-required">
+                                                                </label>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <label for="daily_time_spend_4-5_hour" class="lead_prefarence_tab"> 
+                                                                    <h2 class="" >4.5 Hours</h2>
+                                                                    <input type="radio" id="daily_time_spend_4-5_hour" data-id="lead_prefer_skill_update" name="daily_time_spend" value="4.5 Hours" class="lead_prefference wizard-required">
                                                                 </label>
                                                             </div>
                                                             <div class="col-md-12 text-center">
