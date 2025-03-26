@@ -56,7 +56,7 @@
             }
 
             .lead_prefarence_tab h2 {
-                font-size: 30px;
+                font-size: 28px;
                 font-weight: 800;
                 color: #393185;
             }
@@ -138,27 +138,27 @@
                                 <div class="form_wizerd_header form-wizard-panel"> 
                                     <div href="javascript:void(0)" class="wizerd_header form-wizard-steps {{ ($step == null)?'active':'' }}">
                                         <span>1.</span>
-                                        @if($step == null)<h4 >Check Requirement</h4>@endif
+                                        <h4 >1. @if($step == null)Check Requirement @endif</h4>
                                     </div>
                                     <div href="javascript:void(0)" class="wizerd_header form-wizard-steps {{ ($step == '1')?'active':'' }}" >
                                         <span>2.</span>
-                                        @if($step == '1')<h4>Educational Information</h4>@endif
+                                        <h4>2. @if($step == '1') Educational Information @endif</h4>
                                     </div>
                                     <div href="javascript:void(0)" class="wizerd_header form-wizard-steps {{ ($step == '2')?'active':'' }}">
                                         <span>3.</span>
-                                        @if($step == '2')<h4>Professional Information</h4>@endif
+                                        <h4>3. @if($step == '2') Professional Information @endif</h4>
                                     </div>
                                     <div href="javascript:void(0)" class="wizerd_header form-wizard-steps {{ ($step == '3')?'active':'' }}" >
                                         <span>4.</span>
-                                        @if($step == '3')<h4>Personal Information</h4>@endif
+                                        <h4>4. @if($step == '3') Personal Information @endif</h4>
                                     </div>
                                     <div href="javascript:void(0)" class="wizerd_header form-wizard-steps {{ ($step == '4')?'active':'' }}">
-                                        <span>5.</span>
-                                        @if($step == '4')<h4>Aspirational Details</h4>@endif
+                                        <span></span>
+                                        <h4>5. @if($step == '4') Aspirational Details @endif</h4>
                                     </div>
                                     <div href="javascript:void(0)" class="wizerd_header form-wizard-steps {{ ($step == '5')?'active':'' }}">
-                                        <span>6.</span>
-                                        @if($step == '5')<h4>About ICA</h4>@endif
+                                        <span></span>
+                                        <h4>6. @if($step == '5') About ICA @endif</h4>
                                     </div>
                                 </div>
                             </div>
@@ -213,26 +213,26 @@
                                                     <div class="daily_time_spend_job_readiness lead_preference_selection">
                                                         <div class="wizerd_panel_header">
                                                             <div class="text-center">
-                                                                <h3 class="heading">How much time you can give daily Job Rediness?</h3>
+                                                                <h3 class="heading">How much time you can give daily for job readiness?</h3>
                                                             </div>
                                                         </div>
                                                         <div class="lead_prefarence_tab_container row" >
                                                             <div class="col-md-4">
-                                                                <label for="daily_time_spend_1-5_hour" class="lead_prefarence_tab"> 
+                                                                <label for="job_daily_time_spend_1-5_hour" class="lead_prefarence_tab"> 
                                                                     <h2 class="" >1.5 Hours</h2>
-                                                                    <input type="radio" id="daily_time_spend_1-5_hour" data-id="lead_prefer_job" name="daily_time_spend" value="1.5 Hours" class="lead_prefference wizard-required">
+                                                                    <input type="radio" id="job_daily_time_spend_1-5_hour" data-id="lead_prefer_job" name="daily_time_spend" value="1.5 Hours" class="lead_prefference wizard-required">
                                                                 </label>
                                                             </div>
                                                             <div class="col-md-4">
                                                                 <label for="daily_time_spend_3_hour" class="lead_prefarence_tab"> 
                                                                     <h2 class="" >3 Hours</h2>
-                                                                    <input type="radio" id="daily_time_spend_3_hour" data-id="lead_prefer_job" name="daily_time_spend" value="3 Hours" class="lead_prefference wizard-required">
+                                                                    <input type="radio" id="job_daily_time_spend_3_hour" data-id="lead_prefer_job" name="daily_time_spend" value="3 Hours" class="lead_prefference wizard-required">
                                                                 </label>
                                                             </div>
                                                             <div class="col-md-4">
                                                                 <label for="daily_time_spend_4-5_hour" class="lead_prefarence_tab"> 
                                                                     <h2 class="" >4.5 Hours</h2>
-                                                                    <input type="radio" id="daily_time_spend_4-5_hour" data-id="lead_prefer_job" name="daily_time_spend" value="4.5 Hours" class="lead_prefference wizard-required">
+                                                                    <input type="radio" id="job_daily_time_spend_4-5_hour" data-id="lead_prefer_job" name="daily_time_spend" value="4.5 Hours" class="lead_prefference wizard-required">
                                                                 </label>
                                                             </div>
                                                             <div class="col-md-12 text-center">
@@ -244,7 +244,7 @@
                                                     <div class="daily_time_spend_skill_development lead_preference_selection">
                                                         <div class="wizerd_panel_header">
                                                             <div class="text-center">
-                                                                <h3 class="heading">How much time you can give daily Skill Development?</h3>
+                                                                <h3 class="heading">How much time you can give daily for Skill Development?</h3>
                                                             </div>
                                                         </div>
                                                         <div class="lead_prefarence_tab_container row" >
@@ -271,6 +271,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
                                                     <div class="lead_prefer_job lead_preference_selection">
                                                         <div class="wizerd_panel_header">
                                                             <div class="text-center">
@@ -302,10 +303,11 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
                                                     <div class="placement_duration lead_preference_selection">
                                                         <div class="wizerd_panel_header">
                                                             <div class="text-center">
-                                                                <h3 class="heading">In how many months would you like to?</h3>
+                                                                <h3 class="heading">In how many months would you like to join job?</h3>
                                                             </div>
                                                         </div>
                                                         <div class="lead_prefarence_tab_container row" >
@@ -338,6 +340,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
                                                     <div class="lead_prefer_skill_update lead_preference_selection">
                                                         <div class="">
                                                             <div class="wizerd_panel_header">
@@ -416,6 +419,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
                                                     <div class="select_preffered_course lead_preference_selection">
                                                         <div class="">
                                                             <div class="wizerd_panel_header">
@@ -426,14 +430,14 @@
                                                             <div class="lead_prefarence_tab_container row" >
                                                                 <div class="col-md-6">
                                                                     <label for="career_to_accounting_course" class="lead_prefarence_list"> 
-                                                                        <input type="checkbox" id="career_to_accounting_course" name="skill_list[]" value="Accounting Course" class="wizard-required">
-                                                                        <span class="" >Accounting and Finance</span>
+                                                                        <input type="checkbox" id="career_to_accounting_course" name="skill_list[]" value="Accounts, Finance & Taxation" class="wizard-required">
+                                                                        <span class="" >Accounts, Finance & Taxation </span>
                                                                     </label>
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <label for="career_to_mis_analytics" class="lead_prefarence_list"> 
-                                                                        <input type="checkbox" id="career_to_mis_analytics" name="skill_list[]" value="MIS Analytics" class="wizard-required">
-                                                                        <span class="" >MIS/Data Analytics</span>
+                                                                        <input type="checkbox" id="career_to_mis_analytics" name="skill_list[]" value="MIS and Data Analytics" class="wizard-required">
+                                                                        <span class="" >MIS and Data Analytics</span>
                                                                     </label>
                                                                 </div>
                                                                 <div class="col-md-12 text-center">
@@ -461,7 +465,7 @@
                                                     <div class="row" > 
                                                         <div class="col-12" >
                                                             <div class="contact-info formFieldHighestQualification">
-                                                                <label class="mb-0" style="color: #403c9c;font-weight: 600;"> What is your highest Qualification?  </label>
+                                                                <label class="mb-0" style="color: #403c9c;font-weight: 600;"> What is your highest qualification?  </label>
                                                                 <select id="formFieldHighestQualification" class="qualification" name="qualification" required class="wizard-required">
                                                                     <option value=""> Select Qualification</option>
                                                                     <option value="Secondary"> Secondary </option>
@@ -478,7 +482,7 @@
                                                         </div>
                                                         <div class="col-12" >
                                                             <div class="contact-info formFieldInstitute">
-                                                                <label class="mb-0" style="color: #403c9c;font-weight: 600;">Mention your School/College/university.</label>
+                                                                <label class="mb-0" style="color: #403c9c;font-weight: 600;">Mention your School/College/University.</label>
                                                                 <input id="formFieldInstitute" name="institute" type="text" placeholder="Enter Passing School/College/university" autocomplete="off" required class="wizard-required">
                                                             </div>
                                                         </div>
@@ -650,7 +654,7 @@
                                                         <div class="col-12" >
                                                             <div class="contact-info formFieldMobile">
                                                                 <input id="formFieldMobile" name="mobile" type="number" placeholder="Please enter your mobile number" autocomplete="off" min="6000000000" max="9999999999" required class="mb-2 wizard-required">
-                                                                <span><input type="checkbox" class="copy_mobile_no"> Is this your whatsapp number </span>
+                                                                <span><input type="checkbox" class="copy_mobile_no"> Is the above number your whatsapp number? </span>
                                                             </div>
                                                         </div>
                                                         <div class="col-12" >
@@ -712,7 +716,7 @@
                                                         </div>
                                                         <div class="col-12" >
                                                             <div class="contact-info formFieldPincode">
-                                                                <input type="number" id="formFieldPincode" name="pincode" placeholder="Enter Your Pincode" min="700000" max="799999" autocomplete="off" required class="wizard-required">
+                                                                <input type="number" id="formFieldPincode" name="pincode" placeholder="Enter Your Pincode" min="100000" max="999999" autocomplete="off" required class="wizard-required">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -724,7 +728,6 @@
                                                                     <option value="">Who is your guardian?</option>
                                                                     <option value="Father">Father</option>
                                                                     <option value="Mother">Mother</option>
-                                                                    <option value="Husband">Husband</option>
                                                                     <option value="Other">Other</option>
                                                                 </select>
                                                             </div>
@@ -780,7 +783,7 @@
                                                         </div>
                                                         <div class="col-12" >
                                                             <div class="contact-info formFieldParentMobile">
-                                                                <input id="formFieldParentMobile" name="parent_mobile" type="number" placeholder="Mention your guardian’s mobile no" autocomplete="off" min="6000000000" max="9999999999">
+                                                                <input id="formFieldParentMobile" name="parent_mobile" type="number" placeholder="Mention your guardian’s mobile no" autocomplete="off" min="6000000000" max="9999999999" required>
                                                             </div>
                                                         </div>
                                                         
@@ -854,7 +857,7 @@
                                             <div class="wizerd_set" >
                                                 <div class="wizerd_panel_header">
                                                     <div class="text-center">
-                                                        <h3 class="heading">Tell Me about your class prefarence</h3>
+                                                        <h3 class="heading">Tell Me about your class preference</h3>
                                                     </div>
                                                 </div>
                                                 <div class="wizerd_fieldset" >

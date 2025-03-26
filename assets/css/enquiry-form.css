@@ -1,3 +1,9 @@
+div#main-menu {
+  color: #fff;
+  overflow: hidden;
+  height: 100px;
+}
+
 .form_wizerd_header {
   margin-top: 5px;
 }
@@ -8,6 +14,8 @@
   position: relative;
   margin: 10px 0;
   display: inline;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
 }
   
   .wizerd_header.active,.wizerd_header.activeted {
@@ -30,9 +38,34 @@
     display: inline;
     font-size: 20px;
     line-height: 0;
+    padding: 0 25px;
   }
   
   .wizerd_header::after {
+    content: "";
+    position: absolute;
+    right: -53px;
+    width: 53px;
+    height: 61px;
+    background-image: url('/assets/images/shape-before.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 0;
+  }
+
+  .wizerd_header.active::before {
+    content: "";
+    position: absolute;
+    right: -53px;
+    width: 53px;
+    height: 61px;
+    background-image: url('/assets/images/shape-before.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 0;
+  }
+
+  .wizerd_header.active::after {
     content: "";
     position: absolute;
     right: -53px;
@@ -42,6 +75,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     top: 0;
+    z-index: 8;
   }
 
   .wizerd_header::before {
@@ -254,5 +288,25 @@
     .wizerd_panel_header {
       padding: 10px;
       background: #574cbb;
+    }
+  }
+
+  @media screen and (max-width: 991px) {
+    .navbar-brand img {
+        width: 40%;
+    }
+    
+  }
+  
+  @media screen and (max-width: 1024px) {
+    .lead_prefarence_tab h2 {
+      font-size: 28px;
+    } 
+    .wizerd_header h4 {
+        padding: 0 15px;
+    }
+    .wizerd_header.active::after {
+      right: -53px;
+      width: 55px;
     }
   }
