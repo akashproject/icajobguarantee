@@ -106,6 +106,13 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::post('/save-ad-page', [App\Http\Controllers\Administrator\AdPageController::class, 'save'])->name('admin-sad-ave-page');
         Route::get('/delete-ad-page/{id}', [App\Http\Controllers\Administrator\AdPageController::class, 'delete'])->name('admin-ad-delete-page');
 
+        //Ad Page
+        Route::get('/lam-page', [App\Http\Controllers\Administrator\LamController::class, 'index'])->name('admin-lam-pages');
+        Route::get('/add-lam-page', [App\Http\Controllers\Administrator\LamController::class, 'Add'])->name('admin-add-lam-page');
+        Route::get('/view-lam-page/{id}', [App\Http\Controllers\Administrator\LamController::class, 'show'])->name('admin-lam-view-page');
+        Route::post('/save-lam-page', [App\Http\Controllers\Administrator\LamController::class, 'save'])->name('admin-save-lam-page');
+        Route::get('/delete-lam-page/{id}', [App\Http\Controllers\Administrator\LamController::class, 'delete'])->name('admin-delete-lam-page');
+
         //Courses
         Route::get('/courses', [App\Http\Controllers\Administrator\CourseController::class, 'index'])->name('admin-courses');
         Route::get('/add-course', [App\Http\Controllers\Administrator\CourseController::class, 'Add'])->name('admin-add-course');
@@ -325,6 +332,7 @@ Route::get('/home', function () {
 
 Route::get('/{slug}', [App\Http\Controllers\PageController::class, 'index'])->where('slug', '([A-Za-z0-9\-]+)');
 Route::get('/ads/{slug}', [App\Http\Controllers\AdPageController::class, 'index'])->where('slug', '([A-Za-z0-9\-]+)');
+Route::get('/lam/{slug}', [App\Http\Controllers\LamController::class, 'index'])->where('slug', '([A-Za-z0-9\-]+)')->name('lam-page');
 
 //Affiliate Dashboard
 Route::get('/affiliate-dashboard/{code}', [App\Http\Controllers\AffiliateController::class, 'dashboard'])->name('affiliate-dashboard');
@@ -385,22 +393,21 @@ Route::get('/assessment-success', function () {
 })->name('assessment-success');
 
 Route::get('/index/create-center-login', [App\Http\Controllers\IndexController::class, 'createCenterLogin'])->name('create-center-login');
-//Route::get('/index/create-university-login', [App\Http\Controllers\IndexController::class, 'createUniversityLogin'])->name('create-university-login');
 
 // Pink Form
 Route::get('/student/enquiry-form/{step}', [App\Http\Controllers\StudentController::class, 'index'])->name('student-enquiry-form-with-slug');
 Route::get('/student/enquiry-form', [App\Http\Controllers\StudentController::class, 'index'])->name('student-enquiry-form');
 
-// Template Development
-Route::get('/template/build-up', [App\Http\Controllers\IndexController::class, 'templateBuildUp'])->name('template-build-up');
 Route::post('/job-fair-capture-lead', [App\Http\Controllers\JobFairController::class, 'captureLead'])->name('job-fair-capture-lead');
-
 Route::post('/job-fair-bhim-rao-ambedkar-college', [App\Http\Controllers\JobFairController::class, 'jobFairAmbedkarCollege'])->name('job-fair-bhim-rao-ambedkar-college');
-
 Route::post('/job-fair-sgtbimit-college', [App\Http\Controllers\JobFairController::class, 'jobFairSgtbimitCollege'])->name('job-fair-sgtbimit-college');
-
-
 Route::post('/job-fair-motijheel-rabindra-mahavidyalaya-college', [App\Http\Controllers\JobFairController::class, 'jobFairMotijheelRabindraMahavidyalayaCollege'])->name('job-fair-motijheel-rabindra-mahavidyalaya-college');
+
+
+//Lam FORM Submit 
+Route::post('/lam-page-form-submit', [App\Http\Controllers\LamController::class, 'captureLead'])->name('lam-page-form-submit');
+
+
 Route::middleware(ProtectAgainstSpam::class)->group(function() {
     Auth::routes();
 });

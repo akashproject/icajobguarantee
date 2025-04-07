@@ -31,7 +31,8 @@
 <input type="hidden" name ="utm_creative" value="{{(isset($_GET['utm_creative']))?$_GET['utm_creative']:''}}" >   
 <input type="hidden" name ="utm_adset" value="{{(isset($_GET['utm_adset']))?$_GET['utm_adset']:''}}" > <!-- Optional | Only For Franchise -->
 <input type="hidden" name ="store_area" value="{{ isset($contentMain->store_area)?$contentMain->store_area:'1' }}" >
-<input type="hidden" name ="ref_code" value="{{ (isset($_GET['ref']))?$_GET['ref']:'' }}" >  
+<input type="hidden" name ="ref_code" value="{{ (isset($_GET['ref']))?$_GET['ref']:'' }}" > 
+<input type="hidden" name ="whatsapp_campaign_id" value="{{ isset($contentMain->whatsapp_campaign_id)?$contentMain->whatsapp_campaign_id:null }}" >
 <input type="hidden" name ="source_url" value="{{ url()->current() }}" >
 @honeypot
 {{ csrf_field() }}

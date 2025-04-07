@@ -87,13 +87,6 @@ class AffiliateController extends Controller
                 'aadhar_photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
                 'cheque' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             ]);
-
-            // if ($request->hasFile('pan_photo')) {
-            //     $panPhoto = strtolower($data['name']).'_logo_'.time().'.'.$request->image->extension();  
-                
-            //     $request->image->move(public_path('images/brand'), $imageFile);
-            //     $data['pan_photo'] = "brand/".$imageFile;
-            // }
             
             $affiliateUser = AffiliateUser::findOrFail($data['affiliate_user_id']);
             $affiliateUser->update($data);
@@ -102,17 +95,5 @@ class AffiliateController extends Controller
         } catch(\Illuminate\Database\QueryException $e){
             var_dump($e->getMessage()); 
         }
-    } 
-
-    public function random_strings($length_of_string)
-    {
-    
-        // String of all alphanumeric character
-        $str_result = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    
-        // Shuffle the $str_result and returns substring
-        // of specified length
-        return substr(str_shuffle($str_result),
-                        0, $length_of_string);
     }
 }

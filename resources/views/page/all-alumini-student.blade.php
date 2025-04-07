@@ -156,7 +156,7 @@
 						@foreach(getJoinees(null,null,500) as $value)
 						<div class="placed-grid-box">
 							<div class="image-box">
-								<img src="{{ url('assets/img/placements/'.strtolower(str_replace(' ','-',$value->name)).'.png') }}" alt="Student {{ ($value->name !== null)?$value->name:'' }} placement in {{getCourseById($value->course_id)->name}} in {{ getCenterById($value->center_id)->name }}" style="height: 100%;">
+								<img src="{{ url('assets/img/placements/'.strtolower(str_replace(' ','-',($value->name != null)?$value->name:'')).'.png') }}" alt="Student {{ ($value->name !== null)?$value->name:'' }} placement in {{getCourseById($value->course_id)->name}} in {{ getCenterById($value->center_id)->name }}" style="height: 100%;">
 							</div>
 							<div class="box-content">
 								<div class="box-title mt10">
