@@ -243,6 +243,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
                                                     <div class="lead_prefer_job_aspiration lead_preference_selection">
                                                         <div class="wizerd_panel_header">
                                                             <div class="text-center">
@@ -252,21 +253,21 @@
                                                         </div>
                                                         <div class="lead_prefarence_tab_container row" >
                                                             <div class="col-md-4">
-                                                                <label for="junior_executive_job" class="lead_prefarence_tab"> 
+                                                                <label for="junior_executive_job_aspiration" class="lead_prefarence_tab"> 
                                                                     <h2 class="" >Junior Executive Position</h2>
-                                                                    <input type="radio" data-id="placement_duration" id="junior_executive_job" name="job_aspiration" value="Junior Executive Position" class="lead_prefference wizard-required" required>
+                                                                    <input type="radio" data-id="expected_joining_timeline" id="junior_executive_job_aspiration" name="job_aspiration" value="Junior Executive Position" class="lead_prefference wizard-required" required>
                                                                 </label>
                                                             </div>
                                                             <div class="col-md-4">
-                                                                <label for="mid_level_job" class="lead_prefarence_tab"> 
+                                                                <label for="senior_executive_job_aspiration" class="lead_prefarence_tab"> 
                                                                     <h2 class="" >Senior Executive Position</h2>
-                                                                    <input type="radio" data-id="placement_duration" id="mid_level_job" name="job_aspiration" value="Senior Executive Position" class="lead_prefference wizard-required">
+                                                                    <input type="radio" data-id="expected_joining_timeline" id="senior_executive_job_aspiration" name="job_aspiration" value="Senior Executive Position" class="lead_prefference wizard-required">
                                                                 </label>
                                                             </div>
                                                             <div class="col-md-4">
-                                                                <label for="manager_position_job" class="lead_prefarence_tab"> 
+                                                                <label for="manager_position_job_aspiration" class="lead_prefarence_tab"> 
                                                                     <h2 class="" >Assistant Manager/Manager Position</h2>
-                                                                    <input type="radio" data-id="placement_duration" id="manager_position_job" name="job_aspiration" value="Assistant Manager/Manager Position" class="lead_prefference wizard-required">
+                                                                    <input type="radio" data-id="expected_joining_timeline" id="manager_position_job_aspiration" name="job_aspiration" value="Assistant Manager/Manager Position" class="lead_prefference wizard-required">
                                                                 </label>
                                                             </div>
                                                             <div class="col-md-12 text-center">
@@ -275,7 +276,7 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="placement_duration lead_preference_selection">
+                                                    <div class="expected_joining_timeline lead_preference_selection">
                                                         <div class="wizerd_panel_header">
                                                             <div class="text-center">
                                                                 <h3 class="heading">In how many months would you like to join job?</h3>
@@ -283,27 +284,27 @@
                                                         </div>
                                                         <div class="lead_prefarence_tab_container row" >
                                                             <div class="col-md-6">
-                                                                <label for="get_job_in_3_month" class="lead_prefarence_tab"> 
+                                                                <label for="expected_joining_timeline_3_month" class="lead_prefarence_tab"> 
                                                                     <h2 class="" >3</h2>
-                                                                    <input type="radio" id="get_job_in_3_month" data-id="select_preffered_course" name="expected_joining_timeline" value="3" class="lead_prefference wizard-required">
+                                                                    <input type="radio" id="expected_joining_timeline_3_month" data-id="preferred_career_field" name="expected_joining_timeline" value="3" class="lead_prefference wizard-required">
                                                                 </label>
                                                             </div>
                                                             <div class="col-md-6">
-                                                                <label for="get_job_in_6_month" class="lead_prefarence_tab"> 
+                                                                <label for="expected_joining_timeline_6_month" class="lead_prefarence_tab"> 
                                                                     <h2 class="" >6</h2>
-                                                                    <input type="radio" id="get_job_in_6_month" data-id="select_preffered_course" name="expected_joining_timeline" value="6 Month" class="lead_prefference wizard-required">
+                                                                    <input type="radio" id="expected_joining_timeline_6_month" data-id="preferred_career_field" name="expected_joining_timeline" value="6 Month" class="lead_prefference wizard-required">
                                                                 </label>
                                                             </div>
                                                             <div class="col-md-6">
-                                                                <label for="get_job_in_12_month" class="lead_prefarence_tab"> 
+                                                                <label for="expected_joining_timeline_12_month" class="lead_prefarence_tab"> 
                                                                     <h2 class="" >12</h2>
-                                                                    <input type="radio" id="get_job_in_12_month" data-id="select_preffered_course" name="expected_joining_timeline" value="12 Month" class="lead_prefference wizard-required">
+                                                                    <input type="radio" id="expected_joining_timeline_12_month" data-id="preferred_career_field" name="expected_joining_timeline" value="12 Month" class="lead_prefference wizard-required">
                                                                 </label>
                                                             </div>
                                                             <div class="col-md-6">
-                                                                <label for="get_job_after_12_month" class="lead_prefarence_tab"> 
+                                                                <label for="expected_joining_timeline_after_12_month" class="lead_prefarence_tab"> 
                                                                     <h2 class="" >> 12</h2>
-                                                                    <input type="radio" id="get_job_after_12_month" data-id="select_preffered_course" name="expected_joining_timeline" value="> 12" class="lead_prefference wizard-required">
+                                                                    <input type="radio" id="expected_joining_timeline_after_12_month" data-id="preferred_career_field" name="expected_joining_timeline" value="> 12" class="lead_prefference wizard-required">
                                                                 </label>
                                                             </div>
                                                             <div class="col-md-12 text-center">
@@ -312,7 +313,7 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="select_preffered_course lead_preference_selection">
+                                                    <div class="preferred_career_field lead_preference_selection">
                                                         <div class="">
                                                             <div class="wizerd_panel_header">
                                                                 <div class="text-center">
@@ -343,6 +344,7 @@
                                                         </div>
                                                     </div>
 
+                                                    <!-- Route For Skill Development -->
                                                     <div class="daily_time_spend_skill_development lead_preference_selection">
                                                         <div class="wizerd_panel_header">
                                                             <div class="text-center">
@@ -351,21 +353,21 @@
                                                         </div>
                                                         <div class="lead_prefarence_tab_container row" >
                                                             <div class="col-md-4">
-                                                                <label for="daily_time_spend_1-5_hour" class="lead_prefarence_tab"> 
+                                                                <label for="daily_time_spend_skill_update_1-5_hour" class="lead_prefarence_tab"> 
                                                                     <h2 class="" >1.5 Hours</h2>
-                                                                    <input type="radio" id="daily_time_spend_1-5_hour" data-id="lead_prefer_skill_update" name="daily_time_spend" value="1.5 Hours" class="lead_prefference wizard-required">
+                                                                    <input type="radio" id="daily_time_spend_skill_update_1-5_hour" data-id="preferred_skill_update_field" name="daily_time_spend" value="1.5 Hours" class="lead_prefference wizard-required">
                                                                 </label>
                                                             </div>
                                                             <div class="col-md-4">
-                                                                <label for="daily_time_spend_3_hour" class="lead_prefarence_tab"> 
+                                                                <label for="daily_time_spend_skill_update_3_hour" class="lead_prefarence_tab"> 
                                                                     <h2 class="" >3 Hours</h2>
-                                                                    <input type="radio" id="daily_time_spend_3_hour" data-id="lead_prefer_skill_update" name="daily_time_spend" value="3 Hours" class="lead_prefference wizard-required">
+                                                                    <input type="radio" id="daily_time_spend_skill_update_3_hour" data-id="preferred_skill_update_field" name="daily_time_spend" value="3 Hours" class="lead_prefference wizard-required">
                                                                 </label>
                                                             </div>
                                                             <div class="col-md-4">
-                                                                <label for="daily_time_spend_4-5_hour" class="lead_prefarence_tab"> 
+                                                                <label for="daily_time_spend_skill_update_4-5_hour" class="lead_prefarence_tab"> 
                                                                     <h2 class="" >4.5 Hours</h2>
-                                                                    <input type="radio" id="daily_time_spend_4-5_hour" data-id="lead_prefer_skill_update" name="daily_time_spend" value="4.5 Hours" class="lead_prefference wizard-required">
+                                                                    <input type="radio" id="daily_time_spend_skill_update_4-5_hour" data-id="preferred_skill_update_field" name="daily_time_spend" value="4.5 Hours" class="lead_prefference wizard-required">
                                                                 </label>
                                                             </div>
                                                             <div class="col-md-12 text-center">
@@ -374,7 +376,7 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="lead_prefer_skill_update lead_preference_selection">
+                                                    <div class="preferred_skill_update_field lead_preference_selection">
                                                         <div class="">
                                                             <div class="wizerd_panel_header">
                                                                 <div class="text-center">
@@ -466,9 +468,9 @@
                                                 <div class="wizerd_fieldset" >
                                                     <div class="row" > 
                                                         <div class="col-12" >
-                                                            <div class="contact-info formFieldHighestQualification">
+                                                            <div class="contact-info highestQualification">
                                                                 <label class="mb-0" style="color: #403c9c;font-weight: 600;"> What is your highest qualification?  </label>
-                                                                <select id="formFieldHighestQualification" class="qualification" name="qualification" required class="wizard-required">
+                                                                <select id="highestQualification" class="qualification" name="highest_qualification" required class="wizard-required">
                                                                     <option value=""> Select Qualification</option>
                                                                     <option value="Secondary"> Secondary </option>
                                                                     <option value="Higher Secondery"> Higher Secondary </option>
