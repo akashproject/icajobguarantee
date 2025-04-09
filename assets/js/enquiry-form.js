@@ -18,7 +18,7 @@ function enqueryFormValidate(){
 			email: {
 				required: "Please enter valid email address",
 			},
-			mobile: {
+			mobile_number: {
 				required: "Please enter valid mobile number",
 				min: "Please enter valid mobile number",
 				max: "Please enter valid mobile number",
@@ -59,10 +59,11 @@ jQuery('.lead_prefference').on('change',function(){
 	console.log(jQuery(this).attr("data-id"));
 	jQuery("."+jQuery(this).attr("data-id")).addClass('active');	
 });
-
+let fieldCount = 0;
 jQuery(".add_more_role_btn").on("click",function(){
+	fieldCount++;
 	const fieldContainer = $('<div class="row"></div>');
-	const input = $('<div class=col-md-7><input autocomplete=off type="text" class="job_role_elem wizard-required"id=formFieldJobRole name=job_role[] placeholder="What is your job role?"></div><div class=col-md-3><input autocomplete=off class="job_role_elem wizard-required"id=formFieldJobRoleTimePeriod name=job_role_time[] placeholder="Total Years" type=number>');
+	const input = $('<div class=col-md-7><input autocomplete=off type="text" class="job_role_elem wizard-required"id=formFieldJobRole name=job_role['+fieldCount+'][name] placeholder="What is your job role?"></div><div class=col-md-3><input autocomplete=off class="job_role_elem wizard-required"id=formFieldJobRoleTimePeriod name=job_role['+fieldCount+'][time] placeholder="Total Years" type=number>');
 	const removeBtn = $('<div class=col-md-2><a class=remove_role_btn href=javascript:void(0)>Remove</a></div>');
 	
 	removeBtn.click(function() {
@@ -84,14 +85,14 @@ jQuery('.hide_show_text_field').change(function() {
 
 jQuery(".copy_mobile_no").change(function(){
 	if(jQuery(this).is(':checked')) {		
-		let mobile = jQuery("#formFieldMobile").val();
-		jQuery("#formFieldWhatsapp").val(mobile);
+		let mobile = jQuery("#mobile_number").val();
+		jQuery("#whatsapp_number").val(mobile);
 	} else {
-		jQuery("#formFieldWhatsapp").val("");
+		jQuery("#whatsapp_number").val("");
 	}
 });
 
-jQuery(".pursuing_degree").change(function(){
+jQuery("#current_education_status").change(function(){
 	let field = jQuery(this).attr("data-id");
 	if(jQuery(this).is(':checked')) {	
 		jQuery('.'+field).show();
@@ -100,10 +101,8 @@ jQuery(".pursuing_degree").change(function(){
 	}
 });
 
-jQuery(".semester").change(function(){
+jQuery("#current_semester").change(function(){
 	let field = jQuery(this).attr("data-id");
-	console.log(field);
-	
 	jQuery('.'+field).show();
 })
 
@@ -113,7 +112,7 @@ jQuery(".occupation").on("change",function(){
 	}
 })
 
-jQuery(".guardian_relation").on("change",function(){
+jQuery(".guardian_identity").on("change",function(){
 	if(jQuery(this).val() == "Other"){
 		jQuery("."+jQuery(this).attr("data-id")).show();
 	} else {
@@ -123,7 +122,7 @@ jQuery(".guardian_relation").on("change",function(){
 })
 
 function sendMobileOtp(formId) {
-    var mobileNo = jQuery("#" + formId + " input[name='mobile']").val();
+    var mobileNo = jQuery("#" + formId + " input[name='mobile_number']").val();
 	$.ajaxSetup({
 		headers: {
 		'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

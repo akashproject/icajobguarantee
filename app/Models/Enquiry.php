@@ -12,6 +12,6 @@ class Enquiry extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'id','center_id','course_type','course','name','address','state_id','city','pincode','dob','occupation','mobile','email','parent_name','parent_mobile','parent_email','parent_occupation','qualification','professional_qualification','passing_year','experience','know_from','job_interest','admission_date','slot_day','slot_time','meta_data'
+        'id','center_id','purpose_of_enquiry','daily_time_spend','job_aspiration','expected_joining_timeline','preferred_career_field','highest_qualification','college','date_of_passing','current_education_status','current_semester_timings','professional_course_status','preferred_training_language','is_job_role','job_role','full_name','email_address','mobile_number','whatsapp_number','date_of_birth','address','state','city','pincode','guardian_identity','father_name','father_occupation','mother_name','mother_occupation','parent_mobile_number','expected_starting_salary','expected_monthly_salary_after_5_years','preferred_job_location','preferred_training_days','preferred_training_time','pink_form_source','previous_computer_knowledge','created_at',
     ];
 }

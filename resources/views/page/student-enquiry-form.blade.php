@@ -94,6 +94,7 @@
             if($step > 1) {
                 $previousStep = $step - 1;
             }
+            var_dump($enq)
         @endphp
         <header>
             <div id="main-menu"  class="main-menu-container header-style-2">
@@ -197,13 +198,13 @@
                                                             <div class="col-md-6">
                                                                 <label for="purpose_of_enquiry_job" class="lead_prefarence_tab"> 
                                                                     <h2 class="" >Job Guarantee Course</h2>
-                                                                    <input type="radio" id="purpose_of_enquiry_job" data-id="daily_time_spend_job_readiness" name="purpose_of_enquiry" value="Job Guarantee Course" class="lead_prefference wizard-required">
+                                                                    <input type="radio" id="purpose_of_enquiry_job" data-id="daily_time_spend_job_readiness" name="purpose_of_enquiry" value="Job Guarantee Course" {{ ($enq->purpose_of_enquiry == "Job Guarantee Course")?'selected':'' }}>
                                                                 </label>
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <label for="purpose_of_enquiry_skill_update" class="lead_prefarence_tab"> 
                                                                     <h2 class="" >Skill Development Course</h2>
-                                                                    <input type="radio" id="purpose_of_enquiry_skill_update" data-id="daily_time_spend_skill_development" name="purpose_of_enquiry" value="Skill Development Course" class="lead_prefference wizard-required">
+                                                                    <input type="radio" id="purpose_of_enquiry_skill_update" data-id="daily_time_spend_skill_development" name="purpose_of_enquiry" value="Skill Development Course" {{ ($enq->purpose_of_enquiry == "Skill Development Course")?'selected':'' }}>
                                                                 </label>
                                                             </div>
                                                             <div class="col-md-12 text-center">
@@ -286,7 +287,7 @@
                                                             <div class="col-md-6">
                                                                 <label for="expected_joining_timeline_3_month" class="lead_prefarence_tab"> 
                                                                     <h2 class="" >3</h2>
-                                                                    <input type="radio" id="expected_joining_timeline_3_month" data-id="preferred_career_field" name="expected_joining_timeline" value="3" class="lead_prefference wizard-required">
+                                                                    <input type="radio" id="expected_joining_timeline_3_month" data-id="preferred_career_field" name="expected_joining_timeline" value="3 Month" class="lead_prefference wizard-required">
                                                                 </label>
                                                             </div>
                                                             <div class="col-md-6">
@@ -304,7 +305,7 @@
                                                             <div class="col-md-6">
                                                                 <label for="expected_joining_timeline_after_12_month" class="lead_prefarence_tab"> 
                                                                     <h2 class="" >> 12</h2>
-                                                                    <input type="radio" id="expected_joining_timeline_after_12_month" data-id="preferred_career_field" name="expected_joining_timeline" value="> 12" class="lead_prefference wizard-required">
+                                                                    <input type="radio" id="expected_joining_timeline_after_12_month" data-id="preferred_career_field" name="expected_joining_timeline" value="After 12 Month" class="lead_prefference wizard-required">
                                                                 </label>
                                                             </div>
                                                             <div class="col-md-12 text-center">
@@ -468,9 +469,9 @@
                                                 <div class="wizerd_fieldset" >
                                                     <div class="row" > 
                                                         <div class="col-12" >
-                                                            <div class="contact-info highestQualification">
+                                                            <div class="contact-info">
                                                                 <label class="mb-0" style="color: #403c9c;font-weight: 600;"> What is your highest qualification?  </label>
-                                                                <select id="highestQualification" class="qualification" name="highest_qualification" required class="wizard-required">
+                                                                <select id="" class="qualification" name="highest_qualification" required class="wizard-required">
                                                                     <option value=""> Select Qualification</option>
                                                                     <option value="Secondary"> Secondary </option>
                                                                     <option value="Higher Secondery"> Higher Secondary </option>
@@ -486,8 +487,8 @@
                                                         </div>
                                                         <div class="col-12" >
                                                             <div class="contact-info formFieldInstitute">
-                                                                <label class="mb-0" style="color: #403c9c;font-weight: 600;">Mention your School/College/University.</label>
-                                                                <input id="formFieldInstitute" name="institute" type="text" placeholder="Enter Passing School/College/university" autocomplete="off" required class="wizard-required">
+                                                                <label class="mb-0" style="color: #403c9c;font-weight: 600;">Mention your School/College.</label>
+                                                                <input id="formFieldInstitute" name="college" type="text" placeholder="Enter Passing School/College" autocomplete="off" required class="wizard-required">
                                                             </div>
                                                         </div>
                                                         <div class="col-12" >
@@ -497,7 +498,7 @@
                                                                 </div>
                                                                 <div class="col-6" >
                                                                     <div class="contact-info formFieldPassingYear">
-                                                                        <select id="formFieldPassingYear" class="passing_month" name="passing_month" required class="wizard-required">
+                                                                        <select id="formFieldPassingYear" name="date_of_passing[month]" required class="wizard-required">
                                                                            <option value=""> Select Month</option>
                                                                             <option value="January">January</option>
                                                                             <option value="February">February</option>
@@ -515,7 +516,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-6" >
-                                                                    <select id="formFieldPassingYear" class="passing_year" name="passing_year" required class="wizard-required">
+                                                                    <select id="formFieldPassingYear" name="date_of_passing[year]" required class="wizard-required">
                                                                         <option value=""> Select Year</option>
                                                                         @for ($year = now()->year; $year >= 1980; $year--)
                                                                             <option value="{{ $year }}">{{ $year }}</option>
@@ -526,14 +527,14 @@
                                                         </div>
                                                         <div class="col-12" >
                                                             <div class="contact-info formFieldstillPursuing mb-0">
-                                                                <label for="pursuing_degree mb-0">
-                                                                    <input type="checkbox" id="pursuing_degree" data-id="specify_semester_field" class="pursuing_degree" value="Still pursuing post graduation program"> 
+                                                                <label for="current_education_status mb-0">
+                                                                    <input type="checkbox" id="current_education_status" data-id="specify_semester_field" name="current_education_status" value="Still pursuing post graduation program"> 
                                                                     <span style="color: #403c9c;font-weight: 600;" > Are you currently pursuing any Degree / Post Graduation Program? </span>
                                                                 </label>
                                                             </div>
                                                             <div class="contact-info specify_semester_field" style="display:none;">
                                                                 <label class="mb-0" style="color: #403c9c;font-weight: 600;"> What is your Current Semester?  </label>
-                                                                <select id="formFieldSemester" class="semester" name="semester" required class="wizard-required" data-id="class_shift_field">
+                                                                <select id="current_semester" name="current_semester_timings[semester]" required class="wizard-required" data-id="class_shift_field">
                                                                     <option value="">Select Semester</option>
                                                                     @for($i = 1; $i <= 8; $i++)
                                                                     <option value="{{intToRoman($i)}}">{{intToRoman($i)}}</option>
@@ -543,9 +544,15 @@
                                                             <div class="contact-info class_shift_field" style="display:none;">
                                                             <label class="mb-0" style="color: #403c9c;font-weight: 600;"> What is your college timing? </label>
                                                                 <div class="field_checkbox_group">
-                                                                    <label for="morning" ><input type="radio" id="morning" name="class_shift" value="Morning" > Morning </label>
-                                                                    <label for="day" ><input type="radio" id="day" name="class_shift" value="Day" > Day </label>                
-                                                                    <label for="evening" ><input type="radio" id="evening" name="class_shift" value="Evening" > Evening </label>                
+                                                                    <label for="morning" >
+                                                                        <input type="radio" id="morning" name="current_semester_timings[timing]" value="Morning" > Morning 
+                                                                    </label>
+                                                                    <label for="day" >
+                                                                        <input type="radio" id="day" name="current_semester_timings[timing]" value="Day" > Day 
+                                                                    </label>                
+                                                                    <label for="evening" >
+                                                                        <input type="radio" id="evening" name="current_semester_timings[timing]" value="Evening" > Evening 
+                                                                    </label>                
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -554,22 +561,22 @@
                                                             <div class="contact-info formFieldInstitute">
                                                                 <label class="mb-0" style="color: #403c9c;font-weight: 600;"> Have you completed or are you currently pursuing any professional courses? </label>
                                                                 <div class="field_checkbox_group">
-                                                                    <label for="bank_po" ><input type="checkbox" id="bank_po" name="professional_course[]" value="Bank PO" > Bank PO </label>
-                                                                    <label for="railway" ><input type="checkbox" id="railway" name="professional_course[]" value="Railway" > Railway </label>
-                                                                    <label for="ssc" ><input type="checkbox" id="ssc" name="professional_course[]" value="State Service Commission" > State Service Commission </label>
-                                                                    <label for="ca" ><input type="checkbox" id="ca" name="professional_course[]" value="CA" > CA </label>
-                                                                    <label for="cs" ><input type="checkbox" id="cs" name="professional_course[]" value="CS" > CS </label>
-                                                                    <label for="cma" ><input type="checkbox" id="cma" name="professional_course[]" value="CMA" > CMA </label>
-                                                                    <label for="other" ><input type="checkbox" id="other" name="professional_course[]" value="Other" class="hide_show_text_field"> Other </label>
+                                                                    <label for="bank_po" ><input type="checkbox" id="bank_po" name="professional_course_status[]" value="Bank PO" > Bank PO </label>
+                                                                    <label for="railway" ><input type="checkbox" id="railway" name="professional_course_status[]" value="Railway" > Railway </label>
+                                                                    <label for="ssc" ><input type="checkbox" id="ssc" name="professional_course_status[]" value="State Service Commission" > State Service Commission </label>
+                                                                    <label for="ca" ><input type="checkbox" id="ca" name="professional_course_status[]" value="CA" > CA </label>
+                                                                    <label for="cs" ><input type="checkbox" id="cs" name="professional_course_status[]" value="CS" > CS </label>
+                                                                    <label for="cma" ><input type="checkbox" id="cma" name="professional_course_status[]" value="CMA" > CMA </label>
+                                                                    <label for="other" ><input type="checkbox" id="other" name="professional_course_status[]" value="Other" class="hide_show_text_field"> Other </label>
                                                                 </div>
                                                             </div>
                                                             <div class="specify_field my-2" style="display:none" >
-                                                                <input id="formFieldSpecifyOtherCourse" name="professional_course[]" type="text" placeholder="Please Specity" autocomplete="off" >
+                                                                <input id="formFieldSpecifyOtherCourse" name="professional_course_status[]" type="text" placeholder="Please Specity" autocomplete="off" >
                                                             </div>
                                                         </div>
                                                         <div class="col-12" >
-                                                            <div class="contact-info formFieldLanguage">
-                                                                <select id="formFieldLanguage" class="language" name="language" required class="wizard-required">
+                                                            <div class="contact-info preferred_training_language">
+                                                                <select id="preferred_training_language" name="preferred_training_language" required class="wizard-required">
                                                                     <option value="">What is your preferred language for the training</option>
                                                                     <option value="English"> English </option>
                                                                     <option value="Hindi"> Hindi </option>
@@ -579,7 +586,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group clearfix mt-3"> 
-                                                        <a href="{{ route('student-enquiry-form',[$previousStep,'center'=>$center,'enquiry'=>base64_encode($enquiry)]) }}" class="form-wizard-previous-btn float-left">Previous</a> 
+                                                        <a href="{{ route('student-enquiry-form',[$previousStep,'center'=>$center,'enquiry'=>base64_encode($enq->id)]) }}" class="form-wizard-previous-btn float-left">Previous</a> 
                                                         <button type="submit" class="form-wizard-next-btn float-right">Next</button>
                                                     </div>
                                                 </div>
@@ -597,8 +604,8 @@
                                                     
                                                     <div class="row" > 
                                                         <div class="col-12" >
-                                                            <div class="contact-info formFieldIsWorkExperience">
-                                                                <select id="formFieldIsWorkExperience" class="is_work_experience" name="is_work_experience" required class="wizard-required">
+                                                            <div class="contact-info ">
+                                                                <select name="is_job_role" required class="wizard-required">
                                                                     <option value="">Do you have any work experience? </option>
                                                                     <option value="Yes"> Yes </option>
                                                                     <option value="No"> No </option>
@@ -608,14 +615,14 @@
                                                         
                                                         <div class="col-12" >
                                                             <span style="font-size: 12px;">*If you don’t have any work experience, you can skip the job role section.</span>
-                                                            <div class="contact-info formFieldJobRole">
+                                                            <div class="contact-info">
                                                                 <div class="add_more_job_role">
                                                                     <div class="row">
                                                                         <div class="col-md-7">
-                                                                            <input id="formFieldJobRole" name="job_role[]" type="text" placeholder="What is your job role?" autocomplete="off" class="wizard-required job_role_elem">
+                                                                            <input name="job_role[0][name]" type="text" placeholder="What is your job role?" autocomplete="off" class="wizard-required job_role_elem">
                                                                         </div>
                                                                         <div class="col-md-3">
-                                                                            <input id="formFieldJobRoleTimePeriod" name="job_role_time[]" type="number" placeholder="Total Years" autocomplete="off" class="wizard-required job_role_elem">
+                                                                            <input name="job_role[0][time]" type="number" placeholder="Total Years" autocomplete="off" class="wizard-required job_role_elem">
                                                                         </div>
                                                                         <div class="col-md-2">
                                                                             <a href="javascript:void(0)" class="add_more_role_btn">Add More</a>
@@ -645,67 +652,40 @@
                                                 <div class="wizerd_fieldset" >
                                                     <div class="row" > 
                                                         <div class="col-12" >
-                                                            <div class="contact-info formFieldName">
-                                                                <input id="formFieldName" name="name" type="text" placeholder="Please enter your full name" autocomplete="off" required class="wizard-required">
-                                                                
+                                                            <div class="contact-info ">
+                                                                <input name="full_name" type="text" placeholder="Please enter your full name" autocomplete="off" required class="wizard-required">
                                                             </div>
                                                         </div>
                                                         <div class="col-12" >
-                                                            <div class="contact-info formFieldEmail">
-                                                                <input id="formFieldEmail" name="email" type="email" placeholder="Please enter your active email address" autocomplete="off" required class="wizard-required">
+                                                            <div class="contact-info ">
+                                                                <input name="email_address" type="email" placeholder="Please enter your active email address" autocomplete="off" required class="wizard-required">
                                                             </div>
                                                         </div>
                                                         <div class="col-12" >
-                                                            <div class="contact-info formFieldMobile">
-                                                                <input id="formFieldMobile" name="mobile" type="number" placeholder="Please enter your mobile number" autocomplete="off" min="6000000000" max="9999999999" required class="mb-2 wizard-required">
+                                                            <div class="contact-info ">
+                                                                <input name="mobile_number" id="mobile_number" type="number" placeholder="Please enter your mobile number" autocomplete="off" min="6000000000" max="9999999999" required class="mb-2 wizard-required">
                                                                 <span><input type="checkbox" class="copy_mobile_no"> Is the above number your whatsapp number? </span>
                                                             </div>
                                                         </div>
                                                         <div class="col-12" >
-                                                            <div class="contact-info formFieldWhatsapp">
-                                                                <input id="formFieldWhatsapp" name="whatsapp" type="number" placeholder="Please enter your whatsapp number" autocomplete="off" min="6000000000" max="9999999999" required class="wizard-required">
+                                                            <div class="contact-info ">
+                                                                <input name="whatsapp_number" id="whatsapp_number" type="number" placeholder="Please enter your whatsapp number" autocomplete="off" min="6000000000" max="9999999999" required class="wizard-required">
                                                             </div>
                                                         </div>
                                                         <div class="col-12" >
-                                                            <div class="contact-info formFieldDob">
+                                                            <div class="contact-info">
                                                                 <label class="mb-0" style="color: #403c9c;font-weight: 600;">May I know your Birthday </label>
-                                                                <div class="row">
-                                                                    <div class="col-md-4">
-                                                                        <select name="dob['day']" >
-                                                                            <option> Select day</option>
-                                                                            @for($i=1; $i<=31; $i++)
-                                                                            <option value="{{$i}}">{{$i}}</option>
-                                                                            @endfor
-                                                                        </select>
-                                                                    </div>
-                                                                    <div class="col-md-4">
-                                                                        <select name="dob['month']" >
-                                                                            <option> Select month</option>
-                                                                            @for($i=1; $i<=12; $i++)
-                                                                                @php  $monthName = date('F', mktime(0, 0, 0, $i, 1)); @endphp
-                                                                                <option value='{{$monthName}}'>{{$monthName}}</option>
-                                                                            @endfor
-                                                                        </select>
-                                                                    </div>
-                                                                    <div class="col-md-4">
-                                                                        <select name="dob['year']" >
-                                                                            <option> Select year</option>
-                                                                            @for($i=1970; $i<=2000; $i++)
-                                                                            <option value="{{$i}}">{{$i}}</option>
-                                                                            @endfor
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
+                                                                <input name="date_of_birth" id="date_of_birth" type="date" max="<?= date('Y-m-d', strtotime('-15 years')) ?>" autocomplete="off" required class="wizard-required">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-12" >
-                                                            <div class="contact-info formFieldAddress">
-                                                                <input id="formFieldAddress" name="address" type="text" placeholder="Enter Your Address" autocomplete="off" required class="wizard-required">
+                                                            <div class="contact-info ">
+                                                                <input name="address" type="text" placeholder="Enter Your Address" autocomplete="off" required class="wizard-required">
                                                             </div>
                                                         </div>
                                                         <div class="col-12" >
                                                             <div class="register-form-area">
-                                                                <select id="formFieldState" class="state" name="state" required class="wizard-required">
+                                                                <select id="" class="state" name="state" required class="wizard-required">
                                                                     <option value="">Select state</option>
                                                                     @foreach(getStates() as $state)
                                                                     <option value="{{ $state->name }}"> {{ $state->name }} </option>
@@ -715,20 +695,20 @@
                                                         </div>
                                                         <div class="col-12" >
                                                             <div class="contact-info formFieldCity">
-                                                                <input id="formFieldCity" name="city" type="text" placeholder="Enter Your City" autocomplete="off" required class="wizard-required">
+                                                                <input id="" name="city" type="text" placeholder="Enter Your City" autocomplete="off" required class="wizard-required">
                                                             </div>
                                                         </div>
                                                         <div class="col-12" >
-                                                            <div class="contact-info formFieldPincode">
-                                                                <input type="number" id="formFieldPincode" name="pincode" placeholder="Enter Your Pincode" min="100000" max="999999" autocomplete="off" required class="wizard-required">
+                                                            <div class="contact-info ">
+                                                                <input type="number" name="pincode" placeholder="Enter Your Pincode" min="100000" max="999999" autocomplete="off" required class="wizard-required">
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <h3 class="heading">Guardian Details</h3>
                                                     <div class="row" >
                                                         <div class="col-12" >
-                                                            <div class="contact-info formFieldGuardianRelation">
-                                                                <select id="formFieldGuardianRelation" data-id="specify_guardian_relation_field" class="guardian_relation" name="guardian_relation" class="wizard-required">
+                                                            <div class="contact-info">
+                                                                <select id="" data-id="specify_guardian_relation_field" class="guardian_identity" name="guardian_identity" class="wizard-required">
                                                                     <option value="">Who is your guardian?</option>
                                                                     <option value="Father">Father</option>
                                                                     <option value="Mother">Mother</option>
@@ -737,17 +717,17 @@
                                                             </div>
                                                             <div class="specify_guardian_relation_field my-2" style="display:none" >
                                                                 <label class="mb-0" style="color: #403c9c;font-weight: 600;">*Please share person's name and relation with you </label>
-                                                                <textarea id="formFieldSpecifyOtherGuardianRelation" name="other_guardian_relation" class="textarea_form-field" type="text" placeholder="Example. John Doe, Uncle" autocomplete="off" ></textarea>
+                                                                <textarea id="" name="additional_guardian_details" class="textarea_form-field" type="text" placeholder="Example. John Doe, Uncle" autocomplete="off" ></textarea>
                                                             </div>
                                                         </div> 
                                                         <div class="col-12" >
-                                                            <div class="contact-info formFieldFatherName">
-                                                                <input id="formFieldFatherName" name="father_name" type="text" placeholder="What is your father’s name?" autocomplete="off">
+                                                            <div class="contact-info ">
+                                                                <input id="" name="father_name" type="text" placeholder="What is your father’s name?" autocomplete="off">
                                                             </div>
                                                         </div>
                                                         <div class="col-12" >
-                                                            <div class="contact-info formFieldFatherOccupation">
-                                                                <select id="formFieldFatherOccupation" data-id="specify_father_occupation_field" class="occupation" name="father_occupation" class="wizard-required">
+                                                            <div class="contact-info ">
+                                                                <select id="" data-id="specify_father_occupation_field" name="father_occupation" class="wizard-required occupation">
                                                                     <option value="">What is his occupation?</option>
                                                                     <option value="Business">Business</option>
                                                                     <option value="Govt. Employee">Govt. Employee</option>
@@ -759,17 +739,17 @@
                                                                 </select>
                                                             </div>
                                                             <div class="specify_father_occupation_field my-2" style="display:none" >
-                                                                <input id="formFieldSpecifyOtherCourse" name="other_father_occupation" type="text" placeholder="Please specity other occupation" autocomplete="off" >
+                                                                <input id="" name="other_father_occupation" type="text" placeholder="Please specity other occupation" autocomplete="off" >
                                                             </div>
                                                         </div>
                                                         <div class="col-12" >
-                                                            <div class="contact-info formFieldMotherName">
-                                                                <input id="formFieldMotherName" name="mother_name" type="text" placeholder="What is your mother’s name?" autocomplete="off">
+                                                            <div class="contact-info ">
+                                                                <input id="" name="mother_name" type="text" placeholder="What is your mother’s name?" autocomplete="off">
                                                             </div>
                                                         </div>
                                                         <div class="col-12" >
-                                                            <div class="contact-info formFieldMotherOccupation">
-                                                                <select id="formFieldMotherOccupation" data-id="specify_mother_occupation_field"  class="occupation" name="mother_occupation" class="wizard-required">
+                                                            <div class="contact-info ">
+                                                                <select id="" data-id="specify_mother_occupation_field" name="mother_occupation" class="wizard-required occupation">
                                                                     <option value="">What is her occupation?</option>
                                                                     <option value="House Wife">House Wife</option>
                                                                     <option value="Business">Business</option>
@@ -782,12 +762,12 @@
                                                                 </select>
                                                             </div>
                                                             <div class="specify_mother_occupation_field my-2" style="display:none" >
-                                                                <input id="formFieldSpecifyOtherCourse" name="other_mother_occupation" type="text" placeholder="Please specity other occupation" autocomplete="off" >
+                                                                <input id="" name="other_mother_occupation" type="text" placeholder="Please specity other occupation" autocomplete="off" >
                                                             </div>
                                                         </div>
                                                         <div class="col-12" >
-                                                            <div class="contact-info formFieldParentMobile">
-                                                                <input id="formFieldParentMobile" name="parent_mobile" type="number" placeholder="Mention your guardian’s mobile no" autocomplete="off" min="6000000000" max="9999999999" required>
+                                                            <div class="contact-info ">
+                                                                <input id="" name="parent_mobile_number" type="number" placeholder="Mention your guardian’s mobile no" autocomplete="off" min="6000000000" max="9999999999" required>
                                                             </div>
                                                         </div>
                                                         
@@ -826,25 +806,25 @@
                                                 <div class="wizerd_fieldset" >
                                                     <div class="row" > 
                                                         <div class="col-12" >
-                                                            <div class="contact-info formFieldNextGoal">
+                                                            <div class="contact-info ">
                                                                 <label class="mb-0" style="color: #403c9c;font-weight: 600;"> What is your expected starting salary per month</label>
-                                                                <input id="formFieldNextGoal" name="starting_salary" type="number" autocomplete="off" required class="wizard-required" min="10000">
+                                                                <input id="" name="expected_starting_salary" type="number" autocomplete="off" required class="wizard-required">
                                                             </div>
                                                         </div>
                                                         <div class="col-12" >
-                                                            <div class="contact-info formFieldNextGoal">
+                                                            <div class="contact-info ">
                                                                 <label class="mb-0" style="color: #403c9c;font-weight: 600;"> Expected salary per month after 5 Years</label>
-                                                                <input id="formFieldNextGoal" name="next_goal" type="number" autocomplete="off" required class="wizard-required" min="10000">
+                                                                <input id="" name="expected_monthly_salary_after_5_years" type="number" autocomplete="off" required class="wizard-required">
                                                             </div>
                                                         </div>
                                                         <div class="col-12" >
                                                             <div class="contact-info formFieldlocationPrefarence">
                                                                 <label class="mb-0" style="color: #403c9c;font-weight: 600;"> Do you have any location preference for placement? [If yes, please specify]</label>
                                                                 <div class="field_checkbox_group mt-3">
-                                                                    <label for="same_city" ><input type="radio" id="same_city" name="location_prefarence" value="same city" checked> Same City </label>
-                                                                    <label for="same_state" ><input type="radio" id="same_state" name="location_prefarence" value="same State"> Same State </label>
-                                                                    <label for="same_india" ><input type="radio" id="same_india" name="location_prefarence" value="Anywhere in India"> Anywhere in India </label>
-                                                                    <label for="same_world" ><input type="radio" id="same_world" name="location_prefarence" value="Anywhere in World"> Anywhere in World </label>
+                                                                    <label for="same_city" ><input type="radio" id="same_city" name="preferred_job_location" value="same city" checked> Same City </label>
+                                                                    <label for="same_state" ><input type="radio" id="same_state" name="preferred_job_location" value="same State"> Same State </label>
+                                                                    <label for="same_india" ><input type="radio" id="same_india" name="preferred_job_location" value="Anywhere in India"> Anywhere in India </label>
+                                                                    <label for="same_world" ><input type="radio" id="same_world" name="preferred_job_location" value="Anywhere in World"> Anywhere in World </label>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -872,12 +852,12 @@
                                                                 <div class="field_checkbox_group mt-3 row">
                                                                     <div class="col-md-4">
                                                                         <label for="weekdays" >
-                                                                            <input type="checkbox" id="weekdays" name="day_preference[]" value="Weekdays"> Weekdays
+                                                                            <input type="checkbox" id="weekdays" name="preferred_training_days[]" value="Weekdays"> Weekdays
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-4">
                                                                         <label for="weekend" >
-                                                                            <input type="checkbox" id="weekend" name="day_preference[]" value="Weekend"> Weekend
+                                                                            <input type="checkbox" id="weekend" name="preferred_training_days[]" value="Weekend"> Weekend
                                                                         </label>
                                                                     </div>
                                                                 </div>
@@ -889,42 +869,42 @@
                                                                 <div class="field_checkbox_group mt-3 row">
                                                                     <div class="col-md-4">
                                                                         <label for="08_00_am_09_30_am" >
-                                                                            <input type="checkbox" id="08_00_am_09_30_am" name="time_slot_preference[]" value="8:00 AM - 9:30 AM"> 08:00 AM - 09:30 AM
+                                                                            <input type="checkbox" id="08_00_am_09_30_am" name="preferred_training_time[]" value="8:00 AM - 9:30 AM"> 08:00 AM - 09:30 AM
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-4">
                                                                         <label for="08_30_am_11_00_am" >
-                                                                            <input type="checkbox" id="08_30_am_11_00_am" name="time_slot_preference[]" value="08:30 AM - 11:00 AM"> 08:30 AM - 11:00 AM 
+                                                                            <input type="checkbox" id="08_30_am_11_00_am" name="preferred_training_time[]" value="08:30 AM - 11:00 AM"> 08:30 AM - 11:00 AM 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-4">
                                                                         <label for="11_00_am_12_30_pm" >
-                                                                            <input type="checkbox" id="11_00_am_12_30_pm" name="time_slot_preference[]" value="11:00 AM - 12:30 PM"> 11:00 AM - 12:30 PM 
+                                                                            <input type="checkbox" id="11_00_am_12_30_pm" name="preferred_training_time[]" value="11:00 AM - 12:30 PM"> 11:00 AM - 12:30 PM 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-4">
                                                                         <label for="12_30_pm_02_00_pm" >
-                                                                            <input type="checkbox" id="12_30_pm_02_00_pm" name="time_slot_preference[]" value="12:30 PM - 02:00 PM"> 12:30 PM - 02:00 PM 
+                                                                            <input type="checkbox" id="12_30_pm_02_00_pm" name="preferred_training_time[]" value="12:30 PM - 02:00 PM"> 12:30 PM - 02:00 PM 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-4">
                                                                         <label for="02_00_pm_03_30_pm" >
-                                                                            <input type="checkbox" id="02_00_pm_03_30_pm" name="time_slot_preference[]" value="02:00 PM - 03:30 PM"> 02:00 PM - 03:30 PM 
+                                                                            <input type="checkbox" id="02_00_pm_03_30_pm" name="preferred_training_time[]" value="02:00 PM - 03:30 PM"> 02:00 PM - 03:30 PM 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-4">
                                                                         <label for="03_30_pm_05_00_pm" >
-                                                                            <input type="checkbox" id="03_30_pm_05_00_pm" name="time_slot_preference[]" value="03:30 PM - 05:00 PM"> 03:30 PM - 05:00 PM 
+                                                                            <input type="checkbox" id="03_30_pm_05_00_pm" name="preferred_training_time[]" value="03:30 PM - 05:00 PM"> 03:30 PM - 05:00 PM 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-4">
                                                                         <label for="05_00_pm_06_30_pm" >
-                                                                            <input type="checkbox" id="05_00_pm_06_30_pm" name="time_slot_preference[]" value="05:00 PM - 06:30 PM"> 05:00 PM - 06:30 PM 
+                                                                            <input type="checkbox" id="05_00_pm_06_30_pm" name="preferred_training_time[]" value="05:00 PM - 06:30 PM"> 05:00 PM - 06:30 PM 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-4">
                                                                         <label for="06_30_pm_08_00_pm" >
-                                                                            <input type="checkbox" id="06_30_pm_08_00_pm" name="time_slot_preference[]" value="06:30 PM - 08:00 PM"> 06:30 PM - 08:00 PM 
+                                                                            <input type="checkbox" id="06_30_pm_08_00_pm" name="preferred_training_time[]" value="06:30 PM - 08:00 PM"> 06:30 PM - 08:00 PM 
                                                                         </label>
                                                                     </div>
                                                                 </div>
@@ -936,67 +916,67 @@
                                                                 <div class="field_checkbox_group mt-3 row">
                                                                     <div class="col-md-3">
                                                                         <label for="website" >
-                                                                            <input type="checkbox" id="website" name="know_about_ica[]" value="Website">Website
+                                                                            <input type="checkbox" id="website" name="pink_form_source[]" value="Website">Website
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-3">
                                                                         <label for="google" >
-                                                                            <input type="checkbox" id="google" name="know_about_ica[]" value="Google Search">Google Search 
+                                                                            <input type="checkbox" id="google" name="pink_form_source[]" value="Google Search">Google Search 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-3">
                                                                         <label for="facebook" >
-                                                                            <input type="checkbox" id="facebook" name="know_about_ica[]" value="Facebook">Facebook 
+                                                                            <input type="checkbox" id="facebook" name="pink_form_source[]" value="Facebook">Facebook 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-3">
                                                                         <label for="instagram" >
-                                                                            <input type="checkbox" id="instagram" name="know_about_ica[]" value="Instagram">Instagram 
+                                                                            <input type="checkbox" id="instagram" name="pink_form_source[]" value="Instagram">Instagram 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-3">
                                                                         <label for="youtube" >
-                                                                            <input type="checkbox" id="youtube" name="know_about_ica[]" value="YouTube">YouTube 
+                                                                            <input type="checkbox" id="youtube" name="pink_form_source[]" value="YouTube">YouTube 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-3">
                                                                         <label for="twitter" >
-                                                                            <input type="checkbox" id="twitter" name="know_about_ica[]" value="Twitter"> Twitter 
+                                                                            <input type="checkbox" id="twitter" name="pink_form_source[]" value="Twitter"> Twitter 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-3">
                                                                         <label for="linkedin" >
-                                                                            <input type="checkbox" id="linkedin" name="know_about_ica[]" value="LinkedIn"> LinkedIn 
+                                                                            <input type="checkbox" id="linkedin" name="pink_form_source[]" value="LinkedIn"> LinkedIn 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-3">
                                                                         <label for="banners" >
-                                                                            <input type="checkbox" id="banners" name="know_about_ica[]" value="Banners"> Banners 
+                                                                            <input type="checkbox" id="banners" name="pink_form_source[]" value="Banners"> Banners 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-3">
                                                                         <label for="hordings" >
-                                                                            <input type="checkbox" id="hordings" name="know_about_ica[]" value="Hordings"> Hordings 
+                                                                            <input type="checkbox" id="hordings" name="pink_form_source[]" value="Hordings"> Hordings 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-3">
                                                                         <label for="roadshow" >
-                                                                            <input type="checkbox" id="roadshow" name="know_about_ica[]" value="Roadshow"> Roadshow 
+                                                                            <input type="checkbox" id="roadshow" name="pink_form_source[]" value="Roadshow"> Roadshow 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-3">
                                                                         <label for="seminars" >
-                                                                            <input type="checkbox" id="seminars" name="know_about_ica[]" value="Seminars"> Seminars 
+                                                                            <input type="checkbox" id="seminars" name="pink_form_source[]" value="Seminars"> Seminars 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-3">
                                                                         <label for="handbill_leaflet" >
-                                                                            <input type="checkbox" id="handbill_leaflet" name="know_about_ica[]" value="Handbill/Leaflet"> Handbill/Leaflet 
+                                                                            <input type="checkbox" id="handbill_leaflet" name="pink_form_source[]" value="Handbill/Leaflet"> Handbill/Leaflet 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-3">
                                                                         <label for="Friends_Relative_Teacher" >
-                                                                            <input type="checkbox" id="Friends_Relative_Teacher" name="know_about_ica[]" value="Friends/Relative/Teacher"> Friends/Relative/Teacher 
+                                                                            <input type="checkbox" id="Friends_Relative_Teacher" name="pink_form_source[]" value="Friends/Relative/Teacher"> Friends/Relative/Teacher 
                                                                         </label>
                                                                     </div>
                                                                 </div>
@@ -1008,9 +988,9 @@
                                                                 <div class="row">
                                                                     <div class="col-md-5">
                                                                         <div class="form-group row">
-                                                                            <label for="computer_subject" class="col-sm-3 text-right control-label col-form-label">Subject</label>
+                                                                            <label for="" class="col-sm-3 text-right control-label col-form-label">Subject</label>
                                                                             <div class="col-sm-9">
-                                                                                <input type="text" class="" name="computer_subject" id="computer_subject" placeholder="Enter Subject Here" >
+                                                                                <input type="text" class="" name="previous_computer_knowledge" id="" placeholder="Enter Subject Here" >
                                                                             </div>
                                                                         </div>
                                                                     </div>
