@@ -28,7 +28,9 @@
 									<a href="{{ url('centers') }}/{{ $value->slug }}" class="btn btn-success">View</a>
 									<a href="{{ url('administrator/view-center') }}/{{ $value->id }}" class="btn btn-primary">Edit</a>
 									<!-- <a href="{{ route('center-courses',$value->id) }}" class="btn btn-primary">Courses</a> -->
-									<a href="{{ route('admin-generate-pink-form',$value->id) }}" class="btn btn-primary">Pink Form</a>
+									@if($value->status == '1')
+										<a href="{{ route('admin-generate-pink-form',$value->code) }}" class="btn btn-primary">Pink Form</a>
+									@endif
 									@if($user->role == 'master')
 									<a href="{{ url('administrator/delete-center') }}/{{ $value->id }}" class="btn btn-danger" onclick="return confirm('Are you sure?')"; >Delete </a>
 									@endif

@@ -49,6 +49,11 @@
 					<span class="success-icon"> <i class="fas fa-check"></i> </span>
 					<h4> Thank You! Your Application Submitted. </h4>
 					<h4> Our Career adviser will call you soon to suggest suitable option to You </h4>
+					<div class="text-center">
+						<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
+							<a href="{{ route() }}"> Back To Enquiry Form <i class="fas fa-caret-right"></i></a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

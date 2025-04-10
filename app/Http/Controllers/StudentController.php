@@ -12,15 +12,32 @@ class StudentController extends Controller
 {
     //
 
-    public function index($step = null)
+    public function index($center,$step = null)
     {
-        $center = (request()->has('center'))?request()->get('center'):"";
-        $id = (request()->has('enquiry'))?base64_decode(request()->get('enquiry')):null;
+        $enquiry_id = (request()->has('enquiry_id'))?base64_decode(request()->get('enquiry_id')):null;
         $enq = null;
-        if ($id != null) {
-            $enq = Enquiry::findOrFail($id);
+        if ($enquiry_id != null) {
+            $enq = Enquiry::findOrFail($enquiry_id);
+            if ($enq->date_of_passing) {
+                $date_of_passing = explode(",",$enq->date_of_passing);
+                $enq->date_of_passing = $date_of_passing;
+            }
+            if ($enq->professional_course_status) {
+                $enq->professional_course_status = explode(",",$enq->professional_course_status);
+            }
+            if($enq->preferred_training_days) {
+                $enq->preferred_training_days = explode(',',$enq->preferred_training_days);
+            }
+            if($enq->preferred_training_time) {
+                $enq->preferred_training_time = explode(',',$enq->preferred_training_time);
+            }
+            if($enq->pink_form_source) {
+                $enq->pink_form_source = explode(',',$enq->pink_form_source);
+            }
+
         }
-        return view('page.student-enquiry-form',compact('step','center','enquiry'));
+
+        return view('page.student-enquiry-form',compact('step','center','enq','enquiry_id'));
     }
 
     public function enquiryFormSubmit(Request $request)
@@ -38,33 +55,17 @@ class StudentController extends Controller
             if (isset($postData['date_of_passing'])) {
                 $postData['date_of_passing'] = $postData['date_of_passing']['month'].','.$postData['date_of_passing']['year'];
             }
-            if(isset($postData['current_semester_timings'])){
-                $postData['current_semester_timings'] = "Current Semester: ".$postData['current_semester_timings']['semester'].', Shift: '.$postData['current_semester_timings']['timing'];
-            }
+
             if(isset($postData['professional_course_status'])) {
                 $postData['professional_course_status'] = implode(',',$postData['professional_course_status']);
             }
+            
             if(isset($postData['job_role'])) {
                 $job_role = '';
                 foreach ($postData['job_role'] as $key => $value) {
                     $job_role .= 'Job Role: '.$value['name'].',Year: '.$value['time'].' | ';
                 }
                 $postData['job_role'] = $job_role;
-            }
-            if(isset($postData['mobile'])) {
-                $postData['mobile_number'] = $postData['mobile'];
-            }
-
-            if(isset($postData['guardian_identity']) && $postData['guardian_identity'] == "Other") {
-                $postData['guardian_identity'] = $postData['additional_guardian_details'];
-            }
-
-            if(isset($postData['father_occupation']) && $postData['father_occupation'] == "Other") {
-                $postData['father_occupation'] = $postData['other_father_occupation'];
-            }
-
-            if(isset($postData['mother_occupation']) && $postData['mother_occupation'] == "Other") {
-                $postData['mother_occupation'] = $postData['other_mother_occupation'];
             }
 
             if(isset($postData['preferred_training_days'])) {
@@ -75,6 +76,10 @@ class StudentController extends Controller
                 $postData['preferred_training_time'] = implode(',',$postData['preferred_training_time']);
             }
 
+            if(isset($postData['pink_form_source'])) {
+                $postData['pink_form_source'] = implode(',',$postData['pink_form_source']);
+            }
+
             if($postData['enquiry'] <= 0){
                 $enq = Enquiry::create($postData);
             } else {
@@ -82,11 +87,12 @@ class StudentController extends Controller
                 $enq->update($postData);
             }
             if ($step <= 5) {
-                return redirect()->route('student-enquiry-form-with-slug', [$step,'center' => $postData['center_id'],'enq'=> $enq]);
+                return redirect()->route('student-enquiry-form-with-slug', ['center' => $postData['center_id'],$step,'enquiry_id'=>base64_encode($enq->id)]);
             } else {
+                $center = Center::select('name')->where("code",$enq->center_id)->first();
                 $data = [
-                    'centername'=>'Testing Center',
-                    'centercode'=>'X999',
+                    'centername'=>$center->name,
+                    'centercode'=>$enq->center_id,
                     'PurposeOfInquiry'=> $enq->purpose_of_enquiry,
                     'DailyTimeSpent'=> $enq->daily_time_spend,
                     'JobAspiration'=> $enq->job_aspiration,
@@ -94,25 +100,25 @@ class StudentController extends Controller
                     'PreferredCareerField'=> $enq->preferred_career_field,
                     'DateOfPassing'=> $enq->date_of_passing,
                     'CurrentEducationStatus'=> $enq->current_education_status,
-                    'CurrentSemesterTimings'=> $enq->current_semester_timings,
-                    'ProfessionalCourseStatus'=> $enq->professional_course_status,
+                    'CurrentSemesterTimings'=> "Semister: ".$enq->current_semester.' Shift: '.$enq->current_shift,
+                    'ProfessionalCourseStatus'=> $enq->professional_course_status.','.$enq->other_professional_course_status,
                     'PreferredTrainingLanguage'=> $enq->preferred_training_language,
                     'JobRole'=> $enq->job_role,
                     'FullName'=> $enq->full_name,
                     'EmailAddress'=> $enq->email_address,
                     'MobileNumber'=> $enq->mobile_number,
                     'WhatsappNumber'=> $enq->whatsapp_number,
-                    'DateOfBirth'=> $enq->date_of_birth,
+                    'DateOfBirth'=> date("d/m/Y", strtotime($enq->date_of_birth)),
                     'Address'=> $enq->address,
                     'State'=> $enq->state,
                     'City'=> $enq->city,
                     'Pincode'=> $enq->pincode,
                     'GuardianIdentity'=> $enq->guardian_identity,
                     'FatherName'=> $enq->father_name,
-                    'FatherOccupation'=> $enq->father_occupation,
+                    'FatherOccupation'=> $enq->father_occupation.' '.$enq->other_mother_occupation,
                     'MotherName'=> $enq->mother_name,
-                    'MotherOccupation'=> $enq->mother_occupation,
-                    'AdditionalGuardianDetails'=> $enq->guardian_identity,
+                    'MotherOccupation'=> $enq->mother_occupation.' '.$enq->other_mother_occupation,
+                    'AdditionalGuardianDetails'=>$enq->additional_guardian_details,
                     'ExpectedStartingSalary'=> $enq->expected_starting_salary,
                     'ExpectedMonthlySalaryAfter5Years'=> $enq->expected_monthly_salary_after_5_years,
                     'PreferredJobLocation'=> $enq->preferred_job_location,
@@ -121,8 +127,29 @@ class StudentController extends Controller
                    // 'TrainingSchedulePreference'=> $enq->preferred_training_days.' '.$enq->preferred_training_time,
                     'PreviousComputerKnowledge'=> $enq->previous_computer_knowledge,
                 ];
-                echo json_encode($data);
-                exit;
+
+                //echo json_encode($data);
+                $url = "https://new.icaerp.com/api/online/SavePinkForm";
+                $curl = curl_init($url);
+                curl_setopt($curl, CURLOPT_URL, $url);
+                curl_setopt($curl, CURLOPT_POST, true);
+                curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+                
+                $headers = array(
+                "Content-Type: application/json",
+                );
+                curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+                
+                $data = json_encode($data);
+                curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+                
+                //for debug only!
+                curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+                curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+                
+                $resp = curl_exec($curl);
+                curl_close($curl);
+                $enq->update(['response_log'=>$resp]);
                 return redirect("/walkin-form-thank-you");
             }
             

@@ -92,9 +92,8 @@
         @php
             $previousStep = null;
             if($step > 1) {
-                $previousStep = $step - 1;
+                 $previousStep = $step - 1;
             }
-            var_dump($enq)
         @endphp
         <header>
             <div id="main-menu"  class="main-menu-container header-style-2">
@@ -198,13 +197,13 @@
                                                             <div class="col-md-6">
                                                                 <label for="purpose_of_enquiry_job" class="lead_prefarence_tab"> 
                                                                     <h2 class="" >Job Guarantee Course</h2>
-                                                                    <input type="radio" id="purpose_of_enquiry_job" data-id="daily_time_spend_job_readiness" name="purpose_of_enquiry" value="Job Guarantee Course" {{ ($enq->purpose_of_enquiry == "Job Guarantee Course")?'selected':'' }}>
+                                                                    <input type="radio" id="purpose_of_enquiry_job"  class="lead_prefference wizard-required" data-id="daily_time_spend_job_readiness" name="purpose_of_enquiry" value="Job Guarantee Course" {{ (isset($enq->purpose_of_enquiry) && $enq->purpose_of_enquiry == "Job Guarantee Course")?'selected':'' }}>
                                                                 </label>
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <label for="purpose_of_enquiry_skill_update" class="lead_prefarence_tab"> 
                                                                     <h2 class="" >Skill Development Course</h2>
-                                                                    <input type="radio" id="purpose_of_enquiry_skill_update" data-id="daily_time_spend_skill_development" name="purpose_of_enquiry" value="Skill Development Course" {{ ($enq->purpose_of_enquiry == "Skill Development Course")?'selected':'' }}>
+                                                                    <input type="radio" id="purpose_of_enquiry_skill_update"  class="lead_prefference wizard-required" data-id="daily_time_spend_skill_development" name="purpose_of_enquiry" value="Skill Development Course" {{ (isset($enq->purpose_of_enquiry) && $enq->purpose_of_enquiry == "Skill Development Course")?'selected':'' }}>
                                                                 </label>
                                                             </div>
                                                             <div class="col-md-12 text-center">
@@ -440,8 +439,8 @@
                                                                     </label>
                                                                 </div>
                                                                 <div class="col-md-6">
-                                                                    <label for="lead_prefer_job" class="lead_prefarence_list"> 
-                                                                        <input type="checkbox" id="lead_prefer_job" data-id="lead_prefer_job" name="lead_prefference" value="Full Time Job" class="lead_prefference wizard-required">
+                                                                    <label for="daily_time_spend_job_readiness" class="lead_prefarence_list"> 
+                                                                        <input type="checkbox" id="daily_time_spend_job_readiness" data-id="daily_time_spend_job_readiness" name="lead_prefference" value="Full Time Job" class="lead_prefference wizard-required">
                                                                         <span class="" >Job Guarantee Program</span>
                                                                     </label>
                                                                 </div>
@@ -473,22 +472,22 @@
                                                                 <label class="mb-0" style="color: #403c9c;font-weight: 600;"> What is your highest qualification?  </label>
                                                                 <select id="" class="qualification" name="highest_qualification" required class="wizard-required">
                                                                     <option value=""> Select Qualification</option>
-                                                                    <option value="Secondary"> Secondary </option>
-                                                                    <option value="Higher Secondery"> Higher Secondary </option>
-                                                                    <option value="B.Com"> B.Com </option>
-                                                                    <option value="B.Sc"> B.Sc </option>
-                                                                    <option value="BA"> BA </option>
-                                                                    <option value="BBA"> BBA </option>
-                                                                    <option value="BCA"> BCA </option>
-                                                                    <option value="B.Tech"> B.Tech </option>
-                                                                    <option value="Diploma"> Diploma </option>
+                                                                    <option value="Secondary" {{ ($enq->highest_qualification == 'Secondary')?'selected':'' }}> Secondary </option>
+                                                                    <option value="Higher Secondery" {{ ($enq->highest_qualification == 'Higher Secondery')?'selected':'' }}> Higher Secondary </option>
+                                                                    <option value="B.Com" {{ ($enq->highest_qualification == 'B.Com')?'selected':'' }}> B.Com </option>
+                                                                    <option value="B.Sc" {{ ($enq->highest_qualification == 'B.Sc')?'selected':'' }}> B.Sc </option>
+                                                                    <option value="BA" {{ ($enq->highest_qualification == 'BA')?'selected':'' }}> BA </option>
+                                                                    <option value="BBA" {{ ($enq->highest_qualification == 'BBA')?'selected':'' }}> BBA </option>
+                                                                    <option value="BCA" {{ ($enq->highest_qualification == 'BCA')?'selected':'' }}> BCA </option>
+                                                                    <option value="B.Tech" {{ ($enq->highest_qualification == 'B.Tech')?'selected':'' }}> B.Tech </option>
+                                                                    <option value="Diploma" {{ ($enq->highest_qualification == 'Diploma')?'selected':'' }}> Diploma </option>
                                                                 </select>
                                                             </div>
                                                         </div>
                                                         <div class="col-12" >
                                                             <div class="contact-info formFieldInstitute">
                                                                 <label class="mb-0" style="color: #403c9c;font-weight: 600;">Mention your School/College.</label>
-                                                                <input id="formFieldInstitute" name="college" type="text" placeholder="Enter Passing School/College" autocomplete="off" required class="wizard-required">
+                                                                <input id="formFieldInstitute" name="college" type="text" placeholder="Enter Passing School/College" autocomplete="off" required value="{{ $enq->college }}">
                                                             </div>
                                                         </div>
                                                         <div class="col-12" >
@@ -500,18 +499,18 @@
                                                                     <div class="contact-info formFieldPassingYear">
                                                                         <select id="formFieldPassingYear" name="date_of_passing[month]" required class="wizard-required">
                                                                            <option value=""> Select Month</option>
-                                                                            <option value="January">January</option>
-                                                                            <option value="February">February</option>
-                                                                            <option value="March">March</option>
-                                                                            <option value="April">April</option>
-                                                                            <option value="May">May</option>
-                                                                            <option value="June">June</option>
-                                                                            <option value="July">July</option>
-                                                                            <option value="August">August</option>
-                                                                            <option value="September">September</option>
-                                                                            <option value="October">October</option>
-                                                                            <option value="November">November</option>
-                                                                            <option value="December">December</option>
+                                                                            <option value="January" {{ ($enq->date_of_passing[0] == 'January')?'selected':'' }} >January</option>
+                                                                            <option value="February" {{ ($enq->date_of_passing[0] == 'February')?'selected':'' }} >February</option>
+                                                                            <option value="March" {{ ($enq->date_of_passing[0] == 'March')?'selected':'' }} >March</option>
+                                                                            <option value="April" {{ ($enq->date_of_passing[0] == 'April')?'selected':'' }} >April</option>
+                                                                            <option value="May" {{ ($enq->date_of_passing[0] == 'May')?'selected':'' }} >May</option>
+                                                                            <option value="June" {{ ($enq->date_of_passing[0] == 'June')?'selected':'' }} >June</option>
+                                                                            <option value="July" {{ ($enq->date_of_passing[0] == 'July')?'selected':'' }}  >July</option>
+                                                                            <option value="August"  {{ ($enq->date_of_passing[0] == 'August')?'selected':'' }} >August</option>
+                                                                            <option value="September" {{ ($enq->date_of_passing[0] == 'September')?'selected':'' }} >September</option>
+                                                                            <option value="October" {{ ($enq->date_of_passing[0] == 'October')?'selected':'' }} >October</option>
+                                                                            <option value="November" {{ ($enq->date_of_passing[0] == 'November')?'selected':'' }}>November</option>
+                                                                            <option value="December" {{ ($enq->date_of_passing[0] == 'December')?'selected':'' }} >December</option>
                                                                         </select> 
                                                                     </div>
                                                                 </div>
@@ -519,7 +518,7 @@
                                                                     <select id="formFieldPassingYear" name="date_of_passing[year]" required class="wizard-required">
                                                                         <option value=""> Select Year</option>
                                                                         @for ($year = now()->year; $year >= 1980; $year--)
-                                                                            <option value="{{ $year }}">{{ $year }}</option>
+                                                                            <option value="{{ $year }}" {{ ($enq->date_of_passing[1] == $year)?'selected':'' }} >{{ $year }}</option>
                                                                         @endfor
                                                                     </select>
                                                                 </div>
@@ -528,30 +527,30 @@
                                                         <div class="col-12" >
                                                             <div class="contact-info formFieldstillPursuing mb-0">
                                                                 <label for="current_education_status mb-0">
-                                                                    <input type="checkbox" id="current_education_status" data-id="specify_semester_field" name="current_education_status" value="Still pursuing post graduation program"> 
+                                                                    <input type="checkbox" id="current_education_status" data-id="specify_semester_field" name="current_education_status" value="Still pursuing post graduation program" {{($enq->current_education_status != null)?'checked':''}}> 
                                                                     <span style="color: #403c9c;font-weight: 600;" > Are you currently pursuing any Degree / Post Graduation Program? </span>
                                                                 </label>
                                                             </div>
-                                                            <div class="contact-info specify_semester_field" style="display:none;">
+                                                            <div class="contact-info specify_semester_field" style="display:{{($enq->current_education_status != null)?'block':'none'}};">
                                                                 <label class="mb-0" style="color: #403c9c;font-weight: 600;"> What is your Current Semester?  </label>
-                                                                <select id="current_semester" name="current_semester_timings[semester]" required class="wizard-required" data-id="class_shift_field">
+                                                                <select id="current_semester" name="current_semester" required class="wizard-required" data-id="class_shift_field">
                                                                     <option value="">Select Semester</option>
                                                                     @for($i = 1; $i <= 8; $i++)
-                                                                    <option value="{{intToRoman($i)}}">{{intToRoman($i)}}</option>
+                                                                    <option value="{{intToRoman($i)}}" {{ ($enq->current_semester == intToRoman($i))?'selected':'' }} >{{intToRoman($i)}}</option>
                                                                     @endfor
                                                                 </select>
                                                             </div>
-                                                            <div class="contact-info class_shift_field" style="display:none;">
+                                                            <div class="contact-info class_shift_field" style="display:{{($enq->current_education_status != null)?'block':'none'}};">
                                                             <label class="mb-0" style="color: #403c9c;font-weight: 600;"> What is your college timing? </label>
                                                                 <div class="field_checkbox_group">
                                                                     <label for="morning" >
-                                                                        <input type="radio" id="morning" name="current_semester_timings[timing]" value="Morning" > Morning 
+                                                                        <input type="radio" id="morning" name="current_shift" value="Morning" {{ ($enq->current_shift == "Morning")?'checked':'' }} > Morning 
                                                                     </label>
                                                                     <label for="day" >
-                                                                        <input type="radio" id="day" name="current_semester_timings[timing]" value="Day" > Day 
+                                                                        <input type="radio" id="day" name="current_shift" value="Day" {{ ($enq->current_shift == "Day")?'checked':'' }} > Day 
                                                                     </label>                
                                                                     <label for="evening" >
-                                                                        <input type="radio" id="evening" name="current_semester_timings[timing]" value="Evening" > Evening 
+                                                                        <input type="radio" id="evening" name="current_shift" value="Evening" {{ ($enq->current_shift == "Evening")?'checked':'' }}  > Evening 
                                                                     </label>                
                                                                 </div>
                                                             </div>
@@ -561,32 +560,38 @@
                                                             <div class="contact-info formFieldInstitute">
                                                                 <label class="mb-0" style="color: #403c9c;font-weight: 600;"> Have you completed or are you currently pursuing any professional courses? </label>
                                                                 <div class="field_checkbox_group">
-                                                                    <label for="bank_po" ><input type="checkbox" id="bank_po" name="professional_course_status[]" value="Bank PO" > Bank PO </label>
-                                                                    <label for="railway" ><input type="checkbox" id="railway" name="professional_course_status[]" value="Railway" > Railway </label>
-                                                                    <label for="ssc" ><input type="checkbox" id="ssc" name="professional_course_status[]" value="State Service Commission" > State Service Commission </label>
-                                                                    <label for="ca" ><input type="checkbox" id="ca" name="professional_course_status[]" value="CA" > CA </label>
-                                                                    <label for="cs" ><input type="checkbox" id="cs" name="professional_course_status[]" value="CS" > CS </label>
-                                                                    <label for="cma" ><input type="checkbox" id="cma" name="professional_course_status[]" value="CMA" > CMA </label>
-                                                                    <label for="other" ><input type="checkbox" id="other" name="professional_course_status[]" value="Other" class="hide_show_text_field"> Other </label>
+                                                                    <label for="bank_po" >
+                                                                        <input type="checkbox" id="bank_po" name="professional_course_status[]" value="Bank PO" {{ is_array($enq->professional_course_status) && in_array('Bank PO', $enq->professional_course_status)?'checked':'' }} > Bank PO 
+                                                                    </label>
+                                                                    <label for="railway" >
+                                                                        <input type="checkbox" id="railway" name="professional_course_status[]" value="Railway" {{ is_array($enq->professional_course_status) && in_array('Railway', $enq->professional_course_status)?'checked':'' }} > Railway 
+                                                                    </label>
+                                                                    <label for="ssc" >
+                                                                        <input type="checkbox" id="ssc" name="professional_course_status[]" value="State Service Commission" {{ is_array($enq->professional_course_status) && in_array('State Service Commission', $enq->professional_course_status)?'checked':'' }} > State Service Commission 
+                                                                    </label>
+                                                                    <label for="ca" ><input type="checkbox" id="ca" name="professional_course_status[]" value="CA" {{ is_array($enq->professional_course_status) && in_array('CA', $enq->professional_course_status)?'checked':'' }} > CA </label>
+                                                                    <label for="cs" ><input type="checkbox" id="cs" name="professional_course_status[]" value="CS" {{ is_array($enq->professional_course_status) && in_array('CS', $enq->professional_course_status)?'checked':'' }} > CS </label>
+                                                                    <label for="cma" ><input type="checkbox" id="cma" name="professional_course_status[]" value="CMA" {{ is_array($enq->professional_course_status) && in_array('CMA', $enq->professional_course_status)?'checked':'' }} > CMA </label>
+                                                                    <label for="other" ><input type="checkbox" id="other" name="professional_course_status[]" value="Other" class="hide_show_text_field" {{ is_array($enq->professional_course_status) && in_array('Other', $enq->professional_course_status)?'checked':'' }} > Other </label>
                                                                 </div>
                                                             </div>
-                                                            <div class="specify_field my-2" style="display:none" >
-                                                                <input id="formFieldSpecifyOtherCourse" name="professional_course_status[]" type="text" placeholder="Please Specity" autocomplete="off" >
+                                                            <div class="specify_field my-2" style="display:{{ is_array($enq->professional_course_status) && in_array("Other", $enq->professional_course_status)?'block':'none' }}" >
+                                                                <input id="formFieldSpecifyOtherCourse" name="other_professional_course_status" type="text" placeholder="Please Specity" autocomplete="off"  value="{{ $enq->other_professional_course_status }}">
                                                             </div>
                                                         </div>
                                                         <div class="col-12" >
                                                             <div class="contact-info preferred_training_language">
                                                                 <select id="preferred_training_language" name="preferred_training_language" required class="wizard-required">
                                                                     <option value="">What is your preferred language for the training</option>
-                                                                    <option value="English"> English </option>
-                                                                    <option value="Hindi"> Hindi </option>
-                                                                    <option value="Local"> Local </option>
+                                                                    <option value="English" {{ ($enq->preferred_training_language == 'English')?'selected':'' }}> English </option>
+                                                                    <option value="Hindi" {{ ($enq->preferred_training_language == 'Hindi')?'selected':'' }}> Hindi </option>
+                                                                    <option value="Local"  > Local </option>
                                                                 </select>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="form-group clearfix mt-3"> 
-                                                        <a href="{{ route('student-enquiry-form',[$previousStep,'center'=>$center,'enquiry'=>base64_encode($enq->id)]) }}" class="form-wizard-previous-btn float-left">Previous</a> 
+                                                        <a href="{{ route('student-enquiry-form',[$center,$previousStep,'enquiry_id'=>base64_encode($enquiry_id)]) }}" class="form-wizard-previous-btn float-left">Previous</a> 
                                                         <button type="submit" class="form-wizard-next-btn float-right">Next</button>
                                                     </div>
                                                 </div>
@@ -607,8 +612,8 @@
                                                             <div class="contact-info ">
                                                                 <select name="is_job_role" required class="wizard-required">
                                                                     <option value="">Do you have any work experience? </option>
-                                                                    <option value="Yes"> Yes </option>
-                                                                    <option value="No"> No </option>
+                                                                    <option value="Yes" {{ ($enq->is_job_role == 'Yes')?'selected':'' }}> Yes </option>
+                                                                    <option value="No" {{ ($enq->is_job_role == 'No')?'selected':'' }}> No </option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -635,7 +640,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group clearfix  mt-3">
-                                                        <a href="{{ route('student-enquiry-form-with-slug',[$previousStep,'center'=>$center,'enquiry'=>base64_encode($enquiry)]) }}" class="form-wizard-previous-btn float-left">Previous</a> 
+                                                        <a href="{{ route('student-enquiry-form-with-slug',[$previousStep,'center'=>$center,'enquiry_id'=>base64_encode($enquiry_id)]) }}" class="form-wizard-previous-btn float-left">Previous</a> 
                                                         <button class="form-wizard-next-btn float-right">Next</button>
                                                     </div>
                                                 </div>
@@ -653,54 +658,54 @@
                                                     <div class="row" > 
                                                         <div class="col-12" >
                                                             <div class="contact-info ">
-                                                                <input name="full_name" type="text" placeholder="Please enter your full name" autocomplete="off" required class="wizard-required">
+                                                                <input name="full_name" type="text" placeholder="Please enter your full name" autocomplete="off" required value="{{ $enq->full_name }}">
                                                             </div>
                                                         </div>
                                                         <div class="col-12" >
                                                             <div class="contact-info ">
-                                                                <input name="email_address" type="email" placeholder="Please enter your active email address" autocomplete="off" required class="wizard-required">
+                                                                <input name="email_address" type="email" placeholder="Please enter your active email address" autocomplete="off" required value="{{ $enq->email_address }}">
                                                             </div>
                                                         </div>
                                                         <div class="col-12" >
                                                             <div class="contact-info ">
-                                                                <input name="mobile_number" id="mobile_number" type="number" placeholder="Please enter your mobile number" autocomplete="off" min="6000000000" max="9999999999" required class="mb-2 wizard-required">
+                                                                <input name="mobile_number" id="mobile_number" type="number" placeholder="Please enter your mobile number" autocomplete="off" min="6000000000" max="9999999999" required class="mb-2 wizard-required" value="{{ $enq->mobile_number }}">
                                                                 <span><input type="checkbox" class="copy_mobile_no"> Is the above number your whatsapp number? </span>
                                                             </div>
                                                         </div>
                                                         <div class="col-12" >
                                                             <div class="contact-info ">
-                                                                <input name="whatsapp_number" id="whatsapp_number" type="number" placeholder="Please enter your whatsapp number" autocomplete="off" min="6000000000" max="9999999999" required class="wizard-required">
+                                                                <input name="whatsapp_number" id="whatsapp_number" type="number" placeholder="Please enter your whatsapp number" autocomplete="off" min="6000000000" max="9999999999" required value="{{ $enq->whatsapp_number }}">
                                                             </div>
                                                         </div>
                                                         <div class="col-12" >
                                                             <div class="contact-info">
                                                                 <label class="mb-0" style="color: #403c9c;font-weight: 600;">May I know your Birthday </label>
-                                                                <input name="date_of_birth" id="date_of_birth" type="date" max="<?= date('Y-m-d', strtotime('-15 years')) ?>" autocomplete="off" required class="wizard-required">
+                                                                <input name="date_of_birth" id="date_of_birth" type="date" max="<?= date('Y-m-d', strtotime('-15 years')) ?>" autocomplete="off" required  value="{{ $enq->date_of_birth }}">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-12" >
                                                             <div class="contact-info ">
-                                                                <input name="address" type="text" placeholder="Enter Your Address" autocomplete="off" required class="wizard-required">
+                                                                <input name="address" type="text" placeholder="Enter Your Address" autocomplete="off" required value="{{ $enq->address }}">
                                                             </div>
                                                         </div>
                                                         <div class="col-12" >
                                                             <div class="register-form-area">
-                                                                <select id="" class="state" name="state" required class="wizard-required">
+                                                                <select id="" class="state" name="state" required>
                                                                     <option value="">Select state</option>
                                                                     @foreach(getStates() as $state)
-                                                                    <option value="{{ $state->name }}"> {{ $state->name }} </option>
+                                                                    <option value="{{ $state->name }}" {{ ($enq->state == $state->name)?'selected':'' }} > {{ $state->name }} </option>
                                                                     @endforeach
                                                                 </select>
                                                             </div>
                                                         </div>
                                                         <div class="col-12" >
                                                             <div class="contact-info formFieldCity">
-                                                                <input id="" name="city" type="text" placeholder="Enter Your City" autocomplete="off" required class="wizard-required">
+                                                                <input id="" name="city" type="text" placeholder="Enter Your City" autocomplete="off" required value="{{ $enq->city }}">
                                                             </div>
                                                         </div>
                                                         <div class="col-12" >
                                                             <div class="contact-info ">
-                                                                <input type="number" name="pincode" placeholder="Enter Your Pincode" min="100000" max="999999" autocomplete="off" required class="wizard-required">
+                                                                <input type="number" name="pincode" placeholder="Enter Your Pincode" min="100000" max="999999" autocomplete="off" required value="{{ $enq->pincode }}">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -710,64 +715,64 @@
                                                             <div class="contact-info">
                                                                 <select id="" data-id="specify_guardian_relation_field" class="guardian_identity" name="guardian_identity" class="wizard-required">
                                                                     <option value="">Who is your guardian?</option>
-                                                                    <option value="Father">Father</option>
-                                                                    <option value="Mother">Mother</option>
-                                                                    <option value="Other">Other</option>
+                                                                    <option value="Father" {{ ($enq->guardian_identity == 'Father')?'selected':''}}>Father</option>
+                                                                    <option value="Mother" {{ ($enq->guardian_identity == 'Mother')?'selected':''}}>Mother</option>
+                                                                    <option value="Other" {{ ($enq->guardian_identity == 'Other')?'selected':''}}>Other</option>
                                                                 </select>
                                                             </div>
-                                                            <div class="specify_guardian_relation_field my-2" style="display:none" >
+                                                            <div class="specify_guardian_relation_field my-2" style="display:{{ ($enq->guardian_identity == 'Other')?'block':'none' }}" >
                                                                 <label class="mb-0" style="color: #403c9c;font-weight: 600;">*Please share person's name and relation with you </label>
-                                                                <textarea id="" name="additional_guardian_details" class="textarea_form-field" type="text" placeholder="Example. John Doe, Uncle" autocomplete="off" ></textarea>
+                                                                <textarea id="" name="additional_guardian_details" class="textarea_form-field" type="text" placeholder="Example. John Doe, Uncle" autocomplete="off" >{{$enq->additional_guardian_details}}</textarea>
                                                             </div>
                                                         </div> 
                                                         <div class="col-12" >
                                                             <div class="contact-info ">
-                                                                <input id="" name="father_name" type="text" placeholder="What is your father’s name?" autocomplete="off">
+                                                                <input name="father_name" type="text" placeholder="What is your father’s name?" autocomplete="off" value="{{ $enq->father_name }}">
                                                             </div>
                                                         </div>
                                                         <div class="col-12" >
                                                             <div class="contact-info ">
                                                                 <select id="" data-id="specify_father_occupation_field" name="father_occupation" class="wizard-required occupation">
                                                                     <option value="">What is his occupation?</option>
-                                                                    <option value="Business">Business</option>
-                                                                    <option value="Govt. Employee">Govt. Employee</option>
-                                                                    <option value="Private Employee">Private Employee</option>
-                                                                    <option value="Self Employed">Self Employed</option>
-                                                                    <option value="Agriculture">Agriculture</option>
-                                                                    <option value="Retired">Retired</option>
-                                                                    <option value="Other">Other</option>
+                                                                    <option value="Business" {{ ($enq->father_occupation == 'Business')?'selected':''}} >Business</option>
+                                                                    <option value="Govt. Employee" {{ ($enq->father_occupation == 'Govt. Employee')?'selected':''}} >Govt. Employee</option>
+                                                                    <option value="Private Employee" {{ ($enq->father_occupation == 'Private Employee')?'selected':''}} >Private Employee</option>
+                                                                    <option value="Self Employed" {{ ($enq->father_occupation == 'Private Employee')?'selected':''}} >Self Employed</option>
+                                                                    <option value="Agriculture" {{ ($enq->father_occupation == 'Agriculture')?'selected':''}} >Agriculture</option>
+                                                                    <option value="Retired" {{ ($enq->father_occupation == 'Retired')?'selected':''}} >Retired</option>
+                                                                    <option value="Other" {{ ($enq->father_occupation == 'Other')?'selected':''}} >Other</option>
                                                                 </select>
                                                             </div>
-                                                            <div class="specify_father_occupation_field my-2" style="display:none" >
-                                                                <input id="" name="other_father_occupation" type="text" placeholder="Please specity other occupation" autocomplete="off" >
+                                                            <div class="specify_father_occupation_field my-2" style="display:{{ ($enq->father_occupation == 'Other')?'block':'none' }}" >
+                                                                <input name="other_father_occupation" type="text" value="{{ $enq->other_father_occupation }}" placeholder="Please specity other occupation" autocomplete="off" >
                                                             </div>
                                                         </div>
                                                         <div class="col-12" >
                                                             <div class="contact-info ">
-                                                                <input id="" name="mother_name" type="text" placeholder="What is your mother’s name?" autocomplete="off">
+                                                                <input name="mother_name" type="text" placeholder="What is your mother’s name?" autocomplete="off"  value="{{ $enq->mother_name }}">
                                                             </div>
                                                         </div>
                                                         <div class="col-12" >
                                                             <div class="contact-info ">
-                                                                <select id="" data-id="specify_mother_occupation_field" name="mother_occupation" class="wizard-required occupation">
+                                                                <select data-id="specify_mother_occupation_field" name="mother_occupation" class="wizard-required occupation">
                                                                     <option value="">What is her occupation?</option>
-                                                                    <option value="House Wife">House Wife</option>
-                                                                    <option value="Business">Business</option>
-                                                                    <option value="Govt. Employee">Govt. Employee</option>
-                                                                    <option value="Private Employee">Private Employee</option>
-                                                                    <option value="Self Employed">Self Employed</option>
-                                                                    <option value="Agriculture">Agriculture</option>
-                                                                    <option value="Retired">Retired</option>
-                                                                    <option value="Other">Other</option>
+                                                                    <option value="House Wife" {{ ($enq->mother_occupation == 'House Wife')?'selected':''}} >House Wife</option>
+                                                                    <option value="Business" {{ ($enq->mother_occupation == 'Business')?'selected':''}} >Business</option>
+                                                                    <option value="Govt. Employee" {{ ($enq->mother_occupation == 'Govt. Employee')?'selected':''}} >Govt. Employee</option>
+                                                                    <option value="Private Employee" {{ ($enq->mother_occupation == 'Private Employee')?'selected':''}} >Private Employee</option>
+                                                                    <option value="Self Employed" {{ ($enq->mother_occupation == 'Self Employed')?'selected':''}} >Self Employed</option>
+                                                                    <option value="Agriculture" {{ ($enq->mother_occupation == 'Agriculture')?'selected':''}} >Agriculture</option>
+                                                                    <option value="Retired" {{ ($enq->mother_occupation == 'Retired')?'selected':''}} >Retired</option>
+                                                                    <option value="Other" {{ ($enq->mother_occupation == 'Other')?'selected':''}} >Other</option>
                                                                 </select>
                                                             </div>
-                                                            <div class="specify_mother_occupation_field my-2" style="display:none" >
-                                                                <input id="" name="other_mother_occupation" type="text" placeholder="Please specity other occupation" autocomplete="off" >
+                                                            <div class="specify_mother_occupation_field my-2" style="display:{{ ($enq->mother_occupation == 'Other')?'block':'none' }}" >
+                                                                <input id="" name="other_mother_occupation" type="text"  value="{{ $enq->other_mother_occupation }}" placeholder="Please specity other occupation" autocomplete="off" >
                                                             </div>
                                                         </div>
                                                         <div class="col-12" >
                                                             <div class="contact-info ">
-                                                                <input id="" name="parent_mobile_number" type="number" placeholder="Mention your guardian’s mobile no" autocomplete="off" min="6000000000" max="9999999999" required>
+                                                                <input id="" name="parent_mobile_number" type="number" placeholder="Mention your guardian’s mobile no" autocomplete="off" min="6000000000" max="9999999999" value="{{ $enq->parent_mobile_number }}" required>
                                                             </div>
                                                         </div>
                                                         
@@ -787,7 +792,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group clearfix  mt-3">
-                                                        <a href="{{ route('student-enquiry-form-with-slug',[$previousStep,'center'=>$center,'enquiry'=>base64_encode($enquiry)]) }}" class="form-wizard-previous-btn float-left">Previous</a> 
+                                                        <a href="{{ route('student-enquiry-form-with-slug',[$previousStep,'center'=>$center,'enquiry_id'=>base64_encode($enquiry_id)]) }}" class="form-wizard-previous-btn float-left">Previous</a> 
                                                         <input type="hidden" name="otp_validation" value="1" id="otp_validation" > 
                                                         <input type="hidden" name="responsed_otp" class="responsed_otp" value="">
                                                         <button type="submit" class="form-wizard-next-btn float-right">Next</button>
@@ -808,29 +813,29 @@
                                                         <div class="col-12" >
                                                             <div class="contact-info ">
                                                                 <label class="mb-0" style="color: #403c9c;font-weight: 600;"> What is your expected starting salary per month</label>
-                                                                <input id="" name="expected_starting_salary" type="number" autocomplete="off" required class="wizard-required">
+                                                                <input id="" name="expected_starting_salary" value="{{ $enq->expected_starting_salary }}"  type="number" autocomplete="off" required class="wizard-required">
                                                             </div>
                                                         </div>
                                                         <div class="col-12" >
                                                             <div class="contact-info ">
                                                                 <label class="mb-0" style="color: #403c9c;font-weight: 600;"> Expected salary per month after 5 Years</label>
-                                                                <input id="" name="expected_monthly_salary_after_5_years" type="number" autocomplete="off" required class="wizard-required">
+                                                                <input id="" name="expected_monthly_salary_after_5_years" value="{{ $enq->expected_monthly_salary_after_5_years }}"  type="number" autocomplete="off" required class="wizard-required">
                                                             </div>
                                                         </div>
                                                         <div class="col-12" >
                                                             <div class="contact-info formFieldlocationPrefarence">
                                                                 <label class="mb-0" style="color: #403c9c;font-weight: 600;"> Do you have any location preference for placement? [If yes, please specify]</label>
                                                                 <div class="field_checkbox_group mt-3">
-                                                                    <label for="same_city" ><input type="radio" id="same_city" name="preferred_job_location" value="same city" checked> Same City </label>
-                                                                    <label for="same_state" ><input type="radio" id="same_state" name="preferred_job_location" value="same State"> Same State </label>
-                                                                    <label for="same_india" ><input type="radio" id="same_india" name="preferred_job_location" value="Anywhere in India"> Anywhere in India </label>
-                                                                    <label for="same_world" ><input type="radio" id="same_world" name="preferred_job_location" value="Anywhere in World"> Anywhere in World </label>
+                                                                    <label for="same_city" ><input type="radio" id="same_city" name="preferred_job_location" value="same city" {{ ($enq->preferred_job_location == 'same city')?'checked':''}} > Same City </label>
+                                                                    <label for="same_state" ><input type="radio" id="same_state" name="preferred_job_location" value="same State" {{ ($enq->preferred_job_location == 'same State')?'checked':''}} > Same State </label>
+                                                                    <label for="same_india" ><input type="radio" id="same_india" name="preferred_job_location" value="Anywhere in India" {{ ($enq->preferred_job_location == 'Anywhere in India')?'checked':''}} > Anywhere in India </label>
+                                                                    <label for="same_world" ><input type="radio" id="same_world" name="preferred_job_location" value="Anywhere in World" {{ ($enq->preferred_job_location == 'Anywhere in World')?'checked':''}} > Anywhere in World </label>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="form-group clearfix  mt-3">
-                                                        <a href="{{ route('student-enquiry-form-with-slug',[$previousStep,'center'=>$center,'enquiry'=>base64_encode($enquiry)]) }}" class="form-wizard-previous-btn float-left">Previous</a> 
+                                                        <a href="{{ route('student-enquiry-form-with-slug',[$previousStep,'center'=>$center,'enquiry_id'=>base64_encode($enquiry_id)]) }}" class="form-wizard-previous-btn float-left">Previous</a> 
                                                         <button href="javascript:void(0);" class="form-wizard-next-btn float-right">Submit</button>
                                                     </div>
                                                 </div>
@@ -852,12 +857,12 @@
                                                                 <div class="field_checkbox_group mt-3 row">
                                                                     <div class="col-md-4">
                                                                         <label for="weekdays" >
-                                                                            <input type="checkbox" id="weekdays" name="preferred_training_days[]" value="Weekdays"> Weekdays
+                                                                            <input type="checkbox" id="weekdays" name="preferred_training_days[]" value="Weekdays" {{ is_array($enq->preferred_training_days) && in_array('Weekdays', $enq->preferred_training_days)?'checked':'' }} > Weekdays
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-4">
                                                                         <label for="weekend" >
-                                                                            <input type="checkbox" id="weekend" name="preferred_training_days[]" value="Weekend"> Weekend
+                                                                            <input type="checkbox" id="weekend" name="preferred_training_days[]" value="Weekend" {{ is_array($enq->preferred_training_days) && in_array('Weekend', $enq->preferred_training_days)?'checked':'' }} > Weekend
                                                                         </label>
                                                                     </div>
                                                                 </div>
@@ -869,42 +874,42 @@
                                                                 <div class="field_checkbox_group mt-3 row">
                                                                     <div class="col-md-4">
                                                                         <label for="08_00_am_09_30_am" >
-                                                                            <input type="checkbox" id="08_00_am_09_30_am" name="preferred_training_time[]" value="8:00 AM - 9:30 AM"> 08:00 AM - 09:30 AM
+                                                                            <input type="checkbox" id="08_00_am_09_30_am" name="preferred_training_time[]" value="8:00 AM - 9:30 AM" {{ is_array($enq->preferred_training_time) && in_array('8:00 AM - 9:30 AM', $enq->preferred_training_time)?'checked':'' }} > 08:00 AM - 09:30 AM
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-4">
                                                                         <label for="08_30_am_11_00_am" >
-                                                                            <input type="checkbox" id="08_30_am_11_00_am" name="preferred_training_time[]" value="08:30 AM - 11:00 AM"> 08:30 AM - 11:00 AM 
+                                                                            <input type="checkbox" id="08_30_am_11_00_am" name="preferred_training_time[]" value="08:30 AM - 11:00 AM" {{ is_array($enq->preferred_training_time) && in_array('08:30 AM - 11:00 AM', $enq->preferred_training_time)?'checked':'' }} > 08:30 AM - 11:00 AM 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-4">
                                                                         <label for="11_00_am_12_30_pm" >
-                                                                            <input type="checkbox" id="11_00_am_12_30_pm" name="preferred_training_time[]" value="11:00 AM - 12:30 PM"> 11:00 AM - 12:30 PM 
+                                                                            <input type="checkbox" id="11_00_am_12_30_pm" name="preferred_training_time[]" value="11:00 AM - 12:30 PM" {{ is_array($enq->preferred_training_time) && in_array('11:00 AM - 12:30 PM', $enq->preferred_training_time)?'checked':'' }} > 11:00 AM - 12:30 PM 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-4">
                                                                         <label for="12_30_pm_02_00_pm" >
-                                                                            <input type="checkbox" id="12_30_pm_02_00_pm" name="preferred_training_time[]" value="12:30 PM - 02:00 PM"> 12:30 PM - 02:00 PM 
+                                                                            <input type="checkbox" id="12_30_pm_02_00_pm" name="preferred_training_time[]" value="12:30 PM - 02:00 PM" {{ is_array($enq->preferred_training_time) && in_array('12:30 PM - 02:00 PM', $enq->preferred_training_time)?'checked':'' }} > 12:30 PM - 02:00 PM 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-4">
                                                                         <label for="02_00_pm_03_30_pm" >
-                                                                            <input type="checkbox" id="02_00_pm_03_30_pm" name="preferred_training_time[]" value="02:00 PM - 03:30 PM"> 02:00 PM - 03:30 PM 
+                                                                            <input type="checkbox" id="02_00_pm_03_30_pm" name="preferred_training_time[]" value="02:00 PM - 03:30 PM" {{ is_array($enq->preferred_training_time) && in_array('02:00 PM - 03:30 PM', $enq->preferred_training_time)?'checked':'' }} > 02:00 PM - 03:30 PM 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-4">
                                                                         <label for="03_30_pm_05_00_pm" >
-                                                                            <input type="checkbox" id="03_30_pm_05_00_pm" name="preferred_training_time[]" value="03:30 PM - 05:00 PM"> 03:30 PM - 05:00 PM 
+                                                                            <input type="checkbox" id="03_30_pm_05_00_pm" name="preferred_training_time[]" value="03:30 PM - 05:00 PM" {{ is_array($enq->preferred_training_time) && in_array('03:30 PM - 05:00 PM', $enq->preferred_training_time)?'checked':'' }} > 03:30 PM - 05:00 PM 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-4">
                                                                         <label for="05_00_pm_06_30_pm" >
-                                                                            <input type="checkbox" id="05_00_pm_06_30_pm" name="preferred_training_time[]" value="05:00 PM - 06:30 PM"> 05:00 PM - 06:30 PM 
+                                                                            <input type="checkbox" id="05_00_pm_06_30_pm" name="preferred_training_time[]" value="05:00 PM - 06:30 PM" {{ is_array($enq->preferred_training_time) && in_array('05:00 PM - 06:30 PM', $enq->preferred_training_time)?'checked':'' }} > 05:00 PM - 06:30 PM 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-4">
                                                                         <label for="06_30_pm_08_00_pm" >
-                                                                            <input type="checkbox" id="06_30_pm_08_00_pm" name="preferred_training_time[]" value="06:30 PM - 08:00 PM"> 06:30 PM - 08:00 PM 
+                                                                            <input type="checkbox" id="06_30_pm_08_00_pm" name="preferred_training_time[]" value="06:30 PM - 08:00 PM" {{ is_array($enq->preferred_training_time) && in_array('06:30 PM - 08:00 PM', $enq->preferred_training_time)?'checked':'' }} > 06:30 PM - 08:00 PM 
                                                                         </label>
                                                                     </div>
                                                                 </div>
@@ -916,67 +921,67 @@
                                                                 <div class="field_checkbox_group mt-3 row">
                                                                     <div class="col-md-3">
                                                                         <label for="website" >
-                                                                            <input type="checkbox" id="website" name="pink_form_source[]" value="Website">Website
+                                                                            <input type="checkbox" id="website" name="pink_form_source[]" value="Website" {{ is_array($enq->pink_form_source) && in_array('Website', $enq->pink_form_source)?'checked':'' }} >Website
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-3">
                                                                         <label for="google" >
-                                                                            <input type="checkbox" id="google" name="pink_form_source[]" value="Google Search">Google Search 
+                                                                            <input type="checkbox" id="google" name="pink_form_source[]" value="Google Search" {{ is_array($enq->pink_form_source) && in_array('Google Search', $enq->pink_form_source)?'checked':'' }} >Google Search 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-3">
                                                                         <label for="facebook" >
-                                                                            <input type="checkbox" id="facebook" name="pink_form_source[]" value="Facebook">Facebook 
+                                                                            <input type="checkbox" id="facebook" name="pink_form_source[]" value="Facebook" {{ is_array($enq->pink_form_source) && in_array('Facebook', $enq->pink_form_source)?'checked':'' }} >Facebook 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-3">
                                                                         <label for="instagram" >
-                                                                            <input type="checkbox" id="instagram" name="pink_form_source[]" value="Instagram">Instagram 
+                                                                            <input type="checkbox" id="instagram" name="pink_form_source[]" value="Instagram" {{ is_array($enq->pink_form_source) && in_array('Instagram', $enq->pink_form_source)?'checked':'' }} >Instagram 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-3">
                                                                         <label for="youtube" >
-                                                                            <input type="checkbox" id="youtube" name="pink_form_source[]" value="YouTube">YouTube 
+                                                                            <input type="checkbox" id="youtube" name="pink_form_source[]" value="YouTube" {{ is_array($enq->pink_form_source) && in_array('YouTube', $enq->pink_form_source)?'checked':'' }} >YouTube 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-3">
                                                                         <label for="twitter" >
-                                                                            <input type="checkbox" id="twitter" name="pink_form_source[]" value="Twitter"> Twitter 
+                                                                            <input type="checkbox" id="twitter" name="pink_form_source[]" value="Twitter" {{ is_array($enq->pink_form_source) && in_array('Twitter', $enq->pink_form_source)?'checked':'' }} > Twitter 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-3">
                                                                         <label for="linkedin" >
-                                                                            <input type="checkbox" id="linkedin" name="pink_form_source[]" value="LinkedIn"> LinkedIn 
+                                                                            <input type="checkbox" id="linkedin" name="pink_form_source[]" value="LinkedIn" {{ is_array($enq->pink_form_source) && in_array('LinkedIn', $enq->pink_form_source)?'checked':'' }} > LinkedIn 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-3">
                                                                         <label for="banners" >
-                                                                            <input type="checkbox" id="banners" name="pink_form_source[]" value="Banners"> Banners 
+                                                                            <input type="checkbox" id="banners" name="pink_form_source[]" value="Banners" {{ is_array($enq->pink_form_source) && in_array('Banners', $enq->pink_form_source)?'checked':'' }} > Banners 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-3">
                                                                         <label for="hordings" >
-                                                                            <input type="checkbox" id="hordings" name="pink_form_source[]" value="Hordings"> Hordings 
+                                                                            <input type="checkbox" id="hordings" name="pink_form_source[]" value="Hordings" {{ is_array($enq->pink_form_source) && in_array('Hordings', $enq->pink_form_source)?'checked':'' }} > Hordings 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-3">
                                                                         <label for="roadshow" >
-                                                                            <input type="checkbox" id="roadshow" name="pink_form_source[]" value="Roadshow"> Roadshow 
+                                                                            <input type="checkbox" id="roadshow" name="pink_form_source[]" value="Roadshow" {{ is_array($enq->pink_form_source) && in_array('Roadshow', $enq->pink_form_source)?'checked':'' }} > Roadshow 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-3">
                                                                         <label for="seminars" >
-                                                                            <input type="checkbox" id="seminars" name="pink_form_source[]" value="Seminars"> Seminars 
+                                                                            <input type="checkbox" id="seminars" name="pink_form_source[]" value="Seminars" {{ is_array($enq->pink_form_source) && in_array('Seminars', $enq->pink_form_source)?'checked':'' }} > Seminars 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-3">
                                                                         <label for="handbill_leaflet" >
-                                                                            <input type="checkbox" id="handbill_leaflet" name="pink_form_source[]" value="Handbill/Leaflet"> Handbill/Leaflet 
+                                                                            <input type="checkbox" id="handbill_leaflet" name="pink_form_source[]" value="Handbill/Leaflet" {{ is_array($enq->pink_form_source) && in_array('Handbill/Leaflet', $enq->pink_form_source)?'checked':'' }} > Handbill/Leaflet 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-3">
                                                                         <label for="Friends_Relative_Teacher" >
-                                                                            <input type="checkbox" id="Friends_Relative_Teacher" name="pink_form_source[]" value="Friends/Relative/Teacher"> Friends/Relative/Teacher 
+                                                                            <input type="checkbox" id="Friends_Relative_Teacher" name="pink_form_source[]" value="Friends/Relative/Teacher" {{ is_array($enq->pink_form_source) && in_array('Friends/Relative/Teacher', $enq->pink_form_source)?'checked':'' }} > Friends/Relative/Teacher 
                                                                         </label>
                                                                     </div>
                                                                 </div>
@@ -990,7 +995,7 @@
                                                                         <div class="form-group row">
                                                                             <label for="" class="col-sm-3 text-right control-label col-form-label">Subject</label>
                                                                             <div class="col-sm-9">
-                                                                                <input type="text" class="" name="previous_computer_knowledge" id="" placeholder="Enter Subject Here" >
+                                                                                <input type="text" class="" name="previous_computer_knowledge" id="" placeholder="Enter Subject Here" value="{{ $enq->previous_computer_knowledge }}">
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -1002,7 +1007,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group clearfix  mt-3">
-                                                        <a href="{{ route('student-enquiry-form-with-slug',[$previousStep,'center'=>$center,'enquiry'=>base64_encode($enquiry)]) }}" class="form-wizard-previous-btn float-left">Previous</a> 
+                                                        <a href="{{ route('student-enquiry-form-with-slug',[$previousStep,'center'=>$center,'enquiry_id'=>base64_encode($enquiry_id)]) }}" class="form-wizard-previous-btn float-left">Previous</a> 
                                                         <button href="javascript:void(0);" class="form-wizard-next-btn float-right">Submit</button>
                                                     </div>
                                                 </div>
@@ -1010,7 +1015,7 @@
                                             @break
                                         @endswitch
                                         <input name="center_id" type="hidden" value="{{ $center }}" >
-                                        <input name="enquiry" type="hidden" value="{{ $enquiry }}" >
+                                        <input name="enquiry" type="hidden" value="{{ (isset($enquiry_id))?$enquiry_id:''}}" >
                                     </div>
                                     <input name="step" type="hidden" value="{{ $step }}" >
                                 </form>

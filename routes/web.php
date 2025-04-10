@@ -395,8 +395,8 @@ Route::get('/assessment-success', function () {
 Route::get('/index/create-center-login', [App\Http\Controllers\IndexController::class, 'createCenterLogin'])->name('create-center-login');
 
 // Pink Form
-Route::get('/student/enquiry-form/{step}', [App\Http\Controllers\StudentController::class, 'index'])->name('student-enquiry-form-with-slug');
-Route::get('/student/enquiry-form', [App\Http\Controllers\StudentController::class, 'index'])->name('student-enquiry-form');
+Route::get('/student/enquiry-form/{center}/{step}', [App\Http\Controllers\StudentController::class, 'index'])->name('student-enquiry-form-with-slug');
+Route::get('/student/enquiry-form/{center}', [App\Http\Controllers\StudentController::class, 'index'])->name('student-enquiry-form');
 
 Route::post('/job-fair-capture-lead', [App\Http\Controllers\JobFairController::class, 'captureLead'])->name('job-fair-capture-lead');
 Route::post('/job-fair-bhim-rao-ambedkar-college', [App\Http\Controllers\JobFairController::class, 'jobFairAmbedkarCollege'])->name('job-fair-bhim-rao-ambedkar-college');

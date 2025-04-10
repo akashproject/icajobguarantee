@@ -280,7 +280,7 @@ class CenterController extends Controller
 
     public function generatePinkForm($id){
         try {
-            $qr_content = env('APP_URL').'student/enquiry-form?center='.$id;
+            $qr_content = env('APP_URL').'student/enquiry-form/'.$id;
             $code = random_strings(6);
             QrCode::merge('/assets/images/fab.png')
             ->size(256)
