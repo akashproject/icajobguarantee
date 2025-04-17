@@ -62,7 +62,6 @@ trait LeadSubmitAfterProcess
             "LeadType" => $postData["LeadType"],
             "LeadSource" => $postData["utm_source"],
             "LeadName" => $postData["utm_campaign"],
-            "SourceTo" => "offline",
             "Entity4" => isset($postData["course_id"])
                 ? getErpCourseCode($postData["course_id"])->course_erp_code
                 : "Not Decided Yet",

@@ -95,6 +95,30 @@
 							</div>
 						</div>
 					</div>
+					<div class="col-lg-6">
+						<div class="contact_faq_box">
+							<div class="icon">
+								<img src="{{ url('assets/img/deal.png') }}" alt="icon" class="image-fit-contain">
+							</div>
+							<div class="text">
+								<h4>For Content Partnership</h4>
+								<p> ICA Edu Skills welcomes passionate writers ready to share insightful perspectives on Accounting, Taxation, Tally, GST and SAP</p>
+								<a href="/write-for-us" target="_blank" class="genius-btn gradient-bg text-center text-uppercase">Write For Us<i class="fas fa-chevron-right ml-2"></i></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="contact_faq_box">
+							<div class="icon">
+								<img src="{{ url('assets/img/deal.png') }}" alt="icon" class="image-fit-contain">
+							</div>
+							<div class="text">
+								<h4>For Content Partnership</h4>
+								<p> ICA Edu Skills welcomes passionate writers ready to share insightful perspectives on Accounting, Taxation, Tally, GST and SAP</p>
+								<a href="/write-for-us" target="_blank" class="genius-btn gradient-bg text-center text-uppercase">Write For Us<i class="fas fa-chevron-right ml-2"></i></a>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>

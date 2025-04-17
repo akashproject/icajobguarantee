@@ -960,8 +960,8 @@
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-3">
-                                                                        <label for="hordings" >
-                                                                            <input type="checkbox" id="hordings" name="pink_form_source[]" value="Hordings" {{ is_array($enq->pink_form_source) && in_array('Hordings', $enq->pink_form_source)?'checked':'' }} > Hordings 
+                                                                        <label for="hoardings" >
+                                                                            <input type="checkbox" id="hoardings" name="pink_form_source[]" value="Hoardings" {{ is_array($enq->pink_form_source) && in_array('Hoardings', $enq->pink_form_source)?'checked':'' }} > Hoardings 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-3">

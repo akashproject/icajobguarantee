@@ -13,7 +13,7 @@
 							<div class="header-top-bar ul-li">
 								<ul>
 									<li><a href="mailto:{{get_theme_setting('email')}}" ><i class="fas fa-envelope"></i>{{get_theme_setting('email')}}</a></li>
-									<li><a href="tel:{{get_theme_setting('mobile')}}" ><i class="fas fa-phone-square"></i>{{get_theme_setting('mobile')}}</a></li>
+									<li><a href="{{ url('/contact-us') }}" ><i class="fas fa-phone-square"></i> Call Us</a></li>
 								</ul>
 							</div>
 						</div>
