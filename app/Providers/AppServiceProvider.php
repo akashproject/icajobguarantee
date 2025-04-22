@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
 use App\Models\Media;
 use App\Models\CourseType;
+use App\Models\University;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
@@ -30,7 +31,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+
         Paginator::useBootstrap();
  
         View::composer('*', function($view)
@@ -47,7 +48,6 @@ class AppServiceProvider extends ServiceProvider
             );
             $view->with('primaryMenu', $primaryMenu);
 
-
             //info Menu
             $footerMenu = array(
                 '/events' => 'Events',
@@ -62,7 +62,7 @@ class AppServiceProvider extends ServiceProvider
             $studentMenu = array(
                 "/category/accounting-courses" => 'Job Guarantee Courses',
                 "/centers" => "Centers",
-                "/eduversity" => "University",
+                "https://www.skillvarsity.in" => "University",
                 "https://www.icacourse.in" => "Online Courses",
                 "https://student.icajobguarantee.com/verify/certificateverification.aspx" => "Certificate Verification",
                 
@@ -73,7 +73,7 @@ class AppServiceProvider extends ServiceProvider
              $termsMenu = array(
                 '/category/accounting-courses' => 'Career Courses',
                 '/centers' => 'Centers',
-                '/eduversity' => "University",
+                'https://www.skillvarsity.in/' => "University",
                 '/online-courses' => "Online Courses",
             );
             $view->with('termsMenu', $termsMenu);
@@ -111,11 +111,14 @@ class AppServiceProvider extends ServiceProvider
             }
 
             $view->with('courseTypes', $courseTypes);
+
             //Models
             $models =  array("Blog","Center","Course","CourseType","University");
             $view->with('models', $models);
 
-
+            //University
+            $universities = University::where('status',1)->get();
+            $view->with('universities', $universities);
             //Ad Menu
             $adHeaderMenu = array(
                 '#about' => "About Us",

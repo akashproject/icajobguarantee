@@ -53,8 +53,8 @@
 								<img src="{{ url('assets/img/customer-support-Icon.png') }}" alt="icon" class="image-fit-contain">
 							</div>
 							<div class="text">
-								<h4>Get Instant Support</h4>
-								<p>Talk to our expert counselor to enter into the career enhancement you are looking for.</p>
+								<h4>Course Enquiry</h4>
+								<p>For course info & enrollment, call us between 10 AM – 7 PM (Mon–Sat).</p>
 								<a href="tel:+{{ get_theme_setting('mobile') }}" class="genius-btn gradient-bg text-center text-uppercase">Call Us<i class="fas fa-chevron-right ml-2"></i></a>
 							</div>
 						</div>
@@ -65,8 +65,8 @@
 								<img src="{{ url('assets/img/question-Icon.png') }}" alt="icon" class="image-fit-contain">
 							</div>
 							<div class="text">
-								<h4>For ICA Students</h4>
-								<p>Let's connect &amp; escalate all the doubts regarding the specialized course curriculum!</p>
+								<h4>Raise Complaints </h4>
+								<p>For any complaints or grievances regarding courses, centers, Placements or certifications</p>
 								<a href="mailto:{{ get_theme_setting('email') }}" class="genius-btn gradient-bg text-center text-uppercase">Mail Us<i class="fas fa-chevron-right ml-2"></i></a>
 							</div>
 						</div>
@@ -78,7 +78,7 @@
 							</div>
 							<div class="text">
 								<h4>For ICA Partnership</h4>
-								<p>Let's connect &amp; escalate all the doubts regarding the specialized course curriculum!</p>
+								<p>Want to start an ICA center in your city?</p>
 								<a href="tel:+{{ get_theme_setting('franchise_mobile') }}" class="genius-btn gradient-bg text-center text-uppercase">Call Us<i class="fas fa-chevron-right ml-2"></i></a>
 							</div>
 						</div>
@@ -89,33 +89,10 @@
 								<img src="{{ url('assets/img/deal.png') }}" alt="icon" class="image-fit-contain">
 							</div>
 							<div class="text">
-								<h4>For Content Partnership</h4>
-								<p> ICA Edu Skills welcomes passionate writers ready to share insightful perspectives on Accounting, Taxation, Tally, GST and SAP</p>
-								<a href="/write-for-us" target="_blank" class="genius-btn gradient-bg text-center text-uppercase">Write For Us<i class="fas fa-chevron-right ml-2"></i></a>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-6">
-						<div class="contact_faq_box">
-							<div class="icon">
-								<img src="{{ url('assets/img/deal.png') }}" alt="icon" class="image-fit-contain">
-							</div>
-							<div class="text">
-								<h4>For Content Partnership</h4>
-								<p> ICA Edu Skills welcomes passionate writers ready to share insightful perspectives on Accounting, Taxation, Tally, GST and SAP</p>
-								<a href="/write-for-us" target="_blank" class="genius-btn gradient-bg text-center text-uppercase">Write For Us<i class="fas fa-chevron-right ml-2"></i></a>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-6">
-						<div class="contact_faq_box">
-							<div class="icon">
-								<img src="{{ url('assets/img/deal.png') }}" alt="icon" class="image-fit-contain">
-							</div>
-							<div class="text">
-								<h4>For Content Partnership</h4>
-								<p> ICA Edu Skills welcomes passionate writers ready to share insightful perspectives on Accounting, Taxation, Tally, GST and SAP</p>
-								<a href="/write-for-us" target="_blank" class="genius-btn gradient-bg text-center text-uppercase">Write For Us<i class="fas fa-chevron-right ml-2"></i></a>
+								<h4>For Any Other Queries</h4>
+								<p> Got queries? Just drop us an email!</p>
+								
+								<a href="tel:+{{ get_theme_setting('franchise_mobile') }}" class="genius-btn gradient-bg text-center text-uppercase">Write For Us</a>
 							</div>
 						</div>
 					</div>

@@ -23,13 +23,8 @@
                                     <h2 class="widget-title">Important Links</h2>
                                     <ul>
                                         @foreach ($studentMenu as $key => $menuItem)
-
                                         <li><a target="_blank" href="{{ $key }}"><i class="fas fa-caret-right"></i>{{ $menuItem }}</a></li>
-
                                         @endforeach
-
-                                       
-
                                     </ul>
 
                                 </div>
@@ -39,10 +34,10 @@
                             <div class="footer-menu ul-li-block">
                                 <h2 class="widget-title">Company Info</h2>
                                 <ul>
-                                        @foreach ($footerMenu as $key => $menuItem)
-                                        <li><a target="_blank" href="{{ url($key) }}"><i class="fas fa-caret-right"></i>{{ $menuItem }}</a></li>
-                                        @endforeach
-                                    </ul>
+                                    @foreach ($footerMenu as $key => $menuItem)
+                                    <li><a target="_blank" href="{{ url($key) }}"><i class="fas fa-caret-right"></i>{{ $menuItem }}</a></li>
+                                    @endforeach
+                                </ul>
 
                             </div>
 
