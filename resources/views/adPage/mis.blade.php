@@ -206,19 +206,37 @@
 
 			<div class="row">
 
-				<div class="col-md-7">
+				<div class="col-md-7 mt-25">
 
 					<div class="ad-banner-content text-white">
+					    
+					    <div class="ad-banner-sub-title">
+
+							<br style="padding: 30px 0;" />
+
+						</div>
 
 						<div class="ad-banner-title">
 
-							<h1 class="text-center text-white" style="color: #fff!important;">MIS Course - Certificate in MIS Analytics</h1>
+							<h1 class="text-center text-white" style="color: #fff!important;">Certificate in MIS Analytics</h1>
 
 						</div>
 
 						<div class="ad-banner-sub-title">
 
-							<h3 class="text-center" style="font-size: 1.2rem!important; color: #fff!important;"> Build a powerful in-demand skills set to help corporates in making informed decision-making and make a dynamic and rewarding career for a prosperous future </h3>
+							<br style="padding: 25px 0;" />
+
+						</div>
+
+						<div class="ad-banner-sub-title">
+
+							<h3 class="text-center" style="font-size: 1.2rem!important; color: #fff!important;"> This MIS Course is designed to build a powerful, in-demand skillset to help corporations make informed decisions and create dynamic and rewarding careers for a prosperous future. </h3>
+
+						</div>
+
+						<div class="ad-banner-sub-title">
+
+							<br style="padding: 25px 0;" />
 
 						</div>
 
@@ -279,8 +297,8 @@
                                             <i class="fas fa-star active"></i>
 
                                         </div>
-
-                                        <a href="javascript:void(0)" class="text-white" style="cursor: auto;margin: 0 6px;"> (163 Reviews)</a> <span class="text-white total-enroll" > 289 students </span>
+                                        <br />
+                                        <a href="javascript:void(0)" class="text-white" style="cursor: auto;margin: 0 6px;">290 Reviews</a>| <span class="text-white total-enroll">673 Students</span>
 
                                     </div>
 
@@ -304,7 +322,7 @@
 
 								<h3 class="bold-font  text-white" style="font-size: 23px!important;"><span> Become a </span><br /> Certified MIS Analyst </h3>
 
-								<p class="bold-font text-white">Our experts will guide you through the right MIS Analytics Training process for a lucrative career.</p>
+								<p class="bold-font text-white">Our experts will guide you through the MIS Training process for a lucrative career.</p>
 
 							</div>
 
@@ -420,7 +438,7 @@
 
 								<div class="counter-number">
 
-									<span class="counter-count bold-font">24</span><span>+</span>
+									<span class="counter-count bold-font">26</span>
 
 									<p>Years of Excelllence</p>
 
@@ -462,7 +480,7 @@
 
 						<div class="col-md-3">
 
-							<div class="counter-icon-number "  >
+							<div class="counter-icon-number">
 
 								<div class="counter-icon">
 
@@ -816,6 +834,13 @@
 
 	============================================= -->
 
+	
+	<style type="text/css">
+	    .course-details-content h2 { color: #393185!important; margin: 15px 0!important; font-size: 24px!important;  }
+	     .course-details-content ul,  .course-details-content ol { margin-left: 25px; }
+	     .course-details-content ul { list-style-type:  circle!important;}
+	     .course-details-content li { margin: 5px 0; }
+	</style>
 	
 
 	<!-- Start of Courses Listings
