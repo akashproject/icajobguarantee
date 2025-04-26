@@ -499,18 +499,18 @@
                                                                     <div class="contact-info formFieldPassingYear">
                                                                         <select id="formFieldPassingYear" name="date_of_passing[month]" required class="wizard-required">
                                                                            <option value=""> Select Month</option>
-                                                                            <option value="January" {{ ($enq->date_of_passing[0] == 'January')?'selected':'' }} >January</option>
-                                                                            <option value="February" {{ ($enq->date_of_passing[0] == 'February')?'selected':'' }} >February</option>
-                                                                            <option value="March" {{ ($enq->date_of_passing[0] == 'March')?'selected':'' }} >March</option>
-                                                                            <option value="April" {{ ($enq->date_of_passing[0] == 'April')?'selected':'' }} >April</option>
-                                                                            <option value="May" {{ ($enq->date_of_passing[0] == 'May')?'selected':'' }} >May</option>
-                                                                            <option value="June" {{ ($enq->date_of_passing[0] == 'June')?'selected':'' }} >June</option>
-                                                                            <option value="July" {{ ($enq->date_of_passing[0] == 'July')?'selected':'' }}  >July</option>
-                                                                            <option value="August"  {{ ($enq->date_of_passing[0] == 'August')?'selected':'' }} >August</option>
-                                                                            <option value="September" {{ ($enq->date_of_passing[0] == 'September')?'selected':'' }} >September</option>
-                                                                            <option value="October" {{ ($enq->date_of_passing[0] == 'October')?'selected':'' }} >October</option>
-                                                                            <option value="November" {{ ($enq->date_of_passing[0] == 'November')?'selected':'' }}>November</option>
-                                                                            <option value="December" {{ ($enq->date_of_passing[0] == 'December')?'selected':'' }} >December</option>
+                                                                            <option value="January" {{ ($enq->date_of_passing != null && $enq->date_of_passing[0] == 'January')?'selected':'' }} >January</option>
+                                                                            <option value="February" {{ ($enq->date_of_passing != null && $enq->date_of_passing[0] == 'February')?'selected':'' }} >February</option>
+                                                                            <option value="March" {{ ($enq->date_of_passing != null && $enq->date_of_passing[0] == 'March')?'selected':'' }} >March</option>
+                                                                            <option value="April" {{ ($enq->date_of_passing != null && $enq->date_of_passing[0] == 'April')?'selected':'' }} >April</option>
+                                                                            <option value="May" {{ ($enq->date_of_passing != null && $enq->date_of_passing[0] == 'May')?'selected':'' }} >May</option>
+                                                                            <option value="June" {{ ($enq->date_of_passing != null && $enq->date_of_passing[0] == 'June')?'selected':'' }} >June</option>
+                                                                            <option value="July" {{ ($enq->date_of_passing != null && $enq->date_of_passing[0] == 'July')?'selected':'' }}  >July</option>
+                                                                            <option value="August"  {{ ($enq->date_of_passing != null && $enq->date_of_passing[0] == 'August')?'selected':'' }} >August</option>
+                                                                            <option value="September" {{ ($enq->date_of_passing != null && $enq->date_of_passing[0] == 'September')?'selected':'' }} >September</option>
+                                                                            <option value="October" {{ ($enq->date_of_passing != null && $enq->date_of_passing[0] == 'October')?'selected':'' }} >October</option>
+                                                                            <option value="November" {{ ($enq->date_of_passing != null && $enq->date_of_passing[0] == 'November')?'selected':'' }}>November</option>
+                                                                            <option value="December" {{ ($enq->date_of_passing != null && $enq->date_of_passing[0] == 'December')?'selected':'' }} >December</option>
                                                                         </select> 
                                                                     </div>
                                                                 </div>
@@ -518,7 +518,7 @@
                                                                     <select id="formFieldPassingYear" name="date_of_passing[year]" required class="wizard-required">
                                                                         <option value=""> Select Year</option>
                                                                         @for ($year = now()->year; $year >= 1980; $year--)
-                                                                            <option value="{{ $year }}" {{ ($enq->date_of_passing[1] == $year)?'selected':'' }} >{{ $year }}</option>
+                                                                            <option value="{{ $year }}" {{ ($enq->date_of_passing != null && $enq->date_of_passing[1] == $year)?'selected':'' }} >{{ $year }}</option>
                                                                         @endfor
                                                                     </select>
                                                                 </div>
