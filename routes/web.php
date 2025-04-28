@@ -79,7 +79,8 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::get('/classroom-leads', [App\Http\Controllers\Administrator\LeadController::class, 'classroomLeads'])->name('admin-classroom-leads');
         Route::get('/local-stored-leads', [App\Http\Controllers\Administrator\LeadController::class, 'localStoredLeads'])->name('admin-local-stored-leads');
         Route::get('/franchise-leads', [App\Http\Controllers\Administrator\LeadController::class, 'franchiseLeads'])->name('admin-franchise-leads');
-        
+        Route::get('/backlog-leads', [App\Http\Controllers\Administrator\LeadController::class, 'backLogLeads'])->name('admin-backlog-leads');
+
         // Export Leads 
         
         Route::get('/export-leads/{type}', [App\Http\Controllers\Administrator\LeadController::class, 'exportLeads'])->name('admin-export-leads');
@@ -89,9 +90,8 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::get('/transfar-lead', [App\Http\Controllers\Administrator\LeadReferController::class, 'add'])->name('admin-transfar-lead');
         Route::post('/send-lead', [App\Http\Controllers\Administrator\LeadReferController::class, 'send'])->name('admin-send-lead');
         Route::get('/upload-leads', [App\Http\Controllers\Administrator\LeadReferController::class, 'uploadLead'])->name('admin-upload-leads');
-        Route::get('/backlog-leads', [App\Http\Controllers\Administrator\LeadReferController::class, 'backLogLeads'])->name('admin-backlog-leads');
         Route::get('/update-lead-status/{id}', [App\Http\Controllers\Administrator\LeadReferController::class, 'updateLeadStatus'])->name('admin-update-lead-status');
-        Route::get('/export-lead-csv', [App\Http\Controllers\Administrator\LeadReferController::class, 'exportLeadCsv'])->name('admin-export-lead-csv');
+        //Route::get('/export-lead-csv', [App\Http\Controllers\Administrator\LeadReferController::class, 'exportLeadCsv'])->name('admin-export-lead-csv');
         //Page
         Route::get('/pages', [App\Http\Controllers\Administrator\PageController::class, 'index'])->name('admin-pages');
         Route::get('/add-page', [App\Http\Controllers\Administrator\PageController::class, 'Add'])->name('admin-add-page');

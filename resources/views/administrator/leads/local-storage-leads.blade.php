@@ -8,7 +8,7 @@
 					<label for="no_of_module" class="col-sm-2 text-left control-label col-form-label">
 						Lead History 
 					</label>
-					<a href="{{ route('admin-export-leads','local') }}" class="btn btn-success"> Export as CSV </a>
+					<a href="{{ route('admin-export-leads','all') }}" class="btn btn-success"> Export as CSV </a>
 				</div>
 				<div class="table-responsive">
 					<table id="zero_config" class="table table-striped table-bordered">

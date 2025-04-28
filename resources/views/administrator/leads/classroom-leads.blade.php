@@ -23,6 +23,7 @@
 								<th>OTP Status</th>
 								<th>Utm Campaign</th>
 								<th>Utm Source</th>
+								<th>Created At</th>
 								<!-- <th>Options</th> -->
 							</tr>
 						</thead>
@@ -37,7 +38,8 @@
 								<td>{{ $value->pincode }}</td>													
 								<td>{{ $value->otp_status }}</td>													
 								<td>{{ $value->utm_campaign }}</td>													
-								<td>{{ $value->utm_source }}</td>													
+								<td>{{ $value->utm_source }}</td>	
+								<td>{{ $value->created_at }}</td>														
 																			
 								<!-- <td>
 									<a href="{{ url('administrator/leads/'.$value->id) }}" class="btn btn-success btn-small">View</a>

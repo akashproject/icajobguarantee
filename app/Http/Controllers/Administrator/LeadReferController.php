@@ -92,19 +92,6 @@ class LeadReferController extends Controller
         }
     }
 
-    public function backLogLeads(){
-        try {
-            $leads = DB::table('leads')
-                ->whereNot('otp_status','1')
-                ->groupBy('mobile')
-                ->havingRaw("crm_status != '1'")
-                ->orderBy('id', 'ASC')->get();
-            return view('administrator.leads-refer.backlog',compact('leads'));
-        } catch(\Illuminate\Database\QueryException $e){
-            var_dump($e->getMessage()); 
-        }
-    }
-
     public function updateLeadStatus($id){
         try {
             $data = ['crm_status' => '1','otp_status' => '1'];

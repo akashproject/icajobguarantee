@@ -9,7 +9,7 @@
 						<label for="no_of_module" class="text-left control-label col-form-label">Lead History</label>
 					</div>
 					<div class="col-md-6 text-right">
-						<a href="{{ route('admin-export-lead-csv') }}" target="_blank" class="btn btn-success btn-medium"> Export Csv</a>
+						<a href="{{ route('admin-export-leads','backlog') }}" class="btn btn-success"> Export as CSV </a>
 					</div>
 					
 				</div>
