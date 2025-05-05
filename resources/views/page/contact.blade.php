@@ -55,7 +55,7 @@
 							<div class="text">
 								<h4>Course Enquiry</h4>
 								<p>For course info & enrollment, call us between 10 AM – 7 PM (Mon–Sat).</p>
-								<a href="tel:+{{ get_theme_setting('mobile') }}" class="genius-btn gradient-bg text-center text-uppercase">Call Us<i class="fas fa-chevron-right ml-2"></i></a>
+								<a href="tel:{{ get_theme_setting('mobile') }}" class="genius-btn gradient-bg text-center text-uppercase">Call Us<i class="fas fa-chevron-right ml-2"></i></a>
 							</div>
 						</div>
 					</div>
@@ -67,7 +67,7 @@
 							<div class="text">
 								<h4>Raise Complaints </h4>
 								<p>For any complaints or grievances regarding courses, centers, Placements or certifications</p>
-								<a href="mailto:{{ get_theme_setting('email') }}" class="genius-btn gradient-bg text-center text-uppercase">Mail Us<i class="fas fa-chevron-right ml-2"></i></a>
+								<a href="mailto:crm@icagroupp.in" class="genius-btn gradient-bg text-center text-uppercase">Mail Us<i class="fas fa-chevron-right ml-2"></i></a>
 							</div>
 						</div>
 					</div>
@@ -79,7 +79,7 @@
 							<div class="text">
 								<h4>For ICA Partnership</h4>
 								<p>Want to start an ICA center in your city?</p>
-								<a href="tel:+{{ get_theme_setting('franchise_mobile') }}" class="genius-btn gradient-bg text-center text-uppercase">Call Us<i class="fas fa-chevron-right ml-2"></i></a>
+								<a href="tel:{{ get_theme_setting('franchise_mobile') }}" class="genius-btn gradient-bg text-center text-uppercase">Call Us<i class="fas fa-chevron-right ml-2"></i></a>
 							</div>
 						</div>
 					</div>
@@ -92,7 +92,7 @@
 								<h4>For Any Other Queries</h4>
 								<p> Got queries? Just drop us an email!</p>
 								
-								<a href="tel:+{{ get_theme_setting('franchise_mobile') }}" class="genius-btn gradient-bg text-center text-uppercase">Write For Us</a>
+								<a href="mailto:info@icajobguarantee.com" class="genius-btn gradient-bg text-center text-uppercase">Write For Us</a>
 							</div>
 						</div>
 					</div>

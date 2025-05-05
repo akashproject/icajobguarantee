@@ -3,7 +3,6 @@ let screenCount = 0;
 let stepCount = 1;
 
 function enqueryFormValidate(){
-	console.log("hi");
 	
 	jQuery("#global_other_details_form").valid({
 		rules: {

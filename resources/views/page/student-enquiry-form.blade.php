@@ -1005,6 +1005,9 @@
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                        <div class="col-md-12 text-center">
+                                                            <label class="error"></label>
+                                                        </div>
                                                     </div>
                                                     <div class="form-group clearfix  mt-3">
                                                         <a href="{{ route('student-enquiry-form-with-slug',[$previousStep,'center'=>$center,'enquiry_id'=>base64_encode($enquiry_id)]) }}" class="form-wizard-previous-btn float-left">Previous</a> 
@@ -1036,6 +1039,7 @@
         <script type="text/javascript">
             jQuery("#walking_lead_enquiry_form").validate({
                 rules: {
+                    "pink_form_source[]": "required",
                     "skill_list[]": { required: true }
                 },
                 messages: {
@@ -1047,6 +1051,9 @@
                     },
                     job_type: {
                         required: "Please Select Any of the following option.",
+                    },
+                    "pink_form_source[]": {
+                        required: "Please Select How do you come to know about ICA Edu Skills.",
                     },
                     "skill_list[]": {
                         required: "Please Select Any of the following option.",
