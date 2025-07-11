@@ -58,7 +58,7 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::get('/dashboard', [App\Http\Controllers\Administrator\IndexController::class, 'index'])->name('dashboard');
         Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('administrator-logout');
         Route::get('/update-password/{id}', [App\Http\Controllers\Administrator\IndexController::class, 'updatePassword'])->name('administrator-update-password');
-        
+        Route::post('/duplicator', [App\Http\Controllers\Administrator\IndexController::class, 'duplicator'])->name('admin-duplicator');
         //Users
         Route::get('/center-login', [App\Http\Controllers\Administrator\UserController::class, 'centerLogin'])->name('admin-center-login');
         Route::get('/university-login', [App\Http\Controllers\Administrator\UserController::class, 'universityLogin'])->name('admin-university-login');

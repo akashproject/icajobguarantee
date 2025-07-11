@@ -1596,7 +1596,6 @@ searchBAR: function (){
 			type: "post",
 			data: jQuery(form).serialize(),
 			success: function(result) {
-				console.log(result);
 				jQuery("#" + formId + " .lead_id").val(result.id);
 				return true;
 			}

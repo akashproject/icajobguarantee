@@ -65,6 +65,7 @@ class LamController extends Controller
             ]);
             if($postData["lead_id"] != '') {
                 $leadFromdb = Lead::findOrFail($postData["lead_id"]);
+                $leadFromdb->update($postData);
             }
             // is lead input otp
             if($postData["verify_otp"] != ''){

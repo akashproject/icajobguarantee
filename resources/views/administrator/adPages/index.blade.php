@@ -23,6 +23,12 @@
 								<td>
 									<a href="{{ url('ads') }}/{{ $value->slug }}" class="btn btn-success btn-lg">View</a>
 									<a href="{{ url('administrator/view-ad-page') }}/{{ $value->id }}" class="btn btn-primary btn-lg">Edit</a>
+									<form method="post" action="{{ route('admin-duplicator') }}" style="display: inline;">
+										@csrf
+										<input type="hidden" name="id" value="{{ $value->id }}" >
+										<input type="hidden" name="model" value="ad-pages" >
+										<button type="submit" class="btn btn-primary  btn-small">Duplicate</button>
+									</form>
 									@if($user->role == 'master')
 									<a href="{{ url('administrator/delete-ad-page') }}/{{ $value->id }}" class="btn btn-danger btn-lg" onclick="return confirm('Are you sure?')"; >Delete </a>
 									@endif

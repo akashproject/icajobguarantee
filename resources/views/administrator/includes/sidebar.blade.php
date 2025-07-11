@@ -36,6 +36,7 @@
                         <li class="sidebar-item"><a href="{{ url('administrator/add-page') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Add Page </span></a></li>
                      </ul>
                   </li>
+
                   <li class="sidebar-item">
                      <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-book-multiple-variant"></i><span class="hide-menu">Ad Pages </span></a>
                      <ul aria-expanded="false" class="collapse  first-level">
@@ -43,6 +44,7 @@
                         <li class="sidebar-item"><a href="{{ url('administrator/add-ad-page') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Add Ad Page </span></a></li>
                      </ul>
                   </li>
+
                   <li class="sidebar-item">
                      <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-book-multiple-variant"></i><span class="hide-menu">Lam Pages </span></a>
                      <ul aria-expanded="false" class="collapse  first-level">
@@ -68,24 +70,15 @@
                      </ul>
                   </li>
                   <li class="sidebar-item">
-                     <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-home-map-marker"></i><span class="hide-menu"> Universities </span></a>
+                     <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-book-multiple-variant"></i><span class="hide-menu">Events </span></a>
                      <ul aria-expanded="false" class="collapse  first-level">
-                        <li class="sidebar-item"><a href="{{ url('administrator/universities') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> All Universities </span></a></li>
-                        <li class="sidebar-item"><a href="{{ url('administrator/add-university') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Add University </span></a></li>
-                     </ul>
-                  </li>
-                  <li class="sidebar-item">
-                     <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-book-multiple-variant"></i><span class="hide-menu"> University Course </span></a>
-                     <ul aria-expanded="false" class="collapse  first-level">
-                        <li class="sidebar-item"><a href="{{ url('administrator/university-courses') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> All University Course </span></a></li>
-                        <li class="sidebar-item"><a href="{{ url('administrator/add-university-course') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Add University Course</span></a></li>
-                     </ul>
-                  </li>
-                  <li class="sidebar-item">
-                     <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-book-multiple-variant"></i><span class="hide-menu">University Ad Pages </span></a>
-                     <ul aria-expanded="false" class="collapse  first-level">
-                        <li class="sidebar-item"><a href="{{ url('administrator/university-ad-pages') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> All Ad Pages </span></a></li>
-                        <li class="sidebar-item"><a href="{{ url('administrator/add-university-ad-page') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Add University Ad Page </span></a></li>
+                        <li class="sidebar-item"><a href="{{ url('administrator/events') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> All Events </span></a></li>
+                        <li class="sidebar-item"><a href="{{ url('administrator/add-event') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Add Event </span></a></li>
+                        <li class="sidebar-item"><a href="{{ url('administrator/event-types') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Event Type </span></a></li>
+                        <li class="sidebar-item"><a href="{{ url('administrator/assessments') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> All Assessments </span></a></li>
+                        <li class="sidebar-item"><a href="{{ url('administrator/add-assessment') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Add Assessment </span></a></li>
+                        <li class="sidebar-item"><a href="{{ url('administrator/questions') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> All Questions </span></a></li>
+                        <li class="sidebar-item"><a href="{{ url('administrator/add-question') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Add Question </span></a></li>
                      </ul>
                   </li>
                   <li class="sidebar-item">
@@ -444,18 +437,6 @@
                      <ul aria-expanded="false" class="collapse first-level">
                         <li class="sidebar-item"><a href="{{ url('administrator/lead-refer') }}" class="sidebar-link"><i class="mdi mdi-emoticon"></i><span class="hide-menu"> Recived Leads </span></a></li>
                         <li class="sidebar-item"><a href="{{ url('administrator/transfar-lead') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Transfer New Lead </span></a></li>
-                     </ul>
-                  </li>
-                  <li class="sidebar-item">
-                     <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-book-multiple-variant"></i><span class="hide-menu">Events </span></a>
-                     <ul aria-expanded="false" class="collapse  first-level">
-                        <li class="sidebar-item"><a href="{{ url('administrator/events') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> All Events </span></a></li>
-                        <li class="sidebar-item"><a href="{{ url('administrator/add-event') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Add Event </span></a></li>
-                        <li class="sidebar-item"><a href="{{ url('administrator/event-types') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Event Type </span></a></li>
-                        <li class="sidebar-item"><a href="{{ url('administrator/assessments') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> All Assessments </span></a></li>
-                        <li class="sidebar-item"><a href="{{ url('administrator/add-assessment') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Add Assessment </span></a></li>
-                        <li class="sidebar-item"><a href="{{ url('administrator/questions') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> All Questions </span></a></li>
-                        <li class="sidebar-item"><a href="{{ url('administrator/add-question') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Add Question </span></a></li>
                      </ul>
                   </li>
                   @break

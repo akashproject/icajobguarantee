@@ -1,3 +1,4 @@
+
 @extends('administrator.layouts.admin')
 
 @section('content')

@@ -117,6 +117,7 @@ trait LamLeadSubmitAfterProcess
         curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
         $resp = curl_exec($curl);
+        dd($resp);
         curl_close($curl);
         return response()->json($resp, $this->_statusOK);
     }
@@ -153,26 +154,10 @@ trait LamLeadSubmitAfterProcess
         return true;
     }
 
-    public function captureLeadToDB($postData)
+    public function lamLeadCaptureToDB($postData)
     {
         try {
-            $data = [
-                "role" => $postData["role"],
-                "name" => $postData["name"],
-                "email" => $postData["email"],
-                "mobile" => $postData["mobile"],
-                "center" => isset($postData["center"])? $postData["center"]: "",
-                "city" => isset($postData["city"])? $postData["city"]: "",
-                "pincode" => isset($postData["pincode"])? $postData["pincode"]: "",
-                "latitude" => isset($_COOKIE["lat"]) ? $_COOKIE["lat"] : "",
-                "longitude" => isset($_COOKIE["lng"]) ? $_COOKIE["lat"] : "",
-                "utm_source" => $postData["utm_source"],
-                "utm_campaign" => $postData["utm_campaign"],
-                "otp_status" => "0",
-                "crm_status" => "0",
-                "mail_status" => "0",
-            ];
-            $lead = Lead::create($data);
+            $lead = LamLead::create($data);
             return $lead;
         } catch (\Illuminate\Database\QueryException $e) {
             return response()->json($e, $this->_statusOK);

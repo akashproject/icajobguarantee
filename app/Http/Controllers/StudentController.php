@@ -31,9 +31,6 @@ class StudentController extends Controller
             if($enq->preferred_training_time) {
                 $enq->preferred_training_time = explode(',',$enq->preferred_training_time);
             }
-            if($enq->pink_form_source) {
-                $enq->pink_form_source = explode(',',$enq->pink_form_source);
-            }
 
         }
 
@@ -74,10 +71,6 @@ class StudentController extends Controller
 
             if(isset($postData['preferred_training_time'])) {
                 $postData['preferred_training_time'] = implode(',',$postData['preferred_training_time']);
-            }
-
-            if(isset($postData['pink_form_source'])) {
-                $postData['pink_form_source'] = implode(',',$postData['pink_form_source']);
             }
 
             if($postData['enquiry'] <= 0){

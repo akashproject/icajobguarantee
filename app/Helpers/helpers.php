@@ -322,28 +322,6 @@ if (! function_exists('getCourseModules')) {
     }
 }
 
-if (! function_exists('getUniversities')) {
-    function getUniversities($course_id=null, $university_id=null){
-        $universities = DB::table('universities');
-        if($course_id){
-            $universities->where('university_courses','like', '%"' . $course_id . '"%');
-        } 
-        if($university_id){
-            $universities->where('id',$university_id);
-        } 
-        $universities = $universities->where('status',"1");
-
-        //$radies = getRadius($_COOKIE['lat'],$_COOKIE['lng']);
-        //$centers->whereBetween('lng', [$radies['minLon'], $radies['maxLon']]);
-        //$centers->whereBetween('lat', [$radies['minLat'], $radies['maxLat']]);
-        if(isset($_COOKIE['lng']) && isset($_COOKIE['lat'])){
-            $universities->orderBy(DB::raw('POW((lng-'.$_COOKIE['lng'].'),2) + POW((lat-'.$_COOKIE['lat'].'),2)'));
-        }
-        $universities = $universities->get();       
-        return $universities;
-    }
-}
-
 if (!function_exists('getCenterByCityId')) {
     function getCenterByCityId($city = null,$centername = null){
         $center = DB::table('centers')
@@ -524,7 +502,7 @@ if (! function_exists('getCourseCarriculams')) {
 }
 
 if (! function_exists('getEvents')) {
-    function getEvents($center_id = null){
+    function getEvents($center_id = null,$pagination = "100"){
         try {
             $events = DB::table('events')
             ->join('centers', 'centers.id', '=', 'events.center_id')
@@ -534,8 +512,8 @@ if (! function_exists('getEvents')) {
             } 
             $events = $events->where('events.status', '1')
             ->distinct()
-            ->orderBy('events.id', 'asc')
-            ->get();
+            ->orderBy('events.id', 'desc')
+            ->paginate($pagination);
             return $events;
         } catch(\Illuminate\Database\QueryException $e){
             throw $e;

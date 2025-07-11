@@ -1197,22 +1197,6 @@ searchBAR: function (){
 		}
 	});
 
-	$('#banner_lead_capture_form input').on('keyup', function() {
-		if ($("#banner_lead_capture_form").valid()) {
-			$('.submit_classroom_lead_generation_form').prop('disabled', false);  
-		} else {
-			$('.submit_classroom_lead_generation_form').prop('disabled', 'disabled');
-		}
-	});
-
-	$('#banner_lead_capture_form select').on('change', function() {
-		if ($("#banner_lead_capture_form").valid()) {
-			$('.submit_classroom_lead_generation_form').prop('disabled', false);  
-		} else {
-			$('.submit_classroom_lead_generation_form').prop('disabled', 'disabled');
-		}
-	});
-
 	$('#franchise_lead_capture_form input').on('keyup', function() {
         if ($("#franchise_lead_capture_form").valid()) {
             $('#franchise_lead_capture_form .submit_classroom_lead_generation_form').prop('disabled', false);  
@@ -1229,6 +1213,23 @@ searchBAR: function (){
         }
     });
 
+	$('#banner_lead_capture_form input').on('keyup', function() {
+		if ($("#banner_lead_capture_form").valid()) {
+			$('.submit_classroom_lead_generation_form').prop('disabled', false);  
+		} else {
+			$('.submit_classroom_lead_generation_form').prop('disabled', 'disabled');
+		}
+	});
+
+	$('#banner_lead_capture_form select').on('change', function() {
+		if ($("#banner_lead_capture_form").valid()) {
+			$('.submit_classroom_lead_generation_form').prop('disabled', false);  
+		} else {
+			$('.submit_classroom_lead_generation_form').prop('disabled', 'disabled');
+		}
+	});
+
+	
 	//Popup Form Validation
 	$("#classroom_popup_lead_capture_form").validate({
 		messages: {
@@ -1257,6 +1258,32 @@ searchBAR: function (){
 	
 	//Homepage Form Page Validation
 	$("#banner_lead_capture_form").validate({
+		messages: {
+			name: {
+				required: "Please enter full name",
+			},
+			email: {
+				required: "Please enter valid email address",
+			},
+			mobile: {
+				required: "Please enter valid mobile number",
+				min: "Please enter valid mobile number",
+				max: "Please enter valid mobile number",
+			},
+			pincode: {
+				required: "Please enter valid pincode",
+				min: "This pincode is not in India",
+				max: "This pincode is not in India",
+			},
+		},
+		submitHandler: function(form) {
+			classroomOnFormSubmitProcess(form);
+			return false; // required to block normal submit since you used ajax
+		}
+	});
+
+	//Homepage Form Page Validation
+	$("#lam_lead_capture_form").validate({
 		messages: {
 			name: {
 				required: "Please enter full name",

@@ -28,6 +28,12 @@
 									<a href="{{ url('centers') }}/{{ $value->slug }}" class="btn btn-success">View</a>
 									<a href="{{ url('administrator/view-center') }}/{{ $value->id }}" class="btn btn-primary">Edit</a>
 									<!-- <a href="{{ route('center-courses',$value->id) }}" class="btn btn-primary">Courses</a> -->
+									<form method="post" action="{{ route('admin-duplicator') }}" style="display: inline;">
+										@csrf
+										<input type="hidden" name="id" value="{{ $value->id }}" >
+										<input type="hidden" name="model" value="centers" >
+										<button type="submit" class="btn btn-primary  btn-small">Duplicate</button>
+									</form>
 									@if($value->status == '1')
 										<a href="{{ route('admin-generate-pink-form',$value->code) }}" class="btn btn-primary">Pink Form</a>
 									@endif

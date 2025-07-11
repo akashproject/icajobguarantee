@@ -42,7 +42,7 @@ class AppServiceProvider extends ServiceProvider
                 '/about-us' => "About Us",                
                 '/centers' => "Centers",                
                 '/franchise-opportunity' => "Franchise",               
-                '/eduversity' => "University",
+                'https://www.skillvarsity.in' => "University",
                 '/placements' => "Placements",
                 '/career' => "Career",
             );

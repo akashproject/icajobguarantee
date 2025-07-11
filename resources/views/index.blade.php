@@ -613,14 +613,104 @@
 		</section>
 	<!-- End Course category
 		============================================= -->
+<section id="latest-area" class="latest-area-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<div class="latest-area-content  " >
+							<div class="section-title-2 mb65 headline text-left">
+								<h2>Latest <span>Blogs.</span></h2>
+							</div>
+							<div class="latest-news-posts">
+								@foreach($blogs as $key => $value)
+								<div class="latest-news-area">
+									<div class="latest-news-thumbnile relative-position">
+										<img src="{{ $value->source_url }}" alt="{{ $value->title->rendered }}">
+										<div class="hover-search">
+											<i class="fas fa-search"></i>
+										</div>
+										<div class="blakish-overlay"></div>
+									</div>
+									<div class="date-meta">
+										<i class="fas fa-calendar-alt"></i> {{ date("d M Y",strtotime($value->date))}}
+									</div>
+									<h3 class="latest-title bold-font"><a target="_blank" href="{{ $value->link }}">{!! $value->title->rendered !!}</a></h3>
+								</div>
+								@if($key == 1)
+									 @break
+								@endif
+								@endforeach
+								
+								<div class="view-all-btn bold-font">
+									<a target="_blank" href="/blog">View All News <i class="fas fa-chevron-circle-right"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /latest-news -->
+					<div class="col-md-4">
+						<div class="latest-area-content " >
+							<div class="section-title-2 mb65 headline text-left">
+								<h2>Event <span>Lists</span></h2>
+							</div>
+							@foreach(getEvents(null,3) as $value)
+							<div class="latest-events">
+								<div class="latest-event-item">
+									<div class="events-date  relative-position text-center">
+										<div class="gradient-bdr"></div>
+										<span class="event-date bold-font">{{date('d',strtotime($value->start_date))}}</span>
+										{{date('M Y',strtotime($value->start_date))}}
+									</div>
+									<div class="event-text">
+										<h3 class="latest-title bold-font"><a href="{{url('events/'.$value->slug)}}">{{$value->name}}</a></h3>
+										<div class="course-meta">
+											<span class="course-category"><a href="{{url('events/'.$value->slug)}}">{{$value->center}}</a></span>
+										</div>
+									</div>
+								</div>
+							</div> 
+							@endforeach
+							
+							<div class="view-all-btn bold-font">
+								<a  href="{{ url('events') }}">Check Calendar   <i class="fas fa-calendar-alt"></i></a>
+							</div>
+						</div>
+					</div>
+					<!-- /events -->
 
+					<div class="col-md-4">
+						<div class="latest-area-content " >
+							<div class="section-title-2 mb65 headline text-left">
+								<h2>Latest <span>Video.</span></h2>
+							</div>
+							<div class="latest-video-poster relative-position mb20">
+								<img src="{{url('assets/img/letest-video.webp')}}" alt="">
+								<div class="video-play-btn text-center gradient-bg">
+									<a class="popup-with-zoom-anim" href="https://www.youtube.com/watch?v=vV1urFhrijY"><i class="fas fa-play"></i></a>
+								</div>
+							</div>
+							<div class="vidoe-text">
+								<h3 class="latest-title bold-font"><a href="#">Learning With ICA Edu Skills.</a></h3>
+								<p class="mb25">Certified Industrial Accountant | Accounts Training Institute | Placement Support | ICA Edu Skills.</p>
+							</div>
+							<div class="view-all-btn bold-font">
+								<a href="https://www.youtube.com/@ICAEduSkills">View All Videos <i class="fas fa-chevron-circle-right"></i></a>
+							</div>
+						</div>
+					</div>
+					<!-- /. -->
+				</div>
+			</div>
+		</section>
+	<!-- End latest section
+		============================================= -->
 	<!-- Start FAQ section
 		============================================= -->
 		<section id="faq" class="faq-section">
 			<div class="container">
 				<div class="section-title mb45 headline text-center "  >
 					<span class="subtitle text-uppercase">GENIUS COURSE FAQ</span>
-					<h3>Frequently<span> Ask & Questions</span></h3>
+					<h3>Frequently<span> Asked Questions</span></h3>
 				</div>
 				<div id="accordion" class="panel-group">
 					<div class="row">

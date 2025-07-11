@@ -143,17 +143,6 @@
         button.submit_classroom_lead_generation_form.form_step_1 {
             display: none;
         }
-        .slot_content h4 {
-            background: #853167;
-            color: #ffff;
-            padding: 10px 0;
-        }
-        .mobile {
-            display: none;
-        }
-        a.navbar-brand.text-uppercase img {
-            width: 35% !important;
-        }
         @media screen and (max-width: 767px) {
             .banner_header h1 {
                 font-size: 36px;
@@ -163,12 +152,6 @@
             }
             .navbar-header.float-left {
                 padding-top: 0;
-            }
-            .desktop {
-                display: none !important;
-            }
-            .mobile {
-                display: block;
             }
         }
     </style>
@@ -183,31 +166,19 @@
 </head>
 <body>
     <header>
-        <div id="main-menu" class="main-menu-container header-style-2" style="box-shadow:-1px -1px 4px;margin: 0;padding: 0;">
+		<div id="main-menu" class="main-menu-container header-style-2" style="box-shadow:-1px -1px 4px;margin: 0;padding: 0;">
 			<div class="main-menu py-1" style="height: 118px;">
 				<div class="container">
-					<div class="navbar-default desktop" style="display: flex;justify-content: center;">
-						<div class="navbar-header">
-							<a class="navbar-brand text-uppercase" href="javascript:void(0)" style="text-align: left;">
-                                <img src="{{ url('assets/img/ica-logo.png') }}" alt="ICA Edu Skills" style="width: 100%;">
-                            </a>
-						</div>
-						<div class="navbar-header">
-							<a class="navbar-brand text-uppercase" href="javascript:void(0)"  style="text-align: center;"> 
-                                <img src="{{ url('assets/img/pune-commerce-logo.png') }}" alt="ICA Edu Skills" style="width: 100%;">
-                            </a>
-						</div>
-                        <div class="navbar-header">
-							<a class="navbar-brand text-uppercase" href="javascript:void(0)"  style="text-align: right;"> 
-                                <img src="{{ url('assets/img/pune-university-logo1.png') }}" alt="ICA Edu Skills" style="width: 100%;">
-                            </a>
-						</div>
-					</div>
-                    <div class="navbar-default mobile" >
+					<div class="navbar-default">
 						<div class="navbar-header float-left">
-							<a class="navbar-brand text-uppercase" href="javascript:void(0)" style="width: 100%;">
-                                <img src="{{ url('assets/images/pune-mobile-logo.png') }}" alt="ICA Edu Skills" style="width: 100% !important;"></a>
-						</div><!-- /.navbar-header -->	
+							<a class="navbar-brand text-uppercase" href="javascript:void(0)"><img src="{{ url('assets/images/logo.png') }}" alt="ICA Edu Skills" style="width: 100%;"></a>
+						</div><!-- /.navbar-header -->						
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="navbar-header float-right" style="width: auto;text-align: right;">
+							<a class="navbar-brand text-uppercase" href="javascript:void(0)"  style="text-align: center;"> 
+                                <img src="{{ url('assets/img/employment-exchange-Howrah-east.png') }}" alt="ICA Edu Skills" style="width: 35%;">
+                            </a>
+						</div><!-- /.navbar-header -->		
 					</div>
 				</div>
 			</div>
@@ -221,7 +192,7 @@
                     <div class="col-md-8 py-2">
                         <div class="banner_container">
                             <div class="banner_header">
-                                <h1 style="color: #e53d3f;text-align: center;">Pune’s Biggest Job Fair*</h1>
+                                <h1 style="color: #e53d3f;text-align: center;">Job Fair at Howrah*</h1>
                                 <h2 style="text-align:center;font-weight: 600;font-size: 41px;">Unlock Your Dream Career!</h2 style="font-">
                             </div>
                             <div class="text-center py-3">
@@ -372,7 +343,7 @@
             <div class="row">
                 <div class="col-12 text-center">
                     <div class="organizar py-3">
-                        <h1 style="font-size: 37px;"> ICA Edu Skills (P) Ltd & Department of Commerce, Savitribai Phule Pune university, Job Fair 2025</h1>
+                        <h1 style="font-size: 37px;"> ICA Edu Skills, Howrah  in Association with Howrah Employment Exchange, Job Fair 2025</h1>
                     </div>
                 </div>
             </div>
@@ -380,20 +351,20 @@
                 <div class="col-md-4">
                     <div class="slot py-5">
                         <span> Event Date </span>
-                        <h4> 3rd June 2025 </h4>
+                        <h4> 10th June 2025 </h4>
                     </div>    
                 </div>
                 <div class="col-md-4">
                     <div class="slot py-5">
                         <span> Event Time </span>
-                        <h4> 9:30 AM </h4>
+                        <h4> 10 AM </h4>
                     </div>
                 </div>
               
                 <div class="col-md-4">
                     <div class="slot py-5">
                         <span> Eligibility </span>
-                        <h4>B.Com, M.Com, BBA</h4>
+                        <h4>Any Graduate</h4>
                     </div>
                 </div>
             </div>
@@ -413,19 +384,20 @@
                             <li>📝 Explore career opportunities,
                             <li>📝 Kick-start your success journey,
                             <li>📝 Know your employability score
-                            <li>📝 you are a B.Com/M.Com/BBA/MBA student Upgrade your skills </li>
+                            <li>📝 you are a B.Com/BBA/BCA student Upgrade your skills </li>
                             <li>📝 find alternate career paths</li>
                             <li>📝 Meet with industry leaders and changemakers</li>
                             <li>📝 Get updates from the corporate world</li>
                         </ul>
-                        <h4 class="mb-4"> Exclusive Free Benefits </h4>
+                        <h4 class="mb-4"> Exclusive Benefits </h4>
                         <ul>
                             <li> <i class="fa fa-check"></i> Job Opportunities in Accounts, Taxation, Finance, Banking, MIS, Sales, and more! </li>
                             <li> <i class="fa fa-check"></i> Networking Opportunities with top companies and industry experts </li>
-                            <li> <i class="fa fa-check"></i> Free Employability Assessment & Orientation Workshop <strong>(worth 10000/-)*</strong> </li>
+                            <li> <i class="fa fa-check"></i> Free Employability Assessment & Orientation Workshop <strong>(worth 10000/-)</strong> </li>
                             <li> <i class="fa fa-check"></i> Complimentary expert-led workshop </li>
-                            <li> <i class="fa fa-check"></i> Focussed Tech Workshops in Accounts, Banking, MIS, Taxation, Finance </li>
-                            <li> </i> *Terms & Conditions Apply.</strong> </li>
+                            <li> <i class="fa fa-check"></i> Worth Rs: 30,000 for first 1000 registrations </li>
+                            <li> <i class="fa fa-check"></i> Focussed Tech Workshops in Accounts, Banking, MIS, Taxation, Finance worth Rs.10000. </li>
+                            <li> <i class="fa fa-check"></i> Registration on ICA Job Portal <strong>Rs.10000.</strong> </li>
                         </ul>
                     </div>
                 </div>
@@ -466,7 +438,7 @@
 
                         </div>
                         <div class="agenda-content message_container p-5" style="width: 100%;">
-                            <h3> *Held under Pune University, for university students, graduate and working professional. </h3>
+                            <h3> *Held under Employment Exchange, graduate and working professional. </h3>
                         </div>
                     </div>
                 </div>
@@ -531,7 +503,7 @@
         let globalUrl = "{{ env("APP_URL") }}"
         let isEnableOtp = {{ (get_theme_setting('enable_otp') == "1")?$contentMain->enable_otp:get_theme_setting('enable_otp') }}
         let isAjaxSubmit = "{{ get_theme_setting('ajax_submit') }}"
-        let eventDate = new Date("2025-06-03T09:29:59").getTime();
+        let eventDate = new Date("2025-06-10T09:59:59").getTime();
     </script>
     <script src="{{ url('assets/js/jquery-2.1.4.min.js') }}"></script>
     <script src="{{ url('assets/js/bootstrap.min.js') }}"></script>

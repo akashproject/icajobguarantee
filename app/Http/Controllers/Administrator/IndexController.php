@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 
 class IndexController extends Controller
 {
@@ -46,6 +47,20 @@ class IndexController extends Controller
 
         // Provide feedback to the user.
         return redirect('/administrator');
+    }
+
+    public function duplicator(Request $request){
+        try {
+            $data = $request->all();
+            $model = DB::table($data['model'])->where('id',$data['id'])->first();
+            $model->slug = $model->slug.'-'.'duplicated';
+            unset($model->id);
+
+            DB::table($data['model'])->insert((array)$model);
+            return redirect()->back()->with('message', 'Duplicate create successfully!');
+        } catch(\Illuminate\Database\QueryException $e){
+            var_dump($e->getMessage()); 
+        }
     }
 
 }

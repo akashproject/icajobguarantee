@@ -575,8 +575,8 @@
                                                                     <label for="other" ><input type="checkbox" id="other" name="professional_course_status[]" value="Other" class="hide_show_text_field" {{ is_array($enq->professional_course_status) && in_array('Other', $enq->professional_course_status)?'checked':'' }} > Other </label>
                                                                 </div>
                                                             </div>
-                                                            <div class="specify_field my-2" style="display:{{ is_array($enq->professional_course_status) && in_array("Other", $enq->professional_course_status)?'block':'none' }}" >
-                                                                <input id="formFieldSpecifyOtherCourse" name="other_professional_course_status" type="text" placeholder="Please Specity" autocomplete="off"  value="{{ $enq->other_professional_course_status }}">
+                                                            <div class="specify_field my-2" style="display:{{ is_array($enq->professional_course_status) && in_array('Other', $enq->professional_course_status)?'block':'none' }}" >
+                                                                <input id="formFieldSpecifyOtherCourse" name="other_professional_course_status" type="text" placeholder="Please Specify" autocomplete="off"  value="{{ $enq->other_professional_course_status }}">
                                                             </div>
                                                         </div>
                                                         <div class="col-12" >
@@ -744,7 +744,7 @@
                                                                 </select>
                                                             </div>
                                                             <div class="specify_father_occupation_field my-2" style="display:{{ ($enq->father_occupation == 'Other')?'block':'none' }}" >
-                                                                <input name="other_father_occupation" type="text" value="{{ $enq->other_father_occupation }}" placeholder="Please specity other occupation" autocomplete="off" >
+                                                                <input name="other_father_occupation" type="text" value="{{ $enq->other_father_occupation }}" placeholder="Please Specify other occupation" autocomplete="off" >
                                                             </div>
                                                         </div>
                                                         <div class="col-12" >
@@ -767,7 +767,7 @@
                                                                 </select>
                                                             </div>
                                                             <div class="specify_mother_occupation_field my-2" style="display:{{ ($enq->mother_occupation == 'Other')?'block':'none' }}" >
-                                                                <input id="" name="other_mother_occupation" type="text"  value="{{ $enq->other_mother_occupation }}" placeholder="Please specity other occupation" autocomplete="off" >
+                                                                <input id="" name="other_mother_occupation" type="text"  value="{{ $enq->other_mother_occupation }}" placeholder="Please Specify other occupation" autocomplete="off" >
                                                             </div>
                                                         </div>
                                                         <div class="col-12" >
@@ -878,8 +878,8 @@
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-4">
-                                                                        <label for="08_30_am_11_00_am" >
-                                                                            <input type="checkbox" id="08_30_am_11_00_am" name="preferred_training_time[]" value="08:30 AM - 11:00 AM" {{ is_array($enq->preferred_training_time) && in_array('08:30 AM - 11:00 AM', $enq->preferred_training_time)?'checked':'' }} > 08:30 AM - 11:00 AM 
+                                                                        <label for="08_30_am_10_00_am" >
+                                                                            <input type="checkbox" id="08_30_am_10_00_am" name="preferred_training_time[]" value="08:30 AM - 10:00 AM" {{ is_array($enq->preferred_training_time) && in_array('08:30 AM - 10:00 AM', $enq->preferred_training_time)?'checked':'' }} > 08:30 AM - 10:00 AM 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-4">
@@ -918,70 +918,75 @@
                                                         <div class="col-12" >
                                                             <div class="contact-info formFieldTimeSlot">
                                                                 <label class="mb-0" style="color: #403c9c;font-weight: 600;"> How do you come to know about ICA Edu Skills </label>
-                                                                <div class="field_checkbox_group mt-3 row">
+                                                                <div id="field_checkbox_group" class="field_checkbox_group mt-3 row">
                                                                     <div class="col-md-3">
-                                                                        <label for="website" >
-                                                                            <input type="checkbox" id="website" name="pink_form_source[]" value="Website" {{ is_array($enq->pink_form_source) && in_array('Website', $enq->pink_form_source)?'checked':'' }} >Website
+                                                                        <label for="website" class="checkbox-radio" >
+                                                                            <input type="checkbox" id="website" name="pink_form_source" value="Website" >Website
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-3">
-                                                                        <label for="google" >
-                                                                            <input type="checkbox" id="google" name="pink_form_source[]" value="Google Search" {{ is_array($enq->pink_form_source) && in_array('Google Search', $enq->pink_form_source)?'checked':'' }} >Google Search 
+                                                                        <label for="google" class="checkbox-radio" >
+                                                                            <input type="checkbox" id="google" name="pink_form_source" value="Google Search" >Google Search 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-3">
-                                                                        <label for="facebook" >
-                                                                            <input type="checkbox" id="facebook" name="pink_form_source[]" value="Facebook" {{ is_array($enq->pink_form_source) && in_array('Facebook', $enq->pink_form_source)?'checked':'' }} >Facebook 
+                                                                        <label for="facebook" class="checkbox-radio" >
+                                                                            <input type="checkbox" id="facebook" name="pink_form_source" value="Facebook" >Facebook 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-3">
-                                                                        <label for="instagram" >
-                                                                            <input type="checkbox" id="instagram" name="pink_form_source[]" value="Instagram" {{ is_array($enq->pink_form_source) && in_array('Instagram', $enq->pink_form_source)?'checked':'' }} >Instagram 
+                                                                        <label for="instagram" class="checkbox-radio" >
+                                                                            <input type="checkbox" id="instagram" name="pink_form_source" value="Instagram" >Instagram 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-3">
-                                                                        <label for="youtube" >
-                                                                            <input type="checkbox" id="youtube" name="pink_form_source[]" value="YouTube" {{ is_array($enq->pink_form_source) && in_array('YouTube', $enq->pink_form_source)?'checked':'' }} >YouTube 
+                                                                        <label for="youtube" class="checkbox-radio" >
+                                                                            <input type="checkbox" id="youtube" name="pink_form_source" value="YouTube" >YouTube 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-3">
-                                                                        <label for="twitter" >
-                                                                            <input type="checkbox" id="twitter" name="pink_form_source[]" value="Twitter" {{ is_array($enq->pink_form_source) && in_array('Twitter', $enq->pink_form_source)?'checked':'' }} > Twitter 
+                                                                        <label for="twitter" class="checkbox-radio" >
+                                                                            <input type="checkbox" id="twitter" name="pink_form_source" value="Twitter" > Twitter 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-3">
-                                                                        <label for="linkedin" >
-                                                                            <input type="checkbox" id="linkedin" name="pink_form_source[]" value="LinkedIn" {{ is_array($enq->pink_form_source) && in_array('LinkedIn', $enq->pink_form_source)?'checked':'' }} > LinkedIn 
+                                                                        <label for="linkedin" class="checkbox-radio" >
+                                                                            <input type="checkbox" id="linkedin" name="pink_form_source" value="LinkedIn" > LinkedIn 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-3">
-                                                                        <label for="banners" >
-                                                                            <input type="checkbox" id="banners" name="pink_form_source[]" value="Banners" {{ is_array($enq->pink_form_source) && in_array('Banners', $enq->pink_form_source)?'checked':'' }} > Banners 
+                                                                        <label for="banners" class="checkbox-radio" >
+                                                                            <input type="checkbox" id="banners" name="pink_form_source" value="Banners" > Banners 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-3">
-                                                                        <label for="hoardings" >
-                                                                            <input type="checkbox" id="hoardings" name="pink_form_source[]" value="Hoardings" {{ is_array($enq->pink_form_source) && in_array('Hoardings', $enq->pink_form_source)?'checked':'' }} > Hoardings 
+                                                                        <label for="hoardings" class="checkbox-radio" >
+                                                                            <input type="checkbox" id="hoardings" name="pink_form_source" value="Hoardings" > Hoardings 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-3">
-                                                                        <label for="roadshow" >
-                                                                            <input type="checkbox" id="roadshow" name="pink_form_source[]" value="Roadshow" {{ is_array($enq->pink_form_source) && in_array('Roadshow', $enq->pink_form_source)?'checked':'' }} > Roadshow 
+                                                                        <label for="roadshow" class="checkbox-radio" >
+                                                                            <input type="checkbox" id="roadshow" name="pink_form_source" value="Roadshow" > Roadshow 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-3">
-                                                                        <label for="seminars" >
-                                                                            <input type="checkbox" id="seminars" name="pink_form_source[]" value="Seminars" {{ is_array($enq->pink_form_source) && in_array('Seminars', $enq->pink_form_source)?'checked':'' }} > Seminars 
+                                                                        <label for="seminars" class="checkbox-radio" >
+                                                                            <input type="checkbox" id="seminars" name="pink_form_source" value="Seminars" > Seminars 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-3">
-                                                                        <label for="handbill_leaflet" >
-                                                                            <input type="checkbox" id="handbill_leaflet" name="pink_form_source[]" value="Handbill/Leaflet" {{ is_array($enq->pink_form_source) && in_array('Handbill/Leaflet', $enq->pink_form_source)?'checked':'' }} > Handbill/Leaflet 
+                                                                        <label for="handbill_leaflet" class="checkbox-radio" >
+                                                                            <input type="checkbox" id="handbill_leaflet" name="pink_form_source" value="Handbill/Leaflet"  > Handbill/Leaflet 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-3">
-                                                                        <label for="Friends_Relative_Teacher" >
-                                                                            <input type="checkbox" id="Friends_Relative_Teacher" name="pink_form_source[]" value="Friends/Relative/Teacher" {{ is_array($enq->pink_form_source) && in_array('Friends/Relative/Teacher', $enq->pink_form_source)?'checked':'' }} > Friends/Relative/Teacher 
+                                                                        <label for="data_calling" class="checkbox-radio" >
+                                                                            <input type="checkbox" id="data_calling" name="pink_form_source" value="Data calling" > Data calling 
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <label for="Friends_Relative_Teacher" class="checkbox-radio" >
+                                                                            <input type="checkbox" id="Friends_Relative_Teacher" name="pink_form_source" value="Friends/Relative/Teacher"  > Friends/Relative/Teacher 
                                                                         </label>
                                                                     </div>
                                                                 </div>
@@ -1094,6 +1099,27 @@
                     }
                 }
             });
+
+            const checkboxes = document.querySelectorAll('#field_checkbox_group .checkbox-radio input[type="checkbox"]');
+            const labels = document.querySelectorAll('#field_checkbox_group .checkbox-radio');
+
+            checkboxes.forEach((checkbox, i) => {
+                checkbox.addEventListener('change', () => {
+                    console.log("hello");
+                    
+                if (checkbox.checked) {
+                    checkboxes.forEach((cb, j) => {
+                    if (j !== i) cb.checked = false;
+                    });
+
+                    labels.forEach(label => label.classList.remove('checked'));
+                    labels[i].classList.add('checked');
+                } else {
+                    labels[i].classList.remove('checked');
+                }
+                });
+            });
+            
         </script>
     </body>
 </html>

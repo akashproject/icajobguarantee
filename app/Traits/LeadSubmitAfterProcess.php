@@ -195,27 +195,8 @@ trait LeadSubmitAfterProcess
     public function captureLeadToDB($postData)
     {
         try {
-            $data = [
-                "role" => $postData["role"],
-                "name" => $postData["name"],
-                "email" => $postData["email"],
-                "mobile" => $postData["mobile"],
-                "center" => isset($postData["center"])? $postData["center"]: "",
-                "city" => isset($postData["city"])? $postData["city"]: "",
-                "pincode" => isset($postData["pincode"])? $postData["pincode"]: "",
-                "latitude" => isset($_COOKIE["lat"]) ? $_COOKIE["lat"] : "",
-                "longitude" => isset($_COOKIE["lng"]) ? $_COOKIE["lat"] : "",
-                "utm_source" => $postData["utm_source"],
-                "utm_campaign" => $postData["utm_campaign"],
-                "utm_term" => $postData["utm_term"],
-                "utm_device" => $postData["utm_device"],
-                "utm_creative" => $postData["utm_creative"],
-                "source_url" => $postData["source_url"],
-                "otp_status" => "0",
-                "crm_status" => "0",
-                "mail_status" => "0",
-            ];
-            $lead = Lead::create($data);
+            
+            $lead = Lead::create($postData);
             // DB::table("leadmeta")->insert([
             //     "lead_id" => $lead->id,
             //     "meta_key" => "source",
