@@ -4,8 +4,11 @@
 
     @section('content')
 
-
-
+<style>
+	.banner-black-shadow:before {
+		background-image: none;
+	}
+</style>
 	<!-- Start of Header section
 
 

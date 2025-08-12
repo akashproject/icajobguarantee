@@ -5,6 +5,9 @@
 <style>
 
     
+.usp-content h2, .usp-content h6 {
+    color: #fff;
+}
 
     .placement-grid {
 

@@ -56,17 +56,12 @@ trait LamLeadSubmitAfterProcess
             "DateOfBirth" => isset($postData["date_of_birth"]) ? $postData["date_of_birth"] : "",
             "AlternateMobileNumber" => isset($postData["alternate_mobile_number"]) ? $postData["alternate_mobile_number"] : "",
             "Center" => isset($postData["city"]) ? $postData["city"] : "",
-            "Location" => isset($postData["center"]) ? $postData["center"] : "",
-            "Pincode" => isset($postData["pincode"])
-                ? $postData["pincode"]
-                : "",
+            "Location" => isset($postData["center"]) ? $postData["center"]:"",
+            "Pincode" => isset($postData["pincode"])? $postData["pincode"]: "",
             "LeadType" => $postData["LeadType"],
             "LeadSource" => $postData["utm_source"],
             "LeadName" => $postData["utm_campaign"],
-
-            "Entity4" => isset($postData["course_id"])
-                ? getErpCourseCode($postData["course_id"])->course_erp_code
-                : "Not Decided Yet",
+            "Entity4" => isset($postData["course_id"])? getErpCourseCode($postData["course_id"])->course_erp_code: "Not Decided Yet",
             "EducationalQualification" => $postData["source_url"],
             "Experience" => isset($postData["experience"]) ? $postData["experience"] : "",
             "Textb1" => $postData["utm_term"],
@@ -82,7 +77,6 @@ trait LamLeadSubmitAfterProcess
         if(isset($postData["institute"]) && $postData["institute"] == "Other" ) {
             $apiData['Textb4'] = $postData['institute'].':'.$postData["other_institute"];
         }
-
         if(isset($postData["experience"]) && $postData["experience"] == "Other" ) {
             $apiData['Experience'] = $postData['experience'].':'.$postData["other_experience"];
         }
@@ -98,8 +92,12 @@ trait LamLeadSubmitAfterProcess
         if(isset($postData["year_of_study"])){
             $apiData['Remarks'] = $apiData['Remarks'].' Year of Study:'.$postData["year_of_study"];
         }
-        //ExtraaedgeApiRequest::dispatch($apiData);
-
+        if(isset($postData["semester"])){
+            $apiData['Remarks'] = $apiData['Remarks'].' Semester:'.$postData["semester"];
+        }
+        if(isset($postData["session"])){
+            $apiData['Remarks'] = $apiData['Remarks'].' Session:'.$postData["session"];
+        }
         $url = "https://prodivrapi.extraaedge.com/api/WebHook/addLead";
         $curl = curl_init();
 
@@ -117,7 +115,6 @@ trait LamLeadSubmitAfterProcess
         curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
         $resp = curl_exec($curl);
-        dd($resp);
         curl_close($curl);
         return response()->json($resp, $this->_statusOK);
     }
@@ -154,10 +151,26 @@ trait LamLeadSubmitAfterProcess
         return true;
     }
 
-    public function lamLeadCaptureToDB($postData)
+    public function captureLeadToDB($postData)
     {
         try {
-            $lead = LamLead::create($data);
+            $data = [
+                "role" => $postData["role"],
+                "name" => $postData["name"],
+                "email" => $postData["email"],
+                "mobile" => $postData["mobile"],
+                "center" => isset($postData["center"])? $postData["center"]: "",
+                "city" => isset($postData["city"])? $postData["city"]: "",
+                "pincode" => isset($postData["pincode"])? $postData["pincode"]: "",
+                "latitude" => isset($_COOKIE["lat"]) ? $_COOKIE["lat"] : "",
+                "longitude" => isset($_COOKIE["lng"]) ? $_COOKIE["lat"] : "",
+                "utm_source" => $postData["utm_source"],
+                "utm_campaign" => $postData["utm_campaign"],
+                "otp_status" => "0",
+                "crm_status" => "0",
+                "mail_status" => "0",
+            ];
+            $lead = Lead::create($data);
             return $lead;
         } catch (\Illuminate\Database\QueryException $e) {
             return response()->json($e, $this->_statusOK);
@@ -167,7 +180,7 @@ trait LamLeadSubmitAfterProcess
     public function thankyouNotication($postData){
         try {
             
-            $url = "https://api.st-messaging.com/fe/api/v1/send?username=icaedu1.trans&password=Password@123&unicode=true&from=ICAEDU&to=".$postData["mobile"]."&text=Hi+".$postData["name"]."%2C+Thank+you+for+your+interest+in+our+career+programs.+We+have+received+your+details+and+will+be+in+touch+soon.+Thanks+%26+Regards%2C+ICA+Edu+Skills&dltContentId=1207173139255553618&dltPrincipalEntityId=1201159245568554682"; 
+            $url = "https://api.st-messaging.com/fe/api/v1/send?username=icaedu1.trans&password=Password@123&unicode=false&from=ICAEDU&to=".$postData["mobile"]."&text=Hi+".$postData["name"]."%2C+Thank+you+for+your+interest+in+our+career+programs.+We+have+received+your+details+and+will+be+in+touch+soon.+Thanks+%26+Regards%2C+ICA+Edu+Skills&dltContentId=1207173139255553618&dltPrincipalEntityId=1201159245568554682"; 
 
             $curl = curl_init($url);
             curl_setopt($curl, CURLOPT_URL, $url);

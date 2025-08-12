@@ -131,6 +131,15 @@
         <section class="header-margin"></section>
         <section>
             <div class="container">
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <div class="row justify_center">	
                     <div class="col-md-12">
                         <div class="row">
@@ -851,70 +860,8 @@
                                                 </div>
                                                 <div class="wizerd_fieldset" >
                                                     <div class="row" > 
-                                                        <div class="col-12" >
-                                                            <div class="contact-info formFieldDayPreference">
-                                                                <label class="mb-0" for="formFieldDayPreference" style="color: #403c9c;font-weight: 600;"> Any Day preference for training </label>
-                                                                <div class="field_checkbox_group mt-3 row">
-                                                                    <div class="col-md-4">
-                                                                        <label for="weekdays" >
-                                                                            <input type="checkbox" id="weekdays" name="preferred_training_days[]" value="Weekdays" {{ is_array($enq->preferred_training_days) && in_array('Weekdays', $enq->preferred_training_days)?'checked':'' }} > Weekdays
-                                                                        </label>
-                                                                    </div>
-                                                                    <div class="col-md-4">
-                                                                        <label for="weekend" >
-                                                                            <input type="checkbox" id="weekend" name="preferred_training_days[]" value="Weekend" {{ is_array($enq->preferred_training_days) && in_array('Weekend', $enq->preferred_training_days)?'checked':'' }} > Weekend
-                                                                        </label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-12" >
-                                                            <div class="contact-info formFieldTimeSlot">
-                                                                <label class="mb-0" style="color: #403c9c;font-weight: 600;"> Any Time preference for training </label>
-                                                                <div class="field_checkbox_group mt-3 row">
-                                                                    <div class="col-md-4">
-                                                                        <label for="08_00_am_09_30_am" >
-                                                                            <input type="checkbox" id="08_00_am_09_30_am" name="preferred_training_time[]" value="8:00 AM - 9:30 AM" {{ is_array($enq->preferred_training_time) && in_array('8:00 AM - 9:30 AM', $enq->preferred_training_time)?'checked':'' }} > 08:00 AM - 09:30 AM
-                                                                        </label>
-                                                                    </div>
-                                                                    <div class="col-md-4">
-                                                                        <label for="08_30_am_10_00_am" >
-                                                                            <input type="checkbox" id="08_30_am_10_00_am" name="preferred_training_time[]" value="08:30 AM - 10:00 AM" {{ is_array($enq->preferred_training_time) && in_array('08:30 AM - 10:00 AM', $enq->preferred_training_time)?'checked':'' }} > 08:30 AM - 10:00 AM 
-                                                                        </label>
-                                                                    </div>
-                                                                    <div class="col-md-4">
-                                                                        <label for="11_00_am_12_30_pm" >
-                                                                            <input type="checkbox" id="11_00_am_12_30_pm" name="preferred_training_time[]" value="11:00 AM - 12:30 PM" {{ is_array($enq->preferred_training_time) && in_array('11:00 AM - 12:30 PM', $enq->preferred_training_time)?'checked':'' }} > 11:00 AM - 12:30 PM 
-                                                                        </label>
-                                                                    </div>
-                                                                    <div class="col-md-4">
-                                                                        <label for="12_30_pm_02_00_pm" >
-                                                                            <input type="checkbox" id="12_30_pm_02_00_pm" name="preferred_training_time[]" value="12:30 PM - 02:00 PM" {{ is_array($enq->preferred_training_time) && in_array('12:30 PM - 02:00 PM', $enq->preferred_training_time)?'checked':'' }} > 12:30 PM - 02:00 PM 
-                                                                        </label>
-                                                                    </div>
-                                                                    <div class="col-md-4">
-                                                                        <label for="02_00_pm_03_30_pm" >
-                                                                            <input type="checkbox" id="02_00_pm_03_30_pm" name="preferred_training_time[]" value="02:00 PM - 03:30 PM" {{ is_array($enq->preferred_training_time) && in_array('02:00 PM - 03:30 PM', $enq->preferred_training_time)?'checked':'' }} > 02:00 PM - 03:30 PM 
-                                                                        </label>
-                                                                    </div>
-                                                                    <div class="col-md-4">
-                                                                        <label for="03_30_pm_05_00_pm" >
-                                                                            <input type="checkbox" id="03_30_pm_05_00_pm" name="preferred_training_time[]" value="03:30 PM - 05:00 PM" {{ is_array($enq->preferred_training_time) && in_array('03:30 PM - 05:00 PM', $enq->preferred_training_time)?'checked':'' }} > 03:30 PM - 05:00 PM 
-                                                                        </label>
-                                                                    </div>
-                                                                    <div class="col-md-4">
-                                                                        <label for="05_00_pm_06_30_pm" >
-                                                                            <input type="checkbox" id="05_00_pm_06_30_pm" name="preferred_training_time[]" value="05:00 PM - 06:30 PM" {{ is_array($enq->preferred_training_time) && in_array('05:00 PM - 06:30 PM', $enq->preferred_training_time)?'checked':'' }} > 05:00 PM - 06:30 PM 
-                                                                        </label>
-                                                                    </div>
-                                                                    <div class="col-md-4">
-                                                                        <label for="06_30_pm_08_00_pm" >
-                                                                            <input type="checkbox" id="06_30_pm_08_00_pm" name="preferred_training_time[]" value="06:30 PM - 08:00 PM" {{ is_array($enq->preferred_training_time) && in_array('06:30 PM - 08:00 PM', $enq->preferred_training_time)?'checked':'' }} > 06:30 PM - 08:00 PM 
-                                                                        </label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                        
+                                                        
                                                         <div class="col-12" >
                                                             <div class="contact-info formFieldTimeSlot">
                                                                 <label class="mb-0" style="color: #403c9c;font-weight: 600;"> How do you come to know about ICA Edu Skills </label>
@@ -1023,6 +970,7 @@
                                             @break
                                         @endswitch
                                         <input name="center_id" type="hidden" value="{{ $center }}" >
+                                        <input name="lead_owner" type="hidden" value="{{ $lead_owner }}" >
                                         <input name="enquiry" type="hidden" value="{{ (isset($enquiry_id))?$enquiry_id:''}}" >
                                     </div>
                                     <input name="step" type="hidden" value="{{ $step }}" >

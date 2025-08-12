@@ -195,8 +195,27 @@ trait LeadSubmitAfterProcess
     public function captureLeadToDB($postData)
     {
         try {
-            
-            $lead = Lead::create($postData);
+            $data = [
+                "role" => $postData["role"],
+                "name" => $postData["name"],
+                "email" => $postData["email"],
+                "mobile" => $postData["mobile"],
+                "center" => isset($postData["center"])? $postData["center"]: "",
+                "city" => isset($postData["city"])? $postData["city"]: "",
+                "pincode" => isset($postData["pincode"])? $postData["pincode"]: "",
+                "latitude" => isset($_COOKIE["lat"]) ? $_COOKIE["lat"] : "",
+                "longitude" => isset($_COOKIE["lng"]) ? $_COOKIE["lat"] : "",
+                "utm_source" => $postData["utm_source"],
+                "utm_campaign" => $postData["utm_campaign"],
+                "utm_term" => $postData["utm_term"],
+                "utm_device" => $postData["utm_device"],
+                "utm_creative" => $postData["utm_creative"],
+                "source_url" => $postData["source_url"],
+                "otp_status" => "0",
+                "crm_status" => "0",
+                "mail_status" => "0",
+            ];
+            $lead = Lead::create($data);
             // DB::table("leadmeta")->insert([
             //     "lead_id" => $lead->id,
             //     "meta_key" => "source",
@@ -212,7 +231,7 @@ trait LeadSubmitAfterProcess
     public function thankyouNotication($postData){
         try {
             
-            $url = "https://api.st-messaging.com/fe/api/v1/send?username=icaedu1.trans&password=Password@123&unicode=true&from=ICAEDU&to=".$postData["mobile"]."&text=Hi+".$postData["name"]."%2C+Thank+you+for+your+interest+in+our+career+programs.+We+have+received+your+details+and+will+be+in+touch+soon.+Thanks+%26+Regards%2C+ICA+Edu+Skills&dltContentId=1207173139255553618&dltPrincipalEntityId=1201159245568554682"; 
+            $url = "https://api.st-messaging.com/fe/api/v1/send?username=icaedu1.trans&password=Password@123&unicode=false&from=ICAEDU&to=".$postData["mobile"]."&text=Hi+".$postData["name"]."%2C+Thank+you+for+your+interest+in+our+career+programs.+We+have+received+your+details+and+will+be+in+touch+soon.+Thanks+%26+Regards%2C+ICA+Edu+Skills&dltContentId=1207173139255553618&dltPrincipalEntityId=1201159245568554682"; 
 
             $curl = curl_init($url);
             curl_setopt($curl, CURLOPT_URL, $url);

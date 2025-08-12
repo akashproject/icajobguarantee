@@ -475,6 +475,9 @@
     background:url('/assets/img/section-background.webp');background-repeat: no-repeat;background-position: center;
 
 }
+.usp-content h2, .usp-content h6 {
+    color: #fff;
+}
 @media screen and (max-width: 767px) {
     .usp-section{
         background-repeat: repeat-y;
@@ -648,7 +651,7 @@
 
                             <div class="text-center mt-4">
 
-                                <h2>Job Placements</h2>
+                                <h2 class="text-white">Job Placements</h2>
 
                             </div>
 

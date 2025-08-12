@@ -15,6 +15,7 @@ class StudentController extends Controller
     public function index($center,$step = null)
     {
         $enquiry_id = (request()->has('enquiry_id'))?base64_decode(request()->get('enquiry_id')):null;
+        $lead_owner = Center::where('code', $center)->firstOrFail()->email;
         $enq = null;
         if ($enquiry_id != null) {
             $enq = Enquiry::findOrFail($enquiry_id);
@@ -34,7 +35,7 @@ class StudentController extends Controller
 
         }
 
-        return view('page.student-enquiry-form',compact('step','center','enq','enquiry_id'));
+        return view('page.student-enquiry-form',compact('step','center','lead_owner','enq','enquiry_id'));
     }
 
     public function enquiryFormSubmit(Request $request)
@@ -82,10 +83,15 @@ class StudentController extends Controller
             if ($step <= 5) {
                 return redirect()->route('student-enquiry-form-with-slug', ['center' => $postData['center_id'],$step,'enquiry_id'=>base64_encode($enq->id)]);
             } else {
-                $center = Center::select('name')->where("code",$enq->center_id)->first();
+                $center = Center::select('name','email')->where("code",$enq->center_id)->first();
+                if($enq->response_log != null) {
+                    return redirect()->back()->withErrors('This Record is Already Exists in ERP');
+                }
+                
                 $data = [
                     'centername'=>$center->name,
                     'centercode'=>$enq->center_id,
+                    'LeadOwner'=>$center->email,
                     'PurposeOfInquiry'=> $enq->purpose_of_enquiry,
                     'DailyTimeSpent'=> $enq->daily_time_spend,
                     'JobAspiration'=> $enq->job_aspiration,
@@ -125,8 +131,8 @@ class StudentController extends Controller
                    // 'TrainingSchedulePreference'=> $enq->preferred_training_days.' '.$enq->preferred_training_time,
                     'PreviousComputerKnowledge'=> $enq->previous_computer_knowledge,
                 ];
-
-                //echo json_encode($data);
+                
+                //echo json_encode($data); exit;
                 $url = "https://new.icaerp.com/api/online/SavePinkForm";
                 $curl = curl_init($url);
                 curl_setopt($curl, CURLOPT_URL, $url);

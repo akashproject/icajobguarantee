@@ -4,7 +4,9 @@
 
 <style>
 
-    
+    .usp-content h2, .usp-content h6 {
+    color: #fff;
+}
 
     .placement-grid {
 
@@ -645,7 +647,7 @@
 
                             <div class="text-center mt-4">
 
-                                <h2>Job Placements</h2>
+                                <h2 class="text-white">Job Placements</h2>
 
                             </div>
 
