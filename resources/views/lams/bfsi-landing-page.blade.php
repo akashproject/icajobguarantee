@@ -86,7 +86,7 @@
                                     <img src="{{ url('/assets/img/job-fair-cta.png') }}" >
                                 </div>
                                 <div class="about-btn text-center mt-3">
-                                    <div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
+                                    <div class="genius-yellow-btn gradient-yellow-bg text-center text-uppercase ul-li-block bold-font">
                                         <a class="creative_register_btn" href="javascript:void(0)"> Register Now <i class="fas fa-caret-right"></i></a>
                                     </div>
                                 </div>

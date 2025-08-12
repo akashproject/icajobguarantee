@@ -53,8 +53,6 @@ trait LamLeadSubmitAfterProcess
             "LastName" => $postData["lastname"],
             "Email" => $postData["email"],
             "MobileNumber" => $postData["mobile"],
-            "DateOfBirth" => isset($postData["date_of_birth"]) ? $postData["date_of_birth"] : "",
-            "AlternateMobileNumber" => isset($postData["alternate_mobile_number"]) ? $postData["alternate_mobile_number"] : "",
             "Center" => isset($postData["city"]) ? $postData["city"] : "",
             "Location" => isset($postData["center"]) ? $postData["center"]:"",
             "Pincode" => isset($postData["pincode"])? $postData["pincode"]: "",
@@ -63,7 +61,6 @@ trait LamLeadSubmitAfterProcess
             "LeadName" => $postData["utm_campaign"],
             "Entity4" => isset($postData["course_id"])? getErpCourseCode($postData["course_id"])->course_erp_code: "Not Decided Yet",
             "EducationalQualification" => $postData["source_url"],
-            "Experience" => isset($postData["experience"]) ? $postData["experience"] : "",
             "Textb1" => $postData["utm_term"],
             "Field3" => $postData["utm_device"],
             "Textb2" => $postData["utm_adgroup"],
@@ -77,27 +74,39 @@ trait LamLeadSubmitAfterProcess
         if(isset($postData["institute"]) && $postData["institute"] == "Other" ) {
             $apiData['Textb4'] = $postData['institute'].':'.$postData["other_institute"];
         }
+
+        if(isset($postData["experience"])){
+            $apiData['Remarks'] = $apiData['Remarks'].' Experience: '.$postData["experience"].' | ';
+        }
+
         if(isset($postData["experience"]) && $postData["experience"] == "Other" ) {
-            $apiData['Experience'] = $postData['experience'].':'.$postData["other_experience"];
+            $apiData['Experience'] = " ".$apiData['Remarks'].'-'.$postData["other_experience"];
+        }
+        if(isset($postData["date_of_birth"])) {
+            $apiData['Remarks'] = $apiData['Remarks'].'DOB: '.$postData['date_of_birth'].' | ';
+        }
+        if(isset($postData["alternate_mobile_number"])) {
+            $apiData['Remarks'] = $apiData['Remarks'].'Alternate Mobile Number: '.$postData['alternate_mobile_number'].' | ';
         }
         if(isset($postData["occupation"])){
-            $apiData['Remarks'] = $apiData['Remarks'].' '.$postData["occupation"];
+            $apiData['Remarks'] = $apiData['Remarks'].' Occupation: '.$postData["occupation"].' | ';
         }
         if(isset($postData["career_option"])){
-            $apiData['Remarks'] = $apiData['Remarks'].' '.$postData["career_option"];
+            $apiData['Remarks'] = $apiData['Remarks'].' Career: '.$postData["career_option"];
         }
         if(isset($postData["career_option"]) && $postData["career_option"] == "Other"){
-            $apiData['Remarks'] = " ".$apiData['Remarks'].' :'.$postData["other_career_option"];
+            $apiData['Remarks'] = " ".$apiData['Remarks'].' -'.$postData["other_career_option"].' | ';
         }
         if(isset($postData["year_of_study"])){
-            $apiData['Remarks'] = $apiData['Remarks'].' Year of Study:'.$postData["year_of_study"];
+            $apiData['Remarks'] = $apiData['Remarks'].' Year of Study: '.$postData["year_of_study"].' | ';
         }
         if(isset($postData["semester"])){
-            $apiData['Remarks'] = $apiData['Remarks'].' Semester:'.$postData["semester"];
+            $apiData['Remarks'] = $apiData['Remarks'].' Semester: '.$postData["semester"].' | ';
         }
         if(isset($postData["session"])){
-            $apiData['Remarks'] = $apiData['Remarks'].' Session:'.$postData["session"];
+            $apiData['Remarks'] = $apiData['Remarks'].' Session:'.$postData["session"].' | ';
         }
+
         $url = "https://prodivrapi.extraaedge.com/api/WebHook/addLead";
         $curl = curl_init();
 
