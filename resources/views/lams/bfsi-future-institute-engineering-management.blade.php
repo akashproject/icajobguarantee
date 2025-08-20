@@ -67,12 +67,18 @@
             <div class="container">
 				<div class="row d-flex align-items-center justify-content-between">
 					<div class="col-xl-7 col-md-12 my-4 ps-lg-5">
+						@if(!check_device("mobile"))
 						<div class="d-flex">
 							<div class="banner-logo"><img src="/assets/frontend/bfsi/images/bfsi.png" alt="" class="img-fluid"></div>
 							<div class="banner-logo-ica mb-4 ml-2"><img src="/assets/frontend/bfsi/images/logo-ica.png" alt="" class="img-fluid"></div>
-							<!-- <div class="banner-logo mb-4 ml-2"><img src="/assets/img/gcr-logo.png" alt="" class="img-fluid" style="height: 85px;"></div> -->
+							<div class="banner-logo mb-4 ml-2"><img src="/assets/img/bfsi-future-institute-engineering-management.png" alt="" class="img-fluid"></div>
 						</div>
-						
+						@endif
+						@if(check_device("mobile"))
+						<div class="d-flex">
+							<div class="banner-logo-mobile"><img src="/assets/img/future-institute-mobile.png" alt="" class="img-fluid"></div>
+						</div>
+						@endif
 						<h1 class="mb-4 text-white">CRACK THE CODE <span>TO</span> SMART MONEY MOVES</h1>
 						<h2>All Participants shall receive BFSI Certificates!</h2>
 						<p class="mt-4 mb-4 text-white">Get ready for a 90-minute power-packed session that makes finance fun, simple, and real - right in your classroom!</p>
@@ -80,7 +86,7 @@
 						@if(check_device("mobile"))
 						<div class="about-btn text-center mt-3 position-relative" style="z-index: 2;">
 							<div class="genius-yellow-btn gradient-yellow-bg text-center text-uppercase ul-li-block bold-font">
-								<a class="creative_register_btn" href="javascript:void(0)"> Register Now <i class="fas fa-caret-right"></i></a>
+								<a class="creative_register_btn_mobile" href="javascript:void(0)"> Register Now <i class="fas fa-caret-right"></i></a>
 							</div>
 						</div>
 						@endif
@@ -454,6 +460,11 @@
 		});
 
 		jQuery(".creative_register_btn").on('click',function() {
+			jQuery(".register_cta_content").hide();
+			jQuery(".ad_banner_form_wrapeer").show();
+		});
+
+		jQuery(".creative_register_btn_mobile").on('click',function() {
 			jQuery(this).parent().parent().parent().hide()			
 			jQuery(".register_cta_content").hide();
 			jQuery(".ad_banner_form_wrapeer").show();

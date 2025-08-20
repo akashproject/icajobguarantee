@@ -439,6 +439,9 @@
                         <li class="sidebar-item"><a href="{{ url('administrator/transfar-lead') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Transfer New Lead </span></a></li>
                      </ul>
                   </li>
+                  <li class="sidebar-item">
+                     <a class="sidebar-link waves-effect waves-dark" href="{{ url('administrator/job-fair-leads') }}" aria-expanded="false"><i class="mdi mdi-face"></i><span class="hide-menu">Job Fair Leads</span></a>
+                  </li>
                   @break
                @case("counsellor")
                   <li class="sidebar-item">

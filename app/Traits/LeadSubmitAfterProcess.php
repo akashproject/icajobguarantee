@@ -59,7 +59,7 @@ trait LeadSubmitAfterProcess
             "Pincode" => isset($postData["pincode"])
                 ? $postData["pincode"]
                 : "",
-            "LeadType" => $postData["LeadType"],
+            "LeadType" => $postData["lead_type"],
             "LeadSource" => $postData["utm_source"],
             "LeadName" => $postData["utm_campaign"],
             "Entity4" => isset($postData["course_id"])
@@ -205,6 +205,7 @@ trait LeadSubmitAfterProcess
                 "pincode" => isset($postData["pincode"])? $postData["pincode"]: "",
                 "latitude" => isset($_COOKIE["lat"]) ? $_COOKIE["lat"] : "",
                 "longitude" => isset($_COOKIE["lng"]) ? $_COOKIE["lat"] : "",
+                "LeadType" => $postData["LeadType"],
                 "utm_source" => $postData["utm_source"],
                 "utm_campaign" => $postData["utm_campaign"],
                 "utm_term" => $postData["utm_term"],
@@ -215,13 +216,8 @@ trait LeadSubmitAfterProcess
                 "crm_status" => "0",
                 "mail_status" => "0",
             ];
+            dd($data);
             $lead = Lead::create($data);
-            // DB::table("leadmeta")->insert([
-            //     "lead_id" => $lead->id,
-            //     "meta_key" => "source",
-            //     "meta_value" => "cia",
-            // ]);
-
             return $lead;
         } catch (\Illuminate\Database\QueryException $e) {
             return response()->json($e, $this->_statusOK);

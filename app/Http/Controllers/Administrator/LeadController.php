@@ -128,4 +128,14 @@ class LeadController extends Controller
             var_dump($e->getMessage()); 
         }
     }   
+
+    public function jobFairLeads()
+    {
+        try {
+            $leads = Lead::where('role','b2c')->limit('1000')->orderBy('id','desc')->get();
+            return view('administrator.leads.classroom-leads',compact('leads'));
+        } catch(\Illuminate\Database\QueryException $e){
+            var_dump($e->getMessage()); 
+        }
+    }
 }

@@ -80,6 +80,7 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::get('/local-stored-leads', [App\Http\Controllers\Administrator\LeadController::class, 'localStoredLeads'])->name('admin-local-stored-leads');
         Route::get('/franchise-leads', [App\Http\Controllers\Administrator\LeadController::class, 'franchiseLeads'])->name('admin-franchise-leads');
         Route::get('/backlog-leads', [App\Http\Controllers\Administrator\LeadController::class, 'backLogLeads'])->name('admin-backlog-leads');
+        Route::get('/job-fair-leads', [App\Http\Controllers\Administrator\LeadController::class, 'jobFairLeads'])->name('admin-job-fair-leads');
 
         // Export Leads 
         

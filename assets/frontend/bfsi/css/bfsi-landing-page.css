@@ -267,7 +267,12 @@ button.submit_classroom_lead_generation_form.form_step_1 {
 }
 
 
-   
+.banner-logo-mobile {
+    z-index: 2;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}   
 
 
 
@@ -666,6 +671,9 @@ button.submit_classroom_lead_generation_form.form_step_1 {
 }
 
 @media only screen and (max-width : 768px) {
+  .banner-landing .banner-dot-obj2 {
+    display: none;
+  }
   .banner-webinar{
     background-size: cover;
     min-height: 140vh;
