@@ -20,7 +20,6 @@
 								<th>Center</th>
 								<th>City</th>
 								<th>Pincode</th>
-								<th>OTP Status</th>
 								<th>Utm Campaign</th>
 								<th>Utm Source</th>
 								<th>Created At</th>
@@ -36,7 +35,6 @@
 								<td>{{ $value->center }}</td>													
 								<td>{{ $value->city }}</td>													
 								<td>{{ $value->pincode }}</td>													
-								<td>{{ $value->otp_status }}</td>													
 								<td>{{ $value->utm_campaign }}</td>													
 								<td>{{ $value->utm_source }}</td>	
 								<td>{{ $value->created_at }}</td>														
