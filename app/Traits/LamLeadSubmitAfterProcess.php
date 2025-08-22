@@ -56,7 +56,7 @@ trait LamLeadSubmitAfterProcess
             "Center" => isset($postData["city"]) ? $postData["city"] : "",
             "Location" => isset($postData["center"]) ? $postData["center"]:"",
             "Pincode" => isset($postData["pincode"])? $postData["pincode"]: "",
-            "LeadType" => $postData["LeadType"],
+            "LeadType" => $postData["lead_type"],
             "LeadSource" => $postData["utm_source"],
             "LeadName" => $postData["utm_campaign"],
             "Entity4" => isset($postData["course_id"])? getErpCourseCode($postData["course_id"])->course_erp_code: "Not Decided Yet",

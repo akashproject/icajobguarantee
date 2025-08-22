@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Administrator;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Lead;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Response;
 
@@ -58,7 +59,7 @@ class LeadController extends Controller
 
     public function exportLeads($type){
         try {
-            
+            $user = Auth::user();
             switch ($type) {
                 case 'local':
                     $leads = DB::table('leads')
@@ -79,9 +80,20 @@ class LeadController extends Controller
                     ->limit(2000)
                     ->orderBy('id', 'DESC')->get();
                     break;
+                case 'job-fair':
+                    $leads = DB::table('leads')
+                    ->where('lead_type','Job Fair External')->where('utm_source','Job Fair')
+                    ->orderBy('id', 'DESC')->get();
+                    break;
+                case 'center-wise':
+                    $leads = DB::table('leads')
+                    ->where('center',$user->name)
+                    ->where('lead_type','Job Fair External')->where('utm_source','Job Fair')
+                    ->orderBy('id', 'DESC')->get();
+                    break;
             }
             
-            $report_header = ['Name','Email','Mobile','Center','City','Pincode','Source','Campaign','Term','Device','Creative','Url','Otp','Created Date'];
+            $report_header = ['Name','Email','Mobile','Center','City','Pincode','Source','Campaign','Term','Device','Creative','Url','Created Date'];
             $leadReport = [];
             foreach($leads as $key => $lead) {
                 $leadReport[$key]['Name'] = $lead->name;
@@ -96,7 +108,6 @@ class LeadController extends Controller
                 $leadReport[$key]['Device'] = $lead->utm_device;
                 $leadReport[$key]['Creative'] = $lead->utm_creative;
                 $leadReport[$key]['Url'] = $lead->source_url;
-                $leadReport[$key]['OTP'] = $lead->otp_status;
                 $leadReport[$key]['Created Date'] = $lead->created_at;
             }
 
@@ -132,8 +143,20 @@ class LeadController extends Controller
     public function jobFairLeads()
     {
         try {
-            $leads = Lead::where('role','b2c')->limit('1000')->orderBy('id','desc')->get();
-            return view('administrator.leads.classroom-leads',compact('leads'));
+            $user = Auth::user();
+            $leads = Lead::where('center',$user->name)->where('lead_type','Job Fair External')->where('utm_source','Job Fair')->orderBy('id','desc')->get();
+            
+            return view('administrator.leads.center-wise-leads',compact('leads'));
+        } catch(\Illuminate\Database\QueryException $e){
+            var_dump($e->getMessage()); 
+        }
+    }
+
+    public function allJobFairLeads()
+    {
+        try {
+            $leads = Lead::where('lead_type','Job Fair External')->where('utm_source','Job Fair')->orderBy('id','desc')->get();
+            return view('administrator.leads.job-fair-leads',compact('leads'));
         } catch(\Illuminate\Database\QueryException $e){
             var_dump($e->getMessage()); 
         }

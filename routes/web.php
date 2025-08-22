@@ -82,10 +82,6 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::get('/backlog-leads', [App\Http\Controllers\Administrator\LeadController::class, 'backLogLeads'])->name('admin-backlog-leads');
         Route::get('/job-fair-leads', [App\Http\Controllers\Administrator\LeadController::class, 'jobFairLeads'])->name('admin-job-fair-leads');
 
-        // Export Leads 
-        
-        Route::get('/export-leads/{type}', [App\Http\Controllers\Administrator\LeadController::class, 'exportLeads'])->name('admin-export-leads');
-
         //Lead Refer
         Route::get('/lead-refer', [App\Http\Controllers\Administrator\LeadReferController::class, 'index'])->name('admin-lead-refer');
         Route::get('/transfar-lead', [App\Http\Controllers\Administrator\LeadReferController::class, 'add'])->name('admin-transfar-lead');
@@ -282,14 +278,6 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
         Route::get('/view-author/{id}', [App\Http\Controllers\Administrator\AuthorController::class, 'show'])->name('admin-view-author');
         Route::post('/save-author', [App\Http\Controllers\Administrator\AuthorController::class, 'save'])->name('admin-save-author');
         Route::get('/delete-author/{id}', [App\Http\Controllers\Administrator\AuthorController::class, 'delete'])->name('admin-delete-author');
-
-        //Tags
-        // Route::get('/tags', [App\Http\Controllers\Administrator\TagController::class, 'index'])->name('admin-tags');
-        // Route::post('/get-tags', [App\Http\Controllers\Administrator\TagController::class, 'getTags'])->name('admin-get-tags');
-        // Route::get('/add-tag', [App\Http\Controllers\Administrator\TagController::class, 'add'])->name('admin-add-tag');
-        // Route::get('/view-tag/{id}', [App\Http\Controllers\Administrator\TagController::class, 'show'])->name('admin-view-tag');
-        // Route::post('/save-tag', [App\Http\Controllers\Administrator\TagController::class, 'save'])->name('admin-save-tag');
-        // Route::get('/delete-tag/{id}', [App\Http\Controllers\Administrator\TagController::class, 'delete'])->name('admin-delete-tag');
         
         //Review
         Route::get('/reviews', [App\Http\Controllers\Administrator\ReviewController::class, 'index'])->name('admin-reviews');
@@ -325,6 +313,12 @@ Route::group(['prefix' => 'administrator', 'namespace' => 'Admin'], function () 
     });
     // Will be inside middleware
 });
+
+// Job Fair Leads
+Route::get('/job-fair-leads', [App\Http\Controllers\Administrator\LeadController::class, 'allJobFairLeads'])->name('job-fair-leads');
+
+// Export Leads         
+Route::get('/export-leads/{type}', [App\Http\Controllers\Administrator\LeadController::class, 'exportLeads'])->name('admin-export-leads');
 
 //Page
 Route::get('/home', function () {
