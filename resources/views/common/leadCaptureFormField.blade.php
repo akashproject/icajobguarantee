@@ -42,7 +42,7 @@
 @endif
 
 @if(isset($center))
-    <input type="hidden" name="center" value="{{ (isset($center) )?$center:'' }}">
+    <input type="hidden" name="center" value="{{ $center }}">
 @endif
 
 @if(isset($contentMain->course_id))

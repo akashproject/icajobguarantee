@@ -92,6 +92,11 @@
 											<div id="tab1" class="best-product-section">
 												@if(count($centers) >0 )
 												<div class="row">
+													<div class="col-12 mb-3">
+														<h4 style="font-size: 19px;color: #333;"> {{count($centers) }} Centers found</h4>
+													</div>
+												</div>
+												<div class="row">
 													@foreach($centers as $value)
 													<div class="col-md-4">
 														<div class="product-img-text">
